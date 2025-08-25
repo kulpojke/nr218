@@ -1,3 +1,19 @@
 project:
-  type: website
+  type: presentation
   output-dir: docs
+
+format:
+  revealjs:
+    theme: blood
+    slide-number: true           
+    controls: true               
+    progress: true               
+    hash: true                   
+    center: true                 
+    transition: slide            
+    background-transition: fade  
+    code-block-height: 500px     
+    logo: images/my_logo.png     
+
+editor:
+  render-on-save: true     
