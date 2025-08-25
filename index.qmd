@@ -1,0 +1,12 @@
+---
+format:
+  revealjs:
+    incremental: true 
+jupyter: python3
+echo: true
+output-location: column
+navigation-mode: vertical
+---
+# GEOG 441 Index
+
+Links to lecture slides
