@@ -1,12 +1,113 @@
 ---
 format:
   revealjs:
-    incremental: true 
+    incremental: false 
 jupyter: python3
 echo: true
 output-location: column
 navigation-mode: vertical
----
-# GEOG 441 Index
 
-Links to lecture slides
+---
+# NR 218
+
+
+## Class Details
++ _Location_  
++ Times:
+  - [Monday:]{style="font-size:0.8em"}  
+    [5:10 - 6:00 Lecture]{style="font-size:0.8em"}  
+    [6:10 - 9:00 Lab]{style="font-size:0.8em"}  
+  - [Wednesday]{style="font-size:0.8em"}  
+    [6:10 - 9:00 Lab]{style="font-size:0.8em"}  
+
+
+## Instructor Details
++ Michael Huggins
++ Office Hours:  
+  - Building 72 (Plant Conservatory)
+    Room 107  
+    Mondays 2:30 - 4:30s  
+
+
+## Learning Goals
++ Analyze spatial data  
++ Create maps using geospatial software
++ Produce quality graphics
++ Apply skills in Remote Sensing, GIS, and data science to solve a problem of your own design
++ Understand basic principles of GIS
+
+
+## Active Learning and Growth Mindset
++ Learn by doing
++ Ask questions
++ Explore your interests
+
+
+## Active Learning and Growth Mindset
++ This class will be challenging - learning new skills is hard
++ Recognize that you won’t be good immediately
+  - Mastery takes time and repetition
++ Ask for help!
+  - Internet, classmates, professor (Try not to rely on AI)
++ Don’t be afraid to mess up
++ Crash the computer, it’s ok!
++ Think critically and logically, don’t get frustrated
++ There will be lots of hands-on work time in this class
++ Suggest bringing laptop if you have one
+
+## Class Icebreaker
+
+
+## What is GIS?
+
+:::{.fragment}
+Computer-based tools used to store, visualize, analyze, and interpret geographic data
+:::
+
+<p class="fragment fade-in-then-out">
+  OR  
+  Collection of computer hardware, software, data,
+personnel, and work procedures to store, update,
+manipulate, analyze, and display all forms of geographic
+information. 
+</p>
+
+:::{.fragment}
+![](img/qgis_logo.jpeg){.absolute top=200 left=0 width="75"}
+![](img/qgis_screen.png){.absolute top=220 left=0 width="200"}
+![](img/esri_logo.jpeg){.absolute top=425 right=325 width="100"}
+:::
+
+:::{.fragment}
+![](img/grass-screen.jpeg){.absolute top=260 right=50 width="200"}
+![](img/grass_logo.png){.absolute top=190 right=50 width="75"}
+:::
+
+:::{.fragment}
+![](img/python_ecosytem.jpeg){.absolute top=220 left=210 width="275"}
+![](img/R_ecosystem.jpeg){.absolute top=220 right=275 width="275"}
+![](img/postgis.jpeg){.absolute top=425 left=325 width="200"}
+:::
+
+
+## Application Domains
+GIS is useful is many domains, for example:
++ weather forecasts  
++ navigation  
++ delivery logisitics   
++ apps (e.g. Strava!)   
++ disaster response    
++ infrastructure monitoring   
++ climate monitoring / modeling   
++ urban/regional planning
++ architecture
++ archaeology
++ geography
++ social sciences
++ (geo)physics
++ hydrology
++ biology
++ ecology
++ etc...
+
+## Tools you may use frequently
