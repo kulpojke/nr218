@@ -18,14 +18,21 @@
     "href": "index.html#learning-goals",
     "title": "",
     "section": "Learning Goals",
-    "text": "Learning Goals\n\nAnalyze spatial data\n\nCreate maps using geospatial software\nProduce quality graphics\nApply skills in Remote Sensing, GIS, and data science to solve a problem of your own design"
+    "text": "Learning Goals\n\nAnalyze spatial data\n\nCreate maps using geospatial software\nProduce quality graphics\nApply skills in Remote Sensing, GIS, and data science to solve a problem of your own design\nUnderstand basic principles of GIS"
   },
   {
     "objectID": "index.html#active-learning-and-growth-mindset",
     "href": "index.html#active-learning-and-growth-mindset",
     "title": "",
     "section": "Active Learning and Growth Mindset",
-    "text": "Active Learning and Growth Mindset\n\nx"
+    "text": "Active Learning and Growth Mindset\n\nLearn by doing\nAsk questions\nExplore your interests"
+  },
+  {
+    "objectID": "index.html#active-learning-and-growth-mindset-1",
+    "href": "index.html#active-learning-and-growth-mindset-1",
+    "title": "",
+    "section": "Active Learning and Growth Mindset",
+    "text": "Active Learning and Growth Mindset\n\nThis class will be challenging - learning new skills is hard\nRecognize that you won’t be good immediately\n\nMastery takes time and repetition\n\nAsk for help!\n\nInternet, classmates, professor (Try not to rely on AI)\n\nDon’t be afraid to mess up\nCrash the computer, it’s ok!\nThink critically and logically, don’t get frustrated\nThere will be lots of hands-on work time in this class\nSuggest bringing laptop if you have one"
   },
   {
     "objectID": "index.html#class-icebreaker",
@@ -49,10 +56,10 @@
     "text": "Application Domains\nGIS is useful is many domains, for example: + weather forecasts\n+ navigation\n+ delivery logisitics\n+ apps (e.g. Strava!)\n+ disaster response\n+ infrastructure monitoring\n+ climate monitoring / modeling\n+ urban/regional planning + architecture + archaeology + geography + social sciences + (geo)physics + hydrology + biology + ecology + etc…"
   },
   {
-    "objectID": "index.html#tools-you-may-use-frequently",
-    "href": "index.html#tools-you-may-use-frequently",
+    "objectID": "index.html#why-use-gis",
+    "href": "index.html#why-use-gis",
     "title": "",
-    "section": "Tools you may use frequently",
-    "text": "Tools you may use frequently"
+    "section": "Why use GIS",
+    "text": "Why use GIS\nMonitor and understand our planet"
   }
 ]

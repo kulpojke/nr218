@@ -110,4 +110,7 @@ GIS is useful is many domains, for example:
 + ecology
 + etc...
 
-## Tools you may use frequently
+## Why use GIS
+Monitor and understand our planet
+![](img/aralsea.png){.absolute top=425 left=50 width="200"}
+![](img/Global_NDVI.gif){.absolute top=425 right=50 width="200"}
