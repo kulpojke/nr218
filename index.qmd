@@ -254,7 +254,8 @@ _File extensions_ denote files readable by certain programs, for example:
 ## File Organization and Computer Hygiene
 
 :::{r-stack}
-:::{.fragment  .fade-in-then-out style="font-size: 0.5em"}
+:::{.fragment  .fade-in-then-out style="position: absolute; 
+font-size: 0.5em"}
 Be kind to your future self - keep your files organized:
 
 + Use directories (a.k.a folders)
@@ -264,11 +265,11 @@ Be kind to your future self - keep your files organized:
 ![](https://imgs.xkcd.com/comics/documents.png){.absolute top=75 right=10}
 :::
 
-:::{.fragment .fade-in-then-out style="position: absolute; top: 2;"}
+:::{.fragment .fade-in-then-out style="position: absolute; top: 0;"}
 ![](img/linux-filesystem-hierarchy.png)
 :::
 
-:::{.fragment .fade-in-then-out style="position: absolute; top: 2;"}
+:::{.fragment .fade-in-then-out style="position: absolute; top: 0;"}
 ![](img/windows_dir_structure.jpg)
 :::
 :::
