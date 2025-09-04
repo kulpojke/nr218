@@ -1,4 +1,4 @@
-Country, Population, Language, Continent, Centroid
-France, 65000000, French, Europe, "2.2137, 46.2276"
-Brazil, 192000000, Portuguese, South America, "-47.8825, -15.7942"
-Australia, 22000000, English, Australia, "133.7751, -25.2744"
+Country, Population, Language, Continent, lon, lat
+France, 65000000, French, Europe, 2.2137, 46.2276
+Brazil, 192000000, Portuguese, South America, -47.8825, -15.7942
+Australia, 22000000, English, Australia, 133.7751, -25.2744
