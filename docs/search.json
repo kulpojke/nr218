@@ -235,6 +235,6 @@
     "href": "index.html#reading-a-csv",
     "title": "",
     "section": "Reading a CSV",
-    "text": "Reading a CSV"
+    "text": "Reading a CSV\n\nCountry, Population, Language, Continent, Centroid\nFrance, 65000000, French, Europe, \"2.2137, 46.2276\"\nBrazil, 192000000, Portuguese, South America, \"-47.8825, -15.7942\"\nAustralia, 22000000, English, Australia, \"133.7751, -25.2744\""
   }
 ]
