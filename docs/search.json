@@ -207,6 +207,6 @@
     "href": "index.html#file-organization-and-computer-hygiene",
     "title": "",
     "section": "File Organization and Computer Hygiene",
-    "text": "File Organization and Computer Hygiene\n\n\n\n\n\n\n\n\nBe kind to your future self - keep your files organized:\n\nUse directories (a.k.a folders)\nUse descriptive names:\n\ne.g. slo_county_boundary_26910.geojson not boundary.geojson\n\nDon’t put spaces in file or directory names (see this)"
+    "text": "File Organization and Computer Hygiene\n\n\n\n\n\n\n\n\nBe kind to your future self - keep your files organized:\n\nUse directories (a.k.a folders)\nUse descriptive names:\n\ne.g. slo_county_26910.geojson not county.geojson\n\nDon’t put spaces in file or directory names (see this)"
   }
 ]
