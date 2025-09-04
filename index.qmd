@@ -261,7 +261,7 @@ Be kind to your future self - keep your files organized:
 + Use descriptive names:
   + e.g. `slo_county_26910.geojson` not `county.geojson`
 + Don't put spaces in file or directory names (see [this](https://authors.library.caltech.edu/records/mmnpf-cez11))
-![](https://imgs.xkcd.com/comics/documents.png){.absolute top=120 right=100}
+![](https://imgs.xkcd.com/comics/documents.png){.absolute top=75 right=10}
 :::
 
 :::{.fragment .fade-in-then-out style="position: absolute;"}
