@@ -186,7 +186,7 @@
     "href": "index.html#data-storage",
     "title": "",
     "section": "Data Storage",
-    "text": "Data Storage\n\nOften we store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times there are just 1s and 0s (binary file)\nEven the human readable files are ultimately stored as 1s and 0s ((want to know more)[https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW])"
+    "text": "Data Storage\n\nWe store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times there are just 1s and 0s (binary file)\nEven the human readable files are ultimately stored as 1s and 0s ((want to know more)[https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW])"
   },
   {
     "objectID": "index.html#data-storage-1",
@@ -200,13 +200,41 @@
     "href": "index.html#file-types",
     "title": "",
     "section": "File types",
-    "text": "File types\n\nComputer programsonly read certain file formats.\nFamiliarity with different file types is helpful.\nCommon GIS file types: .shp (and .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
+    "text": "File types\n\nComputer programs only read certain file formats.\nFamiliarity with different file types is helpful.\nCommon GIS file types: .shp (and .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
   },
   {
     "objectID": "index.html#file-organization-and-computer-hygiene",
     "href": "index.html#file-organization-and-computer-hygiene",
     "title": "",
     "section": "File Organization and Computer Hygiene",
-    "text": "File Organization and Computer Hygiene\n\n\nBe kind to your future self - keep your files organized:\n\nUse directories (a.k.a folders)\nUse descriptive names:\n\ne.g. slo_county_26910.geojson not county.geojson\n\nDon’t put spaces in file or directory names (see this)"
+    "text": "File Organization and Computer Hygiene\n\nBe kind to your future self - keep your files organized:\n\nUse directories (a.k.a folders)\nUse descriptive names:\n\ne.g. slo_county_26910.geojson not county.geojson\n\nDon’t put spaces in file or directory names (see this)"
+  },
+  {
+    "objectID": "index.html#file-paths-and-directories",
+    "href": "index.html#file-paths-and-directories",
+    "title": "",
+    "section": "File Paths and Directories",
+    "text": "File Paths and Directories"
+  },
+  {
+    "objectID": "index.html#human-readable-vs.-binary-files",
+    "href": "index.html#human-readable-vs.-binary-files",
+    "title": "",
+    "section": "Human readable vs. binary files",
+    "text": "Human readable vs. binary files\n\nHuman Readable\n\nfile.txt\nfile.csv\nfile.xml\nfile.docx\\(^{*}\\)\nfile.json\nfilename.py\n\n\n* actually, after unzipping a docx is a directory of xml files. Binary until unzipped.\n\n\nBinary\n\nfilename.pdf\nfilename.tif\nfilename.laz\nfilename.parquet\nfilename.pyc"
+  },
+  {
+    "objectID": "index.html#delimiters",
+    "href": "index.html#delimiters",
+    "title": "",
+    "section": "Delimiters",
+    "text": "Delimiters\nData in a file are separated by a ‘delimiter’, such as a comma, tab, space, etc. For example:\n\nfile.csv\n\n\nCountry, Population, Language, Continent, Centroid\nFrance, 65000000, French, Europe, \"2.2137, 46.2276\"\nBrazil, 192000000, Portuguese, South America, \"-47.8825, -15.7942\"\nAustralia, 22000000, English, Australia, \"133.7751, -25.2744\""
+  },
+  {
+    "objectID": "index.html#reading-a-csv",
+    "href": "index.html#reading-a-csv",
+    "title": "",
+    "section": "Reading a CSV",
+    "text": "Reading a CSV"
   }
 ]

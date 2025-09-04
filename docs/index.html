@@ -363,7 +363,7 @@ Additionally, GIS can be performed purely using scripting languages<br>
 <section id="data-storage" class="slide level2 center" style="font-size: 0.5em">
 <h2>Data Storage</h2>
 <ul>
-<li>Often we store data in computer-readable format in files
+<li>We store data in computer-readable format in files
 <ul>
 <li>Sometimes files store data as text (often called human readable files)</li>
 <li>Other times there are just 1s and 0s (binary file)</li>
@@ -428,15 +428,14 @@ Additionally, GIS can be performed purely using scripting languages<br>
 <section id="file-types" class="slide level2 center">
 <h2>File types</h2>
 <ul>
-<li>Computer programsonly read certain file formats.</li>
+<li>Computer programs only read certain file formats.</li>
 <li>Familiarity with different file types is helpful.</li>
 <li>Common GIS file types: .shp (and .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others</li>
 </ul>
 </section>
 <section id="file-organization-and-computer-hygiene" class="slide level2 center">
 <h2>File Organization and Computer Hygiene</h2>
-<div class="{r-stack}">
-<div class="fragment fade-in-then-out" style="position: absolute;  font-size: 0.5em">
+<div style="margin-right: 520px; font-size: 0.5em">
 <p>Be kind to your future self - keep your files organized:</p>
 <ul>
 <li>Use directories (a.k.a folders)</li>
@@ -444,16 +443,68 @@ Additionally, GIS can be performed purely using scripting languages<br>
 <ul>
 <li>e.g.&nbsp;<code>slo_county_26910.geojson</code> not <code>county.geojson</code></li>
 </ul></li>
-<li>Don’t put spaces in file or directory names (see <a href="https://authors.library.caltech.edu/records/mmnpf-cez11">this</a>) <img data-src="https://imgs.xkcd.com/comics/documents.png" class="absolute" style="top: 75px; right: 10px; "></li>
+<li>Don’t put spaces in file or directory names (see <a href="https://authors.library.caltech.edu/records/mmnpf-cez11">this</a>)</li>
 </ul>
 </div>
-<div class="fragment fade-in-then-out" style="position: absolute; top: 0;">
+<p><img data-src="https://imgs.xkcd.com/comics/documents.png" class="absolute" style="top: 100px; right: 0px; height: 500px; "></p>
+</section>
+<section id="file-paths-and-directories" class="slide level2 center">
+<h2>File Paths and Directories</h2>
+<div class="{r-stack}">
+<div class="fragment fade-in-then-out" style="position: absolute;">
 <p><img data-src="img/linux-filesystem-hierarchy.png"></p>
 </div>
-<div class="fragment fade-in-then-out" style="position: absolute; top: 0;">
+<div class="fragment fade-in-then-out" style="position: absolute;">
 <p><img data-src="img/windows_dir_structure.jpg"></p>
 </div>
+<div class="fragment" style="position: absolute;">
+<p><img data-src="img/bash_paths.png"> <img data-src="img/gui_paths.png" width="600"></p>
 </div>
+<div class="fragment" style="position: absolute; top: 165px; left: 0; width: 325px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
+
+</div>
+</div>
+</section>
+<section id="human-readable-vs.-binary-files" class="slide level2 columns center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Human readable vs.&nbsp;binary files</h2>
+<div class="column" style="width:50%;">
+<p><strong>Human Readable</strong></p>
+<ul>
+<li>file.txt</li>
+<li><span data-id="csv-item" style="padding: 2px 4px; border-radius: 3px;">file.csv</span></li>
+<li>file.xml</li>
+<li>file.docx<span class="math inline">\(^{*}\)</span></li>
+<li>file.json</li>
+<li>filename.py</li>
+</ul>
+<div style="font-size: 0.5em">
+<p>* actually, after unzipping a docx is a directory of xml files. Binary until unzipped.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Binary</strong></p>
+<ul>
+<li>filename.pdf</li>
+<li>filename.tif</li>
+<li>filename.laz</li>
+<li>filename.parquet</li>
+<li>filename.pyc</li>
+</ul>
+</div></section>
+<section id="delimiters" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Delimiters</h2>
+<p>Data in a file are separated by a ‘delimiter’, such as a comma, tab, space, etc. For example:</p>
+<ul>
+<li><span data-id="csv-item">file.csv</span></li>
+</ul>
+<div class="fragment" data-id="csv-item" style="padding: 2px 4px; border-radius: 3px;">
+<pre><code>Country, Population, Language, Continent, Centroid
+France, 65000000, French, Europe, "2.2137, 46.2276"
+Brazil, 192000000, Portuguese, South America, "-47.8825, -15.7942"
+Australia, 22000000, English, Australia, "133.7751, -25.2744"</code></pre>
+</div>
+</section>
+<section id="reading-a-csv" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Reading a CSV</h2>
 
 
 </section></section>

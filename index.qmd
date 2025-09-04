@@ -221,7 +221,7 @@ Data about the data, e.g. units, date collected, instruments used...
 :::
 
 ## Data Storage{style="font-size: 0.5em"}
-+ Often we store data in computer-readable format in files
++ We store data in computer-readable format in files
   + Sometimes files store data as text (often called human readable files) 
   + Other times there are just 1s and 0s (binary file)
   + Even the human readable files are ultimately stored as 1s and 0s ((want to know more)[https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW])
@@ -246,29 +246,88 @@ _File extensions_ denote files readable by certain programs, for example:
 
 
 ## File types 
-+ Computer programsonly read certain file formats.
++ Computer programs only read certain file formats.
 + Familiarity with different file types is helpful.
 + Common GIS file types: .shp (and .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg,
 .json, .geojson, .txt, .hdf, .nc, .parquet and a few others
 
 ## File Organization and Computer Hygiene
-
-:::{r-stack}
-:::{.fragment  .fade-in-then-out style="position: absolute; font-size: 0.5em"}
+:::{style="margin-right: 520px; font-size: 0.5em"}
 Be kind to your future self - keep your files organized:
 
 + Use directories (a.k.a folders)
 + Use descriptive names:
   + e.g. `slo_county_26910.geojson` not `county.geojson`
 + Don't put spaces in file or directory names (see [this](https://authors.library.caltech.edu/records/mmnpf-cez11))
-![](https://imgs.xkcd.com/comics/documents.png){.absolute top=75 right=10}
 :::
 
-:::{.fragment .fade-in-then-out style="position: absolute; top: 0;"}
+![](https://imgs.xkcd.com/comics/documents.png){.absolute top=100 right=0 height=500}
+
+
+## File Paths and Directories
+
+:::{r-stack}
+:::{.fragment .fade-in-then-out style="position: absolute;"}
 ![](img/linux-filesystem-hierarchy.png)
 :::
 
-:::{.fragment .fade-in-then-out style="position: absolute; top: 0;"}
+:::{.fragment .fade-in-then-out style="position: absolute;"}
 ![](img/windows_dir_structure.jpg)
 :::
+
+:::{.fragment  style="position: absolute;"}
+![](img/bash_paths.png)
+![](img/gui_paths.png){width=600}
 :::
+
+:::{.fragment style="position: absolute; top: 165px; left: 0; width: 325px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::
+
+## Human readable vs. binary files {.columns data-auto-animate="true"}
+::: {.column width="50%"}
+__Human Readable__
+
++ file.txt
++ [file.csv]{data-id="csv-item" style="padding: 2px 4px; border-radius: 3px;"}
++ file.xml
++ file.docx$^{*}$ 
++ file.json
++ filename.py
+
+:::{style="font-size: 0.5em"}
+\* actually, after unzipping a docx is a directory of xml files. Binary until unzipped. 
+:::
+
+:::
+
+::: {.column width="50%"}
+__Binary__
+
++ filename.pdf
++ filename.tif
++ filename.laz
++ filename.parquet
++ filename.pyc
+:::
+
+
+## Delimiters {data-auto-animate="true"}
+
+Data in a file are separated by a ‘delimiter’, such as a comma,
+tab, space, etc. For example:
+
++ [file.csv]{data-id="csv-item"}
+
+:::{.fragment data-id="csv-item" style="padding: 2px 4px; border-radius: 3px;"}
+```
+Country, Population, Language, Continent, Centroid
+France, 65000000, French, Europe, "2.2137, 46.2276"
+Brazil, 192000000, Portuguese, South America, "-47.8825, -15.7942"
+Australia, 22000000, English, Australia, "133.7751, -25.2744"
+```
+:::
+
+
+## Reading a CSV {data-auto-animate="true"}
