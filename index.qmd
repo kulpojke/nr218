@@ -8,7 +8,7 @@ output-location: column
 navigation-mode: vertical
 
 ---
-# NR 218
+# NR 218 - Introduction
 
 
 ## Class Details
@@ -112,5 +112,166 @@ GIS is useful is many domains, for example:
 
 ## Why use GIS
 Monitor and understand our planet
-![](img/aralsea.png){.absolute top=425 left=50 width="200"}
-![](img/Global_NDVI.gif){.absolute top=425 right=50 width="200"}
+
+![](img/Global_NDVI.gif){top=220 left=110 width="475"}
+![](img/aralsea.png){.absolute top=150 right=100 width="275"}
+
+## Software{style="font-size: 0.5em"}
+:::{.fragment}
++ This Class will be taught using QGIS (but you can use anything you want)
++ Software changes - We will focus on building an understanding of the concepts that will allow you to successfully use any GIS software.
+:::
+
+:::{.r-stack}
+<p class="fragment fade-in-then-out">
+There are many other common GIS (GUI based) software platforms:  
+  - [ESRI (ArcGIS suite)](https://www.geographyrealm.com/qgis-versus-arcgis/)  
+  - [GRASS](https://en.wikipedia.org/wiki/GRASS_GIS)  
+  - [Google Earth Engine](https://en.wikipedia.org/wiki/Google_Earth#Google_Earth_Engine)  
+  - Google Earth Pro  
+  - ENVI  
+  - SAGA  
+  - etc...  
+  ![](img/qgis_screen.png){.absolute top=220 left=500 width="200"}
+</p>
+
+<p class="fragment fade-in-then-out">
+There are also command line tools  
+  - [GDAL](https://en.wikipedia.org/wiki/GDAL)  
+  - PDAL  
+  - WhiteBox Tools  
+</p>
+
+<p class="fragment fade-in-then-out">
+Additionally, GIS can be performed purely using scripting languages  
+  - Python  
+  - R  
+  - Javascript  
+  - Julia  
+</p>
+:::
+
+
+## Software - benefits of open source{.smaller}
++ Available to you, for free, forever (even after Cal Poly)
++ It’s free, as in liberty. If you need extra functionality in QGIS, you can do more than just hope it
+will be included in the next release. You can sponsor the development of a feature, or add it
+yourself if you are familiar with programming.
++ Compatible with any operating system (Windows, Mac, Linux)
++ Collectively advances human knowledge / progress
++ Commonly used in many organizations
++ Easier to learn ArcGIS after QGIS than the other way around
+
+## Beautiful Maps
++ [QGIS Map gallery](https://www.flickr.com/groups/qgis/pool/)
++ [Oceano Dunes (using plas.io)](https://p3d.in/Z86TN) 
++ [Stackexchange thread of beautiful maps](https://gis.stackexchange.com/questions/3083/seeking-examples-of-beautiful-maps)
++ [Cal poly Tree map](https://calpoly.maps.arcgis.com/apps/webappviewer/index.html?id=49c730285d064d17be4c8429426d7609)
+
+## Syllabus Review
+
+# GIS Concepts
+
+## Location
+
+## Direction
+
+## Distance
+
+
+## Space
+
+## Navigation
+
+## Layers
+
+## Attributes
+
+
+## Map Types
+There are a few types of maps:
+
++ A  
++ B
++ Reference - shows location of an object
++ Thematic - shows how one or more factors are
+distributed across space
++ Dynamic / Interactive - maps that change depending on user input
+
+## Map Scale
+
+## What is data? (_What are data?_) 
++ "Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation."
++ "Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form."
+-OED  
+
+## What is information?
++ “The imparting of knowledge in general.”
++ “Knowledge communicated concerning some particular fact, subject, or event; that of which one is apprised or told; intelligence, news.”  
+-OED
+
+## What is Spatial Data?
+:::{.fragment}
+Data with a geographic and/or  spatial component.
+:::
+
+## What is Metadata
+:::{.fragment}
+Data about the data, e.g. units, date collected, instruments used...
+:::
+
+## Data Storage{style="font-size: 0.5em"}
++ Often we store data in computer-readable format in files
+  + Sometimes files store data as text (often called human readable files) 
+  + Other times there are just 1s and 0s (binary file)
+  + Even the human readable files are ultimately stored as 1s and 0s ((want to know more)[https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW])
+
+
+## Data Storage{style="font-size: 0.5em"}
+
+_File extensions_ denote files readable by certain programs, for example:
+
+| Extension | description       |
+|------------------|------------|
+| filename.txt     | text file |
+| filename.doc     | Microsoft Word file |
+| filename.pdf     | portable document file |
+| filename.html    | hypertext markup language |
+| filename.xml     | extensible markup language |
+| filename.tif     | tagged image format |
+| filename.json    | javascript object notation |
+| filename.geojson | geographic json |
+| filename.laz     | LASer zip |
+| filename.parquet | compressed table |
+
+
+## File types 
++ Computer programsonly read certain file formats.
++ Familiarity with different file types is helpful.
++ Common GIS file types: .shp (and .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg,
+.json, .geojson, .txt, .hdf, .nc, .parquet and a few others
+
+## File Organization and Computer Hygiene
+
+:::{r-stack}
+:::{.fragment .fade-in-then-out style="position: absolute;"}
+![](img/linux-filesystem-hierarchy.png)
+:::
+
+:::{.fragment .fade-in-then-out style="position: absolute;"}
+![](img/windows_dir_structure.jpg)
+:::
+
+:::{.fragment  .fade-in-then-out style="font-size: 0.5em"}
+
+Be kind to your future self - keep your files organized:
+
++ Use directories (a.k.a folders)
++ Use descriptive names:
+  + e.g. `slo_county_26910.geojson` not `county.geojson`
++ Don't put spaces in file or directory names (see [this](https://authors.library.caltech.edu/records/mmnpf-cez11))
+![](https://imgs.xkcd.com/comics/documents.png){.absolute top=120 right=100}
+
+:::
+
+:::

@@ -127,8 +127,8 @@
 
 
 <section>
-<section id="nr-218" class="title-slide slide level1 center">
-<h1>NR 218</h1>
+<section id="nr-218---introduction" class="title-slide slide level1 center">
+<h1>NR 218 - Introduction</h1>
 
 </section>
 <section id="class-details" class="slide level2 center">
@@ -231,13 +231,234 @@ Collection of computer hardware, software, data, personnel, and work procedures 
 </section>
 <section id="why-use-gis" class="slide level2 center">
 <h2>Why use GIS</h2>
-<p>Monitor and understand our planet <img data-src="img/aralsea.png" class="absolute" style="top: 425px; left: 50px; width: 200px; "> <img data-src="img/Global_NDVI.gif" class="absolute" style="top: 425px; right: 50px; width: 200px; "></p>
+<p>Monitor and understand our planet</p>
+<p><img data-src="img/Global_NDVI.gif" data-top="220" data-left="110" width="475"> <img data-src="img/aralsea.png" class="absolute" style="top: 150px; right: 100px; width: 275px; "></p>
+</section>
+<section id="software" class="slide level2 center" style="font-size: 0.5em">
+<h2>Software</h2>
+<div class="fragment">
+<ul>
+<li>This Class will be taught using QGIS (but you can use anything you want)</li>
+<li>Software changes - We will focus on building an understanding of the concepts that will allow you to successfully use any GIS software.</li>
+</ul>
+</div>
+<div class="r-stack">
+<p class="fragment fade-in-then-out">
+There are many other common GIS (GUI based) software platforms:<br>
+- <a href="https://www.geographyrealm.com/qgis-versus-arcgis/">ESRI (ArcGIS suite)</a><br>
+- <a href="https://en.wikipedia.org/wiki/GRASS_GIS">GRASS</a><br>
+- <a href="https://en.wikipedia.org/wiki/Google_Earth#Google_Earth_Engine">Google Earth Engine</a><br>
+- Google Earth Pro<br>
+- ENVI<br>
+- SAGA<br>
+- etc…<br>
+<img data-src="img/qgis_screen.png" class="absolute" style="top: 220px; left: 500px; width: 200px; ">
+</p>
+<p class="fragment fade-in-then-out">
+There are also command line tools<br>
+- <a href="https://en.wikipedia.org/wiki/GDAL">GDAL</a><br>
+- PDAL<br>
+- WhiteBox Tools
+</p>
+<p class="fragment fade-in-then-out">
+Additionally, GIS can be performed purely using scripting languages<br>
+- Python<br>
+- R<br>
+- Javascript<br>
+- Julia
+</p>
+</div>
+</section>
+<section id="software---benefits-of-open-source" class="slide level2 smaller center">
+<h2>Software - benefits of open source</h2>
+<ul>
+<li>Available to you, for free, forever (even after Cal Poly)</li>
+<li>It’s free, as in liberty. If you need extra functionality in QGIS, you can do more than just hope it will be included in the next release. You can sponsor the development of a feature, or add it yourself if you are familiar with programming.</li>
+<li>Compatible with any operating system (Windows, Mac, Linux)</li>
+<li>Collectively advances human knowledge / progress</li>
+<li>Commonly used in many organizations</li>
+<li>Easier to learn ArcGIS after QGIS than the other way around</li>
+</ul>
+</section>
+<section id="beautiful-maps" class="slide level2 center">
+<h2>Beautiful Maps</h2>
+<ul>
+<li><a href="https://www.flickr.com/groups/qgis/pool/">QGIS Map gallery</a></li>
+<li><a href="https://p3d.in/Z86TN">Oceano Dunes (using plas.io)</a></li>
+<li><a href="https://gis.stackexchange.com/questions/3083/seeking-examples-of-beautiful-maps">Stackexchange thread of beautiful maps</a></li>
+<li><a href="https://calpoly.maps.arcgis.com/apps/webappviewer/index.html?id=49c730285d064d17be4c8429426d7609">Cal poly Tree map</a></li>
+</ul>
+</section>
+<section id="syllabus-review" class="slide level2 center">
+<h2>Syllabus Review</h2>
+</section></section>
+<section>
+<section id="gis-concepts" class="title-slide slide level1 center">
+<h1>GIS Concepts</h1>
+
+</section>
+<section id="location" class="slide level2 center">
+<h2>Location</h2>
+</section>
+<section id="direction" class="slide level2 center">
+<h2>Direction</h2>
+</section>
+<section id="distance" class="slide level2 center">
+<h2>Distance</h2>
+</section>
+<section id="space" class="slide level2 center">
+<h2>Space</h2>
+</section>
+<section id="navigation" class="slide level2 center">
+<h2>Navigation</h2>
+</section>
+<section id="layers" class="slide level2 center">
+<h2>Layers</h2>
+</section>
+<section id="attributes" class="slide level2 center">
+<h2>Attributes</h2>
+</section>
+<section id="map-types" class="slide level2 center">
+<h2>Map Types</h2>
+<p>There are a few types of maps:</p>
+<ul>
+<li>A<br>
+</li>
+<li>B</li>
+<li>Reference - shows location of an object</li>
+<li>Thematic - shows how one or more factors are distributed across space</li>
+<li>Dynamic / Interactive - maps that change depending on user input</li>
+</ul>
+</section>
+<section id="map-scale" class="slide level2 center">
+<h2>Map Scale</h2>
+</section>
+<section id="what-is-data-what-are-data" class="slide level2 center">
+<h2>What is data? (<em>What are data?</em>)</h2>
+<ul>
+<li>“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”</li>
+<li>“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.” -OED</li>
+</ul>
+</section>
+<section id="what-is-information" class="slide level2 center">
+<h2>What is information?</h2>
+<ul>
+<li>“The imparting of knowledge in general.”</li>
+<li>“Knowledge communicated concerning some particular fact, subject, or event; that of which one is apprised or told; intelligence, news.”<br>
+-OED</li>
+</ul>
+</section>
+<section id="what-is-spatial-data" class="slide level2 center">
+<h2>What is Spatial Data?</h2>
+<div class="fragment">
+<p>Data with a geographic and/or spatial component.</p>
+</div>
+</section>
+<section id="what-is-metadata" class="slide level2 center">
+<h2>What is Metadata</h2>
+<div class="fragment">
+<p>Data about the data, e.g.&nbsp;units, date collected, instruments used…</p>
+</div>
+</section>
+<section id="data-storage" class="slide level2 center" style="font-size: 0.5em">
+<h2>Data Storage</h2>
+<ul>
+<li>Often we store data in computer-readable format in files
+<ul>
+<li>Sometimes files store data as text (often called human readable files)</li>
+<li>Other times there are just 1s and 0s (binary file)</li>
+<li>Even the human readable files are ultimately stored as 1s and 0s ((want to know more)[https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW])</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-storage-1" class="slide level2 center" style="font-size: 0.5em">
+<h2>Data Storage</h2>
+<p><em>File extensions</em> denote files readable by certain programs, for example:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Extension</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>filename.txt</td>
+<td>text file</td>
+</tr>
+<tr class="even">
+<td>filename.doc</td>
+<td>Microsoft Word file</td>
+</tr>
+<tr class="odd">
+<td>filename.pdf</td>
+<td>portable document file</td>
+</tr>
+<tr class="even">
+<td>filename.html</td>
+<td>hypertext markup language</td>
+</tr>
+<tr class="odd">
+<td>filename.xml</td>
+<td>extensible markup language</td>
+</tr>
+<tr class="even">
+<td>filename.tif</td>
+<td>tagged image format</td>
+</tr>
+<tr class="odd">
+<td>filename.json</td>
+<td>javascript object notation</td>
+</tr>
+<tr class="even">
+<td>filename.geojson</td>
+<td>geographic json</td>
+</tr>
+<tr class="odd">
+<td>filename.laz</td>
+<td>LASer zip</td>
+</tr>
+<tr class="even">
+<td>filename.parquet</td>
+<td>compressed table</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="file-types" class="slide level2 center">
+<h2>File types</h2>
+<ul>
+<li>Computer programsonly read certain file formats.</li>
+<li>Familiarity with different file types is helpful.</li>
+<li>Common GIS file types: .shp (and .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others</li>
+</ul>
+</section>
+<section id="file-organization-and-computer-hygiene" class="slide level2 center">
+<h2>File Organization and Computer Hygiene</h2>
+<div class="{r-stack}">
+<div class="fragment fade-in-then-out" style="position: absolute;">
+<p><img data-src="img/linux-filesystem-hierarchy.png"></p>
+</div>
+<div class="fragment fade-in-then-out" style="position: absolute;">
+<p><img data-src="img/windows_dir_structure.jpg"></p>
+</div>
+<div class="fragment" style="font-size: 0.5em">
+<p>Be kind to your future self - keep your files organized:</p>
+<ul>
+<li>Use directories (a.k.a folders)</li>
+<li>Use descriptive names:
+<ul>
+<li>e.g.&nbsp;<code>slo_county_boundary_26910.geojson</code> not <code>boundary.geojson</code></li>
+</ul></li>
+<li>Don’t put spaces in file or directory names (see <a href="https://authors.library.caltech.edu/records/mmnpf-cez11">this</a>) <img data-src="https://imgs.xkcd.com/comics/documents.png" class="absolute" style="top: 120px; right: 100px; "></li>
+</ul>
+</div>
+</div>
 
 
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="images/my_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>

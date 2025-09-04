@@ -61,5 +61,152 @@
     "title": "",
     "section": "Why use GIS",
     "text": "Why use GIS\nMonitor and understand our planet"
+  },
+  {
+    "objectID": "index.html#software",
+    "href": "index.html#software",
+    "title": "",
+    "section": "Software",
+    "text": "Software\n\n\nThis Class will be taught using QGIS (but you can use anything you want)\nSoftware changes - We will focus on building an understanding of the concepts that will allow you to successfully use any GIS software.\n\n\n\n\nThere are many other common GIS (GUI based) software platforms:\n- ESRI (ArcGIS suite)\n- GRASS\n- Google Earth Engine\n- Google Earth Pro\n- ENVI\n- SAGA\n- etc…\n\n\n\nThere are also command line tools\n- GDAL\n- PDAL\n- WhiteBox Tools\n\n\nAdditionally, GIS can be performed purely using scripting languages\n- Python\n- R\n- Javascript\n- Julia"
+  },
+  {
+    "objectID": "index.html#software---benefits-of-open-source",
+    "href": "index.html#software---benefits-of-open-source",
+    "title": "",
+    "section": "Software - benefits of open source",
+    "text": "Software - benefits of open source\n\nAvailable to you, for free, forever (even after Cal Poly)\nIt’s free, as in liberty. If you need extra functionality in QGIS, you can do more than just hope it will be included in the next release. You can sponsor the development of a feature, or add it yourself if you are familiar with programming.\nCompatible with any operating system (Windows, Mac, Linux)\nCollectively advances human knowledge / progress\nCommonly used in many organizations\nEasier to learn ArcGIS after QGIS than the other way around"
+  },
+  {
+    "objectID": "index.html#beautiful-maps",
+    "href": "index.html#beautiful-maps",
+    "title": "",
+    "section": "Beautiful Maps",
+    "text": "Beautiful Maps\n\nQGIS Map gallery\nOceano Dunes (using plas.io)\nStackexchange thread of beautiful maps\nCal poly Tree map"
+  },
+  {
+    "objectID": "index.html#syllabus-review",
+    "href": "index.html#syllabus-review",
+    "title": "",
+    "section": "Syllabus Review",
+    "text": "Syllabus Review"
+  },
+  {
+    "objectID": "index.html#location",
+    "href": "index.html#location",
+    "title": "",
+    "section": "Location",
+    "text": "Location"
+  },
+  {
+    "objectID": "index.html#direction",
+    "href": "index.html#direction",
+    "title": "",
+    "section": "Direction",
+    "text": "Direction"
+  },
+  {
+    "objectID": "index.html#distance",
+    "href": "index.html#distance",
+    "title": "",
+    "section": "Distance",
+    "text": "Distance"
+  },
+  {
+    "objectID": "index.html#space",
+    "href": "index.html#space",
+    "title": "",
+    "section": "Space",
+    "text": "Space"
+  },
+  {
+    "objectID": "index.html#navigation",
+    "href": "index.html#navigation",
+    "title": "",
+    "section": "Navigation",
+    "text": "Navigation"
+  },
+  {
+    "objectID": "index.html#layers",
+    "href": "index.html#layers",
+    "title": "",
+    "section": "Layers",
+    "text": "Layers"
+  },
+  {
+    "objectID": "index.html#attributes",
+    "href": "index.html#attributes",
+    "title": "",
+    "section": "Attributes",
+    "text": "Attributes"
+  },
+  {
+    "objectID": "index.html#map-types",
+    "href": "index.html#map-types",
+    "title": "",
+    "section": "Map Types",
+    "text": "Map Types\nThere are a few types of maps:\n\nA\n\nB\nReference - shows location of an object\nThematic - shows how one or more factors are distributed across space\nDynamic / Interactive - maps that change depending on user input"
+  },
+  {
+    "objectID": "index.html#map-scale",
+    "href": "index.html#map-scale",
+    "title": "",
+    "section": "Map Scale",
+    "text": "Map Scale"
+  },
+  {
+    "objectID": "index.html#what-is-data-what-are-data",
+    "href": "index.html#what-is-data-what-are-data",
+    "title": "",
+    "section": "What is data? (What are data?)",
+    "text": "What is data? (What are data?)\n\n“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”\n“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.” -OED"
+  },
+  {
+    "objectID": "index.html#what-is-information",
+    "href": "index.html#what-is-information",
+    "title": "",
+    "section": "What is information?",
+    "text": "What is information?\n\n“The imparting of knowledge in general.”\n“Knowledge communicated concerning some particular fact, subject, or event; that of which one is apprised or told; intelligence, news.”\n-OED"
+  },
+  {
+    "objectID": "index.html#what-is-spatial-data",
+    "href": "index.html#what-is-spatial-data",
+    "title": "",
+    "section": "What is Spatial Data?",
+    "text": "What is Spatial Data?\n\nData with a geographic and/or spatial component."
+  },
+  {
+    "objectID": "index.html#what-is-metadata",
+    "href": "index.html#what-is-metadata",
+    "title": "",
+    "section": "What is Metadata",
+    "text": "What is Metadata\n\nData about the data, e.g. units, date collected, instruments used…"
+  },
+  {
+    "objectID": "index.html#data-storage",
+    "href": "index.html#data-storage",
+    "title": "",
+    "section": "Data Storage",
+    "text": "Data Storage\n\nOften we store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times there are just 1s and 0s (binary file)\nEven the human readable files are ultimately stored as 1s and 0s ((want to know more)[https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW])"
+  },
+  {
+    "objectID": "index.html#data-storage-1",
+    "href": "index.html#data-storage-1",
+    "title": "",
+    "section": "Data Storage",
+    "text": "Data Storage\nFile extensions denote files readable by certain programs, for example:\n\n\n\nExtension\ndescription\n\n\n\n\nfilename.txt\ntext file\n\n\nfilename.doc\nMicrosoft Word file\n\n\nfilename.pdf\nportable document file\n\n\nfilename.html\nhypertext markup language\n\n\nfilename.xml\nextensible markup language\n\n\nfilename.tif\ntagged image format\n\n\nfilename.json\njavascript object notation\n\n\nfilename.geojson\ngeographic json\n\n\nfilename.laz\nLASer zip\n\n\nfilename.parquet\ncompressed table"
+  },
+  {
+    "objectID": "index.html#file-types",
+    "href": "index.html#file-types",
+    "title": "",
+    "section": "File types",
+    "text": "File types\n\nComputer programsonly read certain file formats.\nFamiliarity with different file types is helpful.\nCommon GIS file types: .shp (and .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
+  },
+  {
+    "objectID": "index.html#file-organization-and-computer-hygiene",
+    "href": "index.html#file-organization-and-computer-hygiene",
+    "title": "",
+    "section": "File Organization and Computer Hygiene",
+    "text": "File Organization and Computer Hygiene\n\n\n\n\n\n\n\n\nBe kind to your future self - keep your files organized:\n\nUse directories (a.k.a folders)\nUse descriptive names:\n\ne.g. slo_county_boundary_26910.geojson not boundary.geojson\n\nDon’t put spaces in file or directory names (see this)"
   }
 ]
