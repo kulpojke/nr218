@@ -57,6 +57,14 @@ navigation-mode: vertical
 
 ## Class Icebreaker
 
+__Three things in common__
+
++ Get is small groups  
++ Take 5 minutes to identify three things you have in common with each other
+  + Choose intresting things.  The stranger, the better
+  + Boring examples:
+    + "We are a forest and fire sciences majors"
+    + "We are all from Southern California"
 
 ## What is GIS?
 
@@ -91,7 +99,9 @@ information.
 
 
 ## Application Domains
-GIS is useful is many domains, for example:
+GIS is useful is many domains, for example:  
+
+::: {style="font-size: 0.45em"}
 + weather forecasts  
 + navigation  
 + delivery logisitics   
@@ -109,12 +119,34 @@ GIS is useful is many domains, for example:
 + biology
 + ecology
 + etc...
+:::
+
 
 ## Why use GIS
+
+::: {.fragment .fade-in-then-out}
 Monitor and understand our planet
 
 ![](img/Global_NDVI.gif){top=220 left=110 width="475"}
 ![](img/aralsea.png){.absolute top=150 right=100 width="275"}
+:::
+
+::: {.fragment .fade-in-then-out}
+Planning
+
+![](img/urb_plan.jpg){
+:::
+
+
+::: {.fragment .fade-in-then-out}
+Disaster Response
+
+![](img/modis-fire.jpeg){top=220 left=110 width="475"}
+![](img/disaster_movie.png){.absolute top=150 right=100 width="275"}
+:::
+
+:::
+
 
 ## Software{style="font-size: 0.5em"}
 :::{.fragment}
@@ -315,8 +347,10 @@ __Binary__
 
 ## Delimiters {data-auto-animate="true"}
 
-Data in a file are separated by a ‘delimiter’, such as a comma,
-tab, space, etc. For example:
+:::{style="font-size: 0.6em"}
+Data in a file are separated by a _delimiter_, such as a comma,
+tab, space, etc. They also generaly have a header describing the contents of each row. For example a csv is a comma delimited file:
+:::
 
 + [file.csv]{data-id="csv-item"}
 
@@ -329,6 +363,9 @@ OBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat
 3028,a766c1b5-1d8e-43b3-9aac-02358de18d35,Heat Perimeter,FIRIS,2025-01-07 23:17:35.698000+00:00,-118.547,34.0589
 3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589
 ```
+:::
+
+:::{.fragment style="position: absolute; top: 268px; left: 2; width: 800px; height: 21px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
 :::
 
 
@@ -345,7 +382,8 @@ OBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat
 :::
 
 ::: {style="font-size: 0.5em" data-id="link-item"}
-[link to file](https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv) (right-click and "save link as")
+[link to file](https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv) (right-click and "save link as")  
+__Tip:__ Remeber, file organization! 
 :::
 
 :::{style="font-size: 0.3em"}
@@ -355,23 +393,86 @@ This csv is adapted from [CA Perimeters CAL FIRE NIFC FIRIS public view ](https:
 ## Reading a CSV with QGIS {data-auto-animate="true"}
  
 ::: {style="font-size: 0.5em" data-id="link-item"}
-[link to file](https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv) (right-click and "save link as")
+[link to file](https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv) (right-click and "save link as")  
 :::
 
 :::{r-stack}
-:::{.fragment .fade-in-then-out style="position: absolute;"}
+
+:::{.fragment .fade-in-then-out data-fragment-index=1 style="position: absolute;"}
 Either `Layer --> Add Layer -->> Add Delimited Text Layer`or press `control V` (command V on Mac)
 :::
 
-:::{.fragment .fade-in style="position: absolute;"}
+:::{.fragment .fade-in data-fragment-index=2 style="position: absolute;"}
 ![](img/qgis_data_source_manager.png){height="350"}
 :::
 
-:::{.fragment .fade-in style="position: absolute; top: 165px; left: 0; width: 325px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::{.fragment .fade-in data-fragment-index=3 style="position: absolute; top: 267px; left: 0; width: 150px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
 :::
 
-:::{.fragment .fade-out style="position: absolute;"}
 :::
 
+
+## Reading a CSV with QGIS {.columns data-auto-animate="true"}
+
+::: {.column width="50%"}
+
+:::{.fragment data-fragment-index=1 style="position: absolute;"}
+![](img/qgis_data_source_manager_2.png){height="350"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=2 style="position: absolute; top: 131px; left: 469px; width: 15px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=3 style="position: absolute; top: 430px; left: 100px; width: 90px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=5 style="position: absolute; top: 260px; left: 100px; width: 90px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::{.fragment .fade-in data-fragment-index=6 style="position: absolute;"}
+![](img/qgis_data_source_manager_3.png){height="350"}
+:::
+
+:::{.fragment .fade-in data-fragment-index=6 style="position: absolute; top: 330px; left: 243px; width: 210px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::
+
+::: {.column width="50%"}
+
+:::{r-stack}
+
+:::{.fragment .fade-in-then-out data-fragment-index=1 style="position: absolute;"}
+Delimited text dialogue box
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=2 style="position: absolute;"}
+Browse for csv
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=3 style="position: absolute;"}
+[Notice that it says CRS must be selected.]{style="font-size: 0.5em"}
+
+What _is_ a CRS?
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=4 style="position: absolute;"}
+::: {style="font-size: 0.6em"}
++ We will discuss what a CRS is in great detail later.
++ For now just know it __provides a reference frame for placing the coordinates on the map__.
++ Coordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)
++ __SRS = CRS__
+:::
+:::
+ 
+:::{.fragment .fade-in-then-out data-fragment-index=5 style="position: absolute;"}
+Here is how we will assign an SRS.
+:::
+
+::: {.fragment .fade-in data-fragment-index=6 style="position: absolute;"}
+Use EPSG:4326 - WGS 84
+:::
+
+:::
 
 :::

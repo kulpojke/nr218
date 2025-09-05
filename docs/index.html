@@ -198,6 +198,20 @@ Mondays 2:30 - 4:30s</li>
 </section>
 <section id="class-icebreaker" class="slide level2 center">
 <h2>Class Icebreaker</h2>
+<p><strong>Three things in common</strong></p>
+<ul>
+<li>Get is small groups<br>
+</li>
+<li>Take 5 minutes to identify three things you have in common with each other
+<ul>
+<li>Choose intresting things. The stranger, the better</li>
+<li>Boring examples:
+<ul>
+<li>“We are a forest and fire sciences majors”</li>
+<li>“We are all from Southern California”</li>
+</ul></li>
+</ul></li>
+</ul>
 </section>
 <section id="what-is-gis" class="slide level2 center">
 <h2>What is GIS?</h2>
@@ -220,19 +234,42 @@ Collection of computer hardware, software, data, personnel, and work procedures 
 </section>
 <section id="application-domains" class="slide level2 center">
 <h2>Application Domains</h2>
-<p>GIS is useful is many domains, for example: + weather forecasts<br>
-+ navigation<br>
-+ delivery logisitics<br>
-+ apps (e.g.&nbsp;Strava!)<br>
-+ disaster response<br>
-+ infrastructure monitoring<br>
-+ climate monitoring / modeling<br>
-+ urban/regional planning + architecture + archaeology + geography + social sciences + (geo)physics + hydrology + biology + ecology + etc…</p>
+<p>GIS is useful is many domains, for example:</p>
+<div style="font-size: 0.45em">
+<ul>
+<li>weather forecasts<br>
+</li>
+<li>navigation<br>
+</li>
+<li>delivery logisitics<br>
+</li>
+<li>apps (e.g.&nbsp;Strava!)<br>
+</li>
+<li>disaster response<br>
+</li>
+<li>infrastructure monitoring<br>
+</li>
+<li>climate monitoring / modeling<br>
+</li>
+<li>urban/regional planning</li>
+<li>architecture</li>
+<li>archaeology</li>
+<li>geography</li>
+<li>social sciences</li>
+<li>(geo)physics</li>
+<li>hydrology</li>
+<li>biology</li>
+<li>ecology</li>
+<li>etc…</li>
+</ul>
+</div>
 </section>
 <section id="why-use-gis" class="slide level2 center">
 <h2>Why use GIS</h2>
+<div class="fragment fade-in-then-out">
 <p>Monitor and understand our planet</p>
 <p><img data-src="img/Global_NDVI.gif" data-top="220" data-left="110" width="475"> <img data-src="img/aralsea.png" class="absolute" style="top: 150px; right: 100px; width: 275px; "></p>
+</div>
 </section>
 <section id="software" class="slide level2 center" style="font-size: 0.5em">
 <h2>Software</h2>
@@ -492,7 +529,9 @@ Additionally, GIS can be performed purely using scripting languages<br>
 </div></section>
 <section id="delimiters" class="slide level2 center" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Delimiters</h2>
-<p>Data in a file are separated by a ‘delimiter’, such as a comma, tab, space, etc. For example:</p>
+<div style="font-size: 0.6em">
+<p>Data in a file are separated by a <em>delimiter</em>, such as a comma, tab, space, etc. They also generaly have a header describing the contents of each row. For example a csv is a comma delimited file:</p>
+</div>
 <ul>
 <li><span data-id="csv-item">file.csv</span></li>
 </ul>
@@ -503,6 +542,9 @@ Additionally, GIS can be performed purely using scripting languages<br>
 3027,2b1329f3-5b39-4c0e-ad34-1250e436e0e1,Heat Perimeter,FIRIS,2025-01-07 22:11:19.142000+00:00,-118.548,34.058
 3028,a766c1b5-1d8e-43b3-9aac-02358de18d35,Heat Perimeter,FIRIS,2025-01-07 23:17:35.698000+00:00,-118.547,34.0589
 3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589</code></pre>
+</div>
+<div class="fragment" style="position: absolute; top: 268px; left: 2; width: 800px; height: 21px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
+
 </div>
 </section>
 <section id="reading-a-csv" class="slide level2 center" data-auto-animate="true">
@@ -516,7 +558,8 @@ Additionally, GIS can be performed purely using scripting languages<br>
 3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589</code></pre>
 </div>
 <div style="font-size: 0.5em" data-id="link-item">
-<p><a href="https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv">link to file</a> (right-click and “save link as”)</p>
+<p><a href="https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv">link to file</a> (right-click and “save link as”)<br>
+<strong>Tip:</strong> Remeber, file organization!</p>
 </div>
 <div style="font-size: 0.3em">
 <p>This csv is adapted from <a href="https://data.ca.gov/dataset/ca-perimeters-cal-fire-nifc-firis-public-view">CA Perimeters CAL FIRE NIFC FIRIS public view</a>.</p>
@@ -528,22 +571,68 @@ Additionally, GIS can be performed purely using scripting languages<br>
 <p><a href="https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv">link to file</a> (right-click and “save link as”)</p>
 </div>
 <div class="{r-stack}">
-<div class="fragment fade-in-then-out" style="position: absolute;">
+<div class="fragment fade-in-then-out" data-fragment-index="1" style="position: absolute;">
 <p>Either <code>Layer --&gt; Add Layer --&gt;&gt; Add Delimited Text Layer</code>or press <code>control V</code> (command V on Mac)</p>
 </div>
-<div class="fragment fade-in" style="position: absolute;">
+<div class="fragment fade-in" data-fragment-index="2" style="position: absolute;">
 <p><img data-src="img/qgis_data_source_manager.png" height="350"></p>
 </div>
-<div class="fragment fade-in" style="position: absolute; top: 165px; left: 0; width: 325px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
-
-</div>
-<div class="fragment fade-out" style="position: absolute;">
+<div class="fragment fade-in" data-fragment-index="3" style="position: absolute; top: 267px; left: 0; width: 150px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
 
 </div>
 </div>
+</section>
+<section id="reading-a-csv-with-qgis-1" class="slide level2 columns center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Reading a CSV with QGIS</h2>
+<div class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="1" style="position: absolute;">
+<p><img data-src="img/qgis_data_source_manager_2.png" height="350"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2" style="position: absolute; top: 131px; left: 469px; width: 15px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
 
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3" style="position: absolute; top: 430px; left: 100px; width: 90px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
 
-</section></section>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="5" style="position: absolute; top: 260px; left: 100px; width: 90px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
+
+</div>
+<div class="fragment fade-in" data-fragment-index="6" style="position: absolute;">
+<p><img data-src="img/qgis_data_source_manager_3.png" height="350"></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="6" style="position: absolute; top: 330px; left: 243px; width: 210px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
+
+</div>
+</div><div class="column" style="width:50%;">
+<div class="{r-stack}">
+<div class="fragment fade-in-then-out" data-fragment-index="1" style="position: absolute;">
+<p>Delimited text dialogue box</p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2" style="position: absolute;">
+<p>Browse for csv</p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3" style="position: absolute;">
+<p><span style="font-size: 0.5em">Notice that it says CRS must be selected.</span></p>
+<p>What <em>is</em> a CRS?</p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="4" style="position: absolute;">
+<div style="font-size: 0.6em">
+<ul>
+<li>We will discuss what a CRS is in great detail later.</li>
+<li>For now just know it <strong>provides a reference frame for placing the coordinates on the map</strong>.</li>
+<li>Coordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)</li>
+<li><strong>SRS = CRS</strong></li>
+</ul>
+</div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="5" style="position: absolute;">
+<p>Here is how we will assign an SRS.</p>
+</div>
+<div class="fragment fade-in" data-fragment-index="6" style="position: absolute;">
+<p>Use EPSG:4326 - WGS 84</p>
+</div>
+</div>
+</div></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
