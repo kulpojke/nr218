@@ -102,14 +102,14 @@
     "href": "index.html#direction",
     "title": "",
     "section": "Direction",
-    "text": "Direction"
+    "text": "Direction\nThe position of a feature of phenomenon on the surface of the earth relative to some reference point\n536 meters north-west of the center of Mono Lake"
   },
   {
     "objectID": "index.html#distance",
     "href": "index.html#distance",
     "title": "",
     "section": "Distance",
-    "text": "Distance"
+    "text": "Distance\n\nThe separation between locations\n\nNominal (e.g. close/far) or Absolute (1 kilometer)\n\nCartesian distance on a flat surface is easy:\n\\[\nD = \\sqrt{(x_{2} - x_{1})^{2} + ((x_{2} - x_{1})^{2}}\n\\]"
   },
   {
     "objectID": "index.html#space",

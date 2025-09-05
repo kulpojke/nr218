@@ -224,7 +224,19 @@ yourself if you are familiar with programming.
 
 ## Direction
 
+The position of a feature of phenomenon on the surface of the earth
+relative to some reference point
+
+_536 meters north-west of the center of Mono Lake_
+
 ## Distance
++ The separation between locations
+  + _Nominal_ (e.g. close/far) or _Absolute_ (1 kilometer)
++ Cartesian distance on a flat surface is easy:  
+$$
+D = \sqrt{(x_{2} - x_{1})^{2} + ((x_{2} - x_{1})^{2}}
+$$
+
 
 
 ## Space
