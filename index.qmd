@@ -242,6 +242,7 @@ $$
 
 ## Space
 For GIS we are mostrly interested in  _topological_ space
+
 + Positional relationships between places / nodes /objects
 + e.g. subway map 
 
@@ -249,7 +250,7 @@ For GIS we are mostrly interested in  _topological_ space
 ## Navigation
 Destination-oriented movement through space
 
-## Layers
+## Layers {style="font-size:0.6em"}
 Models representing different aspects of the physical world
 ![](img/layers.png)
 
