@@ -8,6 +8,10 @@ output-location: column
 navigation-mode: vertical
 
 ---
+# NR 218
+
+Use arrows or menu in bottom left corner to navigate
+
 # NR 218 - Introduction
 
 
@@ -43,7 +47,7 @@ navigation-mode: vertical
 + Explore your interests
 
 
-## Active Learning and Growth Mindset
+## Active Learning and Growth Mindset {style="font-size:0.5em"}
 + This class will be challenging - learning new skills is hard
 + Recognize that you won’t be good immediately
   - Mastery takes time and repetition
@@ -124,25 +128,27 @@ GIS is useful is many domains, for example:
 
 ## Why use GIS
 
-::: {.fragment .fade-in-then-out}
+::: {r-stack}
+
+::: {.fragment .fade-in-then-out style="position: absolute;"}
 Monitor and understand our planet
 
 ![](img/Global_NDVI.gif){top=220 left=110 width="475"}
-![](img/aralsea.png){.absolute top=150 right=100 width="275"}
+![](img/aralsea.png){top=150 right=0 width="275"}
 :::
 
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out style="position: absolute;"}
 Planning
 
-![](img/urb_plan.jpg){
+![](img/urb_plan.png){width="575"}
 :::
 
 
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out style="position: absolute;"}
 Disaster Response
 
 ![](img/modis-fire.jpeg){top=220 left=110 width="475"}
-![](img/disaster_movie.png){.absolute top=150 right=100 width="275"}
+![](img/disaster_movie.png){top=150 right=0 width="275"}
 :::
 
 :::
@@ -150,13 +156,14 @@ Disaster Response
 
 ## Software{style="font-size: 0.5em"}
 :::{.fragment}
-+ This Class will be taught using QGIS (but you can use anything you want)
++ This class will be taught using QGIS (but you can use anything you want)
 + Software changes - We will focus on building an understanding of the concepts that will allow you to successfully use any GIS software.
++ I will occasionally show examples of analysis using other tools, particularly Python.
 :::
 
 :::{.r-stack}
 <p class="fragment fade-in-then-out">
-There are many other common GIS (GUI based) software platforms:  
+There are many other common (GUI based) GIS  software platforms:  
   - [ESRI (ArcGIS suite)](https://www.geographyrealm.com/qgis-versus-arcgis/)  
   - [GRASS](https://en.wikipedia.org/wiki/GRASS_GIS)  
   - [Google Earth Engine](https://en.wikipedia.org/wiki/Google_Earth#Google_Earth_Engine)  
@@ -205,6 +212,15 @@ yourself if you are familiar with programming.
 # GIS Concepts
 
 ## Location
+
++ Position
++ A position on the surface of the earth
++ How do we define a location?
+  + __Absolute Location__ - can be defined using Coordinates
+    + X,Y,(Z) is the Cartesian coordinate system
+    + Latitude and Longitude are the (non-projected )Geographic Coordinate System
+  + __Nominal location__ - relative to something else
+    + e.g. West of the Mississippi River
 
 ## Direction
 

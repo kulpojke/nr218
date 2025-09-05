@@ -60,14 +60,14 @@
     "href": "index.html#why-use-gis",
     "title": "",
     "section": "Why use GIS",
-    "text": "Why use GIS\n\nMonitor and understand our planet"
+    "text": "Why use GIS\n\n\nMonitor and understand our planet\n \n\n\nPlanning\n\n\n\nDisaster Response"
   },
   {
     "objectID": "index.html#software",
     "href": "index.html#software",
     "title": "",
     "section": "Software",
-    "text": "Software\n\n\nThis Class will be taught using QGIS (but you can use anything you want)\nSoftware changes - We will focus on building an understanding of the concepts that will allow you to successfully use any GIS software.\n\n\n\n\nThere are many other common GIS (GUI based) software platforms:\n- ESRI (ArcGIS suite)\n- GRASS\n- Google Earth Engine\n- Google Earth Pro\n- ENVI\n- SAGA\n- etc…\n\n\n\nThere are also command line tools\n- GDAL\n- PDAL\n- WhiteBox Tools\n\n\nAdditionally, GIS can be performed purely using scripting languages\n- Python\n- R\n- Javascript\n- Julia"
+    "text": "Software\n\n\nThis class will be taught using QGIS (but you can use anything you want)\nSoftware changes - We will focus on building an understanding of the concepts that will allow you to successfully use any GIS software.\nI will occasionally show examples of analysis using other tools, particularly Python.\n\n\n\n\nThere are many other common (GUI based) GIS software platforms:\n- ESRI (ArcGIS suite)\n- GRASS\n- Google Earth Engine\n- Google Earth Pro\n- ENVI\n- SAGA\n- etc…\n\n\n\nThere are also command line tools\n- GDAL\n- PDAL\n- WhiteBox Tools\n\n\nAdditionally, GIS can be performed purely using scripting languages\n- Python\n- R\n- Javascript\n- Julia"
   },
   {
     "objectID": "index.html#software---benefits-of-open-source",
@@ -95,7 +95,7 @@
     "href": "index.html#location",
     "title": "",
     "section": "Location",
-    "text": "Location"
+    "text": "Location\n\nPosition\nA position on the surface of the earth\nHow do we define a location?\n\nAbsolute Location - can be defined using Coordinates\n\nX,Y,(Z) is the Cartesian coordinate system\nLatitude and Longitude are the (non-projected )Geographic Coordinate System\n\nNominal location - relative to something else\n\ne.g. West of the Mississippi River"
   },
   {
     "objectID": "index.html#direction",
