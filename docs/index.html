@@ -497,22 +497,49 @@ Additionally, GIS can be performed purely using scripting languages<br>
 <li><span data-id="csv-item">file.csv</span></li>
 </ul>
 <div class="fragment" data-id="csv-item" style="padding: 2px 4px; border-radius: 3px;">
-<pre><code>Country, Population, Language, Continent, Centroid
-France, 65000000, French, Europe, "2.2137, 46.2276"
-Brazil, 192000000, Portuguese, South America, "-47.8825, -15.7942"
-Australia, 22000000, English, Australia, "133.7751, -25.2744"</code></pre>
+<pre><code>OBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat
+3025,04ba1d01-c043-478f-ad62-e7eeb903cf09,Heat Perimeter,FIRIS,2025-01-01 05:39:02.359000+00:00,-120.244,34.8824
+3026,4551a5e4-e94d-46e2-9aac-73cc4314c946,Heat Perimeter,FIRIS,2025-01-02 05:16:55.340000+00:00,-116.83,32.5974
+3027,2b1329f3-5b39-4c0e-ad34-1250e436e0e1,Heat Perimeter,FIRIS,2025-01-07 22:11:19.142000+00:00,-118.548,34.058
+3028,a766c1b5-1d8e-43b3-9aac-02358de18d35,Heat Perimeter,FIRIS,2025-01-07 23:17:35.698000+00:00,-118.547,34.0589
+3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589</code></pre>
 </div>
 </section>
 <section id="reading-a-csv" class="slide level2 center" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Reading a CSV</h2>
 <div data-id="csv-item">
-<pre><code>Country, Population, Language, Continent, Centroid
-France, 65000000, French, Europe, "2.2137, 46.2276"
-Brazil, 192000000, Portuguese, South America, "-47.8825, -15.7942"
-Australia, 22000000, English, Australia, "133.7751, -25.2744"</code></pre>
+<pre><code>OBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat
+3025,04ba1d01-c043-478f-ad62-e7eeb903cf09,Heat Perimeter,FIRIS,2025-01-01 05:39:02.359000+00:00,-120.244,34.8824
+3026,4551a5e4-e94d-46e2-9aac-73cc4314c946,Heat Perimeter,FIRIS,2025-01-02 05:16:55.340000+00:00,-116.83,32.5974
+3027,2b1329f3-5b39-4c0e-ad34-1250e436e0e1,Heat Perimeter,FIRIS,2025-01-07 22:11:19.142000+00:00,-118.548,34.058
+3028,a766c1b5-1d8e-43b3-9aac-02358de18d35,Heat Perimeter,FIRIS,2025-01-07 23:17:35.698000+00:00,-118.547,34.0589
+3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589</code></pre>
 </div>
-<div style="font-size: 0.5em">
-<p><a href="https://github.com/kulpojke/nr218/blob/main/assets/countries.csv">link to file</a>(to download, use the <img data-src="img/downloa_button.png" style="vertical-align: middle;"> button on right)</p>
+<div style="font-size: 0.5em" data-id="link-item">
+<p><a href="https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv">link to file</a> (right-click and “save link as”)</p>
+</div>
+<div style="font-size: 0.3em">
+<p>This csv is adapted from <a href="https://data.ca.gov/dataset/ca-perimeters-cal-fire-nifc-firis-public-view">CA Perimeters CAL FIRE NIFC FIRIS public view</a>.</p>
+</div>
+</section>
+<section id="reading-a-csv-with-qgis" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Reading a CSV with QGIS</h2>
+<div style="font-size: 0.5em" data-id="link-item">
+<p><a href="https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv">link to file</a> (right-click and “save link as”)</p>
+</div>
+<div class="{r-stack}">
+<div class="fragment fade-in-then-out" style="position: absolute;">
+<p>Either <code>Layer --&gt; Add Layer --&gt;&gt; Add Delimited Text Layer</code>or press <code>control V</code> (command V on Mac)</p>
+</div>
+<div class="fragment fade-in" style="position: absolute;">
+<p><img data-src="img/qgis_data_source_manager.png" height="350"></p>
+</div>
+<div class="fragment fade-in" style="position: absolute; top: 165px; left: 0; width: 325px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
+
+</div>
+<div class="fragment fade-out" style="position: absolute;">
+
+</div>
 </div>
 
 

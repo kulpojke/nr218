@@ -228,14 +228,21 @@
     "href": "index.html#delimiters",
     "title": "",
     "section": "Delimiters",
-    "text": "Delimiters\nData in a file are separated by a ‘delimiter’, such as a comma, tab, space, etc. For example:\n\nfile.csv\n\n\nCountry, Population, Language, Continent, Centroid\nFrance, 65000000, French, Europe, \"2.2137, 46.2276\"\nBrazil, 192000000, Portuguese, South America, \"-47.8825, -15.7942\"\nAustralia, 22000000, English, Australia, \"133.7751, -25.2744\""
+    "text": "Delimiters\nData in a file are separated by a ‘delimiter’, such as a comma, tab, space, etc. For example:\n\nfile.csv\n\n\nOBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat\n3025,04ba1d01-c043-478f-ad62-e7eeb903cf09,Heat Perimeter,FIRIS,2025-01-01 05:39:02.359000+00:00,-120.244,34.8824\n3026,4551a5e4-e94d-46e2-9aac-73cc4314c946,Heat Perimeter,FIRIS,2025-01-02 05:16:55.340000+00:00,-116.83,32.5974\n3027,2b1329f3-5b39-4c0e-ad34-1250e436e0e1,Heat Perimeter,FIRIS,2025-01-07 22:11:19.142000+00:00,-118.548,34.058\n3028,a766c1b5-1d8e-43b3-9aac-02358de18d35,Heat Perimeter,FIRIS,2025-01-07 23:17:35.698000+00:00,-118.547,34.0589\n3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589"
   },
   {
     "objectID": "index.html#reading-a-csv",
     "href": "index.html#reading-a-csv",
     "title": "",
     "section": "Reading a CSV",
-    "text": "Reading a CSV\n\nCountry, Population, Language, Continent, Centroid\nFrance, 65000000, French, Europe, \"2.2137, 46.2276\"\nBrazil, 192000000, Portuguese, South America, \"-47.8825, -15.7942\"\nAustralia, 22000000, English, Australia, \"133.7751, -25.2744\"\n\n\nlink to file(to download, use the  button on right)"
+    "text": "Reading a CSV\n\nOBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat\n3025,04ba1d01-c043-478f-ad62-e7eeb903cf09,Heat Perimeter,FIRIS,2025-01-01 05:39:02.359000+00:00,-120.244,34.8824\n3026,4551a5e4-e94d-46e2-9aac-73cc4314c946,Heat Perimeter,FIRIS,2025-01-02 05:16:55.340000+00:00,-116.83,32.5974\n3027,2b1329f3-5b39-4c0e-ad34-1250e436e0e1,Heat Perimeter,FIRIS,2025-01-07 22:11:19.142000+00:00,-118.548,34.058\n3028,a766c1b5-1d8e-43b3-9aac-02358de18d35,Heat Perimeter,FIRIS,2025-01-07 23:17:35.698000+00:00,-118.547,34.0589\n3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589\n\n\nlink to file (right-click and “save link as”)\n\n\nThis csv is adapted from CA Perimeters CAL FIRE NIFC FIRIS public view."
+  },
+  {
+    "objectID": "index.html#reading-a-csv-with-qgis",
+    "href": "index.html#reading-a-csv-with-qgis",
+    "title": "",
+    "section": "Reading a CSV with QGIS",
+    "text": "Reading a CSV with QGIS\n\nlink to file (right-click and “save link as”)\n\n\n\nEither Layer --&gt; Add Layer --&gt;&gt; Add Delimited Text Layeror press control V (command V on Mac)"
   },
   {
     "objectID": "intro.html#section",
