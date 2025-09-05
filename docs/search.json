@@ -109,28 +109,28 @@
     "href": "index.html#distance",
     "title": "",
     "section": "Distance",
-    "text": "Distance\n\nThe separation between locations\n\nNominal (e.g. close/far) or Absolute (1 kilometer)\n\nCartesian distance on a flat surface is easy:\n\\[\nD = \\sqrt{(x_{2} - x_{1})^{2} + ((x_{2} - x_{1})^{2}}\n\\]"
+    "text": "Distance\n\nThe separation between locations\n\nNominal (e.g. close/far) or Absolute (1 kilometer)\n\nCartesian distance on a flat surface is easy:\n\\[\nD = \\sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}\n\\]\nDistance on a 3-Dimensional surface is complicated! Requires calculus."
   },
   {
     "objectID": "index.html#space",
     "href": "index.html#space",
     "title": "",
     "section": "Space",
-    "text": "Space"
+    "text": "Space\nFor GIS we are mostrly interested in topological space + Positional relationships between places / nodes /objects + e.g. subway map"
   },
   {
     "objectID": "index.html#navigation",
     "href": "index.html#navigation",
     "title": "",
     "section": "Navigation",
-    "text": "Navigation"
+    "text": "Navigation\nDestination-oriented movement through space"
   },
   {
     "objectID": "index.html#layers",
     "href": "index.html#layers",
     "title": "",
     "section": "Layers",
-    "text": "Layers"
+    "text": "Layers\nModels representing different aspects of the physical world"
   },
   {
     "objectID": "index.html#attributes",

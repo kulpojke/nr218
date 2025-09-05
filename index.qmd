@@ -234,16 +234,24 @@ _536 meters north-west of the center of Mono Lake_
   + _Nominal_ (e.g. close/far) or _Absolute_ (1 kilometer)
 + Cartesian distance on a flat surface is easy:  
 $$
-D = \sqrt{(x_{2} - x_{1})^{2} + ((x_{2} - x_{1})^{2}}
+D = \sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}
 $$
 
++ Distance on a 3-Dimensional surface is complicated! Requires calculus.
 
 
 ## Space
+For GIS we are mostrly interested in  _topological_ space
++ Positional relationships between places / nodes /objects
++ e.g. subway map 
+
 
 ## Navigation
+Destination-oriented movement through space
 
 ## Layers
+Models representing different aspects of the physical world
+![](img/layers.png)
 
 ## Attributes
 
