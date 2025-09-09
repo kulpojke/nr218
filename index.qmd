@@ -216,18 +216,48 @@ yourself if you are familiar with programming.
 + Position
 + A position on the surface of the earth
 + How do we define a location?
+  + __Nominal location__ - By name
+    + Helsinki, Finland
+    + Appalachia
+
+  + __Relative__
+    + Oakland is east of San Francisco
+
   + __Absolute Location__ - can be defined using Coordinates
+    + Postal Code
     + X,Y,(Z) is the Cartesian coordinate system
     + Latitude and Longitude are the (non-projected )Geographic Coordinate System
-  + __Nominal location__ - relative to something else
-    + e.g. West of the Mississippi River
+  
+## Direction {style="font-size: 0.6em"}
 
-## Direction
-
+:::{r-stack}
+:::{.fragment .fade-in-then-out .absolute}
 The position of a feature of phenomenon on the surface of the earth
 relative to some reference point
 
-_536 meters north-west of the center of Mono Lake_
++ Egocentric location, _to myleft_
++ Landmark direction, _towards the mountain_
+
+In geography and GIS, there are three more standard benchmarks that are used to define the directions:
+
++ True north (and south) is towards the point at which the axis of the
+earth’s rotation intersects the earth’s surface
++ Magnetic north is towards where the Earth's magnetic fields merge in the North  
++ Grid north is the northward direction of the grid lines of latitude and longitude on a map
+:::
+
+:::{.fragment .fade-in-then-out .absolute}
+![](img/Utm-latlon_grid_en.svg.png){width=400px top=10 right=0}
+:::
+
+:::{.fragment .fade-in-then-out .absolute}
+![](img/subway-map-2019a.png){width=400px top=10}
+![](img/subway_true_north.png){width=400px top=10 left=0}
+:::
+
+
+
+:::
 
 ## Distance
 + The separation between locations
@@ -237,37 +267,65 @@ $$
 D = \sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}
 $$
 
-+ Distance on a 3-Dimensional surface is complicated! Requires calculus.
++ Distance on a 3-Dimensional surface is complicated. We willdiscussitlater
+
 
 
 ## Space
-For GIS we are mostrly interested in  _topological_ space
+Space is kind of an ambiguous term. 
+
+For GIS we are often interested in  _topological_ space
 
 + Positional relationships between places / nodes /objects
 + e.g. subway map 
 
 
 ## Navigation
-Destination-oriented movement through space
+Destination-oriented movement through space. Relies on:
++ Landmark Knowledge
++ Route Knowledge
++ Survey knowledge
+
+
+## GIS
+All GIS systems have a database that can relate spatial-data and attribute data.
+
++ Spatial data is made up of points, lines, polygons, etc... which represent locations or features in the real world, e.g. a linestring representing a river.
+
++ Attributes are data associated with the features, e.g. the population ofa city. 
 
 ## Layers {style="font-size:0.6em"}
 Models representing different aspects of the physical world
 ![](img/layers.png)
 
 ## Attributes
-
+flatulation
 
 ## Map Types
 There are a few types of maps:
 
-+ A  
-+ B
-+ Reference - shows location of an object
++ Mental Maps
++ Reference - shows location information, tend to represent geographic reality accurately, topographic maps for example
 + Thematic - shows how one or more factors are
-distributed across space
+distributed across space, such as a map of malaria infection rates
 + Dynamic / Interactive - maps that change depending on user input
 
+## Mental/Cognitive Maps
+
++ Psychological tools that we all use every day. 
++ Stored in our brain
++ To get from one place to another, or to understand and situate events that we hear about
++ Reflect the amount and extent of geographic knowledge and spatial awareness that we possess
+
+Using a blank sheet of paper, take five minutes to
+draw a map from memory ofSan Luis Obispo
+
+
+
+
 ## Map Scale
+
+
 
 ## What is data? (_What are data?_) 
 + "Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation."

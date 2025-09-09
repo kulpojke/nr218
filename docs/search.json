@@ -95,35 +95,42 @@
     "href": "index.html#location",
     "title": "",
     "section": "Location",
-    "text": "Location\n\nPosition\nA position on the surface of the earth\nHow do we define a location?\n\nAbsolute Location - can be defined using Coordinates\n\nX,Y,(Z) is the Cartesian coordinate system\nLatitude and Longitude are the (non-projected )Geographic Coordinate System\n\nNominal location - relative to something else\n\ne.g. West of the Mississippi River"
+    "text": "Location\n\nPosition\nA position on the surface of the earth\nHow do we define a location?\n\nNominal location - By name\n\nHelsinki, Finland\nAppalachia\n\nRelative\n\nOakland is east of San Francisco\n\nAbsolute Location - can be defined using Coordinates\n\nPostal Code\nX,Y,(Z) is the Cartesian coordinate system\nLatitude and Longitude are the (non-projected )Geographic Coordinate System"
   },
   {
     "objectID": "index.html#direction",
     "href": "index.html#direction",
     "title": "",
     "section": "Direction",
-    "text": "Direction\nThe position of a feature of phenomenon on the surface of the earth relative to some reference point\n536 meters north-west of the center of Mono Lake"
+    "text": "Direction\n\n\nThe position of a feature of phenomenon on the surface of the earth relative to some reference point\n\nEgocentric location, to myleft\nLandmark direction, towards the mountain\n\nIn geography and GIS, there are three more standard benchmarks that are used to define the directions:\n\nTrue north (and south) is towards the point at which the axis of the earth’s rotation intersects the earth’s surface\nMagnetic north is towards where the Earth’s magnetic fields merge in the North\n\nGrid north is the northward direction of the grid lines of latitude and longitude on a map"
   },
   {
     "objectID": "index.html#distance",
     "href": "index.html#distance",
     "title": "",
     "section": "Distance",
-    "text": "Distance\n\nThe separation between locations\n\nNominal (e.g. close/far) or Absolute (1 kilometer)\n\nCartesian distance on a flat surface is easy:\n\\[\nD = \\sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}\n\\]\nDistance on a 3-Dimensional surface is complicated! Requires calculus."
+    "text": "Distance\n\nThe separation between locations\n\nNominal (e.g. close/far) or Absolute (1 kilometer)\n\nCartesian distance on a flat surface is easy:\n\\[\nD = \\sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}\n\\]\nDistance on a 3-Dimensional surface is complicated. We willdiscussitlater"
   },
   {
     "objectID": "index.html#space",
     "href": "index.html#space",
     "title": "",
     "section": "Space",
-    "text": "Space\nFor GIS we are mostrly interested in topological space\n\nPositional relationships between places / nodes /objects\ne.g. subway map"
+    "text": "Space\nSpace is kind of an ambiguous term.\nFor GIS we are often interested in topological space\n\nPositional relationships between places / nodes /objects\ne.g. subway map"
   },
   {
     "objectID": "index.html#navigation",
     "href": "index.html#navigation",
     "title": "",
     "section": "Navigation",
-    "text": "Navigation\nDestination-oriented movement through space"
+    "text": "Navigation\nDestination-oriented movement through space. Relies on: + Landmark Knowledge + Route Knowledge + Survey knowledge"
+  },
+  {
+    "objectID": "index.html#gis",
+    "href": "index.html#gis",
+    "title": "",
+    "section": "GIS",
+    "text": "GIS\nAll GIS systems have a database that can relate spatial-data and attribute data.\n\nSpatial data is made up of points, lines, polygons, etc… which represent locations or features in the real world, e.g. a linestring representing a river.\nAttributes are data associated with the features, e.g. the population ofa city."
   },
   {
     "objectID": "index.html#layers",
@@ -137,14 +144,21 @@
     "href": "index.html#attributes",
     "title": "",
     "section": "Attributes",
-    "text": "Attributes"
+    "text": "Attributes\nflatulation"
   },
   {
     "objectID": "index.html#map-types",
     "href": "index.html#map-types",
     "title": "",
     "section": "Map Types",
-    "text": "Map Types\nThere are a few types of maps:\n\nA\n\nB\nReference - shows location of an object\nThematic - shows how one or more factors are distributed across space\nDynamic / Interactive - maps that change depending on user input"
+    "text": "Map Types\nThere are a few types of maps:\n\nMental Maps\nReference - shows location information, tend to represent geographic reality accurately, topographic maps for example\nThematic - shows how one or more factors are distributed across space, such as a map of malaria infection rates\nDynamic / Interactive - maps that change depending on user input"
+  },
+  {
+    "objectID": "index.html#mentalcognitive-maps",
+    "href": "index.html#mentalcognitive-maps",
+    "title": "",
+    "section": "Mental/Cognitive Maps",
+    "text": "Mental/Cognitive Maps\n\nPsychological tools that we all use every day.\nStored in our brain\nTo get from one place to another, or to understand and situate events that we hear about\nReflect the amount and extent of geographic knowledge and spatial awareness that we possess\n\nUsing a blank sheet of paper, take five minutes to draw a map from memory ofSan Luis Obispo"
   },
   {
     "objectID": "index.html#map-scale",

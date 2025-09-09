@@ -357,22 +357,48 @@ Additionally, GIS can be performed purely using scripting languages<br>
 <li>A position on the surface of the earth</li>
 <li>How do we define a location?
 <ul>
+<li><strong>Nominal location</strong> - By name
+<ul>
+<li>Helsinki, Finland</li>
+<li>Appalachia</li>
+</ul></li>
+<li><strong>Relative</strong>
+<ul>
+<li>Oakland is east of San Francisco</li>
+</ul></li>
 <li><strong>Absolute Location</strong> - can be defined using Coordinates
 <ul>
+<li>Postal Code</li>
 <li>X,Y,(Z) is the Cartesian coordinate system</li>
 <li>Latitude and Longitude are the (non-projected )Geographic Coordinate System</li>
-</ul></li>
-<li><strong>Nominal location</strong> - relative to something else
-<ul>
-<li>e.g.&nbsp;West of the Mississippi River</li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="direction" class="slide level2 center">
+<section id="direction" class="slide level2 center" style="font-size: 0.6em">
 <h2>Direction</h2>
+<div class="{r-stack}">
+<div class="fragment fade-in-then-out absolute" style="">
 <p>The position of a feature of phenomenon on the surface of the earth relative to some reference point</p>
-<p><em>536 meters north-west of the center of Mono Lake</em></p>
+<ul>
+<li>Egocentric location, <em>to myleft</em></li>
+<li>Landmark direction, <em>towards the mountain</em></li>
+</ul>
+<p>In geography and GIS, there are three more standard benchmarks that are used to define the directions:</p>
+<ul>
+<li>True north (and south) is towards the point at which the axis of the earth’s rotation intersects the earth’s surface</li>
+<li>Magnetic north is towards where the Earth’s magnetic fields merge in the North<br>
+</li>
+<li>Grid north is the northward direction of the grid lines of latitude and longitude on a map</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-out absolute" style="">
+<p><img data-src="img/Utm-latlon_grid_en.svg.png" data-top="10" data-right="0" width="400"></p>
+</div>
+<div class="fragment fade-in-then-out absolute" style="">
+<p><img data-src="img/subway-map-2019a.png" data-top="10" width="400"> <img data-src="img/subway_true_north.png" data-top="10" data-left="0" width="400"></p>
+</div>
+</div>
 </section>
 <section id="distance" class="slide level2 center">
 <h2>Distance</h2>
@@ -385,12 +411,13 @@ Additionally, GIS can be performed purely using scripting languages<br>
 <span class="math display">\[
 D = \sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}
 \]</span></p></li>
-<li><p>Distance on a 3-Dimensional surface is complicated! Requires calculus.</p></li>
+<li><p>Distance on a 3-Dimensional surface is complicated. We willdiscussitlater</p></li>
 </ul>
 </section>
 <section id="space" class="slide level2 center">
 <h2>Space</h2>
-<p>For GIS we are mostrly interested in <em>topological</em> space</p>
+<p>Space is kind of an ambiguous term.</p>
+<p>For GIS we are often interested in <em>topological</em> space</p>
 <ul>
 <li>Positional relationships between places / nodes /objects</li>
 <li>e.g.&nbsp;subway map</li>
@@ -398,7 +425,15 @@ D = \sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}
 </section>
 <section id="navigation" class="slide level2 center">
 <h2>Navigation</h2>
-<p>Destination-oriented movement through space</p>
+<p>Destination-oriented movement through space. Relies on: + Landmark Knowledge + Route Knowledge + Survey knowledge</p>
+</section>
+<section id="gis" class="slide level2 center">
+<h2>GIS</h2>
+<p>All GIS systems have a database that can relate spatial-data and attribute data.</p>
+<ul>
+<li><p>Spatial data is made up of points, lines, polygons, etc… which represent locations or features in the real world, e.g.&nbsp;a linestring representing a river.</p></li>
+<li><p>Attributes are data associated with the features, e.g.&nbsp;the population ofa city.</p></li>
+</ul>
 </section>
 <section id="layers" class="slide level2 center" style="font-size:0.6em">
 <h2>Layers</h2>
@@ -406,18 +441,27 @@ D = \sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}
 </section>
 <section id="attributes" class="slide level2 center">
 <h2>Attributes</h2>
+<p>flatulation</p>
 </section>
 <section id="map-types" class="slide level2 center">
 <h2>Map Types</h2>
 <p>There are a few types of maps:</p>
 <ul>
-<li>A<br>
-</li>
-<li>B</li>
-<li>Reference - shows location of an object</li>
-<li>Thematic - shows how one or more factors are distributed across space</li>
+<li>Mental Maps</li>
+<li>Reference - shows location information, tend to represent geographic reality accurately, topographic maps for example</li>
+<li>Thematic - shows how one or more factors are distributed across space, such as a map of malaria infection rates</li>
 <li>Dynamic / Interactive - maps that change depending on user input</li>
 </ul>
+</section>
+<section id="mentalcognitive-maps" class="slide level2 center">
+<h2>Mental/Cognitive Maps</h2>
+<ul>
+<li>Psychological tools that we all use every day.</li>
+<li>Stored in our brain</li>
+<li>To get from one place to another, or to understand and situate events that we hear about</li>
+<li>Reflect the amount and extent of geographic knowledge and spatial awareness that we possess</li>
+</ul>
+<p>Using a blank sheet of paper, take five minutes to draw a map from memory ofSan Luis Obispo</p>
 </section>
 <section id="map-scale" class="slide level2 center">
 <h2>Map Scale</h2>
