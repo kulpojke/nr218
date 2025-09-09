@@ -1,11 +1,12 @@
 ---
 format:
   revealjs:
-    incremental: false 
+    incremental: false
 jupyter: python3
 echo: true
 output-location: column
 navigation-mode: vertical
+
 
 ---
 # NR 218
@@ -209,7 +210,7 @@ yourself if you are familiar with programming.
 
 ## Syllabus Review
 
-# GIS Concepts
+# Some basic GIS Concepts
 
 ## Location
 
@@ -282,6 +283,7 @@ For GIS we are often interested in  _topological_ space
 
 ## Navigation
 Destination-oriented movement through space. Relies on:
+
 + Landmark Knowledge
 + Route Knowledge
 + Survey knowledge
@@ -298,17 +300,103 @@ All GIS systems have a database that can relate spatial-data and attribute data.
 Models representing different aspects of the physical world
 ![](img/layers.png)
 
-## Attributes
-flatulation
+## Attributes {style="font-size:0.3em"}
 
-## Map Types
+```{python}
+#| echo: false
+import geopandas as gpd
+from pathlib import Path
+file = Path('assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson')
+df = gpd.read_file(file)
+df.head()
+```
+Attributes of `assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson`
+
+##
+![Right-click layer --> Open Attribute Table](img/qgis-attrubute-table.png)
+
+## Map Types {.columns}
 There are a few types of maps:
 
-+ Mental Maps
-+ Reference - shows location information, tend to represent geographic reality accurately, topographic maps for example
-+ Thematic - shows how one or more factors are
+::: {.column width="50%"}
+:::{r-stack}
+
+:::{.fragment .fade-in-then-out style="position: absolute; font-size: 0.8em;" data-fragment-index="1"}
+Mental Maps
+:::
+
+:::{.fragment .fade-in-then-out style="position: absolute; width: 50%; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.8em;" data-fragment-index="2"}
+
+Reference - shows location information, tend to represent geographic reality accurately, topographic maps for example
+:::
+
+:::{.fragment .fade-in-then-out style="position: absolute; width: 50%; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.8em;" data-fragment-index="3"}
+
+Thematic - shows how one or more factors are
 distributed across space, such as a map of malaria infection rates
-+ Dynamic / Interactive - maps that change depending on user input
+:::
+
+
+:::
+:::
+
+::: {.column width="50%"}
+:::{r-stack}
+
+::: {.fragment .fade-in-then-out style="position: absolute;" data-fragment-index="2"}
+![USGS Topographic Map of Boulder, CO](img/boulder-topo.png)
+:::
+
+::: {.fragment .fade-in-then-out style="position: absolute;" data-fragment-index="3"}
+![European GDP](img/euro-gdp-map.png)
+:::
+
+:::
+:::
+
+::: {.fragment .fade-in style="position: absolute top=0; font-size:0.5em" data-fragment-index="4"}
+__Dynamic / Interactive__  
+- maps that change depending on user input
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+
+from pathlib import Path
+
+import folium
+import geopandas as gpd
+
+aoi_path = Path('assets/Eaton_Perimeter_20250121.geojson')
+aoi = gpd.read_file(aoi_path)
+
+# grab centroids
+c = aoi.to_crs(epsg=26910).dissolve().centroid.to_crs(epsg=4326).item()
+
+# map
+map = folium.Map(
+  location=[c.y, c.x],
+  tiles='OpenStreetMap',
+  zoom_start=12
+)
+
+# perimeter
+geo_j = folium.GeoJson(data=aoi.__geo_interface__,
+  style_function=lambda feature: {
+    'color': 'red',
+    'weight': 2,
+    'fill': False,
+    },
+    name='Fire Perimeter'
+  ).add_to(map)
+# layer control
+
+map
+```
+
+:::
+
+
 
 ## Mental/Cognitive Maps
 
@@ -323,7 +411,7 @@ draw a map from memory ofSan Luis Obispo
 
 
 
-## Map Scale
+
 
 
 
@@ -571,3 +659,77 @@ Use EPSG:4326 - WGS 84
 :::
 
 :::
+
+# Scale, Coordinate systems, and Map Projections
+
+
+
+## Map Conventions 
+
+Mapping conventions facilitate effective conveyance of information.  In most cases using them is a good idea ([but not necessarily always](https://www.storybench.org/mapbreaking-why-cartographic-flaws-can-sometimes-be-a-good-thing/))
+
+:::: {.columns}
+::: {.column width="30%"}
+::: {.figure style="text-align: center; margin: 0 auto;"}
+  ![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Apollo_17_Blue_Marble_original_orientation_%28AS17-148-22727%29.jpg/250px-Apollo_17_Blue_Marble_original_orientation_%28AS17-148-22727%29.jpg)
+
+::: {.figure-caption style="font-size: 0.4em; color: #888;"}
+[The Blue Marble photograph](https://en.wikipedia.org/wiki/The_Blue_Marble) in its original orientation.
+:::
+:::
+:::
+
+::: {.column width="70%"}
+::: {.figure style="text-align: center; margin: 0 auto;"}
+![](img/upsouth.jpeg){style="height: 250px;"}
+
+::: {.figure-caption style="font-size: 0.4em; color: #888;"}
+South's up!  
+:::
+:::
+:::
+
+::::
+
+## Map Scale {style="font-size:0.5em"}
+The factor of reduction of the world so it fits on a map  
+
+::: {.incremental}
+  + You need to shrink things to make a map
+  + On reference maps it is generally important to include a scale bar  
+  ![](img/scale-bar.png){style="height: 175px;"}
+  + Representative fraction (RF) describes scale as a simple ratio 
+    <div style="position: absolute; top: 267px; left: 165px; width: 80px; height: 14px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"></div>
+    + The numerator, which is always unity (i.e., 1), denotes map distance.  
+    The denominator denotes ground or “real-world” distance.
+    + unit neutral
+    + Large vs small, 1:1,000 > 1:1,000,000
+    + Large shows more detail
+:::
+
+## Map Scale {style="font-size:0.5em"}
+
+::: {.figure style="text-align: center; margin: 0 auto;"}
+  ![](img/scale-bar.png){style="height: 400px;"}
+:::
+
+::: {.incremental}
++ <div class="fragment fade-out" style="position: absolute; top: 313px; left: 95px; width: 830px; height: 100px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"></div>
++ <div class="fragment fade-in-then-out" style="position: absolute; top: 413px; left: 300px; width: 400px; height: 38px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"></div>
+
+:::
+
+## Coordinate systems 
+
++ Frameworks that are used to define unique positions
++ Geographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of  Earth
++ GCS is based on a sphere or spheroid (a.k.a. ellipsoid)
++ GCS units are degrees
+  + Latitude $\in 0^\circ, 90^\circ$ (or $-90^\circ, 90^\circ$)
+  + Longitude $\in 0^\circ, 180^\circ$ (or $-180^\circ, 180^\circ$)
+
+
+
+## Projections
+
+![](https://imgs.xkcd.com/comics/map_projections.png){style="position: absolute; right: 20px; top: 00px; width: 300px;"}

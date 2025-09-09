@@ -123,7 +123,7 @@
     "href": "index.html#navigation",
     "title": "",
     "section": "Navigation",
-    "text": "Navigation\nDestination-oriented movement through space. Relies on: + Landmark Knowledge + Route Knowledge + Survey knowledge"
+    "text": "Navigation\nDestination-oriented movement through space. Relies on:\n\nLandmark Knowledge\nRoute Knowledge\nSurvey knowledge"
   },
   {
     "objectID": "index.html#gis",
@@ -144,14 +144,21 @@
     "href": "index.html#attributes",
     "title": "",
     "section": "Attributes",
-    "text": "Attributes\nflatulation"
+    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "",
+    "section": "",
+    "text": "Right-click layer –&gt; Open Attribute Table"
   },
   {
     "objectID": "index.html#map-types",
     "href": "index.html#map-types",
     "title": "",
     "section": "Map Types",
-    "text": "Map Types\nThere are a few types of maps:\n\nMental Maps\nReference - shows location information, tend to represent geographic reality accurately, topographic maps for example\nThematic - shows how one or more factors are distributed across space, such as a map of malaria infection rates\nDynamic / Interactive - maps that change depending on user input"
+    "text": "Map Types\nThere are a few types of maps:\n\n\n\nMental Maps\n\n\nReference - shows location information, tend to represent geographic reality accurately, topographic maps for example\n\n\nThematic - shows how one or more factors are distributed across space, such as a map of malaria infection rates\n\n\n\n\n\n\n\n\nUSGS Topographic Map of Boulder, CO\n\n\n\n\n\n\n\nEuropean GDP\n\n\n\n\n\nDynamic / Interactive\n- maps that change depending on user input\n\n\n\nShow code\nfrom pathlib import Path\n\nimport folium\nimport geopandas as gpd\n\naoi_path = Path('assets/Eaton_Perimeter_20250121.geojson')\naoi = gpd.read_file(aoi_path)\n\n# grab centroids\nc = aoi.to_crs(epsg=26910).dissolve().centroid.to_crs(epsg=4326).item()\n\n# map\nmap = folium.Map(\n  location=[c.y, c.x],\n  tiles='OpenStreetMap',\n  zoom_start=12\n)\n\n# perimeter\ngeo_j = folium.GeoJson(data=aoi.__geo_interface__,\n  style_function=lambda feature: {\n    'color': 'red',\n    'weight': 2,\n    'fill': False,\n    },\n    name='Fire Perimeter'\n  ).add_to(map)\n# layer control\n\nmap\n\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
   },
   {
     "objectID": "index.html#mentalcognitive-maps",
@@ -159,13 +166,6 @@
     "title": "",
     "section": "Mental/Cognitive Maps",
     "text": "Mental/Cognitive Maps\n\nPsychological tools that we all use every day.\nStored in our brain\nTo get from one place to another, or to understand and situate events that we hear about\nReflect the amount and extent of geographic knowledge and spatial awareness that we possess\n\nUsing a blank sheet of paper, take five minutes to draw a map from memory ofSan Luis Obispo"
-  },
-  {
-    "objectID": "index.html#map-scale",
-    "href": "index.html#map-scale",
-    "title": "",
-    "section": "Map Scale",
-    "text": "Map Scale"
   },
   {
     "objectID": "index.html#what-is-data-what-are-data",
@@ -266,10 +266,38 @@
     "text": "Reading a CSV with QGIS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDelimited text dialogue box\n\n\nBrowse for csv\n\n\nNotice that it says CRS must be selected.\nWhat is a CRS?\n\n\n\n\nWe will discuss what a CRS is in great detail later.\nFor now just know it provides a reference frame for placing the coordinates on the map.\nCoordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)\nSRS = CRS\n\n\n\n\nHere is how we will assign an SRS.\n\n\nUse EPSG:4326 - WGS 84"
   },
   {
-    "objectID": "intro.html#section",
-    "href": "intro.html#section",
+    "objectID": "index.html#map-conventions",
+    "href": "index.html#map-conventions",
     "title": "",
-    "section": "",
-    "text": "Today we will cover a few of the tools we will be using this quarter, which should hopefully be installed.\n+ git\n+ conda\n+ VScode\n+ Rstudio\n+ QGIS\n+ GDAL"
+    "section": "Map Conventions",
+    "text": "Map Conventions\nMapping conventions facilitate effective conveyance of information. In most cases using them is a good idea (but not necessarily always)\n\n\n\n\n\nThe Blue Marble photograph in its original orientation.\n\n\n\n\n\n\nSouth’s up!"
+  },
+  {
+    "objectID": "index.html#map-scale",
+    "href": "index.html#map-scale",
+    "title": "",
+    "section": "Map Scale",
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
+  },
+  {
+    "objectID": "index.html#map-scale-1",
+    "href": "index.html#map-scale-1",
+    "title": "",
+    "section": "Map Scale",
+    "text": "Map Scale"
+  },
+  {
+    "objectID": "index.html#coordinate-systems",
+    "href": "index.html#coordinate-systems",
+    "title": "",
+    "section": "Coordinate systems",
+    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nGeographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of Earth\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))"
+  },
+  {
+    "objectID": "index.html#projections",
+    "href": "index.html#projections",
+    "title": "",
+    "section": "Projections",
+    "text": "Projections"
   }
 ]
