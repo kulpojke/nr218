@@ -298,7 +298,28 @@
     "href": "index.html#dms-to-dd-conversion",
     "title": "",
     "section": "DMS to DD conversion",
-    "text": "DMS to DD conversion\n\nConverting is simple, 60 minutes in a degree, 60 seconds in a minute\n\n\n128° 40’ 52.0428” W"
+    "text": "DMS to DD conversion\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.681123"
+  },
+  {
+    "objectID": "index.html#spheroids-and-geoids",
+    "href": "index.html#spheroids-and-geoids",
+    "title": "",
+    "section": "Spheroids and Geoids",
+    "text": "Spheroids and Geoids\n\n\n\nGCS is based on a sphere, spheroid, or geoid\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravity field rather than its topography 1\n\n\n    \\(\\circ\\) Gravity field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid Specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
+  },
+  {
+    "objectID": "index.html#spheroids-and-geoids-1",
+    "href": "index.html#spheroids-and-geoids-1",
+    "title": "",
+    "section": "Spheroids and Geoids",
+    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\nso the surface is approximated using a\nspheroid (also called an ellipsoid of revolution)\nSome spheroids are suited for global use, others for local use"
+  },
+  {
+    "objectID": "index.html#datums",
+    "href": "index.html#datums",
+    "title": "",
+    "section": "Datums",
+    "text": "Datums\n\nA datum is a spheroid with an origen point and orientation\nin common parlance they are often used interchangeably"
   },
   {
     "objectID": "index.html#projections",
