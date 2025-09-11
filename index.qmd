@@ -727,8 +727,16 @@ The factor of reduction of the world so it fits on a map
 + GCS units are degrees
   + Latitude $\in 0^\circ, 90^\circ$ (or $-90^\circ, 90^\circ$)
   + Longitude $\in 0^\circ, 180^\circ$ (or $-180^\circ, 180^\circ$)
++  Degrees can be written in degrees-minutes-seconds (DMS) or in decimal
+degrees (DD). 
+  
+## DMS to DD conversion  
 
++ Converting is simple, 60 minutes in a degree, 60 seconds in a minute
 
+::: {style="text-align: center; font-size:1.2em"}
+128° 40' 52.0428" W 
+:::
 
 ## Projections
 

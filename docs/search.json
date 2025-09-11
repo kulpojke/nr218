@@ -291,7 +291,14 @@
     "href": "index.html#coordinate-systems",
     "title": "",
     "section": "Coordinate systems",
-    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nGeographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of Earth\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))"
+    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nGeographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of Earth\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))\n\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD)."
+  },
+  {
+    "objectID": "index.html#dms-to-dd-conversion",
+    "href": "index.html#dms-to-dd-conversion",
+    "title": "",
+    "section": "DMS to DD conversion",
+    "text": "DMS to DD conversion\n\nConverting is simple, 60 minutes in a degree, 60 seconds in a minute\n\n\n128° 40’ 52.0428” W"
   },
   {
     "objectID": "index.html#projections",
