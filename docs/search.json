@@ -298,21 +298,21 @@
     "href": "index.html#dms-to-dd-conversion",
     "title": "",
     "section": "DMS to DD conversion",
-    "text": "DMS to DD conversion\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.681123"
+    "text": "DMS to DD conversion\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
   },
   {
     "objectID": "index.html#spheroids-and-geoids",
     "href": "index.html#spheroids-and-geoids",
     "title": "",
     "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\n\nGCS is based on a sphere, spheroid, or geoid\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravity field rather than its topography 1\n\n\n    \\(\\circ\\) Gravity field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid Specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
+    "text": "Spheroids and Geoids\n\n\n\nGCS is based on a sphere, spheroid, or geoid\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravitational field rather than its topography 1\n\n\n    \\(\\circ\\) Gravitational field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid is the specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
   },
   {
     "objectID": "index.html#spheroids-and-geoids-1",
     "href": "index.html#spheroids-and-geoids-1",
     "title": "",
     "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\nso the surface is approximated using a\nspheroid (also called an ellipsoid of revolution)\nSome spheroids are suited for global use, others for local use"
+    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\n\n\nso the surface is approximated using a spheroid (also called an ellipsoid of revolution)\n\n\nSome spheroids are suited for global use, others for local use"
   },
   {
     "objectID": "index.html#datums",
@@ -326,6 +326,6 @@
     "href": "index.html#projections",
     "title": "",
     "section": "Projections",
-    "text": "Projections"
+    "text": "Projections\n\nNow that we understand the concepts of coordinates and datums we can understand projections."
   }
 ]

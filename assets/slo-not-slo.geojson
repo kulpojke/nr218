@@ -1,0 +1,33 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Luis Obispo, CA",
+        "description": "Original location in California"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.680656, 35.270378]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mirror Point (Positive Longitude)",
+        "description": "Same latitude, longitude without negative sign"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [120.680656, 35.270378]
+      }
+    }
+  ]
+}

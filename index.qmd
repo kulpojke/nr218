@@ -756,6 +756,11 @@ degrees (DD).
 128° 40' 52.0428" <span style="color: red;">W</span>
 :::
 
+::: {.fragment .absolute .fade-in-then-out data-fragment-index=6 style="text-align: center; font-size:1.2em"}
+![](img/slo-not-slo.png)
+:::
+
+
 :::
 
 :::
@@ -776,10 +781,14 @@ degrees (DD).
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index=5 style="text-align: center; font-size:1.2em"}
-<span style="color: red;">-</span>128.681123
+<span style="color: red;">-</span>128.68112299
 :::
 
 :::
+:::
+
+::: {.fragment  .fade-in-then-out data-fragment-index=6 style="text-align: center; font-size:1.5em"}
+<span style="color: red;">The negative is important!</span> SLO vs. off the coast of Shandong
 :::
 
 ## Spheroids and Geoids {.columns .incremental style="font-size:0.6em"}
@@ -797,15 +806,15 @@ A __geoid__ is an approximation of the true shape of the earth
 :::
 
 ::: {.fragment .fade-in data-fragment-index=3 style="font-size:0.6em"}    
-&nbsp;&nbsp;&nbsp; $\circ$ As defined by its gravity field rather than its topography [^1]
+&nbsp;&nbsp;&nbsp; $\circ$ As defined by its gravitational field rather than its topography [^1]
 :::
 
 ::: {.fragment .fade-in data-fragment-index=4 style="font-size:0.6em"}    
-&nbsp;&nbsp;&nbsp; $\circ$ Gravity field found by finding equipotential surfaces
+&nbsp;&nbsp;&nbsp; $\circ$ Gravitational field found by finding equipotential surfaces
 :::
 
 ::: {.fragment .fade-in data-fragment-index=4 style="font-size:0.6em"}    
-&nbsp;&nbsp;&nbsp; $\circ$ _The_ geoid Specific equipotential surface that best approximates
+&nbsp;&nbsp;&nbsp; $\circ$ _The_ geoid is the specific equipotential surface that best approximates
 mean sea level (MSL) on a global basis
 ::: 
 
@@ -836,19 +845,28 @@ mean sea level (MSL) on a global basis
 ## Spheroids and Geoids {.columns .smaller style="font-size:0.6em"}
 
 ::: {.column width="40%"}
-+  The geoid is pretty complex...
-+  so the surface is approximated using a  
-_spheroid_ (also called an ellipsoid of revolution) 
-+ Some spheroids are suited for global use, others for local use
+
+::: {.fragment .fade-in data-fragment-index=1}
+The geoid is pretty complex... 
+:::
+
+::: {.fragment .fade-in data-fragment-index=2}
+so the surface is approximated using a  _spheroid_ (also called an ellipsoid of revolution) 
+:::
+
+::: {.fragment .fade-in data-fragment-index=3}
+Some spheroids are suited for global use, others for local use
+:::
+
 :::
 
 ::: {.column width="60%"}
 :::  {r-srack}
-::: {.fragment .fade-in-then-out .absloute}
-![](img/GRAVIMETRIC_DATUM_ORIENTATION.png){style="position: absolute; right: 0px; top: 70px; width: 300px;"}
+::: {.fragment .fade-in-then-out .absloute data-fragment-index=2}
+![](https://upload.wikimedia.org/wikipedia/commons/b/bd/Constructie_ellipso%C3%AFde.gif?20070313202411){style="position: absolute; right: 0px; top: 70px; width: 300px;"}
 :::
 
-::: {.fragment .fade-in-then-out .absloute}
+::: {.fragment .fade-in .absloute data-fragment-index=3}
 ![](img/several_ellipsoids.png){style="position: absolute; right: 0px; top: 70px; width: 300px;"}
 :::
 :::
@@ -859,6 +877,16 @@ _spheroid_ (also called an ellipsoid of revolution)
 + A _datum_ is a spheroid with an origen point and orientation
 + in common parlance they are often used interchangeably
 
-## Projections
+## Projections {.columns}
 
-![](https://imgs.xkcd.com/comics/map_projections.png){style="position: absolute; right: 20px; top: 0px; width: 500px;"}
+::: {.column width="50%"}
+Now that we understand the concepts of coordinates and datums we can understand projections.
+
+:::
+
+
+::: {.column width="50%"}
+![](https://imgs.xkcd.com/comics/map_projections.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+:::
+
+
