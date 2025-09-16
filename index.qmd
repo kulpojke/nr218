@@ -880,13 +880,42 @@ Some spheroids are suited for global use, others for local use
 ## Projections {.columns}
 
 ::: {.column width="50%"}
-Now that we understand the concepts of coordinates and datums we can understand projections.
+
++ Mathematical formulas for transform 3D Earth to 2D map
++ i.e. project the latitude and longitude to x any coordinates on a plane
++ There are infinite ways to do this, they all cause distortion
 
 :::
-
 
 ::: {.column width="50%"}
 ![](https://imgs.xkcd.com/comics/map_projections.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
 :::
 
+## Projections {.columns}
 
+::: {.column width="50%"}
+::: {r-stack}
+::: {.fragment .fade-in .absloute data-fragment-index=1}
+Imagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.
+:::
+
+::: {.fragment .fade-in .absloute data-fragment-index=2}
+There are three commonly used surfaces
+:::
+
+:::
+:::
+
+
+::: {.column width="50%"}
+:::{r-stack}
+::: {.fragment .fade-in-then-out .absloute data-fragment-index=1}
+![](img/projection_concept.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+:::
+
+::: {.fragment .fade-in-then-out .absloute data-fragment-index=2}
+![](img/flattenable.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+:::
+
+:::
+:::

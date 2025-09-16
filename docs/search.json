@@ -326,6 +326,13 @@
     "href": "index.html#projections",
     "title": "",
     "section": "Projections",
-    "text": "Projections\n\nNow that we understand the concepts of coordinates and datums we can understand projections."
+    "text": "Projections\n\n\nMathematical formulas for transform 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
+  },
+  {
+    "objectID": "index.html#projections-1",
+    "href": "index.html#projections-1",
+    "title": "",
+    "section": "Projections",
+    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces"
   }
 ]
