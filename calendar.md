@@ -71,29 +71,20 @@ format:
 | November 19  | Wednesday - Week 9 | Real World Applications and Careers - Guest Lectures|
 | November 24  | Monday             | Fall Break |
 | November 26  | Wednesday          | Fall Break |
-| December 1   | Monday - Week 10   | Group project Presentations |
-| December 3   | Wednesday - Week 10 | TBD |
+| December 1   | Monday - Week 10   | Final project Presentations |
+| December 3   | Wednesday - Week 10 | Exam. Final Project Presentations |
 
-| December 6   | Saturday           | Common final exams (optional) |
-| December 8   | Monday             | Final examination period begins |
-| December 10  | Wednesday          | Final examination period |
-| December 12  | Friday             | Final examination period ends |
-| December 13  | Saturday           | Faculty workday, no classes / End of term |
-| December 14  | Sunday             | Academic holiday begins |
-| January 4    | Sunday             | Academic holiday ends |
+
 
 
 ## Project Assignments
 
-This course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other Thursday (see table below for dates), and should be submitted on Canvas [LINK
+This course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other week (see [calendar](#fall-term-calendar-2025) for dates).  Late assignments will be deducted 5% per day late. 
 
-Links to an external site.]. Late assignments will be deducted 5% per day late. 
+There is also a final project, with two final project check-ins, as well as an exam.
 
- 
+For your final project you will propose a novel GIS question and collect or analyze data to answer it.  For the final project you may work alone or in small groups.
 
-There is also a final project, and two final project check-ins in which you will propose a novel GIS question and collect or analyze data to answer it.
-
- 
 
 ## Assignment Weight
 
@@ -127,7 +118,7 @@ Students are allowed a 48-hour ‘no questions’ asked grace period on assignme
 
 ## Attendance Policy 
 
-Students are allowed 3 unexcused absences. Beyond 3 unexcused absences, you will be deducted 2% of the total grade for each unauthorized absence.
+Before leaving for each class you will need to turn in an "exit ticket". The exit ticket is simply a short answer to a question that will given in class. The exit ticket will let me know that you were in class, and help me to gauge how well students are absorbing the material.  You are allowed 3 unexcused absences. Beyond 3 unexcused absences, you will be deducted 2% of the total grade for each unauthorized absence.
 
 ## Academic Integrity
 
@@ -146,13 +137,13 @@ Students can seek AI assistance for project work, but it is important to conside
     + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework
     + The struggle of working through difficult concepts is often where the most valuable learning occurs
 
-That is not to say it is never useful or appropriate to use, but you need to know its limitations.
+That is not to say LLMs are never useful or appropriate to use, but you need to know its limitations.
 
 
  
 ## Textbook
 
-We will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found here: https://saylordotorg.github.io/text_essentials-of-geographic-information-systems
+We will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found [here](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems)
 
 
 

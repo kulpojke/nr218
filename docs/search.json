@@ -25,14 +25,14 @@
     "href": "index.html#active-learning-and-growth-mindset",
     "title": "",
     "section": "Active Learning and Growth Mindset",
-    "text": "Active Learning and Growth Mindset\n\nLearn by doing\nAsk questions\nExplore your interests"
+    "text": "Active Learning and Growth Mindset\n\nThis class will be challenging - learning new skills is hard\nRecognize that you won’t be good immediately\n\nMastery takes time and repetition\n\nAsk for help!\n\nInternet, classmates, professor\n\nTry not to rely on AI\n\n\nDon’t be afraid to mess up\nCrash the computer, it’s ok!\nThink critically and logically, don’t get frustrated\nThere will be lots of hands-on work time in this class\nSuggest bringing laptop if you have one"
   },
   {
-    "objectID": "index.html#active-learning-and-growth-mindset-1",
-    "href": "index.html#active-learning-and-growth-mindset-1",
+    "objectID": "index.html#section",
+    "href": "index.html#section",
     "title": "",
-    "section": "Active Learning and Growth Mindset",
-    "text": "Active Learning and Growth Mindset\n\nThis class will be challenging - learning new skills is hard\nRecognize that you won’t be good immediately\n\nMastery takes time and repetition\n\nAsk for help!\n\nInternet, classmates, professor (Try not to rely on AI)\n\nDon’t be afraid to mess up\nCrash the computer, it’s ok!\nThink critically and logically, don’t get frustrated\nThere will be lots of hands-on work time in this class\nSuggest bringing laptop if you have one"
+    "section": "",
+    "text": "Try not to rely on AI\n\n\n\nAI generated text may not be used for any writing .\nIt is ok to seek AI assistance for project work, but it is important to consider that AI has the potential to make you stupid and waste your time!\n\nDepending on AI prevents development of critical thinking, writing, and problem-solving skills\nAI will sometimes lead you down a terrible, deep rabbit hole of confusion\nGetting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework\nThe struggle of working through difficult concepts is often where the most valuable learning occurs\n\n\nThat is not to say LLMs are never useful or appropriate to use, but you need to know its limitations."
   },
   {
     "objectID": "index.html#class-icebreaker",
@@ -84,13 +84,6 @@
     "text": "Beautiful Maps\n\nQGIS Map gallery\nOceano Dunes (using plas.io)\nStackexchange thread of beautiful maps\nCal poly Tree map"
   },
   {
-    "objectID": "index.html#syllabus-review",
-    "href": "index.html#syllabus-review",
-    "title": "",
-    "section": "Syllabus Review",
-    "text": "Syllabus Review"
-  },
-  {
     "objectID": "index.html#location",
     "href": "index.html#location",
     "title": "",
@@ -102,14 +95,21 @@
     "href": "index.html#direction",
     "title": "",
     "section": "Direction",
-    "text": "Direction\n\n\nThe position of a feature of phenomenon on the surface of the earth relative to some reference point\n\nEgocentric location, to myleft\nLandmark direction, towards the mountain\n\nIn geography and GIS, there are three more standard benchmarks that are used to define the directions:\n\nTrue north (and south) is towards the point at which the axis of the earth’s rotation intersects the earth’s surface\nMagnetic north is towards where the Earth’s magnetic fields merge in the North\n\nGrid north is the northward direction of the grid lines of latitude and longitude on a map"
+    "text": "Direction\nThe position of a feature or phenomenon on the surface of the earth relative to some reference point\n\nEgocentric location, to my left\nLandmark direction, towards the mountain\n\nIn geography and GIS, there are three more standard benchmarks that are used to define the directions:\nTrue north (and south) is towards the point at which the axis of the earth’s rotation intersects the earth’s surface\nMagnetic north is towards where the Earth’s magnetic fields merge in the North\nGrid north is the northward direction of the grid lines of latitude and longitude on a map"
+  },
+  {
+    "objectID": "index.html#section-1",
+    "href": "index.html#section-1",
+    "title": "",
+    "section": "",
+    "text": "True north\n\n\nMagnetic north\n\n\nGrid north"
   },
   {
     "objectID": "index.html#distance",
     "href": "index.html#distance",
     "title": "",
     "section": "Distance",
-    "text": "Distance\n\nThe separation between locations\n\nNominal (e.g. close/far) or Absolute (1 kilometer)\n\nCartesian distance on a flat surface is easy:\n\\[\nD = \\sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}\n\\]\nDistance on a 3-Dimensional surface is complicated. We willdiscussitlater"
+    "text": "Distance\n\nThe separation between locations\n\nNominal (e.g. close/far) or Absolute (1 kilometer)\n\nCartesian distance on a flat surface is easy:\n\\[\nD = \\sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}\n\\]\nDistance on a 3-Dimensional surface is complicated. We will discuss it later"
   },
   {
     "objectID": "index.html#space",
@@ -147,8 +147,8 @@
     "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
   },
   {
-    "objectID": "index.html#section",
-    "href": "index.html#section",
+    "objectID": "index.html#section-2",
+    "href": "index.html#section-2",
     "title": "",
     "section": "",
     "text": "Right-click layer –&gt; Open Attribute Table"
@@ -165,7 +165,7 @@
     "href": "index.html#mentalcognitive-maps",
     "title": "",
     "section": "Mental/Cognitive Maps",
-    "text": "Mental/Cognitive Maps\n\nPsychological tools that we all use every day.\nStored in our brain\nTo get from one place to another, or to understand and situate events that we hear about\nReflect the amount and extent of geographic knowledge and spatial awareness that we possess\n\nUsing a blank sheet of paper, take five minutes to draw a map from memory ofSan Luis Obispo"
+    "text": "Mental/Cognitive Maps\n\nPsychological tools that we all use every day.\nStored in our brain\nTo get from one place to another, or to understand and situate events that we hear about\nReflect the amount and extent of geographic knowledge and spatial awareness that we possess\n\nUsing a blank sheet of paper, take five minutes to draw a map from memory of San Luis Obispo"
   },
   {
     "objectID": "index.html#what-is-data-what-are-data",
@@ -196,6 +196,13 @@
     "text": "What is Metadata\n\nData about the data, e.g. units, date collected, instruments used…"
   },
   {
+    "objectID": "index.html#section-3",
+    "href": "index.html#section-3",
+    "title": "",
+    "section": "",
+    "text": "Checkout Ticket - Some Basic GIS Concepts\n\n    \n    \n    Submit"
+  },
+  {
     "objectID": "index.html#data-storage",
     "href": "index.html#data-storage",
     "title": "",
@@ -217,18 +224,18 @@
     "text": "File types\n\nComputer programs only read certain file formats.\nFamiliarity with different file types is helpful.\nCommon GIS file types: .shp (along with its sidecar files .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
   },
   {
-    "objectID": "index.html#file-organization-and-computer-hygiene",
-    "href": "index.html#file-organization-and-computer-hygiene",
-    "title": "",
-    "section": "File Organization and Computer Hygiene",
-    "text": "File Organization and Computer Hygiene\n\nBe kind to your future self - keep your files organized:\n\nUse directories (a.k.a folders)\nUse descriptive names:\n\ne.g. slo_county_26910.geojson not county.geojson\n\nDon’t put spaces in file or directory names (see this)"
-  },
-  {
     "objectID": "index.html#file-paths-and-directories",
     "href": "index.html#file-paths-and-directories",
     "title": "",
     "section": "File Paths and Directories",
     "text": "File Paths and Directories"
+  },
+  {
+    "objectID": "index.html#file-organization-and-computer-hygiene",
+    "href": "index.html#file-organization-and-computer-hygiene",
+    "title": "",
+    "section": "File Organization and Computer Hygiene",
+    "text": "File Organization and Computer Hygiene\n\nBe kind to your future self - keep your files organized:\n\nUse directories (a.k.a folders)\nUse descriptive names:\n\ne.g. slo_county_26910.geojson not county.geojson\n\nDon’t put spaces in file or directory names (see this)"
   },
   {
     "objectID": "index.html#how-to-organize-your-files",
@@ -389,7 +396,7 @@
     "href": "calendar.html#project-assignments",
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Project Assignments",
-    "text": "Project Assignments\nThis course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other Thursday (see table below for dates), and should be submitted on Canvas [LINK\nLinks to an external site.]. Late assignments will be deducted 5% per day late.\nThere is also a final project, and two final project check-ins in which you will propose a novel GIS question and collect or analyze data to answer it."
+    "text": "Project Assignments\nThis course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other week (see calendar for dates). Late assignments will be deducted 5% per day late.\nThere is also a final project, with two final project check-ins, as well as an exam.\nFor your final project you will propose a novel GIS question and collect or analyze data to answer it. For the final project you may work alone or in small groups."
   },
   {
     "objectID": "calendar.html#assignment-weight",
@@ -417,7 +424,7 @@
     "href": "calendar.html#attendance-policy",
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Attendance Policy",
-    "text": "Attendance Policy\nStudents are allowed 3 unexcused absences. Beyond 3 unexcused absences, you will be deducted 2% of the total grade for each unauthorized absence."
+    "text": "Attendance Policy\nBefore leaving for each class you will need to turn in an “exit ticket”. The exit ticket is simply a short answer to a question that will given in class. The exit ticket will let me know that you were in class, and help me to gauge how well students are absorbing the material. You are allowed 3 unexcused absences. Beyond 3 unexcused absences, you will be deducted 2% of the total grade for each unauthorized absence."
   },
   {
     "objectID": "calendar.html#academic-integrity",
@@ -431,14 +438,14 @@
     "href": "calendar.html#use-of-ai",
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Use of AI",
-    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time! + Depending on AI prevents development of critical thinking, writing, and problem-solving skills + AI will sometimes lead you down a terrible, deep rabbit hole of confusion + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework + The struggle of working through difficult concepts is often where the most valuable learning occurs\nThat is not to say it is never useful or appropriate to use, but you need to know its limitations."
+    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time! + Depending on AI prevents development of critical thinking, writing, and problem-solving skills + AI will sometimes lead you down a terrible, deep rabbit hole of confusion + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework + The struggle of working through difficult concepts is often where the most valuable learning occurs\nThat is not to say LLMs are never useful or appropriate to use, but you need to know its limitations."
   },
   {
     "objectID": "calendar.html#textbook",
     "href": "calendar.html#textbook",
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Textbook",
-    "text": "Textbook\nWe will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found here: https://saylordotorg.github.io/text_essentials-of-geographic-information-systems"
+    "text": "Textbook\nWe will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found here"
   },
   {
     "objectID": "calendar.html#tutorials",

@@ -44,23 +44,37 @@ Use arrows or menu in bottom left corner to navigate
 + Understand basic principles of GIS
 
 
-## Active Learning and Growth Mindset
-+ Learn by doing
-+ Ask questions
-+ Explore your interests
-
-
-## Active Learning and Growth Mindset {style="font-size:0.5em"}
+## Active Learning and Growth Mindset {auto-animate=true style="font-size:0.5em"}
 + This class will be challenging - learning new skills is hard
 + Recognize that you won’t be good immediately
   - Mastery takes time and repetition
 + Ask for help!
-  - Internet, classmates, professor (Try not to rely on AI)
+  - Internet, classmates, professor
+  - ::: {style="margin-top: 0px;"}
+  Try not to rely on AI
+  :::
 + Don’t be afraid to mess up
 + Crash the computer, it’s ok!
 + Think critically and logically, don’t get frustrated
 + There will be lots of hands-on work time in this class
 + Suggest bringing laptop if you have one
+
+## {auto-animate=true}
+::: {style="margin-top: 10px; font-size: 2em;"}
+Try not to rely on AI
+:::
+
+::: {style="font-size:0.5em"}
++ AI generated text [__may not be used for any writing__]{.fragment .highlight-current-red} .
++ It is ok to seek AI assistance for project work, but it is important to consider that AI has the potential to make you stupid and waste your time!
+    + Depending on AI prevents development of critical thinking, writing, and problem-solving skills
+    + AI will sometimes lead you down a terrible, deep rabbit hole of confusion
+    + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework
+    + The struggle of working through difficult concepts is often where the most valuable learning occurs
+
+That is not to say LLMs are never useful or appropriate to use, but you need to know its limitations.
+:::
+
 
 ## Class Icebreaker
 
@@ -72,6 +86,8 @@ __Three things in common__
   + Boring examples:
     + "We are a forest and fire sciences majors"
     + "We are all from Southern California"
+
+# What is GIS Why is it important
 
 ## What is GIS?
 
@@ -195,6 +211,7 @@ Additionally, GIS can be performed purely using scripting languages
 
 
 ## Software - benefits of open source{.smaller}
+
 + Available to you, for free, forever (even after Cal Poly)
 + It’s free, as in liberty. If you need extra functionality in QGIS, you can do more than just hope it
 will be included in the next release. You can sponsor the development of a feature, or add it
@@ -210,11 +227,11 @@ yourself if you are familiar with programming.
 + [Stackexchange thread of beautiful maps](https://gis.stackexchange.com/questions/3083/seeking-examples-of-beautiful-maps)
 + [Cal poly Tree map](https://calpoly.maps.arcgis.com/apps/webappviewer/index.html?id=49c730285d064d17be4c8429426d7609)
 
-## Syllabus Review
+
 
 # Some basic GIS Concepts
 
-## Location
+## Location {style="font-size:0.5em"}
 
 + Position
 + A position on the surface of the earth
@@ -231,36 +248,52 @@ yourself if you are familiar with programming.
     + X,Y,(Z) is the Cartesian coordinate system
     + Latitude and Longitude are the (non-projected )Geographic Coordinate System
   
-## Direction {style="font-size: 0.6em"}
+## Direction {style="font-size: 0.6em" auto-animate=true auto-animate-easing="ease-in-out"}
 
-:::{r-stack}
-:::{.fragment .fade-in-then-out .absolute}
-The position of a feature of phenomenon on the surface of the earth
+
+
+The position of a feature or phenomenon on the surface of the earth
 relative to some reference point
 
-+ Egocentric location, _to myleft_
++ Egocentric location, _to my left_
 + Landmark direction, _towards the mountain_
 
 In geography and GIS, there are three more standard benchmarks that are used to define the directions:
 
-+ True north (and south) is towards the point at which the axis of the
+
+
+[True north]{data-id="1"} (and south) is towards the point at which the axis of the
 earth’s rotation intersects the earth’s surface
-+ Magnetic north is towards where the Earth's magnetic fields merge in the North  
-+ Grid north is the northward direction of the grid lines of latitude and longitude on a map
+
+[Magnetic north]{data-id="2"} is towards where the Earth's magnetic fields merge in the North  
+
+[Grid north]{data-id="3"} is the northward direction of the grid lines of latitude and longitude on a map
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+::: {.absolute style="top: 10px; left: 50px; font-size: 0.8em;" data-id="1"}
+True north
 :::
 
-:::{.fragment .fade-in-then-out .absolute}
+::: {.absolute style="top: 10px; left: 50%; transform: translateX(-50%); font-size: 0.8em;" data-id="2"}
+Magnetic north
+:::
+
+::: {.absolute style="top: 10px; right: 50px; font-size: 0.8em;" data-id="3"}
+Grid north
+:::
+
+:::{.absolute style="top: 40px; left: 50px; font-size: 0.8em;" data-id="1"}
 ![](img/Utm-latlon_grid_en.svg.png){width=400px top=10 right=0}
 :::
 
-:::{.fragment .fade-in-then-out .absolute}
-![](img/subway-map-2019a.png){width=400px top=10}
-![](img/subway_true_north.png){width=400px top=10 left=0}
+:::{.absolute style="top: 40px; right: 50px; font-size: 0.8em;" data-id="2"}
+![](img/North_Magnetic_Poles.png){width=400px top=10}
 :::
 
 
 
-:::
+
 
 ## Distance
 + The separation between locations
@@ -270,7 +303,7 @@ $$
 D = \sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}
 $$
 
-+ Distance on a 3-Dimensional surface is complicated. We willdiscussitlater
++ Distance on a 3-Dimensional surface is complicated. We will discuss it later
 
 
 
@@ -408,7 +441,7 @@ map
 + Reflect the amount and extent of geographic knowledge and spatial awareness that we possess
 
 Using a blank sheet of paper, take five minutes to
-draw a map from memory ofSan Luis Obispo
+draw a map from memory of San Luis Obispo
 
 
 
@@ -437,12 +470,72 @@ Data with a geographic and/or  spatial component.
 Data about the data, e.g. units, date collected, instruments used...
 :::
 
+## 
+Checkout Ticket - Some Basic GIS Concepts
+
+```{=html}
+<div class="passphrase-container" style="text-align: center; margin-top: 50px;">
+    <input type="password" id="passphraseInput" style="padding: 10px; font-size: 1.2em; border: 2px solid #ccc; border-radius: 5px; margin: 10px; width: 300px;" placeholder="Enter passphrase...">
+    <br>
+    <button onclick="checkPassphrase()" style="padding: 10px 20px; font-size: 1.2em; background-color: #007acc; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px;">Submit</button>
+    
+    <div id="response" style="margin-top: 20px; padding: 15px; border-radius: 5px; font-size: 1.1em; display: none;"></div>
+</div>
+
+<script>
+function checkPassphrase() {
+    const input = document.getElementById('passphraseInput');
+    const response = document.getElementById('response');
+    const passphrase = input.value.toLowerCase().trim();
+    
+    const passphrases = {
+        'sajaboys': 'Are the concepts of true north, magnetic north, and grid north more important for reference maps or thematic maps?  Why?.',
+    };
+    
+    response.style.display = 'block';
+    
+    if (passphrases[passphrase]) {
+        response.style.backgroundColor = '#d4edda';
+        response.style.color = '#155724';
+        response.textContent = passphrases[passphrase];
+    } else {
+        response.style.backgroundColor = '#f8d7da';
+        response.style.color = '#721c24';
+        response.textContent = 'Incorrect passphrase. Try again!';
+    }
+    
+    input.value = '';
+}
+</script>
+```
+
+# Spatial Data Models and Formats
+
 ## Data Storage{style="font-size: 0.5em"}
 + We store data in computer-readable format in files
   + Sometimes files store data as text (often called human readable files) 
   + Other times there are just 1s and 0s (binary file)
   + Even the human readable files are ultimately stored as 1s and 0s ([more on that](https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW))
 
+
+::: {r-stack}
+::: {.fragment .absolute .fade-in-then-out}
+![](img/utf8.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out}
+![](img/malloc.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out}
+![](img/smallMemory_cellMatrixSmall.gif)
+:::
+
+::: {.fragment .absolute .fade-in-then-out}
+![](img/utf8.png)
+:::
+
+:::
 
 ## Data Storage{style="font-size: 0.5em"}
 
@@ -468,18 +561,6 @@ _File extensions_ denote files readable by certain programs, for example:
 + Common GIS file types: .shp (along with its _sidecar files_ .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg,
 .json, .geojson, .txt, .hdf, .nc, .parquet and a few others
 
-## File Organization and Computer Hygiene
-:::{style="margin-right: 520px; font-size: 0.5em"}
-Be kind to your future self - keep your files organized:
-
-+ Use directories (a.k.a folders)
-+ Use descriptive names:
-  + e.g. `slo_county_26910.geojson` not `county.geojson`
-+ Don't put spaces in file or directory names (see [this](https://authors.library.caltech.edu/records/mmnpf-cez11))
-:::
-
-![](https://imgs.xkcd.com/comics/documents.png){.absolute top=100 right=0 height=500}
-
 
 ## File Paths and Directories
 
@@ -502,6 +583,17 @@ Be kind to your future self - keep your files organized:
 
 :::
 
+## File Organization and Computer Hygiene
+:::{style="margin-right: 520px; font-size: 0.5em"}
+Be kind to your future self - keep your files organized:
+
++ Use directories (a.k.a folders)
++ Use descriptive names:
+  + e.g. `slo_county_26910.geojson` not `county.geojson`
++ Don't put spaces in file or directory names (see [this](https://authors.library.caltech.edu/records/mmnpf-cez11))
+:::
+
+![](https://imgs.xkcd.com/comics/documents.png){.absolute top=100 right=0 height=500}
 
 ## How to Organize your files {style="font-size:0.5em"}
 + Pick a convention and be consistent
