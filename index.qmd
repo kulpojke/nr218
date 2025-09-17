@@ -13,6 +13,8 @@ navigation-mode: vertical
 
 Use arrows or menu in bottom left corner to navigate
 
+[Syllabus](calendar.html)
+
 # NR 218 - Introduction
 
 
@@ -439,7 +441,7 @@ Data about the data, e.g. units, date collected, instruments used...
 + We store data in computer-readable format in files
   + Sometimes files store data as text (often called human readable files) 
   + Other times there are just 1s and 0s (binary file)
-  + Even the human readable files are ultimately stored as 1s and 0s ((want to know more)[https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW])
+  + Even the human readable files are ultimately stored as 1s and 0s ([more on that](https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW))
 
 
 ## Data Storage{style="font-size: 0.5em"}
@@ -463,7 +465,7 @@ _File extensions_ denote files readable by certain programs, for example:
 ## File types 
 + Computer programs only read certain file formats.
 + Familiarity with different file types is helpful.
-+ Common GIS file types: .shp (and .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg,
++ Common GIS file types: .shp (along with its _sidecar files_ .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg,
 .json, .geojson, .txt, .hdf, .nc, .parquet and a few others
 
 ## File Organization and Computer Hygiene
@@ -500,20 +502,65 @@ Be kind to your future self - keep your files organized:
 
 :::
 
-## Human readable vs. binary files {.columns data-auto-animate="true"}
+
+## How to Organize your files {style="font-size:0.5em"}
++ Pick a convention and be consistent
++ For example:
+
+```
+/Work/NR_classes/
+├── Class1/
+│   └── ...
+├── NR218/
+│   ├── Project_1/
+│   │   └── ...
+│   └── Project_2/
+│       ├── Vector/
+│       │   ├── trees.parquet
+│       │   └── streams.geogjson
+|       ├── Raster/
+│       │   ├── dem.tif
+│       │   └── rainfall.h5
+│       ├── qgis/
+│       │   └── project_2.qmd
+│       └── Results/
+│           ├── Figures/
+│           │   ├── figure1.png
+│           │   ├── figure2.png
+│           │   └── map.png
+│           └── proj_2_report.doc
+```
+
+## Cloud Storage
+
+Many options, but mounting Cal Poly One Drive as a disk is is probably the simplest. 
+
+See the Cal Poly  tutorial [here](https://calpoly.atlassian.net/wiki/spaces/CPKB/pages/732921936/Access+OneDrive+and+SharePoint+from+my+Computer )
+or try [this](https://github.com/rclone/rclone), for Linux users or the computer savvy.
+
+# Tutorial - Quick Intro to QGIS {.incremental}
+
+1) Download `SPR_data.zip` from the files section of canvas
+2) Extract the file ([Linux](https://linuxize.com/post/how-to-unzip-files-in-linux/). [Windows](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5), [Mac](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac)), and place in appropriate file location (Remember, organize your files!)
+
+
+# A quick intro to geospatial data 
+
+
+## Human readable vs. binary files {.columns data-auto-animate="true" style="font-size: 0.6em"}
 ::: {.column width="50%"}
 __Human Readable__
 
 + file.txt
 + [file.csv]{data-id="csv-item" style="padding: 2px 4px; border-radius: 3px;"}
 + file.xml
-+ file.docx$^{*}$ 
++ file.docx[^1] 
 + file.json
 + filename.py
 
-:::{style="font-size: 0.5em"}
-\* actually, after unzipping a docx is a directory of xml files. Binary until unzipped. 
-:::
+
+[^1]: Actually, a docx is a binary until its unzipped, then it is just a directory of xml files. 
+
 
 :::
 
@@ -531,8 +578,8 @@ __Binary__
 ## Delimiters {data-auto-animate="true"}
 
 :::{style="font-size: 0.6em"}
-Data in a file are separated by a _delimiter_, such as a comma,
-tab, space, etc. They also generaly have a header describing the contents of each row. For example a csv is a comma delimited file:
+Data entries in many text files are separated by a _delimiter_, such as a comma,
+tab, space, etc. They also generally have a header describing the contents of each row. For example a csv is a comma delimited file:
 :::
 
 + [file.csv]{data-id="csv-item"}
@@ -548,7 +595,7 @@ OBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat
 ```
 :::
 
-:::{.fragment style="position: absolute; top: 268px; left: 2; width: 800px; height: 21px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::{.fragment style="position: absolute; top: 298px; left: 2; width: 800px; height: 21px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
 :::
 
 
@@ -649,7 +696,7 @@ What _is_ a CRS?
 :::
  
 :::{.fragment .fade-in-then-out data-fragment-index=5 style="position: absolute;"}
-Here is how we will assign an SRS.
+Click the _Geometry Definition_ dropdown to assign an SRS.
 :::
 
 ::: {.fragment .fade-in data-fragment-index=6 style="position: absolute;"}
@@ -806,7 +853,7 @@ A __geoid__ is an approximation of the true shape of the earth
 :::
 
 ::: {.fragment .fade-in data-fragment-index=3 style="font-size:0.6em"}    
-&nbsp;&nbsp;&nbsp; $\circ$ As defined by its gravitational field rather than its topography [^1]
+&nbsp;&nbsp;&nbsp; $\circ$ As defined by its gravitational field rather than its topography [^2]
 :::
 
 ::: {.fragment .fade-in data-fragment-index=4 style="font-size:0.6em"}    
@@ -839,7 +886,7 @@ mean sea level (MSL) on a global basis
 :::
 
 
-[^1]: [Janssen, Volker. "Understanding coordinate reference systems, datums and transformations." (2009).](https://figshare.utas.edu.au/articles/journal_contribution/Understanding_coordinate_reference_systems_datums_and_transformations/22873136/1?file=40609577)
+[^2]: [Janssen, Volker. "Understanding coordinate reference systems, datums and transformations." (2009).](https://figshare.utas.edu.au/articles/journal_contribution/Understanding_coordinate_reference_systems_datums_and_transformations/22873136/1?file=40609577)
 
 
 ## Spheroids and Geoids {.columns .smaller style="font-size:0.6em"}
@@ -862,11 +909,11 @@ Some spheroids are suited for global use, others for local use
 
 ::: {.column width="60%"}
 :::  {r-srack}
-::: {.fragment .fade-in-then-out .absloute data-fragment-index=2}
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=2}
 ![](https://upload.wikimedia.org/wikipedia/commons/b/bd/Constructie_ellipso%C3%AFde.gif?20070313202411){style="position: absolute; right: 0px; top: 70px; width: 300px;"}
 :::
 
-::: {.fragment .fade-in .absloute data-fragment-index=3}
+::: {.fragment .fade-in .absolute data-fragment-index=3}
 ![](img/several_ellipsoids.png){style="position: absolute; right: 0px; top: 70px; width: 300px;"}
 :::
 :::
@@ -893,27 +940,27 @@ Some spheroids are suited for global use, others for local use
 
 ## Projections {.columns}
 
-::: {.column width="50%"}
-::: {r-stack}
-::: {.fragment .fade-in .absloute data-fragment-index=1}
+::: {.column width="50%" .smaller}
+
+::: {.fragment .fade-in-then-semi-out data-fragment-index=1}
 Imagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.
 :::
 
-::: {.fragment .fade-in .absloute data-fragment-index=2}
+::: {.fragment .fade-in data-fragment-index=2}
 There are three commonly used surfaces
 :::
 
-:::
+
 :::
 
 
 ::: {.column width="50%"}
 :::{r-stack}
-::: {.fragment .fade-in-then-out .absloute data-fragment-index=1}
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=1}
 ![](img/projection_concept.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
 :::
 
-::: {.fragment .fade-in-then-out .absloute data-fragment-index=2}
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=2}
 ![](img/flattenable.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
 :::
 

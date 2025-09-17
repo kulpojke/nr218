@@ -200,7 +200,7 @@
     "href": "index.html#data-storage",
     "title": "",
     "section": "Data Storage",
-    "text": "Data Storage\n\nWe store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times there are just 1s and 0s (binary file)\nEven the human readable files are ultimately stored as 1s and 0s ((want to know more)[https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW])"
+    "text": "Data Storage\n\nWe store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times there are just 1s and 0s (binary file)\nEven the human readable files are ultimately stored as 1s and 0s (more on that)"
   },
   {
     "objectID": "index.html#data-storage-1",
@@ -214,7 +214,7 @@
     "href": "index.html#file-types",
     "title": "",
     "section": "File types",
-    "text": "File types\n\nComputer programs only read certain file formats.\nFamiliarity with different file types is helpful.\nCommon GIS file types: .shp (and .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
+    "text": "File types\n\nComputer programs only read certain file formats.\nFamiliarity with different file types is helpful.\nCommon GIS file types: .shp (along with its sidecar files .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
   },
   {
     "objectID": "index.html#file-organization-and-computer-hygiene",
@@ -231,18 +231,32 @@
     "text": "File Paths and Directories"
   },
   {
+    "objectID": "index.html#how-to-organize-your-files",
+    "href": "index.html#how-to-organize-your-files",
+    "title": "",
+    "section": "How to Organize your files",
+    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── Project_1/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
+  },
+  {
+    "objectID": "index.html#cloud-storage",
+    "href": "index.html#cloud-storage",
+    "title": "",
+    "section": "Cloud Storage",
+    "text": "Cloud Storage\nMany options, but mounting Cal Poly One Drive as a disk is is probably the simplest.\nSee the Cal Poly tutorial here or try this, for Linux users or the computer savvy."
+  },
+  {
     "objectID": "index.html#human-readable-vs.-binary-files",
     "href": "index.html#human-readable-vs.-binary-files",
     "title": "",
     "section": "Human readable vs. binary files",
-    "text": "Human readable vs. binary files\n\nHuman Readable\n\nfile.txt\nfile.csv\nfile.xml\nfile.docx\\(^{*}\\)\nfile.json\nfilename.py\n\n\n* actually, after unzipping a docx is a directory of xml files. Binary until unzipped.\n\n\nBinary\n\nfilename.pdf\nfilename.tif\nfilename.laz\nfilename.parquet\nfilename.pyc"
+    "text": "Human readable vs. binary files\n\nHuman Readable\n\nfile.txt\nfile.csv\nfile.xml\nfile.docx1\nfile.json\nfilename.py\n\n\nBinary\n\nfilename.pdf\nfilename.tif\nfilename.laz\nfilename.parquet\nfilename.pyc\n\nActually, a docx is a binary until its unzipped, then it is just a directory of xml files."
   },
   {
     "objectID": "index.html#delimiters",
     "href": "index.html#delimiters",
     "title": "",
     "section": "Delimiters",
-    "text": "Delimiters\n\nData in a file are separated by a delimiter, such as a comma, tab, space, etc. They also generaly have a header describing the contents of each row. For example a csv is a comma delimited file:\n\n\nfile.csv\n\n\nOBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat\n3025,04ba1d01-c043-478f-ad62-e7eeb903cf09,Heat Perimeter,FIRIS,2025-01-01 05:39:02.359000+00:00,-120.244,34.8824\n3026,4551a5e4-e94d-46e2-9aac-73cc4314c946,Heat Perimeter,FIRIS,2025-01-02 05:16:55.340000+00:00,-116.83,32.5974\n3027,2b1329f3-5b39-4c0e-ad34-1250e436e0e1,Heat Perimeter,FIRIS,2025-01-07 22:11:19.142000+00:00,-118.548,34.058\n3028,a766c1b5-1d8e-43b3-9aac-02358de18d35,Heat Perimeter,FIRIS,2025-01-07 23:17:35.698000+00:00,-118.547,34.0589\n3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589"
+    "text": "Delimiters\n\nData entries in many text files are separated by a delimiter, such as a comma, tab, space, etc. They also generally have a header describing the contents of each row. For example a csv is a comma delimited file:\n\n\nfile.csv\n\n\nOBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat\n3025,04ba1d01-c043-478f-ad62-e7eeb903cf09,Heat Perimeter,FIRIS,2025-01-01 05:39:02.359000+00:00,-120.244,34.8824\n3026,4551a5e4-e94d-46e2-9aac-73cc4314c946,Heat Perimeter,FIRIS,2025-01-02 05:16:55.340000+00:00,-116.83,32.5974\n3027,2b1329f3-5b39-4c0e-ad34-1250e436e0e1,Heat Perimeter,FIRIS,2025-01-07 22:11:19.142000+00:00,-118.548,34.058\n3028,a766c1b5-1d8e-43b3-9aac-02358de18d35,Heat Perimeter,FIRIS,2025-01-07 23:17:35.698000+00:00,-118.547,34.0589\n3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589"
   },
   {
     "objectID": "index.html#reading-a-csv",
@@ -263,7 +277,7 @@
     "href": "index.html#reading-a-csv-with-qgis-1",
     "title": "",
     "section": "Reading a CSV with QGIS",
-    "text": "Reading a CSV with QGIS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDelimited text dialogue box\n\n\nBrowse for csv\n\n\nNotice that it says CRS must be selected.\nWhat is a CRS?\n\n\n\n\nWe will discuss what a CRS is in great detail later.\nFor now just know it provides a reference frame for placing the coordinates on the map.\nCoordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)\nSRS = CRS\n\n\n\n\nHere is how we will assign an SRS.\n\n\nUse EPSG:4326 - WGS 84"
+    "text": "Reading a CSV with QGIS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDelimited text dialogue box\n\n\nBrowse for csv\n\n\nNotice that it says CRS must be selected.\nWhat is a CRS?\n\n\n\n\nWe will discuss what a CRS is in great detail later.\nFor now just know it provides a reference frame for placing the coordinates on the map.\nCoordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)\nSRS = CRS\n\n\n\n\nClick the Geometry Definition dropdown to assign an SRS.\n\n\nUse EPSG:4326 - WGS 84"
   },
   {
     "objectID": "index.html#map-conventions",
@@ -333,6 +347,104 @@
     "href": "index.html#projections-1",
     "title": "",
     "section": "Projections",
-    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces"
+    "text": "Projections\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces"
+  },
+  {
+    "objectID": "calendar.html",
+    "href": "calendar.html",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "",
+    "text": "Jump to class calendar"
+  },
+  {
+    "objectID": "calendar.html#class-details",
+    "href": "calendar.html#class-details",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Class Details",
+    "text": "Class Details\n\nLocation\n\nTimes:\n\nMonday:\n5:10 - 6:00 Lecture\n6:10 - 9:00 Lab\n\nWednesday\n6:10 - 9:00 Lab"
+  },
+  {
+    "objectID": "calendar.html#instructor-details",
+    "href": "calendar.html#instructor-details",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Instructor Details",
+    "text": "Instructor Details\n\nMichael Huggins\nOffice Hours:\n\nBuilding 72 (Plant Conservatory) Room 107\nMondays 2:30 - 4:30s"
+  },
+  {
+    "objectID": "calendar.html#learning-goals",
+    "href": "calendar.html#learning-goals",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Learning Goals",
+    "text": "Learning Goals\n\nAnalyze spatial data\n\nCreate maps using geospatial software\nProduce quality graphics\nApply skills in remote sensing, GIS, and data science to solve a problem of your own design\nUnderstand basic principles of GIS"
+  },
+  {
+    "objectID": "calendar.html#class-details-1",
+    "href": "calendar.html#class-details-1",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Class Details",
+    "text": "Class Details\n\nLocation\n\nTimes:\n\nMonday:\n5:10 - 6:00 Lecture\n6:10 - 9:00 Lab\n\nWednesday\n6:10 - 9:00 Lab"
+  },
+  {
+    "objectID": "calendar.html#project-assignments",
+    "href": "calendar.html#project-assignments",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Project Assignments",
+    "text": "Project Assignments\nThis course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other Thursday (see table below for dates), and should be submitted on Canvas [LINK\nLinks to an external site.]. Late assignments will be deducted 5% per day late.\nThere is also a final project, and two final project check-ins in which you will propose a novel GIS question and collect or analyze data to answer it."
+  },
+  {
+    "objectID": "calendar.html#assignment-weight",
+    "href": "calendar.html#assignment-weight",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Assignment Weight",
+    "text": "Assignment Weight\nProject 1 15%\nProject 2 15%\nProject 3 15%\nProject 4 20%\nFinal Project 25%\nParticipation 10%\nTotal 100%"
+  },
+  {
+    "objectID": "calendar.html#grading",
+    "href": "calendar.html#grading",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Grading",
+    "text": "Grading\nA: ≥ 90%\nB: ≥ 80%\nC: ≥ 70%\nD: ≥ 60%\nF: &lt; 60%\nTotal 100%\n\nGrading is not curved.\nYou will be deducted 2% of the total grade for each unauthorized absence."
+  },
+  {
+    "objectID": "calendar.html#assignment-submission-policy",
+    "href": "calendar.html#assignment-submission-policy",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Assignment Submission Policy",
+    "text": "Assignment Submission Policy\nStudents are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline."
+  },
+  {
+    "objectID": "calendar.html#attendance-policy",
+    "href": "calendar.html#attendance-policy",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Attendance Policy",
+    "text": "Attendance Policy\nStudents are allowed 3 unexcused absences. Beyond 3 unexcused absences, you will be deducted 2% of the total grade for each unauthorized absence."
+  },
+  {
+    "objectID": "calendar.html#academic-integrity",
+    "href": "calendar.html#academic-integrity",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nAll students should be familiar with and adhere to the university’s academic integrity policy, which can be found here: https://osrr.calpoly.edu/academic-integrity"
+  },
+  {
+    "objectID": "calendar.html#use-of-ai",
+    "href": "calendar.html#use-of-ai",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Use of AI",
+    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time! + Depending on AI prevents development of critical thinking, writing, and problem-solving skills + AI will sometimes lead you down a terrible, deep rabbit hole of confusion + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework + The struggle of working through difficult concepts is often where the most valuable learning occurs\nThat is not to say it is never useful or appropriate to use, but you need to know its limitations."
+  },
+  {
+    "objectID": "calendar.html#textbook",
+    "href": "calendar.html#textbook",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Textbook",
+    "text": "Textbook\nWe will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found here: https://saylordotorg.github.io/text_essentials-of-geographic-information-systems"
+  },
+  {
+    "objectID": "calendar.html#tutorials",
+    "href": "calendar.html#tutorials",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
+    "section": "Tutorials",
+    "text": "Tutorials\nWe will refer to a number of tutorial videos which describe QGIS processing. These will come primarily from two sources:\nUjaval Gandhi’s QGIS Tutorials and Tips\nQGIS Training Manual\nThere are many other helpful sources of information on GIS Software\nSpatial Thoughtsintroduction-to-qgis.html\nA Gentle Introduction to GISgentle_gis_introduction/index.html"
   }
 ]
