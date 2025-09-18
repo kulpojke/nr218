@@ -509,7 +509,7 @@ function checkPassphrase() {
 </script>
 ```
 
-# Spatial Data Models and Formats
+# Data storage - A superficial Overview
 
 ## Data Storage{style="font-size: 0.5em"}
 + We store data in computer-readable format in files
