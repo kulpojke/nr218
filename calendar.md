@@ -9,7 +9,8 @@ format:
 [Jump to class calendar](#fall-term-calendar-2025)
 
 ## Class Details
-+ _Location_  
++ Building 180 (Baker Hall)  
+Room 230 
 + Times:
   - [Monday:]{style="font-size:0.8em"}  
     [5:10 - 6:00 Lecture]{style="font-size:0.8em"}  
@@ -34,68 +35,28 @@ format:
 + Understand basic principles of GIS
 
 
-## Class Details
-+ _Location_  
-+ Times:
-  - [Monday:]{style="font-size:0.8em"}  
-    [5:10 - 6:00 Lecture]{style="font-size:0.8em"}  
-    [6:10 - 9:00 Lab]{style="font-size:0.8em"}  
-  - [Wednesday]{style="font-size:0.8em"}  
-    [6:10 - 9:00 Lab]{style="font-size:0.8em"}  
-
-
-
-# Fall Term Calendar 2025
-
-| Date | Day of Week | Description |
-|------|-------------|-------------|
-| September 18 | Thursday           | Fall term classes begin |
-| September 22 | Monday - Week 1    | What is GIS Why is it important |
-| September 24 | Wednesday - Week 1 | Basic GIS Concepts / Scale, Coordinate systems, and Map Projections         |
-| September 29 | Monday - Week 2    | Spatial Data Models and Formats |
-| October 1    | Wednesday - Week 2 | Vector and Raster Data |
-| October 6    | Monday - Week 3    | Finding Acquiring, Creating, and Editing GIS Data|
-| October 8    | Wednesday - Week 3 | GeoProcessing and Vector Operations |
-| October 13   | Monday - Week 4    | Geospatial Data: Satellites, UAVs, GPS |
-| October 15   | Wednesday - Week 4 | Spectral Indices and Tabular Joins |
-| October 20   | Monday - Week 5    | Spatial Joins, Final Project Discussion |
-| October 22   | Wednesday - Week 5 | Spatial Analysis Introduction, Final Project Group Discussions |
-| October 27   | Monday - Week 6    | Spatial Analysis: Map Algebra, Reprojection, Resampling |
-| October 29   | Wednesday - Week 6 | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  |
-| November 3   | Monday - Week 7    | Rasterizing by Attributes, Georeferencing, Statistics 101 |
-| November 5   | Wednesday - Week 7 | ArcGIS Pro, Spreadsheets |
-| November 10  | Monday - Week 8    | Web Mapping, Field Data Collection: Mobile sensors and edge devices |
-| November 11  | Tuesday            | Academic holiday - Veterans Day observed |
-| November 12  | Wednesday - Week 8 | No Class |
-| November 17  | Monday - Week 9    | Advanced Topics: Photogrammetry, Radar, Interferometry |
-| November 19  | Wednesday - Week 9 | Real World Applications and Careers - Guest Lectures|
-| November 24  | Monday             | Fall Break |
-| November 26  | Wednesday          | Fall Break |
-| December 1   | Monday - Week 10   | Final project Presentations |
-| December 3   | Wednesday - Week 10 | Exam. Final Project Presentations |
-
-
-
-
 ## Project Assignments
 
 This course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other week (see [calendar](#fall-term-calendar-2025) for dates).  Late assignments will be deducted 5% per day late. 
 
-There is also a final project, with two final project check-ins, as well as an exam.
+There is also a final project as well as an exam.
 
-For your final project you will propose a novel GIS question and collect or analyze data to answer it.  For the final project you may work alone or in small groups.
+For your final project you will propose a novel GIS question and collect or analyze data to answer it.  
 
 
 ## Assignment Weight
+| Asignement     | Percentage of Grade| Description  |
+|----------------|------|----|
+| Project 1      | 10  |  Mapping  |
+| Project 2      | 10  |  Vector Data Analysis  |
+| Project 3      | 10  |  Raster Data Analysis  |
+| Project 4      | 15  |  Remote Sensing, Image Analysis, and Modeling  |
+| Final Project  | 25  |  ![See description](final_proj.md)   |
+| Exam           | 20  |  Will be hard, but curved  |
+| Participation  | 10  |  Will be based on ![exit tickets](#attendance-policy) and engagement  |
+| Assignment 0   _ 1 (bonus) | Easy bonus points
 
-Project 1 15%  
-Project 2 15%  
-Project 3 15%  
-Project 4 20%  
-Final Project 25%  
-Participation 10%
 
-Total 100%
 
  
 ## Grading
@@ -108,13 +69,12 @@ F: < 60%
 
 Total 100%  
 
-+ Grading is not curved.
-+ You will be deducted 2% of the total grade for each unauthorized absence.
+Note: Grading is not curved (Except exam).
+
 
 ## Assignment Submission Policy 
 
-Students are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline.
-
+Assigmentnts (except the final project) will be submitted on Canvas.  Students are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline.
 
 ## Attendance Policy 
 
@@ -124,12 +84,10 @@ Before leaving for each class you will need to turn in an "exit ticket". The exi
 
 All students should be familiar with and adhere to the university’s academic integrity policy, which can be found here: https://osrr.calpoly.edu/academic-integrity 
 
- 
 
 ## Use of AI
 
 AI generated text __may not be used__ for any writing.
-
 
 Students can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time!
     + Depending on AI prevents development of critical thinking, writing, and problem-solving skills
@@ -137,14 +95,12 @@ Students can seek AI assistance for project work, but it is important to conside
     + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework
     + The struggle of working through difficult concepts is often where the most valuable learning occurs
 
-That is not to say LLMs are never useful or appropriate to use, but you need to know its limitations.
-
+That is not to say LLMs are never useful or appropriate to use, but you need to know their limitations.
 
  
 ## Textbook
 
 We will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found [here](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems)
-
 
 
  
@@ -163,3 +119,35 @@ There are many other helpful sources of information on GIS Software
 [Spatial Thoughts](https://courses.spatialthoughts.com/)introduction-to-qgis.html
 
 [A Gentle Introduction to GIS](https://docs.qgis.org/3.40/en/docs/)gentle_gis_introduction/index.html
+
+
+
+# Fall Term Calendar 2025
+
+Here's the table with the Week column containing just the integer week values:
+
+| Date         | Week | Description  | Reading | Due Dates |
+|--------------|------|--------------|---------|-----------|
+| September 22 | 1    | What is GIS Why is it important | Chapters 1 and 2 | |
+| September 24 | 1    | Basic GIS Concepts / Scale, Coordinate systems, and Map Projections | | |
+| September 29 | 2    | Spatial Data Models and Formats | chapters 3 and 4 | |
+| October 1    | 2    | Vector and Raster Data | | |
+| October 6    | 3    | Finding Acquiring, Creating, and Editing GIS Data| chapters 5 and 6 | [Project 1](project_1.html) |
+| October 8    | 3    | GeoProcessing and Vector Operations | | |
+| October 13   | 4    | Geospatial Data: Satellites, UAVs, GPS | chapters 7 and 8 | |
+| October 15   | 4    | Spectral Indices and Tabular Joins | | [Final Project Brainstorm Due](final_proj.md) |
+| October 20   | 5    | Spatial Joins, Final Project Discussion | chapters 9 and 10 | [Project 2](project_2.html) |
+| October 22   | 5    | Spatial Analysis Introduction, Final Project Group Discussions | |  |
+| October 27   | 6    | Spatial Analysis: Map Algebra, Reprojection, Resampling | | |
+| October 29   | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling | | [Final Project Outline Due](final_proj.md) |
+| November 3   | 7    | Rasterizing by Attributes, Georeferencing, Statistics 101 | | |
+| November 5   | 7    | ArcGIS Pro, Spreadsheets | | Project 3 |
+| November 10  | 8    | Web Mapping, Field Data Collection: Mobile sensors and edge devices | | |
+| November 11  | 8    | Academic holiday - Veterans Day observed | | |
+| November 12  | 8    | No Class | | |
+| November 17  | 9    | Advanced Topics: Photogrammetry, Radar, Interferometry | | |
+| November 19  | 9    | Real World Applications and Careers - Guest Lectures| | |
+| November 24  |      | Fall Break | | |
+| November 26  |      | Fall Break | | |
+| December 1   | 10   | Project 4 Presentations | | Project 4 |
+| December 3   | 10   | Exam. Final Project Presentations | | [Final Project](final_proj.md) |

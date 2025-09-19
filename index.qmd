@@ -1139,7 +1139,7 @@ Some spheroids are suited for global use, others for local use
 :::
 
 ::: {.column width="50%"}
-![](https://imgs.xkcd.com/comics/map_projections.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+![](https://imgs.xkcd.com/comics/map_projections.png){style="max-height: 60vh; width: auto; object-fit: contain;"}
 :::
 
 ## Projections {.columns}
@@ -1163,16 +1163,57 @@ There are three commonly used surfaces
 + Each shape can be in one of two cases _tangent_ and _secant_
 :::
 
-::: {.fragment .absolute style="width: 50%" .fade-in-then-semi-out data-fragment-index=4}
-+ Shape and orientation can be chosen to control the type of distortion introduced due to projection
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=4}
+Shape and orientation can be chosen to control the type of distortion introduced due to projection
 :::
 
 ::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=5}
-    + Equidistant projections
+Tissot's indicatrix
+
+    Shows linear, angular, and areal distortions of maps
 :::
+
+::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=6}
+Equidistant projections
+
+::: {style="font-size:0.7em"}
++ Maintains distance between points in one direction (usually north-south)
++ Angles and shapes are not preserved
++ Good for small-scale maps that cover large areas
++ Often used  for global thematic maps
+:::
+:::
+
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=7}
+Conformal map projections
+
+::: {style="font-size:0.7em"}
++ Preserve angles (also known as bearings) between locations
++ Used for navigational purposes
++ Areas tend to be quite distorted
++ Shapes are more or less preserved over small areas, at small scales areas become wildly distorted
++ e.g. Mercator projection is famous for distorting Greenland
+:::
+:::
+
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=7}
+Equal area or equivalent projections
+
+::: {style="font-size:0.7em"}
++ Preserve angles (also known as bearings) between locations
++ Used for navigational purposes
++ Areas tend to be quite distorted
++ Shapes are more or less preserved over small areas, at small scales areas become wildly distorted
++ e.g. Mercator projection is famous for distorting Greenland
+:::
+:::
+
+
 
 :::
 :::
+
+
 
 ::: {.column width="50%"}
 :::{r-stack}
@@ -1186,6 +1227,25 @@ There are three commonly used surfaces
 
 ::: {.fragment .fade-in-then-out .absolute data-fragment-index=3}
 ![](img/secant-tangent-cases.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+:::
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=5}
+![](img/Tissot_world_from_space.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+![](img/Tissot_mercator.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+[Left: circles of equal area on globe. Right: same circles on Mercator projection.]{style="font-size:0.3em"}
+:::
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=6 style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 10px; width: 50%; height: 75%; top: 10%;"}
+![](img/File_Equirectangular_projection_SW.png){style="max-height: 40vh; width: auto; object-fit: contain;"}
+![](img/plate_carree_with_tissots.png){style="max-height: 40vh; width: auto; object-fit: contain;"}
+[Top: True-color satellite image of Earth in equirectangular projection.  
+Bottom: Equirectangular projection with Tissot's indicatrix.]{style="font-size:0.3em"}
+:::
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=7}
+![](img/mercator_nautical.png){style="max-height: 25vh; width: auto; object-fit: contain;"}
+![](img/Tissot_mercator.png){style="max-height: 30vh; width: auto; object-fit: contain;"}  
+[Top: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection.]{style="font-size:0.3em"}
 :::
 
 :::

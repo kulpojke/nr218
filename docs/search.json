@@ -396,7 +396,42 @@
     "href": "index.html#projections-1",
     "title": "",
     "section": "Projections",
-    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe shapes can be oriented in many ways.\n\nEach shape can be in one of two cases tangent and secant\n\n\n\n\nShape and orientation can be chosen to control the type of distortion introduced due to projection\n\n\n\n+ Equidistant projections"
+    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe shapes can be oriented in many ways.\n\nEach shape can be in one of two cases tangent and secant\n\n\n\nShape and orientation can be chosen to control the type of distortion introduced due to projection\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection is famous for distorting Greenland\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
+  },
+  {
+    "objectID": "project_2.html",
+    "href": "project_2.html",
+    "title": "NR 218 Project 2: Vector Data Analysis",
+    "section": "",
+    "text": "Become familiar with vector processing operations in QGIS, import and create GIS data\nPerform basic joins and spatial operations such as buffer, dissolve, intersect, union\nStyle maps in a custom fashion based on columnar values\nUnderstand different data types and corresponding data representations\n\nQuery and filter spatial datasets\n\n\n\n\nProvide written responses to the following Questions:\n\nMeasurement Scales: The following data are derived from which measurement scale?\n\nMy happiness score on a scale of 1 to 10 = 7\nMy weight = 192 lbs.\nThe city I live in = Culver City\nMy current body temperature = 99.8 ºF\nThe number of cheeseburgers I can eat before passing out = 12\nMy license plate number = 1LUVG1S\n\nDigitizing Methods: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.\nAccuracy and Precision Errors: What are the five types of accuracy/precision errors associated with geographic information? Provide an example of each type of error.\nBoundary Mapping Challenges: Per the description of the positional accuracy of wetland boundaries in the textbook, discuss a different map feature whose boundaries are inherently vague and difficult to map.\n\n\n\n\n\n\nComplete the following tutorials and submit screenshots/maps of the final products:\n\nConvert excel file of latitudes/longitudes to a point shapefile:\n\nCarefully follow the instructions and complete the Tutorial - Importing Spreadsheets or CSV Files: https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html\n\nDigitize map data:\n\nCarefully follow the instructions and complete the Tutorial - Digitizing Basics: https://www.qgistutorials.com/en/docs/3/digitizing_basics.html\n\nPerform a tabular join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Table Joins: https://www.qgistutorials.com/en/docs/3/performing_table_joins.html\n\nPerform a Spatial Join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Joins: https://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html\n\nPerform a Spatial Query:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Queries: https://www.qgistutorials.com/en/docs/3/performing_spatial_queries.html\n\n\n\n\n\n\nSubmit on Canvas:\n\nWritten Responses: Answers to written questions 1-4 above\nTutorial Documentation: Maps (png, jpeg, tiff, pdf format) and/or screenshots showing the outputs and final products of tutorials 1-5 in project work. Be sure to include dates/times in screenshots."
+  },
+  {
+    "objectID": "project_2.html#learning-goals",
+    "href": "project_2.html#learning-goals",
+    "title": "NR 218 Project 2: Vector Data Analysis",
+    "section": "",
+    "text": "Become familiar with vector processing operations in QGIS, import and create GIS data\nPerform basic joins and spatial operations such as buffer, dissolve, intersect, union\nStyle maps in a custom fashion based on columnar values\nUnderstand different data types and corresponding data representations\n\nQuery and filter spatial datasets"
+  },
+  {
+    "objectID": "project_2.html#written-responses",
+    "href": "project_2.html#written-responses",
+    "title": "NR 218 Project 2: Vector Data Analysis",
+    "section": "",
+    "text": "Provide written responses to the following Questions:\n\nMeasurement Scales: The following data are derived from which measurement scale?\n\nMy happiness score on a scale of 1 to 10 = 7\nMy weight = 192 lbs.\nThe city I live in = Culver City\nMy current body temperature = 99.8 ºF\nThe number of cheeseburgers I can eat before passing out = 12\nMy license plate number = 1LUVG1S\n\nDigitizing Methods: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.\nAccuracy and Precision Errors: What are the five types of accuracy/precision errors associated with geographic information? Provide an example of each type of error.\nBoundary Mapping Challenges: Per the description of the positional accuracy of wetland boundaries in the textbook, discuss a different map feature whose boundaries are inherently vague and difficult to map."
+  },
+  {
+    "objectID": "project_2.html#project-work",
+    "href": "project_2.html#project-work",
+    "title": "NR 218 Project 2: Vector Data Analysis",
+    "section": "",
+    "text": "Complete the following tutorials and submit screenshots/maps of the final products:\n\nConvert excel file of latitudes/longitudes to a point shapefile:\n\nCarefully follow the instructions and complete the Tutorial - Importing Spreadsheets or CSV Files: https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html\n\nDigitize map data:\n\nCarefully follow the instructions and complete the Tutorial - Digitizing Basics: https://www.qgistutorials.com/en/docs/3/digitizing_basics.html\n\nPerform a tabular join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Table Joins: https://www.qgistutorials.com/en/docs/3/performing_table_joins.html\n\nPerform a Spatial Join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Joins: https://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html\n\nPerform a Spatial Query:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Queries: https://www.qgistutorials.com/en/docs/3/performing_spatial_queries.html"
+  },
+  {
+    "objectID": "project_2.html#submission-requirements",
+    "href": "project_2.html#submission-requirements",
+    "title": "NR 218 Project 2: Vector Data Analysis",
+    "section": "",
+    "text": "Submit on Canvas:\n\nWritten Responses: Answers to written questions 1-4 above\nTutorial Documentation: Maps (png, jpeg, tiff, pdf format) and/or screenshots showing the outputs and final products of tutorials 1-5 in project work. Be sure to include dates/times in screenshots."
   },
   {
     "objectID": "calendar.html",
@@ -410,7 +445,7 @@
     "href": "calendar.html#class-details",
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Class Details",
-    "text": "Class Details\n\nLocation\n\nTimes:\n\nMonday:\n5:10 - 6:00 Lecture\n6:10 - 9:00 Lab\n\nWednesday\n6:10 - 9:00 Lab"
+    "text": "Class Details\n\nBuilding 180 (Baker Hall)\nRoom 230\nTimes:\n\nMonday:\n5:10 - 6:00 Lecture\n6:10 - 9:00 Lab\n\nWednesday\n6:10 - 9:00 Lab"
   },
   {
     "objectID": "calendar.html#instructor-details",
@@ -427,39 +462,32 @@
     "text": "Learning Goals\n\nAnalyze spatial data\n\nCreate maps using geospatial software\nProduce quality graphics\nApply skills in remote sensing, GIS, and data science to solve a problem of your own design\nUnderstand basic principles of GIS"
   },
   {
-    "objectID": "calendar.html#class-details-1",
-    "href": "calendar.html#class-details-1",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Class Details",
-    "text": "Class Details\n\nLocation\n\nTimes:\n\nMonday:\n5:10 - 6:00 Lecture\n6:10 - 9:00 Lab\n\nWednesday\n6:10 - 9:00 Lab"
-  },
-  {
     "objectID": "calendar.html#project-assignments",
     "href": "calendar.html#project-assignments",
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Project Assignments",
-    "text": "Project Assignments\nThis course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other week (see calendar for dates). Late assignments will be deducted 5% per day late.\nThere is also a final project, with two final project check-ins, as well as an exam.\nFor your final project you will propose a novel GIS question and collect or analyze data to answer it. For the final project you may work alone or in small groups."
+    "text": "Project Assignments\nThis course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other week (see calendar for dates). Late assignments will be deducted 5% per day late.\nThere is also a final project as well as an exam.\nFor your final project you will propose a novel GIS question and collect or analyze data to answer it."
   },
   {
     "objectID": "calendar.html#assignment-weight",
     "href": "calendar.html#assignment-weight",
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Assignment Weight",
-    "text": "Assignment Weight\nProject 1 15%\nProject 2 15%\nProject 3 15%\nProject 4 20%\nFinal Project 25%\nParticipation 10%\nTotal 100%"
+    "text": "Assignment Weight\n\n\n\n\n\n\n\n\nAsignement\nPercentage of Grade\nDescription\n\n\n\n\nProject 1\n10\nMapping\n\n\nProject 2\n10\nVector Data Analysis\n\n\nProject 3\n10\nRaster Data Analysis\n\n\nProject 4\n15\nRemote Sensing, Image Analysis, and Modeling\n\n\nFinal Project\n25\n\n\n\nExam\n20\nWill be hard, but curved\n\n\nParticipation\n10\nWill be based on  and engagement\n\n\nAssignment 0 _ 1 (bonus)\nEasy bonus points"
   },
   {
     "objectID": "calendar.html#grading",
     "href": "calendar.html#grading",
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Grading",
-    "text": "Grading\nA: ≥ 90%\nB: ≥ 80%\nC: ≥ 70%\nD: ≥ 60%\nF: &lt; 60%\nTotal 100%\n\nGrading is not curved.\nYou will be deducted 2% of the total grade for each unauthorized absence."
+    "text": "Grading\nA: ≥ 90%\nB: ≥ 80%\nC: ≥ 70%\nD: ≥ 60%\nF: &lt; 60%\nTotal 100%\nNote: Grading is not curved (Except exam)."
   },
   {
     "objectID": "calendar.html#assignment-submission-policy",
     "href": "calendar.html#assignment-submission-policy",
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Assignment Submission Policy",
-    "text": "Assignment Submission Policy\nStudents are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline."
+    "text": "Assignment Submission Policy\nAssigmentnts (except the final project) will be submitted on Canvas. Students are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline."
   },
   {
     "objectID": "calendar.html#attendance-policy",
@@ -480,7 +508,7 @@
     "href": "calendar.html#use-of-ai",
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Use of AI",
-    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time! + Depending on AI prevents development of critical thinking, writing, and problem-solving skills + AI will sometimes lead you down a terrible, deep rabbit hole of confusion + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework + The struggle of working through difficult concepts is often where the most valuable learning occurs\nThat is not to say LLMs are never useful or appropriate to use, but you need to know its limitations."
+    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time! + Depending on AI prevents development of critical thinking, writing, and problem-solving skills + AI will sometimes lead you down a terrible, deep rabbit hole of confusion + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework + The struggle of working through difficult concepts is often where the most valuable learning occurs\nThat is not to say LLMs are never useful or appropriate to use, but you need to know their limitations."
   },
   {
     "objectID": "calendar.html#textbook",
@@ -495,5 +523,82 @@
     "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
     "section": "Tutorials",
     "text": "Tutorials\nWe will refer to a number of tutorial videos which describe QGIS processing. These will come primarily from two sources:\nUjaval Gandhi’s QGIS Tutorials and Tips\nQGIS Training Manual\nThere are many other helpful sources of information on GIS Software\nSpatial Thoughtsintroduction-to-qgis.html\nA Gentle Introduction to GISgentle_gis_introduction/index.html"
+  },
+  {
+    "objectID": "project_1.html",
+    "href": "project_1.html",
+    "title": "NR 218 Project 1: Mapping",
+    "section": "",
+    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\n\n\n\n\nProvide written responses to the following Questions:\n\nMap Scale Analysis: Determine and discuss the most appropriate representative fractions for the following verbal map scale descriptions: (a) individual person, (b) neighborhood, (c) urban, (d) regional, (e) national, and (f) global.\nMap Projections Research: Go to the National Atlas website and read about map projections (archived link).\nGeographic Terms: Define the following terms: (a) datum, (b) developable surface, (c) secant, (d) azimuth, (e) rhumb line, and (f) zenithal.\nProjection Properties: Describe the general properties of the following projections: (a) Universal Transverse Mercator (UTM), (b) State plane system, and (c) Robinson projection.\nUSGS Topographic Maps:\n\nDownload a map for your place of residence from: https://ngmdb.usgs.gov/topoview/\nWhat are the scale, projection, and contour interval of the USGS topographic map that you downloaded for your place of residence?\n\nCoordinate Systems: Find the latitude and longitude of your hometown. Explain how you can convert the coordinates from DD to DMS or vice versa.\n\n\n\n\n\n\n\n[Optional] Carefully follow the instructions to install QGIS on your personal computer - if you are not comfortable using your own machine, skip this step and use the machines in the classroom. Allow 5-10 mins to download and install, depending on your internet connection: https://courses.spatialthoughts.com/install-qgis-ltr.html\n\n\n\n\n\nMake your first (production quality) map!\n\nCarefully follow the instructions and complete the Tutorial - Making a Map: https://www.qgistutorials.com/en/docs/3/making_a_map.html\nSubmit a PDF image of the final map you created at the end of the tutorial\n\nComplete the following tutorials and submit screenshots of the final product:\n\nWorking With Attributes: https://www.qgistutorials.com/en/docs/3/working_with_attributes.html\nBasic Vector Styling: https://www.qgistutorials.com/en/docs/3/basic_vector_styling.htm\n\n\n\n\n\n\nSubmit the following items:\n\nWritten Responses: Answers to Questions 1-6 above\n[Optional] A screenshot showing that you successfully installed QGIS (include the time and date in the screenshot)\nFirst Map: An image of your first map (.tiff, .jpeg, .png, or .pdf format) created from Tutorial 1\n\nBe sure to include all the necessary elements required for a high quality map (i.e. scale bar, north arrow, legend, gridlines, coordinate labels)\n\nTutorial Screenshots: Screenshots of the final outputs and processing steps of Tutorial 2 and Tutorial 4"
+  },
+  {
+    "objectID": "project_1.html#learning-goals",
+    "href": "project_1.html#learning-goals",
+    "title": "NR 218 Project 1: Mapping",
+    "section": "",
+    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling"
+  },
+  {
+    "objectID": "project_1.html#written-responses",
+    "href": "project_1.html#written-responses",
+    "title": "NR 218 Project 1: Mapping",
+    "section": "",
+    "text": "Provide written responses to the following Questions:\n\nMap Scale Analysis: Determine and discuss the most appropriate representative fractions for the following verbal map scale descriptions: (a) individual person, (b) neighborhood, (c) urban, (d) regional, (e) national, and (f) global.\nMap Projections Research: Go to the National Atlas website and read about map projections (archived link).\nGeographic Terms: Define the following terms: (a) datum, (b) developable surface, (c) secant, (d) azimuth, (e) rhumb line, and (f) zenithal.\nProjection Properties: Describe the general properties of the following projections: (a) Universal Transverse Mercator (UTM), (b) State plane system, and (c) Robinson projection.\nUSGS Topographic Maps:\n\nDownload a map for your place of residence from: https://ngmdb.usgs.gov/topoview/\nWhat are the scale, projection, and contour interval of the USGS topographic map that you downloaded for your place of residence?\n\nCoordinate Systems: Find the latitude and longitude of your hometown. Explain how you can convert the coordinates from DD to DMS or vice versa."
+  },
+  {
+    "objectID": "project_1.html#project-work",
+    "href": "project_1.html#project-work",
+    "title": "NR 218 Project 1: Mapping",
+    "section": "",
+    "text": "[Optional] Carefully follow the instructions to install QGIS on your personal computer - if you are not comfortable using your own machine, skip this step and use the machines in the classroom. Allow 5-10 mins to download and install, depending on your internet connection: https://courses.spatialthoughts.com/install-qgis-ltr.html\n\n\n\n\n\nMake your first (production quality) map!\n\nCarefully follow the instructions and complete the Tutorial - Making a Map: https://www.qgistutorials.com/en/docs/3/making_a_map.html\nSubmit a PDF image of the final map you created at the end of the tutorial\n\nComplete the following tutorials and submit screenshots of the final product:\n\nWorking With Attributes: https://www.qgistutorials.com/en/docs/3/working_with_attributes.html\nBasic Vector Styling: https://www.qgistutorials.com/en/docs/3/basic_vector_styling.htm"
+  },
+  {
+    "objectID": "project_1.html#submission-requirements",
+    "href": "project_1.html#submission-requirements",
+    "title": "NR 218 Project 1: Mapping",
+    "section": "",
+    "text": "Submit the following items:\n\nWritten Responses: Answers to Questions 1-6 above\n[Optional] A screenshot showing that you successfully installed QGIS (include the time and date in the screenshot)\nFirst Map: An image of your first map (.tiff, .jpeg, .png, or .pdf format) created from Tutorial 1\n\nBe sure to include all the necessary elements required for a high quality map (i.e. scale bar, north arrow, legend, gridlines, coordinate labels)\n\nTutorial Screenshots: Screenshots of the final outputs and processing steps of Tutorial 2 and Tutorial 4"
+  },
+  {
+    "objectID": "final_proj.html#learning-goals",
+    "href": "final_proj.html#learning-goals",
+    "title": "",
+    "section": "Learning Goals",
+    "text": "Learning Goals\n\nUse GIS to solve a practical problem of your own design\nCollect or access geospatial data\nAnalyze the collected data using the appropriate geoprocessing operations\nPresent your findings in a written report complete with maps and statistics"
+  },
+  {
+    "objectID": "final_proj.html#final-project-brainstorm",
+    "href": "final_proj.html#final-project-brainstorm",
+    "title": "",
+    "section": "Final Project Brainstorm",
+    "text": "Final Project Brainstorm\nCome up with your own geospatial analysis idea. Submit a well thought out paragraph which describes: 1. The question/problem you have identified 2. The geographic data you will use to answer the question 3. The geoprocessing steps you will perform on the data 4. The expected outputs of your analysis\nYou may also frame your question as a hypothesis test (as in the Scientific Method)\nProject Ideas to Get You Started\n\nRecord your hikes/runs/bike rides over the quarter (using an app like Strava), and plot your routes on a map\nAnalyze satellite-based rainfall data in SLO county. What parts of the county experience the most and least amounts of rain? Can you say why that might be?\nDetermine the area of a recently burned fire by analyzing changes in satellite imagery\n\nSUBMIT: 1 paragraph description of the geospatial problem you want to solve, including descriptions of the datasets and processing techniques that you will use in order to solve the problem."
+  },
+  {
+    "objectID": "final_proj.html#final-project-check-ins",
+    "href": "final_proj.html#final-project-check-ins",
+    "title": "",
+    "section": "Final Project Check Ins",
+    "text": "Final Project Check Ins\nThe professor and TA will provide directed feedback based on the results of the brainstorm submission, and meet individually with students to set direction, select datasets, and explore processing techniques. It is STRONGLY recommended that students work on final project in between brainstorm and check-ins, particularly in downloading data and setting scope. This will help ensure project remains on track."
+  },
+  {
+    "objectID": "final_proj.html#final-project-submission-2---outline",
+    "href": "final_proj.html#final-project-submission-2---outline",
+    "title": "",
+    "section": "Final Project Submission #2 - Outline",
+    "text": "Final Project Submission #2 - Outline\nBased on verbal feedback from conversations and written feedback given on project brainstorm, write a one-page outline describing your study. The format should be:\nIntroduction\n\nWhat problem are you trying to solve?\nWhy is it important?\nWhy does it matter to you and/or the world?\nI find it helpful to frame as a question\n\nExamples: - Are different demographic groups disproportionately exposed to poor air quality? - How are temperature and precipitation patterns changing in SLO county? - What’s the fastest route that I can bike between certain landmarks on campus? How does bike infrastructure/time of day factor in?\nIMPORTANT: Do not choose too challenging a problem or too large a geographic area or time window to analyze - you have 5 weeks to work on this project. It should be well-scoped and achievable.\nData\n\nWhat data will you use to answer the question you’ve posed?\nIs this primary or secondary data? Describe the data and the relevant formats.\n\nIMPORTANT: Do not wait until the last minute to download the data! Strongly suggest finding and downloading sample data for this project WITH this submission, as it will guide the scope of the analysis.\nMethods\n\nIf working with secondary data, what geoprocessing or other analyses will you apply to the data?\nIf working with primary data, how will you collect it? What software will be used? Will you be able to upload it into GIS?\n\nExpected Conclusions/Hypotheses\n\nWhat do you expect to see from your analysis?"
+  },
+  {
+    "objectID": "final_proj.html#final-project-report",
+    "href": "final_proj.html#final-project-report",
+    "title": "",
+    "section": "Final Project Report",
+    "text": "Final Project Report\nSubmit an 8-12 page report with the following sections:\nIntroduction\nDescribe the problem/question\nData and Methods\nWhat data will you use to investigate this question? What processing steps and analysis did you perform to answer the problem/question?\nResults\nDescribe the results of the analysis\nDiscussion\nDiscuss and contextualize the results. Were the results what were expected? What assumptions were made in the analysis? How do these results recontextualize the original question? Given what you have learned, what further analysis would you perform?\nConclusions\nWhat are your high level takeaways? What would you have done differently? If you were continuing the project, what else would you do?\nReferences\nCitations and original sources of any sources used (data, websites, publications, etc) in Harvard format."
+  },
+  {
+    "objectID": "final_proj.html#final-project-presentation-optional",
+    "href": "final_proj.html#final-project-presentation-optional",
+    "title": "",
+    "section": "Final Project Presentation [Optional]",
+    "text": "Final Project Presentation [Optional]\nFor extra credit, communicate your findings to the class in a 10-minute presentation, mirroring the structure of the report. Be sure to include maps created during the analysis and other figures, graphs, and charts describing your study and findings."
   }
 ]

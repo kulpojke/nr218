@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Syllabus - NR 218 - Introduction to GIS - Fall 2025</title>
+<title>project_1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,35 +66,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -107,351 +78,77 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Syllabus - NR 218 - Introduction to GIS - Fall 2025</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p><a href="#fall-term-calendar-2025">Jump to class calendar</a></p>
-<section id="class-details" class="level2">
-<h2 class="anchored" data-anchor-id="class-details">Class Details</h2>
-<ul>
-<li>Building 180 (Baker Hall)<br>
-Room 230</li>
-<li>Times:
-<ul>
-<li><span style="font-size:0.8em">Monday:</span><br>
-<span style="font-size:0.8em">5:10 - 6:00 Lecture</span><br>
-<span style="font-size:0.8em">6:10 - 9:00 Lab</span><br>
-</li>
-<li><span style="font-size:0.8em">Wednesday</span><br>
-<span style="font-size:0.8em">6:10 - 9:00 Lab</span></li>
-</ul></li>
-</ul>
-</section>
-<section id="instructor-details" class="level2">
-<h2 class="anchored" data-anchor-id="instructor-details">Instructor Details</h2>
-<ul>
-<li>Michael Huggins</li>
-<li>Office Hours:
-<ul>
-<li>Building 72 (Plant Conservatory) Room 107<br>
-Mondays 2:30 - 4:30s</li>
-</ul></li>
-</ul>
-</section>
+<section id="nr-218-project-1-mapping" class="level1">
+<h1>NR 218 Project 1: Mapping</h1>
 <section id="learning-goals" class="level2">
 <h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
 <ul>
-<li>Analyze spatial data<br>
-</li>
-<li>Create maps using geospatial software</li>
-<li>Produce quality graphics</li>
-<li>Apply skills in remote sensing, GIS, and data science to solve a problem of your own design</li>
-<li>Understand basic principles of GIS</li>
+<li>Understand geographic concepts</li>
+<li>Start working with geographic data</li>
+<li>Make your first map!</li>
+<li>Start working with map attributes and styling</li>
 </ul>
 </section>
-<section id="project-assignments" class="level2">
-<h2 class="anchored" data-anchor-id="project-assignments">Project Assignments</h2>
-<p>This course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other week (see <a href="#fall-term-calendar-2025">calendar</a> for dates). Late assignments will be deducted 5% per day late.</p>
-<p>There is also a final project as well as an exam.</p>
-<p>For your final project you will propose a novel GIS question and collect or analyze data to answer it.</p>
+<section id="written-responses" class="level2">
+<h2 class="anchored" data-anchor-id="written-responses">Written Responses</h2>
+<p>Provide written responses to the following Questions:</p>
+<ol type="1">
+<li><p><strong>Map Scale Analysis</strong>: Determine and discuss the most appropriate representative fractions for the following verbal map scale descriptions: (a) individual person, (b) neighborhood, (c) urban, (d) regional, (e) national, and (f) global.</p></li>
+<li><p><strong>Map Projections Research</strong>: Go to the National Atlas website and read about map projections (<a href="http://web.archive.org/web/20110717124751/http://www.nationalatlas.gov/articles/mapping/a_projections.html">archived link</a>).</p></li>
+<li><p><strong>Geographic Terms</strong>: Define the following terms: (a) datum, (b) developable surface, (c) secant, (d) azimuth, (e) rhumb line, and (f) zenithal.</p></li>
+<li><p><strong>Projection Properties</strong>: Describe the general properties of the following projections: (a) Universal Transverse Mercator (UTM), (b) State plane system, and (c) Robinson projection.</p></li>
+<li><p><strong>USGS Topographic Maps</strong>:</p>
+<ul>
+<li>Download a map for your place of residence from: https://ngmdb.usgs.gov/topoview/</li>
+<li>What are the scale, projection, and contour interval of the USGS topographic map that you downloaded for your place of residence?</li>
+</ul></li>
+<li><p><strong>Coordinate Systems</strong>: Find the latitude and longitude of your hometown. Explain how you can convert the coordinates from DD to DMS or vice versa.</p></li>
+</ol>
 </section>
-<section id="assignment-weight" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-weight">Assignment Weight</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 61%">
-<col style="width: 23%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Asignement</th>
-<th>Percentage of Grade</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Project 1</td>
-<td>10</td>
-<td>Mapping</td>
-</tr>
-<tr class="even">
-<td>Project 2</td>
-<td>10</td>
-<td>Vector Data Analysis</td>
-</tr>
-<tr class="odd">
-<td>Project 3</td>
-<td>10</td>
-<td>Raster Data Analysis</td>
-</tr>
-<tr class="even">
-<td>Project 4</td>
-<td>15</td>
-<td>Remote Sensing, Image Analysis, and Modeling</td>
-</tr>
-<tr class="odd">
-<td>Final Project</td>
-<td>25</td>
-<td><embed src="final_proj.md" class="img-fluid"></td>
-</tr>
-<tr class="even">
-<td>Exam</td>
-<td>20</td>
-<td>Will be hard, but curved</td>
-</tr>
-<tr class="odd">
-<td>Participation</td>
-<td>10</td>
-<td>Will be based on <img src="#attendance-policy.png" class="img-fluid" alt="exit tickets"> and engagement</td>
-</tr>
-<tr class="even">
-<td>Assignment 0 _ 1 (bonus)</td>
-<td>Easy bonus points</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<section id="project-work" class="level2">
+<h2 class="anchored" data-anchor-id="project-work">Project Work</h2>
+<section id="setup-optional" class="level3">
+<h3 class="anchored" data-anchor-id="setup-optional">Setup (Optional)</h3>
+<ul>
+<li><strong>[Optional]</strong> Carefully follow the instructions to install QGIS on your personal computer - if you are not comfortable using your own machine, skip this step and use the machines in the classroom. Allow 5-10 mins to download and install, depending on your internet connection: https://courses.spatialthoughts.com/install-qgis-ltr.html</li>
+</ul>
 </section>
-<section id="grading" class="level2">
-<h2 class="anchored" data-anchor-id="grading">Grading</h2>
-<p>A: ≥ 90%<br>
-B: ≥ 80%<br>
-C: ≥ 70%<br>
-D: ≥ 60%<br>
-F: &lt; 60%</p>
-<p>Total 100%</p>
-<p>Note: Grading is not curved (Except exam).</p>
+<section id="tutorial-assignments" class="level3">
+<h3 class="anchored" data-anchor-id="tutorial-assignments">Tutorial Assignments</h3>
+<ol type="1">
+<li><strong>Make your first (production quality) map!</strong>
+<ul>
+<li>Carefully follow the instructions and complete the Tutorial - Making a Map: https://www.qgistutorials.com/en/docs/3/making_a_map.html</li>
+<li>Submit a PDF image of the final map you created at the end of the tutorial</li>
+</ul></li>
+<li><strong>Complete the following tutorials</strong> and submit screenshots of the final product:
+<ul>
+<li><strong>Working With Attributes</strong>: https://www.qgistutorials.com/en/docs/3/working_with_attributes.html</li>
+<li><strong>Basic Vector Styling</strong>: https://www.qgistutorials.com/en/docs/3/basic_vector_styling.htm</li>
+</ul></li>
+</ol>
 </section>
-<section id="assignment-submission-policy" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-submission-policy">Assignment Submission Policy</h2>
-<p>Assigmentnts (except the final project) will be submitted on Canvas. Students are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline.</p>
 </section>
-<section id="attendance-policy" class="level2">
-<h2 class="anchored" data-anchor-id="attendance-policy">Attendance Policy</h2>
-<p>Before leaving for each class you will need to turn in an “exit ticket”. The exit ticket is simply a short answer to a question that will given in class. The exit ticket will let me know that you were in class, and help me to gauge how well students are absorbing the material. You are allowed 3 unexcused absences. Beyond 3 unexcused absences, you will be deducted 2% of the total grade for each unauthorized absence.</p>
-</section>
-<section id="academic-integrity" class="level2">
-<h2 class="anchored" data-anchor-id="academic-integrity">Academic Integrity</h2>
-<p>All students should be familiar with and adhere to the university’s academic integrity policy, which can be found here: https://osrr.calpoly.edu/academic-integrity</p>
-</section>
-<section id="use-of-ai" class="level2">
-<h2 class="anchored" data-anchor-id="use-of-ai">Use of AI</h2>
-<p>AI generated text <strong>may not be used</strong> for any writing.</p>
-<p>Students can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time! + Depending on AI prevents development of critical thinking, writing, and problem-solving skills + AI will sometimes lead you down a terrible, deep rabbit hole of confusion + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework + The struggle of working through difficult concepts is often where the most valuable learning occurs</p>
-<p>That is not to say LLMs are never useful or appropriate to use, but you need to know their limitations.</p>
-</section>
-<section id="textbook" class="level2">
-<h2 class="anchored" data-anchor-id="textbook">Textbook</h2>
-<p>We will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found <a href="https://saylordotorg.github.io/text_essentials-of-geographic-information-systems">here</a></p>
-</section>
-<section id="tutorials" class="level2">
-<h2 class="anchored" data-anchor-id="tutorials">Tutorials</h2>
-<p>We will refer to a number of tutorial videos which describe QGIS processing. These will come primarily from two sources:</p>
-<p><a href="https://www.qgistutorials.com/en/index.html">Ujaval Gandhi’s QGIS Tutorials and Tips</a></p>
-<p><a href="https://docs.qgis.org/3.34/en/docs/training_manual/index.html">QGIS Training Manual</a></p>
-<p>There are many other helpful sources of information on GIS Software</p>
-<p><a href="https://courses.spatialthoughts.com/">Spatial Thoughts</a>introduction-to-qgis.html</p>
-<p><a href="https://docs.qgis.org/3.40/en/docs/">A Gentle Introduction to GIS</a>gentle_gis_introduction/index.html</p>
-</section>
-<section id="fall-term-calendar-2025" class="level1">
-<h1>Fall Term Calendar 2025</h1>
-<p>Here’s the table with the Week column containing just the integer week values:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Date</th>
-<th>Week</th>
-<th>Description</th>
-<th>Reading</th>
-<th>Due Dates</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>September 22</td>
-<td>1</td>
-<td>What is GIS Why is it important</td>
-<td>Chapters 1 and 2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>September 24</td>
-<td>1</td>
-<td>Basic GIS Concepts / Scale, Coordinate systems, and Map Projections</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>September 29</td>
-<td>2</td>
-<td>Spatial Data Models and Formats</td>
-<td>chapters 3 and 4</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>October 1</td>
-<td>2</td>
-<td>Vector and Raster Data</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>October 6</td>
-<td>3</td>
-<td>Finding Acquiring, Creating, and Editing GIS Data</td>
-<td>chapters 5 and 6</td>
-<td><a href="project_1.html">Project 1</a></td>
-</tr>
-<tr class="even">
-<td>October 8</td>
-<td>3</td>
-<td>GeoProcessing and Vector Operations</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>October 13</td>
-<td>4</td>
-<td>Geospatial Data: Satellites, UAVs, GPS</td>
-<td>chapters 7 and 8</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>October 15</td>
-<td>4</td>
-<td>Spectral Indices and Tabular Joins</td>
-<td></td>
-<td><a href="./final_proj.html">Final Project Brainstorm Due</a></td>
-</tr>
-<tr class="odd">
-<td>October 20</td>
-<td>5</td>
-<td>Spatial Joins, Final Project Discussion</td>
-<td>chapters 9 and 10</td>
-<td><a href="project_2.html">Project 2</a></td>
-</tr>
-<tr class="even">
-<td>October 22</td>
-<td>5</td>
-<td>Spatial Analysis Introduction, Final Project Group Discussions</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>October 27</td>
-<td>6</td>
-<td>Spatial Analysis: Map Algebra, Reprojection, Resampling</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>October 29</td>
-<td>6</td>
-<td>Raster <span class="math inline">\(\times\)</span> Vector Operations, Zonal Statistics, Point Sampling</td>
-<td></td>
-<td><a href="./final_proj.html">Final Project Outline Due</a></td>
-</tr>
-<tr class="odd">
-<td>November 3</td>
-<td>7</td>
-<td>Rasterizing by Attributes, Georeferencing, Statistics 101</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>November 5</td>
-<td>7</td>
-<td>ArcGIS Pro, Spreadsheets</td>
-<td></td>
-<td>Project 3</td>
-</tr>
-<tr class="odd">
-<td>November 10</td>
-<td>8</td>
-<td>Web Mapping, Field Data Collection: Mobile sensors and edge devices</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>November 11</td>
-<td>8</td>
-<td>Academic holiday - Veterans Day observed</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>November 12</td>
-<td>8</td>
-<td>No Class</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>November 17</td>
-<td>9</td>
-<td>Advanced Topics: Photogrammetry, Radar, Interferometry</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>November 19</td>
-<td>9</td>
-<td>Real World Applications and Careers - Guest Lectures</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>November 24</td>
-<td></td>
-<td>Fall Break</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>November 26</td>
-<td></td>
-<td>Fall Break</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>December 1</td>
-<td>10</td>
-<td>Project 4 Presentations</td>
-<td></td>
-<td>Project 4</td>
-</tr>
-<tr class="odd">
-<td>December 3</td>
-<td>10</td>
-<td>Exam. Final Project Presentations</td>
-<td></td>
-<td><a href="./final_proj.html">Final Project</a></td>
-</tr>
-</tbody>
-</table>
+<section id="submission-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="submission-requirements">Submission Requirements</h2>
+<p>Submit the following items:</p>
+<ol type="1">
+<li><p><strong>Written Responses</strong>: Answers to Questions 1-6 above</p></li>
+<li><p><strong>[Optional]</strong> A screenshot showing that you successfully installed QGIS (include the time and date in the screenshot)</p></li>
+<li><p><strong>First Map</strong>: An image of your first map (.tiff, .jpeg, .png, or .pdf format) created from Tutorial 1</p>
+<ul>
+<li>Be sure to include all the necessary elements required for a high quality map (i.e.&nbsp;scale bar, north arrow, legend, gridlines, coordinate labels)</li>
+</ul></li>
+<li><p><strong>Tutorial Screenshots</strong>: Screenshots of the final outputs and processing steps of Tutorial 2 and Tutorial 4</p></li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

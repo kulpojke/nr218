@@ -3,6 +3,9 @@ project:
   output-dir: docs
   render:
     - calendar.md
+    - project_1.md
+    - project_2.md
+    - final_proj.md
     - index.qmd
 
 format:
