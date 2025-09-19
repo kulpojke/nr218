@@ -252,6 +252,48 @@
     "text": "Cloud Storage\nMany options, but mounting Cal Poly One Drive as a disk is is probably the simplest.\nSee the Cal Poly tutorial here or try this, for Linux users or the computer savvy."
   },
   {
+    "objectID": "index.html#section-4",
+    "href": "index.html#section-4",
+    "title": "",
+    "section": "",
+    "text": "Download SPR_data.zip from the files section of canvas\nExtract the file (Linux. Windows, Mac), and place in appropriate file location (Remember, organize your files!)\nOpen QGIS"
+  },
+  {
+    "objectID": "index.html#section-5",
+    "href": "index.html#section-5",
+    "title": "",
+    "section": "",
+    "text": "Open the files from the directory you just extracted\n\nMethod 1\n\nUse the file location in the ‘Browser’ panel\n\nDrag and and drop files into the Layers Panel \n\n\nMethod 2\n\nPress ctrl-v (cmd-v on Mac)\nClick  to browse for file then click .\n\nYou can select multiple files at once when browsing\nClose window when finished."
+  },
+  {
+    "objectID": "index.html#section-6",
+    "href": "index.html#section-6",
+    "title": "",
+    "section": "",
+    "text": "Now the layers should be visible in the panel, and on the map\n\n\n\n\n\n\n\n\nToggle on/off layers by clicking checkboxes\nChange layer order by dragging within panel\nWhat do the little icons between the check and the layer name mean?\nRight click a layer, select Open Attribute Table\nSelect rows of attribute table by clicking on the left edge (where they are numbered)\n\nNote that the corresponding features are highlighted on the map"
+  },
+  {
+    "objectID": "index.html#section-7",
+    "href": "index.html#section-7",
+    "title": "",
+    "section": "",
+    "text": "Panning and zooming (The mouse wheel also zooms while in pan mode)\n\n\nSelect tools\n\n\nInfo"
+  },
+  {
+    "objectID": "index.html#basemaps",
+    "href": "index.html#basemaps",
+    "title": "",
+    "section": "Basemaps",
+    "text": "Basemaps\n\n\nClick Plugins –&gt; Manage and install Plugins\nSearch for QuickMapServices\nClick Install Plugin\nNow on the right there should be a Search QMS bar\n\nSearch for satellite\nPick one (ESRI is a good choice, or Bing)"
+  },
+  {
+    "objectID": "index.html#symbology",
+    "href": "index.html#symbology",
+    "title": "",
+    "section": "Symbology",
+    "text": "Symbology"
+  },
+  {
     "objectID": "index.html#human-readable-vs.-binary-files",
     "href": "index.html#human-readable-vs.-binary-files",
     "title": "",
@@ -354,7 +396,7 @@
     "href": "index.html#projections-1",
     "title": "",
     "section": "Projections",
-    "text": "Projections\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces"
+    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces\n\nplane\ncone\ncylinder\n\n\n\nThe shapes can be oriented in many ways.\nTwo important concepts in oreintation are tangent and secant\n\n\nShape and orientation can be chosen to control the type of distortion introduced due to projection\nTwo important concepts in oreintation are tangent and secant"
   },
   {
     "objectID": "calendar.html",

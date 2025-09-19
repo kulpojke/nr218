@@ -630,10 +630,120 @@ Many options, but mounting Cal Poly One Drive as a disk is is probably the simpl
 See the Cal Poly  tutorial [here](https://calpoly.atlassian.net/wiki/spaces/CPKB/pages/732921936/Access+OneDrive+and+SharePoint+from+my+Computer )
 or try [this](https://github.com/rclone/rclone), for Linux users or the computer savvy.
 
-# Tutorial - Quick Intro to QGIS {.incremental}
+# Tutorial - Quick Intro to QGIS 
+
+## 
 
 1) Download `SPR_data.zip` from the files section of canvas
 2) Extract the file ([Linux](https://linuxize.com/post/how-to-unzip-files-in-linux/). [Windows](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5), [Mac](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac)), and place in appropriate file location (Remember, organize your files!)
+3) Open QGIS  
+
+![](img/Qgis-icon-3.0.png)
+
+## {.columns}
+[Open the files from the directory you just extracted]{style="font-size:0.8em"}
+
+::: {.column style="font-size:0.5em"}
+__Method 1__  
+
+1. Use the file location in the ‘Browser’ panel  
+2. Drag and and drop files into the _Layers_ Panel
+![](img/qgis-file-location-browser-panel.png){height="350px"}
+:::
+
+::: {.column style="font-size:0.5em"}
+__Method 2__  
+
+1. Press `ctrl-v` (`cmd-v` on Mac)
+2. Click ![](img/browse_button.png){style="vertical-align: middle;"} to browse for file then click ![](img/add_button.png){style="vertical-align: middle;"}.
+    + [You can select multiple files at once when browsing]{style="font-size:0.5em"}
+    + [Close window when finished.]{style="font-size:0.5em"}
+![](img/qgis_data_source_manager.png)
+
+:::
+
+## {auto-animate="true"}
+[Now the layers should be visible in the panel, and on the map]{style="font-size:0.9em"}
+
+::: {.fragment .fade-in-then-out}
+![](img/layers_panel.png){data-id="layers"}
+:::
+
+::: {.fragment .fade-in style="position: absolute; right: 50px; top: 100px;"}
+![](img/layers_panel.png){data-id="layers" style="height: 275px;"}
+:::
+
+::: {.fragment .incremental .fade-in style="position: absolute; left: 20px; bottom: 110px; font-size:0.5em"}
++ Toggle on/off layers by clicking checkboxes
++ Change layer order by dragging within panel
++ What do the little icons between the check and the layer name mean?
++ Right click a layer, select _Open Attribute Table_
++ Select rows of attribute table by clicking on the left edge (where they are numbered)
+  + Note that the corresponding features are highlighted on the map 
+:::
+
+
+## {auto-animate="true"}
+
+![](img/layers_panel.png){data-id="layers"}
+
+<!-- red boxes -->
+:::{.fragment .fade-in-then-out data-fragment-index="1" style="position: absolute; top: 50px; left: 120px; width: 165px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index="2" style="position: absolute; top: 50px; left: 415px; width: 115px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index="3" style="position: absolute; top: 50px; left: 530px; width: 20px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+<!-- Words -->
+::: {r-stack}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+[__Panning and zooming__ (The mouse wheel also zooms while in pan mode)]{style="font-size:0.7em; color: red"}
+:::
+
+::: {.fragment  .absolute .fade-in-then-out data-fragment-index="2"}
+[__Select tools__]{style="font-size:0.7em; color: red"}
+:::
+
+::: {.fragment  .absolute .fade-in-then-out data-fragment-index="3"}
+[__Info__]{style="font-size:0.7em; color: red"}
+:::
+
+:::
+
+## Basemaps {.columns}
+
+::: {.column width="50%" style="font-size:0.5em"}
+1. Click Plugins --> Manage and install Plugins
+2. Search for _QuickMapServices_
+3. Click _Install Plugin_
+4. Now on the right there should be a _Search QMS_ bar  
+5. Search for satellite
+6. Pick one (ESRI is a good choice, or Bing)
+:::
+
+::: {.column width="50%"}
+
+![](img/search_qms.png){height="600px"}
+:::
+
+
+## Symbology {.columns}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # A quick intro to geospatial data 
@@ -798,6 +908,8 @@ Use EPSG:4326 - WGS 84
 :::
 
 :::
+
+
 
 # Scale, Coordinate systems, and Map Projections
 
@@ -1034,15 +1146,33 @@ Some spheroids are suited for global use, others for local use
 
 ::: {.column width="50%" .smaller}
 
-::: {.fragment .fade-in-then-semi-out data-fragment-index=1}
+::: {r-stack}
+::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=1}
 Imagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.
 :::
 
-::: {.fragment .fade-in data-fragment-index=2}
-There are three commonly used surfaces
+::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=2}
+There are three commonly used surfaces 
+
++ plane
++ cone
++ cylinder
+:::
+
+::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=3}
+The shapes can be oriented in many ways.   
+
+Two important concepts in oreintation are _tangent_ and _secant_
+:::
+
+::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=4}
+Shape and orientation can be chosen to control the type of distortion introduced due to projection
+
+Two important concepts in oreintation are _tangent_ and _secant_
 :::
 
 
+:::
 :::
 
 
@@ -1054,6 +1184,10 @@ There are three commonly used surfaces
 
 ::: {.fragment .fade-in-then-out .absolute data-fragment-index=2}
 ![](img/flattenable.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+:::
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=3}
+![](img/secant-tangent-cases.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
 :::
 
 :::

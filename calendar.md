@@ -51,7 +51,7 @@ format:
 |------|-------------|-------------|
 | September 18 | Thursday           | Fall term classes begin |
 | September 22 | Monday - Week 1    | What is GIS Why is it important |
-| September 24 | Wednesday - Week 1 | Basic GIS Concepts              |
+| September 24 | Wednesday - Week 1 | Basic GIS Concepts / Scale, Coordinate systems, and Map Projections         |
 | September 29 | Monday - Week 2    | Spatial Data Models and Formats |
 | October 1    | Wednesday - Week 2 | Vector and Raster Data |
 | October 6    | Monday - Week 3    | Finding Acquiring, Creating, and Editing GIS Data|
