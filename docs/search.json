@@ -396,7 +396,7 @@
     "href": "index.html#projections-1",
     "title": "",
     "section": "Projections",
-    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces\n\nplane\ncone\ncylinder\n\n\n\nThe shapes can be oriented in many ways.\nTwo important concepts in oreintation are tangent and secant\n\n\nShape and orientation can be chosen to control the type of distortion introduced due to projection\nTwo important concepts in oreintation are tangent and secant"
+    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe shapes can be oriented in many ways.\n\nEach shape can be in one of two cases tangent and secant\n\n\n\n\nShape and orientation can be chosen to control the type of distortion introduced due to projection\n\n\n\n+ Equidistant projections"
   },
   {
     "objectID": "calendar.html",
