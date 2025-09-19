@@ -1,3 +1,10 @@
+---
+title: ""
+format: 
+  html:
+    theme: cyborg
+---
+
 # NR 218 - Introduction to GIS Final Project
 
 ## Learning Goals
