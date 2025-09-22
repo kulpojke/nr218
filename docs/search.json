@@ -287,11 +287,32 @@
     "text": "Basemaps\n\n\nClick Plugins –&gt; Manage and install Plugins\nSearch for QuickMapServices\nClick Install Plugin\nNow on the right there should be a Search QMS bar\n\nSearch for satellite\nPick one (ESRI is a good choice, or Bing)"
   },
   {
-    "objectID": "index.html#symbology",
-    "href": "index.html#symbology",
+    "objectID": "index.html#symbology---categorized",
+    "href": "index.html#symbology---categorized",
     "title": "",
-    "section": "Symbology",
-    "text": "Symbology"
+    "section": "Symbology - categorized",
+    "text": "Symbology - categorized\n\n\n\nRight click the “sprLanduse” layer\n\nGo to properties\n\nSelect the symbology tab\n\n\n\n\n\n\nExperiment with basic symbology\n\nRight click the “sprLanduse” layer\n\nGo to properties\n\nSelect the symbology tab\n\nFrom the dropdown menu, select “categorized”\n\nSelect “LUtype” from the “Value” dropdown menu, and click “Classify”"
+  },
+  {
+    "objectID": "index.html#symbology---numerical",
+    "href": "index.html#symbology---numerical",
+    "title": "",
+    "section": "Symbology - Numerical",
+    "text": "Symbology - Numerical\n\n\nExperiment with numerical symbology\n\nRight click the “sprSoil” layer\n\ngo to properties\n\nSelect the symbology tab\n\nFrom the dropdown menu, select “Graduated”\n\nSelect “KFACTOR” from the “Value” dropdown menu\n\nclick “Classify”, then “Apply”"
+  },
+  {
+    "objectID": "index.html#print-layout-for-maps",
+    "href": "index.html#print-layout-for-maps",
+    "title": "",
+    "section": "Print Layout For Maps",
+    "text": "Print Layout For Maps\n\nClick Project &gt; “New Print Layout”\n\nGive it a name and click “OK”\n\nClick add map ()\nClick and drag a box onto the map canvas\nto draw a box. This is where the map will\nbe positioned\n\nTo reposition things use move item content ()\n\nClick and drag map to pan\nScroll with mouse wheel to change zoom (hold control for finer control)"
+  },
+  {
+    "objectID": "index.html#print-layout---add-legend",
+    "href": "index.html#print-layout---add-legend",
+    "title": "",
+    "section": "Print Layout - Add Legend",
+    "text": "Print Layout - Add Legend\n\n\nAdd a Legend:\n\nClick the add legend button (), or from drop down menu Add Item &gt; Add Legend\n\nDraw a box to position the legend\n\n\n\n\nEdit legend items by going to Item Properties &gt; Legend Items, and unchecking Auto Update"
   },
   {
     "objectID": "index.html#human-readable-vs.-binary-files",
@@ -396,7 +417,7 @@
     "href": "index.html#projections-1",
     "title": "",
     "section": "Projections",
-    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe shapes can be oriented in many ways.\n\nEach shape can be in one of two cases tangent and secant\n\n\n\nShape and orientation can be chosen to control the type of distortion introduced due to projection\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection is famous for distorting Greenland\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
+    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe shapes can be oriented in many ways.\n\nEach shape can be in one of two cases tangent and secant\n\n\n\nShape and orientation can be chosen to control the type of distortion introduced due to projection\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
   },
   {
     "objectID": "project_2.html",

@@ -730,7 +730,104 @@ __Method 2__
 :::
 
 
-## Symbology {.columns}
+## Symbology - categorized {.columns}
+
+::: {.column width="50%"}
+
+::: {.fragment .fade-in-then-semi-out data-fragment-index="1" style="font-size:0.7em"}
++ Right click the "sprLanduse" layer  
+  + Go to properties
+    + Select the symbology tab
+:::
+
+::: {.fragment .fade-in-then-semi-out data-fragment-index="2" style="font-size:0.6em"}
++ Experiment with basic symbology
+  + Right click the "sprLanduse" layer
+    + Go to properties
+      + Select the symbology tab
+        + From the dropdown menu, select "categorized" 
+          + Select "LUtype" from the "Value" dropdown menu, and click "Classify"
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out data-fragment-index="1"}
+![](img/symbology.png){style="height: 45vh; width: auto; max-width: 100%; object-fit: contain;"}
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="2" style="display: flex; flex-direction: column; align-items: center; gap: 10px;"}
+![](img/cat1.png){style="height: 25vh; width: auto; max-width: 100%; object-fit: contain;"}
+![](img/cat2.png){style="height: 25vh; width: auto; max-width: 100%; object-fit: contain;"}
+![](img/cat3.png){style="height: 25vh; width: auto; max-width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+:::
+
+## Symbology - Numerical {.columns style="font-size:0.7em"}
+
+::: {.column width="50%"}
+
++ Experiment with numerical symbology 
+  + Right click the “sprSoil” layer
+    + go to properties
+      + Select the symbology tab
+        + From the dropdown menu, select “Graduated”
+          + Select “KFACTOR” from the “Value” dropdown menu
+            + click “Classify”, then “Apply”
+
+:::
+
+::: {.column width="50%"}
+![](img/numerical.png){style="height: 60vh; width: auto; max-width: 100%; object-fit: contain;"}
+:::
+
+## Print Layout For Maps {style="font-size:0.8em"}
+
++ Click Project > “New Print Layout”
+  + Give it a name and click “OK”
+    +  Click  _add map_ (![](img/add_map_button.png))
+      + Click and drag a box onto the map canvas    
+      to draw a box.  This is where the map will  
+      be positioned
+        + To reposition things use _move item content_ (![](img/move_item_item_content_button.png){style="vertical-align: middle;"})
+          + Click and drag map to pan
+          + Scroll with mouse wheel to change zoom (hold control for finer control)
+
+
+## Print Layout - Add Legend {.columns}
+
+::: {r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.45em; max-width:35%" }
+Add a Legend:
+
++ Click the _add legend_ button (![](img/add_legend_button.png){style="vertical-align: middle;"}), or from drop down menu _Add Item > Add Legend_
+  + Draw a box to position the legend
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="font-size:0.45em; max-width:35%"}
+Edit legend items by going to _Item Properties > Legend Items_, and unchecking _Auto Update_
+:::
+
+::: {.column width="35%"}
+
+:::
+
+::: {.column width="65%"}
+![](img/map_layout.png){right="5px"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index="2" style="position: absolute; top: 158px; right
+: 85px; width: 45px; height: 10px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::
+
 
 
 
@@ -1200,11 +1297,8 @@ Conformal map projections
 Equal area or equivalent projections
 
 ::: {style="font-size:0.7em"}
-+ Preserve angles (also known as bearings) between locations
-+ Used for navigational purposes
-+ Areas tend to be quite distorted
-+ Shapes are more or less preserved over small areas, at small scales areas become wildly distorted
-+ e.g. Mercator projection is famous for distorting Greenland
++ Preserve area
+
 :::
 :::
 
@@ -1250,3 +1344,53 @@ Bottom: Equirectangular projection with Tissot's indicatrix.]{style="font-size:0
 
 :::
 :::
+
+
+# Spatial Data Models and Formats
+
+##
+
+
+# Vector and Raster Data
+
+
+
+
+# Finding Acquiring, Creating, and Editing GIS Data
+
+
+# GeoProcessing and Vector Operations
+
+
+
+# Geospatial Data: Satellites, UAVs, GPS
+
+
+
+# Spectral Indices and Tabular Joins
+
+
+
+# Spatial Joins, Final Project Discussion
+
+
+# Spatial Analysis Introduction, Final Project Group Discussions
+
+
+# Spatial Analysis: Map Algebra, Reprojection, Resampling
+
+
+# Raster Vector Operations, Zonal Statistics, Point Sampling
+
+
+# Rasterizing by Attributes, Georeferencing, Statistics 101
+
+
+# ArcGIS Pro, Spreadsheets
+
+
+# Web Mapping, Field Data Collection: Mobile sensors and edge devices
+
+
+# Photogrammetry, Radar, Interferometry
+
