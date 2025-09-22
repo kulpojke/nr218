@@ -6,3 +6,4 @@ Welcome to NR 218, Introduction to Geographic Information Systems
 ![Slides](https://kulpojke.github.io/nr218)
 
 
+huh?
