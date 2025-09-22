@@ -630,12 +630,12 @@ Many options, but mounting Cal Poly One Drive as a disk is is probably the simpl
 See the Cal Poly  tutorial [here](https://calpoly.atlassian.net/wiki/spaces/CPKB/pages/732921936/Access+OneDrive+and+SharePoint+from+my+Computer )
 or try [this](https://github.com/rclone/rclone), for Linux users or the computer savvy.
 
-# Tutorial - Quick Intro to QGIS 
+# Tutorial - (not so) Quick Intro to QGIS 
 
 ## 
 
 1) Download `SPR_data.zip` from the files section of canvas
-2) Extract the file ([Linux](https://linuxize.com/post/how-to-unzip-files-in-linux/). [Windows](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5), [Mac](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac)), and place in appropriate file location (Remember, organize your files!)
+2) Extract the file ([Linux](https://linuxize.com/post/how-to-unzip-files-in-linux/), [Windows](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5), [Mac](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac)), and place in appropriate file location (Remember, organize your files!)
 3) Open QGIS  
 
 ![](img/Qgis-icon-3.0.png)
@@ -814,7 +814,13 @@ Add a Legend:
 Edit legend items by going to _Item Properties > Legend Items_, and unchecking _Auto Update_
 :::
 
+::: {.fragment .absolute .fade-in data-fragment-index="3" style="font-size:0.45em; max-width:35%"}
+Buttons will appear to add or remove items
+![](img/legend_editing.png)
+:::
+
 ::: {.column width="35%"}
+
 
 :::
 
@@ -827,6 +833,30 @@ Edit legend items by going to _Item Properties > Legend Items_, and unchecking _
 :::
 
 :::
+
+
+## Other elements
+Use the _Add Item_ dropdown, or the left side toolbar to add a scale bar, and north arrow
+
+
+## Coordinate Grids
+
++ Be sure you have the _Map_ item selected in the _items_ box. 
+  + Select the _Item Properties_ tab
+    + Scroll down and expand _Grids_
+      + Click green + Button to add grid
+        + Click _Modify Grid_
+          + Enter “0.03” for the X and Y intervals
+            + Check the _Draw Coordinates_ box to label grids with coordinates. 
+
+## Export map
+
++ Once you have something satisfactory, create an export of your map to share. 
+  + Layout > Export as image
+    + Choose file type
+      + Set save location
+
+Open the image file we just saved to verify results
 
 
 

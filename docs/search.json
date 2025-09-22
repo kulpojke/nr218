@@ -256,7 +256,7 @@
     "href": "index.html#section-4",
     "title": "",
     "section": "",
-    "text": "Download SPR_data.zip from the files section of canvas\nExtract the file (Linux. Windows, Mac), and place in appropriate file location (Remember, organize your files!)\nOpen QGIS"
+    "text": "Download SPR_data.zip from the files section of canvas\nExtract the file (Linux, Windows, Mac), and place in appropriate file location (Remember, organize your files!)\nOpen QGIS"
   },
   {
     "objectID": "index.html#section-5",
@@ -312,7 +312,28 @@
     "href": "index.html#print-layout---add-legend",
     "title": "",
     "section": "Print Layout - Add Legend",
-    "text": "Print Layout - Add Legend\n\n\nAdd a Legend:\n\nClick the add legend button (), or from drop down menu Add Item &gt; Add Legend\n\nDraw a box to position the legend\n\n\n\n\nEdit legend items by going to Item Properties &gt; Legend Items, and unchecking Auto Update"
+    "text": "Print Layout - Add Legend\n\n\nAdd a Legend:\n\nClick the add legend button (), or from drop down menu Add Item &gt; Add Legend\n\nDraw a box to position the legend\n\n\n\n\nEdit legend items by going to Item Properties &gt; Legend Items, and unchecking Auto Update\n\n\nButtons will appear to add or remove items"
+  },
+  {
+    "objectID": "index.html#other-elements",
+    "href": "index.html#other-elements",
+    "title": "",
+    "section": "Other elements",
+    "text": "Other elements\nUse the Add Item dropdown, or the left side toolbar to add a scale bar, and north arrow"
+  },
+  {
+    "objectID": "index.html#coordinate-grids",
+    "href": "index.html#coordinate-grids",
+    "title": "",
+    "section": "Coordinate Grids",
+    "text": "Coordinate Grids\n\nBe sure you have the Map item selected in the items box.\n\nSelect the Item Properties tab\n\nScroll down and expand Grids\n\nClick green + Button to add grid\n\nClick Modify Grid\n\nEnter “0.03” for the X and Y intervals\n\nCheck the Draw Coordinates box to label grids with coordinates."
+  },
+  {
+    "objectID": "index.html#export-map",
+    "href": "index.html#export-map",
+    "title": "",
+    "section": "Export map",
+    "text": "Export map\n\nOnce you have something satisfactory, create an export of your map to share.\n\nLayout &gt; Export as image\n\nChoose file type\n\nSet save location\n\n\n\n\nOpen the image file we just saved to verify results"
   },
   {
     "objectID": "index.html#human-readable-vs.-binary-files",
