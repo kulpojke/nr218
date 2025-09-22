@@ -1,9 +1,8 @@
 # NR 218 - Introduction to GIS
 Welcome to NR 218, Introduction to Geographic Information Systems
 
-![Sylabus](file:///home/michael/Work/nr218/docs/calendar.html)
+![Sylabus](https://kulpojke.github.io/nr218/calendar.html)
 
-![Slides](https://kulpojke.github.io/nr218)
+![Slides](https://kulpojke.github.io/nr218/#/nr-218)
 
 
-huh?
