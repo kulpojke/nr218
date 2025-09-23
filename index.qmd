@@ -1097,7 +1097,7 @@ The factor of reduction of the world so it fits on a map
 
 :::
 
-## Coordinate systems 
+## Coordinate systems {.smaller}
 
 + Frameworks that are used to define unique positions
 + Geographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of  Earth
@@ -1107,9 +1107,9 @@ The factor of reduction of the world so it fits on a map
   + Longitude $\in 0^\circ, 180^\circ$ (or $-180^\circ, 180^\circ$)
 +  Degrees can be written in degrees-minutes-seconds (DMS) or in decimal
 degrees (DD). 
-  
-## DMS to DD conversion {.smaller .columns}
 
+
+## DMS to DD conversion {.smaller .columns}
 
 ::: {.column width="40%"}
 
@@ -1239,13 +1239,18 @@ Some spheroids are suited for global use, others for local use
 :::
 
 ::: {.column width="60%"}
-:::  {r-srack}
-::: {.fragment .fade-in-then-out .absolute data-fragment-index=2}
-![](https://upload.wikimedia.org/wikipedia/commons/b/bd/Constructie_ellipso%C3%AFde.gif?20070313202411){style="position: absolute; right: 0px; top: 70px; width: 300px;"}
+::: {.r-stack}
+
+::: {.fragment .fade-in-then-out data-fragment-index=1}
+![](img/Gravity_anomalies_on_Earth.jpg){style="width: 300px; height: auto;"}
 :::
 
-::: {.fragment .fade-in .absolute data-fragment-index=3}
-![](img/several_ellipsoids.png){style="position: absolute; right: 0px; top: 70px; width: 300px;"}
+::: {.fragment .fade-in-then-out data-fragment-index=2}
+![](https://upload.wikimedia.org/wikipedia/commons/b/bd/Constructie_ellipso%C3%AFde.gif?20070313202411){style="width: 300px; height: auto;"}
+:::
+
+::: {.fragment .fade-in data-fragment-index=3}
+![](img/several_ellipsoids.png){style="width: 300px; height: auto;"}
 :::
 :::
 :::
@@ -1323,21 +1328,41 @@ Conformal map projections
 :::
 :::
 
-::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=7}
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=8}
 Equal area or equivalent projections
 
 ::: {style="font-size:0.7em"}
 + Preserve area
++ Distort angles
+:::
+
+![](img/File_Equal_Earth_projection_SW.jpg)
+![](img/Goode_homolosine_projection_SW.jpg)
+:::
+
+
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=8}
+Weird projections
+
+::: {style="font-size:0.7em"}
++ Often made as compromises between types of distortion
++ These two were made by architects
+:::
+
+
+:::
 
 :::
 :::
 
+## Real-time Waterman Wind Map
 
-
+::: {style="width: 100%; height: 90vh;"}
+<iframe src="https://earth.nullschool.net/#current/wind/surface/level/waterman" 
+        style="width: 100%; height: 100%; border: none;" 
+        title="Real-time Wind Map">
+</iframe>
 :::
-:::
-
-
 
 ::: {.column width="50%"}
 :::{r-stack}
