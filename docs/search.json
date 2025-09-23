@@ -438,14 +438,14 @@
     "href": "index.html#projections-1",
     "title": "",
     "section": "Projections",
-    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe shapes can be oriented in many ways.\n\nEach shape can be in one of two cases tangent and secant\n\n\n\nShape and orientation can be chosen to control the type of distortion introduced due to projection\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n \n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nThese two were made by architects"
+    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe shapes can be oriented in many ways.\n\nEach shape can be in one of two cases tangent and secant\n\n\n\nShape and orientation can be chosen to control the type of distortion introduced due to projection\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n \n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nThese two were made by architects  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
   },
   {
-    "objectID": "index.html#real-time-waterman-wind-map",
-    "href": "index.html#real-time-waterman-wind-map",
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
     "title": "",
-    "section": "Real-time Waterman Wind Map",
-    "text": "Real-time Waterman Wind Map\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
+    "section": "",
+    "text": "Real-time Waterman Wind Map ::: {style=“width: 100%; height: 90vh;”}   :::"
   },
   {
     "objectID": "project_2.html",
