@@ -858,7 +858,10 @@ Use the _Add Item_ dropdown, or the left side toolbar to add a scale bar, and no
 
 Open the image file we just saved to verify results
 
+## 
+What Are some problems here
 
+![](img/bad_colors_scheme.png)
 
 
 
@@ -1031,12 +1034,15 @@ Click the _Geometry Definition_ dropdown to assign an SRS.
 ::: {.fragment .fade-in data-fragment-index=6 style="position: absolute;"}
 Use EPSG:4326 - WGS 84
 
-Then click Add
-:::
+Click Add
 
 :::
 
 :::
+
+:::
+
+
 
 
 
@@ -1402,13 +1408,15 @@ Bottom: Equirectangular projection with Tissot's indicatrix.]{style="font-size:0
 :::
 :::
 
-## 
+##  
 Real-time Waterman Wind Map
+
 ::: {style="width: 100%; height: 90vh;"}
 <iframe src="https://earth.nullschool.net/#current/wind/surface/level/waterman" 
         style="width: 80%; height: 80%; border: none;" 
         title="Real-time Wind Map">
-</iframe>
+</iframe>  
+
 :::
 
 

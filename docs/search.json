@@ -336,6 +336,13 @@
     "text": "Export map\n\nOnce you have something satisfactory, create an export of your map to share.\n\nLayout &gt; Export as image\n\nChoose file type\n\nSet save location\n\n\n\n\nOpen the image file we just saved to verify results"
   },
   {
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
+    "title": "",
+    "section": "",
+    "text": "What Are some problems here"
+  },
+  {
     "objectID": "index.html#human-readable-vs.-binary-files",
     "href": "index.html#human-readable-vs.-binary-files",
     "title": "",
@@ -368,7 +375,7 @@
     "href": "index.html#reading-a-csv-with-qgis-1",
     "title": "",
     "section": "Reading a CSV with QGIS",
-    "text": "Reading a CSV with QGIS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDelimited text dialogue box\n\n\nBrowse for csv\n\n\nNotice that it says CRS must be selected.\nWhat is a CRS?\n\n\n\n\nWe will discuss what a CRS is in great detail later.\nFor now just know it provides a reference frame for placing the coordinates on the map.\nCoordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)\nSRS = CRS\n\n\n\n\nClick the Geometry Definition dropdown to assign an SRS.\n\n\nUse EPSG:4326 - WGS 84\nThen click Add"
+    "text": "Reading a CSV with QGIS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDelimited text dialogue box\n\n\nBrowse for csv\n\n\nNotice that it says CRS must be selected.\nWhat is a CRS?\n\n\n\n\nWe will discuss what a CRS is in great detail later.\nFor now just know it provides a reference frame for placing the coordinates on the map.\nCoordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)\nSRS = CRS\n\n\n\n\nClick the Geometry Definition dropdown to assign an SRS.\n\n\nUse EPSG:4326 - WGS 84\nClick Add"
   },
   {
     "objectID": "index.html#map-conventions",
@@ -441,15 +448,15 @@
     "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.\n\n\nThere are three commonly used surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe shapes can be oriented in many ways.\n\nEach shape can be in one of two cases tangent and secant\n\n\n\nShape and orientation can be chosen to control the type of distortion introduced due to projection\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n \n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nThese two were made by architects  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
   },
   {
-    "objectID": "index.html#section-8",
-    "href": "index.html#section-8",
-    "title": "",
-    "section": "",
-    "text": "Real-time Waterman Wind Map ::: {style=“width: 100%; height: 90vh;”}   :::"
-  },
-  {
     "objectID": "index.html#section-9",
     "href": "index.html#section-9",
+    "title": "",
+    "section": "",
+    "text": "Real-time Waterman Wind Map"
+  },
+  {
+    "objectID": "index.html#section-10",
+    "href": "index.html#section-10",
     "title": "",
     "section": "",
     "text": "MAp Abstraction"
