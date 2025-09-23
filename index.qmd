@@ -1340,29 +1340,22 @@ Equal area or equivalent projections
 ![](img/Goode_homolosine_projection_SW.jpg)
 :::
 
-
 ::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=8}
 Weird projections
 
 ::: {style="font-size:0.7em"}
-+ Often made as compromises between types of distortion
-+ These two were made by architects
++ Pretty cool
++ These two were made
+:::
+
+![](img/File_Equal_Earth_projection_SW.jpg)
+![](img/Goode_homolosine_projection_SW.jpg)
+:::
+
+:::
 :::
 
 
-:::
-
-:::
-:::
-
-## Real-time Waterman Wind Map
-
-::: {style="width: 100%; height: 90vh;"}
-<iframe src="https://earth.nullschool.net/#current/wind/surface/level/waterman" 
-        style="width: 100%; height: 100%; border: none;" 
-        title="Real-time Wind Map">
-</iframe>
-:::
 
 ::: {.column width="50%"}
 :::{r-stack}
