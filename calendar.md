@@ -54,7 +54,7 @@ For your final project you will propose a novel GIS question and collect or anal
 | Final Project  | 25  |  ![See description](final_proj.md)   |
 | Exam           | 20  |  Will be hard, but curved  |
 | Participation  | 10  |  Will be based on ![exit tickets](#attendance-policy) and engagement  |
-| Assignment 0   _ 1 (bonus) | Easy bonus points
+| Assignment 0   | 1 (bonus) | Easy bonus points
 
 
 
