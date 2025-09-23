@@ -368,7 +368,7 @@
     "href": "index.html#reading-a-csv-with-qgis-1",
     "title": "",
     "section": "Reading a CSV with QGIS",
-    "text": "Reading a CSV with QGIS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDelimited text dialogue box\n\n\nBrowse for csv\n\n\nNotice that it says CRS must be selected.\nWhat is a CRS?\n\n\n\n\nWe will discuss what a CRS is in great detail later.\nFor now just know it provides a reference frame for placing the coordinates on the map.\nCoordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)\nSRS = CRS\n\n\n\n\nClick the Geometry Definition dropdown to assign an SRS.\n\n\nUse EPSG:4326 - WGS 84"
+    "text": "Reading a CSV with QGIS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDelimited text dialogue box\n\n\nBrowse for csv\n\n\nNotice that it says CRS must be selected.\nWhat is a CRS?\n\n\n\n\nWe will discuss what a CRS is in great detail later.\nFor now just know it provides a reference frame for placing the coordinates on the map.\nCoordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)\nSRS = CRS\n\n\n\n\nClick the Geometry Definition dropdown to assign an SRS.\n\n\nUse EPSG:4326 - WGS 84\nThen click Add"
   },
   {
     "objectID": "index.html#map-conventions",

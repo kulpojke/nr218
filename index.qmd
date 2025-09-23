@@ -1030,6 +1030,8 @@ Click the _Geometry Definition_ dropdown to assign an SRS.
 
 ::: {.fragment .fade-in data-fragment-index=6 style="position: absolute;"}
 Use EPSG:4326 - WGS 84
+
+Then click Add
 :::
 
 :::
