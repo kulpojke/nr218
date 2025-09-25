@@ -45,7 +45,7 @@ For your final project you will propose a novel GIS question and collect or anal
 
 
 ## Assignment Weight
-| Asignement     | Percentage of Grade| Description  |
+| Assignment     | Percentage of Grade| Description  |
 |----------------|------|----|
 | Project 1      | 10  |  Mapping  |
 | Project 2      | 10  |  Vector Data Analysis  |
@@ -74,7 +74,7 @@ Note: Grading is not curved (Except exam).
 
 ## Assignment Submission Policy 
 
-Assigmentnts (except the final project) will be submitted on Canvas.  Students are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline.
+Assignments (except the final project) will be submitted on Canvas.  Students are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline.
 
 ## Attendance Policy 
 

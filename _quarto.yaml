@@ -6,6 +6,13 @@ project:
     - project_1.md
     - project_2.md
     - final_proj.md
+    - introduction.qmd
+    - what_is_gis.qmd
+    - some_basic_gis_concepts.qmd
+    - data_storage.qmd
+    - a_quick_intro_to_qgis.qmd
+    - intro_geospatial_data.qmd
+    - projections_etc.qmd
     - index.qmd
 
 format:

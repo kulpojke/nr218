@@ -1,0 +1,232 @@
+# Tutorial - (not so) Quick Intro to QGIS 
+
+## 
+
+1) Download `SPR_data.zip` from the files section of canvas
+2) Extract the file ([Linux](https://linuxize.com/post/how-to-unzip-files-in-linux/), [Windows](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5), [Mac](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac)), and place in appropriate file location (Remember, organize your files!)
+3) Open QGIS  
+
+![](img/Qgis-icon-3.0.png)
+
+## {.columns}
+[Open the files from the directory you just extracted]{style="font-size:0.8em"}
+
+::: {.column style="font-size:0.5em"}
+__Method 1__  
+
+1. Use the file location in the ‘Browser’ panel  
+2. Drag and and drop files into the _Layers_ Panel
+![](img/qgis-file-location-browser-panel.png){height="350px"}
+:::
+
+::: {.column style="font-size:0.5em"}
+__Method 2__  
+
+1. Press `ctrl-v` (`cmd-v` on Mac)
+2. Click ![](img/browse_button.png){style="vertical-align: middle;"} to browse for file then click ![](img/add_button.png){style="vertical-align: middle;"}.
+    + [You can select multiple files at once when browsing]{style="font-size:0.5em"}
+    + [Close window when finished.]{style="font-size:0.5em"}
+![](img/qgis_data_source_manager.png)
+
+:::
+
+## {auto-animate="true"}
+[Now the layers should be visible in the panel, and on the map]{style="font-size:0.9em"}
+
+::: {.fragment .fade-in-then-out}
+![](img/layers_panel.png){data-id="layers"}
+:::
+
+::: {.fragment .fade-in style="position: absolute; right: 50px; top: 100px;"}
+![](img/layers_panel.png){data-id="layers" style="height: 275px;"}
+:::
+
+::: {.fragment .incremental .fade-in style="position: absolute; left: 20px; bottom: 110px; font-size:0.5em"}
++ Toggle on/off layers by clicking checkboxes
++ Change layer order by dragging within panel
++ What do the little icons between the check and the layer name mean?
++ Right click a layer, select _Open Attribute Table_
++ Select rows of attribute table by clicking on the left edge (where they are numbered)
+  + Note that the corresponding features are highlighted on the map 
+:::
+
+
+## {auto-animate="true"}
+
+![](img/layers_panel.png){data-id="layers"}
+
+<!-- red boxes -->
+:::{.fragment .fade-in-then-out data-fragment-index="1" style="position: absolute; top: 50px; left: 120px; width: 165px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index="2" style="position: absolute; top: 50px; left: 415px; width: 115px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index="3" style="position: absolute; top: 50px; left: 530px; width: 20px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+<!-- Words -->
+::: {r-stack}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+[__Panning and zooming__ (The mouse wheel also zooms while in pan mode)]{style="font-size:0.7em; color: red"}
+:::
+
+::: {.fragment  .absolute .fade-in-then-out data-fragment-index="2"}
+[__Select tools__]{style="font-size:0.7em; color: red"}
+:::
+
+::: {.fragment  .absolute .fade-in-then-out data-fragment-index="3"}
+[__Info__]{style="font-size:0.7em; color: red"}
+:::
+
+:::
+
+## Basemaps {.columns}
+
+::: {.column width="50%" style="font-size:0.5em"}
+1. Click Plugins --> Manage and install Plugins
+2. Search for _QuickMapServices_
+3. Click _Install Plugin_
+4. Now on the right there should be a _Search QMS_ bar  
+5. Search for satellite
+6. Pick one (ESRI is a good choice, or Bing)
+:::
+
+::: {.column width="50%"}
+
+![](img/search_qms.png){height="600px"}
+:::
+
+
+## Symbology - categorized {.columns}
+
+::: {.column width="50%"}
+
+::: {.fragment .fade-in-then-semi-out data-fragment-index="1" style="font-size:0.7em"}
++ Right click the "sprLanduse" layer  
+  + Go to properties
+    + Select the symbology tab
+:::
+
+::: {.fragment .fade-in-then-semi-out data-fragment-index="2" style="font-size:0.6em"}
++ Experiment with basic symbology
+  + Right click the "sprLanduse" layer
+    + Go to properties
+      + Select the symbology tab
+        + From the dropdown menu, select "categorized" 
+          + Select "LUtype" from the "Value" dropdown menu, and click "Classify"
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out data-fragment-index="1"}
+![](img/symbology.png){style="height: 45vh; width: auto; max-width: 100%; object-fit: contain;"}
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="2" style="display: flex; flex-direction: column; align-items: center; gap: 10px;"}
+![](img/cat1.png){style="height: 25vh; width: auto; max-width: 100%; object-fit: contain;"}
+![](img/cat2.png){style="height: 25vh; width: auto; max-width: 100%; object-fit: contain;"}
+![](img/cat3.png){style="height: 25vh; width: auto; max-width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+:::
+
+## Symbology - Numerical {.columns style="font-size:0.7em"}
+
+::: {.column width="50%"}
+
++ Experiment with numerical symbology 
+  + Right click the “sprSoil” layer
+    + go to properties
+      + Select the symbology tab
+        + From the dropdown menu, select “Graduated”
+          + Select “KFACTOR” from the “Value” dropdown menu
+            + click “Classify”, then “Apply”
+
+:::
+
+::: {.column width="50%"}
+![](img/numerical.png){style="height: 60vh; width: auto; max-width: 100%; object-fit: contain;"}
+:::
+
+## Print Layout For Maps {style="font-size:0.8em"}
+
++ Click Project > “New Print Layout”
+  + Give it a name and click “OK”
+    +  Click  _add map_ (![](img/add_map_button.png))
+      + Click and drag a box onto the map canvas    
+      to draw a box.  This is where the map will  
+      be positioned
+        + To reposition things use _move item content_ (![](img/move_item_item_content_button.png){style="vertical-align: middle;"})
+          + Click and drag map to pan
+          + Scroll with mouse wheel to change zoom (hold control for finer control)
+
+
+## Print Layout - Add Legend {.columns}
+
+::: {r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.45em; max-width:35%" }
+Add a Legend:
+
++ Click the _add legend_ button (![](img/add_legend_button.png){style="vertical-align: middle;"}), or from drop down menu _Add Item > Add Legend_
+  + Draw a box to position the legend
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="font-size:0.45em; max-width:35%"}
+Edit legend items by going to _Item Properties > Legend Items_, and unchecking _Auto Update_
+:::
+
+::: {.fragment .absolute .fade-in data-fragment-index="3" style="font-size:0.45em; max-width:35%"}
+Buttons will appear to add or remove items
+![](img/legend_editing.png)
+:::
+
+::: {.column width="35%"}
+
+
+:::
+
+::: {.column width="65%"}
+![](img/map_layout.png){right="5px"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index="2" style="position: absolute; top: 158px; right
+: 85px; width: 45px; height: 10px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::
+
+
+## Other elements
+Use the _Add Item_ dropdown, or the left side toolbar to add a scale bar, and north arrow
+
+
+## Coordinate Grids
+
++ Be sure you have the _Map_ item selected in the _items_ box. 
+  + Select the _Item Properties_ tab
+    + Scroll down and expand _Grids_
+      + Click green + Button to add grid
+        + Click _Modify Grid_
+          + Enter “0.03” for the X and Y intervals
+            + Check the _Draw Coordinates_ box to label grids with coordinates. 
+
+## Export map
+
++ Once you have something satisfactory, create an export of your map to share. 
+  + Layout > Export as image
+    + Choose file type
+      + Set save location
+
+Open the image file we just saved to verify results
+
+## 
+What Are some problems here
+
+![](img/bad_colors_scheme.png)

@@ -1,0 +1,140 @@
+# What is GIS Why is it important
+
+## What is GIS?
+
+:::{.fragment}
+Computer-based tools used to store, visualize, analyze, and interpret geographic data
+:::
+
+<p class="fragment fade-in-then-out">
+  OR  
+  Collection of computer hardware, software, data,
+personnel, and work procedures to store, update,
+manipulate, analyze, and display all forms of geographic
+information. 
+</p>
+
+:::{.fragment}
+![](img/qgis_logo.jpeg){.absolute top=200 left=0 width="75"}
+![](img/qgis_screen.png){.absolute top=220 left=0 width="200"}
+![](img/esri_logo.jpeg){.absolute top=425 right=325 width="100"}
+:::
+
+:::{.fragment}
+![](img/grass-screen.jpeg){.absolute top=260 right=50 width="200"}
+![](img/grass_logo.png){.absolute top=190 right=50 width="75"}
+:::
+
+:::{.fragment}
+![](img/python_ecosytem.jpeg){.absolute top=220 left=210 width="275"}
+![](img/R_ecosystem.jpeg){.absolute top=220 right=275 width="275"}
+![](img/postgis.jpeg){.absolute top=425 left=325 width="200"}
+:::
+
+
+## Application Domains
+GIS is useful is many domains, for example:  
+
+::: {style="font-size: 0.45em"}
++ weather forecasts  
++ navigation  
++ delivery logisitics   
++ apps (e.g. Strava!)   
++ disaster response    
++ infrastructure monitoring   
++ climate monitoring / modeling   
++ urban/regional planning
++ architecture
++ archaeology
++ geography
++ social sciences
++ (geo)physics
++ hydrology
++ biology
++ ecology
++ etc...
+:::
+
+
+## Why use GIS
+
+::: {r-stack}
+
+::: {.fragment .fade-in-then-out style="position: absolute;"}
+Monitor and understand our planet
+
+![](img/Global_NDVI.gif){top=220 left=110 width="475"}
+![](img/aralsea.png){top=150 right=0 width="275"}
+:::
+
+::: {.fragment .fade-in-then-out style="position: absolute;"}
+Planning
+
+![](img/urb_plan.png){width="575"}
+:::
+
+
+::: {.fragment .fade-in-then-out style="position: absolute;"}
+Disaster Response
+
+![](img/modis-fire.jpeg){top=220 left=110 width="475"}
+![](img/disaster_movie.png){top=150 right=0 width="275"}
+:::
+
+:::
+
+
+## Software{style="font-size: 0.5em"}
+:::{.fragment}
++ This class will be taught using QGIS (but you can use anything you want)
++ Software changes - We will focus on building an understanding of the concepts that will allow you to successfully use any GIS software.
++ I will occasionally show examples of analysis using other tools, particularly Python.
+:::
+
+:::{.r-stack}
+<p class="fragment fade-in-then-out">
+There are many other common (GUI based) GIS  software platforms:  
+  - [ESRI (ArcGIS suite)](https://www.geographyrealm.com/qgis-versus-arcgis/)  
+  - [GRASS](https://en.wikipedia.org/wiki/GRASS_GIS)  
+  - [Google Earth Engine](https://en.wikipedia.org/wiki/Google_Earth#Google_Earth_Engine)  
+  - Google Earth Pro  
+  - ENVI  
+  - SAGA  
+  - etc...  
+  ![](img/qgis_screen.png){.absolute top=220 left=500 width="200"}
+</p>
+
+<p class="fragment fade-in-then-out">
+There are also command line tools  
+  - [GDAL](https://en.wikipedia.org/wiki/GDAL)  
+  - PDAL  
+  - WhiteBox Tools  
+</p>
+
+<p class="fragment fade-in-then-out">
+Additionally, GIS can be performed purely using scripting languages  
+  - Python  
+  - R  
+  - Javascript  
+  - Julia  
+</p>
+:::
+
+
+## Software - benefits of open source{.smaller}
+
++ Available to you, for free, forever (even after Cal Poly)
++ It’s free, as in liberty. If you need extra functionality in QGIS, you can do more than just hope it
+will be included in the next release. You can sponsor the development of a feature, or add it
+yourself if you are familiar with programming.
++ Compatible with any operating system (Windows, Mac, Linux)
++ Collectively advances human knowledge / progress
++ Commonly used in many organizations
++ Easier to learn ArcGIS after QGIS than the other way around
+
+## Beautiful Maps
++ [QGIS Map gallery](https://www.flickr.com/groups/qgis/pool/)
++ [Oceano Dunes (using plas.io)](https://p3d.in/Z86TN) 
++ [Stackexchange thread of beautiful maps](https://gis.stackexchange.com/questions/3083/seeking-examples-of-beautiful-maps)
++ [Cal poly Tree map](https://calpoly.maps.arcgis.com/apps/webappviewer/index.html?id=49c730285d064d17be4c8429426d7609)
+

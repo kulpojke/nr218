@@ -1,0 +1,371 @@
+# Scale, Coordinate systems, and Map Projections
+
+## Map Conventions
+
+Mapping conventions facilitate effective conveyance of information.  In most cases using them is a good idea ([but not necessarily always](https://www.storybench.org/mapbreaking-why-cartographic-flaws-can-sometimes-be-a-good-thing/))
+
+:::: {.columns}
+::: {.column width="30%"}
+::: {.figure style="text-align: center; margin: 0 auto;"}
+  ![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Apollo_17_Blue_Marble_original_orientation_%28AS17-148-22727%29.jpg/250px-Apollo_17_Blue_Marble_original_orientation_%28AS17-148-22727%29.jpg)
+
+::: {.figure-caption style="font-size: 0.4em; color: #888;"}
+[The Blue Marble photograph](https://en.wikipedia.org/wiki/The_Blue_Marble) in its original orientation.
+:::
+:::
+:::
+
+::: {.column width="70%"}
+::: {.figure style="text-align: center; margin: 0 auto;"}
+![](img/upsouth.jpeg){style="height: 250px;"}
+
+::: {.figure-caption style="font-size: 0.4em; color: #888;"}
+South's up!  
+:::
+:::
+:::
+
+::::
+
+## Map Scale {style="font-size:0.5em"}
+The factor of reduction of the world so it fits on a map  
+
+::: {.incremental}
+  + You need to shrink things to make a map
+  + On reference maps it is generally important to include a scale bar  
+  ![](img/scale-bar.png){style="height: 175px;"}
+  + Representative fraction (RF) describes scale as a simple ratio 
+    <div style="position: absolute; top: 267px; left: 165px; width: 80px; height: 14px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"></div>
+    + The numerator, which is always unity (i.e., 1), denotes map distance.  
+    The denominator denotes ground or “real-world” distance.
+    + unit neutral
+    + Large vs small, 1:1,000 > 1:1,000,000
+    + Large shows more detail
+:::
+
+## Map Scale {style="font-size:0.5em"}
+
+::: {.figure style="text-align: center; margin: 0 auto;"}
+  ![](img/scale-bar.png){style="height: 400px;"}
+:::
+
+::: {.incremental}
++ <div class="fragment fade-out" style="position: absolute; top: 313px; left: 95px; width: 830px; height: 100px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"></div>
++ <div class="fragment fade-in-then-out" style="position: absolute; top: 413px; left: 300px; width: 400px; height: 38px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"></div>
+
+:::
+
+## Coordinate systems {.smaller}
+
++ Frameworks that are used to define unique positions
++ Geographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of  Earth
++ GCS is based on a sphere or spheroid (a.k.a. ellipsoid)
++ GCS units are degrees
+  + Latitude $\in 0^\circ, 90^\circ$ (or $-90^\circ, 90^\circ$)
+  + Longitude $\in 0^\circ, 180^\circ$ (or $-180^\circ, 180^\circ$)
++  Degrees can be written in degrees-minutes-seconds (DMS) or in decimal
+degrees (DD). 
+
+
+## DMS to DD conversion {.smaller .columns}
+
+::: {.column width="40%"}
+
+::: {r-stack}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index=1 style="text-align: center; font-size:1.2em"}
+128° 40' 52.0428" W
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index=2 style="text-align: center; font-size:1.2em"}
+<span style="color: red;">128°</span> 40' 52.0428" W
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index=3 style="text-align: center; font-size:1.2em"}
+128°  <span style="color: red;">40'</span> 52.0428" W
+:::
+
+::: {.fragment .absolute  .fade-in-then-out data-fragment-index=4 style="text-align: center; font-size:1.2em"}
+128° 40'  <span style="color: red;">52.0428"</span> W
+:::
+
+::: {.fragment .absolute  .fade-in-then-out data-fragment-index=5 style="text-align: center; font-size:1.2em"}
+128° 40' 52.0428" <span style="color: red;">W</span>
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index=6 style="text-align: center; font-size:1.2em"}
+![](img/slo-not-slo.png)
+:::
+
+
+:::
+
+:::
+
+::: {.column width="60%"}
+
+::: {r-stack}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index=2 style="text-align: center; font-size:1.2em"}
+<span style="color: red;">128</span>
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index=3 style="text-align: center; font-size:1.2em"}
+128  + <span style="color: red;">(40 / 60)</span>
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index=4 style="text-align: center; font-size:1.2em"}
+128  + (40 / 60) + <span style="color: red;">( 52.0428 / 60$^{2}$ )</span>
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index=5 style="text-align: center; font-size:1.2em"}
+<span style="color: red;">-</span>128.68112299
+:::
+
+:::
+:::
+
+::: {.fragment  .fade-in-then-out data-fragment-index=6 style="text-align: center; font-size:1.5em"}
+<span style="color: red;">The negative is important!</span> SLO vs. off the coast of Shandong
+:::
+
+## Spheroids and Geoids {.columns .incremental style="font-size:0.6em"}
+
+::: {.column width="40%"}
+
+::: {.r-stack style="margin-bottom: 60px; width: 40%;"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index=1}
+GCS is based on a sphere, spheroid, or geoid
+:::
+
+::: {.fragment .absolute .fade-in data-fragment-index=2}
+A __geoid__ is an approximation of the true shape of the earth
+:::    
+:::
+
+::: {.fragment .fade-in data-fragment-index=3 style="font-size:0.6em"}    
+&nbsp;&nbsp;&nbsp; $\circ$ As defined by its gravitational field rather than its topography [^2]
+:::
+
+::: {.fragment .fade-in data-fragment-index=4 style="font-size:0.6em"}    
+&nbsp;&nbsp;&nbsp; $\circ$ Gravitational field found by finding equipotential surfaces
+:::
+
+::: {.fragment .fade-in data-fragment-index=4 style="font-size:0.6em"}    
+&nbsp;&nbsp;&nbsp; $\circ$ _The_ geoid is the specific equipotential surface that best approximates
+mean sea level (MSL) on a global basis
+::: 
+
+::: {.fragment .fade-in data-fragment-index=4 style="font-size:0.6em"}    
+&nbsp;&nbsp;&nbsp; $\circ$ MSL diverges from the geoid by up to 2 m in places.
+::: 
+
+:::
+
+::: {.column width="60%"}
+::: {r-stack}
+::: {.fragment .fade-in-then-out data-fragment-index=3}
+![](img/Gravitational_field_Earth_lines_2.png){style="position: absolute; right: 0px"}
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index=4}
+![](img/Gravity_anomalies_on_Earth.jpg){style="position: absolute; right: 0px; width: 250px"}
+:::
+
+
+:::
+:::
+
+
+[^2]: [Janssen, Volker. "Understanding coordinate reference systems, datums and transformations." (2009).](https://figshare.utas.edu.au/articles/journal_contribution/Understanding_coordinate_reference_systems_datums_and_transformations/22873136/1?file=40609577)
+
+
+## Spheroids and Geoids {.columns .smaller style="font-size:0.6em"}
+
+::: {.column width="40%"}
+
+::: {.fragment .fade-in data-fragment-index=1}
+The geoid is pretty complex... 
+:::
+
+::: {.fragment .fade-in data-fragment-index=2}
+so the surface is approximated using a  _spheroid_ (also called an ellipsoid of revolution) 
+:::
+
+::: {.fragment .fade-in data-fragment-index=3}
+Some spheroids are suited for global use, others for local use
+:::
+
+:::
+
+::: {.column width="60%"}
+::: {.r-stack}
+
+::: {.fragment .fade-in-then-out data-fragment-index=1}
+![](img/Gravity_anomalies_on_Earth.jpg){style="width: 300px; height: auto;"}
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index=2}
+![](https://upload.wikimedia.org/wikipedia/commons/b/bd/Constructie_ellipso%C3%AFde.gif?20070313202411){style="width: 300px; height: auto;"}
+:::
+
+::: {.fragment .fade-in data-fragment-index=3}
+![](img/several_ellipsoids.png){style="width: 300px; height: auto;"}
+:::
+:::
+:::
+
+## Datums
+
++ A _datum_ is a spheroid with an origen point and orientation
++ in common parlance they are often used interchangeably
+
+## Projections {.columns}
+
+::: {.column width="50%"}
+
++ Mathematical formulas for transform 3D Earth to 2D map
++ i.e. project the latitude and longitude to x any coordinates on a plane
++ There are infinite ways to do this, they all cause distortion
+
+:::
+
+::: {.column width="50%"}
+![](https://imgs.xkcd.com/comics/map_projections.png){style="max-height: 60vh; width: auto; object-fit: contain;"}
+:::
+
+## Projections {.columns}
+
+::: {.column width="50%" .smaller}
+::: {r-stack}
+::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=1}
+Imagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.
+:::
+
+::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=2}
+There are three commonly used surfaces 
+
++ plane
++ cone
++ cylinder
+:::
+
+::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=3}
++ The shapes can be oriented in many ways.   
++ Each shape can be in one of two cases _tangent_ and _secant_
+:::
+
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=4}
+Shape and orientation can be chosen to control the type of distortion introduced due to projection
+:::
+
+::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=5}
+Tissot's indicatrix
+
+    Shows linear, angular, and areal distortions of maps
+:::
+
+::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=6}
+Equidistant projections
+
+::: {style="font-size:0.7em"}
++ Maintains distance between points in one direction (usually north-south)
++ Angles and shapes are not preserved
++ Good for small-scale maps that cover large areas
++ Often used  for global thematic maps
+:::
+:::
+
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=7}
+Conformal map projections
+
+::: {style="font-size:0.7em"}
++ Preserve angles (also known as bearings) between locations
++ Used for navigational purposes
++ Areas tend to be quite distorted
++ Shapes are more or less preserved over small areas, at small scales areas become wildly distorted
++ e.g. Mercator projection is famous for distorting Greenland
+:::
+:::
+
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=8}
+Equal area or equivalent projections
+
+::: {style="font-size:0.7em"}
++ Preserve area
++ Distort angles
+:::
+
+![](img/File_Equal_Earth_projection_SW.jpg)
+![](img/Goode_homolosine_projection_SW.jpg)
+:::
+
+
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=9}
+Weird projections
+
+::: {style="font-size:0.7em"}
++ Often made as compromises between types of distortion
++ These two were made by architects
+![](img/File_Dymaxion_projection.png)
+![](img/File_Dymaxion_with_Tissot's_Indicatrices_of_Distortion.svg)
+:::
+
+:::
+
+:::
+:::
+
+
+::: {.column width="50%"}
+:::{r-stack}
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=1}
+![](img/projection_concept.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+:::
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=2}
+![](img/flattenable.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+:::
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=3}
+![](img/secant-tangent-cases.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+:::
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=5}
+![](img/Tissot_world_from_space.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+![](img/Tissot_mercator.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+[Left: circles of equal area on globe. Right: same circles on Mercator projection.]{style="font-size:0.3em"}
+:::
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=6 style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 10px; width: 50%; height: 75%; top: 10%;"}
+![](img/File_Equirectangular_projection_SW.png){style="max-height: 40vh; width: auto; object-fit: contain;"}
+![](img/plate_carree_with_tissots.png){style="max-height: 40vh; width: auto; object-fit: contain;"}
+[Top: True-color satellite image of Earth in equirectangular projection.  
+Bottom: Equirectangular projection with Tissot's indicatrix.]{style="font-size:0.3em"}
+:::
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=7}
+![](img/mercator_nautical.png){style="max-height: 25vh; width: auto; object-fit: contain;"}
+![](img/Tissot_mercator.png){style="max-height: 30vh; width: auto; object-fit: contain;"}  
+[Top: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection.]{style="font-size:0.3em"}
+:::
+
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=9 style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; margin-top: 20px;"}
+![](img/Waterman_projection.png){style="width: 100%; height: auto; object-fit: contain;"}
+![](img/Waterman_Butterfly_with_Tissot's_Indicatrices_of_Distortion.svg.png){style="width: 100%; height: auto; object-fit: contain;"}
+
+:::
+
+:::
+:::
+
+##  
+Real-time Waterman Wind Map
+
+::: {style="width: 100%; height: 90vh;"}
+<iframe src="https://earth.nullschool.net/#current/wind/surface/level/waterman" 
+        style="width: 80%; height: 80%; border: none;" 
+        title="Real-time Wind Map">
+</iframe>  
+
+:::
+

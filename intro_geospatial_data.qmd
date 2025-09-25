@@ -1,0 +1,165 @@
+# A quick intro to geospatial data 
+
+
+## Human readable vs. binary files {.columns data-auto-animate="true" style="font-size: 0.6em"}
+::: {.column width="50%"}
+__Human Readable__
+
++ file.txt
++ [file.csv]{data-id="csv-item" style="padding: 2px 4px; border-radius: 3px;"}
++ file.xml
++ file.docx[^1] 
++ file.json
++ filename.py
+
+
+[^1]: Actually, a docx is a binary until its unzipped, then it is just a directory of xml files. 
+
+
+:::
+
+::: {.column width="50%"}
+__Binary__
+
++ filename.pdf
++ filename.tif
++ filename.laz
++ filename.parquet
++ filename.pyc
+:::
+
+
+## Delimiters {data-auto-animate="true"}
+
+:::{style="font-size: 0.6em"}
+Data entries in many text files are separated by a _delimiter_, such as a comma,
+tab, space, etc. They also generally have a header describing the contents of each row. For example a csv is a comma delimited file:
+:::
+
++ [file.csv]{data-id="csv-item"}
+
+:::{.fragment data-id="csv-item" style="padding: 2px 4px; border-radius: 3px;"}
+```
+OBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat
+3025,04ba1d01-c043-478f-ad62-e7eeb903cf09,Heat Perimeter,FIRIS,2025-01-01 05:39:02.359000+00:00,-120.244,34.8824
+3026,4551a5e4-e94d-46e2-9aac-73cc4314c946,Heat Perimeter,FIRIS,2025-01-02 05:16:55.340000+00:00,-116.83,32.5974
+3027,2b1329f3-5b39-4c0e-ad34-1250e436e0e1,Heat Perimeter,FIRIS,2025-01-07 22:11:19.142000+00:00,-118.548,34.058
+3028,a766c1b5-1d8e-43b3-9aac-02358de18d35,Heat Perimeter,FIRIS,2025-01-07 23:17:35.698000+00:00,-118.547,34.0589
+3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589
+```
+:::
+
+:::{.fragment style="position: absolute; top: 298px; left: 2; width: 800px; height: 21px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+
+## Reading a CSV {data-auto-animate="true"}
+:::{data-id="csv-item"}
+```
+OBJECTID,GlobalID,type,source,poly_DateCurrent,lon,lat
+3025,04ba1d01-c043-478f-ad62-e7eeb903cf09,Heat Perimeter,FIRIS,2025-01-01 05:39:02.359000+00:00,-120.244,34.8824
+3026,4551a5e4-e94d-46e2-9aac-73cc4314c946,Heat Perimeter,FIRIS,2025-01-02 05:16:55.340000+00:00,-116.83,32.5974
+3027,2b1329f3-5b39-4c0e-ad34-1250e436e0e1,Heat Perimeter,FIRIS,2025-01-07 22:11:19.142000+00:00,-118.548,34.058
+3028,a766c1b5-1d8e-43b3-9aac-02358de18d35,Heat Perimeter,FIRIS,2025-01-07 23:17:35.698000+00:00,-118.547,34.0589
+3029,72049d43-03fe-4cc1-899a-fe2eb43934e7,Heat Perimeter,FIRIS,2025-01-07 23:17:39.454000+00:00,-118.547,34.0589
+```
+:::
+
+::: {style="font-size: 0.5em" data-id="link-item"}
+[link to file](https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv) (right-click and "save link as")  
+__Tip:__ Remeber, file organization! 
+:::
+
+:::{style="font-size: 0.3em"}
+This csv is adapted from [CA Perimeters CAL FIRE NIFC FIRIS public view ](https://data.ca.gov/dataset/ca-perimeters-cal-fire-nifc-firis-public-view).
+:::
+
+## Reading a CSV with QGIS {data-auto-animate="true"}
+ 
+::: {style="font-size: 0.5em" data-id="link-item"}
+[link to file](https://raw.githubusercontent.com/kulpojke/nr218/refs/heads/main/assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view_centroids.csv) (right-click and "save link as")  
+:::
+
+:::{r-stack}
+
+:::{.fragment .fade-in-then-out data-fragment-index=1 style="position: absolute;"}
+Either `Layer --> Add Layer -->> Add Delimited Text Layer`or press `control V` (command V on Mac)
+:::
+
+:::{.fragment .fade-in data-fragment-index=2 style="position: absolute;"}
+![](img/qgis_data_source_manager.png){height="350"}
+:::
+
+:::{.fragment .fade-in data-fragment-index=3 style="position: absolute; top: 267px; left: 0; width: 150px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::
+
+
+## Reading a CSV with QGIS {.columns data-auto-animate="true"}
+
+::: {.column width="50%"}
+
+:::{.fragment data-fragment-index=1 style="position: absolute;"}
+![](img/qgis_data_source_manager_2.png){height="350"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=2 style="position: absolute; top: 131px; left: 469px; width: 15px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=3 style="position: absolute; top: 430px; left: 100px; width: 90px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=5 style="position: absolute; top: 260px; left: 100px; width: 90px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::{.fragment .fade-in data-fragment-index=6 style="position: absolute;"}
+![](img/qgis_data_source_manager_3.png){height="350"}
+:::
+
+:::{.fragment .fade-in data-fragment-index=6 style="position: absolute; top: 330px; left: 243px; width: 210px; height: 16px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::
+
+::: {.column width="50%"}
+
+:::{r-stack}
+
+:::{.fragment .fade-in-then-out data-fragment-index=1 style="position: absolute;"}
+Delimited text dialogue box
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=2 style="position: absolute;"}
+Browse for csv
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=3 style="position: absolute;"}
+[Notice that it says CRS must be selected.]{style="font-size: 0.5em"}
+
+What _is_ a CRS?
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index=4 style="position: absolute;"}
+::: {style="font-size: 0.6em"}
++ We will discuss what a CRS is in great detail later.
++ For now just know it __provides a reference frame for placing the coordinates on the map__.
++ Coordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)
++ __SRS = CRS__
+:::
+:::
+ 
+:::{.fragment .fade-in-then-out data-fragment-index=5 style="position: absolute;"}
+Click the _Geometry Definition_ dropdown to assign an SRS.
+:::
+
+::: {.fragment .fade-in data-fragment-index=6 style="position: absolute;"}
+Use EPSG:4326 - WGS 84
+
+Click Add
+
+:::
+
+:::
+
+:::

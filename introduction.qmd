@@ -1,0 +1,71 @@
+# NR 218 - Introduction
+
+
+## Class Details
++ _Location_  
++ Times:
+  - [Monday:]{style="font-size:0.8em"}  
+    [5:10 - 6:00 Lecture]{style="font-size:0.8em"}  
+    [6:10 - 9:00 Lab]{style="font-size:0.8em"}  
+  - [Wednesday]{style="font-size:0.8em"}  
+    [6:10 - 9:00 Lab]{style="font-size:0.8em"}  
+
+
+## Instructor Details
++ Michael Huggins
++ Office Hours:  
+  - Building 72 (Plant Conservatory)
+    Room 107  
+    Mondays 2:30 - 4:30s  
+
+
+## Learning Goals
++ Analyze spatial data  
++ Create maps using geospatial software
++ Produce quality graphics
++ Apply skills in Remote Sensing, GIS, and data science to solve a problem of your own design
++ Understand basic principles of GIS
+
+
+## Active Learning and Growth Mindset {auto-animate=true style="font-size:0.5em"}
++ This class will be challenging - learning new skills is hard
++ Recognize that you won’t be good immediately
+  - Mastery takes time and repetition
++ Ask for help!
+  - Internet, classmates, professor
+  - ::: {style="margin-top: 0px;"}
+  Try not to rely on AI
+  :::
++ Don’t be afraid to mess up
++ Crash the computer, it’s ok!
++ Think critically and logically, don’t get frustrated
++ There will be lots of hands-on work time in this class
++ Suggest bringing laptop if you have one
+
+## {auto-animate=true}
+::: {style="margin-top: 10px; font-size: 2em;"}
+Try not to rely on AI
+:::
+
+::: {style="font-size:0.5em"}
++ AI generated text [__may not be used for any writing__]{.fragment .highlight-current-red} .
++ It is ok to seek AI assistance for project work, but it is important to consider that AI has the potential to make you stupid and waste your time!
+    + Depending on AI prevents development of critical thinking, writing, and problem-solving skills
+    + AI will sometimes lead you down a terrible, deep rabbit hole of confusion
+    + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework
+    + The struggle of working through difficult concepts is often where the most valuable learning occurs
+
+That is not to say LLMs are never useful or appropriate to use, but you need to know its limitations.
+:::
+
+
+## Class Icebreaker
+
+__Three things in common__
+
++ Get is small groups  
++ Take 5 minutes to identify three things you have in common with each other
+  + Choose intresting things.  The stranger, the better
+  + Boring examples:
+    + "We are a forest and fire sciences majors"
+    + "We are all from Southern California"

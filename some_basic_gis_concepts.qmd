@@ -1,0 +1,279 @@
+# Some basic GIS Concepts
+
+## Location {style="font-size:0.5em"}
+
++ Position
++ A position on the surface of the earth
++ How do we define a location?
+  + __Nominal location__ - By name
+    + Helsinki, Finland
+    + Appalachia
+
+  + __Relative__
+    + Oakland is east of San Francisco
+
+  + __Absolute Location__ - can be defined using Coordinates
+    + Postal Code
+    + X,Y,(Z) is the Cartesian coordinate system
+    + Latitude and Longitude are the (non-projected )Geographic Coordinate System
+  
+## Direction {style="font-size: 0.6em" auto-animate=true auto-animate-easing="ease-in-out"}
+
+
+
+The position of a feature or phenomenon on the surface of the earth
+relative to some reference point
+
++ Egocentric location, _to my left_
++ Landmark direction, _towards the mountain_
+
+In geography and GIS, there are three more standard benchmarks that are used to define the directions:
+
+
+
+[True north]{data-id="1"} (and south) is towards the point at which the axis of the
+earth’s rotation intersects the earth’s surface
+
+[Magnetic north]{data-id="2"} is towards where the Earth's magnetic fields merge in the North  
+
+[Grid north]{data-id="3"} is the northward direction of the grid lines of latitude and longitude on a map
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+::: {.absolute style="top: 10px; left: 50px; font-size: 0.8em;" data-id="1"}
+True north
+:::
+
+::: {.absolute style="top: 10px; left: 50%; transform: translateX(-50%); font-size: 0.8em;" data-id="2"}
+Magnetic north
+:::
+
+::: {.absolute style="top: 10px; right: 50px; font-size: 0.8em;" data-id="3"}
+Grid north
+:::
+
+:::{.absolute style="top: 40px; left: 50px; font-size: 0.8em;" data-id="1"}
+![](img/Utm-latlon_grid_en.svg.png){width=400px top=10 right=0}
+:::
+
+:::{.absolute style="top: 40px; right: 50px; font-size: 0.8em;" data-id="2"}
+![](img/North_Magnetic_Poles.png){width=400px top=10}
+:::
+
+
+
+
+
+## Distance
++ The separation between locations
+  + _Nominal_ (e.g. close/far) or _Absolute_ (1 kilometer)
++ Cartesian distance on a flat surface is easy:  
+$$
+D = \sqrt{(x_{2} - x_{1})^{2} + (x_{2} - x_{1})^{2}}
+$$
+
++ Distance on a 3-Dimensional surface is complicated. We will discuss it later
+
+
+
+## Space
+Space is kind of an ambiguous term. 
+
+For GIS we are often interested in  _topological_ space
+
++ Positional relationships between places / nodes /objects
++ e.g. subway map 
+
+
+## Navigation
+Destination-oriented movement through space. Relies on:
+
++ Landmark Knowledge
++ Route Knowledge
++ Survey knowledge
+
+
+## GIS
+All GIS systems have a database that can relate spatial-data and attribute data.
+
++ Spatial data is made up of points, lines, polygons, etc... which represent locations or features in the real world, e.g. a linestring representing a river.
+
++ Attributes are data associated with the features, e.g. the population ofa city. 
+
+## Layers {style="font-size:0.6em"}
+Models representing different aspects of the physical world
+![](img/layers.png)
+
+## Attributes {style="font-size:0.3em"}
+
+```{python}
+#| echo: false
+import geopandas as gpd
+from pathlib import Path
+file = Path('assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson')
+df = gpd.read_file(file)
+df.head()
+```
+Attributes of `assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson`
+
+##
+![Right-click layer --> Open Attribute Table](img/qgis-attrubute-table.png)
+
+## Map Types {.columns}
+There are a few types of maps:
+
+::: {.column width="50%"}
+:::{r-stack}
+
+:::{.fragment .fade-in-then-out style="position: absolute; font-size: 0.8em;" data-fragment-index="1"}
+Mental Maps
+:::
+
+:::{.fragment .fade-in-then-out style="position: absolute; width: 50%; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.8em;" data-fragment-index="2"}
+
+Reference - shows location information, tend to represent geographic reality accurately, topographic maps for example
+:::
+
+:::{.fragment .fade-in-then-out style="position: absolute; width: 50%; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.8em;" data-fragment-index="3"}
+
+Thematic - shows how one or more factors are
+distributed across space, such as a map of malaria infection rates
+:::
+
+
+:::
+:::
+
+::: {.column width="50%"}
+:::{r-stack}
+
+::: {.fragment .fade-in-then-out style="position: absolute;" data-fragment-index="2"}
+![USGS Topographic Map of Boulder, CO](img/boulder-topo.png)
+:::
+
+::: {.fragment .fade-in-then-out style="position: absolute;" data-fragment-index="3"}
+![European GDP](img/euro-gdp-map.png)
+:::
+
+:::
+:::
+
+::: {.fragment .fade-in style="position: absolute top=0; font-size:0.5em" data-fragment-index="4"}
+__Dynamic / Interactive__  
+- maps that change depending on user input
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+
+from pathlib import Path
+
+import folium
+import geopandas as gpd
+
+aoi_path = Path('assets/Eaton_Perimeter_20250121.geojson')
+aoi = gpd.read_file(aoi_path)
+
+# grab centroids
+c = aoi.to_crs(epsg=26910).dissolve().centroid.to_crs(epsg=4326).item()
+
+# map
+map = folium.Map(
+  location=[c.y, c.x],
+  tiles='OpenStreetMap',
+  zoom_start=12
+)
+
+# perimeter
+geo_j = folium.GeoJson(data=aoi.__geo_interface__,
+  style_function=lambda feature: {
+    'color': 'red',
+    'weight': 2,
+    'fill': False,
+    },
+    name='Fire Perimeter'
+  ).add_to(map)
+# layer control
+
+map
+```
+
+:::
+
+
+
+## Mental/Cognitive Maps
+
++ Psychological tools that we all use every day. 
++ Stored in our brain
++ To get from one place to another, or to understand and situate events that we hear about
++ Reflect the amount and extent of geographic knowledge and spatial awareness that we possess
+
+Using a blank sheet of paper, take five minutes to
+draw a map from memory of San Luis Obispo
+
+
+
+
+
+
+
+
+## What is data? (_What are data?_) 
++ "Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation."
++ "Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form."
+-OED  
+
+## What is information?
++ “The imparting of knowledge in general.”
++ “Knowledge communicated concerning some particular fact, subject, or event; that of which one is apprised or told; intelligence, news.”  
+-OED
+
+## What is Spatial Data?
+:::{.fragment}
+Data with a geographic and/or  spatial component.
+:::
+
+## What is Metadata
+:::{.fragment}
+Data about the data, e.g. units, date collected, instruments used...
+:::
+
+## 
+Checkout Ticket - Some Basic GIS Concepts
+
+```{=html}
+<div class="passphrase-container" style="text-align: center; margin-top: 50px;">
+    <input type="password" id="passphraseInput" style="padding: 10px; font-size: 1.2em; border: 2px solid #ccc; border-radius: 5px; margin: 10px; width: 300px;" placeholder="Enter passphrase...">
+    <br>
+    <button onclick="checkPassphrase()" style="padding: 10px 20px; font-size: 1.2em; background-color: #007acc; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px;">Submit</button>
+    
+    <div id="response" style="margin-top: 20px; padding: 15px; border-radius: 5px; font-size: 1.1em; display: none;"></div>
+</div>
+
+<script>
+function checkPassphrase() {
+    const input = document.getElementById('passphraseInput');
+    const response = document.getElementById('response');
+    const passphrase = input.value.toLowerCase().trim();
+    
+    const passphrases = {
+        'sajaboys': 'Are the concepts of true north, magnetic north, and grid north more important for reference maps or thematic maps?  Why?.',
+    };
+    
+    response.style.display = 'block';
+    
+    if (passphrases[passphrase]) {
+        response.style.backgroundColor = '#d4edda';
+        response.style.color = '#155724';
+        response.textContent = passphrases[passphrase];
+    } else {
+        response.style.backgroundColor = '#f8d7da';
+        response.style.color = '#721c24';
+        response.textContent = 'Incorrect passphrase. Try again!';
+    }
+    
+    input.value = '';
+}
+</script>
+```

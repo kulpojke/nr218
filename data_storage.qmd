@@ -1,0 +1,120 @@
+# Data storage - A superficial Overview
+
+## Data Storage{style="font-size: 0.5em"}
++ We store data in computer-readable format in files
+  + Sometimes files store data as text (often called human readable files) 
+  + Other times there are just 1s and 0s (binary file)
+  + Even the human readable files are ultimately stored as 1s and 0s ([more on that](https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW))
+
+
+::: {r-stack}
+::: {.fragment .absolute .fade-in-then-out}
+![](img/utf8.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out}
+![](img/malloc.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out}
+![](img/smallMemory_cellMatrixSmall.gif)
+:::
+
+::: {.fragment .absolute .fade-in-then-out}
+![](img/utf8.png)
+:::
+
+:::
+
+## Data Storage{style="font-size: 0.5em"}
+
+_File extensions_ denote files readable by certain programs, for example:
+
+| Extension | description       |
+|------------------|------------|
+| filename.txt     | text file |
+| filename.doc     | Microsoft Word file |
+| filename.pdf     | portable document file |
+| filename.html    | hypertext markup language |
+| filename.xml     | extensible markup language |
+| filename.tif     | tagged image format |
+| filename.json    | javascript object notation |
+| filename.geojson | geographic json |
+| filename.laz     | LASer zip |
+| filename.parquet | compressed table |
+
+
+## File types 
++ Computer programs only read certain file formats.
++ Familiarity with different file types is helpful.
++ Common GIS file types: .shp (along with its _sidecar files_ .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg,
+.json, .geojson, .txt, .hdf, .nc, .parquet and a few others
+
+
+## File Paths and Directories
+
+:::{r-stack}
+:::{.fragment .fade-in-then-out style="position: absolute;"}
+![](img/linux-filesystem-hierarchy.png)
+:::
+
+:::{.fragment .fade-in-then-out style="position: absolute;"}
+![](img/windows_dir_structure.jpg)
+:::
+
+:::{.fragment  style="position: absolute;"}
+![](img/bash_paths.png)
+![](img/gui_paths.png){width=600}
+:::
+
+:::{.fragment style="position: absolute; top: 165px; left: 0; width: 325px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::
+
+## File Organization and Computer Hygiene
+:::{style="margin-right: 520px; font-size: 0.5em"}
+Be kind to your future self - keep your files organized:
+
++ Use directories (a.k.a folders)
++ Use descriptive names:
+  + e.g. `slo_county_26910.geojson` not `county.geojson`
++ Don't put spaces in file or directory names (see [this](https://authors.library.caltech.edu/records/mmnpf-cez11))
+:::
+
+![](https://imgs.xkcd.com/comics/documents.png){.absolute top=100 right=0 height=500}
+
+## How to Organize your files {style="font-size:0.5em"}
++ Pick a convention and be consistent
++ For example:
+
+```
+/Work/NR_classes/
+├── Class1/
+│   └── ...
+├── NR218/
+│   ├── Project_1/
+│   │   └── ...
+│   └── Project_2/
+│       ├── Vector/
+│       │   ├── trees.parquet
+│       │   └── streams.geogjson
+|       ├── Raster/
+│       │   ├── dem.tif
+│       │   └── rainfall.h5
+│       ├── qgis/
+│       │   └── project_2.qmd
+│       └── Results/
+│           ├── Figures/
+│           │   ├── figure1.png
+│           │   ├── figure2.png
+│           │   └── map.png
+│           └── proj_2_report.doc
+```
+
+## Cloud Storage
+
+Many options, but mounting Cal Poly One Drive as a disk is is probably the simplest. 
+
+See the Cal Poly  tutorial [here](https://calpoly.atlassian.net/wiki/spaces/CPKB/pages/732921936/Access+OneDrive+and+SharePoint+from+my+Computer )
+or try [this](https://github.com/rclone/rclone), for Linux users or the computer savvy.
