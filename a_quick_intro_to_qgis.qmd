@@ -2,7 +2,7 @@
 
 ## 
 
-1) Download `SPR_data.zip` from the files section of canvas
+1) Download `SPR_data.zip` [here](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/SPR_data.zip) (right-click and "save link as")
 2) Extract the file ([Linux](https://linuxize.com/post/how-to-unzip-files-in-linux/), [Windows](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5), [Mac](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac)), and place in appropriate file location (Remember, organize your files!)
 3) Open QGIS  
 

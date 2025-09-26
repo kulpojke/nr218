@@ -6,9 +6,34 @@ jupyter: python3
 echo: true
 output-location: column
 navigation-mode: vertical
-
-
 ---
+
+
+
+```{=html}
+<style>
+.reveal .attribution {
+  font-size: 0.4em !important;
+  color: #888;
+  text-align: right;
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+.reveal .attribution a {
+  color: #666;
+  text-decoration: none;
+}
+
+.reveal .attribution a:hover {
+  text-decoration: underline;
+}
+</style>
+```
+
+
+
 # NR 218
 
 Use arrows or menu in bottom left corner to navigate
@@ -33,14 +58,9 @@ Use arrows or menu in bottom left corner to navigate
 
 # Spatial Data Models and Formats
 
-##
-MAp Abstraction
-
 
 
 # Vector and Raster Data
-
-
 
 
 # Finding Acquiring, Creating, and Editing GIS Data

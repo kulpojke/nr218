@@ -287,9 +287,6 @@ The denominator denotes ground or “real-world” distance.</li>
 <div class="fragment fade-in" data-fragment-index="2">
 <p>so the surface is approximated using a <em>spheroid</em> (also called an ellipsoid of revolution)</p>
 </div>
-<div class="fragment fade-in" data-fragment-index="3">
-<p>Some spheroids are suited for global use, others for local use</p>
-</div>
 </div><div class="column" style="width:60%;">
 <div class="r-stack">
 <div class="fragment fade-in-then-out" data-fragment-index="1">
@@ -305,10 +302,39 @@ The denominator denotes ground or “real-world” distance.</li>
 </div></section>
 <section id="datums" class="slide level2 center">
 <h2>Datums</h2>
+<div class="{r-stack}">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
 <ul>
-<li>A <em>datum</em> is a spheroid with an origen point and orientation</li>
-<li>in common parlance they are often used interchangeably</li>
+<li>A <em>datum</em> is a spheroid with an origen point and orientation aligning it for a particular use.</li>
 </ul>
+<p><img data-src="img/datum.png"></p>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="http://mgimond.github.io/">Manny Gimond</a></p>
+</div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<ul>
+<li>A local datum uses matches a geoid to an ellipsoid to fit a local context, e.g.
+<ul>
+<li>NAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.</li>
+<li>ED50 (European Datum of 1950) is common in Western Europe.</li>
+</ul></li>
+</ul>
+<p><img data-src="img/Datum_local.svg"></p>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="http://mgimond.github.io/">Manny Gimond</a></p>
+</div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
+<ul>
+<li>A geocentric datum aligns the centroid of the geoid to the center of the ellipsoid</li>
+</ul>
+<p><img data-src="img/Datum_geocentric.svg"></p>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="http://mgimond.github.io/">Manny Gimond</a></p>
+</div>
+</div>
+</div>
 </section>
 <section id="projections" class="slide level2 columns center">
 <h2>Projections</h2>
@@ -326,10 +352,10 @@ The denominator denotes ground or “real-world” distance.</li>
 <div class="column smaller" style="width:50%;">
 <div class="{r-stack}">
 <div class="fragment absolute fade-in-then-out" style="width: 50%" data-fragment-index="1">
-<p>Imagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.</p>
+<p>Imagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a <strong>developable surface</strong> (flattenable surface).</p>
 </div>
 <div class="fragment absolute fade-in-then-out" style="width: 50%" data-fragment-index="2">
-<p>There are three commonly used surfaces</p>
+<p>There are three commonly used developable surfaces</p>
 <ul>
 <li>plane</li>
 <li>cone</li>
@@ -338,13 +364,15 @@ The denominator denotes ground or “real-world” distance.</li>
 </div>
 <div class="fragment absolute fade-in-then-out" style="width: 50%" data-fragment-index="3">
 <ul>
-<li>The shapes can be oriented in many ways.<br>
+<li>The developable surface can be oriented in many ways.<br>
 </li>
-<li>Each shape can be in one of two cases <em>tangent</em> and <em>secant</em></li>
+<li>Each developable surface can be in one of two <strong>cases</strong> <em>tangent</em> and <em>secant</em></li>
 </ul>
 </div>
 <div class="fragment absolute fade-in-then-out" style="width: 50%; font-size:0.8em" data-fragment-index="4">
-<p>Shape and orientation can be chosen to control the type of distortion introduced due to projection</p>
+<ul>
+<li>The <strong>aspect</strong> of the projection is the orientation of the developable surface relative to the axis of the earth</li>
+</ul>
 </div>
 <div class="fragment absolute fade-in-then-out" style="width: 50%" data-fragment-index="5">
 <p>Tissot’s indicatrix</p>
@@ -369,7 +397,7 @@ The denominator denotes ground or “real-world” distance.</li>
 <li>Used for navigational purposes</li>
 <li>Areas tend to be quite distorted</li>
 <li>Shapes are more or less preserved over small areas, at small scales areas become wildly distorted</li>
-<li>e.g.&nbsp;Mercator projection is famous for distorting Greenland</li>
+<li>e.g.&nbsp;Mercator projection (with normal aspect) is famous for distorting Greenland</li>
 </ul>
 </div>
 </div>
@@ -381,16 +409,18 @@ The denominator denotes ground or “real-world” distance.</li>
 <li>Distort angles</li>
 </ul>
 </div>
-<p><img data-src="img/File_Equal_Earth_projection_SW.jpg"> <img data-src="img/Goode_homolosine_projection_SW.jpg"></p>
 </div>
 <div class="fragment absolute fade-in-then-out" style="width: 50%; font-size:0.8em" data-fragment-index="9">
 <p>Weird projections</p>
 <div style="font-size:0.7em">
 <ul>
 <li>Often made as compromises between types of distortion</li>
-<li>These two were made by architects <img data-src="img/File_Dymaxion_projection.png"> <img data-src="img/File_Dymaxion_with_Tissot's_Indicatrices_of_Distortion.svg"></li>
+<li>Like the Waterman Butterfly</li>
 </ul>
 </div>
+</div>
+<div class="fragment absolute fade-in-then-out" style="width: 50%; font-size:0.8em" data-fragment-index="10">
+<p><a href="https://www.thetruesize.com">Examine the size distortions on a Mercator Projection</a></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -404,6 +434,9 @@ The denominator denotes ground or “real-world” distance.</li>
 <div class="fragment fade-in-then-out absolute" data-fragment-index="3" style="">
 <p><img data-src="img/secant-tangent-cases.png" style="max-height: 80vh; width: auto; object-fit: contain;"></p>
 </div>
+<div class="fragment fade-in-then-out absolute" data-fragment-index="4" style="">
+<p><img data-src="img/transverse_oblique.jpeg" style="max-height: 80vh; width: auto; object-fit: contain;"></p>
+</div>
 <div class="fragment fade-in-then-out absolute" data-fragment-index="5" style="">
 <p><img data-src="img/Tissot_world_from_space.png" style="max-height: 80vh; width: auto; object-fit: contain;"> <img data-src="img/Tissot_mercator.png" style="max-height: 80vh; width: auto; object-fit: contain;"> <span style="font-size:0.3em">Left: circles of equal area on globe. Right: same circles on Mercator projection.</span></p>
 </div>
@@ -415,8 +448,11 @@ Bottom: Equirectangular projection with Tissot’s indicatrix.</span></p>
 <p><img data-src="img/mercator_nautical.png" style="max-height: 25vh; width: auto; object-fit: contain;"> <img data-src="img/Tissot_mercator.png" style="max-height: 30vh; width: auto; object-fit: contain;"><br>
 <span style="font-size:0.3em">Top: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection.</span></p>
 </div>
+<div class="fragment absolute fade-in-then-out" style="width: 50%; font-size:0.8em" data-fragment-index="8">
+<p><img data-src="img/File_Equal_Earth_projection_SW.jpg"> <img data-src="img/Goode_homolosine_projection_SW.jpg"></p>
+</div>
 <div class="fragment fade-in-then-out absolute" data-fragment-index="9" style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; margin-top: 20px;">
-<p><img data-src="img/Waterman_projection.png" style="width: 100%; height: auto; object-fit: contain;"> <img data-src="img/Waterman_Butterfly_with_Tissot's_Indicatrices_of_Distortion.svg.png" style="width: 100%; height: auto; object-fit: contain;"></p>
+<p><img data-src="img/Waterman_projection.png" style="width: 175%; height: auto; object-fit: contain;"> <img data-src="img/Waterman_Butterfly_with_Tissot's_Indicatrices_of_Distortion.svg.png" style="width: 175%; height: auto; object-fit: contain;"></p>
 </div>
 </div>
 </div></section>
@@ -427,9 +463,43 @@ Bottom: Equirectangular projection with Tissot’s indicatrix.</span></p>
 <iframe src="https://earth.nullschool.net/#current/wind/surface/level/waterman" style="width: 80%; height: 80%; border: none;" title="Real-time Wind Map">
 </iframe>
 </div>
-
-
-</section></section>
+</section>
+<section id="utm" class="slide level2 columns center" style="font-size:0.7em">
+<h2>UTM</h2>
+<div class="column" style="width:50%;">
+<p>Universal <span class="fragment highlight-current-red" data-fragment-index="3">Transverse</span> <span class="fragment highlight-current-red" data-fragment-index="2">Mercator</span> (UTM)</p>
+<ul>
+<li>a projection and accompanying projected coordinate system</li>
+<li>Divided into 60 narrow zones</li>
+<li>Does not cover polar regions</li>
+<li>Large north-south extent with low distortion</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<p><img data-src="img/utm.png"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<p><img data-src="img/National_Atlas_Mercator.png"></p>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="https://commons.wikimedia.org/wiki/File:National_Atlas_Mercator.gif">wikimedia</a></p>
+</div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
+<p><img data-src="img/utm.png"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="">
+<ol type="1">
+<li>Open QGIS</li>
+<li>Use QuickMapServices to add a global Satellite coverage layer.</li>
+<li>In the drop down menus, go to <em>Project –&gt; Preferences</em> then select the CRS tab on the left</li>
+<li>In the filter box type “26910”</li>
+<li>Under <strong>Predefined Coordinate Reference Systems</strong> select <strong>NAD83 / UTM zone 10N</strong></li>
+<li>Click <strong>Apply</strong> and <strong>OK</strong></li>
+</ol>
+</div>
+</div>
+</div></section></section>
 
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

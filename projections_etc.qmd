@@ -190,10 +190,6 @@ The geoid is pretty complex...
 so the surface is approximated using a  _spheroid_ (also called an ellipsoid of revolution) 
 :::
 
-::: {.fragment .fade-in data-fragment-index=3}
-Some spheroids are suited for global use, others for local use
-:::
-
 :::
 
 ::: {.column width="60%"}
@@ -214,9 +210,41 @@ Some spheroids are suited for global use, others for local use
 :::
 
 ## Datums
+::: {r-stack}
 
-+ A _datum_ is a spheroid with an origen point and orientation
-+ in common parlance they are often used interchangeably
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
++ A _datum_ is a spheroid with an origen point and orientation aligning it for a particular use.
+
+![](img/datum.png)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [Manny Gimond](http://mgimond.github.io/)
+:::
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
++ A local datum uses matches a geoid to an ellipsoid to fit a local context, e.g.
+  + NAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.
+  + ED50 (European Datum of 1950) is common in Western Europe.
+
+![](img/Datum_local.svg)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [Manny Gimond](http://mgimond.github.io/)
+:::
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
++ A geocentric datum aligns the centroid of the geoid to the center of the ellipsoid
+
+![](img/Datum_geocentric.svg)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [Manny Gimond](http://mgimond.github.io/)
+:::
+:::
+
+:::
 
 ## Projections {.columns}
 
@@ -237,11 +265,11 @@ Some spheroids are suited for global use, others for local use
 ::: {.column width="50%" .smaller}
 ::: {r-stack}
 ::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=1}
-Imagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a flattenable surface.
+Imagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a __developable surface__ (flattenable surface).
 :::
 
 ::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=2}
-There are three commonly used surfaces 
+There are three commonly used developable surfaces 
 
 + plane
 + cone
@@ -249,12 +277,12 @@ There are three commonly used surfaces
 :::
 
 ::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=3}
-+ The shapes can be oriented in many ways.   
-+ Each shape can be in one of two cases _tangent_ and _secant_
++ The developable surface can be oriented in many ways.   
++ Each developable surface can be in one of two __cases__ _tangent_ and _secant_
 :::
 
 ::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=4}
-Shape and orientation can be chosen to control the type of distortion introduced due to projection
++ The __aspect__ of the projection is the orientation of the developable surface relative to the axis of the earth
 :::
 
 ::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=5}
@@ -282,7 +310,7 @@ Conformal map projections
 + Used for navigational purposes
 + Areas tend to be quite distorted
 + Shapes are more or less preserved over small areas, at small scales areas become wildly distorted
-+ e.g. Mercator projection is famous for distorting Greenland
++ e.g. Mercator projection (with normal aspect) is famous for distorting Greenland
 :::
 :::
 
@@ -294,8 +322,7 @@ Equal area or equivalent projections
 + Distort angles
 :::
 
-![](img/File_Equal_Earth_projection_SW.jpg)
-![](img/Goode_homolosine_projection_SW.jpg)
+
 :::
 
 
@@ -304,11 +331,13 @@ Weird projections
 
 ::: {style="font-size:0.7em"}
 + Often made as compromises between types of distortion
-+ These two were made by architects
-![](img/File_Dymaxion_projection.png)
-![](img/File_Dymaxion_with_Tissot's_Indicatrices_of_Distortion.svg)
++ Like the Waterman Butterfly
 :::
 
+:::
+
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=10}
+[Examine the size distortions on a Mercator Projection](https://www.thetruesize.com)
 :::
 
 :::
@@ -327,6 +356,10 @@ Weird projections
 
 ::: {.fragment .fade-in-then-out .absolute data-fragment-index=3}
 ![](img/secant-tangent-cases.png){style="max-height: 80vh; width: auto; object-fit: contain;"}
+:::
+
+::: {.fragment .fade-in-then-out .absolute data-fragment-index=4}
+![](img/transverse_oblique.jpeg){style="max-height: 80vh; width: auto; object-fit: contain;"}
 :::
 
 ::: {.fragment .fade-in-then-out .absolute data-fragment-index=5}
@@ -348,10 +381,14 @@ Bottom: Equirectangular projection with Tissot's indicatrix.]{style="font-size:0
 [Top: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection.]{style="font-size:0.3em"}
 :::
 
+::: {.fragment .absolute style="width: 50%; font-size:0.8em" .fade-in-then-out data-fragment-index=8}
+![](img/File_Equal_Earth_projection_SW.jpg)
+![](img/Goode_homolosine_projection_SW.jpg)
+:::
 
 ::: {.fragment .fade-in-then-out .absolute data-fragment-index=9 style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; margin-top: 20px;"}
-![](img/Waterman_projection.png){style="width: 100%; height: auto; object-fit: contain;"}
-![](img/Waterman_Butterfly_with_Tissot's_Indicatrices_of_Distortion.svg.png){style="width: 100%; height: auto; object-fit: contain;"}
+![](img/Waterman_projection.png){style="width: 175%; height: auto; object-fit: contain;"}
+![](img/Waterman_Butterfly_with_Tissot's_Indicatrices_of_Distortion.svg.png){style="width: 175%; height: auto; object-fit: contain;"}
 
 :::
 
@@ -368,4 +405,53 @@ Real-time Waterman Wind Map
 </iframe>  
 
 :::
+
+
+## UTM {.columns style="font-size:0.7em"}
+
+::: {.column width="50%"}
+
+Universal <span class="fragment highlight-current-red" data-fragment-index="3">Transverse</span> <span class="fragment highlight-current-red" data-fragment-index="2">Mercator</span> (UTM)
+
++ a projection and accompanying projected coordinate system
++ Divided into 60 narrow zones
++ Does not cover polar regions
++ Large north-south extent with low distortion
+
+
+:::
+
+
+::: {.column width="50%"}
+::: {.r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+![](img/utm.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+![](img/National_Atlas_Mercator.png)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [wikimedia](https://commons.wikimedia.org/wiki/File:National_Atlas_Mercator.gif)
+:::
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+![](img/utm.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+1. Open QGIS
+2. Use QuickMapServices to add a global Satellite coverage layer.
+3. In the drop down menus, go to _Project --> Preferences_ then select the CRS tab on the left 
+4. In the filter box type "26910"
+5. Under __Predefined Coordinate Reference Systems__ select __NAD83 / UTM zone 10N__
+6. Click __Apply__ and __OK__
+:::
+
+:::
+  
+:::
+
 

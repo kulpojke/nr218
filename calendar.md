@@ -129,8 +129,8 @@ Here's the table with the Week column containing just the integer week values:
 | Date         | Week | Description  | Reading | Due Dates |
 |--------------|------|--------------|---------|-----------|
 | September 22 | 1    | What is GIS Why is it important | Chapters 1 and 2 | |
-| September 24 | 1    | Basic GIS Concepts / Scale, Coordinate systems, and Map Projections | | |
-| September 29 | 2    | Spatial Data Models and Formats | chapters 3 and 4 | |
+| September 24 | 1    | Basic GIS Concepts Scale, Coordinate systems, and Map Projections | | |
+| September 29 | 2    | Scale, Coordinate systems, and Map Projections / Spatial Data Models and Formats | chapters 3 and 4 | |
 | October 1    | 2    | Vector and Raster Data | | |
 | October 6    | 3    | Finding Acquiring, Creating, and Editing GIS Data| chapters 5 and 6 | [Project 1](project_1.html) |
 | October 8    | 3    | GeoProcessing and Vector Operations | | |
