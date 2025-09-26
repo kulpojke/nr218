@@ -13,6 +13,7 @@ project:
     - a_quick_intro_to_qgis.qmd
     - intro_geospatial_data.qmd
     - projections_etc.qmd
+    - spatial_data_models.qmd
     - index.qmd
 
 format:

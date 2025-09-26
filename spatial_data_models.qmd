@@ -1,0 +1,380 @@
+# Spatial Data Models and Formats
+
+## Data Overview
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+
+What are Data?
+
+::: {style="font-size:0.7em"}
+- “Facts, measurements, and characteristics of something of interest.”
+- “Facts and statistics collected together for reference or analysis.”
+:::
+
+What is Information?
+
+::: {style="font-size:0.7em"}
+- “Facts provided or learned about something or someone.”
+- “Knowledge and insights that are acquired through the analysis of data.”
+:::
+
+:::
+
+::: {.fragment .fade-in}
+
+What are Spatial Data?
+
+::: {style="font-size:0.7em"}
+- “Data that describe the geographic and spatial aspects of phenomena.”
+- “Facts and statistics collected together for reference or analysis.”
+:::
+
+What are Metadata?
+
+::: {style="font-size:0.7em"}
+- Data about the data 
+- Ex: units, what instruments were used, who/what/when/where/how the data was collected
+:::
+
+:::
+:::
+
+## Data Types
+
++ Data can have different **types**
+
+  ::: {style="font-size:0.7em"}
+  + Ex: How might "population" data differ from "county" data?
+  :::
+
++ The most common types of data available for use in a GIS are:
+
+  ::: {style="font-size:0.7em"}
+  + **Bools** - True / False statements (think off/on switch)
+  + **Strings** - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)
+  + **Numbers** - numerical values (e.g. latitude/longitude coordinates)
+
+    ::: {style="font-size:0.8em"}
+    + **Integers (ints)** - numerical values (8 bit or 16 bit precision)
+    + **Floating Points** - negatives, decimal values (32 bit precision)
+    :::
+  
+  :::
+
+## Data Types - Continuous vs Discrete
+
++ **Continuous** data consists of numerical values
++ **Discrete** data consists of a limited number of possible values, groups, or categories
+
+## Levels of Measurement
+
+::: {.r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.7em"}
++ **Nominal** - Names or identifiers of objects
++ **Ordinal** - Ranked categories based on a measure
++ **Ratio** - have a 0 value that indicates absence of the quantity of interest
+    + [e.g. Mass, distance, Temperature in Kelvins]{style="font-size:0.5em"}
++ **Interval** - have a regular scale, but not a meaningful 0 value
+    + [e.g. Date, temperature in C or F ]{style="font-size:0.5em"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="font-size:0.7em"}
+
+**Ratio** -
+Multiplication makes sense, e.g. 200 K is twice as hot as 100 K
+$$
+2 \times 100 \mathrm{K} = 200 \mathrm{K} 
+$$
+
+**Interval** -
+Multiplication __does not__ make sense, e.g. 200°C is __not__ twice as hot as 100°C
+$$
+2 \times 100°\mathrm{C} \neq 200°\mathrm{C} 
+$$
+
+![](img/Kelvin_og_Celsius_temperaturskalaer.png)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kelvin_og_Celsius_temperaturskalaer.png)
+:::
+
+:::
+
+:::
+
+## Geospatial Data Types: Vector vs. Raster {style="font-size:0.7em"}
+
+::: {.figure style="text-align: center; margin: 0 auto;"}
+  ![](img/vector_vs_raster.png){style="height: 500px;"}
+:::
+
+## Vector Data
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+::: {.columns}
+
+::: {.column width = "40%"}
+::: {style="font-size:0.7em"}
++ Can be described by points, lines, polygons
+  + Ex: roads, rivers, train tracks, hiking trails, sidewalks, building footprints, county boundaries
++ NOT images, do NOT contain any pixels
++ The kind of data we've been working with so far
+:::
+:::
+
+::: {.column width = "50%"}
+::: {.figure style="text-align: right; margin: 0 auto;"}
+![](img/vector_example.png){style="height: 500px;"}
+:::
+:::
+
+:::
+:::
+
+::: {.fragment .fade-in-then-out}
+::: {.columns}
+
+::: {.column width = "40%"}
+::: {style="font-size:0.7em"}
++ Stored as tabular data files with geographic metadata
++ Points, lines, and polygons represent the spatial features
++ Topology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon
+:::
+:::
+
+::: {.column width = "50%"}
+::: {.figure style="text-align: right; margin: 0 auto;"}
+![](img/vector_table.png){style="height: 500px;"}
+:::
+:::
+
+:::
+:::
+
+::: {.fragment .fade-in-then-out}
+::: {.columns}
+
+::: {.column width = "40%"}
+
+**Points**
+
+::: {style="font-size:0.7em"}
++ Zero-dimensional objects containing a **single coordinate pair.**
+  + Ex: Lat/Lon coordinates denoting a city, building, address, etc
++ X,Y coordinates on a cartesian plane
+:::
+
+:::
+
+::: {.column width = "50%"}
+::: {.figure style="text-align: right; margin: 0 auto;"}
+![](img/vector_example.png){style="height: 500px;"}
+:::
+:::
+
+:::
+:::
+
+::: {.fragment .fade-in-then-out}
+::: {.columns}
+
+::: {.column width = "40%"}
+
+**Lines**
+
+::: {style="font-size:0.7em"}
++ One-dimensional objects composed of multiple, explicitly connected points. 
++ Lines have the property of length. 
++ Also called an “arc.”
+:::
+
+:::
+
+::: {.column width = "50%"}
+::: {.figure style="text-align: right; margin: 0 auto;"}
+![](img/vector_example.png){style="height: 500px;"}
+:::
+:::
+
+:::
+:::
+
+::: {.fragment .fade-in}
+::: {.columns}
+
+::: {.column width = "40%"}
+
+**Polygons**
+
+::: {style="font-size:0.7em"}
++ Two-dimensional features created by multiple lines to create a “closed” feature. 
++ First point on the first line segment is the same as the last point on the last line.
++ Can represent city boundaries, buildings, lakes, soils, etc. 
++ Have the properties of area and perimeter. 
+:::
+:::
+
+::: {.column width = "50%"}
+::: {.figure style="text-align: right; margin: 0 auto;"}
+![](img/vector_example.png){style="height: 500px;"}
+:::
+:::
+
+:::
+:::
+:::
+
+## Structuring Vector Data
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+
++ There are several ways to define relationships between vector data:
+  + Unstructured: The **“Spaghetti Model”**
+
+    ::: {style="font-size:0.8em"}
+    + Each feature is a long string of coordinates
+    + No relationships between features
+    :::
+
+  + Structured: The **“Topological Model”**
+
+    ::: {style="font-size:0.8em"} 
+    + Enforced relationships between features
+    :::
+
+:::
+
+::: {.fragment .fade-in}
+
+![](img/spaghetti_vs_topo.png){style="height: 600px;"}
+
+:::
+:::
+
+## Discussion
+
+::: {.incremental}
+::: {style="font-size:0.7em"}
++ What vector type (point, line, or polygon) best represents the following features: 
+
+  ::: {.incremental}
+  ::: {style="font-size:0.8em"}
+  + state boundaries, 
+  + telephone poles, 
+  + buildings, 
+  + cities, 
+  + stream networks, 
+  + mountain peaks, 
+  + soil types,
+  + flight tracks?
+  :::
+  :::
+
++ Which of these features can be represented by multiple vector types? 
++ What conditions might lead you choose one vector type over another?
+
+:::
+:::
+
+## Raster Data
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+::: {.columns}
+
+::: {.column width = "40%"}
+::: {style="font-size:0.7em"}
++ Derived from a grid-based system of contiguous cells containing specific attribute information.
++ The **spatial resolution** of a raster dataset represents a measure of the precision or detail of the displayed information.
++ Widely used by technologies such as digital images and LCD monitors.
+:::
+:::
+
+::: {.column width = "50%"}
+::: {.figure style="text-align: right; margin: 0 auto;"}
+![](img/raster_example1.png)
+:::
+:::
+
+:::
+:::
+
+::: {.fragment .fade-in-then-out}
+::: {.columns}
+
+::: {.column width = "40%"}
+::: {style="font-size:0.7em"}
++ Images, stacks of images (satellite / drone image)
+  + *Raster (latin) means “screen”!*
++ Grids of numbers
++ Things with pixels! 
++ If it's pixelated: 
+  + It’s a raster
++ If it's a photo: 
+  + It’s a raster
++ If it’s a digital image 
+  + It’s a raster!
+
+:::
+:::
+
+::: {.column width = "50%"}
+
+![](img/raster_example2.png){width=600px}
+
+:::
+
+:::
+:::
+
+::: {.fragment .fade-in}
+::: {.columns}
+
+::: {.column width = "40%"}
+::: {style="font-size:0.7em"}
++ The **spatial resolution** of a raster dataset represents a measure of the precision or detail of the displayed information.
+  + AKA pixel size
+  + Ex: 1mm, 1cm, or 1m
++ So when you hear that a camera has N megapixels - this just means it has many millions of pixels 
+
+:::
+:::
+
+::: {.column width = "50%"}
+::: {.figure style="fig-align: center;"}
+![](img/raster_example3.png){style="background-color:white;"}
+:::
+:::
+
+:::
+:::
+
+:::
+
+## Spatial Resolution
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+
+::: {style="font-size:0.7em"}
+The **spatial resolution** of a raster dataset represents a measure of the accuracy or detail of the displayed information.
+:::
+
+![](img/spatial_resolution1.png){fig-align="center"}
+
+:::
+
+::: {.fragment .fade-in-then-out}
+
+::: {style="font-size:0.7em"}
+The **spatial resolution** of a raster dataset represents a measure of the accuracy or detail of the displayed information.
+:::
+
+![](img/spatial_resolution2.png){fig-align="center"}
+
+:::
+:::
