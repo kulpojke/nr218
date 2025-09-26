@@ -364,7 +364,7 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 The **spatial resolution** of a raster dataset represents a measure of the accuracy or detail of the displayed information.
 :::
 
-![](img/spatial_resolution1.png){fig-align="center"}
+![](img/spatial_resolution.png){fig-align="center"}
 
 :::
 
