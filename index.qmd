@@ -52,6 +52,8 @@ Use arrows or menu in bottom left corner to navigate
 
 {{< include intro_geospatial_data.qmd >}}
 
+{{< include w2_house_keeping.qmd >}}
+
 {{< include projections_etc.qmd >}}
 
 {{< include spatial_data_models.qmd >}}

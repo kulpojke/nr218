@@ -22,7 +22,7 @@ __Method 1__
 ::: {.column style="font-size:0.5em"}
 __Method 2__  
 
-1. Press `ctrl-v` (`cmd-v` on Mac)
+1. Press `ctrl-shift-v` (`cmd-shift-v` on Mac)
 2. Click ![](img/browse_button.png){style="vertical-align: middle;"} to browse for file then click ![](img/add_button.png){style="vertical-align: middle;"}.
     + [You can select multiple files at once when browsing]{style="font-size:0.5em"}
     + [Close window when finished.]{style="font-size:0.5em"}

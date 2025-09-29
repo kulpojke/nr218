@@ -14,9 +14,10 @@ format:
 - Analyze the collected data using the appropriate geoprocessing operations
 - Present your findings in a written report complete with maps and statistics
 
-## Final Project Brainstorm
+## Final Project Submission #1 - Brainstorm
 
 Come up with your own geospatial analysis idea. Submit a well thought out paragraph which describes: 
+
 1. The question/problem you have identified
 2. The geographic data you will use to answer the question
 3. The geoprocessing steps you will perform on the data

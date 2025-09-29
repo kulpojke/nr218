@@ -338,7 +338,7 @@
 <ul>
 <li>There are several ways to define relationships between vector data:
 <ul>
-<li><p>Unstructured: The <strong>“Spaghetti Model”</strong></p>
+<li><p>Feature based: The <strong>“Spaghetti Model”</strong></p>
 <div style="font-size:0.8em">
 <ul>
 <li>Each feature is a long string of coordinates</li>
@@ -358,6 +358,101 @@
 <p><img data-src="img/spaghetti_vs_topo.png" style="height: 600px;"></p>
 </div>
 </div>
+</section>
+<section id="some-common-vector-file-formats" class="slide level2 center" style="font-size:0.5em">
+<h2>Some Common Vector File Formats</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 21%">
+<col style="width: 23%">
+<col style="width: 33%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Format</th>
+<th>File Extension</th>
+<th>Stores Topology</th>
+<th>Binary / Human Readable</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Shapefile</td>
+<td>.shp (+ .shx, .dbf, .prj)</td>
+<td>No</td>
+<td>Binary</td>
+<td>Industry standard, but aging</td>
+</tr>
+<tr class="even">
+<td>GeoJSON</td>
+<td>.geojson, .json</td>
+<td>No</td>
+<td>Human Readable</td>
+<td>Web-friendly, text-based</td>
+</tr>
+<tr class="odd">
+<td>GeoPackage</td>
+<td>.gpkg</td>
+<td>No</td>
+<td>Binary</td>
+<td>Modern SQLite-based format</td>
+</tr>
+<tr class="even">
+<td>KML/KMZ</td>
+<td>.kml, .kmz</td>
+<td>No</td>
+<td>Human Readable (.kml) / Binary (.kmz)</td>
+<td>Google Earth format</td>
+</tr>
+<tr class="odd">
+<td>TopoJSON</td>
+<td>.topojson</td>
+<td>Yes</td>
+<td>Human Readable</td>
+<td>Efficient for web, encodes topology</td>
+</tr>
+<tr class="even">
+<td>PostGIS</td>
+<td>(database)</td>
+<td>Yes (optional)</td>
+<td>Binary</td>
+<td>PostgreSQL spatial extension</td>
+</tr>
+<tr class="odd">
+<td>File Geodatabase</td>
+<td>.gdb</td>
+<td>Yes (optional)</td>
+<td>Binary</td>
+<td>ESRI proprietary format</td>
+</tr>
+<tr class="even">
+<td>GeoParquet</td>
+<td>.parquet</td>
+<td>No</td>
+<td>Binary</td>
+<td>Column-oriented, efficient</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="how-to-open-gdb-in-qgis" class="slide level2 smaller center">
+<h2>How to open gdb in QGIS</h2>
+<ol type="1">
+<li><p>Download 3D Hydrography Program data for the CONUS</p>
+<p><a href="https://prd-tnm.s3.amazonaws.com/StagedProducts/Hydrography/3DHP/Annual/GDB/3dhp_all_GDB_FY25_CONUS_20250313/3dhp_all_CONUS_20250313_GDB.zip">gdb</a><br>
+<a href="https://thor-f5.er.usgs.gov/ngtoc/metadata/waf/hydrography/3dhp/annual/3dhp_all_CONUS_20250313_GDB.xml">metadata</a>(Optional)</p></li>
+<li><p>Unzip the zip. (Unless you plan to use it later, you can just unzip it into the Downloads folder where the zip sits)</p></li>
+<li><p>Press <code>ctrl-shift-v</code> (<code>cmd-shift-v</code> on Mac)</p>
+<ol type="a">
+<li>At the top, under “source type”, check the directory box.<br>
+</li>
+<li>Browse for and select <code>3dhp_all_CONUS_20250313_GDB.gdb</code> where you unzipped it.</li>
+<li>Click Add</li>
+</ol></li>
+</ol>
 </section>
 <section id="discussion" class="slide level2 center">
 <h2>Discussion</h2>
@@ -385,6 +480,10 @@
 </div>
 </div>
 </section>
+<section id="section" class="slide level2 center">
+<h2></h2>
+
+<img data-src="img/amazon1.gif" class="r-stretch"></section>
 <section id="raster-data" class="slide level2 center">
 <h2>Raster Data</h2>
 <div class="r-stack">

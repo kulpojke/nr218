@@ -455,3 +455,59 @@ Image Source: [wikimedia](https://commons.wikimedia.org/wiki/File:National_Atlas
 :::
 
 
+## State Plan System {.columns style="font-size:0.7em"}
+
+Each State Plane Coordinate System zone uses a map projection based on its geographic orientation.  
+e.g.
+
+::: {.column width="50%"}
+::: {.r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
++ Transverse Mercator Projection
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
++ Lambert Conformal Conic Projection
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
++ Hotine Oblique Mercator Projection
+:::
+
+:::
+:::
+
+
+::: {.column width="50%"}
+::: {.r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+![](img/state_plane_sec_cyl.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+![](img/state_plane_sec_cone.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+![](img/state_plane_oblique_cyl.png)
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+![](img/state_plane.png)
+:::
+
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5"}
++ Reproject the global satellite image from the last slide to EPSG:2227 (California zone 3)
++ Scroll to zoom in on South Africa.  What do you notice?
+:::
+
+:::
+  
+:::
+
+

@@ -233,7 +233,7 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 ::: {.fragment .fade-in-then-out}
 
 + There are several ways to define relationships between vector data:
-  + Unstructured: The **“Spaghetti Model”**
+  + Feature based: The **“Spaghetti Model”**
 
     ::: {style="font-size:0.8em"}
     + Each feature is a long string of coordinates
@@ -254,6 +254,34 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 
 :::
 :::
+
+## Some Common Vector File Formats {style="font-size:0.5em"}
+
+| Format | File Extension | Stores Topology | Binary / Human Readable | Notes |
+|--------|---------------|-----------------|------------------------|-------|
+| Shapefile | .shp (+ .shx, .dbf, .prj) | No | Binary | Industry standard, but aging |
+| GeoJSON | .geojson, .json | No | Human Readable | Web-friendly, text-based |
+| GeoPackage | .gpkg | No | Binary | Modern SQLite-based format |
+| KML/KMZ | .kml, .kmz | No | Human Readable (.kml) / Binary (.kmz) | Google Earth format |
+| TopoJSON | .topojson | Yes | Human Readable | Efficient for web, encodes topology |
+| PostGIS | (database) | Yes (optional) | Binary | PostgreSQL spatial extension |
+| File Geodatabase | .gdb | Yes (optional) | Binary | ESRI proprietary format |
+| GeoParquet | .parquet | No | Binary | Column-oriented, efficient |
+
+
+## How to open gdb in QGIS {.smaller}
+1. Download  3D Hydrography Program data for the CONUS
+
+    [gdb](https://prd-tnm.s3.amazonaws.com/StagedProducts/Hydrography/3DHP/Annual/GDB/3dhp_all_GDB_FY25_CONUS_20250313/3dhp_all_CONUS_20250313_GDB.zip)   
+    [metadata](https://thor-f5.er.usgs.gov/ngtoc/metadata/waf/hydrography/3dhp/annual/3dhp_all_CONUS_20250313_GDB.xml)(Optional)
+
+2.  Unzip the zip. (Unless you plan to use it later, you can just unzip it into the Downloads folder where the zip sits)
+
+3. Press `ctrl-shift-v` (`cmd-shift-v` on Mac)  
+    a. At the top, under "source type", check the directory box.  
+    b. Browse for and select `3dhp_all_CONUS_20250313_GDB.gdb` where you unzipped it.
+    c. Click Add
+
 
 ## Discussion
 
@@ -279,6 +307,11 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 
 :::
 :::
+
+
+## 
+
+![](img/amazon1.gif)
 
 ## Raster Data
 
