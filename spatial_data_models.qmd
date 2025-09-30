@@ -255,7 +255,7 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 :::
 :::
 
-## Some Common Vector File Formats {style="font-size:0.5em"}
+## Some Common Vector File Formats {style="font-size:0.4em"}
 
 | Format | File Extension | Stores Topology | Binary / Human Readable | Notes |
 |--------|---------------|-----------------|------------------------|-------|
