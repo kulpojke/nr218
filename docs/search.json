@@ -522,7 +522,7 @@
     "href": "index.html#some-common-vector-file-formats",
     "title": "NR 218",
     "section": "Some Common Vector File Formats",
-    "text": "Some Common Vector File Formats\n\n\n\n\n\n\n\n\n\n\nFormat\nFile Extension\nStores Topology\nBinary / Human Readable\nNotes\n\n\n\n\nShapefile\n.shp (+ .shx, .dbf, .prj)\nNo\nBinary\nIndustry standard, but aging\n\n\nGeoJSON\n.geojson, .json\nNo\nHuman Readable\nWeb-friendly, text-based\n\n\nGeoPackage\n.gpkg\nNo\nBinary\nModern SQLite-based format\n\n\nKML/KMZ\n.kml, .kmz\nNo\nHuman Readable (.kml) / Binary (.kmz)\nGoogle Earth format\n\n\nTopoJSON\n.topojson\nYes\nHuman Readable\nEfficient for web, encodes topology\n\n\nPostGIS\n(database)\nYes (optional)\nBinary\nPostgreSQL spatial extension\n\n\nFile Geodatabase\n.gdb\nYes (optional)\nBinary\nESRI proprietary format\n\n\nGeoParquet\n.parquet\nNo\nBinary\nColumn-oriented, efficient"
+    "text": "Some Common Vector File Formats\n\n\n\n\n\n\n\n\n\n\nFormat\nFile Extension\nStores Topology\nBinary / Human Readable\nNotes\n\n\n\n\nShapefile\n.shp (+ .shx, .dbf, .prj)\nNo\nBinary\nCommon, but aging\n\n\nGeoJSON\n.geojson, .json\nNo\nHuman Readable\nWeb-friendly, text-based\n\n\nGeoPackage\n.gpkg\nNo\nBinary\nModern SQLite-based format\n\n\nKML/KMZ\n.kml, .kmz\nNo\nHuman Readable (.kml) / Binary (.kmz)\nGoogle Earth format\n\n\nTopoJSON\n.topojson\nYes\nHuman Readable\nEfficient for web, encodes topology\n\n\nPostGIS\n(database)\nYes (optional)\nBinary\nPostgreSQL spatial extension\n\n\nFile Geodatabase\n.gdb\nYes (optional)\nBinary\nESRI proprietary format, annoying to use in other software\n\n\nGeoParquet\n.parquet\nNo\nBinary\nColumn-oriented, efficient"
   },
   {
     "objectID": "index.html#how-to-open-gdb-in-qgis",
@@ -1306,7 +1306,7 @@
     "href": "spatial_data_models.html#some-common-vector-file-formats",
     "title": "",
     "section": "Some Common Vector File Formats",
-    "text": "Some Common Vector File Formats\n\n\n\n\n\n\n\n\n\n\nFormat\nFile Extension\nStores Topology\nBinary / Human Readable\nNotes\n\n\n\n\nShapefile\n.shp (+ .shx, .dbf, .prj)\nNo\nBinary\nIndustry standard, but aging\n\n\nGeoJSON\n.geojson, .json\nNo\nHuman Readable\nWeb-friendly, text-based\n\n\nGeoPackage\n.gpkg\nNo\nBinary\nModern SQLite-based format\n\n\nKML/KMZ\n.kml, .kmz\nNo\nHuman Readable (.kml) / Binary (.kmz)\nGoogle Earth format\n\n\nTopoJSON\n.topojson\nYes\nHuman Readable\nEfficient for web, encodes topology\n\n\nPostGIS\n(database)\nYes (optional)\nBinary\nPostgreSQL spatial extension\n\n\nFile Geodatabase\n.gdb\nYes (optional)\nBinary\nESRI proprietary format\n\n\nGeoParquet\n.parquet\nNo\nBinary\nColumn-oriented, efficient"
+    "text": "Some Common Vector File Formats\n\n\n\n\n\n\n\n\n\n\nFormat\nFile Extension\nStores Topology\nBinary / Human Readable\nNotes\n\n\n\n\nShapefile\n.shp (+ .shx, .dbf, .prj)\nNo\nBinary\nCommon, but aging\n\n\nGeoJSON\n.geojson, .json\nNo\nHuman Readable\nWeb-friendly, text-based\n\n\nGeoPackage\n.gpkg\nNo\nBinary\nModern SQLite-based format\n\n\nKML/KMZ\n.kml, .kmz\nNo\nHuman Readable (.kml) / Binary (.kmz)\nGoogle Earth format\n\n\nTopoJSON\n.topojson\nYes\nHuman Readable\nEfficient for web, encodes topology\n\n\nPostGIS\n(database)\nYes (optional)\nBinary\nPostgreSQL spatial extension\n\n\nFile Geodatabase\n.gdb\nYes (optional)\nBinary\nESRI proprietary format, annoying to use in other software\n\n\nGeoParquet\n.parquet\nNo\nBinary\nColumn-oriented, efficient"
   },
   {
     "objectID": "spatial_data_models.html#how-to-open-gdb-in-qgis",

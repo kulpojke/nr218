@@ -259,13 +259,13 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 
 | Format | File Extension | Stores Topology | Binary / Human Readable | Notes |
 |--------|---------------|-----------------|------------------------|-------|
-| Shapefile | .shp (+ .shx, .dbf, .prj) | No | Binary | Industry standard, but aging |
+| Shapefile | .shp (+ .shx, .dbf, .prj) | No | Binary | Common, but aging |
 | GeoJSON | .geojson, .json | No | Human Readable | Web-friendly, text-based |
 | GeoPackage | .gpkg | No | Binary | Modern SQLite-based format |
 | KML/KMZ | .kml, .kmz | No | Human Readable (.kml) / Binary (.kmz) | Google Earth format |
 | TopoJSON | .topojson | Yes | Human Readable | Efficient for web, encodes topology |
 | PostGIS | (database) | Yes (optional) | Binary | PostgreSQL spatial extension |
-| File Geodatabase | .gdb | Yes (optional) | Binary | ESRI proprietary format |
+| File Geodatabase | .gdb | Yes (optional) | Binary | ESRI proprietary format, annoying to use in other software |
 | GeoParquet | .parquet | No | Binary | Column-oriented, efficient |
 
 
