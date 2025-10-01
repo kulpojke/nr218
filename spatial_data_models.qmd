@@ -263,7 +263,7 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 | GeoJSON | .geojson, .json | No | Human Readable | Web-friendly, text-based |
 | GeoPackage | .gpkg | No | Binary | Modern SQLite-based format |
 | KML/KMZ | .kml, .kmz | No | Human Readable (.kml) / Binary (.kmz) | Google Earth format |
-| TopoJSON | .topojson | Yes | Human Readable | Efficient for web, encodes topology |
+| TopoJSON | .topojson | Yes | Human Readable | json, Encodes topology |
 | PostGIS | (database) | Yes (optional) | Binary | PostgreSQL spatial extension |
 | File Geodatabase | .gdb | Yes (optional) | Binary | ESRI proprietary format, annoying to use in other software |
 | GeoParquet | .parquet | No | Binary | Column-oriented, efficient |

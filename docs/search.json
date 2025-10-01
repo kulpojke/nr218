@@ -522,7 +522,7 @@
     "href": "index.html#some-common-vector-file-formats",
     "title": "NR 218",
     "section": "Some Common Vector File Formats",
-    "text": "Some Common Vector File Formats\n\n\n\n\n\n\n\n\n\n\nFormat\nFile Extension\nStores Topology\nBinary / Human Readable\nNotes\n\n\n\n\nShapefile\n.shp (+ .shx, .dbf, .prj)\nNo\nBinary\nCommon, but aging\n\n\nGeoJSON\n.geojson, .json\nNo\nHuman Readable\nWeb-friendly, text-based\n\n\nGeoPackage\n.gpkg\nNo\nBinary\nModern SQLite-based format\n\n\nKML/KMZ\n.kml, .kmz\nNo\nHuman Readable (.kml) / Binary (.kmz)\nGoogle Earth format\n\n\nTopoJSON\n.topojson\nYes\nHuman Readable\nEfficient for web, encodes topology\n\n\nPostGIS\n(database)\nYes (optional)\nBinary\nPostgreSQL spatial extension\n\n\nFile Geodatabase\n.gdb\nYes (optional)\nBinary\nESRI proprietary format, annoying to use in other software\n\n\nGeoParquet\n.parquet\nNo\nBinary\nColumn-oriented, efficient"
+    "text": "Some Common Vector File Formats\n\n\n\n\n\n\n\n\n\n\nFormat\nFile Extension\nStores Topology\nBinary / Human Readable\nNotes\n\n\n\n\nShapefile\n.shp (+ .shx, .dbf, .prj)\nNo\nBinary\nCommon, but aging\n\n\nGeoJSON\n.geojson, .json\nNo\nHuman Readable\nWeb-friendly, text-based\n\n\nGeoPackage\n.gpkg\nNo\nBinary\nModern SQLite-based format\n\n\nKML/KMZ\n.kml, .kmz\nNo\nHuman Readable (.kml) / Binary (.kmz)\nGoogle Earth format\n\n\nTopoJSON\n.topojson\nYes\nHuman Readable\njson, Encodes topology\n\n\nPostGIS\n(database)\nYes (optional)\nBinary\nPostgreSQL spatial extension\n\n\nFile Geodatabase\n.gdb\nYes (optional)\nBinary\nESRI proprietary format, annoying to use in other software\n\n\nGeoParquet\n.parquet\nNo\nBinary\nColumn-oriented, efficient"
   },
   {
     "objectID": "index.html#how-to-open-gdb-in-qgis",
@@ -560,11 +560,18 @@
     "text": "Spectral Resolution\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: NASA\n\n\n\n\n\nImage Source: University of Texas at Austin, Center for Space Research via ESA"
   },
   {
-    "objectID": "index.html#external-link-to-turorial",
-    "href": "index.html#external-link-to-turorial",
+    "objectID": "index.html#buffer",
+    "href": "index.html#buffer",
     "title": "NR 218",
-    "section": "External Link to Turorial",
-    "text": "External Link to Turorial"
+    "section": "Buffer",
+    "text": "Buffer"
+  },
+  {
+    "objectID": "index.html#section-11",
+    "href": "index.html#section-11",
+    "title": "NR 218",
+    "section": "",
+    "text": "Link to tutorial"
   },
   {
     "objectID": "projections_etc.html#map-conventions",
@@ -1306,7 +1313,7 @@
     "href": "spatial_data_models.html#some-common-vector-file-formats",
     "title": "",
     "section": "Some Common Vector File Formats",
-    "text": "Some Common Vector File Formats\n\n\n\n\n\n\n\n\n\n\nFormat\nFile Extension\nStores Topology\nBinary / Human Readable\nNotes\n\n\n\n\nShapefile\n.shp (+ .shx, .dbf, .prj)\nNo\nBinary\nCommon, but aging\n\n\nGeoJSON\n.geojson, .json\nNo\nHuman Readable\nWeb-friendly, text-based\n\n\nGeoPackage\n.gpkg\nNo\nBinary\nModern SQLite-based format\n\n\nKML/KMZ\n.kml, .kmz\nNo\nHuman Readable (.kml) / Binary (.kmz)\nGoogle Earth format\n\n\nTopoJSON\n.topojson\nYes\nHuman Readable\nEfficient for web, encodes topology\n\n\nPostGIS\n(database)\nYes (optional)\nBinary\nPostgreSQL spatial extension\n\n\nFile Geodatabase\n.gdb\nYes (optional)\nBinary\nESRI proprietary format, annoying to use in other software\n\n\nGeoParquet\n.parquet\nNo\nBinary\nColumn-oriented, efficient"
+    "text": "Some Common Vector File Formats\n\n\n\n\n\n\n\n\n\n\nFormat\nFile Extension\nStores Topology\nBinary / Human Readable\nNotes\n\n\n\n\nShapefile\n.shp (+ .shx, .dbf, .prj)\nNo\nBinary\nCommon, but aging\n\n\nGeoJSON\n.geojson, .json\nNo\nHuman Readable\nWeb-friendly, text-based\n\n\nGeoPackage\n.gpkg\nNo\nBinary\nModern SQLite-based format\n\n\nKML/KMZ\n.kml, .kmz\nNo\nHuman Readable (.kml) / Binary (.kmz)\nGoogle Earth format\n\n\nTopoJSON\n.topojson\nYes\nHuman Readable\njson, Encodes topology\n\n\nPostGIS\n(database)\nYes (optional)\nBinary\nPostgreSQL spatial extension\n\n\nFile Geodatabase\n.gdb\nYes (optional)\nBinary\nESRI proprietary format, annoying to use in other software\n\n\nGeoParquet\n.parquet\nNo\nBinary\nColumn-oriented, efficient"
   },
   {
     "objectID": "spatial_data_models.html#how-to-open-gdb-in-qgis",
