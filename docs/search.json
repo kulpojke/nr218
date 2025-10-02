@@ -564,11 +564,39 @@
     "href": "index.html#buffer",
     "title": "NR 218",
     "section": "Buffer",
-    "text": "Buffer"
+    "text": "Buffer\n\n\n\n\n\n\n\n\n\nOpen QGIS and open the ‘sprStreams.geojson’\nVector –&gt; Geoprocessing tools –&gt; Buffer\n\n\n\nNotice the Units! Buffering in degrees makes no sense. Reproject it first! What is a good projection?"
+  },
+  {
+    "objectID": "index.html#dissolve",
+    "href": "index.html#dissolve",
+    "title": "NR 218",
+    "section": "Dissolve",
+    "text": "Dissolve\n\n\nIn QGIS open sprSoil.geojson\nChange symbology to categorical by “SOILNAME”\nVector –&gt; Geoprocessing tools –&gt; Dissolve\nUse “HYDROGRPOUP” as dissolve field"
+  },
+  {
+    "objectID": "index.html#clip",
+    "href": "index.html#clip",
+    "title": "NR 218",
+    "section": "Clip",
+    "text": "Clip\n\nVector –&gt; Geoprocessing tools –&gt; Clip\nClip the sprSoil by the streams buffer."
+  },
+  {
+    "objectID": "index.html#spatial-overlays",
+    "href": "index.html#spatial-overlays",
+    "title": "NR 218",
+    "section": "Spatial overlays",
+    "text": "Spatial overlays\n\n\n\nIntersect soils with bufffer, look at attributes\nIntersect buffer with soils, look at attributes\n\n\n\n\nUnion\n\n\n\nSymmetric Difference\n\nTry it with buffer and soils"
   },
   {
     "objectID": "index.html#section-11",
     "href": "index.html#section-11",
+    "title": "NR 218",
+    "section": "",
+    "text": "Check topology Vector --&gt; Geometry --&gt; Check Validity"
+  },
+  {
+    "objectID": "index.html#section-12",
+    "href": "index.html#section-12",
     "title": "NR 218",
     "section": "",
     "text": "Link to tutorial"
