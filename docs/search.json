@@ -144,7 +144,7 @@
     "href": "index.html#attributes",
     "title": "NR 218",
     "section": "Attributes",
-    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
+    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24 34.884, -120.24 34.884, -120...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.83 32.597, -116.83 32.597...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55 34.062, -118.55 34.062...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55 34.062, -118.55 34.062...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55 34.062, -118.55 34.062...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
   },
   {
     "objectID": "index.html#section-2",
@@ -389,7 +389,7 @@
     "href": "index.html#map-scale",
     "title": "NR 218",
     "section": "Map Scale",
-    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
   },
   {
     "objectID": "index.html#map-scale-1",
@@ -536,7 +536,7 @@
     "href": "index.html#discussion",
     "title": "NR 218",
     "section": "Discussion",
-    "text": "Discussion\n\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
+    "text": "Discussion\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
   },
   {
     "objectID": "index.html#raster-data",
@@ -1342,5 +1342,159 @@
     "title": "",
     "section": "Spectral Resolution",
     "text": "Spectral Resolution\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: NASA\n\n\n\n\n\nImage Source: University of Texas at Austin, Center for Space Research via ESA"
+  },
+  {
+    "objectID": "index.html#tutorial-creating-gis-data",
+    "href": "index.html#tutorial-creating-gis-data",
+    "title": "NR 218",
+    "section": "Tutorial: Creating GIS Data",
+    "text": "Tutorial: Creating GIS Data\n\nFor this tutorial, we will need the following toolbars:\n\nDigitizing\nAdvanced digitizing\nSnapping\n\nBe sure these are enabled\nGo to View&gt;Toolbars and select them"
+  },
+  {
+    "objectID": "index.html#reminder---toolbars-and-panels",
+    "href": "index.html#reminder---toolbars-and-panels",
+    "title": "NR 218",
+    "section": "Reminder - Toolbars and Panels",
+    "text": "Reminder - Toolbars and Panels\n\n\n\nAre you looking for something like the layers panel or the processing toolbox?\nYou can view or un-view these by going to View&gt; Panels and View&gt;Toolbars"
+  },
+  {
+    "objectID": "index.html#finding-gis-data",
+    "href": "index.html#finding-gis-data",
+    "title": "NR 218",
+    "section": "Finding GIS Data",
+    "text": "Finding GIS Data\n\nThere is an enormous volume of freely available GIS data online.\nSome places to look:\n\nESRI OpenData: (http://opendata.arcgis.com/)\nNASA: (https://neo.gsfc.nasa.gov/)\nOpenStreetMap: (https://www.openstreetmap.org/)\nUSGS: (https://earthexplorer.usgs.gov/)\n\nLiDAR Explorer: (https://www.usgs.gov/tools/lidarexplorer)\n\nESA: (https://browser.dataspace.copernicus.eu/)\nLPDAAC: (https://lpdaac.usgs.gov/product_search/)\nElevation data: (https://dwtkns.com/srtm30m/)\nSpecies observations: (https://www.inaturalist.org/)"
+  },
+  {
+    "objectID": "index.html#tutorial---copernicus-browser",
+    "href": "index.html#tutorial---copernicus-browser",
+    "title": "NR 218",
+    "section": "Tutorial - Copernicus Browser",
+    "text": "Tutorial - Copernicus Browser\n\nOpen Copernicus Browser (right click to open in new tab)\nFirst, let’s make an account!\n\n\nWe can do a lot without an account, but registration is free and helps them track use of the tool (and manage processing quotas)"
+  },
+  {
+    "objectID": "index.html#google-earth-engine",
+    "href": "index.html#google-earth-engine",
+    "title": "NR 218",
+    "section": "Google Earth Engine",
+    "text": "Google Earth Engine"
+  },
+  {
+    "objectID": "index.html#section-11",
+    "href": "index.html#section-11",
+    "title": "NR 218",
+    "section": "",
+    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel"
+  },
+  {
+    "objectID": "index.html#section-12",
+    "href": "index.html#section-12",
+    "title": "NR 218",
+    "section": "",
+    "text": "Follow the steps to register, confirm your email, and then go back to the main page."
+  },
+  {
+    "objectID": "index.html#section-13",
+    "href": "index.html#section-13",
+    "title": "NR 218",
+    "section": "",
+    "text": "Now let’s get a feel for what the tool can do!"
+  },
+  {
+    "objectID": "index.html#tutorial---google-earth-engine",
+    "href": "index.html#tutorial---google-earth-engine",
+    "title": "NR 218",
+    "section": "Tutorial - Google Earth Engine",
+    "text": "Tutorial - Google Earth Engine\nAnother incredibly powerful tool at our disposal is Google Earth Engine\n\nCloud-based, so it can handle higher intensity data processing\nFree* access to a large collection of datasets\n\n\n*Free for academic use, so let’s take advantage of it!"
+  },
+  {
+    "objectID": "index.html#step-one---registering-for-gee",
+    "href": "index.html#step-one---registering-for-gee",
+    "title": "NR 218",
+    "section": "Step One - Registering for GEE",
+    "text": "Step One - Registering for GEE\n\n\nTo connect your Google account, go to https://code.earthengine.google.com/\nOnce you’ve logged in, you should see something like this:\n\n\n\nWe want to register a new project"
+  },
+  {
+    "objectID": "index.html#section-14",
+    "href": "index.html#section-14",
+    "title": "NR 218",
+    "section": "",
+    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
+  },
+  {
+    "objectID": "index.html#section-15",
+    "href": "index.html#section-15",
+    "title": "NR 218",
+    "section": "",
+    "text": "This will take you to a form where you can confirm your eligibility. Here’s an example of how to fill it out:"
+  },
+  {
+    "objectID": "index.html#section-16",
+    "href": "index.html#section-16",
+    "title": "NR 218",
+    "section": "",
+    "text": "Now let’s go back to the Code Editor."
+  },
+  {
+    "objectID": "index.html#section-17",
+    "href": "index.html#section-17",
+    "title": "NR 218",
+    "section": "",
+    "text": "These are the main panels to be aware of:"
+  },
+  {
+    "objectID": "index.html#step-two---editing-and-running-a-script",
+    "href": "index.html#step-two---editing-and-running-a-script",
+    "title": "NR 218",
+    "section": "Step Two - Editing and Running a Script",
+    "text": "Step Two - Editing and Running a Script\n\n\nIn the scripts panel, select New &gt; File and name it something useful\nYou should see it show up under the Owner dropdown:\n\n\n\n\n\nClick on the file to open it, and then move to the Code Editor. It should be blank to start."
+  },
+  {
+    "objectID": "index.html#section-18",
+    "href": "index.html#section-18",
+    "title": "NR 218",
+    "section": "",
+    "text": "Let’s try running some code! In the editor window, type the following command:\n\n\n\nThen hit run. Look at the console - what do you see?"
+  },
+  {
+    "objectID": "index.html#section-19",
+    "href": "index.html#section-19",
+    "title": "NR 218",
+    "section": "",
+    "text": "Now let’s try something a little more complicated:\n// Note - lines that start like this (//) are comments, meaning they won't be run like regular code\n\n// These are the 5 largest cities in the world: \n// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo\n\n// Create a list named 'largeCities' with the names of all the above cities\n\nvar largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; \n\n// Print the list \n\nprint(largeCities)\nCopy the code above and paste it into your code editor, hit run, and explore the output in the console."
+  },
+  {
+    "objectID": "index.html#section-20",
+    "href": "index.html#section-20",
+    "title": "NR 218",
+    "section": "",
+    "text": "Next, we’re going to explore some spatial data.\n\nIn the search bar at the top of page, type in “California Polytechnic State University”\nClick on the search result, and the map view should update accordingly\n\n\n\n\nAdd a marker to the map by clicking this icon:\n\n\n\nPlace the point somewhere in the middle of campus:\n\n\n\n\n\n\nAt the top of the code editor, you should now see a new var called “geometry”, which gives us the coordinates of our point\n\n\n\n\n\nWe can now reference the point in new lines of code, like we did with “largeCities”"
+  },
+  {
+    "objectID": "index.html#section-21",
+    "href": "index.html#section-21",
+    "title": "NR 218",
+    "section": "",
+    "text": "To add in other data layers, let’s look in the Earth Engine Data Catalog\nUsing the search bar, find the Sentinel-2 Dataset and click on the Level-1C option\n\n\n\n\nScroll down to the “Explore with Earth Engine” section, and copy the JavaScript code\nGo back to the code editor, and paste the code onto a new line\n\n\n\nBefore we run it, let’s make a few changes to the code.\n\nFirst, let’s change these dates to be more recent:\n\n\n\nPick a month in 2025, and set the dates to be the first and end of the month\n\n\n\n\n\nNext, let’s change the center point of the map to the point we dropped earlier:\n\n\n\n\n\nReplace the entire line with the following code:\n\n\nMap.centerObject(geometry, 12);\n\n\nAlternatively, you can just replace the first two numbers with the coordinate values saved to “geometry”\n\n\n\n\nHit run, and watch what happens in the map viewer! It may take a second for the layer to load."
+  },
+  {
+    "objectID": "index.html#what-is-this-code-doing",
+    "href": "index.html#what-is-this-code-doing",
+    "title": "NR 218",
+    "section": "What is this code doing?",
+    "text": "What is this code doing?\n\nThe quality of satellite imagery can be significantly affected by the cloud cover on any given day\nTo compensate for this, it can be helpful to generate a composite image of only the days with clear visibility over a month"
+  },
+  {
+    "objectID": "index.html#section-22",
+    "href": "index.html#section-22",
+    "title": "NR 218",
+    "section": "",
+    "text": "From here, we could clip (or mask, in the case of raster images) the Sentinel image to a set boundary by uploading a shapefile or geojson\nWe can also export map layers, which will be saved to our Google Drive"
+  },
+  {
+    "objectID": "index.html#google-earth-engine-qgis-plugin",
+    "href": "index.html#google-earth-engine-qgis-plugin",
+    "title": "NR 218",
+    "section": "Google Earth Engine QGIS Plugin",
+    "text": "Google Earth Engine QGIS Plugin\n\n\nThere is also a GEE plugin for QGIS!\n\n\n\nWe can do the same operation we just did through the plugin:"
   }
 ]
