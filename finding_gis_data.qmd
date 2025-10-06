@@ -158,21 +158,225 @@ Another incredibly powerful tool at our disposal is Google Earth Engine
 
 ##
 
+This will take you to a form where you can confirm your eligibility. Here's an example of how to fill it out:
+
 ::: {.columns}
 
-::: {.column-width="50%"}
-
-![](img/GEE_form1.png){width=50%}
-
+::: {.column width="50%"}
+![](img/GEE_form1.png)
 :::
 
-::: {.column-width="50%"}
-
-![](img/GEE_form2.png){width=50%}
-
+::: {.column width="50%"}
+![](img/GEE_form2.png)
 :::
 
 :::
+
+##
+
+Now let's go back to the **Code Editor.**
+
+##
+
+These are the main panels to be aware of:
+
+![](img/code_editor_edited.png)
+
+## Step Two - Editing and Running a Script
+
+::: {style="font-size:0.6em"}
+
++ In the scripts panel, select **New > File** and name it something useful
++ You should see it show up under the **Owner** dropdown:
+
+:::
+
+![](img/example_file_GEE.png)
+
+::: {style="font-size:0.6em"}
+
++ Click on the file to open it, and then move to the Code Editor. It should be blank to start.
+
+:::
+
+##
+
++ Let's try running some code! In the editor window, type the following command:
+
+![](img/hello_world.png)
+
++ Then hit **run.** Look at the console - what do you see?
+
+##
+
+Now let's try something a little more complicated:
+
+```{.ojs}
+// Note - lines that start like this (//) are comments, meaning they won't be run like regular code
+
+// These are the 5 largest cities in the world: 
+// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo
+
+// Create a list named 'largeCities' with the names of all the above cities
+
+var largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; 
+
+// Print the list 
+
+print(largeCities)
+```
+
+Copy the code above and paste it into your code editor, hit run, and explore the output in the console.
+
+##
+
+::: {.r-stack}
+
+::: {.fragment .fade-out}
+
+Next, we're going to explore some spatial data.
+
++ In the search bar at the top of page, type in "California Polytechnic State University"
++ Click on the search result, and the map view should update accordingly
+
+:::
+
+::: {.fragment .fade-in-then-out}
+
+::: {style="font-size:0.6em"}
+
+Add a marker to the map by clicking this icon:
+
+:::
+
+![](img/addmarker.png)
+
+::: {style="font-size:0.6em"}
+
+Place the point somewhere in the middle of campus:
+
+:::
+
+![](img/marker_on_map.png){width=60%}
+
+:::
+
+::: {.fragment .fade-in-then-out}
+
+::: {style="font-size:0.6em"}
+
++ At the top of the code editor, you should now see a new **var** called "geometry", which gives us the coordinates of our point
+
+:::
+
+![](img/geometryvar.png)
+
+::: {style="font-size:0.6em"}
+
++ We can now reference the point in new lines of code, like we did with "largeCities"
+
+:::
+
+:::
+
+:::
+
+##
+
+::: {.r-stack}
+
+::: {.fragment .fade-out}
+
++ To add in other data layers, let's look in the [Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets)
++ Using the search bar, find the **Sentinel-2 Dataset** and click on the Level-1C option
+
+:::
+
+::: {.fragment .fade-in-then-out}
+
++ Scroll down to the "Explore with Earth Engine" section, and copy the JavaScript code
++ Go back to the code editor, and paste the code onto a new line
+
+:::
+
+::: {.fragment .fade-in-then-out}
+
+Before we run it, let's make a few changes to the code.
+
++ First, let's change these dates to be more recent:
+
+![](img/dates.png)
+
++ Pick a month in 2025, and set the dates to be the first and end of the month
+
+:::
+
+::: {.fragment .fade-in-then-out}
+
+::: {style="font-size:0.6em"}
+
++ Next, let's change the center point of the map to the point we dropped earlier:
+
+:::
+
+![](img/map_center.png)
+
+::: {style="font-size:0.6em"}
+
++ Replace the entire line with the following code:
+
+:::
+
+```{.ojs}
+Map.centerObject(geometry, 12);
+```
+
+::: {style="font-size:0.6em"}
+
++ Alternatively, you can just replace the first two numbers with the coordinate values saved to "geometry"
+
+:::
+
+:::
+
+::: {.fragment .fade-in-then-out}
+
+Hit run, and watch what happens in the map viewer! It may take a second for the layer to load.
+
+:::
+
+:::
+
+## What is this code doing?
+
++ The quality of satellite imagery can be significantly affected by the cloud cover on any given day
++ To compensate for this, it can be helpful to generate a **composite image** of only the days with clear visibility over a month
+
+##
+
++ From here, we could clip (or mask, in the case of raster images) the Sentinel image to a set boundary by uploading a shapefile or geojson
++ We can also export map layers, which will be saved to our Google Drive 
+
+## Google Earth Engine QGIS Plugin
+
+There is also a [GEE plugin for QGIS!](https://gee-community.github.io/qgis-earthengine-plugin/)
+
+##
+
+::: {style="font-size:0.8em"}
+
+We can do the same operation we just did through the plugin:
+
+:::
+
+![](img/gee_plugin_example.png){width=80%}
+
+
+
+
+
+
+
 
 
 
