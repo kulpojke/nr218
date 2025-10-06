@@ -27,6 +27,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0d84831d95dedbd79f53d1a65782b16f.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -340,16 +405,176 @@ NBR &amp;= \frac{NIR - SWIR2}{NIR + SWIR2} \\
 </section>
 <section id="section-6" class="slide level2 center">
 <h2></h2>
+<p>This will take you to a form where you can confirm your eligibility. Here’s an example of how to fill it out:</p>
 <div class="columns">
-<div class="{.column-width=&quot;50%&quot;}">
-<p><img data-src="img/GEE_form1.png" style="width:50.0%"></p>
-</div><div class="{.column-width=&quot;50%&quot;}">
-<p><img data-src="img/GEE_form2.png" style="width:50.0%"></p>
+<div class="column" style="width:50%;">
+<p><img data-src="img/GEE_form1.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/GEE_form2.png"></p>
+</div></div>
+</section>
+<section id="section-7" class="slide level2 center">
+<h2></h2>
+<p>Now let’s go back to the <strong>Code Editor.</strong></p>
+</section>
+<section id="section-8" class="slide level2 center">
+<h2></h2>
+<p>These are the main panels to be aware of:</p>
+
+<img data-src="img/code_editor_edited.png" class="r-stretch"></section>
+<section id="step-two---editing-and-running-a-script" class="slide level2 center">
+<h2>Step Two - Editing and Running a Script</h2>
+<div style="font-size:0.6em">
+<ul>
+<li>In the scripts panel, select <strong>New &gt; File</strong> and name it something useful</li>
+<li>You should see it show up under the <strong>Owner</strong> dropdown:</li>
+</ul>
 </div>
+
+<img data-src="img/example_file_GEE.png" class="r-stretch"><div style="font-size:0.6em">
+<ul>
+<li>Click on the file to open it, and then move to the Code Editor. It should be blank to start.</li>
+</ul>
+</div>
+</section>
+<section id="section-9" class="slide level2 center">
+<h2></h2>
+<ul>
+<li>Let’s try running some code! In the editor window, type the following command:</li>
+</ul>
+
+<img data-src="img/hello_world.png" class="r-stretch"><ul>
+<li>Then hit <strong>run.</strong> Look at the console - what do you see?</li>
+</ul>
+</section>
+<section id="section-10" class="slide level2 center">
+<h2></h2>
+<p>Now let’s try something a little more complicated:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource ojs number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>// Note - lines that start like this (//) are comments, meaning they won't be run like regular code</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>// These are the 5 largest cities in the world: </span>
+<span id="cb1-4"><a></a>// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a>// Create a list named 'largeCities' with the names of all the above cities</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a>var largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; </span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a>// Print the list </span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a>print(largeCities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Copy the code above and paste it into your code editor, hit run, and explore the output in the console.</p>
+</section>
+<section id="section-11" class="slide level2 center">
+<h2></h2>
+<div class="r-stack">
+<div class="fragment fade-out">
+<p>Next, we’re going to explore some spatial data.</p>
+<ul>
+<li>In the search bar at the top of page, type in “California Polytechnic State University”</li>
+<li>Click on the search result, and the map view should update accordingly</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-out">
+<div style="font-size:0.6em">
+<p>Add a marker to the map by clicking this icon:</p>
+</div>
+<p><img data-src="img/addmarker.png"></p>
+<div style="font-size:0.6em">
+<p>Place the point somewhere in the middle of campus:</p>
+</div>
+<p><img data-src="img/marker_on_map.png" style="width:60.0%"></p>
+</div>
+<div class="fragment fade-in-then-out">
+<div style="font-size:0.6em">
+<ul>
+<li>At the top of the code editor, you should now see a new <strong>var</strong> called “geometry”, which gives us the coordinates of our point</li>
+</ul>
+</div>
+<p><img data-src="img/geometryvar.png"></p>
+<div style="font-size:0.6em">
+<ul>
+<li>We can now reference the point in new lines of code, like we did with “largeCities”</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="section-12" class="slide level2 center">
+<h2></h2>
+<div class="r-stack">
+<div class="fragment fade-out">
+<ul>
+<li>To add in other data layers, let’s look in the <a href="https://developers.google.com/earth-engine/datasets">Earth Engine Data Catalog</a></li>
+<li>Using the search bar, find the <strong>Sentinel-2 Dataset</strong> and click on the Level-1C option</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-out">
+<ul>
+<li>Scroll down to the “Explore with Earth Engine” section, and copy the JavaScript code</li>
+<li>Go back to the code editor, and paste the code onto a new line</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-out">
+<p>Before we run it, let’s make a few changes to the code.</p>
+<ul>
+<li>First, let’s change these dates to be more recent:</li>
+</ul>
+<p><img data-src="img/dates.png"></p>
+<ul>
+<li>Pick a month in 2025, and set the dates to be the first and end of the month</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-out">
+<div style="font-size:0.6em">
+<ul>
+<li>Next, let’s change the center point of the map to the point we dropped earlier:</li>
+</ul>
+</div>
+<p><img data-src="img/map_center.png"></p>
+<div style="font-size:0.6em">
+<ul>
+<li>Replace the entire line with the following code:</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource ojs number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Map.centerObject(geometry, 12);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="font-size:0.6em">
+<ul>
+<li>Alternatively, you can just replace the first two numbers with the coordinate values saved to “geometry”</li>
+</ul>
+</div>
+</div>
+<div class="fragment fade-in-then-out">
+<p>Hit run, and watch what happens in the map viewer! It may take a second for the layer to load.</p>
+</div>
+</div>
+</section>
+<section id="what-is-this-code-doing" class="slide level2 center">
+<h2>What is this code doing?</h2>
+<ul>
+<li>The quality of satellite imagery can be significantly affected by the cloud cover on any given day</li>
+<li>To compensate for this, it can be helpful to generate a <strong>composite image</strong> of only the days with clear visibility over a month</li>
+</ul>
+</section>
+<section id="section-13" class="slide level2 center">
+<h2></h2>
+<ul>
+<li>From here, we could clip (or mask, in the case of raster images) the Sentinel image to a set boundary by uploading a shapefile or geojson</li>
+<li>We can also export map layers, which will be saved to our Google Drive</li>
+</ul>
+</section>
+<section id="google-earth-engine-qgis-plugin" class="slide level2 center">
+<h2>Google Earth Engine QGIS Plugin</h2>
+<p>There is also a <a href="https://gee-community.github.io/qgis-earthengine-plugin/">GEE plugin for QGIS!</a></p>
+</section>
+<section id="section-14" class="slide level2 center">
+<h2></h2>
+<div style="font-size:0.8em">
+<p>We can do the same operation we just did through the plugin:</p>
 </div>
 
 
-</section></section>
+
+<img data-src="img/gee_plugin_example.png" style="width:80.0%" class="r-stretch"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
