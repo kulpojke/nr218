@@ -15,6 +15,8 @@ project:
     - w2_house_keeping.qmd
     - projections_etc.qmd
     - spatial_data_models.qmd
+    - vector_tutorial.qmd
+    - finding_gis_data.qmd
     - index.qmd
 
 format:

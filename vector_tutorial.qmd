@@ -1,0 +1,82 @@
+# Vector Operations
+
+## Buffer
+
+::: {.r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+![](img/buffer.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+![](img/ripar_buffer.jpg){style="max-height: 50vh;"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+
+1. Open QGIS and open the 'sprStreams.geojson'
+2. Vector --> Geoprocessing tools --> Buffer
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+[Notice the Units!  Buffering in degrees makes no sense. Reproject it first! What is a good projection?]{style="font-size:0.7em"}
+
+![](img/degree_buf.png){style="max-height: 50vh;"}
+:::
+
+:::
+
+## Dissolve
+
+![](img/dissolve.png)
+
+1. In QGIS open  `sprSoil.geojson` 
+2. Change symbology to categorical by "SOILNAME"
+3. Vector --> Geoprocessing tools --> Dissolve
+4. Use "HYDROGRPOUP" as dissolve field
+
+
+## Clip
+1. Vector --> Geoprocessing tools --> Clip
+2. Clip the sprSoil by the streams buffer.
+![](img/clip.png)
+
+
+## Spatial overlays
+
+::: {.r-stack}
+
+::: {.fragment .absolute .fade-in-then-out .smaller}
+1. Intersect soils with bufffer, look at attributes
+2. Intersect buffer with soils, look at attributes
+
+![](img/intersect.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out .smaller}
+Union
+
+![](img/union.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out .smaller}
+Symmetric Difference  
+
++ Try it with buffer and soils
+
+![](img/sym_diff.png)
+:::
+
+
+:::
+
+## 
+
+Check topology
+`Vector --> Geometry --> Check Validity`
+
+
+
+##
+
+[Link to tutorial](https://docs.google.com/presentation/d/1vaN4vdtAwcynhPnTDlKepgfcfY5gTgemUoSrCZL0CmY/edit?usp=sharing)

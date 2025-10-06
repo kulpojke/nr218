@@ -1,27 +1,32 @@
-# Finding, Acquiring, Creating, and Editing GIS Data
+# Finding, Acquiring, Creating, and Editing GIS Data  
 
+[as well as]{style="display: block; text-align: center; font-size: 0.8em;"}  
+
+::: {.r-fit-text style="font-size: 2em;"}
+Introduction to Spectral Indices
+:::
 
 ## Finding GIS Data {.smaller}
 + There is an enormous volume of freely available GIS data online.
 + Some places to look:
-  + ESRI OpenData: (http://opendata.arcgis.com/)
-  + NASA: (https://neo.gsfc.nasa.gov/) 
-  + OpenStreetMap: (https://www.openstreetmap.org/)
-  + USGS: (https://earthexplorer.usgs.gov/)
-    + LiDAR Explorer: (https://www.usgs.gov/tools/lidarexplorer) 
-  + ESA: (https://browser.dataspace.copernicus.eu/) 
-  + LPDAAC: (https://lpdaac.usgs.gov/product_search/) 
-  + Elevation data: (https://dwtkns.com/srtm30m/) 
-  + Species observations: (https://www.inaturalist.org/)
+  + [NASA](https://neo.gsfc.nasa.gov/) 
+  + [OpenStreetMap](https://www.openstreetmap.org/)
+  + [USGS](https://earthexplorer.usgs.gov/)
+    + [LiDAR Explorer](https://www.usgs.gov/tools/lidarexplorer) 
+  + [ESA](https://browser.dataspace.copernicus.eu/) 
+  + [LPDAAC](https://lpdaac.usgs.gov/product_search/) 
+  + [Elevation data](https://dwtkns.com/srtm30m/) 
+  + [Species observations](https://www.inaturalist.org/)
+  + [ESRI OpenData](http://opendata.arcgis.com/)
 
 
 ## Tutorial - Copernicus Browser
 
 + Open [Copernicus Browser](https://browser.dataspace.copernicus.eu/) (right click to open in new tab)
-+ First, let's make an account!
++ First, make an account!
 
   ::: {style="font-size:0.7em"}
-  + *We can do a lot without an account, but registration is free and helps them track use of the tool (and manage processing quotas)*
+  + registration is free and helps track use of the tool (and manage processing quotas)
   ::: 
 
 ## {.smaller}
@@ -34,17 +39,81 @@ You should see something like this when it first opens:
 
 To register, click the "Login" button at the top of the left panel
 
-## {.smaller}
-
-:::{.figure style="width: 80%"}
-![](img/confirmation_email.png)
-:::
-
 Follow the steps to register, confirm your email, and then go back to the main page.
+
 
 ## 
 
 [Now let's get a feel for what the tool can do!](https://www.youtube.com/watch?v=F0lIn5r6ZWk)
+
+
+##
+
+Look at the [Garnet Fire ](https://www.fire.ca.gov/incidents/2025/8/24/garnet-fire) on CalFire inciweb.
+
+::: {.r-stack}
+
+::: {.fragment  .absolute .fade-out data-fragment-index="1"}
++ In Copernicus Browser (in visualize mode), paste the lat, lon into the search, hit enter
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
++ Change the date to 2025-09-07
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
++ Adjust image so the fire is in view
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+![](img/2025-09-07-00_00_2025-09-07-23_59_Sentinel-2_L2A_custom.jpg)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
++ Lets try a different visualization
++ Copernicus offers a SWIR based composite visualization that is quite good for burn detection. 
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5"}
+![](img/copernicus_SWIR.jpg)
+:::
+
+:::
+
+##
+
+![](img/swir_lapse.gif){.r-stretch}
+
+
+##
+
++ That is a nice way to visualize but for actual detection purposed using a spectral index is better
++ Normalized Burn Ratio (NBR) is the most obvious choice here.
+$$
+\begin{align}
+NBR &= \frac{NIR - SWIR2}{NIR + SWIR2} \\
+    &= \frac{B8 - B12}{B8 + B12}  \mathrm{For Sentinel 2}
+\end{align}
+$$
+
+__Exercise__ - Create and download a NBR geotiff fro before and after the fire.
+
+
+## Spectral Indices
+
+| Index | Formula | Bands (Sentinel-2) | Purpose |
+|-------|---------|-------------------|---------|
+| NDVI | (NIR - Red) / (NIR + Red) | (B8 - B4) / (B8 + B4) | Vegetation health/density |
+| NDWI | (Green - NIR) / (Green + NIR) | (B3 - B8) / (B3 + B8) | Water bodies detection |
+| NDMI | (NIR - SWIR1) / (NIR + SWIR1) | (B8 - B11) / (B8 + B11) | Vegetation moisture |
+| NBR | (NIR - SWIR2) / (NIR + SWIR2) | (B8 - B12) / (B8 + B12) | Burn severity/scars |
+| NDSI | (Green - SWIR1) / (Green + SWIR1) | (B3 - B11) / (B3 + B11) | Snow cover |
+| NDBI | (SWIR1 - NIR) / (SWIR1 + NIR) | (B11 - B8) / (B11 + B8) | Built-up areas/urban |
+| EVI | 2.5 × (NIR - Red) / (NIR + 6×Red - 7.5×Blue + 1) | 2.5 × (B8 - B4) / (B8 + 6×B4 - 7.5×B2 + 1) | Enhanced vegetation (reduces saturation) |
+| SAVI | 1.5 × (NIR - Red) / (NIR + Red + 0.5) | 1.5 × (B8 - B4) / (B8 + B4 + 0.5) | Vegetation with soil correction |
+
+See [Montero, D., Aybar, C., Mahecha, M.D. et al. A standardized catalogue of spectral indices to advance the use of remote sensing in Earth system research. Sci Data 10, 197 (2023). https://doi.org/10.1038/s41597-023-02096-0](https://doi.org/10.1038/s41597-023-02096-0) 
+
 
 ## Tutorial - Google Earth Engine
 

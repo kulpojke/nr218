@@ -602,6 +602,118 @@
     "text": "Link to tutorial"
   },
   {
+    "objectID": "index.html#finding-gis-data",
+    "href": "index.html#finding-gis-data",
+    "title": "NR 218",
+    "section": "Finding GIS Data",
+    "text": "Finding GIS Data\n\nThere is an enormous volume of freely available GIS data online.\nSome places to look:\n\nNASA\nOpenStreetMap\nUSGS\n\nLiDAR Explorer\n\nESA\nLPDAAC\nElevation data\nSpecies observations\nESRI OpenData"
+  },
+  {
+    "objectID": "index.html#tutorial---copernicus-browser",
+    "href": "index.html#tutorial---copernicus-browser",
+    "title": "NR 218",
+    "section": "Tutorial - Copernicus Browser",
+    "text": "Tutorial - Copernicus Browser\n\nOpen Copernicus Browser (right click to open in new tab)\nFirst, make an account!\n\n\nregistration is free and helps track use of the tool (and manage processing quotas)"
+  },
+  {
+    "objectID": "index.html#section-13",
+    "href": "index.html#section-13",
+    "title": "NR 218",
+    "section": "",
+    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel\nFollow the steps to register, confirm your email, and then go back to the main page."
+  },
+  {
+    "objectID": "index.html#section-14",
+    "href": "index.html#section-14",
+    "title": "NR 218",
+    "section": "",
+    "text": "Now let’s get a feel for what the tool can do!"
+  },
+  {
+    "objectID": "index.html#section-15",
+    "href": "index.html#section-15",
+    "title": "NR 218",
+    "section": "",
+    "text": "Look at the Garnet Fire on CalFire inciweb.\n\n\n\nIn Copernicus Browser (in visualize mode), paste the lat, lon into the search, hit enter\n\n\n\n\nChange the date to 2025-09-07\n\n\n\n\nAdjust image so the fire is in view\n\n\n\n\n\n\n\nLets try a different visualization\nCopernicus offers a SWIR based composite visualization that is quite good for burn detection."
+  },
+  {
+    "objectID": "index.html#section-17",
+    "href": "index.html#section-17",
+    "title": "NR 218",
+    "section": "",
+    "text": "That is a nice way to visualize but for actual detection purposed using a spectral index is better\nNormalized Burn Ratio (NBR) is the most obvious choice here. \\[\n\\begin{align}\nNBR &= \\frac{NIR - SWIR2}{NIR + SWIR2} \\\\\n  &= \\frac{B8 - B12}{B8 + B12}  \\mathrm{For Sentinel 2}\n\\end{align}\n\\]\n\nExercise - Create and download a NBR geotiff fro before and after the fire."
+  },
+  {
+    "objectID": "index.html#spectral-indices",
+    "href": "index.html#spectral-indices",
+    "title": "NR 218",
+    "section": "Spectral Indices",
+    "text": "Spectral Indices\n\n\n\n\n\n\n\n\n\nIndex\nFormula\nBands (Sentinel-2)\nPurpose\n\n\n\n\nNDVI\n(NIR - Red) / (NIR + Red)\n(B8 - B4) / (B8 + B4)\nVegetation health/density\n\n\nNDWI\n(Green - NIR) / (Green + NIR)\n(B3 - B8) / (B3 + B8)\nWater bodies detection\n\n\nNDMI\n(NIR - SWIR1) / (NIR + SWIR1)\n(B8 - B11) / (B8 + B11)\nVegetation moisture\n\n\nNBR\n(NIR - SWIR2) / (NIR + SWIR2)\n(B8 - B12) / (B8 + B12)\nBurn severity/scars\n\n\nNDSI\n(Green - SWIR1) / (Green + SWIR1)\n(B3 - B11) / (B3 + B11)\nSnow cover\n\n\nNDBI\n(SWIR1 - NIR) / (SWIR1 + NIR)\n(B11 - B8) / (B11 + B8)\nBuilt-up areas/urban\n\n\nEVI\n2.5 × (NIR - Red) / (NIR + 6×Red - 7.5×Blue + 1)\n2.5 × (B8 - B4) / (B8 + 6×B4 - 7.5×B2 + 1)\nEnhanced vegetation (reduces saturation)\n\n\nSAVI\n1.5 × (NIR - Red) / (NIR + Red + 0.5)\n1.5 × (B8 - B4) / (B8 + B4 + 0.5)\nVegetation with soil correction\n\n\n\nSee Montero, D., Aybar, C., Mahecha, M.D. et al. A standardized catalogue of spectral indices to advance the use of remote sensing in Earth system research. Sci Data 10, 197 (2023). https://doi.org/10.1038/s41597-023-02096-0"
+  },
+  {
+    "objectID": "index.html#tutorial---google-earth-engine",
+    "href": "index.html#tutorial---google-earth-engine",
+    "title": "NR 218",
+    "section": "Tutorial - Google Earth Engine",
+    "text": "Tutorial - Google Earth Engine\nAnother incredibly powerful tool at our disposal is Google Earth Engine\n\nCloud-based, so it can handle higher intensity data processing\nFree* access to a large collection of datasets\n\n\n*Free for academic use, so let’s take advantage of it!"
+  },
+  {
+    "objectID": "index.html#step-one---registering-for-gee",
+    "href": "index.html#step-one---registering-for-gee",
+    "title": "NR 218",
+    "section": "Step One - Registering for GEE",
+    "text": "Step One - Registering for GEE\n\n\nTo connect your Google account, go to https://code.earthengine.google.com/\nOnce you’ve logged in, you should see something like this:\n\n\n\nWe want to register a new project"
+  },
+  {
+    "objectID": "index.html#section-18",
+    "href": "index.html#section-18",
+    "title": "NR 218",
+    "section": "",
+    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
+  },
+  {
+    "objectID": "vector_tutorial.html#buffer",
+    "href": "vector_tutorial.html#buffer",
+    "title": "",
+    "section": "Buffer",
+    "text": "Buffer\n\n\n\n\n\n\n\n\n\nOpen QGIS and open the ‘sprStreams.geojson’\nVector –&gt; Geoprocessing tools –&gt; Buffer\n\n\n\nNotice the Units! Buffering in degrees makes no sense. Reproject it first! What is a good projection?"
+  },
+  {
+    "objectID": "vector_tutorial.html#dissolve",
+    "href": "vector_tutorial.html#dissolve",
+    "title": "",
+    "section": "Dissolve",
+    "text": "Dissolve\n\n\nIn QGIS open sprSoil.geojson\nChange symbology to categorical by “SOILNAME”\nVector –&gt; Geoprocessing tools –&gt; Dissolve\nUse “HYDROGRPOUP” as dissolve field"
+  },
+  {
+    "objectID": "vector_tutorial.html#clip",
+    "href": "vector_tutorial.html#clip",
+    "title": "",
+    "section": "Clip",
+    "text": "Clip\n\nVector –&gt; Geoprocessing tools –&gt; Clip\nClip the sprSoil by the streams buffer."
+  },
+  {
+    "objectID": "vector_tutorial.html#spatial-overlays",
+    "href": "vector_tutorial.html#spatial-overlays",
+    "title": "",
+    "section": "Spatial overlays",
+    "text": "Spatial overlays\n\n\n\nIntersect soils with bufffer, look at attributes\nIntersect buffer with soils, look at attributes\n\n\n\n\nUnion\n\n\n\nSymmetric Difference\n\nTry it with buffer and soils"
+  },
+  {
+    "objectID": "vector_tutorial.html#section",
+    "href": "vector_tutorial.html#section",
+    "title": "",
+    "section": "",
+    "text": "Check topology Vector --&gt; Geometry --&gt; Check Validity"
+  },
+  {
+    "objectID": "vector_tutorial.html#section-1",
+    "href": "vector_tutorial.html#section-1",
+    "title": "",
+    "section": "",
+    "text": "Link to tutorial"
+  },
+  {
     "objectID": "projections_etc.html#map-conventions",
     "href": "projections_etc.html#map-conventions",
     "title": "",
@@ -1377,5 +1489,75 @@
     "title": "",
     "section": "Spectral Resolution",
     "text": "Spectral Resolution\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: NASA\n\n\n\n\n\nImage Source: University of Texas at Austin, Center for Space Research via ESA"
+  },
+  {
+    "objectID": "finding_gis_data.html#finding-gis-data",
+    "href": "finding_gis_data.html#finding-gis-data",
+    "title": "",
+    "section": "Finding GIS Data",
+    "text": "Finding GIS Data\n\nThere is an enormous volume of freely available GIS data online.\nSome places to look:\n\nNASA\nOpenStreetMap\nUSGS\n\nLiDAR Explorer\n\nESA\nLPDAAC\nElevation data\nSpecies observations\nESRI OpenData"
+  },
+  {
+    "objectID": "finding_gis_data.html#tutorial---copernicus-browser",
+    "href": "finding_gis_data.html#tutorial---copernicus-browser",
+    "title": "",
+    "section": "Tutorial - Copernicus Browser",
+    "text": "Tutorial - Copernicus Browser\n\nOpen Copernicus Browser (right click to open in new tab)\nFirst, make an account!\n\n\nregistration is free and helps track use of the tool (and manage processing quotas)"
+  },
+  {
+    "objectID": "finding_gis_data.html#section",
+    "href": "finding_gis_data.html#section",
+    "title": "",
+    "section": "",
+    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel\nFollow the steps to register, confirm your email, and then go back to the main page."
+  },
+  {
+    "objectID": "finding_gis_data.html#section-1",
+    "href": "finding_gis_data.html#section-1",
+    "title": "",
+    "section": "",
+    "text": "Now let’s get a feel for what the tool can do!"
+  },
+  {
+    "objectID": "finding_gis_data.html#section-2",
+    "href": "finding_gis_data.html#section-2",
+    "title": "",
+    "section": "",
+    "text": "Look at the Garnet Fire on CalFire inciweb.\n\n\n\nIn Copernicus Browser (in visualize mode), paste the lat, lon into the search, hit enter\n\n\n\n\nChange the date to 2025-09-07\n\n\n\n\nAdjust image so the fire is in view\n\n\n\n\n\n\n\nLets try a different visualization\nCopernicus offers a SWIR based composite visualization that is quite good for burn detection."
+  },
+  {
+    "objectID": "finding_gis_data.html#section-4",
+    "href": "finding_gis_data.html#section-4",
+    "title": "",
+    "section": "",
+    "text": "That is a nice way to visualize but for actual detection purposed using a spectral index is better\nNormalized Burn Ratio (NBR) is the most obvious choice here. \\[\n\\begin{align}\nNBR &= \\frac{NIR - SWIR2}{NIR + SWIR2} \\\\\n  &= \\frac{B8 - B12}{B8 + B12}  \\mathrm{For Sentinel 2}\n\\end{align}\n\\]\n\nExercise - Create and download a NBR geotiff fro before and after the fire."
+  },
+  {
+    "objectID": "finding_gis_data.html#spectral-indices",
+    "href": "finding_gis_data.html#spectral-indices",
+    "title": "",
+    "section": "Spectral Indices",
+    "text": "Spectral Indices\n\n\n\n\n\n\n\n\n\nIndex\nFormula\nBands (Sentinel-2)\nPurpose\n\n\n\n\nNDVI\n(NIR - Red) / (NIR + Red)\n(B8 - B4) / (B8 + B4)\nVegetation health/density\n\n\nNDWI\n(Green - NIR) / (Green + NIR)\n(B3 - B8) / (B3 + B8)\nWater bodies detection\n\n\nNDMI\n(NIR - SWIR1) / (NIR + SWIR1)\n(B8 - B11) / (B8 + B11)\nVegetation moisture\n\n\nNBR\n(NIR - SWIR2) / (NIR + SWIR2)\n(B8 - B12) / (B8 + B12)\nBurn severity/scars\n\n\nNDSI\n(Green - SWIR1) / (Green + SWIR1)\n(B3 - B11) / (B3 + B11)\nSnow cover\n\n\nNDBI\n(SWIR1 - NIR) / (SWIR1 + NIR)\n(B11 - B8) / (B11 + B8)\nBuilt-up areas/urban\n\n\nEVI\n2.5 × (NIR - Red) / (NIR + 6×Red - 7.5×Blue + 1)\n2.5 × (B8 - B4) / (B8 + 6×B4 - 7.5×B2 + 1)\nEnhanced vegetation (reduces saturation)\n\n\nSAVI\n1.5 × (NIR - Red) / (NIR + Red + 0.5)\n1.5 × (B8 - B4) / (B8 + B4 + 0.5)\nVegetation with soil correction\n\n\n\nSee Montero, D., Aybar, C., Mahecha, M.D. et al. A standardized catalogue of spectral indices to advance the use of remote sensing in Earth system research. Sci Data 10, 197 (2023). https://doi.org/10.1038/s41597-023-02096-0"
+  },
+  {
+    "objectID": "finding_gis_data.html#tutorial---google-earth-engine",
+    "href": "finding_gis_data.html#tutorial---google-earth-engine",
+    "title": "",
+    "section": "Tutorial - Google Earth Engine",
+    "text": "Tutorial - Google Earth Engine\nAnother incredibly powerful tool at our disposal is Google Earth Engine\n\nCloud-based, so it can handle higher intensity data processing\nFree* access to a large collection of datasets\n\n\n*Free for academic use, so let’s take advantage of it!"
+  },
+  {
+    "objectID": "finding_gis_data.html#step-one---registering-for-gee",
+    "href": "finding_gis_data.html#step-one---registering-for-gee",
+    "title": "",
+    "section": "Step One - Registering for GEE",
+    "text": "Step One - Registering for GEE\n\n\nTo connect your Google account, go to https://code.earthengine.google.com/\nOnce you’ve logged in, you should see something like this:\n\n\n\nWe want to register a new project"
+  },
+  {
+    "objectID": "finding_gis_data.html#section-5",
+    "href": "finding_gis_data.html#section-5",
+    "title": "",
+    "section": "",
+    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
   }
 ]
