@@ -292,22 +292,23 @@ NBR &amp;= \frac{NIR - SWIR2}{NIR + SWIR2} \\
 \end{align}
 \]</span></li>
 </ul>
-<p><strong>Exercise</strong> - Create and download a NBR geotiff fro before and after the fire.</p>
+<p><strong>Exercise</strong> - Create and download a NBR geotiff for before and after the fire.</p>
 </section>
 <section id="spectral-indices" class="slide level2 center">
 <h2>Spectral Indices</h2>
+<div style="font-size: 0.65em;">
 <table class="caption-top">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 20%">
-<col style="width: 43%">
-<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 24%">
+<col style="width: 32%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Index</th>
 <th>Formula</th>
-<th>Bands (Sentinel-2)</th>
+<th>Sentinel-2</th>
 <th>Purpose</th>
 </tr>
 </thead>
@@ -316,13 +317,13 @@ NBR &amp;= \frac{NIR - SWIR2}{NIR + SWIR2} \\
 <td>NDVI</td>
 <td>(NIR - Red) / (NIR + Red)</td>
 <td>(B8 - B4) / (B8 + B4)</td>
-<td>Vegetation health/density</td>
+<td>Vegetation health</td>
 </tr>
 <tr class="even">
 <td>NDWI</td>
 <td>(Green - NIR) / (Green + NIR)</td>
 <td>(B3 - B8) / (B3 + B8)</td>
-<td>Water bodies detection</td>
+<td>Water detection</td>
 </tr>
 <tr class="odd">
 <td>NDMI</td>
@@ -334,7 +335,7 @@ NBR &amp;= \frac{NIR - SWIR2}{NIR + SWIR2} \\
 <td>NBR</td>
 <td>(NIR - SWIR2) / (NIR + SWIR2)</td>
 <td>(B8 - B12) / (B8 + B12)</td>
-<td>Burn severity/scars</td>
+<td>Burn severity</td>
 </tr>
 <tr class="odd">
 <td>NDSI</td>
@@ -343,40 +344,27 @@ NBR &amp;= \frac{NIR - SWIR2}{NIR + SWIR2} \\
 <td>Snow cover</td>
 </tr>
 <tr class="even">
-<td>NDBI</td>
-<td>(SWIR1 - NIR) / (SWIR1 + NIR)</td>
-<td>(B11 - B8) / (B11 + B8)</td>
-<td>Built-up areas/urban</td>
-</tr>
-<tr class="odd">
-<td>EVI</td>
-<td>2.5 × (NIR - Red) / (NIR + 6×Red - 7.5×Blue + 1)</td>
-<td>2.5 × (B8 - B4) / (B8 + 6×B4 - 7.5×B2 + 1)</td>
-<td>Enhanced vegetation (reduces saturation)</td>
-</tr>
-<tr class="even">
 <td>SAVI</td>
 <td>1.5 × (NIR - Red) / (NIR + Red + 0.5)</td>
 <td>1.5 × (B8 - B4) / (B8 + B4 + 0.5)</td>
-<td>Vegetation with soil correction</td>
+<td>Soil-adjusted veg.</td>
 </tr>
 </tbody>
 </table>
-<p>See <a href="https://doi.org/10.1038/s41597-023-02096-0">Montero, D., Aybar, C., Mahecha, M.D.&nbsp;et al.&nbsp;A standardized catalogue of spectral indices to advance the use of remote sensing in Earth system research. Sci Data 10, 197 (2023). https://doi.org/10.1038/s41597-023-02096-0</a></p>
+<p>For more indices / detail see<a href="https://doi.org/10.1038/s41597-023-02096-0">Montero et al.&nbsp;(2023) Sci Data 10:197</a></p>
+</div>
 </section>
 <section id="tutorial---google-earth-engine" class="slide level2 center">
 <h2>Tutorial - Google Earth Engine</h2>
 <p>Another incredibly powerful tool at our disposal is Google Earth Engine</p>
 <ul>
-<li><p>Cloud-based, so it can handle higher intensity data processing</p></li>
-<li><p>Free* access to a large collection of datasets</p>
+<li><p>Cloud-based, so it can handle high intensity data processing</p></li>
+<li><p>Free<sup>1</sup> access to a large collection of datasets</p>
 <div style="font-size:0.7em">
-<ul>
-<li>*Free for academic use, so let’s take advantage of it!</li>
-</ul>
+
 </div></li>
 </ul>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Free for academic use, so let’s take advantage of it!</p></li></ol></aside></section>
 <section id="step-one---registering-for-gee" class="slide level2 center">
 <h2>Step One - Registering for GEE</h2>
 <div style="font-size:0.6em">
@@ -575,6 +563,7 @@ NBR &amp;= \frac{NIR - SWIR2}{NIR + SWIR2} \\
 
 
 <img data-src="img/gee_plugin_example.png" style="width:80.0%" class="r-stretch"></section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

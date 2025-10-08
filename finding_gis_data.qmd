@@ -96,34 +96,32 @@ NBR &= \frac{NIR - SWIR2}{NIR + SWIR2} \\
 \end{align}
 $$
 
-__Exercise__ - Create and download a NBR geotiff fro before and after the fire.
+__Exercise__ - Create and download a NBR geotiff for before and after the fire.
 
 
 ## Spectral Indices
-
-| Index | Formula | Bands (Sentinel-2) | Purpose |
-|-------|---------|-------------------|---------|
-| NDVI | (NIR - Red) / (NIR + Red) | (B8 - B4) / (B8 + B4) | Vegetation health/density |
-| NDWI | (Green - NIR) / (Green + NIR) | (B3 - B8) / (B3 + B8) | Water bodies detection |
+::: {style="font-size: 0.65em;"}
+| Index | Formula | Sentinel-2 | Purpose |
+|-------|---------|------------|---------|
+| NDVI | (NIR - Red) / (NIR + Red) | (B8 - B4) / (B8 + B4) | Vegetation health |
+| NDWI | (Green - NIR) / (Green + NIR) | (B3 - B8) / (B3 + B8) | Water detection |
 | NDMI | (NIR - SWIR1) / (NIR + SWIR1) | (B8 - B11) / (B8 + B11) | Vegetation moisture |
-| NBR | (NIR - SWIR2) / (NIR + SWIR2) | (B8 - B12) / (B8 + B12) | Burn severity/scars |
+| NBR | (NIR - SWIR2) / (NIR + SWIR2) | (B8 - B12) / (B8 + B12) | Burn severity |
 | NDSI | (Green - SWIR1) / (Green + SWIR1) | (B3 - B11) / (B3 + B11) | Snow cover |
-| NDBI | (SWIR1 - NIR) / (SWIR1 + NIR) | (B11 - B8) / (B11 + B8) | Built-up areas/urban |
-| EVI | 2.5 × (NIR - Red) / (NIR + 6×Red - 7.5×Blue + 1) | 2.5 × (B8 - B4) / (B8 + 6×B4 - 7.5×B2 + 1) | Enhanced vegetation (reduces saturation) |
-| SAVI | 1.5 × (NIR - Red) / (NIR + Red + 0.5) | 1.5 × (B8 - B4) / (B8 + B4 + 0.5) | Vegetation with soil correction |
+| SAVI | 1.5 × (NIR - Red) / (NIR + Red + 0.5) | 1.5 × (B8 - B4) / (B8 + B4 + 0.5) | Soil-adjusted veg. |
 
-See [Montero, D., Aybar, C., Mahecha, M.D. et al. A standardized catalogue of spectral indices to advance the use of remote sensing in Earth system research. Sci Data 10, 197 (2023). https://doi.org/10.1038/s41597-023-02096-0](https://doi.org/10.1038/s41597-023-02096-0) 
-
+For more indices / detail see [Montero et al. (2023) Sci Data 10:197](https://doi.org/10.1038/s41597-023-02096-0)
+:::
 
 ## Tutorial - Google Earth Engine
 
 Another incredibly powerful tool at our disposal is Google Earth Engine
 
-+ Cloud-based, so it can handle higher intensity data processing
-+ Free* access to a large collection of datasets
++ Cloud-based, so it can handle high intensity data processing
++ Free[^free] access to a large collection of datasets
 
   ::: {style = "font-size:0.7em"}
-  + *Free for academic use, so let's take advantage of it!
+  [^free]: Free for academic (and non-profit) use, so let's take advantage of it!
   :::
 
 ## Step One - Registering for GEE
