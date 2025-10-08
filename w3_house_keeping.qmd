@@ -1,0 +1,26 @@
+# Week 3 Announcements
+
+## Events
+![](img/library%20flyer.png)
+
+## 
+![](img/slo_gis_day_2025.png)
+
+## 
+![](img/slo_gis_day_2025_2.png)
+
+## Final Project Brainstorm 
+
+__Due October 15th__
+
+Come up with your own geospatial analysis idea. Submit a well thought out paragraph which describes:
+
+1. The question/problem you have identified
+2. The geographic data you will use to answer the question
+2. The geoprocessing steps you will perform on the data
+2. The expected outputs of your analysis
+
+You may also frame your question as a hypothesis test (as in the Scientific Method)
+
++ Submit 1 pdf per group.
++ If you are having a hard time coming up with an idea come to me.

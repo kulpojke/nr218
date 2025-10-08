@@ -1,0 +1,17 @@
+# Week 2 Announcements and such {style="font-size:0.7em"}
+
+
++ Assignment 0 (1 pt extra credit) is available on Canvas until midnight at October 1st. 
++ [Project 1](project_1.html) is due October 6th.
+    + You will have time in class this  week to work on it
+
+In all of your projects please cite sources for data and literature you used for research
+
++ Citations should be: 
+    + In text:
+        + Winter 2021 was the wettest in 30 years (author, year)
+    + In the references, at the end of the document:
+        + Author, (year). Name of the article. Name of the publication. Page numbers. DOI. 
+    + I suggest harvard format:
+        + https://www.mendeley.com/guides/harvard-citation-guide/ 
+    + But I don’t really care as long as you’re consistent

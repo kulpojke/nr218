@@ -606,14 +606,14 @@
     "href": "index.html#spectral-indices",
     "title": "NR 218",
     "section": "Spectral Indices",
-    "text": "Spectral Indices\n\n\n\n\n\n\n\n\n\n\nIndex\nFormula\nSentinel-2\nPurpose\n\n\n\n\nNDVI\n(NIR - Red) / (NIR + Red)\n(B8 - B4) / (B8 + B4)\nVegetation health\n\n\nNDWI\n(Green - NIR) / (Green + NIR)\n(B3 - B8) / (B3 + B8)\nWater detection\n\n\nNDMI\n(NIR - SWIR1) / (NIR + SWIR1)\n(B8 - B11) / (B8 + B11)\nVegetation moisture\n\n\nNBR\n(NIR - SWIR2) / (NIR + SWIR2)\n(B8 - B12) / (B8 + B12)\nBurn severity\n\n\nNDSI\n(Green - SWIR1) / (Green + SWIR1)\n(B3 - B11) / (B3 + B11)\nSnow cover\n\n\nSAVI\n1.5 × (NIR - Red) / (NIR + Red + 0.5)\n1.5 × (B8 - B4) / (B8 + B4 + 0.5)\nSoil-adjusted veg.\n\n\n\nFor more indices / detail seeMontero et al. (2023) Sci Data 10:197"
+    "text": "Spectral Indices\n\n\n\n\n\n\n\n\n\n\nIndex\nFormula\nSentinel-2\nPurpose\n\n\n\n\nNDVI\n(NIR - Red) / (NIR + Red)\n(B8 - B4) / (B8 + B4)\nVegetation health\n\n\nNDWI\n(Green - NIR) / (Green + NIR)\n(B3 - B8) / (B3 + B8)\nWater detection\n\n\nNDMI\n(NIR - SWIR1) / (NIR + SWIR1)\n(B8 - B11) / (B8 + B11)\nVegetation moisture\n\n\nNBR\n(NIR - SWIR2) / (NIR + SWIR2)\n(B8 - B12) / (B8 + B12)\nBurn severity\n\n\nNDSI\n(Green - SWIR1) / (Green + SWIR1)\n(B3 - B11) / (B3 + B11)\nSnow cover\n\n\nSAVI\n1.5 × (NIR - Red) / (NIR + Red + 0.5)\n1.5 × (B8 - B4) / (B8 + B4 + 0.5)\nSoil-adjusted veg.\n\n\n\nFor more indices / detail see Montero et al. (2023) Sci Data 10:197"
   },
   {
     "objectID": "index.html#tutorial---google-earth-engine",
     "href": "index.html#tutorial---google-earth-engine",
     "title": "NR 218",
     "section": "Tutorial - Google Earth Engine",
-    "text": "Tutorial - Google Earth Engine\nAnother incredibly powerful tool at our disposal is Google Earth Engine\n\nCloud-based, so it can handle high intensity data processing\nFree1 access to a large collection of datasets\n\n\n\n\nFree for academic use, so let’s take advantage of it!"
+    "text": "Tutorial - Google Earth Engine\nAnother incredibly powerful tool at our disposal is Google Earth Engine\n\nCloud-based, so it can handle high intensity data processing\nFree1 access to a large collection of datasets\n\n\n\n\nFree for academic (and non-profit) use, so let’s take advantage of it!"
   },
   {
     "objectID": "index.html#step-one---registering-for-gee",
@@ -714,137 +714,263 @@
     "text": "We can do the same operation we just did through the plugin:"
   },
   {
-    "objectID": "vector_tutorial.html#buffer",
-    "href": "vector_tutorial.html#buffer",
-    "title": "",
-    "section": "Buffer",
-    "text": "Buffer\n\n\n\n\n\n\n\n\n\nOpen QGIS and open the ‘sprStreams.geojson’\nVector –&gt; Geoprocessing tools –&gt; Buffer\n\n\n\nNotice the Units! Buffering in degrees makes no sense. Reproject it first! What is a good projection?"
+    "objectID": "index.html#events",
+    "href": "index.html#events",
+    "title": "NR 218",
+    "section": "Events",
+    "text": "Events"
   },
   {
-    "objectID": "vector_tutorial.html#dissolve",
-    "href": "vector_tutorial.html#dissolve",
-    "title": "",
-    "section": "Dissolve",
-    "text": "Dissolve\n\n\nIn QGIS open sprSoil.geojson\nChange symbology to categorical by “SOILNAME”\nVector –&gt; Geoprocessing tools –&gt; Dissolve\nUse “HYDROGRPOUP” as dissolve field"
+    "objectID": "index.html#final-project-brainstorm",
+    "href": "index.html#final-project-brainstorm",
+    "title": "NR 218",
+    "section": "Final Project Brainstorm",
+    "text": "Final Project Brainstorm\nDue October 15th\nCome up with your own geospatial analysis idea. Submit a well thought out paragraph which describes:\n\nThe question/problem you have identified\nThe geographic data you will use to answer the question\nThe geoprocessing steps you will perform on the data\nThe expected outputs of your analysis\n\nYou may also frame your question as a hypothesis test (as in the Scientific Method)\n\nSubmit 1 pdf per group.\nIf you are having a hard time coming up with an idea come to me."
   },
   {
-    "objectID": "vector_tutorial.html#clip",
-    "href": "vector_tutorial.html#clip",
+    "objectID": "finding_gis_data.html#finding-gis-data",
+    "href": "finding_gis_data.html#finding-gis-data",
     "title": "",
-    "section": "Clip",
-    "text": "Clip\n\nVector –&gt; Geoprocessing tools –&gt; Clip\nClip the sprSoil by the streams buffer."
+    "section": "Finding GIS Data",
+    "text": "Finding GIS Data\n\nThere is an enormous volume of freely available GIS data online.\nSome places to look:\n\nNASA\nOpenStreetMap\nUSGS\n\nLiDAR Explorer\n\nESA\nLPDAAC\nElevation data\nSpecies observations\nESRI OpenData"
   },
   {
-    "objectID": "vector_tutorial.html#spatial-overlays",
-    "href": "vector_tutorial.html#spatial-overlays",
+    "objectID": "finding_gis_data.html#tutorial---copernicus-browser",
+    "href": "finding_gis_data.html#tutorial---copernicus-browser",
     "title": "",
-    "section": "Spatial overlays",
-    "text": "Spatial overlays\n\n\n\nIntersect soils with bufffer, look at attributes\nIntersect buffer with soils, look at attributes\n\n\n\n\nUnion\n\n\n\nSymmetric Difference\n\nTry it with buffer and soils"
+    "section": "Tutorial - Copernicus Browser",
+    "text": "Tutorial - Copernicus Browser\n\nOpen Copernicus Browser (right click to open in new tab)\nFirst, make an account!\n\n\nregistration is free and helps track use of the tool (and manage processing quotas)"
   },
   {
-    "objectID": "vector_tutorial.html#section",
-    "href": "vector_tutorial.html#section",
+    "objectID": "finding_gis_data.html#section",
+    "href": "finding_gis_data.html#section",
     "title": "",
     "section": "",
-    "text": "Check topology Vector --&gt; Geometry --&gt; Check Validity"
+    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel\nFollow the steps to register, confirm your email, and then go back to the main page."
   },
   {
-    "objectID": "vector_tutorial.html#section-1",
-    "href": "vector_tutorial.html#section-1",
+    "objectID": "finding_gis_data.html#section-1",
+    "href": "finding_gis_data.html#section-1",
     "title": "",
     "section": "",
-    "text": "Link to tutorial"
+    "text": "Now let’s get a feel for what the tool can do!"
   },
   {
-    "objectID": "projections_etc.html#map-conventions",
-    "href": "projections_etc.html#map-conventions",
-    "title": "",
-    "section": "Map Conventions",
-    "text": "Map Conventions\nMapping conventions facilitate effective conveyance of information. In most cases using them is a good idea (but not necessarily always)\n\n\n\n\n\nThe Blue Marble photograph in its original orientation.\n\n\n\n\n\n\nSouth’s up!"
-  },
-  {
-    "objectID": "projections_etc.html#map-scale",
-    "href": "projections_etc.html#map-scale",
-    "title": "",
-    "section": "Map Scale",
-    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
-  },
-  {
-    "objectID": "projections_etc.html#map-scale-1",
-    "href": "projections_etc.html#map-scale-1",
-    "title": "",
-    "section": "Map Scale",
-    "text": "Map Scale"
-  },
-  {
-    "objectID": "projections_etc.html#coordinate-systems",
-    "href": "projections_etc.html#coordinate-systems",
-    "title": "",
-    "section": "Coordinate systems",
-    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nGeographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of Earth\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))\n\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD)."
-  },
-  {
-    "objectID": "projections_etc.html#dms-to-dd-conversion",
-    "href": "projections_etc.html#dms-to-dd-conversion",
-    "title": "",
-    "section": "DMS to DD conversion",
-    "text": "DMS to DD conversion\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
-  },
-  {
-    "objectID": "projections_etc.html#spheroids-and-geoids",
-    "href": "projections_etc.html#spheroids-and-geoids",
-    "title": "",
-    "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\n\nGCS is based on a sphere, spheroid, or geoid\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravitational field rather than its topography 1\n\n\n    \\(\\circ\\) Gravitational field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid is the specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
-  },
-  {
-    "objectID": "projections_etc.html#spheroids-and-geoids-1",
-    "href": "projections_etc.html#spheroids-and-geoids-1",
-    "title": "",
-    "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\n\n\nso the surface is approximated using a spheroid (also called an ellipsoid of revolution)"
-  },
-  {
-    "objectID": "projections_etc.html#datums",
-    "href": "projections_etc.html#datums",
-    "title": "",
-    "section": "Datums",
-    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum uses matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond"
-  },
-  {
-    "objectID": "projections_etc.html#projections",
-    "href": "projections_etc.html#projections",
-    "title": "",
-    "section": "Projections",
-    "text": "Projections\n\n\nMathematical formulas for transform 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
-  },
-  {
-    "objectID": "projections_etc.html#projections-1",
-    "href": "projections_etc.html#projections-1",
-    "title": "",
-    "section": "Projections",
-    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a developable surface (flattenable surface).\n\n\nThere are three commonly used developable surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe developable surface can be oriented in many ways.\n\nEach developable surface can be in one of two cases tangent and secant\n\n\n\n\nThe aspect of the projection is the orientation of the developable surface relative to the axis of the earth\n\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection (with normal aspect) is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nLike the Waterman Butterfly\n\n\n\n\nExamine the size distortions on a Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
-  },
-  {
-    "objectID": "projections_etc.html#section",
-    "href": "projections_etc.html#section",
+    "objectID": "finding_gis_data.html#section-2",
+    "href": "finding_gis_data.html#section-2",
     "title": "",
     "section": "",
-    "text": "Real-time Waterman Wind Map"
+    "text": "Look at the Garnet Fire on CalFire inciweb.\n\n\n\nIn Copernicus Browser (in visualize mode), paste the lat, lon into the search, hit enter\n\n\n\n\nChange the date to 2025-09-07\n\n\n\n\nAdjust image so the fire is in view\n\n\n\n\n\n\n\nLets try a different visualization\nCopernicus offers a SWIR based composite visualization that is quite good for burn detection."
   },
   {
-    "objectID": "projections_etc.html#utm",
-    "href": "projections_etc.html#utm",
+    "objectID": "finding_gis_data.html#section-4",
+    "href": "finding_gis_data.html#section-4",
     "title": "",
-    "section": "UTM",
-    "text": "UTM\n\nUniversal Transverse Mercator (UTM)\n\na projection and accompanying projected coordinate system\nDivided into 60 narrow zones\nDoes not cover polar regions\nLarge north-south extent with low distortion\n\n\n\n\n\n\n\n\n\nImage Source: wikimedia\n\n\n\n\n\n\n\nOpen QGIS\nUse QuickMapServices to add a global Satellite coverage layer.\nIn the drop down menus, go to Project –&gt; Preferences then select the CRS tab on the left\nIn the filter box type “26910”\nUnder Predefined Coordinate Reference Systems select NAD83 / UTM zone 10N\nClick Apply and OK"
+    "section": "",
+    "text": "That is a nice way to visualize but for actual detection purposed using a spectral index is better\nNormalized Burn Ratio (NBR) is the most obvious choice here. \\[\n\\begin{align}\nNBR &= \\frac{NIR - SWIR2}{NIR + SWIR2} \\\\\n  &= \\frac{B8 - B12}{B8 + B12}  \\mathrm{For Sentinel 2}\n\\end{align}\n\\]\n\nExercise - Create and download a NBR geotiff for before and after the fire."
   },
   {
-    "objectID": "projections_etc.html#state-plan-system",
-    "href": "projections_etc.html#state-plan-system",
+    "objectID": "finding_gis_data.html#spectral-indices",
+    "href": "finding_gis_data.html#spectral-indices",
     "title": "",
-    "section": "State Plan System",
-    "text": "State Plan System\nEach State Plane Coordinate System zone uses a map projection based on its geographic orientation.\ne.g.\n\n\n\n\nTransverse Mercator Projection\n\n\n\n\nLambert Conformal Conic Projection\n\n\n\n\nHotine Oblique Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReproject the global satellite image from the last slide to EPSG:2227 (California zone 3)\nScroll to zoom in on South Africa. What do you notice?"
+    "section": "Spectral Indices",
+    "text": "Spectral Indices\n\n\n\n\n\n\n\n\n\n\nIndex\nFormula\nSentinel-2\nPurpose\n\n\n\n\nNDVI\n(NIR - Red) / (NIR + Red)\n(B8 - B4) / (B8 + B4)\nVegetation health\n\n\nNDWI\n(Green - NIR) / (Green + NIR)\n(B3 - B8) / (B3 + B8)\nWater detection\n\n\nNDMI\n(NIR - SWIR1) / (NIR + SWIR1)\n(B8 - B11) / (B8 + B11)\nVegetation moisture\n\n\nNBR\n(NIR - SWIR2) / (NIR + SWIR2)\n(B8 - B12) / (B8 + B12)\nBurn severity\n\n\nNDSI\n(Green - SWIR1) / (Green + SWIR1)\n(B3 - B11) / (B3 + B11)\nSnow cover\n\n\nSAVI\n1.5 × (NIR - Red) / (NIR + Red + 0.5)\n1.5 × (B8 - B4) / (B8 + B4 + 0.5)\nSoil-adjusted veg.\n\n\n\nFor more indices / detail see Montero et al. (2023) Sci Data 10:197"
+  },
+  {
+    "objectID": "finding_gis_data.html#tutorial---google-earth-engine",
+    "href": "finding_gis_data.html#tutorial---google-earth-engine",
+    "title": "",
+    "section": "Tutorial - Google Earth Engine",
+    "text": "Tutorial - Google Earth Engine\nAnother incredibly powerful tool at our disposal is Google Earth Engine\n\nCloud-based, so it can handle high intensity data processing\nFree1 access to a large collection of datasets\n\n\n\n\nFree for academic (and non-profit) use, so let’s take advantage of it!"
+  },
+  {
+    "objectID": "finding_gis_data.html#step-one---registering-for-gee",
+    "href": "finding_gis_data.html#step-one---registering-for-gee",
+    "title": "",
+    "section": "Step One - Registering for GEE",
+    "text": "Step One - Registering for GEE\n\n\nTo connect your Google account, go to https://code.earthengine.google.com/\nOnce you’ve logged in, you should see something like this:\n\n\n\nWe want to register a new project"
+  },
+  {
+    "objectID": "finding_gis_data.html#section-5",
+    "href": "finding_gis_data.html#section-5",
+    "title": "",
+    "section": "",
+    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
+  },
+  {
+    "objectID": "finding_gis_data.html#section-6",
+    "href": "finding_gis_data.html#section-6",
+    "title": "",
+    "section": "",
+    "text": "This will take you to a form where you can confirm your eligibility. Here’s an example of how to fill it out:"
+  },
+  {
+    "objectID": "finding_gis_data.html#section-7",
+    "href": "finding_gis_data.html#section-7",
+    "title": "",
+    "section": "",
+    "text": "Now let’s go back to the Code Editor."
+  },
+  {
+    "objectID": "finding_gis_data.html#section-8",
+    "href": "finding_gis_data.html#section-8",
+    "title": "",
+    "section": "",
+    "text": "These are the main panels to be aware of:"
+  },
+  {
+    "objectID": "finding_gis_data.html#step-two---editing-and-running-a-script",
+    "href": "finding_gis_data.html#step-two---editing-and-running-a-script",
+    "title": "",
+    "section": "Step Two - Editing and Running a Script",
+    "text": "Step Two - Editing and Running a Script\n\n\nIn the scripts panel, select New &gt; File and name it something useful\nYou should see it show up under the Owner dropdown:\n\n\n\n\n\nClick on the file to open it, and then move to the Code Editor. It should be blank to start."
+  },
+  {
+    "objectID": "finding_gis_data.html#section-9",
+    "href": "finding_gis_data.html#section-9",
+    "title": "",
+    "section": "",
+    "text": "Let’s try running some code! In the editor window, type the following command:\n\n\n\nThen hit run. Look at the console - what do you see?"
+  },
+  {
+    "objectID": "finding_gis_data.html#section-10",
+    "href": "finding_gis_data.html#section-10",
+    "title": "",
+    "section": "",
+    "text": "Now let’s try something a little more complicated:\n// Note - lines that start like this (//) are comments, meaning they won't be run like regular code\n\n// These are the 5 largest cities in the world: \n// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo\n\n// Create a list named 'largeCities' with the names of all the above cities\n\nvar largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; \n\n// Print the list \n\nprint(largeCities)\nCopy the code above and paste it into your code editor, hit run, and explore the output in the console."
+  },
+  {
+    "objectID": "finding_gis_data.html#section-11",
+    "href": "finding_gis_data.html#section-11",
+    "title": "",
+    "section": "",
+    "text": "Next, we’re going to explore some spatial data.\n\nIn the search bar at the top of page, type in “California Polytechnic State University”\nClick on the search result, and the map view should update accordingly\n\n\n\n\nAdd a marker to the map by clicking this icon:\n\n\n\nPlace the point somewhere in the middle of campus:\n\n\n\n\n\n\nAt the top of the code editor, you should now see a new var called “geometry”, which gives us the coordinates of our point\n\n\n\n\n\nWe can now reference the point in new lines of code, like we did with “largeCities”"
+  },
+  {
+    "objectID": "finding_gis_data.html#section-12",
+    "href": "finding_gis_data.html#section-12",
+    "title": "",
+    "section": "",
+    "text": "To add in other data layers, let’s look in the Earth Engine Data Catalog\nUsing the search bar, find the Sentinel-2 Dataset and click on the Level-1C option\n\n\n\n\nScroll down to the “Explore with Earth Engine” section, and copy the JavaScript code\nGo back to the code editor, and paste the code onto a new line\n\n\n\nBefore we run it, let’s make a few changes to the code.\n\nFirst, let’s change these dates to be more recent:\n\n\n\nPick a month in 2025, and set the dates to be the first and end of the month\n\n\n\n\n\nNext, let’s change the center point of the map to the point we dropped earlier:\n\n\n\n\n\nReplace the entire line with the following code:\n\n\nMap.centerObject(geometry, 12);\n\n\nAlternatively, you can just replace the first two numbers with the coordinate values saved to “geometry”\n\n\n\n\nHit run, and watch what happens in the map viewer! It may take a second for the layer to load."
+  },
+  {
+    "objectID": "finding_gis_data.html#what-is-this-code-doing",
+    "href": "finding_gis_data.html#what-is-this-code-doing",
+    "title": "",
+    "section": "What is this code doing?",
+    "text": "What is this code doing?\n\nThe quality of satellite imagery can be significantly affected by the cloud cover on any given day\nTo compensate for this, it can be helpful to generate a composite image of only the days with clear visibility over a month"
+  },
+  {
+    "objectID": "finding_gis_data.html#section-13",
+    "href": "finding_gis_data.html#section-13",
+    "title": "",
+    "section": "",
+    "text": "From here, we could clip (or mask, in the case of raster images) the Sentinel image to a set boundary by uploading a shapefile or geojson\nWe can also export map layers, which will be saved to our Google Drive"
+  },
+  {
+    "objectID": "finding_gis_data.html#google-earth-engine-qgis-plugin",
+    "href": "finding_gis_data.html#google-earth-engine-qgis-plugin",
+    "title": "",
+    "section": "Google Earth Engine QGIS Plugin",
+    "text": "Google Earth Engine QGIS Plugin\nThere is also a GEE plugin for QGIS!"
+  },
+  {
+    "objectID": "finding_gis_data.html#section-14",
+    "href": "finding_gis_data.html#section-14",
+    "title": "",
+    "section": "",
+    "text": "We can do the same operation we just did through the plugin:"
+  },
+  {
+    "objectID": "spatial_data_models.html#data-overview",
+    "href": "spatial_data_models.html#data-overview",
+    "title": "",
+    "section": "Data Overview",
+    "text": "Data Overview\n\n\nWhat are Data?\n\n\n“Facts, measurements, and characteristics of something of interest.”\n“Facts and statistics collected together for reference or analysis.”\n\n\nWhat is Information?\n\n\n“Facts provided or learned about something or someone.”\n“Knowledge and insights that are acquired through the analysis of data.”\n\n\n\n\nWhat are Spatial Data?\n\n\n“Data that describe the geographic and spatial aspects of phenomena.”\n“Facts and statistics collected together for reference or analysis.”\n\n\nWhat are Metadata?\n\n\nData about the data\nEx: units, what instruments were used, who/what/when/where/how the data was collected"
+  },
+  {
+    "objectID": "spatial_data_models.html#data-types",
+    "href": "spatial_data_models.html#data-types",
+    "title": "",
+    "section": "Data Types",
+    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Points - negatives, decimal values (32 bit precision)"
+  },
+  {
+    "objectID": "spatial_data_models.html#data-types---continuous-vs-discrete",
+    "href": "spatial_data_models.html#data-types---continuous-vs-discrete",
+    "title": "",
+    "section": "Data Types - Continuous vs Discrete",
+    "text": "Data Types - Continuous vs Discrete\n\nContinuous data consists of numerical values\nDiscrete data consists of a limited number of possible values, groups, or categories"
+  },
+  {
+    "objectID": "spatial_data_models.html#levels-of-measurement",
+    "href": "spatial_data_models.html#levels-of-measurement",
+    "title": "",
+    "section": "Levels of Measurement",
+    "text": "Levels of Measurement\n\n\n\nNominal - Names or identifiers of objects\nOrdinal - Ranked categories based on a measure\nRatio - have a 0 value that indicates absence of the quantity of interest\n\ne.g. Mass, distance, Temperature in Kelvins\n\nInterval - have a regular scale, but not a meaningful 0 value\n\ne.g. Date, temperature in C or F\n\n\n\n\nRatio - Multiplication makes sense, e.g. 200 K is twice as hot as 100 K \\[\n2 \\times 100 \\mathrm{K} = 200 \\mathrm{K}\n\\]\nInterval - Multiplication does not make sense, e.g. 200°C is not twice as hot as 100°C \\[\n2 \\times 100°\\mathrm{C} \\neq 200°\\mathrm{C}\n\\]\n\n\nImage Source: wikimedia"
+  },
+  {
+    "objectID": "spatial_data_models.html#geospatial-data-types-vector-vs.-raster",
+    "href": "spatial_data_models.html#geospatial-data-types-vector-vs.-raster",
+    "title": "",
+    "section": "Geospatial Data Types: Vector vs. Raster",
+    "text": "Geospatial Data Types: Vector vs. Raster"
+  },
+  {
+    "objectID": "spatial_data_models.html#vector-data",
+    "href": "spatial_data_models.html#vector-data",
+    "title": "",
+    "section": "Vector Data",
+    "text": "Vector Data\n\n\n\n\n\n\nCan be described by points, lines, polygons\n\nEx: roads, rivers, train tracks, hiking trails, sidewalks, building footprints, county boundaries\n\nNOT images, do NOT contain any pixels\nThe kind of data we’ve been working with so far\n\n\n\n\n\n\n\n\n\n\n\n\n\nStored as tabular data files with geographic metadata\nPoints, lines, and polygons represent the spatial features\nTopology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon\n\n\n\n\n\n\n\n\n\n\n\nPoints\n\n\nZero-dimensional objects containing a single coordinate pair.\n\nEx: Lat/Lon coordinates denoting a city, building, address, etc\n\nX,Y coordinates on a cartesian plane\n\n\n\n\n\n\n\n\n\n\n\nLines\n\n\nOne-dimensional objects composed of multiple, explicitly connected points.\nLines have the property of length.\nAlso called an “arc.”\n\n\n\n\n\n\n\n\n\n\n\nPolygons\n\n\nTwo-dimensional features created by multiple lines to create a “closed” feature.\nFirst point on the first line segment is the same as the last point on the last line.\nCan represent city boundaries, buildings, lakes, soils, etc.\nHave the properties of area and perimeter."
+  },
+  {
+    "objectID": "spatial_data_models.html#structuring-vector-data",
+    "href": "spatial_data_models.html#structuring-vector-data",
+    "title": "",
+    "section": "Structuring Vector Data",
+    "text": "Structuring Vector Data\n\n\n\nThere are several ways to define relationships between vector data:\n\nFeature based: The “Spaghetti Model”\n\n\nEach feature is a long string of coordinates\nNo relationships between features\n\n\nStructured: The “Topological Model”\n\n\nEnforced relationships between features"
+  },
+  {
+    "objectID": "spatial_data_models.html#some-common-vector-file-formats",
+    "href": "spatial_data_models.html#some-common-vector-file-formats",
+    "title": "",
+    "section": "Some Common Vector File Formats",
+    "text": "Some Common Vector File Formats\n\n\n\n\n\n\n\n\n\n\nFormat\nFile Extension\nStores Topology\nBinary / Human Readable\nNotes\n\n\n\n\nShapefile\n.shp (+ .shx, .dbf, .prj)\nNo\nBinary\nCommon, but aging\n\n\nGeoJSON\n.geojson, .json\nNo\nHuman Readable\nWeb-friendly, text-based\n\n\nGeoPackage\n.gpkg\nNo\nBinary\nModern SQLite-based format\n\n\nKML/KMZ\n.kml, .kmz\nNo\nHuman Readable (.kml) / Binary (.kmz)\nGoogle Earth format\n\n\nTopoJSON\n.topojson\nYes\nHuman Readable\njson, Encodes topology\n\n\nPostGIS\n(database)\nYes (optional)\nBinary\nPostgreSQL spatial extension\n\n\nFile Geodatabase\n.gdb\nYes (optional)\nBinary\nESRI proprietary format, annoying to use in other software\n\n\nGeoParquet\n.parquet\nNo\nBinary\nColumn-oriented, efficient"
+  },
+  {
+    "objectID": "spatial_data_models.html#how-to-open-gdb-in-qgis",
+    "href": "spatial_data_models.html#how-to-open-gdb-in-qgis",
+    "title": "",
+    "section": "How to open gdb in QGIS",
+    "text": "How to open gdb in QGIS\n\nDownload 3D Hydrography Program data for the CONUS\ngdb\nmetadata(Optional)\nUnzip the zip. (Unless you plan to use it later, you can just unzip it into the Downloads folder where the zip sits)\nPress ctrl-shift-v (cmd-shift-v on Mac)\n\nAt the top, under “source type”, check the directory box.\n\nBrowse for and select 3dhp_all_CONUS_20250313_GDB.gdb where you unzipped it.\nClick Add"
+  },
+  {
+    "objectID": "spatial_data_models.html#discussion",
+    "href": "spatial_data_models.html#discussion",
+    "title": "",
+    "section": "Discussion",
+    "text": "Discussion\n\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
+  },
+  {
+    "objectID": "spatial_data_models.html#raster-data",
+    "href": "spatial_data_models.html#raster-data",
+    "title": "",
+    "section": "Raster Data",
+    "text": "Raster Data\n\n\n\n\n\n\nDerived from a grid-based system of contiguous cells containing specific attribute information.\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\nWidely used by technologies such as digital images and LCD monitors.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRaster (latin) means “screen”!\n\nGrids of numbers\nThings with pixels!\nIf it’s pixelated:\n\nIt’s a raster\n\nIf it’s a photo:\n\nIt’s a raster\n\nIf it’s a digital image\n\nIt’s a raster!\n\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\nAKA pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
+  },
+  {
+    "objectID": "spatial_data_models.html#spatial-resolution",
+    "href": "spatial_data_models.html#spatial-resolution",
+    "title": "",
+    "section": "Spatial Resolution",
+    "text": "Spatial Resolution\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the accuracy or detail of the displayed information.\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the accuracy or detail of the displayed information."
+  },
+  {
+    "objectID": "spatial_data_models.html#spectral-resolution",
+    "href": "spatial_data_models.html#spectral-resolution",
+    "title": "",
+    "section": "Spectral Resolution",
+    "text": "Spectral Resolution\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: NASA\n\n\n\n\n\nImage Source: University of Texas at Austin, Center for Space Research via ESA"
   },
   {
     "objectID": "a_quick_intro_to_qgis.html#section",
@@ -1103,7 +1229,7 @@
     "href": "project_2.html",
     "title": "NR 218 Project 2: Vector Data Analysis",
     "section": "",
-    "text": "Become familiar with vector processing operations in QGIS, import and create GIS data\nPerform basic joins and spatial operations such as buffer, dissolve, intersect, union\nStyle maps in a custom fashion based on columnar values\nUnderstand different data types and corresponding data representations\n\nQuery and filter spatial datasets\n\n\n\n\nProvide written responses to the following Questions:\n\nMeasurement Scales: The following data are derived from which measurement scale?\n\nMy happiness score on a scale of 1 to 10 = 7\nMy weight = 192 lbs.\nThe city I live in = Culver City\nMy current body temperature = 99.8 ºF\nThe number of cheeseburgers I can eat before passing out = 12\nMy license plate number = 1LUVG1S\n\nDigitizing Methods: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.\nAccuracy and Precision Errors: What are the five types of accuracy/precision errors associated with geographic information? Provide an example of each type of error.\nBoundary Mapping Challenges: Per the description of the positional accuracy of wetland boundaries in the textbook, discuss a different map feature whose boundaries are inherently vague and difficult to map.\n\n\n\n\n\n\nComplete the following tutorials and submit screenshots/maps of the final products:\n\nConvert excel file of latitudes/longitudes to a point shapefile:\n\nCarefully follow the instructions and complete the Tutorial - Importing Spreadsheets or CSV Files: https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html\n\nDigitize map data:\n\nCarefully follow the instructions and complete the Tutorial - Digitizing Basics: https://www.qgistutorials.com/en/docs/3/digitizing_basics.html\n\nPerform a tabular join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Table Joins: https://www.qgistutorials.com/en/docs/3/performing_table_joins.html\n\nPerform a Spatial Join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Joins: https://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html\n\nPerform a Spatial Query:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Queries: https://www.qgistutorials.com/en/docs/3/performing_spatial_queries.html\n\n\n\n\n\n\nSubmit on Canvas:\n\nWritten Responses: Answers to written questions 1-4 above\nTutorial Documentation: Maps (png, jpeg, tiff, pdf format) and/or screenshots showing the outputs and final products of tutorials 1-5 in project work. Be sure to include dates/times in screenshots."
+    "text": "Become familiar with vector processing operations in QGIS, import and create GIS data\nPerform basic joins and spatial operations such as buffer, dissolve, intersect, union\nStyle maps in a custom fashion based on columnar values\nUnderstand different data types and corresponding data representations\n\nQuery and filter spatial datasets\n\n\n\n\nProvide written responses to the following Questions:\n\nMeasurement Scales: The following data are using which type of measurement scale?\n\nMy happiness score on a scale of 1 to 10 = 7\nMy weight = 192 lbs.\nThe city I live in = Helsinki Finland\nMy current body temperature = 99.8 \\(\\circ\\) F\nMy current body temperature = 37.7 ºF\nMy current body temperature = 310.8 K\nThe number of impossible burgers I can eat before passing out = 12\n\nDigitizing Methods: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.\nAccuracy and Precision Errors: What are the five types of accuracy/precision errors associated with geographic information? Provide an example of each type of error.\nBoundary Mapping Challenges: Per the description of the positional accuracy of wetland boundaries in the textbook, discuss a different map feature whose boundaries are inherently vague and difficult to map.\n\n\n\n\n\n\nComplete the following tutorials and submit screenshots/maps of the final products:\n\nConvert excel file of latitudes/longitudes to a point shapefile:\n\nCarefully follow the instructions and complete the Tutorial - Importing Spreadsheets or CSV Files: https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html\n\nDigitize map data:\n\nCarefully follow the instructions and complete the Tutorial - Digitizing Basics: https://www.qgistutorials.com/en/docs/3/digitizing_basics.html\n\nPerform a tabular join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Table Joins: https://www.qgistutorials.com/en/docs/3/performing_table_joins.html\n\nPerform a Spatial Join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Joins: https://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html\n\nPerform a Spatial Query:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Queries: https://www.qgistutorials.com/en/docs/3/performing_spatial_queries.html\n\n\n\n\n\n\nSubmit on Canvas:\n\nWritten Responses: Answers to written questions 1-4 above\nTutorial Documentation: Maps (png, jpeg, tiff, pdf format) and/or screenshots showing the outputs and final products of tutorials 1-5 in project work. Be sure to include dates/times in screenshots."
   },
   {
     "objectID": "project_2.html#learning-goals",
@@ -1117,7 +1243,7 @@
     "href": "project_2.html#written-responses",
     "title": "NR 218 Project 2: Vector Data Analysis",
     "section": "",
-    "text": "Provide written responses to the following Questions:\n\nMeasurement Scales: The following data are derived from which measurement scale?\n\nMy happiness score on a scale of 1 to 10 = 7\nMy weight = 192 lbs.\nThe city I live in = Culver City\nMy current body temperature = 99.8 ºF\nThe number of cheeseburgers I can eat before passing out = 12\nMy license plate number = 1LUVG1S\n\nDigitizing Methods: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.\nAccuracy and Precision Errors: What are the five types of accuracy/precision errors associated with geographic information? Provide an example of each type of error.\nBoundary Mapping Challenges: Per the description of the positional accuracy of wetland boundaries in the textbook, discuss a different map feature whose boundaries are inherently vague and difficult to map."
+    "text": "Provide written responses to the following Questions:\n\nMeasurement Scales: The following data are using which type of measurement scale?\n\nMy happiness score on a scale of 1 to 10 = 7\nMy weight = 192 lbs.\nThe city I live in = Helsinki Finland\nMy current body temperature = 99.8 \\(\\circ\\) F\nMy current body temperature = 37.7 ºF\nMy current body temperature = 310.8 K\nThe number of impossible burgers I can eat before passing out = 12\n\nDigitizing Methods: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.\nAccuracy and Precision Errors: What are the five types of accuracy/precision errors associated with geographic information? Provide an example of each type of error.\nBoundary Mapping Challenges: Per the description of the positional accuracy of wetland boundaries in the textbook, discuss a different map feature whose boundaries are inherently vague and difficult to map."
   },
   {
     "objectID": "project_2.html#project-work",
@@ -1442,248 +1568,150 @@
     "text": "Reading a CSV with QGIS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDelimited text dialogue box\n\n\nBrowse for csv\n\n\nNotice that it says CRS must be selected.\nWhat is a CRS?\n\n\n\n\nWe will discuss what a CRS is in great detail later.\nFor now just know it provides a reference frame for placing the coordinates on the map.\nCoordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)\nSRS = CRS\n\n\n\n\nClick the Geometry Definition dropdown to assign an SRS.\n\n\nUse EPSG:4326 - WGS 84\nClick Add"
   },
   {
-    "objectID": "spatial_data_models.html#data-overview",
-    "href": "spatial_data_models.html#data-overview",
+    "objectID": "projections_etc.html#map-conventions",
+    "href": "projections_etc.html#map-conventions",
     "title": "",
-    "section": "Data Overview",
-    "text": "Data Overview\n\n\nWhat are Data?\n\n\n“Facts, measurements, and characteristics of something of interest.”\n“Facts and statistics collected together for reference or analysis.”\n\n\nWhat is Information?\n\n\n“Facts provided or learned about something or someone.”\n“Knowledge and insights that are acquired through the analysis of data.”\n\n\n\n\nWhat are Spatial Data?\n\n\n“Data that describe the geographic and spatial aspects of phenomena.”\n“Facts and statistics collected together for reference or analysis.”\n\n\nWhat are Metadata?\n\n\nData about the data\nEx: units, what instruments were used, who/what/when/where/how the data was collected"
+    "section": "Map Conventions",
+    "text": "Map Conventions\nMapping conventions facilitate effective conveyance of information. In most cases using them is a good idea (but not necessarily always)\n\n\n\n\n\nThe Blue Marble photograph in its original orientation.\n\n\n\n\n\n\nSouth’s up!"
   },
   {
-    "objectID": "spatial_data_models.html#data-types",
-    "href": "spatial_data_models.html#data-types",
+    "objectID": "projections_etc.html#map-scale",
+    "href": "projections_etc.html#map-scale",
     "title": "",
-    "section": "Data Types",
-    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Points - negatives, decimal values (32 bit precision)"
+    "section": "Map Scale",
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
   },
   {
-    "objectID": "spatial_data_models.html#data-types---continuous-vs-discrete",
-    "href": "spatial_data_models.html#data-types---continuous-vs-discrete",
+    "objectID": "projections_etc.html#map-scale-1",
+    "href": "projections_etc.html#map-scale-1",
     "title": "",
-    "section": "Data Types - Continuous vs Discrete",
-    "text": "Data Types - Continuous vs Discrete\n\nContinuous data consists of numerical values\nDiscrete data consists of a limited number of possible values, groups, or categories"
+    "section": "Map Scale",
+    "text": "Map Scale"
   },
   {
-    "objectID": "spatial_data_models.html#levels-of-measurement",
-    "href": "spatial_data_models.html#levels-of-measurement",
+    "objectID": "projections_etc.html#coordinate-systems",
+    "href": "projections_etc.html#coordinate-systems",
     "title": "",
-    "section": "Levels of Measurement",
-    "text": "Levels of Measurement\n\n\n\nNominal - Names or identifiers of objects\nOrdinal - Ranked categories based on a measure\nRatio - have a 0 value that indicates absence of the quantity of interest\n\ne.g. Mass, distance, Temperature in Kelvins\n\nInterval - have a regular scale, but not a meaningful 0 value\n\ne.g. Date, temperature in C or F\n\n\n\n\nRatio - Multiplication makes sense, e.g. 200 K is twice as hot as 100 K \\[\n2 \\times 100 \\mathrm{K} = 200 \\mathrm{K}\n\\]\nInterval - Multiplication does not make sense, e.g. 200°C is not twice as hot as 100°C \\[\n2 \\times 100°\\mathrm{C} \\neq 200°\\mathrm{C}\n\\]\n\n\nImage Source: wikimedia"
+    "section": "Coordinate systems",
+    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nGeographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of Earth\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))\n\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD)."
   },
   {
-    "objectID": "spatial_data_models.html#geospatial-data-types-vector-vs.-raster",
-    "href": "spatial_data_models.html#geospatial-data-types-vector-vs.-raster",
+    "objectID": "projections_etc.html#dms-to-dd-conversion",
+    "href": "projections_etc.html#dms-to-dd-conversion",
     "title": "",
-    "section": "Geospatial Data Types: Vector vs. Raster",
-    "text": "Geospatial Data Types: Vector vs. Raster"
+    "section": "DMS to DD conversion",
+    "text": "DMS to DD conversion\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
   },
   {
-    "objectID": "spatial_data_models.html#vector-data",
-    "href": "spatial_data_models.html#vector-data",
+    "objectID": "projections_etc.html#spheroids-and-geoids",
+    "href": "projections_etc.html#spheroids-and-geoids",
     "title": "",
-    "section": "Vector Data",
-    "text": "Vector Data\n\n\n\n\n\n\nCan be described by points, lines, polygons\n\nEx: roads, rivers, train tracks, hiking trails, sidewalks, building footprints, county boundaries\n\nNOT images, do NOT contain any pixels\nThe kind of data we’ve been working with so far\n\n\n\n\n\n\n\n\n\n\n\n\n\nStored as tabular data files with geographic metadata\nPoints, lines, and polygons represent the spatial features\nTopology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon\n\n\n\n\n\n\n\n\n\n\n\nPoints\n\n\nZero-dimensional objects containing a single coordinate pair.\n\nEx: Lat/Lon coordinates denoting a city, building, address, etc\n\nX,Y coordinates on a cartesian plane\n\n\n\n\n\n\n\n\n\n\n\nLines\n\n\nOne-dimensional objects composed of multiple, explicitly connected points.\nLines have the property of length.\nAlso called an “arc.”\n\n\n\n\n\n\n\n\n\n\n\nPolygons\n\n\nTwo-dimensional features created by multiple lines to create a “closed” feature.\nFirst point on the first line segment is the same as the last point on the last line.\nCan represent city boundaries, buildings, lakes, soils, etc.\nHave the properties of area and perimeter."
+    "section": "Spheroids and Geoids",
+    "text": "Spheroids and Geoids\n\n\n\nGCS is based on a sphere, spheroid, or geoid\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravitational field rather than its topography 1\n\n\n    \\(\\circ\\) Gravitational field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid is the specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
   },
   {
-    "objectID": "spatial_data_models.html#structuring-vector-data",
-    "href": "spatial_data_models.html#structuring-vector-data",
+    "objectID": "projections_etc.html#spheroids-and-geoids-1",
+    "href": "projections_etc.html#spheroids-and-geoids-1",
     "title": "",
-    "section": "Structuring Vector Data",
-    "text": "Structuring Vector Data\n\n\n\nThere are several ways to define relationships between vector data:\n\nFeature based: The “Spaghetti Model”\n\n\nEach feature is a long string of coordinates\nNo relationships between features\n\n\nStructured: The “Topological Model”\n\n\nEnforced relationships between features"
+    "section": "Spheroids and Geoids",
+    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\n\n\nso the surface is approximated using a spheroid (also called an ellipsoid of revolution)"
   },
   {
-    "objectID": "spatial_data_models.html#some-common-vector-file-formats",
-    "href": "spatial_data_models.html#some-common-vector-file-formats",
+    "objectID": "projections_etc.html#datums",
+    "href": "projections_etc.html#datums",
     "title": "",
-    "section": "Some Common Vector File Formats",
-    "text": "Some Common Vector File Formats\n\n\n\n\n\n\n\n\n\n\nFormat\nFile Extension\nStores Topology\nBinary / Human Readable\nNotes\n\n\n\n\nShapefile\n.shp (+ .shx, .dbf, .prj)\nNo\nBinary\nCommon, but aging\n\n\nGeoJSON\n.geojson, .json\nNo\nHuman Readable\nWeb-friendly, text-based\n\n\nGeoPackage\n.gpkg\nNo\nBinary\nModern SQLite-based format\n\n\nKML/KMZ\n.kml, .kmz\nNo\nHuman Readable (.kml) / Binary (.kmz)\nGoogle Earth format\n\n\nTopoJSON\n.topojson\nYes\nHuman Readable\njson, Encodes topology\n\n\nPostGIS\n(database)\nYes (optional)\nBinary\nPostgreSQL spatial extension\n\n\nFile Geodatabase\n.gdb\nYes (optional)\nBinary\nESRI proprietary format, annoying to use in other software\n\n\nGeoParquet\n.parquet\nNo\nBinary\nColumn-oriented, efficient"
+    "section": "Datums",
+    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum uses matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond"
   },
   {
-    "objectID": "spatial_data_models.html#how-to-open-gdb-in-qgis",
-    "href": "spatial_data_models.html#how-to-open-gdb-in-qgis",
+    "objectID": "projections_etc.html#projections",
+    "href": "projections_etc.html#projections",
     "title": "",
-    "section": "How to open gdb in QGIS",
-    "text": "How to open gdb in QGIS\n\nDownload 3D Hydrography Program data for the CONUS\ngdb\nmetadata(Optional)\nUnzip the zip. (Unless you plan to use it later, you can just unzip it into the Downloads folder where the zip sits)\nPress ctrl-shift-v (cmd-shift-v on Mac)\n\nAt the top, under “source type”, check the directory box.\n\nBrowse for and select 3dhp_all_CONUS_20250313_GDB.gdb where you unzipped it.\nClick Add"
+    "section": "Projections",
+    "text": "Projections\n\n\nMathematical formulas for transform 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
   },
   {
-    "objectID": "spatial_data_models.html#discussion",
-    "href": "spatial_data_models.html#discussion",
+    "objectID": "projections_etc.html#projections-1",
+    "href": "projections_etc.html#projections-1",
     "title": "",
-    "section": "Discussion",
-    "text": "Discussion\n\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
+    "section": "Projections",
+    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a developable surface (flattenable surface).\n\n\nThere are three commonly used developable surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe developable surface can be oriented in many ways.\n\nEach developable surface can be in one of two cases tangent and secant\n\n\n\n\nThe aspect of the projection is the orientation of the developable surface relative to the axis of the earth\n\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection (with normal aspect) is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nLike the Waterman Butterfly\n\n\n\n\nExamine the size distortions on a Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
   },
   {
-    "objectID": "spatial_data_models.html#raster-data",
-    "href": "spatial_data_models.html#raster-data",
-    "title": "",
-    "section": "Raster Data",
-    "text": "Raster Data\n\n\n\n\n\n\nDerived from a grid-based system of contiguous cells containing specific attribute information.\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\nWidely used by technologies such as digital images and LCD monitors.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRaster (latin) means “screen”!\n\nGrids of numbers\nThings with pixels!\nIf it’s pixelated:\n\nIt’s a raster\n\nIf it’s a photo:\n\nIt’s a raster\n\nIf it’s a digital image\n\nIt’s a raster!\n\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\nAKA pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
-  },
-  {
-    "objectID": "spatial_data_models.html#spatial-resolution",
-    "href": "spatial_data_models.html#spatial-resolution",
-    "title": "",
-    "section": "Spatial Resolution",
-    "text": "Spatial Resolution\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the accuracy or detail of the displayed information.\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the accuracy or detail of the displayed information."
-  },
-  {
-    "objectID": "spatial_data_models.html#spectral-resolution",
-    "href": "spatial_data_models.html#spectral-resolution",
-    "title": "",
-    "section": "Spectral Resolution",
-    "text": "Spectral Resolution\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: NASA\n\n\n\n\n\nImage Source: University of Texas at Austin, Center for Space Research via ESA"
-  },
-  {
-    "objectID": "finding_gis_data.html#finding-gis-data",
-    "href": "finding_gis_data.html#finding-gis-data",
-    "title": "",
-    "section": "Finding GIS Data",
-    "text": "Finding GIS Data\n\nThere is an enormous volume of freely available GIS data online.\nSome places to look:\n\nNASA\nOpenStreetMap\nUSGS\n\nLiDAR Explorer\n\nESA\nLPDAAC\nElevation data\nSpecies observations\nESRI OpenData"
-  },
-  {
-    "objectID": "finding_gis_data.html#tutorial---copernicus-browser",
-    "href": "finding_gis_data.html#tutorial---copernicus-browser",
-    "title": "",
-    "section": "Tutorial - Copernicus Browser",
-    "text": "Tutorial - Copernicus Browser\n\nOpen Copernicus Browser (right click to open in new tab)\nFirst, make an account!\n\n\nregistration is free and helps track use of the tool (and manage processing quotas)"
-  },
-  {
-    "objectID": "finding_gis_data.html#section",
-    "href": "finding_gis_data.html#section",
+    "objectID": "projections_etc.html#section",
+    "href": "projections_etc.html#section",
     "title": "",
     "section": "",
-    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel\nFollow the steps to register, confirm your email, and then go back to the main page."
+    "text": "Real-time Waterman Wind Map"
   },
   {
-    "objectID": "finding_gis_data.html#section-1",
-    "href": "finding_gis_data.html#section-1",
+    "objectID": "projections_etc.html#utm",
+    "href": "projections_etc.html#utm",
+    "title": "",
+    "section": "UTM",
+    "text": "UTM\n\nUniversal Transverse Mercator (UTM)\n\na projection and accompanying projected coordinate system\nDivided into 60 narrow zones\nDoes not cover polar regions\nLarge north-south extent with low distortion\n\n\n\n\n\n\n\n\n\nImage Source: wikimedia\n\n\n\n\n\n\n\nOpen QGIS\nUse QuickMapServices to add a global Satellite coverage layer.\nIn the drop down menus, go to Project –&gt; Preferences then select the CRS tab on the left\nIn the filter box type “26910”\nUnder Predefined Coordinate Reference Systems select NAD83 / UTM zone 10N\nClick Apply and OK"
+  },
+  {
+    "objectID": "projections_etc.html#state-plan-system",
+    "href": "projections_etc.html#state-plan-system",
+    "title": "",
+    "section": "State Plan System",
+    "text": "State Plan System\nEach State Plane Coordinate System zone uses a map projection based on its geographic orientation.\ne.g.\n\n\n\n\nTransverse Mercator Projection\n\n\n\n\nLambert Conformal Conic Projection\n\n\n\n\nHotine Oblique Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReproject the global satellite image from the last slide to EPSG:2227 (California zone 3)\nScroll to zoom in on South Africa. What do you notice?"
+  },
+  {
+    "objectID": "vector_tutorial.html#buffer",
+    "href": "vector_tutorial.html#buffer",
+    "title": "",
+    "section": "Buffer",
+    "text": "Buffer\n\n\n\n\n\n\n\n\n\nOpen QGIS and open the ‘sprStreams.geojson’\nVector –&gt; Geoprocessing tools –&gt; Buffer\n\n\n\nNotice the Units! Buffering in degrees makes no sense. Reproject it first! What is a good projection?"
+  },
+  {
+    "objectID": "vector_tutorial.html#dissolve",
+    "href": "vector_tutorial.html#dissolve",
+    "title": "",
+    "section": "Dissolve",
+    "text": "Dissolve\n\n\nIn QGIS open sprSoil.geojson\nChange symbology to categorical by “SOILNAME”\nVector –&gt; Geoprocessing tools –&gt; Dissolve\nUse “HYDROGRPOUP” as dissolve field"
+  },
+  {
+    "objectID": "vector_tutorial.html#clip",
+    "href": "vector_tutorial.html#clip",
+    "title": "",
+    "section": "Clip",
+    "text": "Clip\n\nVector –&gt; Geoprocessing tools –&gt; Clip\nClip the sprSoil by the streams buffer."
+  },
+  {
+    "objectID": "vector_tutorial.html#spatial-overlays",
+    "href": "vector_tutorial.html#spatial-overlays",
+    "title": "",
+    "section": "Spatial overlays",
+    "text": "Spatial overlays\n\n\n\nIntersect soils with bufffer, look at attributes\nIntersect buffer with soils, look at attributes\n\n\n\n\nUnion\n\n\n\nSymmetric Difference\n\nTry it with buffer and soils"
+  },
+  {
+    "objectID": "vector_tutorial.html#section",
+    "href": "vector_tutorial.html#section",
     "title": "",
     "section": "",
-    "text": "Now let’s get a feel for what the tool can do!"
+    "text": "Check topology Vector --&gt; Geometry --&gt; Check Validity"
   },
   {
-    "objectID": "finding_gis_data.html#section-2",
-    "href": "finding_gis_data.html#section-2",
+    "objectID": "vector_tutorial.html#section-1",
+    "href": "vector_tutorial.html#section-1",
     "title": "",
     "section": "",
-    "text": "Look at the Garnet Fire on CalFire inciweb.\n\n\n\nIn Copernicus Browser (in visualize mode), paste the lat, lon into the search, hit enter\n\n\n\n\nChange the date to 2025-09-07\n\n\n\n\nAdjust image so the fire is in view\n\n\n\n\n\n\n\nLets try a different visualization\nCopernicus offers a SWIR based composite visualization that is quite good for burn detection."
+    "text": "Link to tutorial"
   },
   {
-    "objectID": "finding_gis_data.html#section-4",
-    "href": "finding_gis_data.html#section-4",
+    "objectID": "w3_house_keeping.html#events",
+    "href": "w3_house_keeping.html#events",
     "title": "",
-    "section": "",
-    "text": "That is a nice way to visualize but for actual detection purposed using a spectral index is better\nNormalized Burn Ratio (NBR) is the most obvious choice here. \\[\n\\begin{align}\nNBR &= \\frac{NIR - SWIR2}{NIR + SWIR2} \\\\\n  &= \\frac{B8 - B12}{B8 + B12}  \\mathrm{For Sentinel 2}\n\\end{align}\n\\]\n\nExercise - Create and download a NBR geotiff for before and after the fire."
+    "section": "Events",
+    "text": "Events"
   },
   {
-    "objectID": "finding_gis_data.html#spectral-indices",
-    "href": "finding_gis_data.html#spectral-indices",
+    "objectID": "w3_house_keeping.html#final-project-brainstorm",
+    "href": "w3_house_keeping.html#final-project-brainstorm",
     "title": "",
-    "section": "Spectral Indices",
-    "text": "Spectral Indices\n\n\n\n\n\n\n\n\n\n\nIndex\nFormula\nSentinel-2\nPurpose\n\n\n\n\nNDVI\n(NIR - Red) / (NIR + Red)\n(B8 - B4) / (B8 + B4)\nVegetation health\n\n\nNDWI\n(Green - NIR) / (Green + NIR)\n(B3 - B8) / (B3 + B8)\nWater detection\n\n\nNDMI\n(NIR - SWIR1) / (NIR + SWIR1)\n(B8 - B11) / (B8 + B11)\nVegetation moisture\n\n\nNBR\n(NIR - SWIR2) / (NIR + SWIR2)\n(B8 - B12) / (B8 + B12)\nBurn severity\n\n\nNDSI\n(Green - SWIR1) / (Green + SWIR1)\n(B3 - B11) / (B3 + B11)\nSnow cover\n\n\nSAVI\n1.5 × (NIR - Red) / (NIR + Red + 0.5)\n1.5 × (B8 - B4) / (B8 + B4 + 0.5)\nSoil-adjusted veg.\n\n\n\nFor more indices / detail seeMontero et al. (2023) Sci Data 10:197"
-  },
-  {
-    "objectID": "finding_gis_data.html#tutorial---google-earth-engine",
-    "href": "finding_gis_data.html#tutorial---google-earth-engine",
-    "title": "",
-    "section": "Tutorial - Google Earth Engine",
-    "text": "Tutorial - Google Earth Engine\nAnother incredibly powerful tool at our disposal is Google Earth Engine\n\nCloud-based, so it can handle high intensity data processing\nFree1 access to a large collection of datasets\n\n\n\n\nFree for academic use, so let’s take advantage of it!"
-  },
-  {
-    "objectID": "finding_gis_data.html#step-one---registering-for-gee",
-    "href": "finding_gis_data.html#step-one---registering-for-gee",
-    "title": "",
-    "section": "Step One - Registering for GEE",
-    "text": "Step One - Registering for GEE\n\n\nTo connect your Google account, go to https://code.earthengine.google.com/\nOnce you’ve logged in, you should see something like this:\n\n\n\nWe want to register a new project"
-  },
-  {
-    "objectID": "finding_gis_data.html#section-5",
-    "href": "finding_gis_data.html#section-5",
-    "title": "",
-    "section": "",
-    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
-  },
-  {
-    "objectID": "finding_gis_data.html#section-6",
-    "href": "finding_gis_data.html#section-6",
-    "title": "",
-    "section": "",
-    "text": "This will take you to a form where you can confirm your eligibility. Here’s an example of how to fill it out:"
-  },
-  {
-    "objectID": "finding_gis_data.html#section-7",
-    "href": "finding_gis_data.html#section-7",
-    "title": "",
-    "section": "",
-    "text": "Now let’s go back to the Code Editor."
-  },
-  {
-    "objectID": "finding_gis_data.html#section-8",
-    "href": "finding_gis_data.html#section-8",
-    "title": "",
-    "section": "",
-    "text": "These are the main panels to be aware of:"
-  },
-  {
-    "objectID": "finding_gis_data.html#step-two---editing-and-running-a-script",
-    "href": "finding_gis_data.html#step-two---editing-and-running-a-script",
-    "title": "",
-    "section": "Step Two - Editing and Running a Script",
-    "text": "Step Two - Editing and Running a Script\n\n\nIn the scripts panel, select New &gt; File and name it something useful\nYou should see it show up under the Owner dropdown:\n\n\n\n\n\nClick on the file to open it, and then move to the Code Editor. It should be blank to start."
-  },
-  {
-    "objectID": "finding_gis_data.html#section-9",
-    "href": "finding_gis_data.html#section-9",
-    "title": "",
-    "section": "",
-    "text": "Let’s try running some code! In the editor window, type the following command:\n\n\n\nThen hit run. Look at the console - what do you see?"
-  },
-  {
-    "objectID": "finding_gis_data.html#section-10",
-    "href": "finding_gis_data.html#section-10",
-    "title": "",
-    "section": "",
-    "text": "Now let’s try something a little more complicated:\n// Note - lines that start like this (//) are comments, meaning they won't be run like regular code\n\n// These are the 5 largest cities in the world: \n// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo\n\n// Create a list named 'largeCities' with the names of all the above cities\n\nvar largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; \n\n// Print the list \n\nprint(largeCities)\nCopy the code above and paste it into your code editor, hit run, and explore the output in the console."
-  },
-  {
-    "objectID": "finding_gis_data.html#section-11",
-    "href": "finding_gis_data.html#section-11",
-    "title": "",
-    "section": "",
-    "text": "Next, we’re going to explore some spatial data.\n\nIn the search bar at the top of page, type in “California Polytechnic State University”\nClick on the search result, and the map view should update accordingly\n\n\n\n\nAdd a marker to the map by clicking this icon:\n\n\n\nPlace the point somewhere in the middle of campus:\n\n\n\n\n\n\nAt the top of the code editor, you should now see a new var called “geometry”, which gives us the coordinates of our point\n\n\n\n\n\nWe can now reference the point in new lines of code, like we did with “largeCities”"
-  },
-  {
-    "objectID": "finding_gis_data.html#section-12",
-    "href": "finding_gis_data.html#section-12",
-    "title": "",
-    "section": "",
-    "text": "To add in other data layers, let’s look in the Earth Engine Data Catalog\nUsing the search bar, find the Sentinel-2 Dataset and click on the Level-1C option\n\n\n\n\nScroll down to the “Explore with Earth Engine” section, and copy the JavaScript code\nGo back to the code editor, and paste the code onto a new line\n\n\n\nBefore we run it, let’s make a few changes to the code.\n\nFirst, let’s change these dates to be more recent:\n\n\n\nPick a month in 2025, and set the dates to be the first and end of the month\n\n\n\n\n\nNext, let’s change the center point of the map to the point we dropped earlier:\n\n\n\n\n\nReplace the entire line with the following code:\n\n\nMap.centerObject(geometry, 12);\n\n\nAlternatively, you can just replace the first two numbers with the coordinate values saved to “geometry”\n\n\n\n\nHit run, and watch what happens in the map viewer! It may take a second for the layer to load."
-  },
-  {
-    "objectID": "finding_gis_data.html#what-is-this-code-doing",
-    "href": "finding_gis_data.html#what-is-this-code-doing",
-    "title": "",
-    "section": "What is this code doing?",
-    "text": "What is this code doing?\n\nThe quality of satellite imagery can be significantly affected by the cloud cover on any given day\nTo compensate for this, it can be helpful to generate a composite image of only the days with clear visibility over a month"
-  },
-  {
-    "objectID": "finding_gis_data.html#section-13",
-    "href": "finding_gis_data.html#section-13",
-    "title": "",
-    "section": "",
-    "text": "From here, we could clip (or mask, in the case of raster images) the Sentinel image to a set boundary by uploading a shapefile or geojson\nWe can also export map layers, which will be saved to our Google Drive"
-  },
-  {
-    "objectID": "finding_gis_data.html#google-earth-engine-qgis-plugin",
-    "href": "finding_gis_data.html#google-earth-engine-qgis-plugin",
-    "title": "",
-    "section": "Google Earth Engine QGIS Plugin",
-    "text": "Google Earth Engine QGIS Plugin\nThere is also a GEE plugin for QGIS!"
-  },
-  {
-    "objectID": "finding_gis_data.html#section-14",
-    "href": "finding_gis_data.html#section-14",
-    "title": "",
-    "section": "",
-    "text": "We can do the same operation we just did through the plugin:"
+    "section": "Final Project Brainstorm",
+    "text": "Final Project Brainstorm\nDue October 15th\nCome up with your own geospatial analysis idea. Submit a well thought out paragraph which describes:\n\nThe question/problem you have identified\nThe geographic data you will use to answer the question\nThe geoprocessing steps you will perform on the data\nThe expected outputs of your analysis\n\nYou may also frame your question as a hypothesis test (as in the Scientific Method)\n\nSubmit 1 pdf per group.\nIf you are having a hard time coming up with an idea come to me."
   }
 ]

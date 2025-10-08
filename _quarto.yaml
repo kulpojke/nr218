@@ -17,6 +17,7 @@ project:
     - spatial_data_models.qmd
     - vector_tutorial.qmd
     - finding_gis_data.qmd
+    - w3_house_keeping.qmd
     - index.qmd
 
 format:

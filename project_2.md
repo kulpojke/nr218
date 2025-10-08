@@ -19,13 +19,15 @@ format:
 
 Provide written responses to the following Questions:
 
-1. **Measurement Scales**: The following data are derived from which measurement scale?
+1. **Measurement Scales**: The following data are using which type of measurement scale?
    - My happiness score on a scale of 1 to 10 = 7
    - My weight = 192 lbs.
-   - The city I live in = Culver City
-   - My current body temperature = 99.8 ºF
-   - The number of cheeseburgers I can eat before passing out = 12
-   - My license plate number = 1LUVG1S
+   - The city I live in = Helsinki Finland
+   - My current body temperature = 99.8 $\circ$ F
+   - My current body temperature = 37.7 ºF
+   - My current body temperature = 310.8 K
+   - The number of impossible burgers I can eat before passing out = 12
+   
 
 2. **Digitizing Methods**: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.
 
