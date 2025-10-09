@@ -7,6 +7,7 @@ format:
 
 # NR 218 Project 2: Vector Data Analysis
 
+
 ## Learning Goals
 
 - Become familiar with vector processing operations in QGIS, import and create GIS data
