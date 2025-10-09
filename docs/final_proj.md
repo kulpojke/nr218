@@ -7,6 +7,8 @@ format:
 
 # NR 218 - Introduction to GIS Final Project
 
+You will work in groups of $3 \pm 1$ to answer a question or test a hypothesis of your choosing.
+
 ## Learning Goals
 
 - Use GIS to solve a practical problem of your own design
