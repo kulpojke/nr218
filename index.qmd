@@ -69,6 +69,8 @@ Use arrows or menu in bottom left corner to navigate
 
 {{< include w3_house_keeping.qmd >}}
 
+{{< include vector_tutorial.qmd >}}
+
 
 
 # Vector and Raster Data

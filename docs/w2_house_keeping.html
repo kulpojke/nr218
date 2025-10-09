@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>vector_tutorial</title>
+  <title>w2_house_keeping</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -126,141 +126,37 @@
     <div class="slides">
 
 
-<section>
-<section id="vector-operations" class="title-slide slide level1 center">
-<h1>Vector Operations</h1>
-
-</section>
-<section id="buffer" class="slide level2 center">
-<h2>Buffer</h2>
-<div class="r-stack">
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
-<p><img data-src="img/buffer.png"></p>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
-<p><img data-src="img/ripar_buffer.jpg" style="max-height: 50vh;"></p>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
-<ol type="1">
-<li>Open QGIS and open the ‘sprStreams.geojson’</li>
-<li>Vector –&gt; Geoprocessing tools –&gt; Buffer</li>
-</ol>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="">
-<p><span style="font-size:0.7em">Notice the Units! Buffering in degrees makes no sense. Reproject it first! What is a good projection?</span></p>
-<p><img data-src="img/degree_buf.png" style="max-height: 50vh;"></p>
-</div>
-</div>
-</section>
-<section id="dissolve" class="slide level2 center">
-<h2>Dissolve</h2>
-
-<img data-src="img/dissolve.png" class="r-stretch"><ol type="1">
-<li>In QGIS open <code>sprSoil.geojson</code></li>
-<li>Change symbology to categorical by “SOILNAME”</li>
-<li>Vector –&gt; Geoprocessing tools –&gt; Dissolve</li>
-<li>Use “HYDROGRPOUP” as dissolve field</li>
-</ol>
-</section>
-<section id="clip" class="slide level2 center">
-<h2>Clip</h2>
-<ol type="1">
-<li>Vector –&gt; Geoprocessing tools –&gt; Clip</li>
-<li>Clip the sprSoil by the streams buffer. <img data-src="img/clip.png"></li>
-</ol>
-</section>
-<section id="spatial-overlays" class="slide level2 center">
-<h2>Spatial overlays</h2>
-<div class="r-stack">
-<div class="fragment absolute fade-in-then-out smaller" style="">
-<ol type="1">
-<li>Intersect soils with bufffer, look at attributes</li>
-<li>Intersect buffer with soils, look at attributes</li>
-</ol>
-<p><img data-src="img/intersect.png"></p>
-</div>
-<div class="fragment absolute fade-in-then-out smaller" style="">
-<p>Union</p>
-<p><img data-src="img/union.png"></p>
-</div>
-<div class="fragment absolute fade-in-then-out smaller" style="">
-<p>Symmetric Difference</p>
+<section id="week-2-announcements-and-such" class="title-slide slide level1 center" style="font-size:0.7em">
+<h1>Week 2 Announcements and such</h1>
 <ul>
-<li>Try it with buffer and soils</li>
-</ul>
-<p><img data-src="img/sym_diff.png"></p>
-</div>
-</div>
-</section>
-<section id="section" class="slide level2 center">
-<h2></h2>
-<p>Check topology <code>Vector --&gt; Geometry --&gt; Check Validity</code></p>
-</section>
-<section id="section-1" class="slide level2 center">
-<h2></h2>
-<p><a href="https://docs.google.com/presentation/d/1vaN4vdtAwcynhPnTDlKepgfcfY5gTgemUoSrCZL0CmY/edit?usp=sharing">Link to tutorial</a> about editing vectors.</p>
-</section>
-<section id="joins" class="slide level2 center">
-<h2>Joins</h2>
-<div class="{r-stack}">
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
-<p><strong>Tabular joins</strong> join layers by matching a common column name (e.g., parcel_id or GEOID)</p>
-<p><img data-src="img/joins_image0.png" style="max-width: 90%; max-height: 60vh; object-fit: contain;"></p>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
-<p>Spatial joins transfer attributes based on how features relate in space (intersects, within, nearest)</p>
-<p><img data-src="img/spatial-join-basic-idea.png" style="max-width: 90%; max-height: 60vh; object-fit: contain;"></p>
-</div>
-</div>
-</section>
-<section id="tabular-joins" class="slide level2 center" style="font-size:0.7em">
-<h2>Tabular Joins</h2>
-<ol type="1">
-<li><p>Download <a href="https://github.com/kulpojke/nr218/blob/main/assets/cal_counties.geojson">California Counties</a> and <a href="https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv">median household income</a></p></li>
-<li><p>add the counties layer</p></li>
-<li><p>add the income csv (you must select “no geometry (attribute only table)”)</p></li>
-<li><p>Open the attribute tables for each look at the names for the columns containing county name</p></li>
-<li><p>In the Processing Toolbox search :join” and select “join attributes by field”</p>
+<li>Assignment 0 (1 pt extra credit) is available on Canvas until midnight at October 1st.</li>
+<li><a href="project_1.html">Project 1</a> is due October 6th.
 <ul>
-<li>Input layer 1 is counties, input layer 2 is<br>
-</li>
-<li>use appropriate column names</li>
+<li>You will have time in class this week to work on it</li>
 </ul></li>
-<li><p>Look at the attribute table of the resulting layer</p></li>
-<li><p>Change the symbology to make a thematic map showing median income by county.</p></li>
-</ol>
-</section>
-<section id="spatial-joins" class="slide level2 center" style="font-size:0.7em">
-<h2>Spatial Joins</h2>
-<p><strong>One-to-One Spatial Join</strong></p>
-<ul>
-<li><p>Output: Each feature from the target layer (the primary layer) gets a single matching record from the join layer (secondary layer).</p></li>
-<li><p>Handling Multiple Matches: If multiple matches are found, only one matching feature is selected (usually the first or based on criteria like nearest neighbor).</p></li>
-<li><p>Example:Joining cities (target) with climate zones (join layer), ensuring each city gets only one associated climate zone. <strong>One-to-Many Spatial Join</strong></p></li>
-<li><p>Output: If multiple matching features exist, the target feature is duplicated for each matching feature from the join layer.</p></li>
-<li><p>Handling Multiple Matches: Every matching record from the join layer is included, leading to multiple rows for one target feature.</p></li>
-<li><p>Example: Joining states (target) with cities (join layer). Each state will appear multiple times for every city within its boundaries.</p></li>
 </ul>
-</section>
-<section id="merge-vs-spatial-join" class="slide level2 center">
-<h2>Merge vs Spatial Join</h2>
-<p><strong>Spatial Join</strong>:<br>
-You might use a spatial join to combine data from a “census tracts” layer with a “crime incidents” layer to see the crime statistics within each census tract.</p>
-<p><strong>Merge</strong>:<br>
-You might use a merge to combine two adjacent land parcels into a single, larger parcel with a new boundary.</p>
-</section>
-<section id="spatial-joins-1" class="slide level2 smaller center">
-<h2>Spatial Joins</h2>
-<p>Download <a href="https://gis.data.ca.gov/api/download/v1/items/8cd5d2038c5547ba911eea7bec48e28b/geojson?layers=2">Cities</a></p>
+<p>In all of your projects please cite sources for data and literature you used for research</p>
 <ul>
-<li>Use the “join attributes by location” tool from the geoprocessing toolbox to join cities to counties</li>
-<li>Why someone would do this particular join I don now know, but it illustrates the point.</li>
-<li>There will be problems. Hint: “validate geometries and”fix geometries” tools will be useful.</li>
+<li>Citations should be:
+<ul>
+<li>In text:
+<ul>
+<li>Winter 2021 was the wettest in 30 years (author, year)</li>
+</ul></li>
+<li>In the references, at the end of the document:
+<ul>
+<li>Author, (year). Name of the article. Name of the publication. Page numbers. DOI.</li>
+</ul></li>
+<li>I suggest harvard format:
+<ul>
+<li>https://www.mendeley.com/guides/harvard-citation-guide/</li>
+</ul></li>
+<li>But I don’t really care as long as you’re consistent</li>
+</ul></li>
 </ul>
-<p><strong>Challenge</strong> - Figure out how to join counties to cities, and calculate total urban area for each county.</p>
 
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

@@ -1,74 +1,66 @@
-﻿Income (Median household income) for California by County
-"All Races (includes Hispanic/Latino), Both Sexes, All Ages, 2019-2023"
-Sorted by Value
-
-County,FIPS,Value (Dollars),Rank within US (of 3141 counties)
-"United States",00000,"78,538","N/A"
-"California",06000,"96,334","6 of 52"
-"Trinity County",06105,"53,498","2,457"
-"Siskiyou County",06093,"55,499","2,309"
-"Imperial County",06025,"56,393","2,246"
-"Modoc County",06049,"56,648","2,221"
-"Lake County",06033,"58,738","2,055"
-"Sierra County",06091,"60,000","1,915"
-"Humboldt County",06023,"61,135","1,802"
-"Tehama County",06103,"61,834","1,739"
-"Lassen County",06035,"64,395","1,515"
-"Mendocino County",06045,"64,688","1,476"
-"Plumas County",06063,"64,946","1,436"
-"Merced County",06047,"65,044","1,420"
-"Mariposa County",06043,"65,378","1,392"
-"Del Norte County",06015,"66,780","1,299"
-"Kern County",06029,"67,660","1,234"
-"Butte County",06007,"68,574","1,152"
-"Kings County",06031,"68,750","1,139"
-"Tulare County",06107,"69,489","1,095"
-"Glenn County",06021,"70,487","1,018"
-"Fresno County",06019,"71,434","945"
-"Shasta County",06089,"71,931","900"
-"Tuolumne County",06109,"72,259","886"
-"Inyo County",06027,"72,432","870"
-"Yuba County",06115,"73,313","796"
-"Colusa County",06011,"75,149","704"
-"Sutter County",06101,"75,450","692"
-"Madera County",06039,"75,496","690"
-"Stanislaus County",06099,"79,661","518"
-"Calaveras County",06009,"79,877","511"
-"Amador County",06005,"81,526","458"
-"San Bernardino County",06071,"82,184","440"
-"Nevada County",06057,"84,905","361"
-"Mono County",06051,"86,953","313"
-"Los Angeles County",06037,"87,760","294"
-"San Joaquin County",06077,"88,531","279"
-"Sacramento County",06067,"88,724","273"
-"Yolo County",06113,"88,818","271"
-"Riverside County",06065,"89,672","258"
-"San Luis Obispo County",06079,"93,398","219"
-"Monterey County",06053,"94,486","202"
-"Santa Barbara County",06083,"95,977","184"
-"Solano County",06095,"99,994","150"
-"San Diego County",06073,"102,285","131"
-"Sonoma County",06097,"102,840","122"
-"El Dorado County",06017,"106,190","107"
-"Ventura County",06111,"107,327","100"
-"San Benito County",06069,"108,289","91"
-"Napa County",06055,"108,970","87"
-"Santa Cruz County",06087,"109,266","84"
-"Alpine County",06003,"110,781","73"
-"Orange County",06059,"113,702","64"
-"Placer County",06061,"114,678","57"
-"Contra Costa County",06013,"125,727","33"
-"Alameda County",06001,"126,240","31"
-"San Francisco County",06075,"141,446","11"
-"Marin County",06041,"142,785","10"
-"San Mateo County",06081,"156,000","3"
-"Santa Clara County",06085,"159,674","2"
-
-Suggested Citation:
-HDPulse: An Ecosystem of Minority Health and Health Disparities Resources. National Institute on Minority Health and Health Disparities. Created 10/8/2025. Available from https://hdpulse.nimhd.nih.gov
-
-Notes:
-"NA: Data not available [http://hdpulse.nimhd.nih.gov/data/datanotavailable.html] for this combination of geography, cancer site, age, and race/ethnicity."
-Source: Demographic data provided by the Census Bureau (http://www.census.gov/) & the American Community Survey (http://www.census.gov/acs/www/).
-"For more information about Income (Median household income), see the dictionary at http://hdpulse.nimhd.nih.gov/dictionary.php#income."
-"Median Incomes over 250,000 have been coded to 250,001 by the Census Bureau. [ http://www2.census.gov/acs2012_5yr/summaryfile/ACS_2008-2012_SF_Tech_Doc.pdf ]"
+,County,FIPS,Value (Dollars),Rank within US (of 3141 counties)
+0,Trinity,06105,"53,498","2,457"
+1,Siskiyou,06093,"55,499","2,309"
+2,Imperial,06025,"56,393","2,246"
+3,Modoc,06049,"56,648","2,221"
+4,Lake,06033,"58,738","2,055"
+5,Sierra,06091,"60,000","1,915"
+6,Humboldt,06023,"61,135","1,802"
+7,Tehama,06103,"61,834","1,739"
+8,Lassen,06035,"64,395","1,515"
+9,Mendocino,06045,"64,688","1,476"
+10,Plumas,06063,"64,946","1,436"
+11,Merced,06047,"65,044","1,420"
+12,Mariposa,06043,"65,378","1,392"
+13,Del,06015,"66,780","1,299"
+14,Kern,06029,"67,660","1,234"
+15,Butte,06007,"68,574","1,152"
+16,Kings,06031,"68,750","1,139"
+17,Tulare,06107,"69,489","1,095"
+18,Glenn,06021,"70,487","1,018"
+19,Fresno,06019,"71,434",945
+20,Shasta,06089,"71,931",900
+21,Tuolumne,06109,"72,259",886
+22,Inyo,06027,"72,432",870
+23,Yuba,06115,"73,313",796
+24,Colusa,06011,"75,149",704
+25,Sutter,06101,"75,450",692
+26,Madera,06039,"75,496",690
+27,Stanislaus,06099,"79,661",518
+28,Calaveras,06009,"79,877",511
+29,Amador,06005,"81,526",458
+30,San,06071,"82,184",440
+31,Nevada,06057,"84,905",361
+32,Mono,06051,"86,953",313
+33,Los,06037,"87,760",294
+34,San,06077,"88,531",279
+35,Sacramento,06067,"88,724",273
+36,Yolo,06113,"88,818",271
+37,Riverside,06065,"89,672",258
+38,San,06079,"93,398",219
+39,Monterey,06053,"94,486",202
+40,Santa,06083,"95,977",184
+41,Solano,06095,"99,994",150
+42,San,06073,"102,285",131
+43,Sonoma,06097,"102,840",122
+44,El,06017,"106,190",107
+45,Ventura,06111,"107,327",100
+46,San,06069,"108,289",91
+47,Napa,06055,"108,970",87
+48,Santa,06087,"109,266",84
+49,Alpine,06003,"110,781",73
+50,Orange,06059,"113,702",64
+51,Placer,06061,"114,678",57
+52,Contra,06013,"125,727",33
+53,Alameda,06001,"126,240",31
+54,San,06075,"141,446",11
+55,Marin,06041,"142,785",10
+56,San,06081,"156,000",3
+57,Santa,06085,"159,674",2
+58,Suggested,,,
+59,HDPulse:,,,
+60,Notes:,,,
+61,NA:,,,
+62,Source:,,,
+63,For,,,
+64,Median,,,
