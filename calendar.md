@@ -134,7 +134,7 @@ Here's the table with the Week column containing just the integer week values:
 | October 1    | 2    | Vector and Raster Data | | |
 | October 6    | 3    | Finding Acquiring, Creating, and Editing GIS Data| chapters 5 and 6 | [Project 1](project_1.html) |
 | October 8    | 3    | GeoProcessing and Vector Operations | | |
-| October 13   | 4    | Geospatial Data: Satellites, UAVs, GPS | chapters 7 and 8 | |
+| October 13   | 4    | Remotely Sensed Data: Satellites, UAVs, GPS | chapters 7 and 8 | |
 | October 15   | 4    | Spectral Indices and Tabular Joins | | [Final Project Brainstorm Due](final_proj.md) |
 | October 20   | 5    | Spatial Joins, Final Project Discussion | chapters 9 and 10 | [Project 2](project_2.html) |
 | October 22   | 5    | Spatial Analysis Introduction, Final Project Group Discussions | |  |

@@ -18,6 +18,7 @@ project:
     - vector_tutorial.qmd
     - finding_gis_data.qmd
     - w3_house_keeping.qmd
+    - remote_sensing.qmd
     - index.qmd
 
 format:
