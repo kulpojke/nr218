@@ -275,8 +275,7 @@ Hopefully by now you have this data.
 
 
 + [fire perimeters](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EeI5CefmJnZKgL1EU5lcxDoBiiGvVQrU-7NFUJaSew6ktA?e=ls6lkO)
-+ [AOI]()
-+ [NAIP image]()
++ [NAIP image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EbhJfgpJKspBkSC4ftohoacBMEmd3DRxG32-Lxr4qIDDQA?e=Swa8t0)
 
 [Fire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from ![California Open Data Portal](https://data.ca.gov/group/fire)]{style="font-size:0.3.5em"}
 

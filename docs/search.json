@@ -837,7 +837,7 @@
     "href": "index.html#section-31",
     "title": "NR 218",
     "section": "",
-    "text": "Hopefully by now you have this data.\n\nfire perimeters\nAOI\nNAIP image\n\nFire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from \n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf"
+    "text": "Hopefully by now you have this data.\n\nfire perimeters\nNAIP image\n\nFire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from \n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf"
   },
   {
     "objectID": "index.html#fire-example-1",
@@ -1929,7 +1929,7 @@
     "href": "remote_sensing.html#section-1",
     "title": "",
     "section": "",
-    "text": "Hopefully by now you have this data.\n\nfire perimeters\nAOI\nNAIP image\n\nFire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from \n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf"
+    "text": "Hopefully by now you have this data.\n\nfire perimeters\nNAIP image\n\nFire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from \n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf"
   },
   {
     "objectID": "remote_sensing.html#fire-example-1",
