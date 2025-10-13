@@ -416,32 +416,83 @@
 <h2>Fire Example (2)</h2>
 <div style="font-size:0.5em">
 <ol start="7" type="1">
-<li><p>Clip <code>scratch_2</code> by the AOI</p>
+<li>Clip <code>scratch_2</code> by the AOI
 <ol type="a">
 <li>Save the results as <code>fires_in_AOI</code></li>
 </ol></li>
-<li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly delete <code>scratch_1</code>, <code>scratch_2',</code>Coffee<code>, and</code>extent`</p></li>
-<li><p>Open <code>naip_2022</code></p>
+<li>When you are satisfied that <code>fires_in_AOI</code> turned out correctly delete <code>scratch_1</code>, <code>scratch_2',</code>Coffee<code>, and</code>extent`</li>
+<li>Open <code>naip_2022</code>
 <ol type="a">
 <li>Open the Layer Properties dialog</li>
 <li>Go to the Transparency tab on the left.</li>
 <li>Change Transparency Band to None (what is band 4?)</li>
 </ol></li>
-<li><p>Clip <code>naip_2022 to the AOI.</code>Raster<code>-&gt;</code>Extraction<code>-&gt;</code>Clip Raster By Mask Layer`</p></li>
-<li><p>Name the result <code>naip_2022_clipped</code></p></li>
-<li><p>Now lets view it as False color</p>
+<li>Clip <code>naip_2022 to the AOI.</code>Raster<code>-&gt;</code>Extraction<code>-&gt;</code>Clip Raster By Mask Layer`</li>
+<li>Name the result <code>naip_2022_clipped</code></li>
+<li>Now lets view it as False color
+<ol type="a">
+<li>Recall from earlier, that is NIR, G, R</li>
+<li>Open symbology and change the band order 1</li>
+</ol></li>
+</ol>
+</div>
+</section>
+<section id="fire-example-3" class="slide level2 center">
+<h2>Fire Example (3)</h2>
+<div style="font-size:0.5em">
+<ol start="11" type="1">
+<li>Name the result <code>naip_2022_clipped</code></li>
+<li>Now lets view it as False color
 <ol type="a">
 <li>Recall from earlier, that is NIR, G, R</li>
 <li>Open symbology and change the band order</li>
 </ol></li>
-<li><p>Calculate Normalized Difference Vegetation Index</p>
+<li>Calculate Normalized Difference Vegetation Index
 <ol type="a">
-<li>Open Raster Calculator ( <em>Raster</em> -&gt; <em>Raster Calculator</em>) b . enter <code>( "naip_2022_clipped@4"  - "naip_2022_clipped@1" )  /  ( "naip_2022_clipped@4" + "naip_2022_clipped@1" )</code></li>
+<li><span class="math display">\[NDVI = \frac{NIR - Red}{NIR + Red}\]</span></li>
+<li>Open Raster Calculator ( <em>Raster</em> -&gt; <em>Raster Calculator</em>) c . enter <code>( "naip_2022_clipped@4"  - "naip_2022_clipped@1" )  /  ( "naip_2022_clipped@4" + "naip_2022_clipped@1" )</code></li>
 <li>check the “create on the fly raster …” box at the top under “Result Layer”</li>
 <li>Run</li>
 </ol></li>
 </ol>
 </div>
+</section>
+<section id="fire-example-4" class="slide level2 center">
+<h2>Fire Example (4)</h2>
+<p>NDVI values</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Value Range</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Water, clouds, or non-vegetated surfaces.</td>
+</tr>
+<tr class="even">
+<td>0 to 0.1</td>
+<td>Exposed rock, sand, or snow.</td>
+</tr>
+<tr class="odd">
+<td>0.2 to 0.5</td>
+<td>Sparse vegetation,</td>
+</tr>
+<tr class="even">
+<td>0.6 to 0.9</td>
+<td>Dense Vegetation</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="section-2" class="slide level2 center">
+<h2></h2>
+<p><span class="math display">\[
+SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
+\]</span></p>
+<p>Where <span class="math inline">\(L\)</span> is often 0.5, but adjusted for exposed soil</p>
 
 
 </section></section>

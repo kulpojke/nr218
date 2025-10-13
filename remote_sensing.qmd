@@ -343,15 +343,43 @@ fire_example/
     c. Change Transparency Band to None (what is band 4?)
 10. Clip `naip_2022 to the AOI.  `Raster` -> `Extraction` -> `Clip Raster By Mask Layer`
 11. Name the result `naip_2022_clipped`
-11. Now lets view it as False color
+12. Now lets view it as False color
     a. Recall from earlier, that is NIR, G, R
     b. Open symbology and change the band order
-12. Calculate Normalized Difference Vegetation Index
-
-    a. Open Raster Calculator ( _Raster_ -> _Raster Calculator_)
-    b . enter ` ( "naip_2022_clipped@4"  - "naip_2022_clipped@1" )  /  ( "naip_2022_clipped@4" + "naip_2022_clipped@1" )` 
-    c. check the "create on the fly raster ..." box at the top under "Result Layer"
-    d. Run
+1
 
 :::
 
+## Fire Example (3)
+::: {style="font-size:0.5em"}
+11. Name the result `naip_2022_clipped`
+12. Now lets view it as False color
+    a. Recall from earlier, that is NIR, G, R
+    b. Open symbology and change the band order
+13. Calculate Normalized Difference Vegetation Index
+    a. $$NDVI = \frac{NIR - Red}{NIR + Red}$$
+    b. Open Raster Calculator ( _Raster_ -> _Raster Calculator_)
+    c . enter ` ( "naip_2022_clipped@4"  - "naip_2022_clipped@1" )  /  ( "naip_2022_clipped@4" + "naip_2022_clipped@1" )` 
+    d. check the "create on the fly raster ..." box at the top under "Result Layer"
+    e. Run
+
+:::
+
+## Fire Example (4)
+
+NDVI values
+
+| Value Range | Interpretation |
+|-------------|----------------|
+| 0 | Water, clouds, or non-vegetated surfaces.|
+| 0 to 0.1 | Exposed rock, sand, or snow. |
+| 0.2 to 0.5 | Sparse vegetation, |
+| 0.6 to 0.9 | Dense Vegetation |
+
+## 
+
+$$
+SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L} 
+$$
+
+Where $L$ is often 0.5, but adjusted for exposed soil

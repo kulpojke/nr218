@@ -851,7 +851,28 @@
     "href": "index.html#fire-example-2",
     "title": "NR 218",
     "section": "Fire Example (2)",
-    "text": "Fire Example (2)\n\n\nClip scratch_2 by the AOI\n\nSave the results as fires_in_AOI\n\nWhen you are satisfied that fires_in_AOI turned out correctly delete scratch_1, scratch_2',Coffee, andextent`\nOpen naip_2022\n\nOpen the Layer Properties dialog\nGo to the Transparency tab on the left.\nChange Transparency Band to None (what is band 4?)\n\nClip naip_2022 to the AOI.Raster-&gt;Extraction-&gt;Clip Raster By Mask Layer`\nName the result naip_2022_clipped\nNow lets view it as False color\n\nRecall from earlier, that is NIR, G, R\nOpen symbology and change the band order\n\nCalculate Normalized Difference Vegetation Index\n\nOpen Raster Calculator ( Raster -&gt; Raster Calculator) b . enter ( \"naip_2022_clipped@4\"  - \"naip_2022_clipped@1\" )  /  ( \"naip_2022_clipped@4\" + \"naip_2022_clipped@1\" )\ncheck the “create on the fly raster …” box at the top under “Result Layer”\nRun"
+    "text": "Fire Example (2)\n\n\nClip scratch_2 by the AOI\n\nSave the results as fires_in_AOI\n\nWhen you are satisfied that fires_in_AOI turned out correctly delete scratch_1, scratch_2',Coffee, andextent`\nOpen naip_2022\n\nOpen the Layer Properties dialog\nGo to the Transparency tab on the left.\nChange Transparency Band to None (what is band 4?)\n\nClip naip_2022 to the AOI.Raster-&gt;Extraction-&gt;Clip Raster By Mask Layer`\nName the result naip_2022_clipped\nNow lets view it as False color\n\nRecall from earlier, that is NIR, G, R\nOpen symbology and change the band order 1"
+  },
+  {
+    "objectID": "index.html#fire-example-3",
+    "href": "index.html#fire-example-3",
+    "title": "NR 218",
+    "section": "Fire Example (3)",
+    "text": "Fire Example (3)\n\n\nName the result naip_2022_clipped\nNow lets view it as False color\n\nRecall from earlier, that is NIR, G, R\nOpen symbology and change the band order\n\nCalculate Normalized Difference Vegetation Index\n\n\\[NDVI = \\frac{NIR - Red}{NIR + Red}\\]\nOpen Raster Calculator ( Raster -&gt; Raster Calculator) c . enter ( \"naip_2022_clipped@4\"  - \"naip_2022_clipped@1\" )  /  ( \"naip_2022_clipped@4\" + \"naip_2022_clipped@1\" )\ncheck the “create on the fly raster …” box at the top under “Result Layer”\nRun"
+  },
+  {
+    "objectID": "index.html#fire-example-4",
+    "href": "index.html#fire-example-4",
+    "title": "NR 218",
+    "section": "Fire Example (4)",
+    "text": "Fire Example (4)\nNDVI values\n\n\n\nValue Range\nInterpretation\n\n\n\n\n0\nWater, clouds, or non-vegetated surfaces.\n\n\n0 to 0.1\nExposed rock, sand, or snow.\n\n\n0.2 to 0.5\nSparse vegetation,\n\n\n0.6 to 0.9\nDense Vegetation"
+  },
+  {
+    "objectID": "index.html#section-32",
+    "href": "index.html#section-32",
+    "title": "NR 218",
+    "section": "",
+    "text": "\\[\nSAVI = \\frac{(NIR - Red) \\times (1 + L)}{NIR + Red + L}\n\\]\nWhere \\(L\\) is often 0.5, but adjusted for exposed soil"
   },
   {
     "objectID": "w3_house_keeping.html#events",
@@ -1922,6 +1943,27 @@
     "href": "remote_sensing.html#fire-example-2",
     "title": "",
     "section": "Fire Example (2)",
-    "text": "Fire Example (2)\n\n\nClip scratch_2 by the AOI\n\nSave the results as fires_in_AOI\n\nWhen you are satisfied that fires_in_AOI turned out correctly delete scratch_1, scratch_2',Coffee, andextent`\nOpen naip_2022\n\nOpen the Layer Properties dialog\nGo to the Transparency tab on the left.\nChange Transparency Band to None (what is band 4?)\n\nClip naip_2022 to the AOI.Raster-&gt;Extraction-&gt;Clip Raster By Mask Layer`\nName the result naip_2022_clipped\nNow lets view it as False color\n\nRecall from earlier, that is NIR, G, R\nOpen symbology and change the band order\n\nCalculate Normalized Difference Vegetation Index\n\nOpen Raster Calculator ( Raster -&gt; Raster Calculator) b . enter ( \"naip_2022_clipped@4\"  - \"naip_2022_clipped@1\" )  /  ( \"naip_2022_clipped@4\" + \"naip_2022_clipped@1\" )\ncheck the “create on the fly raster …” box at the top under “Result Layer”\nRun"
+    "text": "Fire Example (2)\n\n\nClip scratch_2 by the AOI\n\nSave the results as fires_in_AOI\n\nWhen you are satisfied that fires_in_AOI turned out correctly delete scratch_1, scratch_2',Coffee, andextent`\nOpen naip_2022\n\nOpen the Layer Properties dialog\nGo to the Transparency tab on the left.\nChange Transparency Band to None (what is band 4?)\n\nClip naip_2022 to the AOI.Raster-&gt;Extraction-&gt;Clip Raster By Mask Layer`\nName the result naip_2022_clipped\nNow lets view it as False color\n\nRecall from earlier, that is NIR, G, R\nOpen symbology and change the band order 1"
+  },
+  {
+    "objectID": "remote_sensing.html#fire-example-3",
+    "href": "remote_sensing.html#fire-example-3",
+    "title": "",
+    "section": "Fire Example (3)",
+    "text": "Fire Example (3)\n\n\nName the result naip_2022_clipped\nNow lets view it as False color\n\nRecall from earlier, that is NIR, G, R\nOpen symbology and change the band order\n\nCalculate Normalized Difference Vegetation Index\n\n\\[NDVI = \\frac{NIR - Red}{NIR + Red}\\]\nOpen Raster Calculator ( Raster -&gt; Raster Calculator) c . enter ( \"naip_2022_clipped@4\"  - \"naip_2022_clipped@1\" )  /  ( \"naip_2022_clipped@4\" + \"naip_2022_clipped@1\" )\ncheck the “create on the fly raster …” box at the top under “Result Layer”\nRun"
+  },
+  {
+    "objectID": "remote_sensing.html#fire-example-4",
+    "href": "remote_sensing.html#fire-example-4",
+    "title": "",
+    "section": "Fire Example (4)",
+    "text": "Fire Example (4)\nNDVI values\n\n\n\nValue Range\nInterpretation\n\n\n\n\n0\nWater, clouds, or non-vegetated surfaces.\n\n\n0 to 0.1\nExposed rock, sand, or snow.\n\n\n0.2 to 0.5\nSparse vegetation,\n\n\n0.6 to 0.9\nDense Vegetation"
+  },
+  {
+    "objectID": "remote_sensing.html#section-2",
+    "href": "remote_sensing.html#section-2",
+    "title": "",
+    "section": "",
+    "text": "\\[\nSAVI = \\frac{(NIR - Red) \\times (1 + L)}{NIR + Red + L}\n\\]\nWhere \\(L\\) is often 0.5, but adjusted for exposed soil"
   }
 ]
