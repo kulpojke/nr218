@@ -131,6 +131,24 @@
 <h1>Remote Sensing!</h1>
 
 </section>
+<section id="section" class="slide level2 center">
+<h2></h2>
+<p>Start Downloads:</p>
+<ul>
+<li><a href="https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EeI5CefmJnZKgL1EU5lcxDoBiiGvVQrU-7NFUJaSew6ktA?e=ls6lkO">fire perimeters</a></li>
+<li><a href="">AOI</a></li>
+<li><a href="">NAIP image</a></li>
+</ul>
+<p>Alternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:</p>
+<div style="text-align: center;">
+<pre><code>fire_example/
+├── data/
+│   ├── subset_of_cal_hist_fires.geojson
+│   └── naip_2022.tif
+└── docs/
+    </code></pre>
+</div>
+</section>
 <section id="remote-sensing-1" class="slide level2 center">
 <h2>Remote sensing</h2>
 <div class="columns">
@@ -140,6 +158,12 @@
 <p><strong>Remote sensing</strong> - Obtaining information about an object from a distance.</p>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="max-width: 100%; font-size:0.6em;">
+<p>What is the most basic form of remote sensing you can think of?</p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="max-width: 100%; font-size:0.8em;">
+<p><span style="color: red;">Looking at something!</span></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="max-width: 100%; font-size:0.6em;">
 <p>There are many different methods of remote sensing.</p>
 <ul>
 <li>Some ground based</li>
@@ -147,29 +171,96 @@
 <li>Some satellite based</li>
 </ul>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="max-width: 100%; font-size:0.6em;">
-<p>What is the most basic form of remote sensing you can think of?</p>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="max-width: 100%; font-size:0.8em;">
-<p><span style="color: red;">Looking at something!</span></p>
-</div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="5" style="max-width: 100%; font-size:0.6em;">
 <ul>
 <li>Most remote sensing relies on electromagnetic radiation</li>
 </ul>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="6" style="max-width: 100%; font-size:0.6em;">
+<p>Red band (0.63 - 0.69 µm)</p>
+<p><img data-src="img/rspec.png"></p>
+<p>Useful for:</p>
+<ul>
+<li>Detecting bare soil, buildings, pavement</li>
+<li>Chlorophyll absorption</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="7" style="max-width: 100%; font-size:0.6em;">
+<p>Green band (0.52 - 0.6 µm)</p>
+<p><img data-src="img/gspec.png"></p>
+<p>Useful for:</p>
+<ul>
+<li>phenology / vegetation dynamics</li>
+<li>plant Health</li>
+<li>algal Blooms</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="8" style="max-width: 100%; font-size:0.6em;">
+<p>Blue band (0.45 - 0.52 µm)</p>
+<p><img data-src="img/bspec.png"></p>
+<p>Useful for:</p>
+<ul>
+<li>water</li>
+<li>clouds</li>
+<li>snow</li>
+<li>aerosols</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="9" style="max-width: 100%; font-size:0.6em;">
+<p>NIR band (0.77 - 0.9 µm)</p>
+<p><img data-src="img/nirspec.png"></p>
+<p>Useful for:</p>
+<ul>
+<li>biomass</li>
+<li>vegetation detection</li>
+<li>boundary detection</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="10" style="max-width: 100%; font-size:0.6em;">
+<p>A “True Color” image used Red, Green and Blue</p>
+<p><img data-src="img/rgbspec.png"></p>
+<div style="font-size:0.5em">
+<ul>
+<li>Pixels in display contain 3 sub-pixels</li>
+<li>Each sub-pixels intensity is controlled by the intensity value in the image</li>
+<li>Intensity values are stored as 8-bit unsigned integers (<code>uint8</code>)
+<ul>
+<li>8 bits = <span class="math inline">\(2^{8}\)</span> = 256 possible values</li>
+<li>Range: 0 to 255 (256 values total)</li>
+<li>Images are sometimes <em>stored</em> with higher precision, but displayed with 8 bits</li>
+</ul></li>
+</ul>
+</div>
+<pre><code>(255, 0, 0)   = pure red
+(0, 255, 0)   = pure green
+(0, 0, 255)   = pure blue
+(255, 255, 0) = yellow (red + green)
+(0, 255, 255) = cyan (green + blue)
+(255, 0, 255) = magenta (red + blue)
+(255, 255, 255) = white (all combined)
+(0, 0, 0)     = black (none)</code></pre>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="11" style="max-width: 100%; font-size:0.6em;">
+<p>Combining bands on different ways is often useful.</p>
+<p><img data-src="img/false_spec.png"></p>
+<p>For example, False Color Image</p>
+<ul>
+<li>NIR, G, R<br>
+</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="12" style="max-width: 100%; font-size:0.6em;">
 <ul>
 <li>Humans see only a small portion of the EM spectrum.</li>
 <li>Instruments on satellites capture more, but still only a small portion of the entire electromagnetic spectrum</li>
 </ul>
-<p><span style="font-size:0.4em">Right: Reflectance of water, soil and vegetation in different wavelengths and Landsat TM channels.</span></p>
+<p><span style="font-size:0.5em"><strong>Right</strong>: Reflectance of water, soil and vegetation in different wavelengths and Landsat TM channels.</span></p>
 </div>
 </div>
 <!-- end r-stack -->
 </div><!-- end column --><div class="column" style="width:65%;">
 <div class="r-stack">
-<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
 <p><img data-src="img/Mother_Bird_by_Keisuke_Aso_Aisawa.jpeg" style="max-width: 100%; height: auto; object-fit: contain;;width:100.0%"></p>
 <div class="attribution" style="font-size:0.4em">
 <p>Image Source: <a href="https://commons.wikimedia.org/wiki/File:Electromagneticwave3D.gif">Wikimedia</a></p>
@@ -182,12 +273,30 @@
 </div>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="6" style="">
+<p><img data-src="img/red.png"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="7" style="">
+<p><img data-src="img/green.png"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="8" style="">
+<p><img data-src="img/blue.png"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="9" style="">
+<p><img data-src="img/nir.png"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="10" style="">
+<p><img data-src="img/rgb.png"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="11" style="">
+<p><img data-src="img/false.png"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="12" style="">
 <p><img data-src="img/EM_nasa.png" style="max-width: 100%; height: auto; object-fit: contain;;width:100.0%"></p>
 <div class="attribution" style="font-size:0.4em">
 <p>Image Source: <a href="https://appliedsciences.nasa.gov/sites/default/files/2022-11/Fundamentals_of_RS_Edited_SC.pdf">NASA</a></p>
 </div>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="6" style="">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="13" style="">
 <p><img data-src="img/spectral_signatures_landsat_450.jpg" style="max-width: 100%; height: auto; object-fit: contain;;width:100.0%"></p>
 <div class="attribution" style="font-size:0.4em">
 <p>Image Source: <a href="https://seos-project.eu/classification/classification-c01-p05.html">SEOS</a></p>
@@ -199,18 +308,52 @@
 </div>
 <!-- end columns -->
 </section>
-<section id="section" class="slide level2 center">
+<section id="passive-vs.-active" class="slide level2 center">
+<h2>Passive vs.&nbsp;Active</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<p><img data-src="img/active-passive-remote-sensing.png"></p>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing">NASA Earthdata</a></p>
+</div>
+</div>
+<div class="fragment absolute fade-in" data-fragment-index="2" style="">
+<ul>
+<li>The type of remote sensing we have been discussing so far is <em>radiometric</em>, or <em>optical</em> remote sensing.</li>
+<li>Optical remote sensing is passive</li>
+<li>Light from the sun bounces off of the earth and into the sensor (Eyeball, Camera, Radiometer)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="naip-imagery" class="slide level2 center">
+<h2>NAIP Imagery</h2>
+<div style="font-size:0.9em">
+<p><strong>National Agriculture Imagery Program (NAIP)</strong></p>
+<ul>
+<li>High-resolution aerial imagery of the continental United States</li>
+<li>Collected during agricultural growing seasons</li>
+<li>Typically 4-band: Red, Green, Blue, Near-Infrared (NIR)</li>
+<li>60 cm (or better) spatial resolution</li>
+<li>Updated on a 2-3 year cycle for each state</li>
+</ul>
+<p><strong>Learn more:</strong> <a href="https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/">USDA NAIP Program</a></p>
+</div>
+</section>
+<section id="section-1" class="slide level2 center">
 <h2></h2>
 <div class="r-stack">
 <div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
-<p>Download:</p>
+<p>Hopefully by now you have this data.</p>
 <ul>
 <li><a href="https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EeI5CefmJnZKgL1EU5lcxDoBiiGvVQrU-7NFUJaSew6ktA?e=ls6lkO">fire perimeters</a></li>
 <li><a href="">AOI</a></li>
 <li><a href="">NAIP image</a></li>
 </ul>
+<p><span style="font-size:0.3.5em">Fire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from <img data-src="https://data.ca.gov/group/fire.png" alt="California Open Data Portal"></span></p>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<div style="font-size:0.7em">
 <ul>
 <li>Make a project folder for this on your OneDrive, call it <code>fire_example</code></li>
 <li>inside of <code>fire_example</code> create a ‘data’ directory and a ‘docs’ directory
@@ -220,8 +363,10 @@
 <li>your project qgz file in <code>fire_example</code></li>
 </ul></li>
 </ul>
+</div>
 <div style="text-align: center;">
 <pre><code>fire_example/
+├── fire_example.qgz
 ├── data/
 │   ├── fire_perimeters.geojson
 │   └── naip.tif
@@ -229,28 +374,33 @@
     └── map1.pdf</code></pre>
 </div>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
+</div>
+<!-- end r-stack -->
+</section>
+<section id="fire-example-1" class="slide level2 center">
+<h2>Fire Example (1)</h2>
+<div style="font-size:0.5em">
 <ol type="1">
 <li>Open the fire perimeters dataset in QGIS</li>
-<li>Extract the River fire (<code>FIRE_NAME</code> is <code>RIVER COMPLEX</code>)
+<li>Extract the Coffee fire (<code>FIRE_NAME</code> is <code>COFFEE</code>)
 <ol type="a">
-<li>There are a few ways you can do this</li>
-<li>Name the resulting layer “River Complex”</li>
+<li>There are a few ways you can do this, your choice</li>
+<li>Name the resulting layer <code>Coffee</code></li>
 </ol></li>
-<li>Now extract all of the polygons which <em>overlap</em> the River Complex
-<ol type="a">
-<li>Name the resulting layer “scratch_1”</li>
-</ol></li>
-<li>Further reduce the “scratch_1” layer by selecting only fires that have happened since 2014
+<li>Reduce <code>scratch_1</code> by selecting only fires that have happened since 2014 (Hint: extract by attribute)
 <ol start="2" type="a">
 <li>i.e.&nbsp;<code>YEAR_ &gt; 2013</code></li>
-<li>Name the result, “scratch_2”</li>
+<li>Name the resulting layer <code>scratch_1</code></li>
 </ol></li>
-<li>Use the “Extract layer extent” tool to get a polygon of the extent of the river fire
+<li>Now extract all of the polygons which <em>overlap</em> the <code>Coffee</code> (Hint: “select by location”)
+<ol start="3" type="a">
+<li>Name the result, <code>scratch_2</code></li>
+</ol></li>
+<li>Use the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire
 <ol type="a">
-<li>Name the result “extent”</li>
+<li>Name the result <code>extent</code></li>
 </ol></li>
-<li>Buffer “extent” by 50 m
+<li>Buffer “extent” by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference)
 <ol type="a">
 <li>name the buffered layer, our area of interest, “AOI”</li>
 </ol></li>
@@ -258,11 +408,33 @@
 <ol type="a">
 <li>Save the results as <code>fires_in_AOI</code></li>
 </ol></li>
-<li>When you are satisfied that <code>fires_in_AOI</code> turned out correctly delete <code>scratch_1</code>, <code>scratch_2', and</code>extent`</li>
+<li>When you are satisfied that <code>fires_in_AOI</code> turned out correctly you can delete <code>scratch_1</code>, <code>scratch_2',</code>Coffee<code>, and</code>extent`</li>
 </ol>
 </div>
+</section>
+<section id="fire-example-2" class="slide level2 center">
+<h2>Fire Example (2)</h2>
+<div style="font-size:0.5em">
+<ol start="7" type="1">
+<li>Clip <code>scratch_2</code> by the AOI
+<ol type="a">
+<li>Save the results as <code>fires_in_AOI</code></li>
+</ol></li>
+<li>When you are satisfied that <code>fires_in_AOI</code> turned out correctly delete <code>scratch_1</code>, <code>scratch_2',</code>Coffee<code>, and</code>extent`</li>
+<li>Open <code>naip_2022</code>
+<ol type="a">
+<li>Open the Layer Properties dialog</li>
+<li>Go to the Transparency tab on the left.</li>
+<li>Change Transparency Band to None (what is band 4?)</li>
+</ol></li>
+<li>Clip <code>naip_2022 to the AOI.</code>Raster<code>-&gt;</code>Extraction<code>-&gt;</code>Clip Raster By Mask Layer`</li>
+<li>Now lets view it as False color
+<ol type="a">
+<li>Recall from earler, that is NIR, G, R</li>
+<li>Open symbology and change the band order</li>
+</ol></li>
+</ol>
 </div>
-<!-- end r-stack -->
 
 
 </section></section>

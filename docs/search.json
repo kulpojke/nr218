@@ -805,18 +805,53 @@
     "text": "Spatial Joins\nDownload Cities\n\nUse the “join attributes by location” tool from the geoprocessing toolbox to join cities to counties\nWhy someone would do this particular join I don now know, but it illustrates the point.\nThere will be problems. Hint: “validate geometries and”fix geometries” tools will be useful.\n\nChallenge - Figure out how to join counties to cities, and calculate total urban area for each county."
   },
   {
-    "objectID": "index.html#remote-sensing-1",
-    "href": "index.html#remote-sensing-1",
-    "title": "NR 218",
-    "section": "Remote sensing",
-    "text": "Remote sensing\n\n\n\n\nRemote sensing - Obtaining information about an object from a distance.\n\n\nThere are many different methods of remote sensing.\n\nSome ground based\nSome airborne\nSome satellite based\n\n\n\nWhat is the most basic form of remote sensing you can think of?\n\n\nLooking at something!\n\n\n\nMost remote sensing relies on electromagnetic radiation\n\n\n\n\nHumans see only a small portion of the EM spectrum.\nInstruments on satellites capture more, but still only a small portion of the entire electromagnetic spectrum\n\nRight: Reflectance of water, soil and vegetation in different wavelengths and Landsat TM channels.\n\n\n\n\n\n\n\n\nImage Source: Wikimedia\n\n\n\n\n\nImage Source: Wikimedia\n\n\n\n\n\nImage Source: NASA\n\n\n\n\n\nImage Source: SEOS"
-  },
-  {
     "objectID": "index.html#section-30",
     "href": "index.html#section-30",
     "title": "NR 218",
     "section": "",
-    "text": "Download:\n\nfire perimeters\nAOI\nNAIP image\n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\nfire_example/\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf\n\n\n\n\nOpen the fire perimeters dataset in QGIS\nExtract the River fire (FIRE_NAME is RIVER COMPLEX)\n\nThere are a few ways you can do this\nName the resulting layer “River Complex”\n\nNow extract all of the polygons which overlap the River Complex\n\nName the resulting layer “scratch_1”\n\nFurther reduce the “scratch_1” layer by selecting only fires that have happened since 2014\n\ni.e. YEAR_ &gt; 2013\nName the result, “scratch_2”\n\nUse the “Extract layer extent” tool to get a polygon of the extent of the river fire\n\nName the result “extent”\n\nBuffer “extent” by 50 m\n\nname the buffered layer, our area of interest, “AOI”\n\nClip scratch_2 by the AOI\n\nSave the results as fires_in_AOI\n\nWhen you are satisfied that fires_in_AOI turned out correctly delete scratch_1, scratch_2', andextent`"
+    "text": "Start Downloads:\n\nfire perimeters\nAOI\nNAIP image\n\nAlternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:\n\nfire_example/\n├── data/\n│   ├── subset_of_cal_hist_fires.geojson\n│   └── naip_2022.tif\n└── docs/"
+  },
+  {
+    "objectID": "index.html#remote-sensing-1",
+    "href": "index.html#remote-sensing-1",
+    "title": "NR 218",
+    "section": "Remote sensing",
+    "text": "Remote sensing\n\n\n\n\nRemote sensing - Obtaining information about an object from a distance.\n\n\nWhat is the most basic form of remote sensing you can think of?\n\n\nLooking at something!\n\n\nThere are many different methods of remote sensing.\n\nSome ground based\nSome airborne\nSome satellite based\n\n\n\n\nMost remote sensing relies on electromagnetic radiation\n\n\n\nRed band (0.63 - 0.69 µm)\n\nUseful for:\n\nDetecting bare soil, buildings, pavement\nChlorophyll absorption\n\n\n\nGreen band (0.52 - 0.6 µm)\n\nUseful for:\n\nphenology / vegetation dynamics\nplant Health\nalgal Blooms\n\n\n\nBlue band (0.45 - 0.52 µm)\n\nUseful for:\n\nwater\nclouds\nsnow\naerosols\n\n\n\nNIR band (0.77 - 0.9 µm)\n\nUseful for:\n\nbiomass\nvegetation detection\nboundary detection\n\n\n\nA “True Color” image used Red, Green and Blue\n\n\n\nPixels in display contain 3 sub-pixels\nEach sub-pixels intensity is controlled by the intensity value in the image\nIntensity values are stored as 8-bit unsigned integers (uint8)\n\n8 bits = \\(2^{8}\\) = 256 possible values\nRange: 0 to 255 (256 values total)\nImages are sometimes stored with higher precision, but displayed with 8 bits\n\n\n\n(255, 0, 0)   = pure red\n(0, 255, 0)   = pure green\n(0, 0, 255)   = pure blue\n(255, 255, 0) = yellow (red + green)\n(0, 255, 255) = cyan (green + blue)\n(255, 0, 255) = magenta (red + blue)\n(255, 255, 255) = white (all combined)\n(0, 0, 0)     = black (none)\n\n\nCombining bands on different ways is often useful.\n\nFor example, False Color Image\n\nNIR, G, R\n\n\n\n\n\nHumans see only a small portion of the EM spectrum.\nInstruments on satellites capture more, but still only a small portion of the entire electromagnetic spectrum\n\nRight: Reflectance of water, soil and vegetation in different wavelengths and Landsat TM channels.\n\n\n\n\n\n\n\n\nImage Source: Wikimedia\n\n\n\n\n\nImage Source: Wikimedia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImage Source: NASA\n\n\n\n\n\nImage Source: SEOS"
+  },
+  {
+    "objectID": "index.html#passive-vs.-active",
+    "href": "index.html#passive-vs.-active",
+    "title": "NR 218",
+    "section": "Passive vs. Active",
+    "text": "Passive vs. Active\n\n\n\n\nImage Source: NASA Earthdata\n\n\n\n\nThe type of remote sensing we have been discussing so far is radiometric, or optical remote sensing.\nOptical remote sensing is passive\nLight from the sun bounces off of the earth and into the sensor (Eyeball, Camera, Radiometer)"
+  },
+  {
+    "objectID": "index.html#naip-imagery",
+    "href": "index.html#naip-imagery",
+    "title": "NR 218",
+    "section": "NAIP Imagery",
+    "text": "NAIP Imagery\n\nNational Agriculture Imagery Program (NAIP)\n\nHigh-resolution aerial imagery of the continental United States\nCollected during agricultural growing seasons\nTypically 4-band: Red, Green, Blue, Near-Infrared (NIR)\n60 cm (or better) spatial resolution\nUpdated on a 2-3 year cycle for each state\n\nLearn more: USDA NAIP Program"
+  },
+  {
+    "objectID": "index.html#section-31",
+    "href": "index.html#section-31",
+    "title": "NR 218",
+    "section": "",
+    "text": "Hopefully by now you have this data.\n\nfire perimeters\nAOI\nNAIP image\n\nFire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from \n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf"
+  },
+  {
+    "objectID": "index.html#fire-example-1",
+    "href": "index.html#fire-example-1",
+    "title": "NR 218",
+    "section": "Fire Example (1)",
+    "text": "Fire Example (1)\n\n\nOpen the fire perimeters dataset in QGIS\nExtract the Coffee fire (FIRE_NAME is COFFEE)\n\nThere are a few ways you can do this, your choice\nName the resulting layer Coffee\n\nReduce scratch_1 by selecting only fires that have happened since 2014 (Hint: extract by attribute)\n\ni.e. YEAR_ &gt; 2013\nName the resulting layer scratch_1\n\nNow extract all of the polygons which overlap the Coffee (Hint: “select by location”)\n\nName the result, scratch_2\n\nUse the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire\n\nName the result extent\n\nBuffer “extent” by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference)\n\nname the buffered layer, our area of interest, “AOI”\n\nClip scratch_2 by the AOI\n\nSave the results as fires_in_AOI\n\nWhen you are satisfied that fires_in_AOI turned out correctly you can delete scratch_1, scratch_2',Coffee, andextent`"
+  },
+  {
+    "objectID": "index.html#fire-example-2",
+    "href": "index.html#fire-example-2",
+    "title": "NR 218",
+    "section": "Fire Example (2)",
+    "text": "Fire Example (2)\n\n\nClip scratch_2 by the AOI\n\nSave the results as fires_in_AOI\n\nWhen you are satisfied that fires_in_AOI turned out correctly delete scratch_1, scratch_2',Coffee, andextent`\nOpen naip_2022\n\nOpen the Layer Properties dialog\nGo to the Transparency tab on the left.\nChange Transparency Band to None (what is band 4?)\n\nClip naip_2022 to the AOI.Raster-&gt;Extraction-&gt;Clip Raster By Mask Layer`\nNow lets view it as False color\n\nRecall from earler, that is NIR, G, R\nOpen symbology and change the band order"
   },
   {
     "objectID": "w3_house_keeping.html#events",
@@ -1841,17 +1876,52 @@
     "text": "We can do the same operation we just did through the plugin:"
   },
   {
-    "objectID": "remote_sensing.html#remote-sensing-1",
-    "href": "remote_sensing.html#remote-sensing-1",
-    "title": "",
-    "section": "Remote sensing",
-    "text": "Remote sensing\n\n\n\n\nRemote sensing - Obtaining information about an object from a distance.\n\n\nThere are many different methods of remote sensing.\n\nSome ground based\nSome airborne\nSome satellite based\n\n\n\nWhat is the most basic form of remote sensing you can think of?\n\n\nLooking at something!\n\n\n\nMost remote sensing relies on electromagnetic radiation\n\n\n\n\nHumans see only a small portion of the EM spectrum.\nInstruments on satellites capture more, but still only a small portion of the entire electromagnetic spectrum\n\nRight: Reflectance of water, soil and vegetation in different wavelengths and Landsat TM channels.\n\n\n\n\n\n\n\n\nImage Source: Wikimedia\n\n\n\n\n\nImage Source: Wikimedia\n\n\n\n\n\nImage Source: NASA\n\n\n\n\n\nImage Source: SEOS"
-  },
-  {
     "objectID": "remote_sensing.html#section",
     "href": "remote_sensing.html#section",
     "title": "",
     "section": "",
-    "text": "Download:\n\nfire perimeters\nAOI\nNAIP image\n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\nfire_example/\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf\n\n\n\n\nOpen the fire perimeters dataset in QGIS\nExtract the River fire (FIRE_NAME is RIVER COMPLEX)\n\nThere are a few ways you can do this\nName the resulting layer “River Complex”\n\nNow extract all of the polygons which overlap the River Complex\n\nName the resulting layer “scratch_1”\n\nFurther reduce the “scratch_1” layer by selecting only fires that have happened since 2014\n\ni.e. YEAR_ &gt; 2013\nName the result, “scratch_2”\n\nUse the “Extract layer extent” tool to get a polygon of the extent of the river fire\n\nName the result “extent”\n\nBuffer “extent” by 50 m\n\nname the buffered layer, our area of interest, “AOI”\n\nClip scratch_2 by the AOI\n\nSave the results as fires_in_AOI\n\nWhen you are satisfied that fires_in_AOI turned out correctly delete scratch_1, scratch_2', andextent`"
+    "text": "Start Downloads:\n\nfire perimeters\nAOI\nNAIP image\n\nAlternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:\n\nfire_example/\n├── data/\n│   ├── subset_of_cal_hist_fires.geojson\n│   └── naip_2022.tif\n└── docs/"
+  },
+  {
+    "objectID": "remote_sensing.html#remote-sensing-1",
+    "href": "remote_sensing.html#remote-sensing-1",
+    "title": "",
+    "section": "Remote sensing",
+    "text": "Remote sensing\n\n\n\n\nRemote sensing - Obtaining information about an object from a distance.\n\n\nWhat is the most basic form of remote sensing you can think of?\n\n\nLooking at something!\n\n\nThere are many different methods of remote sensing.\n\nSome ground based\nSome airborne\nSome satellite based\n\n\n\n\nMost remote sensing relies on electromagnetic radiation\n\n\n\nRed band (0.63 - 0.69 µm)\n\nUseful for:\n\nDetecting bare soil, buildings, pavement\nChlorophyll absorption\n\n\n\nGreen band (0.52 - 0.6 µm)\n\nUseful for:\n\nphenology / vegetation dynamics\nplant Health\nalgal Blooms\n\n\n\nBlue band (0.45 - 0.52 µm)\n\nUseful for:\n\nwater\nclouds\nsnow\naerosols\n\n\n\nNIR band (0.77 - 0.9 µm)\n\nUseful for:\n\nbiomass\nvegetation detection\nboundary detection\n\n\n\nA “True Color” image used Red, Green and Blue\n\n\n\nPixels in display contain 3 sub-pixels\nEach sub-pixels intensity is controlled by the intensity value in the image\nIntensity values are stored as 8-bit unsigned integers (uint8)\n\n8 bits = \\(2^{8}\\) = 256 possible values\nRange: 0 to 255 (256 values total)\nImages are sometimes stored with higher precision, but displayed with 8 bits\n\n\n\n(255, 0, 0)   = pure red\n(0, 255, 0)   = pure green\n(0, 0, 255)   = pure blue\n(255, 255, 0) = yellow (red + green)\n(0, 255, 255) = cyan (green + blue)\n(255, 0, 255) = magenta (red + blue)\n(255, 255, 255) = white (all combined)\n(0, 0, 0)     = black (none)\n\n\nCombining bands on different ways is often useful.\n\nFor example, False Color Image\n\nNIR, G, R\n\n\n\n\n\nHumans see only a small portion of the EM spectrum.\nInstruments on satellites capture more, but still only a small portion of the entire electromagnetic spectrum\n\nRight: Reflectance of water, soil and vegetation in different wavelengths and Landsat TM channels.\n\n\n\n\n\n\n\n\nImage Source: Wikimedia\n\n\n\n\n\nImage Source: Wikimedia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImage Source: NASA\n\n\n\n\n\nImage Source: SEOS"
+  },
+  {
+    "objectID": "remote_sensing.html#passive-vs.-active",
+    "href": "remote_sensing.html#passive-vs.-active",
+    "title": "",
+    "section": "Passive vs. Active",
+    "text": "Passive vs. Active\n\n\n\n\nImage Source: NASA Earthdata\n\n\n\n\nThe type of remote sensing we have been discussing so far is radiometric, or optical remote sensing.\nOptical remote sensing is passive\nLight from the sun bounces off of the earth and into the sensor (Eyeball, Camera, Radiometer)"
+  },
+  {
+    "objectID": "remote_sensing.html#naip-imagery",
+    "href": "remote_sensing.html#naip-imagery",
+    "title": "",
+    "section": "NAIP Imagery",
+    "text": "NAIP Imagery\n\nNational Agriculture Imagery Program (NAIP)\n\nHigh-resolution aerial imagery of the continental United States\nCollected during agricultural growing seasons\nTypically 4-band: Red, Green, Blue, Near-Infrared (NIR)\n60 cm (or better) spatial resolution\nUpdated on a 2-3 year cycle for each state\n\nLearn more: USDA NAIP Program"
+  },
+  {
+    "objectID": "remote_sensing.html#section-1",
+    "href": "remote_sensing.html#section-1",
+    "title": "",
+    "section": "",
+    "text": "Hopefully by now you have this data.\n\nfire perimeters\nAOI\nNAIP image\n\nFire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from \n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf"
+  },
+  {
+    "objectID": "remote_sensing.html#fire-example-1",
+    "href": "remote_sensing.html#fire-example-1",
+    "title": "",
+    "section": "Fire Example (1)",
+    "text": "Fire Example (1)\n\n\nOpen the fire perimeters dataset in QGIS\nExtract the Coffee fire (FIRE_NAME is COFFEE)\n\nThere are a few ways you can do this, your choice\nName the resulting layer Coffee\n\nReduce scratch_1 by selecting only fires that have happened since 2014 (Hint: extract by attribute)\n\ni.e. YEAR_ &gt; 2013\nName the resulting layer scratch_1\n\nNow extract all of the polygons which overlap the Coffee (Hint: “select by location”)\n\nName the result, scratch_2\n\nUse the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire\n\nName the result extent\n\nBuffer “extent” by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference)\n\nname the buffered layer, our area of interest, “AOI”\n\nClip scratch_2 by the AOI\n\nSave the results as fires_in_AOI\n\nWhen you are satisfied that fires_in_AOI turned out correctly you can delete scratch_1, scratch_2',Coffee, andextent`"
+  },
+  {
+    "objectID": "remote_sensing.html#fire-example-2",
+    "href": "remote_sensing.html#fire-example-2",
+    "title": "",
+    "section": "Fire Example (2)",
+    "text": "Fire Example (2)\n\n\nClip scratch_2 by the AOI\n\nSave the results as fires_in_AOI\n\nWhen you are satisfied that fires_in_AOI turned out correctly delete scratch_1, scratch_2',Coffee, andextent`\nOpen naip_2022\n\nOpen the Layer Properties dialog\nGo to the Transparency tab on the left.\nChange Transparency Band to None (what is band 4?)\n\nClip naip_2022 to the AOI.Raster-&gt;Extraction-&gt;Clip Raster By Mask Layer`\nNow lets view it as False color\n\nRecall from earler, that is NIR, G, R\nOpen symbology and change the band order"
   }
 ]
