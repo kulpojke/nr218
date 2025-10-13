@@ -1,0 +1,357 @@
+# Remote Sensing!
+
+## 
+Start Downloads:
+
++ [fire perimeters](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EeI5CefmJnZKgL1EU5lcxDoBiiGvVQrU-7NFUJaSew6ktA?e=ls6lkO)
++ [AOI]()
++ [NAIP image]()
+
+Alternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:
+
+::: {style="text-align: center;"}
+```
+fire_example/
+├── data/
+│   ├── subset_of_cal_hist_fires.geojson
+│   └── naip_2022.tif
+└── docs/
+    
+```
+:::
+
+
+## Remote sensing
+
+::: {.columns}
+
+::: {.column width="35%"}
+::: {.r-stack style="position: relative; min-height: 400px;"}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="max-width: 100%; font-size:0.6em;"}
+__Remote sensing__ - Obtaining information about an object from a distance.
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="max-width: 100%; font-size:0.6em;"}
+What is the most basic form of remote sensing you can think of?
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3" style="max-width: 100%; font-size:0.8em;"}
+
+[Looking at something!]{style="color: red;"}
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4" style="max-width: 100%; font-size:0.6em;"}
+There are many different methods of remote sensing.
+
++ Some ground based
++ Some airborne
++ Some satellite based
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5" style="max-width: 100%; font-size:0.6em;"}
++ Most remote sensing relies on electromagnetic radiation
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="6" style="max-width: 100%; font-size:0.6em;"}
+Red band (0.63 - 0.69 µm)
+
+![](img/rspec.png)
+
+Useful for:  
+
++ Detecting bare soil, buildings, pavement
++ Chlorophyll absorption
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="7" style="max-width: 100%; font-size:0.6em;"}
+Green band (0.52 - 0.6 µm)
+
+![](img/gspec.png)
+
+Useful for:  
+
++ phenology / vegetation dynamics
++ plant Health
++ algal Blooms
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="8" style="max-width: 100%; font-size:0.6em;"}
+Blue band (0.45 - 0.52 µm)
+
+![](img/bspec.png)
+
+Useful for:  
+
++ water
++ clouds 
++ snow
++ aerosols
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="9" style="max-width: 100%; font-size:0.6em;"}
+NIR band (0.77 - 0.9 µm)
+
+
+![](img/nirspec.png)
+
+Useful for:  
+
++ biomass
++ vegetation detection
++ boundary detection
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="10" style="max-width: 100%; font-size:0.6em;"}
+A "True Color" image used Red, Green and Blue 
+
+![](img/rgbspec.png)
+
+::: {style="font-size:0.5em"}
++ Pixels in display contain 3 sub-pixels
++ Each sub-pixels intensity is controlled by the intensity value in the image
++ Intensity values are stored as 8-bit unsigned integers (`uint8`) 
+    + 8 bits = $2^{8}$ = 256 possible values
+    + Range: 0 to 255 (256 values total)
+    + Images are sometimes _stored_ with higher precision, but displayed with 8 bits
+:::
+
+```
+(255, 0, 0)   = pure red
+(0, 255, 0)   = pure green
+(0, 0, 255)   = pure blue
+(255, 255, 0) = yellow (red + green)
+(0, 255, 255) = cyan (green + blue)
+(255, 0, 255) = magenta (red + blue)
+(255, 255, 255) = white (all combined)
+(0, 0, 0)     = black (none)
+```
+
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="11" style="max-width: 100%; font-size:0.6em;"}
+Combining bands on different ways is often useful.
+
+![](img/false_spec.png)
+
+For example, False Color Image
+
++ NIR, G, R           
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="12" style="max-width: 100%; font-size:0.6em;"}
+
++ Humans see only a small portion of the EM spectrum. 
++ Instruments on satellites capture more, but still only a small portion of the entire electromagnetic spectrum
+
+[__Right__:  Reflectance of water, soil and vegetation in different wavelengths and Landsat TM channels.]{style="font-size:0.5em"}
+:::
+
+::: 
+<!-- end r-stack -->
+::: 
+<!-- end column -->
+
+::: {.column width="65%"}
+
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+![](img/Mother_Bird_by_Keisuke_Aso_Aisawa.jpeg){width="100%" style="max-width: 100%; height: auto; object-fit: contain;"}
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:Electromagneticwave3D.gif)
+:::  
+:::  
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5"}
+![](img/Electromagneticwave3D.gif){width="100%" style="max-width: 100%; height: auto; object-fit: contain;"}
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:Electromagneticwave3D.gif)
+:::  
+:::  
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="6"}
+![](img/red.png)
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="7"}
+![](img/green.png)
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="8"}
+![](img/blue.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="9"}
+![](img/nir.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="10"}
+![](img/rgb.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="11"}
+![](img/false.png)
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="12"}
+![](img/EM_nasa.png){width="100%" style="max-width: 100%; height: auto; object-fit: contain;"}
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [NASA](https://appliedsciences.nasa.gov/sites/default/files/2022-11/Fundamentals_of_RS_Edited_SC.pdf)
+:::
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="13"}
+![](img/spectral_signatures_landsat_450.jpg){width="100%" style="max-width: 100%; height: auto; object-fit: contain;"}
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [SEOS](https://seos-project.eu/classification/classification-c01-p05.html)
+:::
+:::
+
+:::
+<!-- end r-stack -->
+::: 
+<!-- end column -->
+
+:::
+<!-- end columns -->
+
+## Passive vs. Active
+
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+![](img/active-passive-remote-sensing.png)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [NASA Earthdata](https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing)
+:::
+
+:::
+
+::: {.fragment .absolute .fade-in data-fragment-index="2"}
++ The type of remote sensing we have been discussing so far is _radiometric_, or _optical_ remote sensing. 
++ Optical remote sensing is passive 
++ Light from the sun bounces off of the earth and into the sensor (Eyeball, Camera, Radiometer)
+:::
+
+
+:::
+
+## NAIP Imagery
+
+::: {style="font-size:0.9em"}
+**National Agriculture Imagery Program (NAIP)**
+
++ High-resolution aerial imagery of the continental United States
++ Collected during agricultural growing seasons
++ Typically 4-band: Red, Green, Blue, Near-Infrared (NIR)
++ 60 cm (or better) spatial resolution
++ Updated on a 2-3 year cycle for each state
+
+**Learn more:** [USDA NAIP Program](https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/)
+:::
+
+## 
+
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+Hopefully by now you have this data.
+
+
++ [fire perimeters](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EeI5CefmJnZKgL1EU5lcxDoBiiGvVQrU-7NFUJaSew6ktA?e=ls6lkO)
++ [AOI]()
++ [NAIP image]()
+
+[Fire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from ![California Open Data Portal](https://data.ca.gov/group/fire)]{style="font-size:0.3.5em"}
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+
+::: {style="font-size:0.7em"}
++ Make a project folder for this on your OneDrive, call it `fire_example`
++ inside of  `fire_example` create a 'data' directory and a 'docs' directory
+    - you will store your data in `data`
+    - you will store your non-GIS file outputs in `docs`
+    - your project qgz file in `fire_example`
+:::
+
+::: {style="text-align: center;"}
+```
+fire_example/
+├── fire_example.qgz
+├── data/
+│   ├── fire_perimeters.geojson
+│   └── naip.tif
+└── docs/
+    └── map1.pdf
+```
+:::
+
+:::
+
+:::
+<!-- end r-stack -->
+
+##  Fire Example (1)
+
+::: {style="font-size:0.5em"}
+1. Open the fire perimeters dataset in QGIS
+2. Extract the Coffee fire (`FIRE_NAME` is `COFFEE`) 
+    a. There are a few ways you can do this, your choice
+    b. Name the resulting layer `Coffee`
+3. Reduce `scratch_1` by selecting only fires that have happened since 2014 (Hint: extract by attribute)
+    b. i.e. `YEAR_ > 2013`
+    a. Name the resulting layer `scratch_1`
+4. Now extract all of the polygons which _overlap_ the `Coffee` (Hint: "select by location")
+    c. Name the result, `scratch_2`
+5. Use the "Extract layer extent" tool to get a polygon of the extent of the Coffee fire
+    a. Name the result `extent`
+6. Buffer "extent" by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference)
+    a. name the buffered layer, our area of interest, "AOI"
+7. Clip `scratch_2` by the AOI
+    a. Save the results as `fires_in_AOI`
+8. When you are satisfied that `fires_in_AOI` turned out correctly you can delete `scratch_1`, `scratch_2', `Coffee`, and `extent`
+::: 
+
+
+## Fire Example (2)
+
+::: {style="font-size:0.5em"}
+7. Clip `scratch_2` by the AOI
+    a. Save the results as `fires_in_AOI`
+8. When you are satisfied that `fires_in_AOI` turned out correctly delete `scratch_1`, `scratch_2', `Coffee`, and `extent`
+9. Open `naip_2022`
+    a. Open the Layer Properties dialog 
+    b. Go to the Transparency tab on the left.
+    c. Change Transparency Band to None (what is band 4?)
+10. Clip `naip_2022 to the AOI.  `Raster` -> `Extraction` -> `Clip Raster By Mask Layer`
+11. Name the result `naip_2022_clipped`
+11. Now lets view it as False color
+    a. Recall from earlier, that is NIR, G, R
+    b. Open symbology and change the band order
+12. Calculate Normalized Difference Vegetation Index
+
+    a. Open Raster Calculator ( _Raster_ -> _Raster Calculator_)
+    b . enter ` ( "naip_2022_clipped@4"  - "naip_2022_clipped@1" )  /  ( "naip_2022_clipped@4" + "naip_2022_clipped@1" )` 
+    c. check the "create on the fly raster ..." box at the top under "Result Layer"
+    d. Run
+
+:::
+

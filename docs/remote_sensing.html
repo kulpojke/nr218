@@ -416,22 +416,29 @@
 <h2>Fire Example (2)</h2>
 <div style="font-size:0.5em">
 <ol start="7" type="1">
-<li>Clip <code>scratch_2</code> by the AOI
+<li><p>Clip <code>scratch_2</code> by the AOI</p>
 <ol type="a">
 <li>Save the results as <code>fires_in_AOI</code></li>
 </ol></li>
-<li>When you are satisfied that <code>fires_in_AOI</code> turned out correctly delete <code>scratch_1</code>, <code>scratch_2',</code>Coffee<code>, and</code>extent`</li>
-<li>Open <code>naip_2022</code>
+<li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly delete <code>scratch_1</code>, <code>scratch_2',</code>Coffee<code>, and</code>extent`</p></li>
+<li><p>Open <code>naip_2022</code></p>
 <ol type="a">
 <li>Open the Layer Properties dialog</li>
 <li>Go to the Transparency tab on the left.</li>
 <li>Change Transparency Band to None (what is band 4?)</li>
 </ol></li>
-<li>Clip <code>naip_2022 to the AOI.</code>Raster<code>-&gt;</code>Extraction<code>-&gt;</code>Clip Raster By Mask Layer`</li>
-<li>Now lets view it as False color
+<li><p>Clip <code>naip_2022 to the AOI.</code>Raster<code>-&gt;</code>Extraction<code>-&gt;</code>Clip Raster By Mask Layer`</p></li>
+<li><p>Name the result <code>naip_2022_clipped</code></p></li>
+<li><p>Now lets view it as False color</p>
 <ol type="a">
-<li>Recall from earler, that is NIR, G, R</li>
+<li>Recall from earlier, that is NIR, G, R</li>
 <li>Open symbology and change the band order</li>
+</ol></li>
+<li><p>Calculate Normalized Difference Vegetation Index</p>
+<ol type="a">
+<li>Open Raster Calculator ( <em>Raster</em> -&gt; <em>Raster Calculator</em>) b . enter <code>( "naip_2022_clipped@4"  - "naip_2022_clipped@1" )  /  ( "naip_2022_clipped@4" + "naip_2022_clipped@1" )</code></li>
+<li>check the “create on the fly raster …” box at the top under “Result Layer”</li>
+<li>Run</li>
 </ol></li>
 </ol>
 </div>
