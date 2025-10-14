@@ -809,7 +809,7 @@
     "href": "index.html#section-30",
     "title": "NR 218",
     "section": "",
-    "text": "Start Downloads:\n\nfire perimeters\nAOI\nNAIP image\n\nAlternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:\n\nfire_example/\n├── data/\n│   ├── subset_of_cal_hist_fires.geojson\n│   └── naip_2022.tif\n└── docs/"
+    "text": "Start Downloads:\n\nfire perimeters\nNAIP image\n\nAlternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:\n\nfire_example/\n├── data/\n│   ├── subset_of_cal_hist_fires.geojson\n│   └── naip_2022.tif\n└── docs/"
   },
   {
     "objectID": "index.html#remote-sensing-1",
@@ -873,6 +873,13 @@
     "title": "NR 218",
     "section": "",
     "text": "\\[\nSAVI = \\frac{(NIR - Red) \\times (1 + L)}{NIR + Red + L}\n\\]\nWhere \\(L\\) is often 0.5, but adjusted for exposed soil"
+  },
+  {
+    "objectID": "index.html#section-33",
+    "href": "index.html#section-33",
+    "title": "NR 218",
+    "section": "",
+    "text": "Image Source: NASA ARSET\n\n\n\n\n\n\n\n\nImage Source: NASA ARSET"
   },
   {
     "objectID": "w3_house_keeping.html#events",
@@ -1901,7 +1908,7 @@
     "href": "remote_sensing.html#section",
     "title": "",
     "section": "",
-    "text": "Start Downloads:\n\nfire perimeters\nAOI\nNAIP image\n\nAlternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:\n\nfire_example/\n├── data/\n│   ├── subset_of_cal_hist_fires.geojson\n│   └── naip_2022.tif\n└── docs/"
+    "text": "Start Downloads:\n\nfire perimeters\nNAIP image\n\nAlternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:\n\nfire_example/\n├── data/\n│   ├── subset_of_cal_hist_fires.geojson\n│   └── naip_2022.tif\n└── docs/"
   },
   {
     "objectID": "remote_sensing.html#remote-sensing-1",
@@ -1965,5 +1972,12 @@
     "title": "",
     "section": "",
     "text": "\\[\nSAVI = \\frac{(NIR - Red) \\times (1 + L)}{NIR + Red + L}\n\\]\nWhere \\(L\\) is often 0.5, but adjusted for exposed soil"
+  },
+  {
+    "objectID": "remote_sensing.html#section-3",
+    "href": "remote_sensing.html#section-3",
+    "title": "",
+    "section": "",
+    "text": "Image Source: NASA ARSET\n\n\n\n\n\n\n\n\nImage Source: NASA ARSET"
   }
 ]

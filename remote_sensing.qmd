@@ -4,8 +4,7 @@
 Start Downloads:
 
 + [fire perimeters](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EeI5CefmJnZKgL1EU5lcxDoBiiGvVQrU-7NFUJaSew6ktA?e=ls6lkO)
-+ [AOI]()
-+ [NAIP image]()
++ [NAIP image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EbhJfgpJKspBkSC4ftohoacBMEmd3DRxG32-Lxr4qIDDQA?e=Swa8t0)
 
 Alternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:
 
@@ -382,3 +381,26 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 $$
 
 Where $L$ is often 0.5, but adjusted for exposed soil
+
+##
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+![](img/trees_ndvis.png)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [NASA ARSET](https://appliedsciences.nasa.gov/sites/default/files/2023-10/Spectral_Indices_Part1.pdf)
+:::
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+![](img/seasons_ndvi.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+![](img/seasons_ndvi.png)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [NASA ARSET](https://appliedsciences.nasa.gov/sites/default/files/2023-10/Spectral_Indices_Part1.pdf)
+:::
+:::
