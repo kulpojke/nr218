@@ -404,3 +404,27 @@ Image Source: [NASA ARSET](https://appliedsciences.nasa.gov/sites/default/files/
 Image Source: [NASA ARSET](https://appliedsciences.nasa.gov/sites/default/files/2023-10/Spectral_Indices_Part1.pdf)
 :::
 :::
+
+##
+::: {.smaller}
+1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) and clock the download button at the top of the page.  This should start downloading a zip of the file. 
+2. Unzip them and put them into a new directory in you fire_example, 
+like so 
+:::
+
+::: {style="text-align: center;"}
+```
+fire_example/
+├── fire_example.qgz
+├── data/
+│   ├── fire_perimeters.geojson
+│   └── naip.tif
+│
+├──s2/
+│   ├── s2_2016.tif
+│   └── ...
+│   └── s2_2025.tif
+│
+└── docs/
+```
+:::

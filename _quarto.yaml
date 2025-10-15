@@ -20,10 +20,12 @@ project:
     - w3_house_keeping.qmd
     - remote_sensing.qmd
     - index.qmd
+  resources:
+    - .nojekyll
 
 format:
   revealjs:
-    theme: blood
+    theme: dracula
     slide-number: true           
     controls: true               
     progress: true               
@@ -32,8 +34,7 @@ format:
     transition: slide            
     background-transition: fade  
     code-block-height: 500px     
-        
 
 
 editor:
-  render-on-save: true     
+  render-on-save: true
