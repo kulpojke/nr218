@@ -407,7 +407,7 @@ Image Source: [NASA ARSET](https://appliedsciences.nasa.gov/sites/default/files/
 
 ##
 ::: {.smaller}
-1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) and clock the download button at the top of the page.  This should start downloading a zip of the file. 
+1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) and click the download button at the top of the page.  This should start downloading a zip of the file. 
 2. Unzip them and put them into a new directory in you fire_example, 
 like so 
 :::
