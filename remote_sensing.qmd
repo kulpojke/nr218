@@ -510,29 +510,175 @@ fire_example/
 
 9. Install Point Sampling Tool pluggin.
 
-## A digression on Creating Red Relief from DEM
+## A Digression - Visualizing Elevation {style="font-size:0.6em"}
 
-:::: {.columns}
+::: {.r-stack}
 
-::: {.column width="50%"}
-### Steps in QGIS
+::: {.fragment .fade-in-then-out data-fragment-index="1" style="font-size:0.7em;"}
+::: {style="text-align: center;"}
+DEMs are fundamental to many types of analysis, but not great to look at.
 
-1. **Load your DEM** into QGIS
+![](img/dem_plain.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+:::
 
-2. **Create Hillshade**
+::: {.fragment .fade-in-then-out data-fragment-index="2" style="font-size:0.7em;"}
+::: {style="text-align: center;"}
+Slope Maps are a little better.
+
++ Raster → Analysis → Slope...
+
+![](img/slope.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="3" style="font-size:0.7em;"}
+::: {style="text-align: center;"}
+Hillshade maps are much better
+
++ Raster → Analysis → Hillshade...
+
+![](img/hillshade.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="4" style="font-size:0.7em;"}
+::: {style="text-align: center;"}
+Better yet, Red Relief!
+
++ See next slide
+
+![](img/red_relief.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+:::
+
+:::
+
+
+## A Digression Continued - Red Relief {style="font-size:0.6em"}
+
+::: {style="font-size:0.7em;"}
+1. **Create Hillshade**
    - Raster → Analysis → Hillshade
    - Azimuth: 315°, Altitude: 45°
-   - Save output
-
-3. **Apply Red Relief Style to DEM**
+   
+2. **Apply Red Relief Style to DEM**
    - Right-click DEM → Properties → Symbology
-   - Render type: **Singleband pseudocolor**
+   - Render type: Singleband pseudocolor
    - Color ramp: Create custom red gradient
    - Min value: Black → Max value: Red
+   - ![](img/black_red_ramp.png)
 
 4. **Blend Layers**
    - Place hillshade **above** DEM
-   - Set hillshade **Blending mode**: Multiply
-   - Adjust hillshade opacity (~50-70%)
+   - Set hillshade Blending mode: Multiply
+   - Adjust hillshade opacity somewhere ~50-70%
+    - Opacity is found under the Transparency tab just below Symbology
+
+:::
+
+## A Digression Continued {style="font-size:0.6em; text-align: center;"}
+
+::: {style="text-align: center;"}
+![](img/aoi_red_relief.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+## A Digression Continued - Landforms {style="font-size:0.6em"}
+
+:::{.columns}
+
+::: {.column width="70%"}
+![](img/geomorph.gif){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+
+::: {.column width="30%"}
+![](img/geomorph_legend.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+:::
+
+## Raster Resampling {style="font-size:0.6em"}
+
+::: {style="font-size:0.7em"}
+Resampling is adjusting the pixel size or resolution of raster data in order to:
+
++ __Match resolutions__ - So multiple rasters will align for analyisis (e.g., NDVI and elevation) [^match]
++ __Downsample__ - Reduce resolution for faster processing
+
+::: {style="margin-left: 2em;"}
+![](img/down_sample.png)
+:::
+
++ __Upsample__ - Increase resolution for finer analyses (though it won’t create new information)
+
+::: {style="margin-left: 2em;"}
+![](img/up_sample.png)
+:::
+
+::: {style="font-size:0.5em"}
+[^match]: Resampling does not necessarily align pixels between rasters, though this option can be specified in certain resampling algorithms.
+:::
+
+:::
+
+## Raster Resampling
+
+
+## Raster Reprojection (Warping)
+
+::: {.columns}
+::: {.column width="40%"}
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+Just like vector data, we need to reproject rasters if we’re to do accurate analysis. 
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+The goal is to realign the pixels, without changing their values.
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+The goal is to realign the pixels, without changing their values.
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+What happens in the reprojection can be thought of as a two-step process
+
+1. The pixel outlines are reprojected as if they were polygons
+2. This results in an irregular grid
+3. The grid is then resampled to form a regular grid
+
+:::
+
+
+:::
+
+:::
+
+
+::: {.column width="60%"}
+::: { .r-stack}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+![](img/grid_warp.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+![](img/rast_sin_to_ITM.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+![](img/sin_to_ITM.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+![](img/pix_reproj.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+
+:::
+
+:::
 :::
 

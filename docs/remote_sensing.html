@@ -601,34 +601,152 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 <li><p>Install Point Sampling Tool pluggin.</p></li>
 </ol>
 </section>
-<section id="a-digression-on-creating-red-relief-from-dem" class="slide level2 center">
-<h2>A digression on Creating Red Relief from DEM</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="steps-in-qgis">Steps in QGIS</h3>
+<section id="a-digression---visualizing-elevation" class="slide level2 center" style="font-size:0.6em">
+<h2>A Digression - Visualizing Elevation</h2>
+<div class="r-stack">
+<div class="fragment fade-in-then-out" data-fragment-index="1" style="font-size:0.7em;">
+<div style="text-align: center;">
+<p>DEMs are fundamental to many types of analysis, but not great to look at.</p>
+<p><img data-src="img/dem_plain.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2" style="font-size:0.7em;">
+<div style="text-align: center;">
+<p>Slope Maps are a little better.</p>
+<ul>
+<li>Raster → Analysis → Slope…</li>
+</ul>
+<p><img data-src="img/slope.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3" style="font-size:0.7em;">
+<div style="text-align: center;">
+<p>Hillshade maps are much better</p>
+<ul>
+<li>Raster → Analysis → Hillshade…</li>
+</ul>
+<p><img data-src="img/hillshade.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="4" style="font-size:0.7em;">
+<div style="text-align: center;">
+<p>Better yet, Red Relief!</p>
+<ul>
+<li>See next slide</li>
+</ul>
+<p><img data-src="img/red_relief.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="a-digression-continued---red-relief" class="slide level2 center" style="font-size:0.6em">
+<h2>A Digression Continued - Red Relief</h2>
+<div style="font-size:0.7em;">
 <ol type="1">
-<li><p><strong>Load your DEM</strong> into QGIS</p></li>
-<li><p><strong>Create Hillshade</strong></p>
+<li><strong>Create Hillshade</strong>
 <ul>
 <li>Raster → Analysis → Hillshade</li>
 <li>Azimuth: 315°, Altitude: 45°</li>
-<li>Save output</li>
 </ul></li>
-<li><p><strong>Apply Red Relief Style to DEM</strong></p>
+<li><strong>Apply Red Relief Style to DEM</strong>
 <ul>
 <li>Right-click DEM → Properties → Symbology</li>
-<li>Render type: <strong>Singleband pseudocolor</strong></li>
+<li>Render type: Singleband pseudocolor</li>
 <li>Color ramp: Create custom red gradient</li>
 <li>Min value: Black → Max value: Red</li>
+<li><img data-src="img/black_red_ramp.png"></li>
 </ul></li>
-<li><p><strong>Blend Layers</strong></p>
+<li><strong>Blend Layers</strong>
 <ul>
 <li>Place hillshade <strong>above</strong> DEM</li>
-<li>Set hillshade <strong>Blending mode</strong>: Multiply</li>
-<li>Adjust hillshade opacity (~50-70%)</li>
+<li>Set hillshade Blending mode: Multiply</li>
+<li>Adjust hillshade opacity somewhere ~50-70%</li>
+<li>Opacity is found under the Transparency tab just below Symbology</li>
 </ul></li>
 </ol>
+</div>
+</section>
+<section id="a-digression-continued" class="slide level2 center" style="font-size:0.6em; text-align: center;">
+<h2>A Digression Continued</h2>
+<div style="text-align: center;">
+<p><img data-src="img/aoi_red_relief.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+</section>
+<section id="a-digression-continued---landforms" class="slide level2 center" style="font-size:0.6em">
+<h2>A Digression Continued - Landforms</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="img/geomorph.gif" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="img/geomorph_legend.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
 </div></div>
+</section>
+<section id="raster-resampling" class="slide level2 center" style="font-size:0.6em">
+<h2>Raster Resampling</h2>
+<div style="font-size:0.7em">
+<p>Resampling is adjusting the pixel size or resolution of raster data in order to:</p>
+<ul>
+<li><strong>Match resolutions</strong> - So multiple rasters will align for analyisis (e.g., NDVI and elevation) <sup>1</sup></li>
+<li><strong>Downsample</strong> - Reduce resolution for faster processing</li>
+</ul>
+<div style="margin-left: 2em;">
+<p><img data-src="img/down_sample.png"></p>
+</div>
+<ul>
+<li><strong>Upsample</strong> - Increase resolution for finer analyses (though it won’t create new information)</li>
+</ul>
+<div style="margin-left: 2em;">
+<p><img data-src="img/up_sample.png"></p>
+</div>
+<div style="font-size:0.5em">
+
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Resampling does not necessarily align pixels between rasters, though this option can be specified in certain resampling algorithms.</p></li></ol></aside></section>
+<section id="raster-resampling-1" class="slide level2 center">
+<h2>Raster Resampling</h2>
+</section>
+<section id="raster-reprojection-warping" class="slide level2 center">
+<h2>Raster Reprojection (Warping)</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="r-stack">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<p>Just like vector data, we need to reproject rasters if we’re to do accurate analysis.</p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<p>The goal is to realign the pixels, without changing their values.</p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
+<p>The goal is to realign the pixels, without changing their values.</p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="">
+<p>What happens in the reprojection can be thought of as a two-step process</p>
+<ol type="1">
+<li>The pixel outlines are reprojected as if they were polygons</li>
+<li>This results in an irregular grid</li>
+<li>The grid is then resampled to form a regular grid</li>
+</ol>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="r-stack">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<p><img data-src="img/grid_warp.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<p><img data-src="img/rast_sin_to_ITM.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
+<p><img data-src="img/sin_to_ITM.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="">
+<p><img data-src="img/pix_reproj.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+</div>
+</div></div>
+
+
 </section></section>
 
     </div>
