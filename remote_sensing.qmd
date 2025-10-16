@@ -395,6 +395,10 @@ Where $L$ is often 0.5, but adjusted for exposed soil
 
 ## NDVI - what is it doing?
 
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"  }
+![](img/ndvi_response.png)
+:::
+
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
 ![](img/trees_ndvis.png)
 
@@ -460,7 +464,7 @@ $$
 
 3. Do the same for [this other link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM) but put them into `s2_nbr`
 
-4. Download this [DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2) and put them into the data directory in your fire_example, like so:
+4. Download this [DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2) and put them into the data directory in your fire_example, as seen to the right.
 :::
 
 ::: {.column width="50%"}

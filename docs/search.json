@@ -886,7 +886,7 @@
     "href": "index.html#ndvi---what-is-it-doing",
     "title": "NR 218",
     "section": "NDVI - what is it doing?",
-    "text": "NDVI - what is it doing?\n\n\n\nImage Source: NASA ARSET\n\n\n\n\n\n\n\n\nImage Source: NASA ARSET"
+    "text": "NDVI - what is it doing?\n\n\n\n\n\n\nImage Source: NASA ARSET\n\n\n\n\n\n\n\n\nImage Source: NASA ARSET"
   },
   {
     "objectID": "index.html#what-is-a-spectral-index",
@@ -907,7 +907,7 @@
     "href": "index.html#back-to-the-exercise",
     "title": "NR 218",
     "section": "Back to the exercise",
-    "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, like so:\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   └── dem_1m_6339.tif\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
+    "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, as seen to the right.\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   └── dem_1m_6339.tif\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
   },
   {
     "objectID": "index.html#section-33",
@@ -2020,7 +2020,7 @@
     "href": "remote_sensing.html#ndvi---what-is-it-doing",
     "title": "",
     "section": "NDVI - what is it doing?",
-    "text": "NDVI - what is it doing?\n\n\n\nImage Source: NASA ARSET\n\n\n\n\n\n\n\n\nImage Source: NASA ARSET"
+    "text": "NDVI - what is it doing?\n\n\n\n\n\n\nImage Source: NASA ARSET\n\n\n\n\n\n\n\n\nImage Source: NASA ARSET"
   },
   {
     "objectID": "remote_sensing.html#what-is-a-spectral-index",
@@ -2041,7 +2041,7 @@
     "href": "remote_sensing.html#back-to-the-exercise",
     "title": "",
     "section": "Back to the exercise",
-    "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, like so:\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   └── dem_1m_6339.tif\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
+    "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, as seen to the right.\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   └── dem_1m_6339.tif\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
   },
   {
     "objectID": "remote_sensing.html#section-3",
