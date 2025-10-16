@@ -382,7 +382,18 @@ $$
 
 Where $L$ is often 0.5, but adjusted for exposed soil
 
-##
+
+## More Downloading
+::: {.smaller}
+1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page.  This should start downloading a zip of the file. 
+2. Do the same for [this other link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM)  
+3. Download this [DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2)(Right-click, save as)
+
+:::
+
+
+
+## NDVI - what is it doing?
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
 ![](img/trees_ndvis.png)
@@ -398,29 +409,75 @@ Image Source: [NASA ARSET](https://appliedsciences.nasa.gov/sites/default/files/
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
-![](img/seasons_ndvi.png)
+![](img/drought_ndvi.png)
 
 ::: {.attribution style="font-size:0.4em"}
 Image Source: [NASA ARSET](https://appliedsciences.nasa.gov/sites/default/files/2023-10/Spectral_Indices_Part1.pdf)
 :::
 :::
 
-##
-::: {.smaller}
-1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) and click the download button at the top of the page.  This should start downloading a zip of the file. 
-2. Unzip them and put them into a new directory in you fire_example, 
-like so 
+
+## What is a spectral index?
+
++ A mathematical equation that is applied on the various spectral bands of an
+image per pixel
++ Simple band ratios that highlight a specific process or property on the land
+surface
++ Reduce effects of atmosphere, instrument noise, sun angle: allows for consistent
+spatial and temporal comparisons [^nasa]
+
+[^nasa]: These definitions come from the NASA ARSET slideshow _Spectral Indices for Land and Aquatic Applications_
+
+
+## Spectral Response Curves
+
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+![](img/exploit_spectral_response.png)
 :::
 
-::: {style="text-align: center;"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+$$
+\text{NBR} = \frac{\text{NIR} - \text{SWIR-2}}{\text{NIR} + \text{SWIR-2}} = \frac{B_8 - B_{12}}{B_8 + B_{12}}
+$$
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+![](img/mendo_fires.png)
+:::
+
+:::
+
+## Back to the exercise
+
+:::: {.columns style="font-size:0.6em"}
+
+::: {.column width="50%"}
+1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.
+
+2. Unzip them and put them into a new directory, called `s2`, in your fire_example
+
+3. Do the same for [this other link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM) but put them into `s2_nbr`
+
+4. Download this [DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2) and put them into the data directory in your fire_example, like so:
+:::
+
+::: {.column width="50%"}
 ```
 fire_example/
 ├── fire_example.qgz
 ├── data/
 │   ├── fire_perimeters.geojson
-│   └── naip.tif
+│   ├── naip.tif
+│   └── dem_1m_6339.tif
 │
-├──s2/
+├── s2/
+│   ├── s2_2016_NBR.tif
+│   └── ...
+│   └── s2_2025_NBR.tif
+│
+├── s2_nbr/
 │   ├── s2_2016.tif
 │   └── ...
 │   └── s2_2025.tif
@@ -428,3 +485,24 @@ fire_example/
 └── docs/
 ```
 :::
+
+::::
+
+## {style="font-size:0.7em"}
+
+5. Using extract selection or extract by attribute, make separate `Coffee` and `River` layers from your `fires in AOI` layer.
+
+6. Spatial Overlays:
+    a. Find the difference between the `River` and `Coffee` layers, call it `river only`
+    b. Find the difference between the `Coffee` and `River` layers, call it `coffee only`
+    c. Find the intersection between the `Coffee` and `River` layers, call it `both`
+
+7. In GeoProcessing Toolbox find "Raster Calculator".
+    a. right click it and select "Execute as Batch Process"
+
+8. Make random points inside of `coffee only` `river only` and `both` using the "Random Points Inside Polygons" tool with:
+    a. Sampling Strategy = point density
+    b. Point Count or Point Density = 0.000001 (this is per m$^{2}$)
+
+9. Install Point Sampling Tool pluggin
+

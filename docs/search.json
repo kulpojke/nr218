@@ -875,18 +875,46 @@
     "text": "\\[\nSAVI = \\frac{(NIR - Red) \\times (1 + L)}{NIR + Red + L}\n\\]\nWhere \\(L\\) is often 0.5, but adjusted for exposed soil"
   },
   {
+    "objectID": "index.html#more-downloading",
+    "href": "index.html#more-downloading",
+    "title": "NR 218",
+    "section": "More Downloading",
+    "text": "More Downloading\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nDo the same for this other link\n\nDownload this DEM(Right-click, save as)"
+  },
+  {
+    "objectID": "index.html#ndvi---what-is-it-doing",
+    "href": "index.html#ndvi---what-is-it-doing",
+    "title": "NR 218",
+    "section": "NDVI - what is it doing?",
+    "text": "NDVI - what is it doing?\n\n\n\nImage Source: NASA ARSET\n\n\n\n\n\n\n\n\nImage Source: NASA ARSET"
+  },
+  {
+    "objectID": "index.html#what-is-a-spectral-index",
+    "href": "index.html#what-is-a-spectral-index",
+    "title": "NR 218",
+    "section": "What is a spectral index?",
+    "text": "What is a spectral index?\n\nA mathematical equation that is applied on the various spectral bands of an image per pixel\nSimple band ratios that highlight a specific process or property on the land surface\nReduce effects of atmosphere, instrument noise, sun angle: allows for consistent spatial and temporal comparisons 1\n\nThese definitions come from the NASA ARSET slideshow Spectral Indices for Land and Aquatic Applications"
+  },
+  {
+    "objectID": "index.html#spectral-response-curves",
+    "href": "index.html#spectral-response-curves",
+    "title": "NR 218",
+    "section": "Spectral Response Curves",
+    "text": "Spectral Response Curves\n\n\n\n\n\n\\[\n\\text{NBR} = \\frac{\\text{NIR} - \\text{SWIR-2}}{\\text{NIR} + \\text{SWIR-2}} = \\frac{B_8 - B_{12}}{B_8 + B_{12}}\n\\]"
+  },
+  {
+    "objectID": "index.html#back-to-the-exercise",
+    "href": "index.html#back-to-the-exercise",
+    "title": "NR 218",
+    "section": "Back to the exercise",
+    "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, like so:\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   └── dem_1m_6339.tif\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
+  },
+  {
     "objectID": "index.html#section-33",
     "href": "index.html#section-33",
     "title": "NR 218",
     "section": "",
-    "text": "Image Source: NASA ARSET\n\n\n\n\n\n\n\n\nImage Source: NASA ARSET"
-  },
-  {
-    "objectID": "index.html#section-34",
-    "href": "index.html#section-34",
-    "title": "NR 218",
-    "section": "",
-    "text": "Open this link and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory in you fire_example, like so\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n│\n├──s2/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
+    "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin"
   },
   {
     "objectID": "w3_house_keeping.html#events",
@@ -1981,17 +2009,45 @@
     "text": "\\[\nSAVI = \\frac{(NIR - Red) \\times (1 + L)}{NIR + Red + L}\n\\]\nWhere \\(L\\) is often 0.5, but adjusted for exposed soil"
   },
   {
+    "objectID": "remote_sensing.html#more-downloading",
+    "href": "remote_sensing.html#more-downloading",
+    "title": "",
+    "section": "More Downloading",
+    "text": "More Downloading\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nDo the same for this other link\n\nDownload this DEM(Right-click, save as)"
+  },
+  {
+    "objectID": "remote_sensing.html#ndvi---what-is-it-doing",
+    "href": "remote_sensing.html#ndvi---what-is-it-doing",
+    "title": "",
+    "section": "NDVI - what is it doing?",
+    "text": "NDVI - what is it doing?\n\n\n\nImage Source: NASA ARSET\n\n\n\n\n\n\n\n\nImage Source: NASA ARSET"
+  },
+  {
+    "objectID": "remote_sensing.html#what-is-a-spectral-index",
+    "href": "remote_sensing.html#what-is-a-spectral-index",
+    "title": "",
+    "section": "What is a spectral index?",
+    "text": "What is a spectral index?\n\nA mathematical equation that is applied on the various spectral bands of an image per pixel\nSimple band ratios that highlight a specific process or property on the land surface\nReduce effects of atmosphere, instrument noise, sun angle: allows for consistent spatial and temporal comparisons 1\n\nThese definitions come from the NASA ARSET slideshow Spectral Indices for Land and Aquatic Applications"
+  },
+  {
+    "objectID": "remote_sensing.html#spectral-response-curves",
+    "href": "remote_sensing.html#spectral-response-curves",
+    "title": "",
+    "section": "Spectral Response Curves",
+    "text": "Spectral Response Curves\n\n\n\n\n\n\\[\n\\text{NBR} = \\frac{\\text{NIR} - \\text{SWIR-2}}{\\text{NIR} + \\text{SWIR-2}} = \\frac{B_8 - B_{12}}{B_8 + B_{12}}\n\\]"
+  },
+  {
+    "objectID": "remote_sensing.html#back-to-the-exercise",
+    "href": "remote_sensing.html#back-to-the-exercise",
+    "title": "",
+    "section": "Back to the exercise",
+    "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, like so:\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   └── dem_1m_6339.tif\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
+  },
+  {
     "objectID": "remote_sensing.html#section-3",
     "href": "remote_sensing.html#section-3",
     "title": "",
     "section": "",
-    "text": "Image Source: NASA ARSET\n\n\n\n\n\n\n\n\nImage Source: NASA ARSET"
-  },
-  {
-    "objectID": "remote_sensing.html#section-4",
-    "href": "remote_sensing.html#section-4",
-    "title": "",
-    "section": "",
-    "text": "Open this link and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory in you fire_example, like so\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n│\n├──s2/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
+    "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin"
   }
 ]
