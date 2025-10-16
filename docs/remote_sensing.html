@@ -598,10 +598,37 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 <li>Sampling Strategy = point density</li>
 <li>Point Count or Point Density = 0.000001 (this is per m<span class="math inline">\(^{2}\)</span>)</li>
 </ol></li>
-<li><p>Install Point Sampling Tool pluggin</p></li>
+<li><p>Install Point Sampling Tool pluggin.</p></li>
 </ol>
-
-
+</section>
+<section id="a-digression-on-creating-red-relief-from-dem" class="slide level2 center">
+<h2>A digression on Creating Red Relief from DEM</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="steps-in-qgis">Steps in QGIS</h3>
+<ol type="1">
+<li><p><strong>Load your DEM</strong> into QGIS</p></li>
+<li><p><strong>Create Hillshade</strong></p>
+<ul>
+<li>Raster → Analysis → Hillshade</li>
+<li>Azimuth: 315°, Altitude: 45°</li>
+<li>Save output</li>
+</ul></li>
+<li><p><strong>Apply Red Relief Style to DEM</strong></p>
+<ul>
+<li>Right-click DEM → Properties → Symbology</li>
+<li>Render type: <strong>Singleband pseudocolor</strong></li>
+<li>Color ramp: Create custom red gradient</li>
+<li>Min value: Black → Max value: Red</li>
+</ul></li>
+<li><p><strong>Blend Layers</strong></p>
+<ul>
+<li>Place hillshade <strong>above</strong> DEM</li>
+<li>Set hillshade <strong>Blending mode</strong>: Multiply</li>
+<li>Adjust hillshade opacity (~50-70%)</li>
+</ul></li>
+</ol>
+</div></div>
 </section></section>
 
     </div>

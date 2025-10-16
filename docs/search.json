@@ -914,7 +914,14 @@
     "href": "index.html#section-33",
     "title": "NR 218",
     "section": "",
-    "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin"
+    "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin."
+  },
+  {
+    "objectID": "index.html#a-digression-on-creating-red-relief-from-dem",
+    "href": "index.html#a-digression-on-creating-red-relief-from-dem",
+    "title": "NR 218",
+    "section": "A digression on Creating Red Relief from DEM",
+    "text": "A digression on Creating Red Relief from DEM\n\n\nSteps in QGIS\n\nLoad your DEM into QGIS\nCreate Hillshade\n\nRaster → Analysis → Hillshade\nAzimuth: 315°, Altitude: 45°\nSave output\n\nApply Red Relief Style to DEM\n\nRight-click DEM → Properties → Symbology\nRender type: Singleband pseudocolor\nColor ramp: Create custom red gradient\nMin value: Black → Max value: Red\n\nBlend Layers\n\nPlace hillshade above DEM\nSet hillshade Blending mode: Multiply\nAdjust hillshade opacity (~50-70%)\n\n\n\nVector and Raster Data\n\n\n\nFinding Acquiring, Creating, and Editing GIS Data\n\n\n\nGeoProcessing and Vector Operations\n\n\n\nGeospatial Data: Satellites, UAVs, GPS\n\n\n\nSpectral Indices and Tabular Joins\n\n\n\nSpatial Joins, Final Project Discussion\n\n\n\nSpatial Analysis Introduction, Final Project Group Discussions\n\n\n\nSpatial Analysis: Map Algebra, Reprojection, Resampling\n\n\n\nRaster Vector Operations, Zonal Statistics, Point Sampling\n\n\n\nRasterizing by Attributes, Georeferencing, Statistics 101\n\n\n\nArcGIS Pro, Spreadsheets\n\n\n\nWeb Mapping, Field Data Collection: Mobile sensors and edge devices\n\n\n\nPhotogrammetry, Radar, Interferometry"
   },
   {
     "objectID": "w3_house_keeping.html#events",
@@ -2048,6 +2055,13 @@
     "href": "remote_sensing.html#section-3",
     "title": "",
     "section": "",
-    "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin"
+    "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin."
+  },
+  {
+    "objectID": "remote_sensing.html#a-digression-on-creating-red-relief-from-dem",
+    "href": "remote_sensing.html#a-digression-on-creating-red-relief-from-dem",
+    "title": "",
+    "section": "A digression on Creating Red Relief from DEM",
+    "text": "A digression on Creating Red Relief from DEM\n\n\nSteps in QGIS\n\nLoad your DEM into QGIS\nCreate Hillshade\n\nRaster → Analysis → Hillshade\nAzimuth: 315°, Altitude: 45°\nSave output\n\nApply Red Relief Style to DEM\n\nRight-click DEM → Properties → Symbology\nRender type: Singleband pseudocolor\nColor ramp: Create custom red gradient\nMin value: Black → Max value: Red\n\nBlend Layers\n\nPlace hillshade above DEM\nSet hillshade Blending mode: Multiply\nAdjust hillshade opacity (~50-70%)"
   }
 ]

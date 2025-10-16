@@ -508,5 +508,31 @@ fire_example/
     a. Sampling Strategy = point density
     b. Point Count or Point Density = 0.000001 (this is per m$^{2}$)
 
-9. Install Point Sampling Tool pluggin
+9. Install Point Sampling Tool pluggin.
+
+## A digression on Creating Red Relief from DEM
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### Steps in QGIS
+
+1. **Load your DEM** into QGIS
+
+2. **Create Hillshade**
+   - Raster → Analysis → Hillshade
+   - Azimuth: 315°, Altitude: 45°
+   - Save output
+
+3. **Apply Red Relief Style to DEM**
+   - Right-click DEM → Properties → Symbology
+   - Render type: **Singleband pseudocolor**
+   - Color ramp: Create custom red gradient
+   - Min value: Black → Max value: Red
+
+4. **Blend Layers**
+   - Place hillshade **above** DEM
+   - Set hillshade **Blending mode**: Multiply
+   - Adjust hillshade opacity (~50-70%)
+:::
 
