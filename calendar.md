@@ -137,7 +137,7 @@ Here's the table with the Week column containing just the integer week values:
 | October 13   | 4    | Remote Sensing 1 | chapters 7 and 8 | |
 | October 15   | 4    | Remote Sensing 2: Spectral Indices, Elevation Data  | | [Final Project Brainstorm Due](final_proj.md) |
 | October 20   | 5    | Spatial Analysis: Map Algebra, Reprojection, Resampling;  Final Project Discussion | chapters 9 and 10 | [Project 2](project_2.html) |
-| October 22   | 5    | Spatial Analysis Introduction | |  |
+| October 22   | 5    | Spatial Analysis Continued | |  |
 | October 27   | 6    | Remote Sensing 3: SAR, Lidar, GPS | | |
 | October 29   | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling | | [Final Project Outline Due](final_proj.md) |
 | November 3   | 7    | Rasterizing by Attributes, Georeferencing, Statistics 101 | | |

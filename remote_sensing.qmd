@@ -388,7 +388,6 @@ Where $L$ is often 0.5, but adjusted for exposed soil
 1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page.  This should start downloading a zip of the file. 
 2. Do the same for [this other link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM)  
 3. Download this [DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2)(Right-click, save as)
-
 :::
 
 
@@ -465,6 +464,8 @@ $$
 3. Do the same for [this other link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM) but put them into `s2_nbr`
 
 4. Download this [DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2) and put them into the data directory in your fire_example, as seen to the right.
+
+5. Finally, download this [Land use](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EcppyDdlx-lDggbCMv4zEXMBH_ps-0EcglHWZgZXUz1dsg?e=FQ1REl) raster and save.
 :::
 
 ::: {.column width="50%"}
@@ -474,7 +475,9 @@ fire_example/
 ├── data/
 │   ├── fire_perimeters.geojson
 │   ├── naip.tif
-│   └── dem_1m_6339.tif
+│   ├── dem_1m_6339.tif
+│   └── 2016...classification.tiff
+│
 │
 ├── s2/
 │   ├── s2_2016_NBR.tif
@@ -623,11 +626,45 @@ Resampling is adjusting the pixel size or resolution of raster data in order to:
 :::
 
 
+## Raster Resampling - Methods {style="font-size:0.6em"}
+
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+__Nearest Neighbor Resampling__
+
+- The new raster pixels get the value from nearest pixel of the original raster to the center of the new pixel.
+- Note that some of the values are lost this way (particularly in downsampling), since they were not passed on to the new raster
+
+![](img/resamp_nn.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+__bilinear resampling__
+
+- Each new raster cell gets a weighted average of four nearest cells from the input, rather than just one
+- Less loss of information
+
+![](img/resamp_bilin.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+__Average resampling__
+
+- Each new cell gets the (non-weighted) average of all overlapping input cells
+
+![](img/resamp_avg.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+:::
+
+
 ## Raster Resampling {style="font-size:0.6em"}
 
 ::: { .r-stack}
 ::: {.fragment .absolute .fade-out data-fragment-index="1"}
-There are two tools for resampling 
+There are two$^*$ tools for resampling in QGIS
 
 ::: {.columns}
 ::: {.column width="%"}
@@ -639,11 +676,11 @@ There are two tools for resampling
 :::
 
 :::
-
-
-
-
+[* Actually there are others, notably if Grass is installed its tools are also available.]{style="font-size:0.5em"}
 :::
+
+
+
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
 | Feature | QGIS Align Rasters | GDAL Warp |
@@ -674,19 +711,19 @@ There are two tools for resampling
 ::: {.column width="40%"}
 ::: { .r-stack}
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+::: {.fragment .fade-in-then-out data-fragment-index="1" style="font-size:0.7em"}
 Just like vector data, we need to reproject rasters if we’re to do accurate analysis. 
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+::: {.fragment .fade-in-then-out data-fragment-index="2" style="font-size:0.7em"}
 The goal is to realign the pixels, without changing their values.
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+::: {.fragment .fade-in-then-out data-fragment-index="3" style="font-size:0.7em"}
 The goal is to realign the pixels, without changing their values.
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+::: {.fragment .fade-in-then-out data-fragment-index="4" style="font-size:0.7em"}
 What happens in the reprojection can be thought of as a two-step process
 
 1. The pixel outlines are reprojected as if they were polygons
@@ -724,4 +761,3 @@ What happens in the reprojection can be thought of as a two-step process
 
 :::
 :::
-

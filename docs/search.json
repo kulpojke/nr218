@@ -907,7 +907,7 @@
     "href": "index.html#back-to-the-exercise",
     "title": "NR 218",
     "section": "Back to the exercise",
-    "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, as seen to the right.\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   └── dem_1m_6339.tif\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
+    "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, as seen to the right.\nFinally, download this Land use raster and save.\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   ├── dem_1m_6339.tif\n│   └── 2016...classification.tiff\n│\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
   },
   {
     "objectID": "index.html#section-33",
@@ -952,11 +952,18 @@
     "text": "Raster Resampling\n\nResampling is adjusting the pixel size or resolution of raster data in order to:\n\nMatch resolutions - So multiple rasters will align1 for analyisis (e.g., NDVI and elevation)\nDownsample - Reduce resolution for faster processing\n\n\n\n\n\nUpsample - Increase resolution for finer analyses (though it won’t create new information)\n\n\n\n\n\n\n\n\nResampling does not , by definition, align pixels between rasters, but alignment is included in many resampling algorithms."
   },
   {
+    "objectID": "index.html#raster-resampling---methods",
+    "href": "index.html#raster-resampling---methods",
+    "title": "NR 218",
+    "section": "Raster Resampling - Methods",
+    "text": "Raster Resampling - Methods\n\n\nNearest Neighbor Resampling\n\nThe new raster pixels get the value from nearest pixel of the original raster to the center of the new pixel.\nNote that some of the values are lost this way (particularly in downsampling), since they were not passed on to the new raster\n\n\n\n\nbilinear resampling\n\nEach new raster cell gets a weighted average of four nearest cells from the input, rather than just one\nLess loss of information\n\n\n\n\nAverage resampling\n\nEach new cell gets the (non-weighted) average of all overlapping input cells"
+  },
+  {
     "objectID": "index.html#raster-resampling-1",
     "href": "index.html#raster-resampling-1",
     "title": "NR 218",
     "section": "Raster Resampling",
-    "text": "Raster Resampling\n\n\nThere are two tools for resampling\n\n\n\n\n\n\n\n\n\n\n\nFeature\nQGIS Align Rasters\nGDAL Warp\n\n\n\n\nAlign to grid\n✅ Yes (to reference)\n✅ Yes (to round coords)\n\n\nResample\n✅ Yes\n✅ Yes\n\n\nMatch resolution\n✅ Yes\n⚠️ Only if specified\n\n\nMatch extent\n✅ Yes\n⚠️ Only if specified\n\n\nGrid type\nReference raster\nInteger/round coordinates\n\n\n\n\n\n\nQGIS Align Rasters\nGDAL Warp is more flexible\n\nIt can reproject\nIt can clip to an extent\n\nIt is a useful command line tool"
+    "text": "Raster Resampling\n\n\nThere are two\\(^*\\) tools for resampling in QGIS\n\n\n\n\n\n\n* Actually there are others, notably if Grass is installed its tools are also available.\n\n\n\n\n\nFeature\nQGIS Align Rasters\nGDAL Warp\n\n\n\n\nAlign to grid\n✅ Yes (to reference)\n✅ Yes (to round coords)\n\n\nResample\n✅ Yes\n✅ Yes\n\n\nMatch resolution\n✅ Yes\n⚠️ Only if specified\n\n\nMatch extent\n✅ Yes\n⚠️ Only if specified\n\n\nGrid type\nReference raster\nInteger/round coordinates\n\n\n\n\n\n\nQGIS Align Rasters\nGDAL Warp is more flexible\n\nIt can reproject\nIt can clip to an extent\n\nIt is a useful command line tool"
   },
   {
     "objectID": "index.html#raster-resampling-2",
@@ -2097,7 +2104,7 @@
     "href": "remote_sensing.html#back-to-the-exercise",
     "title": "",
     "section": "Back to the exercise",
-    "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, as seen to the right.\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   └── dem_1m_6339.tif\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
+    "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, as seen to the right.\nFinally, download this Land use raster and save.\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   ├── dem_1m_6339.tif\n│   └── 2016...classification.tiff\n│\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
   },
   {
     "objectID": "remote_sensing.html#section-3",
@@ -2142,11 +2149,18 @@
     "text": "Raster Resampling\n\nResampling is adjusting the pixel size or resolution of raster data in order to:\n\nMatch resolutions - So multiple rasters will align1 for analyisis (e.g., NDVI and elevation)\nDownsample - Reduce resolution for faster processing\n\n\n\n\n\nUpsample - Increase resolution for finer analyses (though it won’t create new information)\n\n\n\n\n\n\n\n\nResampling does not , by definition, align pixels between rasters, but alignment is included in many resampling algorithms."
   },
   {
+    "objectID": "remote_sensing.html#raster-resampling---methods",
+    "href": "remote_sensing.html#raster-resampling---methods",
+    "title": "",
+    "section": "Raster Resampling - Methods",
+    "text": "Raster Resampling - Methods\n\n\nNearest Neighbor Resampling\n\nThe new raster pixels get the value from nearest pixel of the original raster to the center of the new pixel.\nNote that some of the values are lost this way (particularly in downsampling), since they were not passed on to the new raster\n\n\n\n\nbilinear resampling\n\nEach new raster cell gets a weighted average of four nearest cells from the input, rather than just one\nLess loss of information\n\n\n\n\nAverage resampling\n\nEach new cell gets the (non-weighted) average of all overlapping input cells"
+  },
+  {
     "objectID": "remote_sensing.html#raster-resampling-1",
     "href": "remote_sensing.html#raster-resampling-1",
     "title": "",
     "section": "Raster Resampling",
-    "text": "Raster Resampling\n\n\nThere are two tools for resampling\n\n\n\n\n\n\n\n\n\n\n\nFeature\nQGIS Align Rasters\nGDAL Warp\n\n\n\n\nAlign to grid\n✅ Yes (to reference)\n✅ Yes (to round coords)\n\n\nResample\n✅ Yes\n✅ Yes\n\n\nMatch resolution\n✅ Yes\n⚠️ Only if specified\n\n\nMatch extent\n✅ Yes\n⚠️ Only if specified\n\n\nGrid type\nReference raster\nInteger/round coordinates\n\n\n\n\n\n\nQGIS Align Rasters\nGDAL Warp is more flexible\n\nIt can reproject\nIt can clip to an extent\n\nIt is a useful command line tool"
+    "text": "Raster Resampling\n\n\nThere are two\\(^*\\) tools for resampling in QGIS\n\n\n\n\n\n\n* Actually there are others, notably if Grass is installed its tools are also available.\n\n\n\n\n\nFeature\nQGIS Align Rasters\nGDAL Warp\n\n\n\n\nAlign to grid\n✅ Yes (to reference)\n✅ Yes (to round coords)\n\n\nResample\n✅ Yes\n✅ Yes\n\n\nMatch resolution\n✅ Yes\n⚠️ Only if specified\n\n\nMatch extent\n✅ Yes\n⚠️ Only if specified\n\n\nGrid type\nReference raster\nInteger/round coordinates\n\n\n\n\n\n\nQGIS Align Rasters\nGDAL Warp is more flexible\n\nIt can reproject\nIt can clip to an extent\n\nIt is a useful command line tool"
   },
   {
     "objectID": "remote_sensing.html#raster-resampling-2",
