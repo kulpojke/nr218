@@ -134,11 +134,11 @@ Here's the table with the Week column containing just the integer week values:
 | October 1    | 2    | Vector and Raster Data | | |
 | October 6    | 3    | Finding Acquiring, Creating, and Editing GIS Data| chapters 5 and 6 | [Project 1](project_1.html) |
 | October 8    | 3    | GeoProcessing and Vector Operations | | |
-| October 13   | 4    | Remotely Sensing 1 | chapters 7 and 8 | |
-| October 15   | 4    | Remotely Sensing 2: Spectral Indices, Elevation Data  | | [Final Project Brainstorm Due](final_proj.md) |
-| October 20   | 5    | Remotely Sensing 3: SAR, Lidar, GPS;  Final Project Discussion | chapters 9 and 10 | [Project 2](project_2.html) |
-| October 22   | 5    | Spatial Analysis Introduction, Final Project Group Discussions | |  |
-| October 27   | 6    | Spatial Analysis: Map Algebra, Reprojection, Resampling | | |
+| October 13   | 4    | Remote Sensing 1 | chapters 7 and 8 | |
+| October 15   | 4    | Remote Sensing 2: Spectral Indices, Elevation Data  | | [Final Project Brainstorm Due](final_proj.md) |
+| October 20   | 5    | Spatial Analysis: Map Algebra, Reprojection, Resampling;  Final Project Discussion | chapters 9 and 10 | [Project 2](project_2.html) |
+| October 22   | 5    | Spatial Analysis Introduction | |  |
+| October 27   | 6    | Remote Sensing 3: SAR, Lidar, GPS | | |
 | October 29   | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling | | [Final Project Outline Due](final_proj.md) |
 | November 3   | 7    | Rasterizing by Attributes, Georeferencing, Statistics 101 | | |
 | November 5   | 7    | GEE, Spreadsheets | | Project 3 |
