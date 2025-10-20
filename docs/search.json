@@ -949,11 +949,18 @@
     "href": "index.html#raster-resampling",
     "title": "NR 218",
     "section": "Raster Resampling",
-    "text": "Raster Resampling\n\nResampling is adjusting the pixel size or resolution of raster data in order to:\n\nMatch resolutions - So multiple rasters will align for analyisis (e.g., NDVI and elevation) 1\nDownsample - Reduce resolution for faster processing\n\n\n\n\n\nUpsample - Increase resolution for finer analyses (though it won’t create new information)\n\n\n\n\n\n\n\n\nResampling does not necessarily align pixels between rasters, though this option can be specified in certain resampling algorithms."
+    "text": "Raster Resampling\n\nResampling is adjusting the pixel size or resolution of raster data in order to:\n\nMatch resolutions - So multiple rasters will align1 for analyisis (e.g., NDVI and elevation)\nDownsample - Reduce resolution for faster processing\n\n\n\n\n\nUpsample - Increase resolution for finer analyses (though it won’t create new information)\n\n\n\n\n\n\n\n\nResampling does not , by definition, align pixels between rasters, but alignment is included in many resampling algorithms."
   },
   {
     "objectID": "index.html#raster-resampling-1",
     "href": "index.html#raster-resampling-1",
+    "title": "NR 218",
+    "section": "Raster Resampling",
+    "text": "Raster Resampling\n\n\nThere are two tools for resampling\n\n\n\n\n\n\n\n\n\n\n\nFeature\nQGIS Align Rasters\nGDAL Warp\n\n\n\n\nAlign to grid\n✅ Yes (to reference)\n✅ Yes (to round coords)\n\n\nResample\n✅ Yes\n✅ Yes\n\n\nMatch resolution\n✅ Yes\n⚠️ Only if specified\n\n\nMatch extent\n✅ Yes\n⚠️ Only if specified\n\n\nGrid type\nReference raster\nInteger/round coordinates\n\n\n\n\n\n\nQGIS Align Rasters\nGDAL Warp is more flexible\n\nIt can reproject\nIt can clip to an extent\n\nIt is a useful command line tool"
+  },
+  {
+    "objectID": "index.html#raster-resampling-2",
+    "href": "index.html#raster-resampling-2",
     "title": "NR 218",
     "section": "Raster Resampling",
     "text": "Raster Resampling"
@@ -2132,11 +2139,18 @@
     "href": "remote_sensing.html#raster-resampling",
     "title": "",
     "section": "Raster Resampling",
-    "text": "Raster Resampling\n\nResampling is adjusting the pixel size or resolution of raster data in order to:\n\nMatch resolutions - So multiple rasters will align for analyisis (e.g., NDVI and elevation) 1\nDownsample - Reduce resolution for faster processing\n\n\n\n\n\nUpsample - Increase resolution for finer analyses (though it won’t create new information)\n\n\n\n\n\n\n\n\nResampling does not necessarily align pixels between rasters, though this option can be specified in certain resampling algorithms."
+    "text": "Raster Resampling\n\nResampling is adjusting the pixel size or resolution of raster data in order to:\n\nMatch resolutions - So multiple rasters will align1 for analyisis (e.g., NDVI and elevation)\nDownsample - Reduce resolution for faster processing\n\n\n\n\n\nUpsample - Increase resolution for finer analyses (though it won’t create new information)\n\n\n\n\n\n\n\n\nResampling does not , by definition, align pixels between rasters, but alignment is included in many resampling algorithms."
   },
   {
     "objectID": "remote_sensing.html#raster-resampling-1",
     "href": "remote_sensing.html#raster-resampling-1",
+    "title": "",
+    "section": "Raster Resampling",
+    "text": "Raster Resampling\n\n\nThere are two tools for resampling\n\n\n\n\n\n\n\n\n\n\n\nFeature\nQGIS Align Rasters\nGDAL Warp\n\n\n\n\nAlign to grid\n✅ Yes (to reference)\n✅ Yes (to round coords)\n\n\nResample\n✅ Yes\n✅ Yes\n\n\nMatch resolution\n✅ Yes\n⚠️ Only if specified\n\n\nMatch extent\n✅ Yes\n⚠️ Only if specified\n\n\nGrid type\nReference raster\nInteger/round coordinates\n\n\n\n\n\n\nQGIS Align Rasters\nGDAL Warp is more flexible\n\nIt can reproject\nIt can clip to an extent\n\nIt is a useful command line tool"
+  },
+  {
+    "objectID": "remote_sensing.html#raster-resampling-2",
+    "href": "remote_sensing.html#raster-resampling-2",
     "title": "",
     "section": "Raster Resampling",
     "text": "Raster Resampling"

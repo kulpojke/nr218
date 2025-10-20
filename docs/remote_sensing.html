@@ -686,7 +686,7 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 <div style="font-size:0.7em">
 <p>Resampling is adjusting the pixel size or resolution of raster data in order to:</p>
 <ul>
-<li><strong>Match resolutions</strong> - So multiple rasters will align for analyisis (e.g., NDVI and elevation) <sup>1</sup></li>
+<li><strong>Match resolutions</strong> - So multiple rasters will align<sup>1</sup> for analyisis (e.g., NDVI and elevation)</li>
 <li><strong>Downsample</strong> - Reduce resolution for faster processing</li>
 </ul>
 <div style="margin-left: 2em;">
@@ -702,8 +702,71 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>Resampling does not necessarily align pixels between rasters, though this option can be specified in certain resampling algorithms.</p></li></ol></aside></section>
-<section id="raster-resampling-1" class="slide level2 center">
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Resampling does not , by definition, align pixels between rasters, but alignment is included in many resampling algorithms.</p></li></ol></aside></section>
+<section id="raster-resampling-1" class="slide level2 center" style="font-size:0.6em">
+<h2>Raster Resampling</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<p>There are two tools for resampling</p>
+<div class="columns">
+<div class="column" style="width:%;">
+<p><img data-src="img/resamp_menu2.png"></p>
+</div><div class="column" style="width:%;">
+<p><img data-src="img/resamp_menu.png"></p>
+</div></div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>QGIS Align Rasters</th>
+<th>GDAL Warp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Align to grid</td>
+<td>✅ Yes (to reference)</td>
+<td>✅ Yes (to round coords)</td>
+</tr>
+<tr class="even">
+<td>Resample</td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+</tr>
+<tr class="odd">
+<td>Match resolution</td>
+<td>✅ Yes</td>
+<td>⚠️ Only if specified</td>
+</tr>
+<tr class="even">
+<td>Match extent</td>
+<td>✅ Yes</td>
+<td>⚠️ Only if specified</td>
+</tr>
+<tr class="odd">
+<td>Grid type</td>
+<td>Reference raster</td>
+<td>Integer/round coordinates</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<ul>
+<li>QGIS Align Rasters</li>
+<li>GDAL Warp is more flexible
+<ul>
+<li>It can reproject</li>
+<li>It can clip to an extent</li>
+</ul></li>
+<li>It is a useful command line tool</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="raster-resampling-2" class="slide level2 center">
 <h2>Raster Resampling</h2>
 </section>
 <section id="raster-reprojection-warping" class="slide level2 center">

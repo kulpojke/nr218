@@ -603,7 +603,7 @@ Better yet, Red Relief!
 ::: {style="font-size:0.7em"}
 Resampling is adjusting the pixel size or resolution of raster data in order to:
 
-+ __Match resolutions__ - So multiple rasters will align for analyisis (e.g., NDVI and elevation) [^match]
++ __Match resolutions__ - So multiple rasters will align[^match] for analyisis (e.g., NDVI and elevation) 
 + __Downsample__ - Reduce resolution for faster processing
 
 ::: {style="margin-left: 2em;"}
@@ -617,7 +617,50 @@ Resampling is adjusting the pixel size or resolution of raster data in order to:
 :::
 
 ::: {style="font-size:0.5em"}
-[^match]: Resampling does not necessarily align pixels between rasters, though this option can be specified in certain resampling algorithms.
+[^match]: Resampling  does not , by definition, align pixels between rasters, but alignment is included in many resampling algorithms.
+:::
+
+:::
+
+
+## Raster Resampling {style="font-size:0.6em"}
+
+::: { .r-stack}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+There are two tools for resampling 
+
+::: {.columns}
+::: {.column width="%"}
+![](img/resamp_menu2.png)
+:::
+
+::: {.column width="%"}
+![](img/resamp_menu.png)
+:::
+
+:::
+
+
+
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+| Feature | QGIS Align Rasters | GDAL Warp |
+|---------|-------------------|-----------------|
+| Align to grid | ✅ Yes (to reference) | ✅ Yes (to round coords) |
+| Resample | ✅ Yes | ✅ Yes |
+| Match resolution | ✅ Yes | ⚠️ Only if specified |
+| Match extent | ✅ Yes | ⚠️ Only if specified |
+| Grid type | Reference raster | Integer/round coordinates |
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
++ QGIS Align Rasters
++ GDAL Warp is more flexible
+    + It can reproject
+    + It can clip to an extent
++ It is a useful command line tool
 :::
 
 :::
