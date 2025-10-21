@@ -762,3 +762,68 @@ What happens in the reprojection can be thought of as a two-step process
 
 :::
 :::
+
+## Raster Reprojection using GDAL Warp
+
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1" style="font-size:0.7em"}
+
+1. In QGIS open dw_2025. 
+    a. Look at the CRS
+    b. Look at the resolution.
+
+2. In the symbology tab, at the bottom left there is a style dropdown.
+    a. select "Load Style..." use the browser to open the `dw_style.qml` file from the `dynamic_world` folder
+    b. Apply
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.7em"}
+Reproject dw_2025 using GDAL Warp (`Processing Toolbox: GDAL → Raster projection → Warp`)
+
++ Leave Source CRS blank (In "Input layer" you can see that the CRS is recognized)
++ Set Target CRS to EPSG:6339
++ Use average resampling
++ Set " Output file resolution in target georeferenced units" to 10
+    + What are the target georeferenced units?
++ Leave the rest as defaults, including  "[save to temporary Layer]"
+
+__Compare the results to the original. Do you see any problems?__
+
+:::
+
+::: {.fragment  .fade-in-then-out data-fragment-index="2" style="font-size:0.7em"}
+Why is this margin of different land cover appearing?
+
+::: {.columns}
+::: {.column width="%"}
+![](img/original.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.column width="%"}
+![](img/reproj_avg_bad.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+:::
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+Try again, what resampling method should you use?
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+::: {.columns}
+::: {.column width="%"}
+![](img/original.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.column width="%"}
+![](img/reproj_nn.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+:::
+
+:::
+
+
+:::

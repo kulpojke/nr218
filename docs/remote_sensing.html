@@ -841,6 +841,59 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 </div>
 </div>
 </div></div>
+</section>
+<section id="raster-reprojection-using-gdal-warp" class="slide level2 center">
+<h2>Raster Reprojection using GDAL Warp</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="font-size:0.7em">
+<ol type="1">
+<li>In QGIS open dw_2025.
+<ol type="a">
+<li>Look at the CRS</li>
+<li>Look at the resolution.</li>
+</ol></li>
+<li>In the symbology tab, at the bottom left there is a style dropdown.
+<ol type="a">
+<li>select “Load Style…” use the browser to open the <code>dw_style.qml</code> file from the <code>dynamic_world</code> folder</li>
+<li>Apply</li>
+</ol></li>
+</ol>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="font-size:0.7em">
+<p>Reproject dw_2025 using GDAL Warp (<code>Processing Toolbox: GDAL → Raster projection → Warp</code>)</p>
+<ul>
+<li>Leave Source CRS blank (In “Input layer” you can see that the CRS is recognized)</li>
+<li>Set Target CRS to EPSG:6339</li>
+<li>Use average resampling</li>
+<li>Set ” Output file resolution in target georeferenced units” to 10
+<ul>
+<li>What are the target georeferenced units?</li>
+</ul></li>
+<li>Leave the rest as defaults, including “[save to temporary Layer]”</li>
+</ul>
+<p><strong>Compare the results to the original. Do you see any problems?</strong></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2" style="font-size:0.7em">
+<p>Why is this margin of different land cover appearing?</p>
+<div class="columns">
+<div class="column" style="width:%;">
+<p><img data-src="img/original.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div><div class="column" style="width:%;">
+<p><img data-src="img/reproj_avg_bad.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div></div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
+<p>Try again, what resampling method should you use?</p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="">
+<div class="columns">
+<div class="column" style="width:%;">
+<p><img data-src="img/original.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div><div class="column" style="width:%;">
+<p><img data-src="img/reproj_nn.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div></div>
+</div>
+</div>
 
 
 </section></section>
