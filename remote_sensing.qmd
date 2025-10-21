@@ -503,6 +503,7 @@ fire_example/
     a. Find the difference between the `River` and `Coffee` layers, call it `river only`
     b. Find the difference between the `Coffee` and `River` layers, call it `coffee only`
     c. Find the intersection between the `Coffee` and `River` layers, call it `both`
+    d. __Use the AOI and the three layers you just found to make a polygon called `unburned`, i.e neither.__
 
 7. In GeoProcessing Toolbox find "Raster Calculator".
     a. right click it and select "Execute as Batch Process"

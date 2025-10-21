@@ -914,7 +914,7 @@
     "href": "index.html#section-33",
     "title": "NR 218",
     "section": "",
-    "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin."
+    "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\nUse the AOI and the three layers you just found to make a polygon called unburned, i.e neither.\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin."
   },
   {
     "objectID": "index.html#a-digression---visualizing-elevation",
@@ -2111,7 +2111,7 @@
     "href": "remote_sensing.html#section-3",
     "title": "",
     "section": "",
-    "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin."
+    "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\nUse the AOI and the three layers you just found to make a polygon called unburned, i.e neither.\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin."
   },
   {
     "objectID": "remote_sensing.html#a-digression---visualizing-elevation",
