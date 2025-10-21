@@ -518,7 +518,7 @@ fire_example/
 
 ::: {.r-stack}
 
-::: {.fragment .fade-in-then-out data-fragment-index="1" style="font-size:0.7em;"}
+::: {.fragment .fade-out data-fragment-index="1" style="font-size:0.7em;"}
 ::: {style="text-align: center;"}
 DEMs are fundamental to many types of analysis, but not great to look at.
 
@@ -526,7 +526,7 @@ DEMs are fundamental to many types of analysis, but not great to look at.
 :::
 :::
 
-::: {.fragment .fade-in-then-out data-fragment-index="2" style="font-size:0.7em;"}
+::: {.fragment .fade-in-then-out data-fragment-index="1" style="font-size:0.7em;"}
 ::: {style="text-align: center;"}
 Slope Maps are a little better.
 
@@ -536,7 +536,7 @@ Slope Maps are a little better.
 :::
 :::
 
-::: {.fragment .fade-in-then-out data-fragment-index="3" style="font-size:0.7em;"}
+::: {.fragment .fade-in-then-out data-fragment-index="2" style="font-size:0.7em;"}
 ::: {style="text-align: center;"}
 Hillshade maps are much better
 
@@ -546,7 +546,7 @@ Hillshade maps are much better
 :::
 :::
 
-::: {.fragment .fade-in-then-out data-fragment-index="4" style="font-size:0.7em;"}
+::: {.fragment .fade-in-then-out data-fragment-index="3" style="font-size:0.7em;"}
 ::: {style="text-align: center;"}
 Better yet, Red Relief!
 
