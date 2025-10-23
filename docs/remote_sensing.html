@@ -6,7 +6,9 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
   <title>remote_sensing</title>
@@ -846,13 +848,14 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 <h2>Raster Reprojection using GDAL Warp</h2>
 <div class="r-stack">
 <div class="fragment absolute fade-out" data-fragment-index="1" style="font-size:0.7em">
-<ol type="1">
-<li>In QGIS open dw_2025.
+<ol start="0" type="1">
+<li><p>Download <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EdgBHLPzgANIkCbXNrV4ezoBFWEp9jQzWmIp1js7SUsPhg?e=1r3ifc">dw_2025.tif</a> and <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EVeMfAwzkw5PqQ8KlJxY73wBSm8B23Zymz5RAFje821Jfw?e=vIZ0rz">dw_20218.tif</a> as well as <a href="">dw_style.qml</a>https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EXMEE6bR85VMkOPotG9dk6sBbr2JQx2QNFtsR9-0OAIQfg?e=aa09WA</p></li>
+<li><p>In QGIS open dw_2025.</p>
 <ol type="a">
 <li>Look at the CRS</li>
 <li>Look at the resolution.</li>
 </ol></li>
-<li>In the symbology tab, at the bottom left there is a style dropdown.
+<li><p>In the symbology tab, at the bottom left there is a style dropdown.</p>
 <ol type="a">
 <li>select “Load Style…” use the browser to open the <code>dw_style.qml</code> file from the <code>dynamic_world</code> folder</li>
 <li>Apply</li>
@@ -882,16 +885,33 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 <p><img data-src="img/reproj_avg_bad.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
 </div></div>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="font-size:0.7em">
 <p>Try again, what resampling method should you use?</p>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="font-size:0.7em">
 <div class="columns">
 <div class="column" style="width:%;">
 <p><img data-src="img/original.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
 </div><div class="column" style="width:%;">
 <p><img data-src="img/reproj_nn.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
 </div></div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="5" style="font-size:0.7em">
+<ul>
+<li>Save the reprojected layer <code>dw_2025_6339.tif</code>.</li>
+<li>Reproject dw_2018 in the same way (save as <code>dw_2018_6339.tif</code>)</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="6" style="font-size:0.7em">
+<ul>
+<li>Use <code>Raster Tools --&gt; Align Rasters</code> to align <code>dw_2018_6339.tif</code> and <code>dem_1m_6339.tif</code> to dw_2025_6339 (use appropriate resample methods).</li>
+</ul>
+<video id="video_shortcode_videojs_video1" width="80%" class="video-js vjs-default-skin " controls="" preload="auto" data-setup="{}" title=""><source src="img/align.webm"></video>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="7" style="font-size:0.7em">
+<ul>
+<li>Now use the the Raster Calculator to Find areas that were Trees in 2018, but not in 2025.</li>
+</ul>
 </div>
 </div>
 
@@ -1298,6 +1318,7 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
       }
     });
     </script>
+    <script>videojs(video_shortcode_videojs_video1);</script>
     
 
 </body></html>

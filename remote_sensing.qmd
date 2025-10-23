@@ -769,6 +769,8 @@ What happens in the reprojection can be thought of as a two-step process
 
 ::: {.fragment .absolute .fade-out data-fragment-index="1" style="font-size:0.7em"}
 
+0. Download [dw_2025.tif](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EdgBHLPzgANIkCbXNrV4ezoBFWEp9jQzWmIp1js7SUsPhg?e=1r3ifc) and [dw_20218.tif](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EVeMfAwzkw5PqQ8KlJxY73wBSm8B23Zymz5RAFje821Jfw?e=vIZ0rz) as well as [dw_style.qml]()https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EXMEE6bR85VMkOPotG9dk6sBbr2JQx2QNFtsR9-0OAIQfg?e=aa09WA
+
 1. In QGIS open dw_2025. 
     a. Look at the CRS
     b. Look at the resolution.
@@ -808,11 +810,11 @@ Why is this margin of different land cover appearing?
 
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3" style="font-size:0.7em"}
 Try again, what resampling method should you use?
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4" style="font-size:0.7em"}
 ::: {.columns}
 ::: {.column width="%"}
 ![](img/original.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
@@ -825,5 +827,19 @@ Try again, what resampling method should you use?
 
 :::
 
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5" style="font-size:0.7em"}
++ Save the reprojected layer `dw_2025_6339.tif`.
++ Reproject dw_2018 in the same way (save as `dw_2018_6339.tif`)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="6" style="font-size:0.7em"}
++ Use `Raster Tools --> Align Rasters` to align `dw_2018_6339.tif` and `dem_1m_6339.tif` to dw_2025_6339 (use appropriate resample methods).
+
+{{< video img/align.webm width="80%" style="max-height: 70vh; object-fit: contain;" >}}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="7" style="font-size:0.7em"}
++ Now use the the Raster Calculator to Find areas that were Trees in 2018, but not in 2025.
+:::
 
 :::
