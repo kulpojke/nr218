@@ -138,14 +138,14 @@ Here's the table with the Week column containing just the integer week values:
 | October 15   | 4    | Remote Sensing 2: Spectral Indices, Elevation Data  | | [Final Project Brainstorm Due](final_proj.md) |
 | October 20   | 5    | Spatial Analysis: Map Algebra, Reprojection, Resampling;  Final Project Discussion | chapters 9 and 10 | [Project 2](project_2.html) |
 | October 22   | 5    | Spatial Analysis Continued | |  |
-| October 27   | 6    | Remote Sensing 3: SAR, Lidar, GPS | | |
-| October 29   | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling | | [Final Project Outline Due](final_proj.md) |
-| November 3   | 7    | Rasterizing by Attributes, Georeferencing, Statistics 101 | | |
+| October 27   | 6    | Statistics 101, Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | | |
+| October 29   | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling, continued | | [Final Project Outline Due](final_proj.md) |
+| November 3   | 7    | Rasterizing by Attributes, Georeferencing | | |
 | November 5   | 7    | GEE, Spreadsheets | | [Project 3](project_3.md) |
 | November 10  | 8    | Web Mapping, Field Data Collection: Mobile sensors and edge devices | | |
 | November 11  | 8    | Academic holiday - Veterans Day observed | | |
 | November 12  | 8    | No Class | | |
-| November 17  | 9    | Advanced Topics: Photogrammetry, Radar, Interferometry | | |
+| November 17  | 9    | Advanced Topics: GPS, Lidar, Photogrammetry, Radar, Interferometry | | |
 | November 19  | 9    | Real World Applications and Careers - Guest Lectures| | |
 | November 24  |      | Fall Break | | |
 | November 26  |      | Fall Break | | |
