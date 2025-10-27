@@ -1,3 +1,10 @@
+---
+title: ""
+format: 
+  html:
+    theme: cyborg
+---
+
 # NR 218 Project 3: Raster Data Analysis
 
 ## Learning Goals: 
@@ -19,7 +26,7 @@
 
 ## Project Work [6 pts]
 
-For the next questions, you will need to download the SPR Elevation Data, available in the Week 4 folder in canvas, and here, and use it with existing SPR Vector Data, available in the Week 1 folder in canvas, and here, in order to answer the following questions: 
+For the next questions, you will need to download the SPR [Elevation Data](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EXsEcn283Z9OlNPK86hUMQIBHWUHgcDk8WLwQKH7XKalGg?e=qMW97K) use it with existing [SPR Vector Data](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/SPR_data.zip) in order to answer the following questions: 
 
 1. Report the minimum, maximum, mean, and median elevation within the boundary of Swanton Ranch, as defined in sprBoundary.geojson? 
 
