@@ -839,7 +839,9 @@ Try again, what resampling method should you use?
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="7" style="font-size:0.7em"}
-+ Now use the the Raster Calculator to Find areas that were Trees in 2018, but not in 2025.
++ Now use the the Raster Calculator to Find areas that were covered in trees in 2018, but not in 2025.
+
+
 :::
 
 :::

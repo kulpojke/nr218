@@ -141,7 +141,7 @@ Here's the table with the Week column containing just the integer week values:
 | October 27   | 6    | Remote Sensing 3: SAR, Lidar, GPS | | |
 | October 29   | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling | | [Final Project Outline Due](final_proj.md) |
 | November 3   | 7    | Rasterizing by Attributes, Georeferencing, Statistics 101 | | |
-| November 5   | 7    | GEE, Spreadsheets | | Project 3 |
+| November 5   | 7    | GEE, Spreadsheets | | [Project 3](project_3.md) |
 | November 10  | 8    | Web Mapping, Field Data Collection: Mobile sensors and edge devices | | |
 | November 11  | 8    | Academic holiday - Veterans Day observed | | |
 | November 12  | 8    | No Class | | |
