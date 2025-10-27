@@ -73,6 +73,8 @@ Use arrows or menu in bottom left corner to navigate
 
 {{< include remote_sensing.qmd >}}
 
+{{< include statistics_101.qmd >}}
+
 
 # Vector and Raster Data
 

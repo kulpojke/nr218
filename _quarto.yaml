@@ -20,6 +20,7 @@ project:
     - finding_gis_data.qmd
     - w3_house_keeping.qmd
     - remote_sensing.qmd
+    - statistics_101.qmd
     - index.qmd
   resources:
     - .nojekyll

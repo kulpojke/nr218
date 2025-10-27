@@ -17,14 +17,14 @@ format:
 2 .Chain together commands in order to achieve desired outcomes
 3. Work with messy data to produce viable analysis to real world problems
 
-## Provide written responses to the following Questions [4 pts]
+## Provide written responses to the following Questions [2 pts]
 
 1. What are the differences between vector and raster data? 
 2. Give 3 examples of real-world data that are best described by (A) Vector datasets, and (B) Raster datasets. Explain your reasoning
 3. What is the importance of pixel size and spatial resolution in raster data? 
 4. What are some common types of raster data used in GIS? Hint: we have worked with many of them in the class so far. 
 
-## Project Work [6 pts]
+## Project Work [4 pts]
 
 For the next questions, you will need to download the SPR [Elevation Data](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EXsEcn283Z9OlNPK86hUMQIBHWUHgcDk8WLwQKH7XKalGg?e=qMW97K) use it with existing [SPR Vector Data](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/SPR_data.zip) in order to answer the following questions: 
 
@@ -34,7 +34,7 @@ For the next questions, you will need to download the SPR [Elevation Data](https
 
 3. Report the mean slope (in degrees) for parcels (as defined in sprParcels.geojson) with the following APN #s: `057-131-60`, `057-141-01`, and `057-121-14`.
 
-##  Tutorials [6 pts]:
+##  Tutorials [4 pts]:
 
 1. Sample raster data over points and polygons:
     + Carefully follow the instructions and complete [Sampling Raster Data using Points or Polygons](https://www.qgistutorials.com/en/docs/3/sampling_raster_data.html )
