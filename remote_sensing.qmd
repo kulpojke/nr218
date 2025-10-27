@@ -833,7 +833,7 @@ Try again, what resampling method should you use?
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="6" style="font-size:0.7em"}
-+ Use `Raster Tools --> Align Rasters` to align `dw_2018_6339.tif` and `dem_1m_6339.tif` to dw_2025_6339 (use appropriate resample methods).
++ Use `Raster Tools → Align Rasters` to align `dw_2018_6339.tif` and `dem_1m_6339.tif` to dw_2025_6339 (use appropriate resample methods).
 
 {{< video img/align.webm width="80%" style="max-height: 70vh; object-fit: contain;" >}}
 :::

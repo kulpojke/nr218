@@ -127,9 +127,13 @@
 
 
 <section>
-<section id="statistics-101" class="title-slide slide level1 center">
-<h1>Statistics 101</h1>
+<section id="statistics-and-raster-extractions" class="title-slide slide level1 center">
+<h1>Statistics and Raster Extractions</h1>
 
+</section>
+<section id="download-some-stuff" class="slide level2 center">
+<h2>Download some stuff</h2>
+<p>Download <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EXsEcn283Z9OlNPK86hUMQIBHWUHgcDk8WLwQKH7XKalGg?e=fDzcoU">sprElevation.tif</a> and put it with your sprData (That you used for your first map, if you lost it, get it <a href="https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/SPR_data.zip">here</a> )</p>
 </section>
 <section id="measures-of-central-tendency" class="slide level2 columns center" data-auto-animate="true" style="font-size:0.65em">
 <h2 data-id="quarto-animate-title">Measures of Central Tendency</h2>
@@ -155,7 +159,7 @@
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="5">
 <ul>
-<li><strong>Truncated mean</strong> - average after dropping the some percentage of the highest and lowest values to dampen outliers.</li>
+<li><strong>Trimmed mean</strong> - average after dropping the highest and lowest values to dampen outliers.</li>
 </ul>
 </div>
 </div>
@@ -168,7 +172,7 @@
 <div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="font-size:0.8em;">
 <p><br> Sample data (annual NDVI for five plots):<br>
 <code>0.41, 0.55, 0.58, 0.60, 0.94</code></p>
-<p><span class="math inline">\(\bar{x} = \frac{0.41 + 0.55 + 0.58 + 0.60 + 0.94}{5} = 0.616\)</span></p>
+<p><strong>Sample</strong> Mean <span class="math inline">\(\bar{x} = \frac{0.41 + 0.55 + 0.58 + 0.60 + 0.94}{5} = 0.616\)</span></p>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="font-size:0.8em;">
 <p><br> Sample data (annual NDVI for five plots):<br>
@@ -184,10 +188,222 @@ Middle value = <code>0.58</code></p>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="5" style="font-size:0.8em;">
 <p><br> Sample data (annual NDVI for five plots):<br>
 <code>0.41, 0.55, 0.58, 0.60, 0.94</code></p>
-<p><span class="math inline">\(\bar{x}_{10\%} = \frac{0.55 + 0.58 + 0.60}{3} = 0.577\)</span></p>
+<p>Truncated <strong>Sample</strong> Mean <span class="math inline">\(\bar{x}_{10\%} = \frac{0.55 + 0.58 + 0.60}{3} = 0.577\)</span></p>
 </div>
 </div>
-</div></section></section>
+</div></section>
+<section id="variance-spread" class="slide level2 columns center" data-auto-animate="true" style="font-size:0.65em">
+<h2 data-id="quarto-animate-title">Variance &amp; Spread</h2>
+<div class="column" style="width:45%;">
+<div class="r-stack">
+<div class="fragment fade-in-then-out" data-fragment-index="1">
+<p>Central tendency + spread → fuller story about a dataset.</p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2">
+<ul>
+<li><strong>Range</strong> - quick check on the total spread, but driven by extremes.</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3">
+<ul>
+<li><strong>Variance (<span class="math inline">\(s^{2}\)</span>)</strong> - average squared deviation from the mean using <span class="math inline">\(n-1\)</span> for a sample.</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="4">
+<ul>
+<li><strong>Standard deviation (<span class="math inline">\(s\)</span>)</strong> - square root of variance; back in the units you collected.</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="5">
+<ul>
+<li>Smaller <span class="math inline">\(s\)</span> → values cluster around the mean; larger <span class="math inline">\(s\)</span> → more variable plots.</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:55%;">
+<div class="r-stack" style="position: relative; min-height: 360px;">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="font-size:0.8em;">
+<p><br> Sample data (annual NDVI for five plots):<br>
+<code>0.41, 0.55, 0.58, 0.60, 0.94</code></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="font-size:0.8em;">
+<p><br> Sample data (annual NDVI for five plots):<br>
+<code>0.41, 0.55, 0.58, 0.60, 0.94</code></p>
+<p><strong>Range</strong>: <span class="math inline">\(0.94 - 0.41 = 0.53\)</span></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="font-size:0.8em;">
+<p><br> Sample data (annual NDVI for five plots):<br>
+<code>0.41, 0.55, 0.58, 0.60, 0.94</code></p>
+<p><strong>Sample</strong> Variance, unbiased estimator <span class="math inline">\(s^{2} = \frac{\sum (x - \bar{x})^{2}}{n - 1} = 0.038\)</span></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="font-size:0.8em;">
+<p><br> Sample data (annual NDVI for five plots):<br>
+<code>0.41, 0.55, 0.58, 0.60, 0.94</code></p>
+<p><span class="math inline">\(s = \sqrt{s^{2}} = 0.195\)</span></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="5" style="font-size:0.8em;">
+<p><br> Sample data (annual NDVI for five plots):<br>
+<code>0.41, 0.55, 0.58, 0.60, 0.94</code></p>
+<p><span class="math inline">\(s = \sqrt{s^{2}} = 0.195\)</span></p>
+</div>
+</div>
+</div></section>
+<section id="population-v.-sample" class="slide level2 center">
+<h2>Population v. Sample</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<p><img data-src="img/pop_v_samp.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="https://upload.wikimedia.org/wikipedia/commons/7/75/Population_versus_sample_%28statistics%29.png">Wikimedia</a></p>
+</div>
+</div>
+<div class="fragment absolute fade-in" data-fragment-index="1" style="">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Population Variance (Parameter)</p>
+<p><span class="math inline">\(\sigma^{2} = \frac{\sum (x - \mu)^{2}}{N} = ?\)</span></p>
+</div><div class="column" style="width:50%;">
+<p>Sample Variance, unbiased estimator (statistic)</p>
+<p><span class="math inline">\(s^{2} = \frac{\sum (x - \bar{x})^{2}}{n - 1} = 0.038\)</span></p>
+</div></div>
+</div>
+</div>
+</section>
+<section id="precision-v.-accuracy" class="slide level2 center" style="font-size:0.7em">
+<h2>Precision v. Accuracy</h2>
+<ul>
+<li>Higher spatial resolution does not inherently make the data more <em>accurate</em> - though higher resolution data can be described as more <em>precise</em></li>
+<li>Spatial resolution <em>can</em> affect the accuracy of analysis performed with the raster data,</li>
+</ul>
+<p><img data-src="img/targets.png" style="max-height: 50vh; object-fit: contain;;width:80.0%"></p>
+</section>
+<section id="extracting-raster-values" class="slide level2 center" style="font-size:0.7em">
+<h2>Extracting Raster Values</h2>
+<p>Sometimes we would like to know the raster values at points, along a line, or within a polygon.</p>
+<p><img data-src="img/extracta.png" style="max-height: 50vh; object-fit: contain;;width:80.0%"></p>
+</section>
+<section id="extracting-raster-values-by-point" class="slide level2 center" style="font-size:0.7em">
+<h2>Extracting Raster Values by Point</h2>
+<div class="columns">
+<div class="column" style="font-size:0.&amp;em">
+<ul>
+<li>Consider the elevation data and rain gauge locations at Swanton Ranch.</li>
+<li>What if we want to know the elevation of all rain gauges represented points?</li>
+</ul>
+<p><span style="font-size:0.5em"><code>Processing Toolbox</code> → <code>Sample raster values</code></span></p>
+<ul>
+<li>Input layer = points</li>
+<li>Raster layer = elevation</li>
+<li>Output column prefix = “Elevation_”</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="img/spr_rain_elev.png" style="max-height: 50vh; object-fit: contain;;width:80.0%"></p>
+<p><strong>Now use the Field Calculator to calculate the mean and standard deviation!</strong></p>
+</div></div>
+</section>
+<section id="extracting-raster-values-along-lines" class="slide level2 center">
+<h2>Extracting Raster Values along lines</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<p>Say we want to know the elevation along each reach of the rivers</p>
+<ul>
+<li>How might we do this?</li>
+<li>Hint - recall what lines are made up of?</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="font-size:0.5em">
+<p>Steps:</p>
+<ol type="1">
+<li>Densify line layer:
+<ol type="a">
+<li><code>Processing Toolbox</code> → <code>Vector Geometry</code> → <code>Densify by Interval</code></li>
+<li>Set a suitable interval (e.g., every 10 meters) to create additional vertices along the line</li>
+</ol></li>
+<li>Convert the densified lines into points:
+<ol type="a">
+<li>Use <code>Processing Toolbox</code> → <code>Vector Geometry</code> → <code>Points along Geometry</code></li>
+<li>This will generate points at the line vertices or specified intervals along the line</li>
+</ol></li>
+<li>Sample Raster Values:
+<ol type="a">
+<li>Run Sample Raster Values (<code>Processing Toolbox</code> → <code>Raster Analysis</code>)</li>
+<li>Input the points you just created and the raster layer</li>
+<li>This will extract the raster values at each point along the original line segments</li>
+</ol></li>
+</ol>
+</div>
+<div class="fragment absolute fade-in" data-fragment-index="2" style="font-size:0.5em">
+<p>Steps:</p>
+<ol type="1">
+<li>Densify line layer:
+<ol type="a">
+<li><code>Processing Toolbox</code> → <code>Vector Geometry</code> → <code>Densify by Interval</code></li>
+<li>Set a suitable interval (e.g., every 10 meters) to create additional vertices along the line</li>
+</ol></li>
+<li>Convert the densified lines into points:
+<ol type="a">
+<li>Use <code>Processing Toolbox</code> → <code>Vector Geometry</code> → <code>Points along Geometry</code></li>
+<li>This will generate points at the line vertices or specified intervals along the line</li>
+</ol></li>
+<li>Sample Raster Values:
+<ol type="a">
+<li>Run Sample Raster Values (<code>Processing Toolbox</code> → <code>Raster Analysis</code>)</li>
+<li>Input the points you just created and the raster layer</li>
+<li>This will extract the raster values at each point along the original line segments</li>
+</ol></li>
+</ol>
+<p><span style="font-size:1.2em"><strong>Do this for sprRoads and Elevation</strong></span></p>
+</div>
+</div>
+</section>
+<section id="extracting-zonal-statistics" class="slide level2 center">
+<h2>Extracting Zonal Statistics</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<p>Let’s say you want to determine the mean / median / minimum / max <em>elevation</em> or <em>slope</em>, or <em>NDVI</em> or anything else described by raster data, but for every feature in a polygon layer (e.g.&nbsp;for every county in CA)</p>
+<p>How would you do that, knowing what we already know?</p>
+</div>
+<div class="fragment absolute fade-in" data-fragment-index="1" style="">
+<p>Easier Way:</p>
+<p><code>Processing Toolbox</code> → <code>Raster Analysis</code> → <code>Zonal Statistics</code></p>
+<p><strong>Calculate the mean elevation for each feature in <code>sprParcels</code></strong></p>
+</div>
+</div>
+</section>
+<section id="converting-vector-data-to-raster" class="slide level2 center">
+<h2>Converting Vector Data to Raster</h2>
+<p><img data-src="img/vect_to_rast.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+<p>Input Later: sprStreams Fixed Value to burn: 1 Output Raster Size units: Pixels Width/Horizontal Resolution: 1250 Height/Vertical Resolution: 1250 Output Extent: Calculate from layer (sprStreams)</p>
+</section>
+<section id="proximity-raster" class="slide level2 center">
+<h2>Proximity Raster</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<p>What if we wanted to determine the distance from any pixel to the nearest stream? <code>Raster</code> → <code>Analysis</code> → <code>Proximity (Raster Distance)</code> Input Layer = Rasterized streams</p>
+</div>
+<div class="fragment absolute fade-in" data-fragment-index="1" style="">
+<p>The way we just did this is somewhat absurd. Why? How could you fix it?</p>
+</div>
+</div>
+</section>
+<section id="raster-contours" class="slide level2 center" style="font-size:0.6em">
+<h2>Raster → Contours</h2>
+<p><code>Raster</code> → <code>Extraction</code> → <code>Contours</code></p>
+<p><img data-src="img/rast_contours.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</section>
+<section id="heatmaps" class="slide level2 center" style="font-size:0.6em">
+<h2>Heatmaps</h2>
+<p><img data-src="img/heatmaps.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</section>
+<section id="point-count-to-raster" class="slide level2 center" style="font-size:0.6em">
+<h2>Point Count to Raster</h2>
+<p>Input layer: Your point layer<br>
+Burn in value: Set this to 1<br>
+Output raster size: resolution In map units<br>
+Additional creation parameters: <code>-add</code> (to sum the values for points in the same cell)</p>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

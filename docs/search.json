@@ -984,14 +984,105 @@
     "href": "index.html#raster-reprojection-using-gdal-warp",
     "title": "NR 218",
     "section": "Raster Reprojection using GDAL Warp",
-    "text": "Raster Reprojection using GDAL Warp\n\n\n\nDownload dw_2025.tif and dw_20218.tif as well as dw_style.qmlhttps://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EXMEE6bR85VMkOPotG9dk6sBbr2JQx2QNFtsR9-0OAIQfg?e=aa09WA\nIn QGIS open dw_2025.\n\nLook at the CRS\nLook at the resolution.\n\nIn the symbology tab, at the bottom left there is a style dropdown.\n\nselect “Load Style…” use the browser to open the dw_style.qml file from the dynamic_world folder\nApply\n\n\n\n\nReproject dw_2025 using GDAL Warp (Processing Toolbox: GDAL → Raster projection → Warp)\n\nLeave Source CRS blank (In “Input layer” you can see that the CRS is recognized)\nSet Target CRS to EPSG:6339\nUse average resampling\nSet ” Output file resolution in target georeferenced units” to 10\n\nWhat are the target georeferenced units?\n\nLeave the rest as defaults, including “[save to temporary Layer]”\n\nCompare the results to the original. Do you see any problems?\n\n\nWhy is this margin of different land cover appearing?\n\n\n\n\n\n\n\n\nTry again, what resampling method should you use?\n\n\n\n\n\n\n\n\n\n\n\nSave the reprojected layer dw_2025_6339.tif.\nReproject dw_2018 in the same way (save as dw_2018_6339.tif)\n\n\n\n\nUse Raster Tools --&gt; Align Rasters to align dw_2018_6339.tif and dem_1m_6339.tif to dw_2025_6339 (use appropriate resample methods).\n\n\n\n\n\nNow use the the Raster Calculator to Find areas that were covered in trees in 2018, but not in 2025."
+    "text": "Raster Reprojection using GDAL Warp\n\n\n\nDownload dw_2025.tif and dw_20218.tif as well as dw_style.qmlhttps://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EXMEE6bR85VMkOPotG9dk6sBbr2JQx2QNFtsR9-0OAIQfg?e=aa09WA\nIn QGIS open dw_2025.\n\nLook at the CRS\nLook at the resolution.\n\nIn the symbology tab, at the bottom left there is a style dropdown.\n\nselect “Load Style…” use the browser to open the dw_style.qml file from the dynamic_world folder\nApply\n\n\n\n\nReproject dw_2025 using GDAL Warp (Processing Toolbox: GDAL → Raster projection → Warp)\n\nLeave Source CRS blank (In “Input layer” you can see that the CRS is recognized)\nSet Target CRS to EPSG:6339\nUse average resampling\nSet ” Output file resolution in target georeferenced units” to 10\n\nWhat are the target georeferenced units?\n\nLeave the rest as defaults, including “[save to temporary Layer]”\n\nCompare the results to the original. Do you see any problems?\n\n\nWhy is this margin of different land cover appearing?\n\n\n\n\n\n\n\n\nTry again, what resampling method should you use?\n\n\n\n\n\n\n\n\n\n\n\nSave the reprojected layer dw_2025_6339.tif.\nReproject dw_2018 in the same way (save as dw_2018_6339.tif)\n\n\n\n\nUse Raster Tools → Align Rasters to align dw_2018_6339.tif and dem_1m_6339.tif to dw_2025_6339 (use appropriate resample methods).\n\n\n\n\n\nNow use the the Raster Calculator to Find areas that were covered in trees in 2018, but not in 2025."
+  },
+  {
+    "objectID": "index.html#download-some-stuff",
+    "href": "index.html#download-some-stuff",
+    "title": "NR 218",
+    "section": "Download some stuff",
+    "text": "Download some stuff\nDownload sprElevation.tif and put it with your sprData (That you used for your first map, if you lost it, get it here )"
   },
   {
     "objectID": "index.html#measures-of-central-tendency",
     "href": "index.html#measures-of-central-tendency",
     "title": "NR 218",
     "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\n\n\n\nCentral tendency gives a single value to describe where the middle of a dataset lives.\n\n\n\nMean - arithmetic average, best when values are roughly symmetric.\n\n\n\n\nMedian - middle ordered value, robust when a few outliers pull the mean.\n\n\n\n\nMode - most common value or category, useful for discrete or categorical data.\n\n\n\n\nTruncated mean - average after dropping the some percentage of the highest and lowest values to dampen outliers.\n\n\n\n\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\\(\\bar{x} = \\frac{0.41 + 0.55 + 0.58 + 0.60 + 0.94}{5} = 0.616\\)\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nOrder the values → 0.41, 0.55, 0.58, 0.60, 0.94\nMiddle value = 0.58\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nNo repeats → no single mode (we call this “none” or “multi-modal”).\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\\(\\bar{x}_{10\\%} = \\frac{0.55 + 0.58 + 0.60}{3} = 0.577\\)"
+    "text": "Measures of Central Tendency\n\n\n\nCentral tendency gives a single value to describe where the middle of a dataset lives.\n\n\n\nMean - arithmetic average, best when values are roughly symmetric.\n\n\n\n\nMedian - middle ordered value, robust when a few outliers pull the mean.\n\n\n\n\nMode - most common value or category, useful for discrete or categorical data.\n\n\n\n\nTrimmed mean - average after dropping the highest and lowest values to dampen outliers.\n\n\n\n\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nSample Mean \\(\\bar{x} = \\frac{0.41 + 0.55 + 0.58 + 0.60 + 0.94}{5} = 0.616\\)\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nOrder the values → 0.41, 0.55, 0.58, 0.60, 0.94\nMiddle value = 0.58\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nNo repeats → no single mode (we call this “none” or “multi-modal”).\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nTruncated Sample Mean \\(\\bar{x}_{10\\%} = \\frac{0.55 + 0.58 + 0.60}{3} = 0.577\\)"
+  },
+  {
+    "objectID": "index.html#variance-spread",
+    "href": "index.html#variance-spread",
+    "title": "NR 218",
+    "section": "Variance & Spread",
+    "text": "Variance & Spread\n\n\n\nCentral tendency + spread → fuller story about a dataset.\n\n\n\nRange - quick check on the total spread, but driven by extremes.\n\n\n\n\nVariance (\\(s^{2}\\)) - average squared deviation from the mean using \\(n-1\\) for a sample.\n\n\n\n\nStandard deviation (\\(s\\)) - square root of variance; back in the units you collected.\n\n\n\n\nSmaller \\(s\\) → values cluster around the mean; larger \\(s\\) → more variable plots.\n\n\n\n\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nRange: \\(0.94 - 0.41 = 0.53\\)\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nSample Variance, unbiased estimator \\(s^{2} = \\frac{\\sum (x - \\bar{x})^{2}}{n - 1} = 0.038\\)\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\\(s = \\sqrt{s^{2}} = 0.195\\)\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\\(s = \\sqrt{s^{2}} = 0.195\\)"
+  },
+  {
+    "objectID": "index.html#population-v.-sample",
+    "href": "index.html#population-v.-sample",
+    "title": "NR 218",
+    "section": "Population v. Sample",
+    "text": "Population v. Sample\n\n\n\n\nImage Source: Wikimedia\n\n\n\n\n\nPopulation Variance (Parameter)\n\\(\\sigma^{2} = \\frac{\\sum (x - \\mu)^{2}}{N} = ?\\)\n\nSample Variance, unbiased estimator (statistic)\n\\(s^{2} = \\frac{\\sum (x - \\bar{x})^{2}}{n - 1} = 0.038\\)"
+  },
+  {
+    "objectID": "index.html#precision-v.-accuracy",
+    "href": "index.html#precision-v.-accuracy",
+    "title": "NR 218",
+    "section": "Precision v. Accuracy",
+    "text": "Precision v. Accuracy\n\nHigher spatial resolution does not inherently make the data more accurate - though higher resolution data can be described as more precise\nSpatial resolution can affect the accuracy of analysis performed with the raster data,"
+  },
+  {
+    "objectID": "index.html#extracting-raster-values",
+    "href": "index.html#extracting-raster-values",
+    "title": "NR 218",
+    "section": "Extracting Raster Values",
+    "text": "Extracting Raster Values\nSometimes we would like to know the raster values at points, along a line, or within a polygon."
+  },
+  {
+    "objectID": "index.html#extracting-raster-values-by-point",
+    "href": "index.html#extracting-raster-values-by-point",
+    "title": "NR 218",
+    "section": "Extracting Raster Values by Point",
+    "text": "Extracting Raster Values by Point\n\n\n\nConsider the elevation data and rain gauge locations at Swanton Ranch.\nWhat if we want to know the elevation of all rain gauges represented points?\n\nProcessing Toolbox → Sample raster values\n\nInput layer = points\nRaster layer = elevation\nOutput column prefix = “Elevation_”\n\n\n\nNow use the Field Calculator to calculate the mean and standard deviation!"
+  },
+  {
+    "objectID": "index.html#extracting-raster-values-along-lines",
+    "href": "index.html#extracting-raster-values-along-lines",
+    "title": "NR 218",
+    "section": "Extracting Raster Values along lines",
+    "text": "Extracting Raster Values along lines\n\n\nSay we want to know the elevation along each reach of the rivers\n\nHow might we do this?\nHint - recall what lines are made up of?\n\n\n\nSteps:\n\nDensify line layer:\n\nProcessing Toolbox → Vector Geometry → Densify by Interval\nSet a suitable interval (e.g., every 10 meters) to create additional vertices along the line\n\nConvert the densified lines into points:\n\nUse Processing Toolbox → Vector Geometry → Points along Geometry\nThis will generate points at the line vertices or specified intervals along the line\n\nSample Raster Values:\n\nRun Sample Raster Values (Processing Toolbox → Raster Analysis)\nInput the points you just created and the raster layer\nThis will extract the raster values at each point along the original line segments\n\n\n\n\nSteps:\n\nDensify line layer:\n\nProcessing Toolbox → Vector Geometry → Densify by Interval\nSet a suitable interval (e.g., every 10 meters) to create additional vertices along the line\n\nConvert the densified lines into points:\n\nUse Processing Toolbox → Vector Geometry → Points along Geometry\nThis will generate points at the line vertices or specified intervals along the line\n\nSample Raster Values:\n\nRun Sample Raster Values (Processing Toolbox → Raster Analysis)\nInput the points you just created and the raster layer\nThis will extract the raster values at each point along the original line segments\n\n\nDo this for sprRoads and Elevation"
+  },
+  {
+    "objectID": "index.html#extracting-zonal-statistics",
+    "href": "index.html#extracting-zonal-statistics",
+    "title": "NR 218",
+    "section": "Extracting Zonal Statistics",
+    "text": "Extracting Zonal Statistics\n\n\nLet’s say you want to determine the mean / median / minimum / max elevation or slope, or NDVI or anything else described by raster data, but for every feature in a polygon layer (e.g. for every county in CA)\nHow would you do that, knowing what we already know?\n\n\nEasier Way:\nProcessing Toolbox → Raster Analysis → Zonal Statistics\nCalculate the mean elevation for each feature in sprParcels"
+  },
+  {
+    "objectID": "index.html#converting-vector-data-to-raster",
+    "href": "index.html#converting-vector-data-to-raster",
+    "title": "NR 218",
+    "section": "Converting Vector Data to Raster",
+    "text": "Converting Vector Data to Raster\n\nInput Later: sprStreams Fixed Value to burn: 1 Output Raster Size units: Pixels Width/Horizontal Resolution: 1250 Height/Vertical Resolution: 1250 Output Extent: Calculate from layer (sprStreams)"
+  },
+  {
+    "objectID": "index.html#proximity-raster",
+    "href": "index.html#proximity-raster",
+    "title": "NR 218",
+    "section": "Proximity Raster",
+    "text": "Proximity Raster\n\n\nWhat if we wanted to determine the distance from any pixel to the nearest stream? Raster → Analysis → Proximity (Raster Distance) Input Layer = Rasterized streams\n\n\nThe way we just did this is somewhat absurd. Why? How could you fix it?"
+  },
+  {
+    "objectID": "index.html#raster-contours",
+    "href": "index.html#raster-contours",
+    "title": "NR 218",
+    "section": "Raster → Contours",
+    "text": "Raster → Contours\nRaster → Extraction → Contours"
+  },
+  {
+    "objectID": "index.html#heatmaps",
+    "href": "index.html#heatmaps",
+    "title": "NR 218",
+    "section": "Heatmaps",
+    "text": "Heatmaps"
+  },
+  {
+    "objectID": "index.html#point-count-to-raster",
+    "href": "index.html#point-count-to-raster",
+    "title": "NR 218",
+    "section": "Point Count to Raster",
+    "text": "Point Count to Raster\nInput layer: Your point layer\nBurn in value: Set this to 1\nOutput raster size: resolution In map units\nAdditional creation parameters: -add (to sum the values for points in the same cell)"
   },
   {
     "objectID": "remote_sensing.html#section",
@@ -1173,7 +1264,7 @@
     "href": "remote_sensing.html#raster-reprojection-using-gdal-warp",
     "title": "",
     "section": "Raster Reprojection using GDAL Warp",
-    "text": "Raster Reprojection using GDAL Warp\n\n\n\nDownload dw_2025.tif and dw_20218.tif as well as dw_style.qmlhttps://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EXMEE6bR85VMkOPotG9dk6sBbr2JQx2QNFtsR9-0OAIQfg?e=aa09WA\nIn QGIS open dw_2025.\n\nLook at the CRS\nLook at the resolution.\n\nIn the symbology tab, at the bottom left there is a style dropdown.\n\nselect “Load Style…” use the browser to open the dw_style.qml file from the dynamic_world folder\nApply\n\n\n\n\nReproject dw_2025 using GDAL Warp (Processing Toolbox: GDAL → Raster projection → Warp)\n\nLeave Source CRS blank (In “Input layer” you can see that the CRS is recognized)\nSet Target CRS to EPSG:6339\nUse average resampling\nSet ” Output file resolution in target georeferenced units” to 10\n\nWhat are the target georeferenced units?\n\nLeave the rest as defaults, including “[save to temporary Layer]”\n\nCompare the results to the original. Do you see any problems?\n\n\nWhy is this margin of different land cover appearing?\n\n\n\n\n\n\n\n\nTry again, what resampling method should you use?\n\n\n\n\n\n\n\n\n\n\n\nSave the reprojected layer dw_2025_6339.tif.\nReproject dw_2018 in the same way (save as dw_2018_6339.tif)\n\n\n\n\nUse Raster Tools --&gt; Align Rasters to align dw_2018_6339.tif and dem_1m_6339.tif to dw_2025_6339 (use appropriate resample methods).\n\n\n\n\n\nNow use the the Raster Calculator to Find areas that were covered in trees in 2018, but not in 2025."
+    "text": "Raster Reprojection using GDAL Warp\n\n\n\nDownload dw_2025.tif and dw_20218.tif as well as dw_style.qmlhttps://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EXMEE6bR85VMkOPotG9dk6sBbr2JQx2QNFtsR9-0OAIQfg?e=aa09WA\nIn QGIS open dw_2025.\n\nLook at the CRS\nLook at the resolution.\n\nIn the symbology tab, at the bottom left there is a style dropdown.\n\nselect “Load Style…” use the browser to open the dw_style.qml file from the dynamic_world folder\nApply\n\n\n\n\nReproject dw_2025 using GDAL Warp (Processing Toolbox: GDAL → Raster projection → Warp)\n\nLeave Source CRS blank (In “Input layer” you can see that the CRS is recognized)\nSet Target CRS to EPSG:6339\nUse average resampling\nSet ” Output file resolution in target georeferenced units” to 10\n\nWhat are the target georeferenced units?\n\nLeave the rest as defaults, including “[save to temporary Layer]”\n\nCompare the results to the original. Do you see any problems?\n\n\nWhy is this margin of different land cover appearing?\n\n\n\n\n\n\n\n\nTry again, what resampling method should you use?\n\n\n\n\n\n\n\n\n\n\n\nSave the reprojected layer dw_2025_6339.tif.\nReproject dw_2018 in the same way (save as dw_2018_6339.tif)\n\n\n\n\nUse Raster Tools → Align Rasters to align dw_2018_6339.tif and dem_1m_6339.tif to dw_2025_6339 (use appropriate resample methods).\n\n\n\n\n\nNow use the the Raster Calculator to Find areas that were covered in trees in 2018, but not in 2025."
   },
   {
     "objectID": "finding_gis_data.html#finding-gis-data",
@@ -2240,10 +2331,101 @@
     "text": "Final Project Brainstorm\nDue October 15th\nCome up with your own geospatial analysis idea. Submit a well thought out paragraph which describes:\n\nThe question/problem you have identified\nThe geographic data you will use to answer the question\nThe geoprocessing steps you will perform on the data\nThe expected outputs of your analysis\n\nYou may also frame your question as a hypothesis test (as in the Scientific Method)\n\nSubmit 1 pdf per group.\nIf you are having a hard time coming up with an idea come to me."
   },
   {
+    "objectID": "statistics_101.html#download-some-stuff",
+    "href": "statistics_101.html#download-some-stuff",
+    "title": "",
+    "section": "Download some stuff",
+    "text": "Download some stuff\nDownload sprElevation.tif and put it with your sprData (That you used for your first map, if you lost it, get it here )"
+  },
+  {
     "objectID": "statistics_101.html#measures-of-central-tendency",
     "href": "statistics_101.html#measures-of-central-tendency",
     "title": "",
     "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\n\n\n\nCentral tendency gives a single value to describe where the middle of a dataset lives.\n\n\n\nMean - arithmetic average, best when values are roughly symmetric.\n\n\n\n\nMedian - middle ordered value, robust when a few outliers pull the mean.\n\n\n\n\nMode - most common value or category, useful for discrete or categorical data.\n\n\n\n\nTruncated mean - average after dropping the some percentage of the highest and lowest values to dampen outliers.\n\n\n\n\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\\(\\bar{x} = \\frac{0.41 + 0.55 + 0.58 + 0.60 + 0.94}{5} = 0.616\\)\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nOrder the values → 0.41, 0.55, 0.58, 0.60, 0.94\nMiddle value = 0.58\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nNo repeats → no single mode (we call this “none” or “multi-modal”).\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\\(\\bar{x}_{10\\%} = \\frac{0.55 + 0.58 + 0.60}{3} = 0.577\\)"
+    "text": "Measures of Central Tendency\n\n\n\nCentral tendency gives a single value to describe where the middle of a dataset lives.\n\n\n\nMean - arithmetic average, best when values are roughly symmetric.\n\n\n\n\nMedian - middle ordered value, robust when a few outliers pull the mean.\n\n\n\n\nMode - most common value or category, useful for discrete or categorical data.\n\n\n\n\nTrimmed mean - average after dropping the highest and lowest values to dampen outliers.\n\n\n\n\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nSample Mean \\(\\bar{x} = \\frac{0.41 + 0.55 + 0.58 + 0.60 + 0.94}{5} = 0.616\\)\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nOrder the values → 0.41, 0.55, 0.58, 0.60, 0.94\nMiddle value = 0.58\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nNo repeats → no single mode (we call this “none” or “multi-modal”).\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nTruncated Sample Mean \\(\\bar{x}_{10\\%} = \\frac{0.55 + 0.58 + 0.60}{3} = 0.577\\)"
+  },
+  {
+    "objectID": "statistics_101.html#variance-spread",
+    "href": "statistics_101.html#variance-spread",
+    "title": "",
+    "section": "Variance & Spread",
+    "text": "Variance & Spread\n\n\n\nCentral tendency + spread → fuller story about a dataset.\n\n\n\nRange - quick check on the total spread, but driven by extremes.\n\n\n\n\nVariance (\\(s^{2}\\)) - average squared deviation from the mean using \\(n-1\\) for a sample.\n\n\n\n\nStandard deviation (\\(s\\)) - square root of variance; back in the units you collected.\n\n\n\n\nSmaller \\(s\\) → values cluster around the mean; larger \\(s\\) → more variable plots.\n\n\n\n\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nRange: \\(0.94 - 0.41 = 0.53\\)\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\nSample Variance, unbiased estimator \\(s^{2} = \\frac{\\sum (x - \\bar{x})^{2}}{n - 1} = 0.038\\)\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\\(s = \\sqrt{s^{2}} = 0.195\\)\n\n\n Sample data (annual NDVI for five plots):\n0.41, 0.55, 0.58, 0.60, 0.94\n\\(s = \\sqrt{s^{2}} = 0.195\\)"
+  },
+  {
+    "objectID": "statistics_101.html#population-v.-sample",
+    "href": "statistics_101.html#population-v.-sample",
+    "title": "",
+    "section": "Population v. Sample",
+    "text": "Population v. Sample\n\n\n\n\nImage Source: Wikimedia\n\n\n\n\n\nPopulation Variance (Parameter)\n\\(\\sigma^{2} = \\frac{\\sum (x - \\mu)^{2}}{N} = ?\\)\n\nSample Variance, unbiased estimator (statistic)\n\\(s^{2} = \\frac{\\sum (x - \\bar{x})^{2}}{n - 1} = 0.038\\)"
+  },
+  {
+    "objectID": "statistics_101.html#precision-v.-accuracy",
+    "href": "statistics_101.html#precision-v.-accuracy",
+    "title": "",
+    "section": "Precision v. Accuracy",
+    "text": "Precision v. Accuracy\n\nHigher spatial resolution does not inherently make the data more accurate - though higher resolution data can be described as more precise\nSpatial resolution can affect the accuracy of analysis performed with the raster data,"
+  },
+  {
+    "objectID": "statistics_101.html#extracting-raster-values",
+    "href": "statistics_101.html#extracting-raster-values",
+    "title": "",
+    "section": "Extracting Raster Values",
+    "text": "Extracting Raster Values\nSometimes we would like to know the raster values at points, along a line, or within a polygon."
+  },
+  {
+    "objectID": "statistics_101.html#extracting-raster-values-by-point",
+    "href": "statistics_101.html#extracting-raster-values-by-point",
+    "title": "",
+    "section": "Extracting Raster Values by Point",
+    "text": "Extracting Raster Values by Point\n\n\n\nConsider the elevation data and rain gauge locations at Swanton Ranch.\nWhat if we want to know the elevation of all rain gauges represented points?\n\nProcessing Toolbox → Sample raster values\n\nInput layer = points\nRaster layer = elevation\nOutput column prefix = “Elevation_”\n\n\n\nNow use the Field Calculator to calculate the mean and standard deviation!"
+  },
+  {
+    "objectID": "statistics_101.html#extracting-raster-values-along-lines",
+    "href": "statistics_101.html#extracting-raster-values-along-lines",
+    "title": "",
+    "section": "Extracting Raster Values along lines",
+    "text": "Extracting Raster Values along lines\n\n\nSay we want to know the elevation along each reach of the rivers\n\nHow might we do this?\nHint - recall what lines are made up of?\n\n\n\nSteps:\n\nDensify line layer:\n\nProcessing Toolbox → Vector Geometry → Densify by Interval\nSet a suitable interval (e.g., every 10 meters) to create additional vertices along the line\n\nConvert the densified lines into points:\n\nUse Processing Toolbox → Vector Geometry → Points along Geometry\nThis will generate points at the line vertices or specified intervals along the line\n\nSample Raster Values:\n\nRun Sample Raster Values (Processing Toolbox → Raster Analysis)\nInput the points you just created and the raster layer\nThis will extract the raster values at each point along the original line segments\n\n\n\n\nSteps:\n\nDensify line layer:\n\nProcessing Toolbox → Vector Geometry → Densify by Interval\nSet a suitable interval (e.g., every 10 meters) to create additional vertices along the line\n\nConvert the densified lines into points:\n\nUse Processing Toolbox → Vector Geometry → Points along Geometry\nThis will generate points at the line vertices or specified intervals along the line\n\nSample Raster Values:\n\nRun Sample Raster Values (Processing Toolbox → Raster Analysis)\nInput the points you just created and the raster layer\nThis will extract the raster values at each point along the original line segments\n\n\nDo this for sprRoads and Elevation"
+  },
+  {
+    "objectID": "statistics_101.html#extracting-zonal-statistics",
+    "href": "statistics_101.html#extracting-zonal-statistics",
+    "title": "",
+    "section": "Extracting Zonal Statistics",
+    "text": "Extracting Zonal Statistics\n\n\nLet’s say you want to determine the mean / median / minimum / max elevation or slope, or NDVI or anything else described by raster data, but for every feature in a polygon layer (e.g. for every county in CA)\nHow would you do that, knowing what we already know?\n\n\nEasier Way:\nProcessing Toolbox → Raster Analysis → Zonal Statistics\nCalculate the mean elevation for each feature in sprParcels"
+  },
+  {
+    "objectID": "statistics_101.html#converting-vector-data-to-raster",
+    "href": "statistics_101.html#converting-vector-data-to-raster",
+    "title": "",
+    "section": "Converting Vector Data to Raster",
+    "text": "Converting Vector Data to Raster\n\nInput Later: sprStreams Fixed Value to burn: 1 Output Raster Size units: Pixels Width/Horizontal Resolution: 1250 Height/Vertical Resolution: 1250 Output Extent: Calculate from layer (sprStreams)"
+  },
+  {
+    "objectID": "statistics_101.html#proximity-raster",
+    "href": "statistics_101.html#proximity-raster",
+    "title": "",
+    "section": "Proximity Raster",
+    "text": "Proximity Raster\n\n\nWhat if we wanted to determine the distance from any pixel to the nearest stream? Raster → Analysis → Proximity (Raster Distance) Input Layer = Rasterized streams\n\n\nThe way we just did this is somewhat absurd. Why? How could you fix it?"
+  },
+  {
+    "objectID": "statistics_101.html#raster-contours",
+    "href": "statistics_101.html#raster-contours",
+    "title": "",
+    "section": "Raster → Contours",
+    "text": "Raster → Contours\nRaster → Extraction → Contours"
+  },
+  {
+    "objectID": "statistics_101.html#heatmaps",
+    "href": "statistics_101.html#heatmaps",
+    "title": "",
+    "section": "Heatmaps",
+    "text": "Heatmaps"
+  },
+  {
+    "objectID": "statistics_101.html#point-count-to-raster",
+    "href": "statistics_101.html#point-count-to-raster",
+    "title": "",
+    "section": "Point Count to Raster",
+    "text": "Point Count to Raster\nInput layer: Your point layer\nBurn in value: Set this to 1\nOutput raster size: resolution In map units\nAdditional creation parameters: -add (to sum the values for points in the same cell)"
   }
 ]

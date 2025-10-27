@@ -1,0 +1,335 @@
+# Statistics and Raster Extractions
+
+## Download some stuff
+
+Download [sprElevation.tif](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EXsEcn283Z9OlNPK86hUMQIBHWUHgcDk8WLwQKH7XKalGg?e=fDzcoU) and put it with your sprData (That you used for your first map, if you lost it, get it [here](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/SPR_data.zip) )
+
+
+## Measures of Central Tendency {.columns data-auto-animate="true" style="font-size:0.65em"}
+
+::: {.column width="45%"}
+:::{.r-stack}
+
+::: {.fragment .fade-in-then-out data-fragment-index="1"}
+Central tendency gives a single value to describe where the middle of a dataset lives.
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="2"}
++ __Mean__ - arithmetic average, best when values are roughly symmetric.
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="3"}
++ __Median__ - middle ordered value, robust when a few outliers pull the mean.
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="4"}
++ __Mode__ - most common value or category, useful for discrete or categorical data.
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="5"}
++ __Trimmed mean__ - average after dropping the highest and lowest values to dampen outliers.
+:::
+
+:::
+:::
+
+::: {.column width="55%"}
+:::{.r-stack style="position: relative; min-height: 320px;"}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.8em;"}
+<br>
+Sample data (annual NDVI for five plots):  
+`0.41, 0.55, 0.58, 0.60, 0.94`
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="font-size:0.8em;"}
+<br>
+Sample data (annual NDVI for five plots):  
+`0.41, 0.55, 0.58, 0.60, 0.94`
+
+__Sample__ Mean
+$\bar{x} = \frac{0.41 + 0.55 + 0.58 + 0.60 + 0.94}{5} = 0.616$
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3" style="font-size:0.8em;"}
+<br>
+Sample data (annual NDVI for five plots):  
+`0.41, 0.55, 0.58, 0.60, 0.94`
+
+Order the values → `0.41, 0.55, 0.58, 0.60, 0.94`  
+Middle value = `0.58`
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4" style="font-size:0.8em;"}
+<br>
+Sample data (annual NDVI for five plots):  
+`0.41, 0.55, 0.58, 0.60, 0.94`
+
+No repeats → no single mode (we call this "none" or "multi-modal").
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5" style="font-size:0.8em;"}
+<br>
+Sample data (annual NDVI for five plots):  
+`0.41, 0.55, 0.58, 0.60, 0.94`
+
+Truncated __Sample__ Mean
+$\bar{x}_{10\%} = \frac{0.55 + 0.58 + 0.60}{3} = 0.577$
+:::
+
+:::
+:::
+
+## Variance & Spread {.columns data-auto-animate="true" style="font-size:0.65em"}
+
+::: {.column width="45%"}
+:::{.r-stack}
+
+::: {.fragment .fade-in-then-out data-fragment-index="1"}
+Central tendency + spread → fuller story about a dataset.
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="2"}
++ __Range__ - quick check on the total spread, but driven by extremes.
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="3"}
++ __Variance ($s^{2}$)__ - average squared deviation from the mean using $n-1$ for a sample.
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="4"}
++ __Standard deviation ($s$)__ - square root of variance; back in the units you collected.
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="5"}
++ Smaller $s$ → values cluster around the mean; larger $s$ → more variable plots.
+:::
+
+:::
+:::
+
+::: {.column width="55%"}
+:::{.r-stack style="position: relative; min-height: 360px;"}
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.8em;"}
+<br>
+Sample data (annual NDVI for five plots):  
+`0.41, 0.55, 0.58, 0.60, 0.94`
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="font-size:0.8em;"}
+<br>
+Sample data (annual NDVI for five plots):  
+`0.41, 0.55, 0.58, 0.60, 0.94`
+
+__Range__: $0.94 - 0.41 = 0.53$
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3" style="font-size:0.8em;"}
+<br>
+Sample data (annual NDVI for five plots):  
+`0.41, 0.55, 0.58, 0.60, 0.94`
+
+__Sample__ Variance, unbiased estimator
+$s^{2} = \frac{\sum (x - \bar{x})^{2}}{n - 1} = 0.038$
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4" style="font-size:0.8em;"}
+<br>
+Sample data (annual NDVI for five plots):  
+`0.41, 0.55, 0.58, 0.60, 0.94`
+
+$s = \sqrt{s^{2}} = 0.195$
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5" style="font-size:0.8em;"}
+<br>
+Sample data (annual NDVI for five plots):  
+`0.41, 0.55, 0.58, 0.60, 0.94`
+
+$s = \sqrt{s^{2}} = 0.195$
+:::
+
+:::
+:::
+
+
+## Population v. Sample
+
+::: { .r-stack}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+![](img/pop_v_samp.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [Wikimedia](https://upload.wikimedia.org/wikipedia/commons/7/75/Population_versus_sample_%28statistics%29.png)
+::: 
+
+:::
+
+::: {.fragment .absolute .fade-in data-fragment-index="1"}
+
+::: {.columns}
+::: {.column width="50%"}
+
+Population Variance (Parameter)  
+
+$\sigma^{2} = \frac{\sum (x - \mu)^{2}}{N} = ?$
+
+:::
+
+::: {.column width="50%"}
+Sample Variance, unbiased estimator (statistic)  
+
+$s^{2} = \frac{\sum (x - \bar{x})^{2}}{n - 1} = 0.038$
+
+:::
+:::
+
+:::
+:::
+
+## Precision v. Accuracy {style="font-size:0.7em"}
++ Higher spatial resolution does not inherently make the data more _accurate_ - though higher resolution data can be described as more _precise_
++ Spatial resolution _can_ affect the accuracy of analysis performed with the raster data,
+
+![](img/targets.png){width="80%" style="max-height: 50vh; object-fit: contain;"}
+
+## Extracting Raster Values {style="font-size:0.7em"}
+
+Sometimes we would like to know the raster values at points, along a line, or within a polygon.
+
+![](img/extracta.png){width="80%" style="max-height: 50vh; object-fit: contain;"}
+
+## Extracting Raster Values by Point {style="font-size:0.7em"}
+
+::: {.columns}
+::: {.column width="60%" style="font-size:0.&em"}
++ Consider the elevation data and rain gauge locations at Swanton Ranch.
++ What if we want to know the elevation of all rain gauges represented points? 
+
+[`Processing Toolbox` → `Sample raster values`]{style="font-size:0.5em"}
+
++ Input layer = points
++ Raster layer = elevation 
++ Output column prefix = “Elevation_” 
+
+:::
+
+::: {.column width="40%"}
+![](img/spr_rain_elev.png){width="80%" style="max-height: 50vh; object-fit: contain;"}
+
+__Now use the Field Calculator to calculate the mean and standard deviation!__
+
+:::
+:::
+
+## Extracting Raster Values along lines
+
+::: { .r-stack}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+Say we want to know the elevation along each reach of the rivers
+
++ How might we do this? 
++ Hint - recall what lines are made up of? 
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.5em"}
+Steps:
+
+1. Densify line layer:
+    a. `Processing Toolbox` → `Vector Geometry` → `Densify by Interval`
+    b. Set a suitable interval (e.g., every 10 meters) to create additional vertices along the line
+2. Convert the densified lines into points:
+    a. Use `Processing Toolbox` → `Vector Geometry` → `Points along Geometry`
+    b. This will generate points at the line vertices or specified intervals along the line
+3. Sample Raster Values:
+    a. Run Sample Raster Values (`Processing Toolbox` → `Raster Analysis`)
+    b. Input the points you just created and the raster layer
+    c. This will extract the raster values at each point along the original line segments
+:::
+
+::: {.fragment .absolute .fade-in data-fragment-index="2" style="font-size:0.5em"}
+Steps:
+
+1. Densify line layer:
+    a. `Processing Toolbox` → `Vector Geometry` → `Densify by Interval`
+    b. Set a suitable interval (e.g., every 10 meters) to create additional vertices along the line
+2. Convert the densified lines into points:
+    a. Use `Processing Toolbox` → `Vector Geometry` → `Points along Geometry`
+    b. This will generate points at the line vertices or specified intervals along the line
+3. Sample Raster Values:
+    a. Run Sample Raster Values (`Processing Toolbox` → `Raster Analysis`)
+    b. Input the points you just created and the raster layer
+    c. This will extract the raster values at each point along the original line segments
+
+[__Do this for sprRoads and Elevation__ ]{style="font-size:1.2em"}
+
+:::
+:::
+
+## Extracting Zonal Statistics
+
+::: { .r-stack}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+Let’s say you want to determine the mean / median / minimum / max *elevation* or *slope*, or *NDVI* or anything else described by raster data, but for every feature in a polygon layer (e.g. for every county in CA)
+
+How would you do that, knowing what we already know?
+:::
+
+::: {.fragment .absolute .fade-in data-fragment-index="1"}
+Easier Way:
+
+`Processing Toolbox` → `Raster Analysis` → `Zonal Statistics`
+
+__Calculate the mean elevation for each feature in `sprParcels`__
+
+
+:::
+
+:::
+
+## Converting Vector Data to Raster
+
+![](img/vect_to_rast.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+
+Input Later: sprStreams
+Fixed Value to burn: 1
+Output Raster Size units: Pixels
+Width/Horizontal Resolution: 1250
+Height/Vertical Resolution: 1250
+Output Extent: Calculate from layer (sprStreams)
+
+## Proximity Raster
+
+::: { .r-stack}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+What if we wanted to determine the distance from any pixel to the nearest stream?
+`Raster` → `Analysis` → `Proximity (Raster Distance)`
+Input Layer = Rasterized streams 
+
+:::
+
+::: {.fragment .absolute .fade-in data-fragment-index="1"}
+
+The way we just did this is somewhat absurd. Why?  How could you fix it?
+
+:::
+
+:::
+
+## Raster → Contours {style="font-size:0.6em"}
+
+`Raster` → `Extraction` → `Contours`
+
+![](img/rast_contours.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+
+## Heatmaps {style="font-size:0.6em"}
+
+![](img/heatmaps.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+
+## Point Count to Raster {style="font-size:0.6em"}
+
+Input layer: Your point layer  
+Burn in value: Set this to 1   
+Output raster size:  resolution In map units  
+Additional creation parameters:  `-add` (to sum the values for points in the same cell)  
