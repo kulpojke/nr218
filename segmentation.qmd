@@ -1,0 +1,35 @@
+# Segmentation (A trivially simple example)
+
+## Data {style="font-size:0.7em"}
+
++ For the Example:
+    + [october_ndvi.tif](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EQ2SXXQfw8pFkwC60AW8n10BF630lCzmzbGHEptsLezPnQ?e=XdramV)
+
++ Also bag these files for the challenge:
+
+    + [Sentinel2 median composite image, near Susques Argentina, 2025-04-01 to 2025-10-26](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EQkAW31cxJhEpdZAmYTmEccBIM9mwHiynmSJ85_kavB7hQ?e=Fapfce)
+
+    + [Sentinel2 max composite image, near Susques Argentina, 2025-04-01 to 2025-10-26](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EUHmBt2TQN9Gix6F_NdlecgBtG4fUFYu99TS0ie4s0dU4w?e=BL3Zcx)
+
+
+
+
+## A simple example of segmentation {style="font-size:0.7em"}
+
+1. Open `october_ndvi.tif`.
+2. __What should you do before starting? __
+3. Use the raster calculator to create a binary raster where  NDVI > 0.2.
+4. Use `Raster` > `Conversion` > `Polygonize` to make polygons from the raster
+5. Use the field calculator to calculate are (expression: `$area`)
+6. __What units is area in?__
+6. Remove tiny polygons based on area.
+7. What did you do?
+
+## Challenge! {style="font-size:0.7em"}
+
+You Know about spectral indices.  You know about (very basic) segmentation. 
+
+1. Segment the Lithium Brine Evaporation Ponds using [Sentinel2 median composite image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EQkAW31cxJhEpdZAmYTmEccBIM9mwHiynmSJ85_kavB7hQ?e=Fapfce), [Sentinel2 maximum composite image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EUHmBt2TQN9Gix6F_NdlecgBtG4fUFYu99TS0ie4s0dU4w?e=BL3Zcx) (near Susques Argentina, 2025-04-01 to 2025-10-26).
+2. Calculate their total area.
+3. What is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?
+

@@ -21,6 +21,7 @@ project:
     - w3_house_keeping.qmd
     - remote_sensing.qmd
     - statistics_101.qmd
+    - segmentation.qmd
     - index.qmd
   resources:
     - .nojekyll
