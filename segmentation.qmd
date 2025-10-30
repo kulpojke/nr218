@@ -16,6 +16,8 @@
 
 ## A simple example of segmentation {style="font-size:0.7em"}
 
+Start a QGIS project ad set the project crs 20 EPSG:6339.
+
 1. Open `october_ndvi.tif`.
 2. __What should you do before starting? __
 3. Use the raster calculator to create a binary raster where  NDVI > 0.2.

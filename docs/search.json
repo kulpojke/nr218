@@ -1096,7 +1096,7 @@
     "href": "index.html#a-simple-example-of-segmentation",
     "title": "NR 218",
     "section": "A simple example of segmentation",
-    "text": "A simple example of segmentation\n\nOpen october_ndvi.tif.\nWhat should you do before starting? \nUse the raster calculator to create a binary raster where NDVI &gt; 0.2.\nUse Raster &gt; Conversion &gt; Polygonize to make polygons from the raster\nUse the field calculator to calculate are (expression: $area)\nWhat units is area in?\nRemove tiny polygons based on area.\nWhat did you do?"
+    "text": "A simple example of segmentation\nStart a QGIS project ad set the project crs 20 EPSG:6339.\n\nOpen october_ndvi.tif.\nWhat should you do before starting? \nUse the raster calculator to create a binary raster where NDVI &gt; 0.2.\nUse Raster &gt; Conversion &gt; Polygonize to make polygons from the raster\nUse the field calculator to calculate are (expression: $area)\nWhat units is area in?\nRemove tiny polygons based on area.\nWhat did you do?"
   },
   {
     "objectID": "index.html#challenge",
@@ -2461,7 +2461,7 @@
     "href": "segmentation.html#a-simple-example-of-segmentation",
     "title": "",
     "section": "A simple example of segmentation",
-    "text": "A simple example of segmentation\n\nOpen october_ndvi.tif.\nWhat should you do before starting? \nUse the raster calculator to create a binary raster where NDVI &gt; 0.2.\nUse Raster &gt; Conversion &gt; Polygonize to make polygons from the raster\nUse the field calculator to calculate are (expression: $area)\nWhat units is area in?\nRemove tiny polygons based on area.\nWhat did you do?"
+    "text": "A simple example of segmentation\nStart a QGIS project ad set the project crs 20 EPSG:6339.\n\nOpen october_ndvi.tif.\nWhat should you do before starting? \nUse the raster calculator to create a binary raster where NDVI &gt; 0.2.\nUse Raster &gt; Conversion &gt; Polygonize to make polygons from the raster\nUse the field calculator to calculate are (expression: $area)\nWhat units is area in?\nRemove tiny polygons based on area.\nWhat did you do?"
   },
   {
     "objectID": "segmentation.html#challenge",
