@@ -1089,7 +1089,7 @@
     "href": "index.html#data",
     "title": "NR 218",
     "section": "Data",
-    "text": "Data\n\nFor the Example:\n\noctober_ndvi.tif\n\nAlso bag these files for the challenge:\n\nSentinel2 median composite image, near Susques Argentina, 2025-04-01 to 2025-10-26\nSentinel2 max composite image, near Susques Argentina, 2025-04-01 to 2025-10-26"
+    "text": "Data\n\nFor the Example:\n\noctober_ndvi.tif\n\nAlso bag these files for the challenge:\n\nSentinel-2 median composite image, near Susques Argentina, 2025-04-01 to 2025-10-26\nSentinel-2 max composite image, near Susques Argentina, 2025-04-01 to 2025-10-26"
   },
   {
     "objectID": "index.html#a-simple-example-of-segmentation",
@@ -1103,7 +1103,7 @@
     "href": "index.html#challenge",
     "title": "NR 218",
     "section": "Challenge!",
-    "text": "Challenge!\nYou Know about spectral indices. You know about (very basic) segmentation.\n\nSegment the Lithium Brine Evaporation Ponds using Sentinel2 median composite image, Sentinel2 maximum composite image (near Susques Argentina, 2025-04-01 to 2025-10-26).\nCalculate their total area.\nWhat is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?"
+    "text": "Challenge!\nYou Know about spectral indices. You know about (very basic) segmentation.\n\nSegment the Lithium Brine Evaporation Ponds using Sentinel-2 median composite image, Sentinel-2 maximum composite image (near Susques Argentina, 2025-04-01 to 2025-10-26).\nCalculate their total area.\nWhat is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?"
   },
   {
     "objectID": "statistics_101.html#download-some-stuff",
@@ -2454,7 +2454,7 @@
     "href": "segmentation.html#data",
     "title": "",
     "section": "Data",
-    "text": "Data\n\nFor the Example:\n\noctober_ndvi.tif\n\nAlso bag these files for the challenge:\n\nSentinel2 median composite image, near Susques Argentina, 2025-04-01 to 2025-10-26\nSentinel2 max composite image, near Susques Argentina, 2025-04-01 to 2025-10-26"
+    "text": "Data\n\nFor the Example:\n\noctober_ndvi.tif\n\nAlso bag these files for the challenge:\n\nSentinel-2 median composite image, near Susques Argentina, 2025-04-01 to 2025-10-26\nSentinel-2 max composite image, near Susques Argentina, 2025-04-01 to 2025-10-26"
   },
   {
     "objectID": "segmentation.html#a-simple-example-of-segmentation",
@@ -2468,6 +2468,6 @@
     "href": "segmentation.html#challenge",
     "title": "",
     "section": "Challenge!",
-    "text": "Challenge!\nYou Know about spectral indices. You know about (very basic) segmentation.\n\nSegment the Lithium Brine Evaporation Ponds using Sentinel2 median composite image, Sentinel2 maximum composite image (near Susques Argentina, 2025-04-01 to 2025-10-26).\nCalculate their total area.\nWhat is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?"
+    "text": "Challenge!\nYou Know about spectral indices. You know about (very basic) segmentation.\n\nSegment the Lithium Brine Evaporation Ponds using Sentinel-2 median composite image, Sentinel-2 maximum composite image (near Susques Argentina, 2025-04-01 to 2025-10-26).\nCalculate their total area.\nWhat is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?"
   }
 ]
