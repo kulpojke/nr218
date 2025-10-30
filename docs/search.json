@@ -144,7 +144,7 @@
     "href": "index.html#attributes",
     "title": "NR 218",
     "section": "Attributes",
-    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
+    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24 34.884, -120.24 34.884, -120...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.83 32.597, -116.83 32.597...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55 34.062, -118.55 34.062...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55 34.062, -118.55 34.062...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55 34.062, -118.55 34.062...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
   },
   {
     "objectID": "index.html#section-2",
@@ -389,7 +389,7 @@
     "href": "index.html#map-scale",
     "title": "NR 218",
     "section": "Map Scale",
-    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
   },
   {
     "objectID": "index.html#map-scale-1",
@@ -536,7 +536,7 @@
     "href": "index.html#discussion",
     "title": "NR 218",
     "section": "Discussion",
-    "text": "Discussion\n\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
+    "text": "Discussion\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
   },
   {
     "objectID": "index.html#raster-data",
@@ -2469,5 +2469,40 @@
     "title": "",
     "section": "Challenge!",
     "text": "Challenge!\nYou Know about spectral indices. You know about (very basic) segmentation. You know about zonal ststistics.\n\nSegment the Lithium Brine Evaporation Ponds using Sentinel-2 median composite image, Sentinel-2 maximum composite image (near Susques Argentina, 2025-04-01 to 2025-10-26).\nCalculate their total area.\nWhat is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?"
+  },
+  {
+    "objectID": "index.html#what-is-georeferencing",
+    "href": "index.html#what-is-georeferencing",
+    "title": "NR 218",
+    "section": "What is Georeferencing?",
+    "text": "What is Georeferencing?\n\nLet’s say you took an aerial photo, or have an old map with no coordinate information and want to work with that in QGIS.\nGeoreferencing is the process by which we ascribe real-world locations to non-GIS data.\nGround Control Points or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates."
+  },
+  {
+    "objectID": "index.html#example-swanton-ranch-treasure-map",
+    "href": "index.html#example-swanton-ranch-treasure-map",
+    "title": "NR 218",
+    "section": "Example: Swanton Ranch Treasure Map",
+    "text": "Example: Swanton Ranch Treasure Map\n\n\n\n\n\n10 minutes to see if anyone can find the treasure!"
+  },
+  {
+    "objectID": "index.html#tutorial-geoferencing-the-treasure-map",
+    "href": "index.html#tutorial-geoferencing-the-treasure-map",
+    "title": "NR 218",
+    "section": "Tutorial: Geoferencing the Treasure Map",
+    "text": "Tutorial: Geoferencing the Treasure Map\n\n\n\n\n\nDownload treasure_map.tif\nOpen QGIS\nLayer &gt; Georeferencer\nOpen Raster\n\nSelect the file we downloaded\n\n\n\n\n\n\n\n\n\n\n\n\n\nOpen Transformation Settings\nSelect Polynomial 1 for Transformation Type\nSet output file\nClick ok\n\n\n \n\n\n\nCan anyone find where (in Swanton) our treasure map might correspond to?\nWhat geographic features are helpful for identifying?\n\n\n\n\n\n\nOnce you find the place:\n\nAdd GCPs\nClick a point on the image\nThe Enter Map Coordinates box should pop up\nSelect the From Map Canvas button\nClick point\nClick ok\nRepeat 4x\n\n\n\n\n \n\n\n\n\n\n\nGeoreferencer dialogue should look like this:\n\n\n\n\nClick Run\n\n\n\n\n\nInspect the result - turn on transparency\nHow to be more accurate?\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs"
+  },
+  {
+    "objectID": "index.html#rasterizing-by-attributes-1",
+    "href": "index.html#rasterizing-by-attributes-1",
+    "title": "NR 218",
+    "section": "Rasterizing by Attributes",
+    "text": "Rasterizing by Attributes\n\nWhat if we want to create a raster dataset from some vector polygons on the basis of one of the (numerical) attributes?\nExample: Swanton Ranch data\n\nWe have some polygons describing soils (sprSoils.geojson)\nOne of the attributes is KFactor - hydraulic conductivity\nWe want to create a new raster on the basis of this attribute"
+  },
+  {
+    "objectID": "index.html#rasterize-by-attribute---symbolize-by-value",
+    "href": "index.html#rasterize-by-attribute---symbolize-by-value",
+    "title": "NR 218",
+    "section": "Rasterize by Attribute - Symbolize by Value",
+    "text": "Rasterize by Attribute - Symbolize by Value\n\n\n\n\n\n\n\n\nRaster &gt; Conversion &gt; Rasterize (Vector to Raster)\nLayer = sprSoil\nField = KFACTOR\nOutput raster size units = Pixels\nHorizontal / Vertical Resolution = 1250"
   }
 ]

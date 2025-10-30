@@ -14,13 +14,13 @@ format:
     b. Working with remote sensing datasets, deriving geophysical properties
     b. Dealing with NoData values and masks 
 
-2 .Chain together commands in order to achieve desired outcomes
+2. Chain together commands in order to achieve desired outcomes
 3. Work with messy data to produce viable analysis to real world problems
 
 ## Provide written responses to the following Questions [2 pts]
 
 1. What are the differences between vector and raster data? 
-2. Give 3 examples of real-world data that are best described by (A) Vector datasets, and (B) Raster datasets. Explain your reasoning
+2. Give 3 examples of real-world data that are best described by (A) Vector datasets, and (B) Raster datasets. Explain your reasoning.
 3. What is the importance of pixel size and spatial resolution in raster data? 
 4. What are some common types of raster data used in GIS? Hint: we have worked with many of them in the class so far. 
 
