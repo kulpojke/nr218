@@ -27,7 +27,7 @@
 
 ## Challenge! {style="font-size:0.7em"}
 
-You Know about spectral indices.  You know about (very basic) segmentation. 
+You Know about spectral indices.  You know about (very basic) segmentation. You know about zonal ststistics.
 
 1. Segment the Lithium Brine Evaporation Ponds using [Sentinel-2 median composite image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EQkAW31cxJhEpdZAmYTmEccBIM9mwHiynmSJ85_kavB7hQ?e=Fapfce), [Sentinel-2 maximum composite image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EUHmBt2TQN9Gix6F_NdlecgBtG4fUFYu99TS0ie4s0dU4w?e=BL3Zcx) (near Susques Argentina, 2025-04-01 to 2025-10-26).
 2. Calculate their total area.
