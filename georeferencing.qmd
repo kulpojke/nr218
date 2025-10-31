@@ -1,0 +1,139 @@
+# Georeferencing
+
+## What is Georeferencing?
+
++ Let’s say you took an aerial photo, or have an old map with no coordinate information and want to work with that in QGIS.
++ __Georeferencing__ is the process by which we ascribe real-world locations to non-GIS data. 
++ __Ground Control Points__ or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates.
+
+## Example: Swanton Ranch Treasure Map
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+
+![](img/treasure_map.png)
+
+:::
+::: {.fragment .fade-in-then-out}
+
+10 minutes to see if anyone can find the treasure!
+
+:::
+:::
+
+## Tutorial: Geoferencing the Treasure Map
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+:::: {.columns}
+
+::: {.column width="70%"}
++ Download treasure_map.tif
++ Open QGIS
++ `Layer` > `Georeferencer`
++ Open Raster
+    + Select the file we downloaded
+:::
+
+::: {.column width="30%"}
+![](img/raster_icon.png)
+:::
+
+::::
+
+:::
+::: {.fragment .fade-in-then-out}
+
+![](img/treasure_map_processing.png){style="height: 500px;"}
+
+:::
+::: {.fragment .fade-in-then-out}
+:::: {.columns}
+
+::: {.column width="60%"}
++ Open Transformation Settings 
++ Select `Polynomial 1` for `Transformation Type`
++ Set output file 
++ Click ok
+:::
+
+::: {.column width="40%"}
+![](img/settings_icon.png)
+![](img/transformation_settings.png)
+:::
+
+::::
+
+:::
+::: {.fragment .fade-in-then-out}
+
+Can anyone find where (in Swanton) our treasure map might correspond to?
+
+What geographic features are helpful for identifying?
+
+:::
+::: {.fragment .fade-in-then-out}
+:::: {.columns}
+
+::: {.column width="60%"}
+
+::: {style="font-size:0.7em"}
++ Once you find the place:
+    + Add GCPs
+    + Click a point on the image
+    + The `Enter Map Coordinates` box should pop up
+    + Select the `From Map Canvas` button
+    + Click point
+    + Click ok 
+    + Repeat 4x
+:::
+
+:::
+::: {.column width="40%"}
+
+![](img/add_point_icon.png)
+![](img/map_coordinates.png)
+
+:::
+::::
+:::
+::: {.fragment .fade-in-then-out}
+:::: {.columns}
+
+::: {.column width="70%"}
+
+::: {style="font-size:0.8em"}
+Georeferencer dialogue should look like this:
+:::
+
+![](img/georeferencer_dialogue.png)
+
+::::
+::: {.column width="30%"}
+
+::: {style="font-size:0.8em"}
+Click `Run`
+:::
+
+![](img/run_icon.png)
+
+:::
+::::
+:::
+::: {.fragment .fade-in-then-out}
+
+Inspect the result - turn on transparency
+
+How to be more accurate?
+
++ Try again
++ Experiment with different transformations / resampling techniques
++ Add more GCPs
+
+:::
+::: {.fragment .fade-in-then-out}
+
+![](img/georeference_final.png)
+
+:::
+:::

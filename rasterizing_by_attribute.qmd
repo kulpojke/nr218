@@ -1,0 +1,43 @@
+# Rasterizing by Attributes
+
+## Rasterizing by Attributes
+
++ What if we want to create a raster dataset from some vector polygons on the basis of one of the (numerical) attributes? 
++ Example: Swanton Ranch data 
+    + We have some polygons describing soils (sprSoils.geojson)
+    + One of the attributes is KFactor - hydraulic conductivity
+    + We want to create a new raster on the basis of this attribute
+
+## Rasterize by Attribute - Symbolize by Value
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+
+![](img/soil_attributes.png)
+
+:::
+::: {.fragment .fade-in-then-out}
+:::: {.columns}
+
+::: {.column width="60%"}
+
++ `Raster` > `Conversion` > `Rasterize` (Vector to Raster)
++ Layer = sprSoil
++ Field = KFACTOR
++ Output raster size units = Pixels
++ Horizontal / Vertical Resolution = 1250
+
+:::
+::: {.column width="40%"}
+
+![](img/vector_conversion.png)
+
+:::
+::::
+:::
+::: {.fragment .fade-in-then-out}
+
+![](img/rasterized_vector.png)
+
+:::
+:::
