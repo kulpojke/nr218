@@ -22,6 +22,8 @@ project:
     - remote_sensing.qmd
     - statistics_101.qmd
     - segmentation.qmd
+    - rasterizing_by_attribute.qmd
+    - include georeferencing.qmd
     - index.qmd
   resources:
     - .nojekyll

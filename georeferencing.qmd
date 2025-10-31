@@ -6,48 +6,39 @@
 + __Georeferencing__ is the process by which we ascribe real-world locations to non-GIS data. 
 + __Ground Control Points__ or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates.
 
-## Example: Swanton Ranch Treasure Map
+## Example: Swanton Ranch Treasure Map {style="font-size:0.7em"}
 
 ::: {.r-stack}
-::: {.fragment .fade-in-then-out}
+::: {.fragment  .fade-out data-fragment-index="1"}
+[Download the Swanton Ranch [treasure_map.tif](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EQUKbpq79c5LqJLOFpqCnNEBuB4GkTU-3xSiTT1NA7T3nw?e=hGnzcH)]{style="font-size:0.6em"}. Put it someplace sensible.
 
 ![](img/treasure_map.png)
 
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment  .fade-in-then-out data-fragment-index="1"}
+
 
 10 minutes to see if anyone can find the treasure!
 
 :::
 :::
 
-## Tutorial: Geoferencing the Treasure Map
+## Tutorial: Geoferencing the Treasure Map {style="font-size:0.7em"}
 
 ::: {.r-stack}
-::: {.fragment .fade-in-then-out}
-:::: {.columns}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
 
-::: {.column width="70%"}
-+ Download treasure_map.tif
-+ Open QGIS
-+ `Layer` > `Georeferencer`
-+ Open Raster
-    + Select the file we downloaded
+1. Open QGIS
+2. Open Georeferncer (`Layer` > `Georeferencer`)
+3. Open the raster (this button ![](img/raster_icon.png){style="height:1.2em; vertical-align:middle;"})
+4. Select `treasure_map.tif` ![](img/treasure_map.png){style="height:5em; vertical-align:middle;"}
 :::
-
-::: {.column width="30%"}
-![](img/raster_icon.png)
-:::
-
-::::
-
-:::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
 
 ![](img/treasure_map_processing.png){style="height: 500px;"}
 
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
 :::: {.columns}
 
 ::: {.column width="60%"}
@@ -65,14 +56,14 @@
 ::::
 
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
 
 Can anyone find where (in Swanton) our treasure map might correspond to?
 
 What geographic features are helpful for identifying?
 
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
 :::: {.columns}
 
 ::: {.column width="60%"}
@@ -97,7 +88,7 @@ What geographic features are helpful for identifying?
 :::
 ::::
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5"}
 :::: {.columns}
 
 ::: {.column width="70%"}
@@ -108,7 +99,7 @@ Georeferencer dialogue should look like this:
 
 ![](img/georeferencer_dialogue.png)
 
-::::
+:::
 ::: {.column width="30%"}
 
 ::: {style="font-size:0.8em"}
@@ -120,7 +111,7 @@ Click `Run`
 :::
 ::::
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="6"}
 
 Inspect the result - turn on transparency
 
@@ -131,7 +122,7 @@ How to be more accurate?
 + Add more GCPs
 
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="7"}
 
 ![](img/georeference_final.png)
 

@@ -82,44 +82,5 @@ Use arrows or menu in bottom left corner to navigate
 {{< include georeferencing.qmd >}}
 
 
-# Vector and Raster Data
 
-
-# Finding Acquiring, Creating, and Editing GIS Data
-
-
-# GeoProcessing and Vector Operations
-
-
-
-# Geospatial Data: Satellites, UAVs, GPS
-
-
-
-# Spectral Indices and Tabular Joins
-
-
-
-# Spatial Joins, Final Project Discussion
-
-
-# Spatial Analysis Introduction, Final Project Group Discussions
-
-
-# Spatial Analysis: Map Algebra, Reprojection, Resampling
-
-
-# Raster Vector Operations, Zonal Statistics, Point Sampling
-
-
-# Rasterizing by Attributes, Georeferencing, Statistics 101
-
-
-# ArcGIS Pro, Spreadsheets
-
-
-# Web Mapping, Field Data Collection: Mobile sensors and edge devices
-
-
-# Photogrammetry, Radar, Interferometry
 
