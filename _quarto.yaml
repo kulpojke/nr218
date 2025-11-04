@@ -23,7 +23,8 @@ project:
     - statistics_101.qmd
     - segmentation.qmd
     - rasterizing_by_attribute.qmd
-    - include georeferencing.qmd
+    - georeferencing.qmd
+    - focal_filters.qmd
     - index.qmd
   resources:
     - .nojekyll

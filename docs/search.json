@@ -1141,6 +1141,83 @@
     "text": "Tutorial: Geoferencing the Treasure Map\n\n\n\nOpen QGIS\nOpen Georeferncer (Layer &gt; Georeferencer)\nOpen the raster (this button )\nSelect treasure_map.tif \n\n\n\n\n\n\n\n\n\nOpen Transformation Settings\nSelect Polynomial 1 for Transformation Type\nSet output file\nClick ok\n\n\n \n\n\n\nCan anyone find where (in Swanton) our treasure map might correspond to?\nWhat geographic features are helpful for identifying?\n\n\n\n\n\n\nOnce you find the place:\n\nAdd GCPs\nClick a point on the image\nThe Enter Map Coordinates box should pop up\nSelect the From Map Canvas button\nClick point\nClick ok\nRepeat 4x\n\n\n\n\n \n\n\n\n\n\n\nGeoreferencer dialogue should look like this:\n\n\n\n\nClick Run\n\n\n\n\n\nInspect the result - turn on transparency\nHow to be more accurate?\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs"
   },
   {
+    "objectID": "index.html#what-are-focal-filters",
+    "href": "index.html#what-are-focal-filters",
+    "title": "NR 218",
+    "section": "What are Focal Filters?",
+    "text": "What are Focal Filters?\n\nFocal, or neighborhood, filters evaluate each cell using values from its neighbors\nThey smooth noise, enhance edges, and extract landform signatures from rasters\nWindow size and shape determine how much contextual information influences the output\nin QGIS use r.neighbors from processing toolbox"
+  },
+  {
+    "objectID": "index.html#neighborhood-windows",
+    "href": "index.html#neighborhood-windows",
+    "title": "NR 218",
+    "section": "Neighborhood Windows",
+    "text": "Neighborhood Windows\n\nNeighborhoods are typically defined as square windows (3×3, 5×5, etc.).\nCell spacing and window dimensions dictate the spatial scale of the analysis.\nLarger windows generalize features; smaller windows preserve local detail."
+  },
+  {
+    "objectID": "index.html#kernels-weights",
+    "href": "index.html#kernels-weights",
+    "title": "NR 218",
+    "section": "Kernels & Weights",
+    "text": "Kernels & Weights\n\nKernels are matrices of weights used to combine neighbor values into a new pixel.\nWeight patterns emphasize directions, distances, or specific neighbors."
+  },
+  {
+    "objectID": "index.html#mean-a.k.a.-low-pass-filter",
+    "href": "index.html#mean-a.k.a.-low-pass-filter",
+    "title": "NR 218",
+    "section": "Mean (a.k.a. Low-Pass) Filter",
+    "text": "Mean (a.k.a. Low-Pass) Filter\n\nAverages the values within the neighborhood, producing a smoothed surface.\nDampens high-frequency variation\nUseful for removing noise from continuous surfaces (elevation, temperature, etc.)."
+  },
+  {
+    "objectID": "index.html#median-filter",
+    "href": "index.html#median-filter",
+    "title": "NR 218",
+    "section": "Median Filter",
+    "text": "Median Filter\n\nReplaces the center cell with the median of neighborhood values.\nPreserves edges better than mean smoothing while removing salt-and-pepper noise."
+  },
+  {
+    "objectID": "index.html#minimum-maximum-filters",
+    "href": "index.html#minimum-maximum-filters",
+    "title": "NR 218",
+    "section": "Minimum & Maximum Filters",
+    "text": "Minimum & Maximum Filters\n\nMinimum filter assigns the lowest neighborhood value; maximum uses the highest.\nMimic morphological erosion (minimum) and dilation (maximum) on raster data.\nHighlight depressions or peaks, and support feature extraction workflows."
+  },
+  {
+    "objectID": "index.html#roughness-filters",
+    "href": "index.html#roughness-filters",
+    "title": "NR 218",
+    "section": "Roughness Filters",
+    "text": "Roughness Filters\n\n\nQuantify variability inside the neighborhood (e.g., range, standard deviation).\nCapture terrain ruggedness, habitat heterogeneity, or surface texture.\nSensitive to window size: smaller windows detect micro-relief; larger windows show broader roughness zones.\nRaster &gt; Analysis &gt; Roughness computes elevation range within a kernel in QGIS"
+  },
+  {
+    "objectID": "index.html#tpi-geomorphons",
+    "href": "index.html#tpi-geomorphons",
+    "title": "NR 218",
+    "section": "TPI & Geomorphons",
+    "text": "TPI & Geomorphons\n\nTopographic Position Index (TPI) compares a cell to the mean elevation of its neighbors.\nPositive TPI marks ridges; negative TPI highlights valleys—kernel size sets the landform scale.\nGeomorphons classify landforms using multi-directional TPI, revealing patterns such as spurs, hollows, and plains."
+  },
+  {
+    "objectID": "georeferencing.html#what-is-georeferencing",
+    "href": "georeferencing.html#what-is-georeferencing",
+    "title": "",
+    "section": "What is Georeferencing?",
+    "text": "What is Georeferencing?\n\nLet’s say you took an aerial photo, or have an old map with no coordinate information and want to work with that in QGIS.\nGeoreferencing is the process by which we ascribe real-world locations to non-GIS data.\nGround Control Points or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates."
+  },
+  {
+    "objectID": "georeferencing.html#example-swanton-ranch-treasure-map",
+    "href": "georeferencing.html#example-swanton-ranch-treasure-map",
+    "title": "",
+    "section": "Example: Swanton Ranch Treasure Map",
+    "text": "Example: Swanton Ranch Treasure Map\n\n\nDownload the Swanton Ranch treasure_map.tif. Put it someplace sensible.\n\n\n\n10 minutes to see if anyone can find the treasure!"
+  },
+  {
+    "objectID": "georeferencing.html#tutorial-geoferencing-the-treasure-map",
+    "href": "georeferencing.html#tutorial-geoferencing-the-treasure-map",
+    "title": "",
+    "section": "Tutorial: Geoferencing the Treasure Map",
+    "text": "Tutorial: Geoferencing the Treasure Map\n\n\n\nOpen QGIS\nOpen Georeferncer (Layer &gt; Georeferencer)\nOpen the raster (this button )\nSelect treasure_map.tif \n\n\n\n\n\n\n\n\n\nOpen Transformation Settings\nSelect Polynomial 1 for Transformation Type\nSet output file\nClick ok\n\n\n \n\n\n\nCan anyone find where (in Swanton) our treasure map might correspond to?\nWhat geographic features are helpful for identifying?\n\n\n\n\n\n\nOnce you find the place:\n\nAdd GCPs\nClick a point on the image\nThe Enter Map Coordinates box should pop up\nSelect the From Map Canvas button\nClick point\nClick ok\nRepeat 4x\n\n\n\n\n \n\n\n\n\n\n\nGeoreferencer dialogue should look like this:\n\n\n\n\nClick Run\n\n\n\n\n\nInspect the result - turn on transparency\nHow to be more accurate?\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs"
+  },
+  {
     "objectID": "segmentation.html#data",
     "href": "segmentation.html#data",
     "title": "",
@@ -2518,5 +2595,61 @@
     "title": "",
     "section": "Rasterize by Attribute - Symbolize by Value",
     "text": "Rasterize by Attribute - Symbolize by Value\n\n\n\n\n\n\n\n\nRaster &gt; Conversion &gt; Rasterize (Vector to Raster)\nLayer = sprSoil\nField = KFACTOR\nOutput raster size units = Pixels\nHorizontal / Vertical Resolution = 1250"
+  },
+  {
+    "objectID": "focal_filters.html#what-are-focal-filters",
+    "href": "focal_filters.html#what-are-focal-filters",
+    "title": "",
+    "section": "What are Focal Filters?",
+    "text": "What are Focal Filters?\n\nFocal, or neighborhood, filters evaluate each cell using values from its neighbors\nThey smooth noise, enhance edges, and extract landform signatures from rasters\nWindow size and shape determine how much contextual information influences the output\nin QGIS use r.neighbors from processing toolbox"
+  },
+  {
+    "objectID": "focal_filters.html#neighborhood-windows",
+    "href": "focal_filters.html#neighborhood-windows",
+    "title": "",
+    "section": "Neighborhood Windows",
+    "text": "Neighborhood Windows\n\nNeighborhoods are typically defined as square windows (3×3, 5×5, etc.).\nCell spacing and window dimensions dictate the spatial scale of the analysis.\nLarger windows generalize features; smaller windows preserve local detail."
+  },
+  {
+    "objectID": "focal_filters.html#kernels-weights",
+    "href": "focal_filters.html#kernels-weights",
+    "title": "",
+    "section": "Kernels & Weights",
+    "text": "Kernels & Weights\n\nKernels are matrices of weights used to combine neighbor values into a new pixel.\nWeight patterns emphasize directions, distances, or specific neighbors."
+  },
+  {
+    "objectID": "focal_filters.html#mean-a.k.a.-low-pass-filter",
+    "href": "focal_filters.html#mean-a.k.a.-low-pass-filter",
+    "title": "",
+    "section": "Mean (a.k.a. Low-Pass) Filter",
+    "text": "Mean (a.k.a. Low-Pass) Filter\n\nAverages the values within the neighborhood, producing a smoothed surface.\nDampens high-frequency variation\nUseful for removing noise from continuous surfaces (elevation, temperature, etc.)."
+  },
+  {
+    "objectID": "focal_filters.html#median-filter",
+    "href": "focal_filters.html#median-filter",
+    "title": "",
+    "section": "Median Filter",
+    "text": "Median Filter\n\nReplaces the center cell with the median of neighborhood values.\nPreserves edges better than mean smoothing while removing salt-and-pepper noise."
+  },
+  {
+    "objectID": "focal_filters.html#minimum-maximum-filters",
+    "href": "focal_filters.html#minimum-maximum-filters",
+    "title": "",
+    "section": "Minimum & Maximum Filters",
+    "text": "Minimum & Maximum Filters\n\nMinimum filter assigns the lowest neighborhood value; maximum uses the highest.\nMimic morphological erosion (minimum) and dilation (maximum) on raster data.\nHighlight depressions or peaks, and support feature extraction workflows."
+  },
+  {
+    "objectID": "focal_filters.html#roughness-filters",
+    "href": "focal_filters.html#roughness-filters",
+    "title": "",
+    "section": "Roughness Filters",
+    "text": "Roughness Filters\n\n\nQuantify variability inside the neighborhood (e.g., range, standard deviation).\nCapture terrain ruggedness, habitat heterogeneity, or surface texture.\nSensitive to window size: smaller windows detect micro-relief; larger windows show broader roughness zones.\nRaster &gt; Analysis &gt; Roughness computes elevation range within a kernel in QGIS"
+  },
+  {
+    "objectID": "focal_filters.html#tpi-geomorphons",
+    "href": "focal_filters.html#tpi-geomorphons",
+    "title": "",
+    "section": "TPI & Geomorphons",
+    "text": "TPI & Geomorphons\n\nTopographic Position Index (TPI) compares a cell to the mean elevation of its neighbors.\nPositive TPI marks ridges; negative TPI highlights valleys—kernel size sets the landform scale.\nGeomorphons classify landforms using multi-directional TPI, revealing patterns such as spurs, hollows, and plains."
   }
 ]
