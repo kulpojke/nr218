@@ -1999,7 +1999,7 @@
     "href": "terminals.html#powershell-vs-bash",
     "title": "",
     "section": "PowerShell vs Bash",
-    "text": "PowerShell vs Bash\n\nPowerShell is object-oriented: pipelines pass .NET objects, not plain strings.\nBash pipelines stream text; tools like cat, grep, awk compose seamlessly.\nExample (Bash):\n\ncat access.log | grep \"GET /api\" | wc -l\n\nPowerShell equivalent:\n\nGet-Content access.log | Select-String \"GET /api\" | Measure-Object | Select-Object -ExpandProperty Count\n\nPowerShell excels with structured data (ConvertTo-Json, Select-Object), while Bash remains lighter for quick text processing."
+    "text": "PowerShell vs Bash\n\nPowerShell is object-oriented: pipelines pass .NET objects, not plain strings.\nBash pipelines stream text; tools like cat, grep, awk compose seamlessly.\nExample (Bash):\n\ncat access.log | grep \"GET /api\" | wc -l\n\nPowerShell equivalent:\n\nGet-Content access.log | Select-String \"GET /api\" | Measure-Object | Select-Object -ExpandProperty Count"
   },
   {
     "objectID": "terminals.html#digression-why-all-this-mess",
@@ -2755,7 +2755,7 @@
     "href": "intro_excel_arc.html#final-project-data-processing-examples",
     "title": "",
     "section": "Final Project: Data & Processing Examples",
-    "text": "Final Project: Data & Processing Examples\n\nSample data table structure:\n\n\n\n\nVariable\nResolution\nSource\nFile name\n\n\n\n\nPrecipitation\n1 km\nUSGS (2023)\nprecip_2025.tif\n\n\nLandcover\n30 m\nNASA (2015)\nlancover.tif\n\n\nStreams\nNA\nUSDA (2024)\nstreams.geojson"
+    "text": "Final Project: Data & Processing Examples\n\nSample data table structure:\n\n\n\n\n\nVariable\nResolution\nSource\nFile name\n\n\n\n\nPrecipitation\n1 km\nUSGS (2023)\nprecip_2025.tif\n\n\nLandcover\n30 m\nNASA (2015)\nlancover.tif\n\n\nStreams\nNA\nUSDA (2024)\nstreams.geojson"
   },
   {
     "objectID": "intro_excel_arc.html#section-4",
@@ -2763,6 +2763,13 @@
     "title": "",
     "section": "",
     "text": "Sketch processing diagrams to communicate workflows clearly (inputs → tools → outputs)."
+  },
+  {
+    "objectID": "intro_excel_arc.html#section-5",
+    "href": "intro_excel_arc.html#section-5",
+    "title": "",
+    "section": "",
+    "text": "That’s all for today!"
   },
   {
     "objectID": "intro_excel_arc.html#final-project-tips",

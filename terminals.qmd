@@ -38,7 +38,7 @@ cat access.log | grep "GET /api" | wc -l
 Get-Content access.log | Select-String "GET /api" | Measure-Object | Select-Object -ExpandProperty Count
 ```
 
-- PowerShell excels with structured data (`ConvertTo-Json`, `Select-Object`), while Bash remains lighter for quick text processing.
+
 
 ## DIGRESSION: Why all this mess? {style="font-size:0.7em"}
 

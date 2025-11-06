@@ -116,11 +116,13 @@ This applies to QGIS as well.
 - Add preliminary results—screenshots, tables, or maps show tangible progress.
 - Cite sources with in-text references and an alphabetical references section.
 
-![](assets/intro_excel_arc-011.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
 
 ## Final Project: Data & Processing Examples {style="font-size:0.7em"}
 
 - Sample data table structure:
+
+![](assets/intro_excel_arc-011.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
 
 | Variable      | Resolution | Source       | File name |
 |---------------|------------|--------------|-----------|
@@ -136,7 +138,7 @@ This applies to QGIS as well.
 
 ##
 
-![](assets/intro_excel_arc-012.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+[That's all for today!]{.larger}
 
 ## Final Project Tips {style="font-size:0.7em"}
 

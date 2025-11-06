@@ -234,9 +234,6 @@
 <li>PowerShell equivalent:</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a></a><span class="fu">Get-Content</span> access<span class="op">.</span><span class="fu">log</span> <span class="op">|</span> <span class="fu">Select-String</span> <span class="st">"GET /api"</span> <span class="op">|</span> <span class="fu">Measure-Object</span> <span class="op">|</span> <span class="fu">Select-Object</span> <span class="op">-</span>ExpandProperty Count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>PowerShell excels with structured data (<code>ConvertTo-Json</code>, <code>Select-Object</code>), while Bash remains lighter for quick text processing.</li>
-</ul>
 </section>
 <section id="digression-why-all-this-mess" class="slide level2 center" style="font-size:0.7em">
 <h2>DIGRESSION: Why all this mess?</h2>
