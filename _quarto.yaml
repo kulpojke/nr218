@@ -25,6 +25,7 @@ project:
     - rasterizing_by_attribute.qmd
     - georeferencing.qmd
     - focal_filters.qmd
+    - intro_excel_arc.qmd
     - index.qmd
   resources:
     - .nojekyll

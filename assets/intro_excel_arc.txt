@@ -1,0 +1,605 @@
+Microsoft Excel, Intro to Arc
+Pro
+NR 218
+
+GIS Anecdotes?
+
+https://www.linkedin.com/posts/matthew-marrero-0142a9357_surveying-gis-civilengineering-activity-73890297463
+33884416-4oaJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiodRQBMtDo-tf_fpKqe-zzk2X
+Hn0WoO2M
+
+GIS Anecdotes?
+
+Housekeeping
+
+Final Project Outline: Due Tues (10/28)
+●
+●
+●
+●
+
+Finalize an idea / topic
+Write an outline of the Introduction, Data, Methods
+Find at least 1 dataset you will use in your final project
+See Canvas for Structure
+○ Intro - what q are you asking? Why important?
+○ Data - what data will you use? Primary / secondary?
+○ Methods - how will you process / manipulate data to answer Q?
+
+Housekeeping - Project 2 graded
+● Nice work all around!
+● More interested in logic to arrive at answer than answer itself
+● Resubmit and get ½ credit back for points you missed
+○ If resubmitting Project Work or Tutorials - MUST include screenshots
+of each individual step to get back ½ credit.
+
+Project 2 Review
+●
+
+You’re tasked with supporting several city projects. For each task, choose the
+best/most appropriate vector geometry type to describe the feature (Point, Line, or
+Polygon) and justify your choice in 1-2 sentences.
+○ Mapping individual street trees for a maintenance inventory. Points — each
+tree is a discrete location; supports field crews and DB joins.
+○ Delineating building footprints for calculating rooftop solar potential. Polygons
+— roof area & edges matter for area/azimuth calculations.
+○ Representing bus routes for network analysis and travel time estimation. Lines
+— traversable networks and route topology are linear.
+○ Defining school attendance zones for eligibility checks by address. Polygons
+— closed areas for point-in-polygon address checks.
+○ Locating reported potholes submitted by residents via a mobile app. Points —
+single observed locations; easy to buffer/cluster.
+
+Project 2 Review
+●
+
+You’re designing an attribute table for a municipal parcels polygon layer. For
+each attribute (column), specify the most appropriate data type (Options:
+Integer, Float/Double, Text/String, Date/Time, Boolean) and briefly justify your
+choice.
+○ Parcel_ID (e.g., “003421-7”) Text/String — preserves leading zeros and
+mixed characters like hyphens.
+○ Owner_ZIP (e.g., “02108”) Text/String — ZIPs are labels; leading zeros
+must be preserved.
+○ Assessed_Value (in dollars) Integer (or Float/Double if cents needed) —
+numeric currency value used in sums.
+○ Impervious_Cover_Pct (0–100 with decimals) Float/Double — needs
+decimals (e.g., 42.7%).
+○ Has_Easement (yes/no) Boolean — yes/no flag.
+
+Project 2 Review
+1.
+
+2.
+
+3.
+
+Within the sprSoil layer, how many unique values are
+present in the “SOILNAME” field? Hint: Use the “Statistics by
+Categories” tool. [2pts] 19
+Within the sprSoil layer, which type of soil (described in the
+“SOILNAME” field) occurs in the largest number of
+polygons? Hint: Use the “Statistics by Categories” tool. How
+many polygon features have this type of soil? [2pts] Santa
+Lucia shaly clay loam [1pt], 19 polygons [1pt]
+Within the sprLandUse layer, what is the total acreage of
+each land use type (given in the “LUtype” field)? Hint: Use the
+“Add Geometry Attributes” tool and/or the “Statistics by
+Categories” tool. [2pts] See table below
+
+LUtype
+
+Total Acres
+
+Range
+
+1373.5
+
+Forest
+
+1340.4
+
+Natural Areas
+
+425.8
+
+Crops
+
+99.1
+
+Structure Areas
+
+20.63
+
+Housekeeping
+
+Project 3 Due Tues 11/4 11:59 pm
+● Please Submit 1 document - easier to review and give
+feedback that way
+○ Include all maps, etc in that doc
+● Let me know if you need extra time for whatever reason stuff happens!
+○ Would rather you take extra time to learn the material
+and get something out of it than submit an incomplete
+project!
+
+Final Project Draft - Due Tues 11/11
+Based on verbal feedback from in-class conversations and written feedback given
+on project brainstorm and outline, write a draft of your final project.
+●
+●
+●
+●
+●
+
+Submit a working draft of your report.
+This should include drafts (or detailed outlines) of the “Introduction”, “Background”, “Study
+Goals”, “Data”, “Methods”, and "References" Sections, at a minimum.
+Include a map of your 'study area', which should depict the key information around your
+project:
+HIGHLY suggest including preliminary results - including screenshots of data, tables, maps,
+etc that you have produced to this point
+Include a REFERENCES section where you cite, in alphabetical order, sources of data used
+in your project.
+○ BE SURE TO INCLUDE IN-TEXT CITATIONS in (Author, year) format in your report,
+where appropriate.
+
+Final Project - Data Table example
+
+Variable
+
+Resolution
+
+Source
+
+Precipitation
+
+1km
+
+USGS, (2023)
+
+Landcover
+
+30m
+
+NASA, (2015)
+
+etc
+
+etc
+
+etc
+
+Final Project - Processing Diagram example
+
+Final Project Tips
+● Make your project achievable
+○ Pick a relatively small area for your analysis
+○ Pick a specific problem
+■ Good example:
+● How has land use changed in SLO county over the last 15 years
+■ Bad example
+● How has climate changed in the USA since 1900
+● Find your data ASAP
+■ Don’t get to the end of the quarter before realizing the data you
+want to use in your project does not exist
+■ Include Screenshots of data you will use in QGIS
+
+Final Project Tips
+● Think about the time component
+○ You can’t analyze every single image ever taken over your study area
+○ Select your time window of analysis based on what you’re studying
+■ Before / after fires
+■ Before / after algal blooms
+■ Contrast vegetation dynamics in spring / fall
+■ Contrast hydrologic dynamics in drought / flood
+● Analyzing the same area across different times can reveal interesting dynamics
+in terms of:
+○ Seasonality, hydrology, vegetation and fire, ocean dynamics, etc
+
+Final Project Resources
+● Remember - you can easily export vector data to excel to make charts, graphs
+etc
+● High quality examples are on canvas!
+● Need help finding or processing data?
+○ Digital Projects Lab Peer assistants can help you
+○ Book time with them here: https://guides.lib.calpoly.edu/dpl
+○ I can help you: OH = M / W 12-1pm
+○ Haley can help you
+○ ChatGPT can (probably) help you
+○ Google can help you
+○ Etc…
+● Potentially helpful datasets can be found here:
+https://docs.google.com/spreadsheets/d/19QFK3faJuigk_8Nc8smDpe2k-U62ID3f0B-4wgm93tg/edit?gid=0#gid=0
+
+Useful Datasets
+● https://docs.google.com/spreadsheets/d/19QFK3faJuigk_8Nc8smDpe2
+k-U62ID3f0B-4wgm93tg/edit?gid=0#gid=0
+
+Solving GIS problems - debugging
+● If you get an error message: “ERROR: SOMETHING HAPPENED”
+○ Try copy / pasting into:
+■ Google / ChatGPT
+○ Look for resources on:
+■ StackExchange / Quora / Reddit / Blogs
+● Else, write a description of what you were doing to cause the
+problem, or a description of the problem into any of the above.
+● Go for a walk - take a 10 min break and reset - or try again with
+fresh eyes first thing in the AM!
+● Collaborate and work together to solve problems!
+
+Solving GIS problems - Think like computer
+● Must *exactly* follow the instructions
+○ … in the correct order
+○ … with the correct data
+○ … etc
+● It can be tricky
+● If something doesn’t work that *should* work, and you don’t know
+why:
+○ Remove the layer, try again
+○ Restart the program (QGIS), and try again
+● You’ll be amazed how much this fixes.
+● The computer just does what we tell it to
+● Collaborate and work together to solve problems
+
+Solving GIS problems - it’s really about mindset
+●
+●
+●
+●
+●
+●
+
+It takes patience
+It takes discipline
+It takes resilience
+It takes growth mindset
+It’s ok to get frustrated
+It’s not ok to let challenges stifle your curiosity, motivation, and
+appetite to learn
+
+Nothing worth doing is easy - progress comes through struggle and
+adversity.
+
+NEW MATERIAL: Geocoding
+● Sounds fancy (coding != programming?)
+● Refers to translating addresses (e.g. 1234 Grand St. San
+Luis Obispo, 93401) to lat/lon coordinates
+● Can also “Reverse Geocode”, and transform lat/lon
+coordinates to addresses
+● Useful in city planning, demographics, social sciences, etc
+
+● Lots of online tools that do this for free
+
+Tutorial: Export data from QGIS → Excel
+● Open swanton data in QGIS
+● Right click the “sprLandUse” layer
+○ Export > MS Office Open XML spreadsheet [XLSX]
+
+● Save to Desktop or somewhere accessible
+
+Tutorial: Microsoft Excel- loading data
+●
+●
+●
+●
+●
+
+Go to office.com
+Login with your CP credentials
+Click “Explore Apps”
+Open an excel sheet
+File > Open > Open files from this Device
+○ Select the file we just saved
+○ You should now see GIS data in excel online
+
+Tutorial: Microsoft Excel- loading data
+●
+●
+●
+●
+●
+
+Go to office.com
+Login with your CP credentials
+Click “Explore Apps”
+Open an excel sheet
+File > Open > Open files from this Device
+○ Select the file we just saved
+○ You should now see GIS data in excel online
+
+Tutorial: Microsoft Excel- Sort and Filter
+● Click the ‘funnel’ like button
+● Now a small arrow appears next to each column name.
+● Click it
+
+Tutorial: Microsoft Excel- Sort and Filter
+●
+●
+●
+●
+●
+●
+
+Click arrow
+Sort ascending
+Sort descending
+Filter out a category
+Click “Apply”
+What happens?
+
+Tutorial: Microsoft Excel- analyzing data
+Real example
+● Let’s say we want to figure out what % of the total land
+area is occupied by each land use type?
+○ Create a new ‘mini-table’ to do this
+○ Which chart is best for visualizing this?
+
+Tutorial: Microsoft Excel- charting data
+Real example - could we visualize with a chart?
+● Highlight the data
+● Insert > Chart > Pie
+
+Tutorial: Microsoft Excel
+Real example - could we
+visualize with a chart?
+● Highlight the data
+● Insert > Chart > Pie
+● Right click>Format>Data labels
+
+Tutorial: Microsoft Excel- charting data
+●
+●
+●
+●
+●
+●
+
+Select a column (e.g. LUType)
+Click “Data” Tab > Analyze Data
+Click “Insert Pivot Table” on the right banner
+Notice a new sheet pops up
+What is this sheet showing?
+What can we do with it?
+
+Tutorial: Microsoft Excel- Pivot Table
+●
+●
+●
+●
+●
+●
+●
+●
+
+Select a categorical column (e.g. LUType)
+Hold control and select a second numerical column (Acres)
+Click “Data” Tab > Analyze Data
+Click “Insert Pivot Table”
+Select “Acres by LUType”
+Notice a new sheet pops up
+What is this sheet showing?
+What can we do with it?
+
+Tutorial: Microsoft Excel
+Real example - could we
+visualize with a chart?
+● Highlight the data
+● Insert > Chart > Pie
+● Right click>Format>Data labels
+
+Tutorial: Microsoft Excel- charting data
+● Highlight data in new tab
+● Insert > Chart
+○ Try:
+○ Pie chart
+○ Clustered columns
+○ Some others
+
+Tutorial: Microsoft Excel- histogram for
+numerical data
+● Highlight the “Acres” column
+● Insert > Chart
+○ Histogram
+○ What does this show?
+
+Tutorial: Microsoft Excel- histogram for
+numerical data
+● Click on a blue bin
+● Set the “bin width” lower
+● What happens?
+
+Tutorial: Microsoft Excel- scatterplot
+
+Excel scatterplotting
+● What is a scatterplot?
+● Why would you use a scatterplot?
+
+Microsoft Excel- loading data
+●
+●
+●
+●
+●
+●
+
+Download tz_trees.kml from canvas and save it as a .csv
+Go to office.com
+Login with your CP credentials
+Click “Explore Apps”
+Open an excel sheet
+File > Open > Open files from this Device
+○ Select the file we just saved
+○ You should now see GIS data in excel online
+
+Microsoft Excel- scatterplot data
+● Select the “height” and “diam” columns
+● Insert>
+● Chart > Scatter
+
+Microsoft Excel- trendline
+● Right click + format
+● Series > height
+● Trendline > Equation > R-squared
+
+Microsoft Excel- modifying scales
+● Select the “height” and “agb_tonn_1” columns
+● Insert> Scatter
+● Comments?
+● What do we do
+when data is
+‘bunched up’
+along an axis like
+this?
+
+Microsoft Excel- modifying scales
+●
+●
+●
+●
+
+Right click chart > Format
+Horizontal Axis> Logarithmic
+Vertical Axis> Logarithmic
+What happens to the chart?
+
+Microsoft Excel- Log - Log plot
+
+Continuing in GIS at Cal Poly
+● Do you enjoy this class?
+● Considering taking more Geospatial classes at Cal Poly (see next
+slide for details)
+● Consider a GIS Minor
+● Consider doing GIS-related research with faculty
+
+GIS at Cal Poly (Minor Requirements)
+Required Courses
+BRAE 150
+
+Design Graphics and CAD for Agricultural Engineering
+
+2
+
+BRAE 239
+
+Engineering Surveying
+
+4
+
+BRAE 345
+
+Aerial Photogrammetry and Remote Sensing
+
+3-4
+
+or GEOG 328
+
+Applications in Remote Sensing and GIS
+
+NR/LA 218
+
+Introduction to Geographic Information Systems (GIS)
+
+or GEOG 218
+
+Applications in GIS
+
+NR 418
+
+Applied GIS
+
+or GEOG 441
+
+Advanced Applications in Geospatial Technologies
+
+3-4
+
+3-4
+
+Break?
+
+NEW MATERIAL: Arc Pro
+● Another type of GIS software by ESRI, Environmental
+Systems Research Institute (Redlands CA)
+● Same features, but costs several $1000s per year
+● Common in Government orgs, large Nonprofits
+● Easier / more user friendly than QGIS
+● Not open source, only Windows operating system, no
+community development (no plugins), less customization,
+less helpful material online
+
+Tutorial: Intro to Arc Pro
+●
+●
+●
+●
+●
+●
+●
+
+Open up the start menu and select ArcGIS pro
+Download SwantonGIS.gdb.zip from canvas
+Unzip it
+Try to open with ArcGIS Pro
+Map > Add Data
+Select the gdb we just downloaded
+Drag / drop layers into ArcGIS
+
+Tutorial: Intro to Arc Pro
+
+Tutorial: Intro to Arc Pro - category symbology
+● Right click a layer (e.g. sprVegetation)
+● Symbology > Unique Values > Vegtype 1
+
+Tutorial: Intro to Arc Pro - category symbology
+
+Tutorial: Intro to Arc Pro - graduated symbology
+●
+●
+●
+●
+●
+
+Right click a layer (e.g. sprSoils)
+Try out a few symbologies for numerical data
+Symbology > Graduated Colors > KFACTOR
+Symbology > Graduated Symbols > Depth
+Symbology > Proportional Symbols > Slopemax
+
+Tutorial: Intro to Arc Pro - graduated symbology
+
+Tutorial: Mapping with Arc Pro
+●
+●
+●
+●
+●
+●
+●
+●
+
+Insert > New Layout > 8.5x11 Letter
+Map Frame > Map 1:55xxxx
+Draw your frame
+Add north arrow
+Add scale bar
+Add legend
+Add latitude / longitude coordinates with “Grid”
+To publish: Share > Export map > copy or set filepath
+
+Tutorial: Mapping with Arc Pro
+
+Tutorial: Making a
+basic map with arc pro
+
+PROJECT 4 - Due 11/20
+● Goal: Pick the optimal location on Swanton Ranch for ONE
+of the following sites (decide before leaving class):
+○ Student Housing Site
+○ Hemp Farm Site
+○ Helicopter Landing Site
+● Write a report describing how and why you selected the
+site (See instructions on Canvas)
+● Get in groups of 2-3 based on seating
+○ SEE ME IF YOU DO NOT HAVE A GROUP
+
+

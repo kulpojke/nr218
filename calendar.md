@@ -141,12 +141,12 @@ Here's the table with the Week column containing just the integer week values:
 | October 27   | 6    | Statistics 101, Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | | |
 | October 29   | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling, continued | | [Final Project Outline Due](final_proj.md) |
 | November 3   | 7    | Rasterizing by Attributes, Georeferencing | | |
-| November 5   | 7    | GEE, Spreadsheets | | [Project 3](project_3.md) |
-| November 10  | 8    | Web Mapping, Field Data Collection: Mobile sensors and edge devices | | |
+| November 5   | 7    | Open lab time | | [Project 3](project_3.md) |
+| November 10  | 8    | Spreadsheets, ArcGIS, Google Earth Engine  | | |
 | November 11  | 8    | Academic holiday - Veterans Day observed | | |
 | November 12  | 8    | No Class | | |
-| November 17  | 9    | Advanced Topics: GPS, Lidar, Photogrammetry, Radar, Interferometry | | |
-| November 19  | 9    | Real World Applications and Careers - Guest Lectures| | |
+| November 17  | 9    | Web Mapping, Field Data Collection: Mobile sensors and edge devices | | |
+| November 19  | 9    | Advanced Topics: GPS, Lidar, Photogrammetry, Radar, Interferometry| | |
 | November 24  |      | Fall Break | | |
 | November 26  |      | Fall Break | | |
 | December 1   | 10   | Project 4 Presentations | | Project 4 |
