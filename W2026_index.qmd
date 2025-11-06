@@ -1,0 +1,90 @@
+---
+title: "NR 218"
+format:
+  revealjs:
+    incremental: false
+jupyter: python3
+echo: true
+output-location: column
+navigation-mode: vertical
+---
+
+
+
+```{=html}
+<style>
+.reveal .attribution {
+  font-size: 0.4em !important;
+  color: #888;
+  text-align: right;
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+.reveal .attribution a {
+  color: #666;
+  text-decoration: none;
+}
+
+.reveal .attribution a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive image sizing */
+.reveal img {
+  max-width: 95%;
+  max-height: 70vh;
+  height: auto;
+  object-fit: contain;
+}
+</style>
+```
+
+
+
+# NR 218
+
+Use arrows or menu in bottom left corner to navigate
+
+[Syllabus](calendar.html)
+
+{{< include introduction.qmd >}}
+
+{{< include terminals.qmd >}}
+
+{{< include what_is_gis.qmd >}}
+
+{{< include some_basic_gis_concepts.qmd >}}
+
+{{< include data_storage.qmd >}}
+
+{{< include a_quick_intro_to_qgis.qmd >}}
+
+{{< include intro_geospatial_data.qmd >}}
+
+{{< include projections_etc.qmd >}}
+
+{{< include spatial_data_models.qmd >}}
+
+{{< include finding_gis_data.qmd >}}
+
+{{< include w3_house_keeping.qmd >}}
+
+{{< include vector_tutorial.qmd >}}
+
+{{< include remote_sensing.qmd >}}
+
+{{< include statistics_101.qmd >}}
+
+{{< include segmentation.qmd >}}
+
+{{< include rasterizing_by_attribute.qmd >}}
+
+{{< include georeferencing.qmd >}}
+
+{{< include focal_filters.qmd >}}
+
+
+
+

@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>intro_excel_arc</title>
+  <title>terminals</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,6 +27,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-e9506f4cf0740638825fabafd1e71958.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -127,418 +192,63 @@
 
 
 <section>
-<section id="intro-to-spreadsheets-and-arc-gis" class="title-slide slide level1 center">
-<h1>Intro to spreadsheets and ARC GIS</h1>
-
+<section id="terminals-and-shells" class="title-slide slide level1 center">
+<h1>Terminals and Shells</h1>
+<p>If you have a deep emotional connection to MS Windows, prepare to be offended!</p>
 </section>
-<section id="microsoft-excel-intro-to-arc-pro" class="slide level2 center" style="font-size:0.7em">
-<h2>Microsoft Excel, Intro to Arc Pro</h2>
-<p>Today</p>
+<section id="terminals-across-operating-systems" class="slide level2 center" style="font-size:0.7em">
+<h2>Terminals Across Operating Systems</h2>
 <ul>
-<li>blend spreadsheet skills with ArcGIS Pro fundamentals.</li>
-<li>Build confidence moving data between QGIS, Excel Online, and ArcGIS Pro.</li>
-<li>Reinforce project expectations before introducing new tools.</li>
+<li><strong>Linux</strong>: terminals are native; <code>/bin/bash</code>, <code>/bin/zsh</code>, or others under the same POSIX conventions.</li>
+<li><strong>macOS</strong>: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.</li>
+<li><strong>Windows</strong>: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages.</li>
 </ul>
 </section>
-<section id="section" class="slide level2 center">
-<h2></h2>
-<p><img data-src="assets/intro_excel_arc-005.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="section-1" class="slide level2 center">
-<h2></h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="assets/intro_excel_arc-007.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="assets/intro_excel_arc-008.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</div></div>
-<p><img data-src="assets/intro_excel_arc-009.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="gis-anecdotes" class="slide level2 center" style="font-size:0.7em">
-<h2>GIS Anecdotes</h2>
-<p><a href="https://www.linkedin.com/posts/matthew-marrero-0142a9357_surveying-gis-civilengineering-activity-7389029746333884416-4oaJ">LinkedIn story on surveying, GIS, and civil engineering</a>.</p>
-</section>
-<section id="housekeeping" class="slide level2 center" style="font-size:0.7em">
-<h2>Housekeeping</h2>
-<p>Project 3 (Due November 5th @ 11:59 pm)</p>
-</section>
-<section id="enough" class="slide level2 center">
-<h2>Enough!</h2>
-<p>Stop working out of your Download Folders!</p>
+<section id="the-windows-terminal-zoo" class="slide level2 center" style="font-size:0.7em">
+<h2>The Windows Terminal Zoo</h2>
 <ul>
-<li>File organization is a big component of GIS work (or any other computer based analysis)</li>
-<li>Take the time to set up a project folder and organize your data.</li>
-<li><em>Sooooo</em> many of the problems you are having are related to poor file organization!</li>
-<li>You should never feel sad about deleting the entire contents of your download folder!</li>
+<li><strong>Command Prompt (<code>cmd.exe</code>)</strong>: legacy DOS-style environment with limited scripting features.</li>
+<li><strong>PowerShell (5.x)</strong> vs <strong>PowerShell 7+</strong>: different .NET runtimes, different module compatibility.</li>
+<li><strong>Git Bash / MSYS2</strong>: provides a GNU userland inside Windows; paths need translation.</li>
+<li><strong>Environment-specific shells</strong>: <code>Anaconda Prompt</code>, <code>OSGeo4W Shell</code>, etc., inject toolchains and custom env vars; each behaves slightly differently.</li>
 </ul>
 </section>
-<section id="enough-1" class="slide level2 center">
-<h2>Enough!</h2>
-<p>Also, when you get a zip..</p>
+<section id="why-does-cmd.exe-feel-janky" class="slide level2 center" style="font-size:0.7em">
+<h2>Why Does <code>cmd.exe</code> Feel Janky?</h2>
 <ul>
-<li>Extract the files to your project directory (and organize if need by)</li>
-<li>Leave the zip in your downloads and never glance at it again.</li>
+<li>Command language rooted in DOS; minimal quoting, no pipelines beyond simple <code>|</code>.</li>
+<li>Lacks native concepts like environment exports.</li>
+<li>Encoding quirks (Code Page 437 vs UTF-8) cause unexpected character issues.</li>
+<li>File globbing and path separators differ (<code>\</code> vs <code>/</code>), breaking cross-platform scripts.</li>
 </ul>
 </section>
-<section id="file-organization-and-computer-hygiene" class="slide level2 center">
-<h2>File Organization and Computer Hygiene</h2>
-<div style="margin-right: 520px; font-size: 0.5em">
-<p>Be kind to your future self - keep your files organized:</p>
+<section id="powershell-vs-bash" class="slide level2 center" style="font-size:0.7em">
+<h2>PowerShell vs Bash</h2>
 <ul>
-<li>Use directories (a.k.a folders)</li>
-<li>Use descriptive names:
-<ul>
-<li>e.g.&nbsp;<code>slo_county_26910.geojson</code> not <code>county.geojson</code></li>
-</ul></li>
-<li>Don’t put spaces in file or directory names (see <a href="https://authors.library.caltech.edu/records/mmnpf-cez11">this</a>)</li>
+<li>PowerShell is object-oriented: pipelines pass .NET objects, not plain strings.</li>
+<li>Bash pipelines stream text; tools like <code>cat</code>, <code>grep</code>, <code>awk</code> compose seamlessly.</li>
+<li>Example (Bash):</li>
 </ul>
-</div>
-<p><img data-src="https://imgs.xkcd.com/comics/documents.png" class="absolute" style="top: 100px; right: 0px; height: 500px; "></p>
-</section>
-<section id="how-to-organize-your-files" class="slide level2 center" style="font-size:0.5em">
-<h2>How to Organize your files</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="fu">cat</span> access.log <span class="kw">|</span> <span class="fu">grep</span> <span class="st">"GET /api"</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>Pick a convention and be consistent</li>
-<li>For example:</li>
+<li>PowerShell equivalent:</li>
 </ul>
-<pre><code>/Work/NR_classes/
-├── Class1/
-│   └── ...
-├── NR218/
-│   ├── Project_1/
-│   │   └── ...
-│   └── Project_2/
-│       ├── Vector/
-│       │   ├── trees.parquet
-│       │   └── streams.geogjson
-|       ├── Raster/
-│       │   ├── dem.tif
-│       │   └── rainfall.h5
-│       ├── qgis/
-│       │   └── project_2.qmd
-│       └── Results/
-│           ├── Figures/
-│           │   ├── figure1.png
-│           │   ├── figure2.png
-│           │   └── map.png
-│           └── proj_2_report.doc</code></pre>
-</section>
-<section id="section-2" class="slide level2 center">
-<h2></h2>
-<p><img data-src="assets/intro_excel_arc-004.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-<div style="text-align: center; font-size:0.7em">
-<p>This applies to QGIS as well.</p>
-</div>
-</section>
-<section id="section-3" class="slide level2 center">
-<h2></h2>
-</section>
-<section id="final-project-draft-due-1111" class="slide level2 center" style="font-size:0.7em">
-<h2>Final Project Draft (Due 11/11)</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a></a><span class="fu">Get-Content</span> access<span class="op">.</span><span class="fu">log</span> <span class="op">|</span> <span class="fu">Select-String</span> <span class="st">"GET /api"</span> <span class="op">|</span> <span class="fu">Measure-Object</span> <span class="op">|</span> <span class="fu">Select-Object</span> <span class="op">-</span>ExpandProperty Count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>Deliver a working draft covering Introduction, Background, Study Goals, Data, Methods, and References.</li>
-<li>Include a study area map that grounds your project context.</li>
-<li>Add preliminary results—screenshots, tables, or maps show tangible progress.</li>
-<li>Cite sources with in-text references and an alphabetical references section.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-011.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="final-project-data-processing-examples" class="slide level2 center" style="font-size:0.7em">
-<h2>Final Project: Data &amp; Processing Examples</h2>
-<ul>
-<li>Sample data table structure:</li>
-</ul>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Variable</th>
-<th>Resolution</th>
-<th>Source</th>
-<th>File name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Precipitation</td>
-<td>1 km</td>
-<td>USGS (2023)</td>
-<td>precip_2025.tif</td>
-</tr>
-<tr class="even">
-<td>Landcover</td>
-<td>30 m</td>
-<td>NASA (2015)</td>
-<td>lancover.tif</td>
-</tr>
-<tr class="odd">
-<td>Streams</td>
-<td>NA</td>
-<td>USDA (2024)</td>
-<td>streams.geojson</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="section-4" class="slide level2 center">
-<h2></h2>
-<ul>
-<li>Sketch processing diagrams to communicate workflows clearly (inputs → tools → outputs). <img data-src="assets/intro_excel_arc-010.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></li>
+<li>PowerShell excels with structured data (<code>ConvertTo-Json</code>, <code>Select-Object</code>), while Bash remains lighter for quick text processing.</li>
 </ul>
 </section>
-<section id="section-5" class="slide level2 center">
-<h2></h2>
-<p><img data-src="assets/intro_excel_arc-012.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="final-project-tips" class="slide level2 center" style="font-size:0.7em">
-<h2>Final Project Tips</h2>
+<section id="digression-why-all-this-mess" class="slide level2 center" style="font-size:0.7em">
+<h2>DIGRESSION: Why all this mess?</h2>
+<p>86-DOS –&gt; MS-DOS –&gt; MS-DOS 2.0</p>
 <ul>
-<li>Scope realistically: pick a focused area and question.</li>
-<li>Secure data early; verify availability before committing to a topic.</li>
-<li>Document intermediate products (screenshots, stats) as you go.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-013.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="final-project-tips-time-dimension" class="slide level2 center" style="font-size:0.7em">
-<h2>Final Project Tips: Time Dimension</h2>
+<li>86-DOS (a.k.a Quick and Dirty Operating System)
 <ul>
-<li>Choose comparison windows that match your phenomenon (e.g., pre/post fire, seasonal contrasts).</li>
-<li>Temporal analyses reveal dynamics in hydrology, vegetation, ocean conditions, and more.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-014.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="final-project-resources" class="slide level2 center" style="font-size:0.7em">
-<h2>Final Project Resources</h2>
-<ul>
-<li>Export QGIS attribute tables to Excel for quick charts and summaries.</li>
-<li>Browse high-quality exemplars on Canvas.</li>
-<li>Support network:
-<ul>
-<li>Digital Projects Lab peer assistants — <a href="https://guides.lib.calpoly.edu/dpl">book time</a></li>
-<li>Instructor office hours (Mon/Wed 12–1 pm)</li>
-<li>Haley, classmates, ChatGPT, and the broader web.</li>
-</ul></li>
-<li>Curated dataset list: <a href="https://docs.google.com/spreadsheets/d/19QFK3faJuigk_8Nc8smDpe2k-U62ID3f0B-4wgm93tg/edit?gid=0#gid=0">Potential datasets spreadsheet</a>.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-016.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="debugging-gis-workflows" class="slide level2 center" style="font-size:0.7em">
-<h2>Debugging GIS Workflows</h2>
-<ul>
-<li>Translate cryptic error messages into keywords for Google, StackExchange, or ChatGPT.</li>
-<li>Describe what you were doing when the problem appeared; context helps others help you.</li>
-<li>Step away briefly—fresh eyes solve many stubborn issues.</li>
-<li>Collaborate; many GIS puzzles are easier as a team.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-017.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="think-like-a-computer" class="slide level2 center" style="font-size:0.7em">
-<h2>Think Like a Computer</h2>
-<ul>
-<li>Follow instructions exactly: correct order, layers, and parameters.</li>
-<li>When tools misbehave:
-<ul>
-<li>Remove and re-add the layer.</li>
-<li>Restart QGIS and retry the workflow.</li>
-</ul></li>
-<li>Remember: computers execute exactly what we specify—precision matters.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-018.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="growth-mindset-for-gis" class="slide level2 center" style="font-size:0.7em">
-<h2>Growth Mindset for GIS</h2>
-<ul>
-<li>Success requires patience, discipline, resilience, and curiosity.</li>
-<li>Frustration is normal; letting it derail progress isn’t.</li>
-<li>Meaningful progress comes through iterative struggle and reflection.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-019.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="new-material-geocoding" class="slide level2 center" style="font-size:0.7em">
-<h2>New Material: Geocoding</h2>
-<ul>
-<li>Geocoding converts addresses to coordinates; reverse geocoding does the opposite.</li>
-<li>Supports planning, demographics, and many location-based analyses.</li>
-<li>Numerous free tools and APIs exist—use them responsibly.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-020.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="tutorial-export-qgis-data-to-excel" class="slide level2 center" style="font-size:0.7em">
-<h2>Tutorial: Export QGIS Data to Excel</h2>
-<ul>
-<li>Open the Swanton dataset in QGIS.</li>
-<li>Right-click <code>sprLandUse</code> → <code>Export</code> → <code>MS Office Open XML spreadsheet (XLSX)</code>.</li>
-<li>Save the file to an accessible location (e.g., Desktop or OneDrive).</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-021.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="excel-online-load-gis-data" class="slide level2 center" style="font-size:0.7em">
-<h2>Excel Online: Load GIS Data</h2>
-<ul>
-<li>Visit <a href="https://office.com">office.com</a> and sign in with CP credentials.</li>
-<li>Explore apps → open Excel → <code>File</code> → <code>Open</code> → <code>Open files from this device</code>.</li>
-<li>Select the exported XLSX to view GIS attributes in Excel Online.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-022.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="excel-basics-sort-filter" class="slide level2 center" style="font-size:0.7em">
-<h2>Excel Basics: Sort &amp; Filter</h2>
-<ul>
-<li>Use the funnel icon to enable filters on each column header.</li>
-<li>Sort ascending/descending and filter categories to explore the dataset.</li>
-<li>Observe how filtering impacts downstream calculations.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-023.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="excel-analysis-summaries-charts" class="slide level2 center" style="font-size:0.7em">
-<h2>Excel Analysis: Summaries &amp; Charts</h2>
-<ul>
-<li>Build mini-tables to compute metrics (e.g., % land area by use).</li>
-<li>Highlight data → <code>Insert</code> → <code>Chart</code> to visualize (pie, column, etc.).</li>
-<li>Format data labels and legends for clarity.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-024.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="excel-analysis-pivot-tables" class="slide level2 center" style="font-size:0.7em">
-<h2>Excel Analysis: Pivot Tables</h2>
-<ul>
-<li>Select a categorical field (e.g., <code>LUType</code>) and a numeric field (<code>Acres</code>).</li>
-<li><code>Data</code> tab → <code>Analyze Data</code> → <code>Insert Pivot Table</code>.</li>
-<li>Inspect the generated sheet to see totals by category; experiment with other stats.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-025.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="excel-analysis-histograms" class="slide level2 center" style="font-size:0.7em">
-<h2>Excel Analysis: Histograms</h2>
-<ul>
-<li>Highlight the <code>Acres</code> column → <code>Insert</code> → <code>Chart</code> → <code>Histogram</code>.</li>
-<li>Adjust bin width to reveal distribution patterns and outliers.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-026.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="excel-analysis-scatterplots-trendlines" class="slide level2 center" style="font-size:0.7em">
-<h2>Excel Analysis: Scatterplots &amp; Trendlines</h2>
-<ul>
-<li>Select paired fields (e.g., <code>height</code> vs <code>diameter</code>) → <code>Insert</code> → <code>Scatter</code>.</li>
-<li>Add trendlines and display equation plus R² to assess relationships.</li>
-<li>When values cluster along an axis, use logarithmic scales to spread the data.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-028.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="continuing-gis-at-cal-poly" class="slide level2 center" style="font-size:0.7em">
-<h2>Continuing GIS at Cal Poly</h2>
-<ul>
-<li>Enjoying the course? Explore additional geospatial classes and consider the GIS minor.</li>
-<li>Engage in GIS-related research with faculty or campus partners.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-030.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="gis-minor-requirements-highlights" class="slide level2 center" style="font-size:0.7em">
-<h2>GIS Minor Requirements (Highlights)</h2>
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 77%">
-<col style="width: 9%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Course</th>
-<th>Title</th>
-<th>Units</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>BRAE 150</td>
-<td>Design Graphics and CAD for Agricultural Engineering</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td>BRAE 239</td>
-<td>Engineering Surveying</td>
-<td>4</td>
-</tr>
-<tr class="odd">
-<td>BRAE 345</td>
-<td>Aerial Photogrammetry and Remote Sensing</td>
-<td>3–4</td>
-</tr>
-<tr class="even">
-<td>GEOG 328</td>
-<td>Applications in Remote Sensing and GIS <em>(option)</em></td>
-<td>3–4</td>
-</tr>
-<tr class="odd">
-<td>NR/LA 218 or GEOG 218</td>
-<td>Intro / Applications in GIS</td>
-<td>3–4</td>
-</tr>
-<tr class="even">
-<td>NR 418 or GEOG 441</td>
-<td>Applied / Advanced Geospatial Technologies</td>
-<td>3–4</td>
-</tr>
-</tbody>
-</table>
-<p><img data-src="assets/intro_excel_arc-032.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="break" class="slide level2 center" style="font-size:0.7em">
-<h2>Break?</h2>
-<p>Take a moment to reset—hydrate, stretch, and prepare for ArcGIS Pro.</p>
-<p><img data-src="assets/intro_excel_arc-033.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="new-material-arcgis-pro-overview" class="slide level2 center" style="font-size:0.7em">
-<h2>New Material: ArcGIS Pro Overview</h2>
-<ul>
-<li>ESRI’s enterprise GIS platform; widely used in government and large nonprofits.</li>
-<li>Feature-rich and user-friendly but proprietary, Windows-only, and licensed.</li>
-<li>Fewer plugins/community resources compared to QGIS; plan support accordingly.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-034.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="tutorial-arcgis-pro-setup" class="slide level2 center" style="font-size:0.7em">
-<h2>Tutorial: ArcGIS Pro Setup</h2>
-<ul>
-<li>Launch ArcGIS Pro from the Start menu.</li>
-<li>Download <code>SwantonGIS.gdb.zip</code> from Canvas and extract it.</li>
-<li>In ArcGIS Pro: <code>Map</code> → <code>Add Data</code> → browse to the unzipped GDB.</li>
-<li>Drag layers from the geodatabase into the map.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-035.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="arcgis-pro-symbology" class="slide level2 center" style="font-size:0.7em">
-<h2>ArcGIS Pro: Symbology</h2>
-<ul>
-<li>Category symbology: right-click layer (e.g., <code>sprVegetation</code>) → <code>Symbology</code> → <code>Unique Values</code> → choose field (<code>Vegtype1</code>).</li>
-<li>Graduated styling: experiment with numerical fields (<code>sprSoils</code>):
-<ul>
-<li><code>Graduated Colors</code> with <code>KFACTOR</code>.</li>
-<li><code>Graduated Symbols</code> with <code>Depth</code>.</li>
-<li><code>Proportional Symbols</code> with <code>SlopeMax</code>.</li>
+<li>Developed and marketed by Seattle Computer Products (SCP) for its Intel 8086-based computer kit</li>
+<li>Used the forward slash (/) for command line options</li>
+<li></li>
 </ul></li>
 </ul>
-<p><img data-src="assets/intro_excel_arc-037.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="arcgis-pro-layouts-export" class="slide level2 center" style="font-size:0.7em">
-<h2>ArcGIS Pro: Layouts &amp; Export</h2>
-<ul>
-<li><code>Insert</code> → <code>New Layout</code> → <code>8.5 x 11 Letter</code>; set scale (e.g., 1:55,000).</li>
-<li>Add map frame, north arrow, scale bar, legend, and grid coordinates.</li>
-<li>Share the finished map via <code>Share</code> → <code>Export Map</code>, setting filename and path.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-038.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
-</section>
-<section id="project-4-overview-due-1120" class="slide level2 center" style="font-size:0.7em">
-<h2>Project 4 Overview (Due 11/20)</h2>
-<ul>
-<li>Goal: select the optimal Swanton Ranch site for one option:
-<ul>
-<li>Student housing, Hemp farm, or Helicopter landing.</li>
-</ul></li>
-<li>Produce a report explaining site selection criteria and analysis.</li>
-<li>Work in groups of 2–3; coordinate today and check in if you need a team.</li>
-</ul>
-<p><img data-src="assets/intro_excel_arc-040.jpg" style="max-height: 420px; margin: 1.5rem auto; display: block;"></p>
 
 
 </section></section>

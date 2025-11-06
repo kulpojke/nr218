@@ -8,6 +8,7 @@ project:
     - project_3.md
     - final_proj.md
     - introduction.qmd
+    - terminals.qmd
     - what_is_gis.qmd
     - some_basic_gis_concepts.qmd
     - data_storage.qmd

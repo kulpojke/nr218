@@ -1,0 +1,327 @@
+# Intro to spreadsheets and ARC GIS
+
+## Microsoft Excel, Intro to Arc Pro {style="font-size:0.7em"}
+Today 
+
+- blend spreadsheet skills with ArcGIS Pro fundamentals.
+- Build confidence moving data between QGIS, Excel Online, and ArcGIS Pro.
+- Reinforce project expectations before introducing new tools.
+
+## 
+
+![](assets/intro_excel_arc-005.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+##
+
+::: {.columns}
+::: {.column width="50%"}
+![](assets/intro_excel_arc-007.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+:::
+
+
+::: {.column width="50%"}
+![](assets/intro_excel_arc-008.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+
+:::
+:::
+
+
+
+![](assets/intro_excel_arc-009.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+
+
+## GIS Anecdotes {style="font-size:0.7em"}
+
+[LinkedIn story on surveying, GIS, and civil engineering](https://www.linkedin.com/posts/matthew-marrero-0142a9357_surveying-gis-civilengineering-activity-7389029746333884416-4oaJ).
+
+
+## Housekeeping {style="font-size:0.7em"}
+
+Project 3 (Due November 5th @ 11:59 pm) 
+
+
+
+## Enough!
+
+Stop working out of your Download Folders!
+
++ File organization is a big component of GIS work (or any other computer based analysis)
++ Take the time to set up a project folder and organize your data.
++ _Sooooo_ many of the problems you are having are related to poor file organization!
++ You should never feel sad about deleting the entire contents of your download folder!
+
+## Enough!
+
+Also, when you get a zip..
+
++ Extract the files to your project directory (and organize if need by)
++ Leave the zip in your downloads and never glance at it again.
+
+## File Organization and Computer Hygiene
+:::{style="margin-right: 520px; font-size: 0.5em"}
+Be kind to your future self - keep your files organized:
+
++ Use directories (a.k.a folders)
++ Use descriptive names:
+  + e.g. `slo_county_26910.geojson` not `county.geojson`
++ Don't put spaces in file or directory names (see [this](https://authors.library.caltech.edu/records/mmnpf-cez11))
+:::
+
+![](https://imgs.xkcd.com/comics/documents.png){.absolute top=100 right=0 height=500}
+
+## How to Organize your files {style="font-size:0.5em"}
++ Pick a convention and be consistent
++ For example:
+
+```
+/Work/NR_classes/
+├── Class1/
+│   └── ...
+├── NR218/
+│   ├── Project_1/
+│   │   └── ...
+│   └── Project_2/
+│       ├── Vector/
+│       │   ├── trees.parquet
+│       │   └── streams.geogjson
+|       ├── Raster/
+│       │   ├── dem.tif
+│       │   └── rainfall.h5
+│       ├── qgis/
+│       │   └── project_2.qmd
+│       └── Results/
+│           ├── Figures/
+│           │   ├── figure1.png
+│           │   ├── figure2.png
+│           │   └── map.png
+│           └── proj_2_report.doc
+```
+
+##
+
+![](assets/intro_excel_arc-004.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+::: {style="text-align: center; font-size:0.7em"}
+This applies to QGIS as well.
+:::
+
+## 
+
+## Final Project Draft (Due 11/11) {style="font-size:0.7em"}
+
+- Deliver a working draft covering Introduction, Background, Study Goals, Data, Methods, and References.
+- Include a study area map that grounds your project context.
+- Add preliminary results—screenshots, tables, or maps show tangible progress.
+- Cite sources with in-text references and an alphabetical references section.
+
+![](assets/intro_excel_arc-011.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Final Project: Data & Processing Examples {style="font-size:0.7em"}
+
+- Sample data table structure:
+
+| Variable      | Resolution | Source       | File name |
+|---------------|------------|--------------|-----------|
+| Precipitation | 1 km       | USGS (2023)  | precip_2025.tif |
+| Landcover     | 30 m       | NASA (2015)  | lancover.tif |
+| Streams       | NA         | USDA (2024)  | streams.geojson |
+
+
+##
+- Sketch processing diagrams to communicate workflows clearly (inputs → tools → outputs).
+![](assets/intro_excel_arc-010.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+
+##
+
+![](assets/intro_excel_arc-012.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Final Project Tips {style="font-size:0.7em"}
+
+- Scope realistically: pick a focused area and question.
+- Secure data early; verify availability before committing to a topic.
+- Document intermediate products (screenshots, stats) as you go.
+
+![](assets/intro_excel_arc-013.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Final Project Tips: Time Dimension {style="font-size:0.7em"}
+
+- Choose comparison windows that match your phenomenon (e.g., pre/post fire, seasonal contrasts).
+- Temporal analyses reveal dynamics in hydrology, vegetation, ocean conditions, and more.
+
+![](assets/intro_excel_arc-014.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Final Project Resources {style="font-size:0.7em"}
+
+- Export QGIS attribute tables to Excel for quick charts and summaries.
+- Browse high-quality exemplars on Canvas.
+- Support network:
+  - Digital Projects Lab peer assistants — [book time](https://guides.lib.calpoly.edu/dpl)
+  - Instructor office hours (Mon/Wed 12–1 pm)
+  - Haley, classmates, ChatGPT, and the broader web.
+- Curated dataset list: [Potential datasets spreadsheet](https://docs.google.com/spreadsheets/d/19QFK3faJuigk_8Nc8smDpe2k-U62ID3f0B-4wgm93tg/edit?gid=0#gid=0).
+
+![](assets/intro_excel_arc-016.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Debugging GIS Workflows {style="font-size:0.7em"}
+
+- Translate cryptic error messages into keywords for Google, StackExchange, or ChatGPT.
+- Describe what you were doing when the problem appeared; context helps others help you.
+- Step away briefly—fresh eyes solve many stubborn issues.
+- Collaborate; many GIS puzzles are easier as a team.
+
+![](assets/intro_excel_arc-017.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Think Like a Computer {style="font-size:0.7em"}
+
+- Follow instructions exactly: correct order, layers, and parameters.
+- When tools misbehave:
+  - Remove and re-add the layer.
+  - Restart QGIS and retry the workflow.
+- Remember: computers execute exactly what we specify—precision matters.
+
+![](assets/intro_excel_arc-018.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Growth Mindset for GIS {style="font-size:0.7em"}
+
+- Success requires patience, discipline, resilience, and curiosity.
+- Frustration is normal; letting it derail progress isn’t.
+- Meaningful progress comes through iterative struggle and reflection.
+
+![](assets/intro_excel_arc-019.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## New Material: Geocoding {style="font-size:0.7em"}
+
+- Geocoding converts addresses to coordinates; reverse geocoding does the opposite.
+- Supports planning, demographics, and many location-based analyses.
+- Numerous free tools and APIs exist—use them responsibly.
+
+![](assets/intro_excel_arc-020.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Tutorial: Export QGIS Data to Excel {style="font-size:0.7em"}
+
+- Open the Swanton dataset in QGIS.
+- Right-click `sprLandUse` → `Export` → `MS Office Open XML spreadsheet (XLSX)`.
+- Save the file to an accessible location (e.g., Desktop or OneDrive).
+
+![](assets/intro_excel_arc-021.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Excel Online: Load GIS Data {style="font-size:0.7em"}
+
+- Visit [office.com](https://office.com) and sign in with CP credentials.
+- Explore apps → open Excel → `File` → `Open` → `Open files from this device`.
+- Select the exported XLSX to view GIS attributes in Excel Online.
+
+![](assets/intro_excel_arc-022.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Excel Basics: Sort & Filter {style="font-size:0.7em"}
+
+- Use the funnel icon to enable filters on each column header.
+- Sort ascending/descending and filter categories to explore the dataset.
+- Observe how filtering impacts downstream calculations.
+
+![](assets/intro_excel_arc-023.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Excel Analysis: Summaries & Charts {style="font-size:0.7em"}
+
+- Build mini-tables to compute metrics (e.g., % land area by use).
+- Highlight data → `Insert` → `Chart` to visualize (pie, column, etc.).
+- Format data labels and legends for clarity.
+
+![](assets/intro_excel_arc-024.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Excel Analysis: Pivot Tables {style="font-size:0.7em"}
+
+- Select a categorical field (e.g., `LUType`) and a numeric field (`Acres`).
+- `Data` tab → `Analyze Data` → `Insert Pivot Table`.
+- Inspect the generated sheet to see totals by category; experiment with other stats.
+
+![](assets/intro_excel_arc-025.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Excel Analysis: Histograms {style="font-size:0.7em"}
+
+- Highlight the `Acres` column → `Insert` → `Chart` → `Histogram`.
+- Adjust bin width to reveal distribution patterns and outliers.
+
+![](assets/intro_excel_arc-026.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Excel Analysis: Scatterplots & Trendlines {style="font-size:0.7em"}
+
+- Select paired fields (e.g., `height` vs `diameter`) → `Insert` → `Scatter`.
+- Add trendlines and display equation plus R² to assess relationships.
+- When values cluster along an axis, use logarithmic scales to spread the data.
+
+![](assets/intro_excel_arc-028.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Continuing GIS at Cal Poly {style="font-size:0.7em"}
+
+- Enjoying the course? Explore additional geospatial classes and consider the GIS minor.
+- Engage in GIS-related research with faculty or campus partners.
+
+![](assets/intro_excel_arc-030.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## GIS Minor Requirements (Highlights) {style="font-size:0.7em"}
+
+| Course   | Title                                                     | Units |
+|----------|-----------------------------------------------------------|-------|
+| BRAE 150 | Design Graphics and CAD for Agricultural Engineering      | 2     |
+| BRAE 239 | Engineering Surveying                                     | 4     |
+| BRAE 345 | Aerial Photogrammetry and Remote Sensing                  | 3–4   |
+| GEOG 328 | Applications in Remote Sensing and GIS *(option)*         | 3–4   |
+| NR/LA 218 or GEOG 218 | Intro / Applications in GIS                  | 3–4   |
+| NR 418 or GEOG 441    | Applied / Advanced Geospatial Technologies   | 3–4   |
+
+![](assets/intro_excel_arc-032.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Break? {style="font-size:0.7em"}
+
+Take a moment to reset—hydrate, stretch, and prepare for ArcGIS Pro.
+
+![](assets/intro_excel_arc-033.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## New Material: ArcGIS Pro Overview {style="font-size:0.7em"}
+
+- ESRI’s enterprise GIS platform; widely used in government and large nonprofits.
+- Feature-rich and user-friendly but proprietary, Windows-only, and licensed.
+- Fewer plugins/community resources compared to QGIS; plan support accordingly.
+
+![](assets/intro_excel_arc-034.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Tutorial: ArcGIS Pro Setup {style="font-size:0.7em"}
+
+- Launch ArcGIS Pro from the Start menu.
+- Download `SwantonGIS.gdb.zip` from Canvas and extract it.
+- In ArcGIS Pro: `Map` → `Add Data` → browse to the unzipped GDB.
+- Drag layers from the geodatabase into the map.
+
+![](assets/intro_excel_arc-035.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## ArcGIS Pro: Symbology {style="font-size:0.7em"}
+
+- Category symbology: right-click layer (e.g., `sprVegetation`) → `Symbology` → `Unique Values` → choose field (`Vegtype1`).
+- Graduated styling: experiment with numerical fields (`sprSoils`):
+  - `Graduated Colors` with `KFACTOR`.
+  - `Graduated Symbols` with `Depth`.
+  - `Proportional Symbols` with `SlopeMax`.
+
+![](assets/intro_excel_arc-037.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## ArcGIS Pro: Layouts & Export {style="font-size:0.7em"}
+
+- `Insert` → `New Layout` → `8.5 x 11 Letter`; set scale (e.g., 1:55,000).
+- Add map frame, north arrow, scale bar, legend, and grid coordinates.
+- Share the finished map via `Share` → `Export Map`, setting filename and path.
+
+![](assets/intro_excel_arc-038.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+## Project 4 Overview (Due 11/20) {style="font-size:0.7em"}
+
+- Goal: select the optimal Swanton Ranch site for one option:
+  - Student housing, Hemp farm, or Helicopter landing.
+- Produce a report explaining site selection criteria and analysis.
+- Work in groups of 2–3; coordinate today and check in if you need a team.
+
+![](assets/intro_excel_arc-040.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
