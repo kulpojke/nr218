@@ -133,18 +133,13 @@ This applies to QGIS as well.
 
 ##
 - Sketch processing diagrams to communicate workflows clearly (inputs → tools → outputs).
-![](assets/intro_excel_arc-010.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
 
-
-##
-
-[That's all for today!]{.larger}
 
 ## Final Project Tips {style="font-size:0.7em"}
 
-- Scope realistically: pick a focused area and question.
-- Secure data early; verify availability before committing to a topic.
-- Document intermediate products (screenshots, stats) as you go.
+- Document Methods:
+  + Write down the steps you are taking as you go.
+  + Save intermediate products (files, scripts you use) as you go.
 
 ![](assets/intro_excel_arc-013.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
 
@@ -153,7 +148,6 @@ This applies to QGIS as well.
 - Choose comparison windows that match your phenomenon (e.g., pre/post fire, seasonal contrasts).
 - Temporal analyses reveal dynamics in hydrology, vegetation, ocean conditions, and more.
 
-![](assets/intro_excel_arc-014.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
 
 ## Final Project Resources {style="font-size:0.7em"}
 
@@ -162,10 +156,10 @@ This applies to QGIS as well.
 - Support network:
   - Digital Projects Lab peer assistants — [book time](https://guides.lib.calpoly.edu/dpl)
   - Instructor office hours (Mon/Wed 12–1 pm)
-  - Haley, classmates, ChatGPT, and the broader web.
-- Curated dataset list: [Potential datasets spreadsheet](https://docs.google.com/spreadsheets/d/19QFK3faJuigk_8Nc8smDpe2k-U62ID3f0B-4wgm93tg/edit?gid=0#gid=0).
+  - DIllen, classmates, the internet.
+- Having trouble finding data, look on the[potential datasets spreadsheet](https://docs.google.com/spreadsheets/d/19QFK3faJuigk_8Nc8smDpe2k-U62ID3f0B-4wgm93tg/edit?gid=0#gid=0).
 
-![](assets/intro_excel_arc-016.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
 
 ## Debugging GIS Workflows {style="font-size:0.7em"}
 
@@ -174,7 +168,7 @@ This applies to QGIS as well.
 - Step away briefly—fresh eyes solve many stubborn issues.
 - Collaborate; many GIS puzzles are easier as a team.
 
-![](assets/intro_excel_arc-017.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
 
 ## Think Like a Computer {style="font-size:0.7em"}
 
@@ -184,7 +178,6 @@ This applies to QGIS as well.
   - Restart QGIS and retry the workflow.
 - Remember: computers execute exactly what we specify—precision matters.
 
-![](assets/intro_excel_arc-018.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
 
 ## Growth Mindset for GIS {style="font-size:0.7em"}
 
@@ -192,7 +185,8 @@ This applies to QGIS as well.
 - Frustration is normal; letting it derail progress isn’t.
 - Meaningful progress comes through iterative struggle and reflection.
 
-![](assets/intro_excel_arc-019.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
+
 
 ## New Material: Geocoding {style="font-size:0.7em"}
 
@@ -200,31 +194,35 @@ This applies to QGIS as well.
 - Supports planning, demographics, and many location-based analyses.
 - Numerous free tools and APIs exist—use them responsibly.
 
-![](assets/intro_excel_arc-020.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
 
 ## Tutorial: Export QGIS Data to Excel {style="font-size:0.7em"}
 
 - Open the Swanton dataset in QGIS.
-- Right-click `sprLandUse` → `Export` → `MS Office Open XML spreadsheet (XLSX)`.
-- Save the file to an accessible location (e.g., Desktop or OneDrive).
+- Right-click `sprLandUse` → `Export` → `MS Office Open XML spreadsheet (XLSX)` (`csv` will work fine too).
+- Save the file to an accessible location (e.g. SPC working directory or OneDrive).
 
-![](assets/intro_excel_arc-021.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
 
 ## Excel Online: Load GIS Data {style="font-size:0.7em"}
 
-- Visit [office.com](https://office.com) and sign in with CP credentials.
+- Visit [office.com](https://office.com) and sign in with CP credentials (Or via Cal Poly Portal, Software Hub).
 - Explore apps → open Excel → `File` → `Open` → `Open files from this device`.
 - Select the exported XLSX to view GIS attributes in Excel Online.
 
+
+![](assets/intro_excel_arc-015.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+![](assets/intro_excel_arc-017.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+![](assets/intro_excel_arc-018.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+![](assets/intro_excel_arc-019.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+![](assets/intro_excel_arc-020.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+![](assets/intro_excel_arc-021.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
 ![](assets/intro_excel_arc-022.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+![](assets/intro_excel_arc-023.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+![](assets/intro_excel_arc-024.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
 
 ## Excel Basics: Sort & Filter {style="font-size:0.7em"}
 
-- Use the funnel icon to enable filters on each column header.
+- Use the funnel icon ![](assets/intro_excel_arc-016.jpg){height=1.2em} to enable filters on each column header.
 - Sort ascending/descending and filter categories to explore the dataset.
-- Observe how filtering impacts downstream calculations.
-
-![](assets/intro_excel_arc-023.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
 
 ## Excel Analysis: Summaries & Charts {style="font-size:0.7em"}
 
@@ -232,7 +230,7 @@ This applies to QGIS as well.
 - Highlight data → `Insert` → `Chart` to visualize (pie, column, etc.).
 - Format data labels and legends for clarity.
 
-![](assets/intro_excel_arc-024.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
+
 
 ## Excel Analysis: Pivot Tables {style="font-size:0.7em"}
 
