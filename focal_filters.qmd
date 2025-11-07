@@ -1,0 +1,65 @@
+# Focal Filters
+
+
+## What are Focal Filters? {style="font-size:0.7em"}
+
+- Focal, or neighborhood, filters evaluate each cell using values from its neighbors
+- They smooth noise, enhance edges, and extract landform signatures from rasters
+- Window size and shape determine how much contextual information influences the output
+- in QGIS use `r.neighbors` from processing toolbox
+
+
+## Neighborhood Windows {.smaller}
+
+- Neighborhoods are typically defined as square windows (3×3, 5×5, etc.).
+- Cell spacing and window dimensions dictate the spatial scale of the analysis.
+- Larger windows generalize features; smaller windows preserve local detail.
+
+## Kernels & Weights {.smaller}
+
+- Kernels are matrices of weights used to combine neighbor values into a new pixel.
+- Weight patterns emphasize directions, distances, or specific neighbors.
+
+![](img/kernels.png){style="height:70%"}
+
+## Mean (a.k.a. Low-Pass) Filter {style="font-size:0.7em"}
+
+- Averages the values within the neighborhood, producing a smoothed surface.
+- Dampens high-frequency variation
+- Useful for removing noise from continuous surfaces (elevation, temperature, etc.).
+
+![](img/filter_5x5_mean.gif){width="80%" style="max-height: 40vh; object-fit: contain; center: True"}
+
+## Median Filter {style="font-size:0.7em"}
+
+- Replaces the center cell with the median of neighborhood values.
+- Preserves edges better than mean smoothing while removing salt-and-pepper noise.
+
+
+![](img/filter_5x5_median.gif){width="80%" style="max-height: 40vh; object-fit: contain; center: True"}
+
+## Minimum & Maximum Filters {style="font-size:0.7em"}
+
+- Minimum filter assigns the lowest neighborhood value; maximum uses the highest.
+- Mimic morphological erosion (minimum) and dilation (maximum) on raster data.
+- Highlight depressions or peaks, and support feature extraction workflows.
+
+
+## Roughness Filters {style="font-size:0.7em"}
+
+::: {style="font-size:0.6em"}
+- Quantify variability inside the neighborhood (e.g., range, standard deviation).
+- Capture terrain ruggedness, habitat heterogeneity, or surface texture.
+- Sensitive to window size: smaller windows detect micro-relief; larger windows show broader roughness zones.
+- `Raster` > `Analysis` > `Roughness` computes elevation range within a kernel in QGIS
+:::
+
+![](img/filter_roughness.png){width="80%" style="max-height: 40vh; object-fit: contain; center: True"}
+
+## TPI & Geomorphons {style="font-size:0.7em"}
+
+- Topographic Position Index (TPI) compares a cell to the mean elevation of its neighbors.
+- Positive TPI marks ridges; negative TPI highlights valleys—kernel size sets the landform scale.
+- Geomorphons classify landforms using multi-directional TPI, revealing patterns such as spurs, hollows, and plains.
+
+![](img/geomorph2.png){width="80%" style="max-height: 40vh; object-fit: contain; center: True"}

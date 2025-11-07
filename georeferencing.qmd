@@ -10,7 +10,7 @@
 
 ::: {.r-stack}
 ::: {.fragment  .fade-out data-fragment-index="1"}
-[Download the Swanton Ranch [treasure_map.tif](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EQUKbpq79c5LqJLOFpqCnNEBuB4GkTU-3xSiTT1NA7T3nw?e=hGnzcH)]{style="font-size:0.6em"}. Put it someplace sensible.
+[Download the Swanton Ranch [treasure_map.tif](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EQUKbpq79c5LqJLOFpqCnNEBuB4GkTU-3xSiTT1NA7T3nw?e=hGnzcH). Put it someplace sensible.]{style="font-size:0.6em"}
 
 ![](img/treasure_map.png)
 

@@ -79,6 +79,8 @@ Use arrows or menu in bottom left corner to navigate
 
 {{< include rasterizing_by_attribute.qmd >}}
 
+{{< include focal_filters.qmd >}}
+
 {{< include georeferencing.qmd >}}
 
 
