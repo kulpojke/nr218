@@ -6,6 +6,7 @@ project:
     - project_1.md
     - project_2.md
     - project_3.md
+    - project_4.md    
     - final_proj.md
     - introduction.qmd
     - terminals.qmd
