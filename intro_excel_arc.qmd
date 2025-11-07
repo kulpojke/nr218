@@ -109,7 +109,7 @@ This applies to QGIS as well.
 
 ## 
 
-## Final Project Draft (Due 11/11) {style="font-size:0.7em"}
+## Final Project Draft (Optional, due 2025-11-19) {style="font-size:0.7em"}
 
 - Deliver a working draft covering Introduction, Background, Study Goals, Data, Methods, and References.
 - Include a study area map that grounds your project context.
