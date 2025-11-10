@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b31e5964e9981dea50e926b314bcc293.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-10e7899fb7f66198667b989b776f2332.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -83,45 +83,54 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="nr-218-project-4-qgis-raster-workflow-with-neon-data" class="level1">
-<h1>NR 218 Project 4: QGIS Raster Workflow with NEON Data</h1>
-<p>This project mirrors the <a href="https://www.neonscience.org/resources/learning-hub/tutorials/raster-data-r">NEON “Raster Data in R”</a> tutorial, but every task is completed in QGIS instead of R. Follow the workflow below, document your process with screenshots, and answer the reflection prompts at the end.</p>
+<section id="project-4---part-1-qgis-raster-workflow-with-neon-data" class="level1">
+<h1>Project 4 - Part 1: QGIS Raster Workflow with NEON Data</h1>
+<p>This project is adabted from the <a href="https://www.neonscience.org/resources/learning-hub/tutorials/raster-data-r">NEON “Raster Data in R”</a> tutorial, but every task is completed in QGIS instead of R. Follow the workflow below, document your process with screenshots, and answer the reflection prompts at the end.</p>
+<p>If you are not familiar with National Ecological Observatory Network (NEON), it is the U.S National Science Foundation’s continental-scale observation facility. It is designed to collect long-term ecological data. Click <a href="https://www.neonscience.org/">here</a> for more information about NEON.</p>
 <section id="learning-goals" class="level2">
 <h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
 <ul>
-<li>Practice downloading and organizing NEON remote sensing raster products</li>
+<li>Practice downloading and organizing remote sensing raster products</li>
 <li>Inspect spatial metadata, bit depth, and NoData handling inside QGIS</li>
-<li>Build multi-band raster composites and derive canopy/surface metrics with Raster Calculator</li>
+<li>Build multi-band raster composites and derive tree canopy/surface metrics with Raster Calculator</li>
 <li>Clip and summarize rasters with study-area polygons using built-in QGIS geoprocessing tools</li>
 <li>Export publication-ready rasters and QA plots that match the NEON tutorial outputs</li>
 </ul>
 </section>
-<section id="data-prep-work" class="level2">
-<h2 class="anchored" data-anchor-id="data-prep-work">Data + Prep Work</h2>
+<section id="downloading-data-and-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="downloading-data-and-preparation">Downloading Data and Preparation</h2>
 <ol type="1">
-<li><strong>Download the NEON SJER raster sample bundle</strong> used in the NEON tutorial (DSM, DTM, RGB imagery, canopy height model, and a shapefile of the SJER plot boundary). You can grab the identical zip here: <a href="https://www.neonscience.org/sites/default/files/NEON-DS-Imaging-SJER.zip" class="uri">https://www.neonscience.org/sites/default/files/NEON-DS-Imaging-SJER.zip</a></li>
-<li>Extract the archive to <code>data/project_4/</code> inside this repo. Keep the folder names (<code>NEON-DS-Airborne-RemoteSensing/SJER/</code>) intact so layer names match the instructions.</li>
-<li>Launch QGIS ≥ 3.30 and create a project file <code>project_4_sjer.qgz</code> in the same directory. Set the default CRS to <code>EPSG:32611</code> (UTM Zone 11N) to match the NEON raster products.</li>
+<li><p><strong>Download the NEON SJER raster sample bundle</strong> used in the NEON tutorial <a href="https://ndownloader.figshare.com/files/7907590">here</a>. This data comes from the <a href="https://www.neonscience.org/field-sites/field-sites-map/SJER">San Joaquin Experimental Range</a> field site (SJER). It includes a digital surface model (DSM), digital terrain model (DTM), RGB imagery, canopy height model (CHM), and a shapefile of the SJER plot boundary.</p></li>
+<li><p>Extract the archive to a directory called <code>project_4/</code> (Wherever you are storing your files for nr218, NOT IN DOWNLOADS!). Keep the folder names (<code>NEON-DS-Airborne-RemoteSensing/SJER/</code>) intact so that layer names match the instructions.<br>
+<u><strong>Take a screenshot of your file explorer, showing the <code>project 4</code> directory and include it in your submission.</strong></u></p></li>
+<li><p>Launch QGIS and create a project file <code>project_4_sjer.qgz</code> in the same directory. Set the default CRS to <code>EPSG:32611</code> (UTM Zone 11N) to match the NEON raster products.</p></li>
 </ol>
 <blockquote class="blockquote">
-<p><strong>Tip:</strong> Add the folders inside <code>data/project_4</code> to the QGIS Browser Favorites so you can drag files in quickly.</p>
+<p><strong>Tip:</strong> You can add the folders inside <code>data/project_4</code> to the QGIS Browser Favorites so you can drag files in quickly.</p>
 </blockquote>
 </section>
-<section id="guided-qgis-workflow-mirrors-neon-steps" class="level2">
-<h2 class="anchored" data-anchor-id="guided-qgis-workflow-mirrors-neon-steps">Guided QGIS Workflow (mirrors NEON steps)</h2>
+<section id="guided-qgis-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="guided-qgis-workflow">Guided QGIS Workflow</h2>
 <section id="inspect-raster-metadata" class="level3">
 <h3 class="anchored" data-anchor-id="inspect-raster-metadata">1. Inspect Raster Metadata</h3>
 <ul>
-<li>Drag <code>SJER_dsmCrop.tif</code> and <code>SJER_dtmCrop.tif</code> into the map.</li>
-<li>Open <strong>Layer Properties ▸ Information</strong> and record: CRS, resolution, pixel count, NoData value, and min/max elevation. Compare to what NEON reports in their R output tables.</li>
-<li>Screenshot the metadata panel and include it in your submission.</li>
+<li>Open <code>SJER_dsmCrop.tif</code> and <code>SJER_dtmCrop.tif</code>.</li>
+<li>Open <strong>Layer Properties ▸ Information</strong> and record:
+<ul>
+<li>CRS</li>
+<li>resolution</li>
+<li>pixel count</li>
+<li>NoData value</li>
+<li>and min/max elevation.</li>
+</ul></li>
 </ul>
+<p><u><strong>Screenshot the Information panel and include it in your submission.</strong></u></p>
 </section>
 <section id="visualize-single-band-elevation-rasters" class="level3">
 <h3 class="anchored" data-anchor-id="visualize-single-band-elevation-rasters">2. Visualize Single-Band Elevation Rasters</h3>
 <ul>
 <li>With <code>SJER_dsmCrop.tif</code> selected, open <strong>Symbology</strong> and switch to <strong>Singleband pseudocolor</strong>.</li>
-<li>Choose the <code>Spectral</code> color ramp, set the min/max to the reported DSM range, and enable the <strong>Histogram stretch</strong> to mimic the R plots.</li>
+<li>Choose the <code>Spectral</code> color ramp, set the min/max to the reported DSM range, under “Min / Max Value Settings” enable “Cumulative count cut”.</li>
 <li>Duplicate the layer styling for the DTM (right-click ▸ Styles ▸ Copy/Paste).</li>
 <li>Export both styled rasters as PNGs (<strong>Project ▸ Import/Export ▸ Export map to image</strong>) named <code>dsm_render.png</code> and <code>dtm_render.png</code>.</li>
 </ul>

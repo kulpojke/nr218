@@ -5,36 +5,49 @@ format:
     theme: cyborg
 ---
 
-# NR 218 Project 4: QGIS Raster Workflow with NEON Data
+ 
 
-This project mirrors the [NEON "Raster Data in R"](https://www.neonscience.org/resources/learning-hub/tutorials/raster-data-r) tutorial, but every task is completed in QGIS instead of R. Follow the workflow below, document your process with screenshots, and answer the reflection prompts at the end.
+# Project 4 - Part 1: QGIS Raster Workflow with NEON Data
+
+This project is adabted from the [NEON "Raster Data in R"](https://www.neonscience.org/resources/learning-hub/tutorials/raster-data-r) tutorial, but every task is completed in QGIS instead of R. Follow the workflow below, document your process with screenshots, and answer the reflection prompts at the end.
+
+If you are not familiar with National Ecological Observatory Network (NEON), it is the U.S National Science Foundation's continental-scale observation facility. It is designed to collect long-term ecological data. Click [here](https://www.neonscience.org/) for more information about NEON.
 
 ## Learning Goals
 
-- Practice downloading and organizing NEON remote sensing raster products
+- Practice downloading and organizing remote sensing raster products
 - Inspect spatial metadata, bit depth, and NoData handling inside QGIS
-- Build multi-band raster composites and derive canopy/surface metrics with Raster Calculator
+- Build multi-band raster composites and derive tree canopy/surface metrics with Raster Calculator
 - Clip and summarize rasters with study-area polygons using built-in QGIS geoprocessing tools
 - Export publication-ready rasters and QA plots that match the NEON tutorial outputs
 
-## Data + Prep Work
+## Downloading Data and Preparation
 
-1. **Download the NEON SJER raster sample bundle** used in the NEON tutorial (DSM, DTM, RGB imagery, canopy height model, and a shapefile of the SJER plot boundary). You can grab the identical zip here: <https://www.neonscience.org/sites/default/files/NEON-DS-Imaging-SJER.zip>
-2. Extract the archive to `data/project_4/` inside this repo. Keep the folder names (`NEON-DS-Airborne-RemoteSensing/SJER/`) intact so layer names match the instructions.
-3. Launch QGIS ≥ 3.30 and create a project file `project_4_sjer.qgz` in the same directory. Set the default CRS to `EPSG:32611` (UTM Zone 11N) to match the NEON raster products.
+1. **Download the NEON SJER raster sample bundle** used in the NEON tutorial [here](https://ndownloader.figshare.com/files/7907590). This data comes from the [San Joaquin Experimental Range](https://www.neonscience.org/field-sites/field-sites-map/SJER) field site (SJER). It includes a digital surface model (DSM), digital terrain model (DTM), RGB imagery, canopy height model (CHM), and a shapefile of the SJER plot boundary.   
 
-> **Tip:** Add the folders inside `data/project_4` to the QGIS Browser Favorites so you can drag files in quickly.
+2. Extract the archive to a directory called `project_4/` (Wherever you are storing your files for nr218, NOT IN DOWNLOADS!). Keep the folder names (`NEON-DS-Airborne-RemoteSensing/SJER/`) intact so that layer names match the instructions.   
+<u>__Take a screenshot of your file explorer, showing the `project 4` directory and include it in your submission.__</u> 
 
-## Guided QGIS Workflow (mirrors NEON steps)
+3. Launch QGIS and create a project file `project_4_sjer.qgz` in the same directory. Set the default CRS to `EPSG:32611` (UTM Zone 11N) to match the NEON raster products.
+
+> **Tip:** You can add the folders inside `data/project_4` to the QGIS Browser Favorites so you can drag files in quickly.
+
+## Guided QGIS Workflow 
 
 ### 1. Inspect Raster Metadata
-- Drag `SJER_dsmCrop.tif` and `SJER_dtmCrop.tif` into the map.
-- Open **Layer Properties ▸ Information** and record: CRS, resolution, pixel count, NoData value, and min/max elevation. Compare to what NEON reports in their R output tables.
-- Screenshot the metadata panel and include it in your submission.
+- Open `SJER_dsmCrop.tif` and `SJER_dtmCrop.tif`.
+- Open **Layer Properties ▸ Information** and record:  
+   - CRS
+   - resolution
+   - pixel count
+   - NoData value
+   - and min/max elevation. 
+
+<u>__Screenshot the Information panel and include it in your submission.__</u>
 
 ### 2. Visualize Single-Band Elevation Rasters
 - With `SJER_dsmCrop.tif` selected, open **Symbology** and switch to **Singleband pseudocolor**.
-- Choose the `Spectral` color ramp, set the min/max to the reported DSM range, and enable the **Histogram stretch** to mimic the R plots.
+- Choose the `Spectral` color ramp, set the min/max to the reported DSM range, under "Min / Max Value Settings" enable "Cumulative count cut".
 - Duplicate the layer styling for the DTM (right-click ▸ Styles ▸ Copy/Paste).
 - Export both styled rasters as PNGs (**Project ▸ Import/Export ▸ Export map to image**) named `dsm_render.png` and `dtm_render.png`.
 
