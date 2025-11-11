@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-10e7899fb7f66198667b989b776f2332.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b31e5964e9981dea50e926b314bcc293.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -83,8 +83,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="project-4---part-1-qgis-raster-workflow-with-neon-data" class="level1">
-<h1>Project 4 - Part 1: QGIS Raster Workflow with NEON Data</h1>
+<p># Project 4 There are two parts; a tutorial, and a challenging taks for you to figure out.</p>
+<section id="part-1-qgis-raster-workflow-with-neon-data" class="level1">
+<h1>Part 1: QGIS Raster Workflow with NEON Data</h1>
 <p>This project is adabted from the <a href="https://www.neonscience.org/resources/learning-hub/tutorials/raster-data-r">NEON “Raster Data in R”</a> tutorial, but every task is completed in QGIS instead of R. Follow the workflow below, document your process with screenshots, and answer the reflection prompts at the end.</p>
 <p>If you are not familiar with National Ecological Observatory Network (NEON), it is the U.S National Science Foundation’s continental-scale observation facility. It is designed to collect long-term ecological data. Click <a href="https://www.neonscience.org/">here</a> for more information about NEON.</p>
 <section id="learning-goals" class="level2">
@@ -101,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="downloading-data-and-preparation">Downloading Data and Preparation</h2>
 <ol type="1">
 <li><p><strong>Download the NEON SJER raster sample bundle</strong> used in the NEON tutorial <a href="https://ndownloader.figshare.com/files/7907590">here</a>. This data comes from the <a href="https://www.neonscience.org/field-sites/field-sites-map/SJER">San Joaquin Experimental Range</a> field site (SJER). It includes a digital surface model (DSM), digital terrain model (DTM), RGB imagery, canopy height model (CHM), and a shapefile of the SJER plot boundary.</p></li>
-<li><p>Extract the archive to a directory called <code>project_4/</code> (Wherever you are storing your files for nr218, NOT IN DOWNLOADS!). Keep the folder names (<code>NEON-DS-Airborne-RemoteSensing/SJER/</code>) intact so that layer names match the instructions.<br>
+<li><p>Extract the archive to a directory called <code>project_4/</code> (Wherever you are storing your files for nr218, NOT IN DOWNLOADS!). Keep the folder names (e.g.&nbsp;<code>NEON-DS-Field-Site-Spatial-Data/SJER/</code>) intact so that layer names match the instructions.<br>
 <u><strong>Take a screenshot of your file explorer, showing the <code>project 4</code> directory and include it in your submission.</strong></u></p></li>
 <li><p>Launch QGIS and create a project file <code>project_4_sjer.qgz</code> in the same directory. Set the default CRS to <code>EPSG:32611</code> (UTM Zone 11N) to match the NEON raster products.</p></li>
 </ol>
@@ -114,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="inspect-raster-metadata" class="level3">
 <h3 class="anchored" data-anchor-id="inspect-raster-metadata">1. Inspect Raster Metadata</h3>
 <ul>
-<li>Open <code>SJER_dsmCrop.tif</code> and <code>SJER_dtmCrop.tif</code>.</li>
+<li>Open <code>project_4/NEON-DS-Field-Site-Spatial-Data/SJER/DigitalSurfaceModel/SJER2013_DSM.tif</code> and <code>project_4/NEON-DS-Field-Site-Spatial-Data/SJER/DigitalTerrainModel/SJER2013_DTM.tif</code>.</li>
 <li>Open <strong>Layer Properties ▸ Information</strong> and record:
 <ul>
 <li>CRS</li>
@@ -129,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="visualize-single-band-elevation-rasters" class="level3">
 <h3 class="anchored" data-anchor-id="visualize-single-band-elevation-rasters">2. Visualize Single-Band Elevation Rasters</h3>
 <ul>
-<li>With <code>SJER_dsmCrop.tif</code> selected, open <strong>Symbology</strong> and switch to <strong>Singleband pseudocolor</strong>.</li>
+<li>With <code>SJER2013_DSM.tif</code> selected, open <strong>Symbology</strong> and switch to <strong>Singleband pseudocolor</strong>.</li>
 <li>Choose the <code>Spectral</code> color ramp, set the min/max to the reported DSM range, under “Min / Max Value Settings” enable “Cumulative count cut”.</li>
 <li>Duplicate the layer styling for the DTM (right-click ▸ Styles ▸ Copy/Paste).</li>
 <li>Export both styled rasters as PNGs (<strong>Project ▸ Import/Export ▸ Export map to image</strong>) named <code>dsm_render.png</code> and <code>dtm_render.png</code>.</li>
@@ -138,8 +139,41 @@ ul.task-list li input[type="checkbox"] {
 <section id="build-a-multi-band-rgb-composite" class="level3">
 <h3 class="anchored" data-anchor-id="build-a-multi-band-rgb-composite">3. Build a Multi-Band RGB Composite</h3>
 <ul>
-<li>Add the three files <code>SJER_ORT_1.tif</code>, <code>SJER_ORT_2.tif</code>, <code>SJER_ORT_3.tif</code> (red, green, blue bands).</li>
-<li>Use <strong>Raster ▸ Miscellaneous ▸ Build Virtual Raster (VRT)</strong> to stack them into <code>SJER_RGB.vrt</code>. Set <strong>Source band</strong> order to 1=Red, 2=Green, 3=Blue, and check <strong>Separate</strong>.</li>
+<li>Add the three files corresponding to red, green, and blue bands from <code>project_4/NEON-DS-Field-Site-Spatial-Data/SJER/RGB</code></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Band</th>
+<th>Approx. wavelength (nm)</th>
+<th>Spectral region</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>19</td>
+<td>~450</td>
+<td>Blue (visible)</td>
+</tr>
+<tr class="even">
+<td>34</td>
+<td>~520</td>
+<td>Green (visible)</td>
+</tr>
+<tr class="odd">
+<td>58</td>
+<td>~610</td>
+<td>Orange-to-red (visible)</td>
+</tr>
+<tr class="even">
+<td>90</td>
+<td>~660</td>
+<td>Red (visible)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Use <strong>Raster ▸ Miscellaneous ▸ Build Virtual Raster (VRT)</strong> to stack them into <code>SJER_RGB.vrt</code>. arange the bands from top to bottom as Red, Green, Blue, and check “Place each file in seperate band”</li>
 <li>Load the VRT, change <strong>Render type</strong> to <code>Multiband color</code>, assign bands accordingly, and apply a slight saturation boost via <strong>Layer Rendering ▸ Contrast</strong>.</li>
 <li>Save the styled RGB map as <code>sjer_rgb_map.png</code>.</li>
 </ul>
@@ -147,63 +181,37 @@ ul.task-list li input[type="checkbox"] {
 <section id="derive-a-canopy-height-model-dsm-dtm" class="level3">
 <h3 class="anchored" data-anchor-id="derive-a-canopy-height-model-dsm-dtm">4. Derive a Canopy Height Model (DSM − DTM)</h3>
 <ul>
-<li>Open <strong>Raster ▸ Raster Calculator</strong> and compute <code>"SJER_dsmCrop@1" - "SJER_dtmCrop@1"</code>.</li>
+<li>Open <strong>Raster ▸ Raster Calculator</strong> and compute <code>"SJER2013_DSM.tif" - "SJER2013_DTM.tif"</code>.</li>
 <li>Save the output as <code>SJER_chm_qgis.tif</code> inside <code>data/project_4/outputs</code>. Set the output data type to <code>Float32</code> and NoData = <code>-9999</code> to match NEON.</li>
 <li>Bring the CHM into the map, apply a graduated style with 2 m class breaks (0–2, 2–5, 5–10, 10–20, &gt;20 m). Label the legend classes clearly.</li>
 </ul>
 </section>
-<section id="clip-rasters-to-the-sjer-plot-boundary" class="level3">
-<h3 class="anchored" data-anchor-id="clip-rasters-to-the-sjer-plot-boundary">5. Clip Rasters to the SJER Plot Boundary</h3>
-<ul>
-<li>Add the boundary shapefile <code>SJER_plotBoundary.shp</code>.</li>
-<li>Use <strong>Raster ▸ Extraction ▸ Clip Raster by Mask Layer</strong> to clip DSM, DTM, RGB VRT, and CHM to the boundary. Name the outputs <code>*_plot.tif</code>.</li>
-<li>Confirm the clip preserved the CRS and NoData values; document by showing the <strong>Metadata</strong> tab for one clipped raster.</li>
-</ul>
-</section>
 <section id="summarize-elevation-and-canopy-stats" class="level3">
-<h3 class="anchored" data-anchor-id="summarize-elevation-and-canopy-stats">6. Summarize Elevation and Canopy Stats</h3>
+<h3 class="anchored" data-anchor-id="summarize-elevation-and-canopy-stats">5. Summarize Elevation and Canopy Stats</h3>
 <ul>
+<li>Create a plot boundary vector file by extracting the extent of the DSM, use a scratch layer.</li>
 <li>Convert the plot boundary polygon to a layer with an attribute field <code>Plot_ID = "SJER"</code> (attribute table ▸ toggle edit ▸ field calculator).</li>
-<li>Run <strong>Raster ▸ Zonal statistics</strong> twice: once for DSM, once for CHM. Calculate mean, min, max, standard deviation, and count; write results into fields prefixed <code>DSM_</code> and <code>CHM_</code>.</li>
-<li>Capture a screenshot of the attribute table showing the computed stats. Cross-check the values against the R tutorial results.</li>
+<li>Run <strong>Raster ▸ Zonal statistics</strong> twice: once for DSM, once for CHM. Calculate mean, min, max, standard deviation, and count; write results into fields prefixed <code>DSM_</code> and <code>CHM_</code>. Save the resulting vector as `project_4/NEON-DS-Field-Site-Spatial-Data/SJER/plot.geogjson’.</li>
 </ul>
-</section>
-<section id="profile-and-histograms" class="level3">
-<h3 class="anchored" data-anchor-id="profile-and-histograms">7. Profile and Histograms</h3>
-<ul>
-<li>Use the <strong>Raster layer histogram</strong> (Layer Properties ▸ Histogram) for DSM and CHM to reproduce the NEON distribution plots. Export each histogram as an image and note the bin settings used.</li>
-<li>Optional: draw an elevation profile using the <strong>Profile Tool</strong> plugin to mimic the NEON line plots.</li>
-</ul>
-</section>
-<section id="document-outputs" class="level3">
-<h3 class="anchored" data-anchor-id="document-outputs">8. Document Outputs</h3>
-<p>Create a layout (<code>Project ▸ New Print Layout</code>) that contains: - Map frame showing the clipped CHM with boundary overlay - Insets for DSM and RGB renderings - Table displaying zonal stats results - Text blocks citing data source (NEON, 2018) and projection info Export the layout as <code>project_4_layout.pdf</code>.</p>
+<p><u><strong>Capture a screenshot of the attribute table showing the computed stats.</strong></u></p>
 </section>
 </section>
 <section id="reflection-deliverables" class="level2">
 <h2 class="anchored" data-anchor-id="reflection-deliverables">Reflection &amp; Deliverables</h2>
-<ol type="1">
-<li><strong>Short Answer (submit in Canvas or append to this repo)</strong>
 <ul>
-<li>How do the DSM and DTM ranges compare to the R-based summary values? Explain any differences.</li>
-<li>Describe your workflow for handling NoData in QGIS. Where did you confirm the mask value?</li>
-<li>What advantages did you notice when completing the raster math (CHM) in QGIS versus code?</li>
-</ul></li>
-<li><strong>Files to Upload to Canvas</strong>
-<ul>
-<li><code>dsm_render.png</code>, <code>dtm_render.png</code>, <code>sjer_rgb_map.png</code>, <code>project_4_layout.pdf</code></li>
-<li>Screenshots of metadata panels, zonal statistics table, histograms, and any optional profile plots (include timestamps).</li>
-<li>A short PDF or Markdown note answering the reflection prompts.</li>
-</ul></li>
-<li><strong>Include in Repo Submission (if requested)</strong>
-<ul>
-<li><code>project_4.md</code> (this file) plus any QGIS project files or derived rasters under <code>data/project_4/outputs/</code>.</li>
-</ul></li>
-</ol>
-<p>Stay organized, follow the NEON tutorial’s order, and call out any deviations you make while working in QGIS so the workflow can be replicated.</p>
-
-
+<li>Table displaying zonal stats results</li>
+<li><code>dsm_render.png</code>, <code>dtm_render.png</code>, <code>sjer_rgb_map.png</code></li>
+<li>Screenshots of metadata panels, zonal statistics table (include timestamps).</li>
+</ul>
 </section>
+</section>
+<section id="part-2" class="level1">
+<h1>Part 2</h1>
+<p>Download data for <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EiE5HEXY-1FGu2fJx3bkTnoBwS8q1PDwYkYex55UwdGqTg?e=DFkRZN">Cachuma Reservoir</a></p>
+<p>Estimate the change in the volume of water that was in the reservoir between July 2018 and February 2024.</p>
+<p>This can be done using tools that we have already used in this class.</p>
+
+
 </section>
 
 </main> <!-- /main -->
