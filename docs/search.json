@@ -1948,35 +1948,35 @@
   {
     "objectID": "project_4.html",
     "href": "project_4.html",
-    "title": "Part 1: QGIS Raster Workflow with NEON Data",
+    "title": "Project 4",
     "section": "",
-    "text": "# Project 4\nThere are two parts; a tutorial, and a challenging taks for you to figure out."
+    "text": "Changes:"
   },
   {
     "objectID": "project_4.html#learning-goals",
     "href": "project_4.html#learning-goals",
-    "title": "Part 1: QGIS Raster Workflow with NEON Data",
+    "title": "Project 4",
     "section": "Learning Goals",
     "text": "Learning Goals\n\nPractice downloading and organizing remote sensing raster products\nInspect spatial metadata, bit depth, and NoData handling inside QGIS\nBuild multi-band raster composites and derive tree canopy/surface metrics with Raster Calculator\nClip and summarize rasters with study-area polygons using built-in QGIS geoprocessing tools\nExport publication-ready rasters and QA plots that match the NEON tutorial outputs"
   },
   {
     "objectID": "project_4.html#downloading-data-and-preparation",
     "href": "project_4.html#downloading-data-and-preparation",
-    "title": "Part 1: QGIS Raster Workflow with NEON Data",
+    "title": "Project 4",
     "section": "Downloading Data and Preparation",
     "text": "Downloading Data and Preparation\n\nDownload the NEON SJER raster sample bundle used in the NEON tutorial here. This data comes from the San Joaquin Experimental Range field site (SJER). It includes a digital surface model (DSM), digital terrain model (DTM), RGB imagery, canopy height model (CHM), and a shapefile of the SJER plot boundary.\nExtract the archive to a directory called project_4/ (Wherever you are storing your files for nr218, NOT IN DOWNLOADS!). Keep the folder names (e.g. NEON-DS-Field-Site-Spatial-Data/SJER/) intact so that layer names match the instructions.\nTake a screenshot of your file explorer, showing the project 4 directory and include it in your submission.\nLaunch QGIS and create a project file project_4_sjer.qgz in the same directory. Set the default CRS to EPSG:32611 (UTM Zone 11N) to match the NEON raster products.\n\n\nTip: You can add the folders inside data/project_4 to the QGIS Browser Favorites so you can drag files in quickly."
   },
   {
     "objectID": "project_4.html#guided-qgis-workflow",
     "href": "project_4.html#guided-qgis-workflow",
-    "title": "Part 1: QGIS Raster Workflow with NEON Data",
+    "title": "Project 4",
     "section": "Guided QGIS Workflow",
-    "text": "Guided QGIS Workflow\n\n1. Inspect Raster Metadata\n\nOpen project_4/NEON-DS-Field-Site-Spatial-Data/SJER/DigitalSurfaceModel/SJER2013_DSM.tif and project_4/NEON-DS-Field-Site-Spatial-Data/SJER/DigitalTerrainModel/SJER2013_DTM.tif.\nOpen Layer Properties ▸ Information and record:\n\nCRS\nresolution\npixel count\nNoData value\nand min/max elevation.\n\n\nScreenshot the Information panel and include it in your submission.\n\n\n2. Visualize Single-Band Elevation Rasters\n\nWith SJER2013_DSM.tif selected, open Symbology and switch to Singleband pseudocolor.\nChoose the Spectral color ramp, set the min/max to the reported DSM range, under “Min / Max Value Settings” enable “Cumulative count cut”.\nDuplicate the layer styling for the DTM (right-click ▸ Styles ▸ Copy/Paste).\nExport both styled rasters as PNGs (Project ▸ Import/Export ▸ Export map to image) named dsm_render.png and dtm_render.png.\n\n\n\n3. Build a Multi-Band RGB Composite\n\nAdd the three files corresponding to red, green, and blue bands from project_4/NEON-DS-Field-Site-Spatial-Data/SJER/RGB\n\n\n\n\nBand\nApprox. wavelength (nm)\nSpectral region\n\n\n\n\n19\n~450\nBlue (visible)\n\n\n34\n~520\nGreen (visible)\n\n\n58\n~610\nOrange-to-red (visible)\n\n\n90\n~660\nRed (visible)\n\n\n\n\nUse Raster ▸ Miscellaneous ▸ Build Virtual Raster (VRT) to stack them into SJER_RGB.vrt. arange the bands from top to bottom as Red, Green, Blue, and check “Place each file in seperate band”\nLoad the VRT, change Render type to Multiband color, assign bands accordingly, and apply a slight saturation boost via Layer Rendering ▸ Contrast.\nSave the styled RGB map as sjer_rgb_map.png.\n\n\n\n4. Derive a Canopy Height Model (DSM − DTM)\n\nOpen Raster ▸ Raster Calculator and compute \"SJER2013_DSM.tif\" - \"SJER2013_DTM.tif\".\nSave the output as SJER_chm_qgis.tif inside data/project_4/outputs. Set the output data type to Float32 and NoData = -9999 to match NEON.\nBring the CHM into the map, apply a graduated style with 2 m class breaks (0–2, 2–5, 5–10, 10–20, &gt;20 m). Label the legend classes clearly.\n\n\n\n5. Summarize Elevation and Canopy Stats\n\nCreate a plot boundary vector file by extracting the extent of the DSM, use a scratch layer.\nConvert the plot boundary polygon to a layer with an attribute field Plot_ID = \"SJER\" (attribute table ▸ toggle edit ▸ field calculator).\nRun Raster ▸ Zonal statistics twice: once for DSM, once for CHM. Calculate mean, min, max, standard deviation, and count; write results into fields prefixed DSM_ and CHM_. Save the resulting vector as `project_4/NEON-DS-Field-Site-Spatial-Data/SJER/plot.geogjson’.\n\nCapture a screenshot of the attribute table showing the computed stats."
+    "text": "Guided QGIS Workflow\n\n1. Inspect Raster Metadata\n\nOpen project_4/NEON-DS-Field-Site-Spatial-Data/SJER/DigitalSurfaceModel/SJER2013_DSM.tif and project_4/NEON-DS-Field-Site-Spatial-Data/SJER/DigitalTerrainModel/SJER2013_DTM.tif.\nOpen Layer Properties ▸ Information and record:\n\nCRS\nresolution\npixel count\nNoData value\nand min/max elevation.\n\n\nScreenshot the Information panel and include it in your submission.\n\n\n2. Visualize Single-Band Elevation Rasters\n\nWith SJER2013_DSM.tif selected, open Symbology and switch to Singleband pseudocolor.\nChoose the Spectral color ramp, set the min/max to the reported DSM range, under “Min / Max Value Settings” enable “Cumulative count cut”.\nDuplicate the layer styling for the DTM (right-click ▸ Styles ▸ Copy/Paste).\nExport both styled rasters as PNGs (Project ▸ Import/Export ▸ Export map to image) named dsm_render.png and dtm_render.png.\n\n\n\n3. Build a Multi-Band RGB Composite\n\nAdd the three files corresponding to red, green, and blue bands from project_4/NEON-DS-Field-Site-Spatial-Data/SJER/RGB\n\n\n\n\nBand\nApprox. wavelength (nm)\nSpectral region\n\n\n\n\n19\n~450\nBlue\n\n\n34\n~520\nGreen\n\n\n58\n~610\nRed\n\n\n90\n~660\nNIR\n\n\n\n\nUse Raster ▸ Miscellaneous ▸ Build Virtual Raster (VRT) to stack them into SJER_RGB.vrt. arange the bands from top to bottom as Red, Green, Blue, and check “Place each file in seperate band”\nLoad the VRT, change Render type to Multiband color, assign bands accordingly, and apply a slight saturation boost via Layer Rendering ▸ Contrast.\nSave the styled RGB map as sjer_rgb_map.png.\n\n\n\n4. Derive a Canopy Height Model (DSM − DTM)\n\nOpen Raster ▸ Raster Calculator and compute \"SJER2013_DSM.tif\" - \"SJER2013_DTM.tif\".\nSave the output as SJER_chm_qgis.tif inside data/project_4/outputs. In the export/ save file dialogue, set the output data type to Float32 and NoData = -9999 (scroll to the bottom of the dialogue to do the NoData).\nBring the CHM into the map, apply a graduated style with 2 m class breaks (0–2, 2–5, 5–10, 10–20, &gt;20 m) by using singleband pseudocolor as the render type, and discrete interpolation. Label the legend classes clearly.\n\n\n\n5. Summarize Elevation and Canopy Stats\n\nCreate a plot boundary vector file by extracting the extent of the DSM, use a scratch layer.\nConvert the plot boundary polygon to a layer with an attribute field Plot_ID = \"SJER\" (attribute table ▸ toggle edit ▸ field calculator).\nRun Raster ▸ Zonal statistics twice: once for DSM, once for CHM. Calculate mean, min, max, standard deviation, and count; write results into fields prefixed DSM_ and CHM_. Save the resulting vector as `project_4/NEON-DS-Field-Site-Spatial-Data/SJER/plot.geogjson’.\n\nCapture a screenshot of the attribute table showing the computed stats."
   },
   {
     "objectID": "project_4.html#reflection-deliverables",
     "href": "project_4.html#reflection-deliverables",
-    "title": "Part 1: QGIS Raster Workflow with NEON Data",
+    "title": "Project 4",
     "section": "Reflection & Deliverables",
     "text": "Reflection & Deliverables\n\nTable displaying zonal stats results\ndsm_render.png, dtm_render.png, sjer_rgb_map.png\nScreenshots of metadata panels, zonal statistics table (include timestamps)."
   },

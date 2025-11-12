@@ -5,9 +5,20 @@ format:
     theme: cyborg
 ---
 
- # Project 4
- 
-There are two parts; a tutorial, and a challenging taks for you to figure out.
+__Changes:__
+
++ __2025-11-11 - Band information in section 3 of part 1 was incorrect.__
+   + The table has been changed and now reflects the proper band values (band 58 is red, band 90 is NIR)
+   + also, band 90 was missing coordinate data, you may have notices it
+   would not work with the vrt building step.  This is because band 90 was plotting
+   into a 1m $\times$ 1m square on the prime meridian and equator.  As a result, the
+   build vrt function was trying to buils a vrt with 1m resolution than included
+   the actual site, and [Null Island](https://en.wikipedia.org/wiki/Null_Island).
+   + A fixer version of band 90 can be downloaded [her](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZHfrzYO7KZMniR4iCj4nYABFfDmEmYGbNlHaKVGeIkLBw?e=W4m1ug)
+
+# Project 4
+
+There are two parts; a tutorial, and a challenging task for you to figure out.
 
 # Part 1: QGIS Raster Workflow with NEON Data
 
@@ -56,12 +67,12 @@ If you are not familiar with National Ecological Observatory Network (NEON), it 
 ### 3. Build a Multi-Band RGB Composite
 - Add the three files corresponding to red, green, and blue bands from `project_4/NEON-DS-Field-Site-Spatial-Data/SJER/RGB`
 
-| Band | Approx. wavelength (nm) | Spectral region         |
-|------|-------------------------|-------------------------|
-| 19   | ~450                    | Blue (visible)          |
-| 34   | ~520                    | Green (visible)         |
-| 58   | ~610                    | Orange-to-red (visible) |
-| 90   | ~660                    | Red (visible)           |
+| Band | Approx. wavelength (nm) | Spectral region |
+|------|-------------------------|-----------------|
+| 19   | ~450                    | Blue            |
+| 34   | ~520                    | Green           |
+| 58   | ~610                    | Red             |
+| 90   | ~660                    | NIR             |
 
 - Use **Raster ▸ Miscellaneous ▸ Build Virtual Raster (VRT)** to stack them into `SJER_RGB.vrt`. arange the bands from top to bottom as Red, Green, Blue, and check "Place each file in seperate band"
 - Load the VRT, change **Render type** to `Multiband color`, assign bands accordingly, and apply a slight saturation boost via **Layer Rendering ▸ Contrast**.
@@ -69,8 +80,8 @@ If you are not familiar with National Ecological Observatory Network (NEON), it 
 
 ### 4. Derive a Canopy Height Model (DSM − DTM)
 - Open **Raster ▸ Raster Calculator** and compute `"SJER2013_DSM.tif" - "SJER2013_DTM.tif"`.
-- Save the output as `SJER_chm_qgis.tif` inside `data/project_4/outputs`. Set the output data type to `Float32` and NoData = `-9999` to match NEON.
-- Bring the CHM into the map, apply a graduated style with 2 m class breaks (0–2, 2–5, 5–10, 10–20, >20 m). Label the legend classes clearly.
+- Save the output as `SJER_chm_qgis.tif` inside `data/project_4/outputs`. In the export/ save file dialogue, set the output data type to `Float32` and NoData = `-9999` (scroll to the bottom of the dialogue to do the NoData).
+- Bring the CHM into the map, apply a graduated style with 2 m class breaks (0–2, 2–5, 5–10, 10–20, >20 m) by using singleband pseudocolor as the render type, and discrete interpolation.  Label the legend classes clearly.
 
 ### 5. Summarize Elevation and Canopy Stats
 - Create a plot boundary vector file by extracting the extent of the DSM, use a scratch layer.
@@ -90,8 +101,14 @@ If you are not familiar with National Ecological Observatory Network (NEON), it 
 
 # Part 2
 
-Download data for [Cachuma Reservoir](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EiE5HEXY-1FGu2fJx3bkTnoBwS8q1PDwYkYex55UwdGqTg?e=DFkRZN)
+__Download data__ 
 
-Estimate the change in the volume of water that was in the reservoir between July 2018 and February 2024. 
+For [Cachuma Reservoir](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EiE5HEXY-1FGu2fJx3bkTnoBwS8q1PDwYkYex55UwdGqTg?e=DFkRZN)
 
-This can be done using tools that we have already used in this class.
+It includes:  
+   + a DEM from summer of 2018 (as tiles)
+   + Sentinel-2 image from July, 2018
+   + Sentinel-2 image from February, 2014
+
+__Task__
+Estimate the change in the volume of water that was in the reservoir between summer, 2018 and February, 2024. This can be done using tools that we have already used in this class.

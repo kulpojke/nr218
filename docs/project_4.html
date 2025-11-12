@@ -66,6 +66,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,8 +112,19 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p># Project 4</p>
-<p>There are two parts; a tutorial, and a challenging taks for you to figure out.</p>
+<p><strong>Changes:</strong></p>
+<ul>
+<li><strong>2025-11-11 - Band information in section 3 of part 1 was incorrect.</strong>
+<ul>
+<li>The table has been changed and now reflects the proper band values (band 58 is red, band 90 is NIR)</li>
+<li>also, band 90 was missing coordinate data, you may have notices it would not work with the vrt building step. This is because band 90 was plotting into a 1m <span class="math inline">\(\times\)</span> 1m square on the prime meridian and equator. As a result, the build vrt function was trying to buils a vrt with 1m resolution than included the actual site, and <a href="https://en.wikipedia.org/wiki/Null_Island">Null Island</a>.</li>
+<li>A fixer version of band 90 can be downloaded <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZHfrzYO7KZMniR4iCj4nYABFfDmEmYGbNlHaKVGeIkLBw?e=W4m1ug">her</a></li>
+</ul></li>
+</ul>
+<section id="project-4" class="level1">
+<h1>Project 4</h1>
+<p>There are two parts; a tutorial, and a challenging task for you to figure out.</p>
+</section>
 <section id="part-1-qgis-raster-workflow-with-neon-data" class="level1">
 <h1>Part 1: QGIS Raster Workflow with NEON Data</h1>
 <p>This project is adabted from the <a href="https://www.neonscience.org/resources/learning-hub/tutorials/raster-data-r">NEON “Raster Data in R”</a> tutorial, but every task is completed in QGIS instead of R. Follow the workflow below, document your process with screenshots, and answer the reflection prompts at the end.</p>
@@ -154,22 +194,22 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>19</td>
 <td>~450</td>
-<td>Blue (visible)</td>
+<td>Blue</td>
 </tr>
 <tr class="even">
 <td>34</td>
 <td>~520</td>
-<td>Green (visible)</td>
+<td>Green</td>
 </tr>
 <tr class="odd">
 <td>58</td>
 <td>~610</td>
-<td>Orange-to-red (visible)</td>
+<td>Red</td>
 </tr>
 <tr class="even">
 <td>90</td>
 <td>~660</td>
-<td>Red (visible)</td>
+<td>NIR</td>
 </tr>
 </tbody>
 </table>
@@ -183,8 +223,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="derive-a-canopy-height-model-dsm-dtm">4. Derive a Canopy Height Model (DSM − DTM)</h3>
 <ul>
 <li>Open <strong>Raster ▸ Raster Calculator</strong> and compute <code>"SJER2013_DSM.tif" - "SJER2013_DTM.tif"</code>.</li>
-<li>Save the output as <code>SJER_chm_qgis.tif</code> inside <code>data/project_4/outputs</code>. Set the output data type to <code>Float32</code> and NoData = <code>-9999</code> to match NEON.</li>
-<li>Bring the CHM into the map, apply a graduated style with 2 m class breaks (0–2, 2–5, 5–10, 10–20, &gt;20 m). Label the legend classes clearly.</li>
+<li>Save the output as <code>SJER_chm_qgis.tif</code> inside <code>data/project_4/outputs</code>. In the export/ save file dialogue, set the output data type to <code>Float32</code> and NoData = <code>-9999</code> (scroll to the bottom of the dialogue to do the NoData).</li>
+<li>Bring the CHM into the map, apply a graduated style with 2 m class breaks (0–2, 2–5, 5–10, 10–20, &gt;20 m) by using singleband pseudocolor as the render type, and discrete interpolation. Label the legend classes clearly.</li>
 </ul>
 </section>
 <section id="summarize-elevation-and-canopy-stats" class="level3">
@@ -208,9 +248,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="part-2" class="level1">
 <h1>Part 2</h1>
-<p>Download data for <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EiE5HEXY-1FGu2fJx3bkTnoBwS8q1PDwYkYex55UwdGqTg?e=DFkRZN">Cachuma Reservoir</a></p>
-<p>Estimate the change in the volume of water that was in the reservoir between July 2018 and February 2024.</p>
-<p>This can be done using tools that we have already used in this class.</p>
+<p><strong>Download data</strong></p>
+<p>For <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EiE5HEXY-1FGu2fJx3bkTnoBwS8q1PDwYkYex55UwdGqTg?e=DFkRZN">Cachuma Reservoir</a></p>
+<p>It includes:<br>
++ a DEM from summer of 2018 (as tiles) + Sentinel-2 image from July, 2018 + Sentinel-2 image from February, 2014</p>
+<p><strong>Task</strong> Estimate the change in the volume of water that was in the reservoir between summer, 2018 and February, 2024. This can be done using tools that we have already used in this class.</p>
 
 
 </section>
