@@ -114,5 +114,5 @@ It includes:
 __Task__
 Estimate the change in the volume of water that was in the reservoir between summer, 2018 and February, 2024. This can be done using tools that we have already used in this class.
 
->Hints: 
-> + Upi will need to mosaic the raster tiles.  You usee build vrt in the section above to stack bands. Now use it to mosaic tiles.
+>Hints:  
+> You will need to mosaic the raster tiles.  You usee build vrt in the section above to stack bands. Now use it to mosaic tiles.
