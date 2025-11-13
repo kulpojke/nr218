@@ -106,9 +106,13 @@ __Download data__
 For [Cachuma Reservoir](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EiE5HEXY-1FGu2fJx3bkTnoBwS8q1PDwYkYex55UwdGqTg?e=DFkRZN)
 
 It includes:  
+
    + a DEM from summer of 2018 (as tiles)
    + Sentinel-2 image from July, 2018
    + Sentinel-2 image from February, 2014
 
 __Task__
 Estimate the change in the volume of water that was in the reservoir between summer, 2018 and February, 2024. This can be done using tools that we have already used in this class.
+
+>Hints: 
+> + Upi will need to mosaic the raster tiles.  You usee build vrt in the section above to stack bands. Now use it to mosaic tiles.

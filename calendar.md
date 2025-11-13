@@ -126,28 +126,28 @@ There are many other helpful sources of information on GIS Software
 
 Here's the table with the Week column containing just the integer week values:
 
-| Date         | Week | Description                                                                                  | Reading           | Due Dates                                     |
-|--------------|------|----------------------------------------------------------------------------------------------|-------------------|-----------------------------------------------|
-| September 22 | 1    | What is GIS Why is it important                                                              | Chapters 1 and 2  |                                               |
-| September 24 | 1    | Basic GIS Concepts Scale, Coordinate systems, and Map Projections                            |                   |                                               |
-| September 29 | 2    | Scale, Coordinate systems, and Map Projections / Spatial Data Models and Formats             | chapters 3 and 4  |                                               |
-| October 1    | 2    | Vector and Raster Data                                                                       |                   |                                               |
-| October 6    | 3    | Finding Acquiring, Creating, and Editing GIS Data                                            | chapters 5 and 6  | [Project 1](project_1.html)                   |
-| October 8    | 3    | GeoProcessing and Vector Operations                                                          |                   |                                               |
-| October 13   | 4    | Remote Sensing 1                                                                             | chapters 7 and 8  |                                               |
-| October 15   | 4    | Remote Sensing 2: Spectral Indices, Elevation Data                                           |                   | [Final Project Brainstorm Due](final_proj.md) |
-| October 20   | 5    | Spatial Analysis: Map Algebra, Reprojection, Resampling;  Final Project Discussion           | chapters 9 and 10 | [Project 2](project_2.html)                   |
-| October 22   | 5    | Spatial Analysis Continued                                                                   |                   |                                               |
-| October 27   | 6    | Statistics 101, Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling          |                   |                                               |
-| October 29   | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling, continued               |                   | [Final Project Outline Due](final_proj.md)    |
-| November 3   | 7    | Rasterizing by Attributes, Georeferencing                                                    |                   |                                               |
-| November 5   | 7    | Open lab time                                                                                |                   | [Project 3](project_3.md)                     |
-| November 10  | 8    | Spreadsheets, ArcGIS, Google Earth Engine                                                    |                   |                                               |
-| November 11  | 8    | Academic holiday - Veterans Day observed                                                     |                   |                                               |
-| November 12  | 8    | No Class                                                                                     |                   |                                               |
-| November 17  | 9    | Web Mapping, Field Data Collection: Mobile sensors and edge devices                          |                   |                                               |
-| November 19  | 9    | Advanced Topics: GPS, Lidar, Photogrammetry, Radar, Interferometry                           |                   | Final Project Draft \[optional\]              |
-| November 24  |      | Fall Break                                                                                   |                   |                                               |
-| November 26  |      | Fall Break                                                                                   |                   |                                               |
-| December 1   | 10   | Project 4 Presentations                                                                      |                   | [Project 4](project_4.md)                     |
-| December 3   | 10   | Exam. Final Project Presentations                                                            |                   | [Final Project](final_proj.md)                |
+| Date         | Week | Description                                                                         | Reading          | Due Dates                                     |
+|--------------|------|-------------------------------------------------------------------------------------|------------------|-----------------------------------------------|
+| September 22 | 1    | What is GIS Why is it important                                                     | Chapters 1 and 2 |                                               |
+| September 24 | 1    | Basic GIS Concepts Scale, Coordinate systems, and Map Projections                   |                  |                                               |
+| September 29 | 2    | Scale, Coordinate systems, and Map Projections / Spatial Data Models and Formats    | chapters 3 and 4 |                                               |
+| October 1    | 2    | Vector and Raster Data                                                              |                  |                                               |
+| October 6    | 3    | Finding Acquiring, Creating, and Editing GIS Data                                   | chapters 5 and 6 | [Project 1](project_1.html)                   |
+| October 8    | 3    | GeoProcessing and Vector Operations                                                 |                  |                                               |
+| October 13   | 4    | Remote Sensing 1                                                                    | chapters 7 and 8 |                                               |
+| October 15   | 4    | Remote Sensing 2: Spectral Indices, Elevation Data                                  |                  | [Final Project Brainstorm Due](final_proj.md) |
+| October 20   | 5    | Spatial Analysis: Map Algebra, Reprojection, Resampling;  Final Project Discussion  | chapters 9 and 10| [Project 2](project_2.html)                   |
+| October 22   | 5    | Spatial Analysis Continued                                                          |                  |                                               |
+| October 27   | 6    | Statistics 101, Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling |                  |                                               |
+| October 29   | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling, continued      |                  | [Final Project Outline Due](final_proj.md)    |
+| November 3   | 7    | Rasterizing by Attributes, Georeferencing                                           |                  |                                               |
+| November 5   | 7    | Open lab time                                                                       |                  | [Project 3](project_3.md)                     |
+| November 10  | 8    | Spreadsheets, ArcGIS, Google Earth Engine                                           |                  |                                               |
+| November 11  | 8    | Academic holiday - Veterans Day observed                                            |                  |                                               |
+| November 12  | 8    | No Class                                                                            |                  |                                               |
+| November 17  | 9    | Web Mapping, Field Data Collection: Mobile sensors and edge devices                 |                  |                                               |
+| November 19  | 9    | Advanced Topics: GPS, Lidar, Photogrammetry, Radar, Interferometry                  |                  | Final Project Draft \[optional\]              |
+| November 24  |      | Fall Break                                                                          |                  |                                               |
+| November 26  |      | Fall Break                                                                          |                  |                                               |
+| December 1   | 10   | Project 4 Presentations                                                             |                  | [Project 4](project_4.md)                     |
+| December 3   | 10   | Exam. Final Project Presentations                                                   |                  | [Final Project](final_proj.md)                |
