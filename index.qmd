@@ -83,9 +83,7 @@ Use arrows or menu in bottom left corner to navigate
 
 {{< include georeferencing.qmd >}}
 
-
-
-{{< include intro_excel_arc.qmd >}}
+{{< include intro_excel_arc_tmp.qmd >}}
 
 
 
