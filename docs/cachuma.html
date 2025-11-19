@@ -159,7 +159,7 @@ window.Quarto = {
 </section>
 <section id="find-the-approximate-summer-2018-water-surface" class="level2">
 <h2 class="anchored" data-anchor-id="find-the-approximate-summer-2018-water-surface">Find the approximate summer 2018 Water surface</h2>
-<p>This can be done using the 208 S2 image, or the DEM. Here we will use the DEM for this step.</p>
+<p>This can be done using the 208 S2 image, or the DEM. Here we will use the DEM for this step. THe method using the Sentinel-2 image would be similar to they way we will fine the area and elavation for th e 2024 sentinel image later int his tutorial.</p>
 <p>To do this, first create a hillshade to visualize the DEM (here shown as red relief).The lake surface (as determined by the USGS) is easily visible as a perfectly flat area. Use the information tool <img src="img/info_tool.png" class="img-fluid" style="height: 1.2em"> to find the elevation of the lake surface (214.16 ft, shockingly close to sea level!). Then use the raster calculator and polygonize tool to segment out the lake surface (see <a href="#fig-surf2018" class="quarto-xref">Figure&nbsp;1</a>). Now you can calculate the 2018 lake surface area and you know the elevation (<span class="math inline">\(z_{2018} = 65.2759659112~\text{m}\)</span>). (Some people may be happy to use this DEM as is and calculate the change in volume in acre-feet, but I would much rather have it in <span class="math inline">\(m^3\)</span>, so I converted the DEM values from ft to m (<code>dem@1 / 3.28084</code> ).)</p>
 <blockquote class="blockquote">
 <p>Note: For the raster calculator if yo us <code>dem@1 = 214.16</code> you will probably get an empty raster. This is due to <a href="https://en.wikipedia.org/wiki/Floating-point_error_mitigation">floating-point representation</a> error. Instead use something like <code>dem@1 &gt; 214.15 AND dem@1 &lt; 214.17</code></p>
@@ -174,7 +174,10 @@ Figure&nbsp;1: Lake surface in summer 2018 as estimated using the DEM
 </figcaption>
 </figure>
 </div>
-<p>Next find the surface area and elevation of the lake surface in February, 2024. The process is similar to what that for 2018, but this time you will need to use the S2 image. Use the Modified Normalized Difference Water Index (MNDWI) to segment the lake surface. Calculate it with the raster calculator. Results should be similar to <a href="#fig-MNDWI_2024" class="quarto-xref">Figure&nbsp;2</a>.</p>
+</section>
+<section id="find-the-approximate-summer-2024-water-surface" class="level2">
+<h2 class="anchored" data-anchor-id="find-the-approximate-summer-2024-water-surface">Find the approximate summer 2024 Water surface</h2>
+<p>Next we will find the surface area and elevation of the lake surface in February, 2024. The process is similar to what that for 2018, but this time you will need to use the S2 image. Use the Modified Normalized Difference Water Index (MNDWI) to segment the lake surface. Calculate it with the raster calculator. Results should be similar to <a href="#fig-MNDWI_2024" class="quarto-xref">Figure&nbsp;2</a>.</p>
 <p><span class="math display">\[
 \mathrm{MNDWI} = \frac{green - SWIR}{green + SWIR}
 \]</span></p>
@@ -225,26 +228,61 @@ Figure&nbsp;5: Extracted points lying in fairly flat areas.
 </figure>
 </div>
 <p>Now use Excel, QGIS plotting tools (which kind of stink), or some other software of your choice to create a histogram of the extracted points elevations (<a href="#fig-hist" class="quarto-xref">Figure&nbsp;6</a>).</p>
-<div id="cell-fig-hist" class="cell" data-message="false" data-execution_count="1">
-<div class="cell-output cell-output-display">
-<div id="fig-hist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="cell" data-message="false" data-execution_count="1">
+<div id="fig-hist" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-message="false" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="cachuma_files/figure-html/fig-hist-output-1.png" width="566" height="411" class="figure-img">
+<div id="fig-hist-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-hist-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<pre id="fig-hist-1" class="cell-output cell-output-display" data-execution_count="1"><code>Text(0.5, 0, 'Elevation (m)')</code></pre>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Histogram of extracted points with mean and median.
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-hist-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Histogram of extracted points with mean and median.
+</figcaption>
+</figure>
+</div>
+<div class="cell-output cell-output-display">
+<div id="fig-hist-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="566" height="429">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-hist-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="cachuma_files/figure-html/fig-hist-output-2.png" id="fig-hist-2" data-ref-parent="fig-hist" width="566" height="429" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-hist-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Since the mean and median values are both <span class="math inline">\(\approx\)</span> 69.2, it would appear to be a good value to choose for <span class="math inline">\(z_{2024}\)</span>.</p>
-<p>Next we will calculate the volume of slices of the reservoir between <span class="math inline">\(z_{2018}\)</span> and <span class="math inline">\(z_{2024}\)</span> For a given slice,</p>
-<p><span class="math display">\[
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Since the mean and median values are both <span class="math inline">\(\approx\)</span> 69.2 m, it would appear to be a good value to choose for <span class="math inline">\(z_{2024}\)</span>.</p>
+</section>
+<section id="calculate-of-the-reservoir" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-of-the-reservoir">Calculate of the reservoir</h2>
+<p>In order to calculate the volume of the reservoir, Next we will calculate the volume of slices of the reservoir between <span class="math inline">\(z_{2018}\)</span> and <span class="math inline">\(z_{2024}\)</span> For a given slice,</p>
+<p><span id="eq-slice"><span class="math display">\[  
 V_{n} \approx \Delta z \times \frac{A_{n}+A_{n+1}}{2}
-\]</span></p>
-<p>where the volume of the slice <span class="math inline">\(V_{n}\)</span> is approximated by the depth of the slice <span class="math inline">\(\Delta z\)</span> times the mean area of the top (<span class="math inline">\(A_{n}+A_{n+1}\)</span>) and bottom (<span class="math inline">\(A_{n}+A_{n}\)</span>) of the slice</p>
+\tag{1}\]</span></span></p>
+<p><span id="eq-total"><span class="math display">\[
+V_{total} = \sum_{n=0}^{n} V_{n}
+\tag{2}\]</span></span></p>
+<p>where the volume of the slice <span class="math inline">\(V_{n}\)</span> is approximated by the depth of the slice <span class="math inline">\(\Delta z\)</span> times the mean area of the top (<span class="math inline">\(A_{n}+A_{n+1}\)</span>) and bottom (<span class="math inline">\(A_{n}+A_{n}\)</span>) of the slice, and <span class="math inline">\(V_{total}\)</span> is the sum of all the slices. <a href="#fig-schem" class="quarto-xref">Figure&nbsp;7</a> shows a schematic representation of the volume approximation method.</p>
+<div id="fig-schem" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-schem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/cachuma_schem.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-schem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Cross-sectional schematic of volume estimation method described in <a href="#eq-slice" class="quarto-xref">Equation&nbsp;1</a> and <a href="#eq-total" class="quarto-xref">Equation&nbsp;2</a>
+</figcaption>
+</figure>
+</div>
 
 
 </section>

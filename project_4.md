@@ -14,7 +14,7 @@ __Changes:__
    into a 1m $\times$ 1m square on the prime meridian and equator.  As a result, the
    build vrt function was trying to buils a vrt with 1m resolution than included
    the actual site, and [Null Island](https://en.wikipedia.org/wiki/Null_Island).
-   + A fixer version of band 90 can be downloaded [her](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZHfrzYO7KZMniR4iCj4nYABFfDmEmYGbNlHaKVGeIkLBw?e=W4m1ug)
+   + A fixeD version of band 90 can be downloaded [herE](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZHfrzYO7KZMniR4iCj4nYABFfDmEmYGbNlHaKVGeIkLBw?e=W4m1ug)
 
 # Project 4
 
@@ -80,12 +80,11 @@ If you are not familiar with National Ecological Observatory Network (NEON), it 
 
 ### 4. Derive a Canopy Height Model (DSM − DTM)
 - Open **Raster ▸ Raster Calculator** and compute `"SJER2013_DSM.tif" - "SJER2013_DTM.tif"`.
-- Save the output as `SJER_chm_qgis.tif` inside `data/project_4/outputs`. In the export/ save file dialogue, set the output data type to `Float32` and NoData = `-9999` (scroll to the bottom of the dialogue to do the NoData).
+- Save the output as `SJER_chm_qgis.tif` inside `data/project_4/outputs`. In the export/ save file dialogue, set the NoData equal to `-9999` (scroll to the bottom of the dialogue to do the NoData).
 - Bring the CHM into the map, apply a graduated style with 2 m class breaks (0–2, 2–5, 5–10, 10–20, >20 m) by using singleband pseudocolor as the render type, and discrete interpolation.  Label the legend classes clearly.
 
 ### 5. Summarize Elevation and Canopy Stats
 - Create a plot boundary vector file by extracting the extent of the DSM, use a scratch layer.
-- Convert the plot boundary polygon to a layer with an attribute field `Plot_ID = "SJER"` (attribute table ▸ toggle edit ▸ field calculator).
 - Run **Raster ▸ Zonal statistics** twice: once for DSM, once for CHM. Calculate mean, min, max, standard deviation, and count; write results into fields prefixed `DSM_` and `CHM_`. Save the resulting vector as `project_4/NEON-DS-Field-Site-Spatial-Data/SJER/plot.geogjson'.
 
 <u>__Capture a screenshot of the attribute table showing the computed stats.__</u>
@@ -101,9 +100,7 @@ If you are not familiar with National Ecological Observatory Network (NEON), it 
 
 # Part 2
 
-__Download data__ 
-
-For [Cachuma Reservoir](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EiE5HEXY-1FGu2fJx3bkTnoBwS8q1PDwYkYex55UwdGqTg?e=DFkRZN)
+__Download data__ for [Cachuma Reservoir](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EiE5HEXY-1FGu2fJx3bkTnoBwS8q1PDwYkYex55UwdGqTg?e=DFkRZN)
 
 It includes:  
 
@@ -111,8 +108,15 @@ It includes:
    + Sentinel-2 image from July, 2018
    + Sentinel-2 image from February, 2014
 
-__Task__
+## Task
 Estimate the change in the volume of water that was in the reservoir between summer, 2018 and February, 2024. This can be done using tools that we have already used in this class.
 
+## Deliverables
+A short document with:
+
++ Methods: Write a clear explanation of what you did, and why.  Document the steps you took, using figures where needed.  
++ Solution:  Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.
+
+
 >Hints:  
-> You will need to mosaic the raster tiles.  You usee build vrt in the section above to stack bands. Now use it to mosaic tiles.
+> You will need to mosaic the raster tiles.  You used build vrt in the section above to stack bands. Now use it to mosaic tiles. Think about the differences between mosaicing and stacking.

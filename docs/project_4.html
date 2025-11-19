@@ -118,7 +118,7 @@ window.Quarto = {
 <ul>
 <li>The table has been changed and now reflects the proper band values (band 58 is red, band 90 is NIR)</li>
 <li>also, band 90 was missing coordinate data, you may have notices it would not work with the vrt building step. This is because band 90 was plotting into a 1m <span class="math inline">\(\times\)</span> 1m square on the prime meridian and equator. As a result, the build vrt function was trying to buils a vrt with 1m resolution than included the actual site, and <a href="https://en.wikipedia.org/wiki/Null_Island">Null Island</a>.</li>
-<li>A fixer version of band 90 can be downloaded <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZHfrzYO7KZMniR4iCj4nYABFfDmEmYGbNlHaKVGeIkLBw?e=W4m1ug">her</a></li>
+<li>A fixeD version of band 90 can be downloaded <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZHfrzYO7KZMniR4iCj4nYABFfDmEmYGbNlHaKVGeIkLBw?e=W4m1ug">herE</a></li>
 </ul></li>
 </ul>
 <section id="project-4" class="level1">
@@ -223,7 +223,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="derive-a-canopy-height-model-dsm-dtm">4. Derive a Canopy Height Model (DSM − DTM)</h3>
 <ul>
 <li>Open <strong>Raster ▸ Raster Calculator</strong> and compute <code>"SJER2013_DSM.tif" - "SJER2013_DTM.tif"</code>.</li>
-<li>Save the output as <code>SJER_chm_qgis.tif</code> inside <code>data/project_4/outputs</code>. In the export/ save file dialogue, set the output data type to <code>Float32</code> and NoData = <code>-9999</code> (scroll to the bottom of the dialogue to do the NoData).</li>
+<li>Save the output as <code>SJER_chm_qgis.tif</code> inside <code>data/project_4/outputs</code>. In the export/ save file dialogue, set the NoData equal to <code>-9999</code> (scroll to the bottom of the dialogue to do the NoData).</li>
 <li>Bring the CHM into the map, apply a graduated style with 2 m class breaks (0–2, 2–5, 5–10, 10–20, &gt;20 m) by using singleband pseudocolor as the render type, and discrete interpolation. Label the legend classes clearly.</li>
 </ul>
 </section>
@@ -231,7 +231,6 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="summarize-elevation-and-canopy-stats">5. Summarize Elevation and Canopy Stats</h3>
 <ul>
 <li>Create a plot boundary vector file by extracting the extent of the DSM, use a scratch layer.</li>
-<li>Convert the plot boundary polygon to a layer with an attribute field <code>Plot_ID = "SJER"</code> (attribute table ▸ toggle edit ▸ field calculator).</li>
 <li>Run <strong>Raster ▸ Zonal statistics</strong> twice: once for DSM, once for CHM. Calculate mean, min, max, standard deviation, and count; write results into fields prefixed <code>DSM_</code> and <code>CHM_</code>. Save the resulting vector as `project_4/NEON-DS-Field-Site-Spatial-Data/SJER/plot.geogjson’.</li>
 </ul>
 <p><u><strong>Capture a screenshot of the attribute table showing the computed stats.</strong></u></p>
@@ -248,21 +247,32 @@ window.Quarto = {
 </section>
 <section id="part-2" class="level1">
 <h1>Part 2</h1>
-<p><strong>Download data</strong></p>
-<p>For <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EiE5HEXY-1FGu2fJx3bkTnoBwS8q1PDwYkYex55UwdGqTg?e=DFkRZN">Cachuma Reservoir</a></p>
+<p><strong>Download data</strong> for <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EiE5HEXY-1FGu2fJx3bkTnoBwS8q1PDwYkYex55UwdGqTg?e=DFkRZN">Cachuma Reservoir</a></p>
 <p>It includes:</p>
 <ul>
 <li>a DEM from summer of 2018 (as tiles)</li>
 <li>Sentinel-2 image from July, 2018</li>
 <li>Sentinel-2 image from February, 2014</li>
 </ul>
-<p><strong>Task</strong> Estimate the change in the volume of water that was in the reservoir between summer, 2018 and February, 2024. This can be done using tools that we have already used in this class.</p>
+<section id="task" class="level2">
+<h2 class="anchored" data-anchor-id="task">Task</h2>
+<p>Estimate the change in the volume of water that was in the reservoir between summer, 2018 and February, 2024. This can be done using tools that we have already used in this class.</p>
+</section>
+<section id="deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
+<p>A short document with:</p>
+<ul>
+<li>Methods: Write a clear explanation of what you did, and why. Document the steps you took, using figures where needed.<br>
+</li>
+<li>Solution: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.</li>
+</ul>
 <blockquote class="blockquote">
 <p>Hints:<br>
-You will need to mosaic the raster tiles. You usee build vrt in the section above to stack bands. Now use it to mosaic tiles.</p>
+You will need to mosaic the raster tiles. You used build vrt in the section above to stack bands. Now use it to mosaic tiles. Think about the differences between mosaicing and stacking.</p>
 </blockquote>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

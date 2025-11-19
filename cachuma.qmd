@@ -27,7 +27,7 @@ The DEM is in tiles so you need to mosaic it.  I used `Raster` > `Conversion` > 
 
 ## Find the approximate summer 2018 Water surface 
 
-This can be done using the 208 S2 image, or the DEM.   Here we will use the DEM for this step.
+This can be done using the 208 S2 image, or the DEM.   Here we will use the DEM for this step.  THe method using the Sentinel-2 image would be similar to they way we will fine the area and elavation for th e 2024 sentinel image later int his tutorial.
 
 To do this, first create a hillshade to visualize the DEM (here shown as red relief).The lake surface (as determined by the USGS) is easily visible as a perfectly flat area. Use the information tool ![](img/info_tool.png){style="height: 1.2em"} to find the elevation of the lake surface (214.16 ft, shockingly close to sea level!). Then use the raster calculator and polygonize tool to segment out the lake surface (see @fig-surf2018). Now you can calculate the 2018 lake surface area and  you know the elevation ($z_{2018} = 65.2759659112~\text{m}$).  (Some people may be happy to use this DEM as is and calculate the change in volume in acre-feet, but I would much rather have it in $m^3$, so I converted the DEM values from ft to m (`dem@1 / 3.28084` ).)
 
@@ -36,7 +36,9 @@ To do this, first create a hillshade to visualize the DEM (here shown as red rel
 
 ![Lake surface in summer 2018 as estimated using the DEM](img/cachuma_2018.gif){#fig-surf2018}
 
-Next find the surface area and elevation of the lake surface in February, 2024.  The process is similar to what that for 2018, but this time you will need to use the S2 image. Use the Modified Normalized Difference Water Index (MNDWI) to segment the lake surface. Calculate it with the raster calculator.  Results should be similar to @fig-MNDWI_2024.
+## Find the approximate summer 2024 Water surface 
+
+Next we will find the surface area and elevation of the lake surface in February, 2024.  The process is similar to what that for 2018, but this time you will need to use the S2 image. Use the Modified Normalized Difference Water Index (MNDWI) to segment the lake surface. Calculate it with the raster calculator.  Results should be similar to @fig-MNDWI_2024.
 
 $$ 
 \mathrm{MNDWI} = \frac{green - SWIR}{green + SWIR}
@@ -89,14 +91,24 @@ for text in legend.get_texts():
 ax.text(0.77, 0.8, f'Mean = {mu}', transform=ax.transAxes, fontsize=10, color='whitesmoke');
 ax.text(0.77, 0.75, f'Median = {m}', transform=ax.transAxes, fontsize=10, color='whitesmoke');
 ax.set_facecolor('none');
+ax.set_xlabel('Elevation (m)')
 ```
 
-Since the mean and median values are both $\approx$ 69.2, it would appear to be a good value to choose for $z_{2024}$. 
+Since the mean and median values are both $\approx$ 69.2 m, it would appear to be a good value to choose for $z_{2024}$. 
 
-Next we will calculate the volume of slices of the reservoir between $z_{2018}$ and $z_{2024}$  For a given slice,
 
-$$
-V_{n} \approx \Delta z \times \frac{A_{n}+A_{n+1}}{2} 
-$$
+## Calculate of the reservoir
 
-where the volume of the slice $V_{n}$ is approximated by the depth of the slice $\Delta z$ times the mean area of the top ($A_{n}+A_{n+1}$) and bottom ($A_{n}+A_{n}$) of the slice
+In order to calculate the volume of the reservoir, Next we will calculate the volume of slices of the reservoir between $z_{2018}$ and $z_{2024}$  For a given slice,
+
+$$  
+V_{n} \approx \Delta z \times \frac{A_{n}+A_{n+1}}{2}
+$$ {#eq-slice}
+
+$$ 
+V_{total} = \sum_{n=0}^{n} V_{n}
+$$ {#eq-total}
+
+where the volume of the slice $V_{n}$ is approximated by the depth of the slice $\Delta z$ times the mean area of the top ($A_{n}+A_{n+1}$) and bottom ($A_{n}+A_{n}$) of the slice, and $V_{total}$ is the sum of all the slices.  @fig-schem shows a schematic representation of the volume approximation method.
+
+![Cross-sectional schematic of volume estimation method described in @eq-slice and @eq-total](img/cachuma_schem.png){#fig-schem}
