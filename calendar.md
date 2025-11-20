@@ -149,5 +149,5 @@ Here's the table with the Week column containing just the integer week values:
 | November 19  | 9    | Advanced Topics: GPS, Lidar, Photogrammetry, Radar, Interferometry                  |                  | Final Project Draft \[optional\]              |
 | November 24  |      | Fall Break                                                                          |                  |                                               |
 | November 26  |      | Fall Break                                                                          |                  |                                               |
-| December 1   | 10   | Project 4 Presentations                                                             |                  | [Project 4](project_4.md)                     |
+| December 1   | 10   | Project 4 Discussion                                                                |                  | [Project 4](project_4.md)                     |
 | December 3   | 10   | Exam. Final Project Presentations                                                   |                  | [Final Project](final_proj.md)                |
