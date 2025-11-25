@@ -145,8 +145,8 @@ Here's the table with the Week column containing just the integer week values:
 | November 10  | 8    | Spreadsheets, ArcGIS, Google Earth Engine                                           |                  |                                               |
 | November 11  | 8    | Academic holiday - Veterans Day observed                                            |                  |                                               |
 | November 12  | 8    | No Class                                                                            |                  |                                               |
-| November 17  | 9    | Web Mapping, Field Data Collection: Mobile sensors and edge devices                 |                  |                                               |
-| November 19  | 9    | Advanced Topics: GPS, Lidar, Photogrammetry, Radar, Interferometry                  |                  | Final Project Draft \[optional\]              |
+| November 17  | 9    | Project work                                                                        |                  |                                               |
+| November 19  | 9    | Project work                                                                        |                  | Final Project Draft \[optional\]              |
 | November 24  |      | Fall Break                                                                          |                  |                                               |
 | November 26  |      | Fall Break                                                                          |                  |                                               |
 | December 1   | 10   | Project 4 Discussion                                                                |                  | [Project 4](project_4.md)                     |
