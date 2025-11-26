@@ -7,6 +7,8 @@ format:
 
 # Cachuma Solution
 
+# Assignment
+
 __Data provided__
 
 |  Filename                        | Year | Description       |
@@ -19,6 +21,9 @@ __Data provided__
 __Task__
 
 Estimate the change in the volume of water ($\Delta V$) that was in the reservoir between summer, 2018 and February, 2024. This can be done using tools that we have already used in this class.
+
+## Solution
+In order to calculate the volume of the reservoir we will perform a 1D numerical integration by stacking prismoidal estimates of volume.
 
 ## Mosaic DEM 
 
@@ -97,9 +102,9 @@ ax.set_xlabel('Elevation (m)')
 Since the mean and median values are both $\approx$ 69.2 m, it would appear to be a good value to choose for $z_{2024}$. 
 
 
-## Calculate of the reservoir
+## Calculate the volume of the reservoir
 
-In order to calculate the volume of the reservoir, Next we will calculate the volume of slices of the reservoir between $z_{2018}$ and $z_{2024}$  For a given slice,
+In order to calculate the volume of the reservoir, next we will calculate the volume of slices of the reservoir between $z_{2018}$ and $z_{2024}$  For a given slice,
 
 $$  
 V_{n} \approx \Delta z \times \frac{A_{n}+A_{n+1}}{2}
@@ -113,7 +118,24 @@ where the volume of the slice $V_{n}$ is approximated by the depth of the slice 
 
 ![Cross-sectional schematic of volume estimation method described in @eq-slice and @eq-total](img/cachuma_schem.png){#fig-schem}
 
-In order to calculate $V_{n}$ for each slice, starting from the 2018 water level, first pick a value for $\Delta z$, here we will use 1 m. Then find the surface area of the reservoir at $z_{2018} + \Delta z$.  This can be done using the raster calculator to create a mask for pixels lying between the lake surface, and 1 m above the lake surface(`(dem_m@1 > 65.275) AND (dem_m@1 < 66.3)`). You can then polygonize the mask and extract the polygon representing the surface (see @fig-z1).
+In order to calculate $V_{n}$ for each slice, starting from the 2018 water level, first pick a value for $\Delta z$, here we will use 1 m. Then find the surface area of the reservoir at $z_{2018} + \Delta z$.  This can be done using the raster calculator to create a mask for pixels lying between the lake surface, and 1 m above the lake surface (`(dem_m@1 > 65.275) AND (dem_m@1 < 66.3)`). You can then polygonize the mask and extract the polygon representing the surface (see @fig-z1).
 
 ![Lake surface area with water level 1m higher than in in summer 2018, estimated using the DEM](img/cachuma_zplus1.png){#fig-z1}
 
+Now for the first slice ($\Delta Z_{0}$) we have estimates for the area of the bottom ($A_{0} \approx 6544034.000155964 \text{m}^{2}$ ) and area of the top ($A_{1} \approx 7512197.9998339815 \text{m}^{2}$), and we know the thickness of the slice is 1 m. Calculating an estimate for the volume of the slice using @eq-slice gives $\approx 2.5 \times 10^{13} m^{3}$
+
+
+
+![At 2m above the 2018, the surface connects through the spillway to areas outside of the lake.  It needs to be separated by turning on editing and using the _split features_ button.](img/uh_oh_2.gif){#fig-split_poly}
+
+This process is repeated for each 1 m thick slice (the final slice will be thinner as it is limited by $Z_{2024}$). Formulas for calculating the lake surface area at each step are given in @tbl:slices. It is important to note that the calculated surface may begin to include areas on the other side of the spillway, and the polygon will need to be split (@fig-split_poly). 
+
+
+|Surface | Formula                                                   |
+|------|-------------------------------------------------------------|
+| $z_{0} (z_{2018})$   | (`(dem_m@1 > 65.275) AND (dem_m@1 < 66.3)`) |
+| $z_{1}$              | (`(dem_m@1 > 65.275) AND (dem_m@1 < 67.3)`) |
+| $z_{2}$              | (`(dem_m@1 > 65.275) AND (dem_m@1 < 68.3)`) |
+| $z_{3} (z_{2024})$   | (`(dem_m@1 > 65.275) AND (dem_m@1 < 69.2)`) |
+
+: Formula for each surface area at the top of each slice. {#tbl:slices}
