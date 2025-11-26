@@ -236,7 +236,7 @@ Figure&nbsp;5: Extracted points lying in fairly flat areas.
 </div>
 <p>Now use Excel, QGIS plotting tools (which kind of stink), or some other software of your choice to create a histogram of the extracted points elevations (<a href="#fig-hist" class="quarto-xref">Figure&nbsp;6</a>).</p>
 <div class="cell" data-message="false" data-execution_count="1">
-<div id="fig-hist" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-message="false" data-execution_count="1">
+<div id="fig-hist" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1" data-message="false">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div id="fig-hist-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
@@ -312,7 +312,7 @@ Figure&nbsp;9: At 2m above the 2018, the surface connects through the spillway t
 </figcaption>
 </figure>
 </div>
-<p>This process is repeated for each 1 m thick slice (the final slice will be thinner as it is limited by <span class="math inline">\(Z_{2024}\)</span>). Formulas for calculating the lake surface area at each step are given in <span class="citation" data-cites="tbl:slices">@tbl:slices</span>. It is important to note that the calculated surface will begin to include areas on the other side of the spillway, and the polygon will need to be split (<a href="#fig-split_poly" class="quarto-xref">Figure&nbsp;9</a>).</p>
+<p>This process is repeated for each 1 m thick slice (the final slice will be thinner as it is limited by <span class="math inline">\(Z_{2024}\)</span>). Formulas for calculating the lake surface area at each step are given in <span class="citation" data-cites="tbl:slices">@tbl:slices</span>. It is important to note that the calculated surface may begin to include areas on the other side of the spillway, and the polygon will need to be split (<a href="#fig-split_poly" class="quarto-xref">Figure&nbsp;9</a>).</p>
 <table class="caption-top table">
 <caption>Formula for each surface area at the top of each slice. {#tbl:slices}</caption>
 <thead>
