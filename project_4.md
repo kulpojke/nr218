@@ -119,5 +119,5 @@ A short document with:
 
 
 >Hints:  
-> You will need to mosaic the raster tiles.  You used build vrt in the section above to stack bands. Now use it to mosaic tiles. Think about the differences between mosaicing and stacking.
+> You will need to mosaic the raster tiles.  You used build vrt in the section above to stack bands. Now use it to mosaic tiles. Think about the differences between mosaicing and stacking.  
 > For a sanity check on your solution, the total volume of the reservoir is currently estimated as 232,000,000 $m^{3}$
