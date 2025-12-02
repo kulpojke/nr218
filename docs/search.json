@@ -1761,7 +1761,7 @@
     "href": "project_4.html#deliverables",
     "title": "Project 4",
     "section": "Deliverables",
-    "text": "Deliverables\nA short document with:\n\nMethods: Write a clear explanation of what you did, and why. Document the steps you took, using figures where needed.\n\nSolution: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.\n\n\nHints:\nYou will need to mosaic the raster tiles. You used build vrt in the section above to stack bands. Now use it to mosaic tiles. Think about the differences between mosaicing and stacking."
+    "text": "Deliverables\nA short document with:\n\nMethods: Write a clear explanation of what you did, and why. Document the steps you took, using figures where needed.\n\nSolution: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.\n\n\nHints:\nYou will need to mosaic the raster tiles. You used build vrt in the section above to stack bands. Now use it to mosaic tiles. Think about the differences between mosaicing and stacking. For a sanity check on your solution, the total volume of the reservoir is currently estimated as 232,000,000 \\(m^{3}\\)"
   },
   {
     "objectID": "project_2.html",

@@ -150,4 +150,4 @@ Here's the table with the Week column containing just the integer week values:
 | November 24  |      | Fall Break                                                                          |                  |                                               |
 | November 26  |      | Fall Break                                                                          |                  |                                               |
 | December 1   | 10   | Project 4 Discussion                                                                |                  | [Project 4](project_4.md)                     |
-| December 3   | 10   | Exam. Final Project Presentations, project 4 Solution                                                 |                  | [Final Project](final_proj.md)                |
+| December 3   | 10   | Exam. Final Project Presentations, project 4 Solution                               |                  | [Final Project](final_proj.md)                |
