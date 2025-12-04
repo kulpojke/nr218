@@ -122,20 +122,38 @@ In order to calculate $V_{n}$ for each slice, starting from the 2018 water level
 
 ![Lake surface area with water level 1m higher than in in summer 2018, estimated using the DEM](img/cachuma_zplus1.png){#fig-z1}
 
-Now for the first slice ($\Delta Z_{0}$) we have estimates for the area of the bottom ($A_{0} \approx 6544034.000155964 \text{m}^{2}$ ) and area of the top ($A_{1} \approx 7512197.9998339815 \text{m}^{2}$), and we know the thickness of the slice is 1 m. Calculating an estimate for the volume of the slice using @eq-slice gives $\approx 2.5 \times 10^{13} m^{3}$
+Now, for the first slice ($\Delta Z_{0}$) we have estimates for the area of the bottom ($A_{0} \approx 6544034.000155964 \text{m}^{2}$ ) and area of the top ($A_{1} \approx 7512197.9998339815 \text{m}^{2}$), and we know the thickness of the slice is 1 m. Calculating an estimate for the volume of the slice using @eq-slice gives $\approx 2.5 \times 10^{13} m^{3}$
 
 
+
+
+This process is repeated for each 1 m thick slice (the final slice will be thinner as it is limited by $Z_{2024}$). Formulas for calculating the lake surface area at each step are given in @tbl-slices. 
+
+
+::: {#tbl-slices}
+|Surface | Formula                                                 |  Area (m$^{3}$)    |
+|--------|---------------------------------------------------------|--------------------|
+| $z_{0} (z_{2018})$   | `(dem_m@1 > 65.275) AND (dem_m@1 < 66.3)` | 6544034.000155964  |
+| $z_{1}$              | `(dem_m@1 > 65.275) AND (dem_m@1 < 67.3)` | 7512197.9998339815 |
+| $z_{2}$              | `(dem_m@1 > 65.275) AND (dem_m@1 < 68.3)` | 8719786.154200599  |
+| $z_{3} (z_{2024})$   | `(dem_m@1 > 65.275) AND (dem_m@1 < 69.2)` | 11118719.999728722 |
+|                      |                                           |                    |
+
+Formula for each surface area at the top of each slice, and its corresponding surface area. 
+:::
+
+It is important to note that the calculated surface may begin to include areas on the other side of the spillway, and the polygon will need to be split (@fig-split_poly).
 
 ![At 2m above the 2018, the surface connects through the spillway to areas outside of the lake.  It needs to be separated by turning on editing and using the _split features_ button.](img/uh_oh_2.gif){#fig-split_poly}
 
-This process is repeated for each 1 m thick slice (the final slice will be thinner as it is limited by $Z_{2024}$). Formulas for calculating the lake surface area at each step are given in @tbl:slices. It is important to note that the calculated surface may begin to include areas on the other side of the spillway, and the polygon will need to be split (@fig-split_poly). 
-
-
-|Surface | Formula                                                   |
-|------|-------------------------------------------------------------|
-| $z_{0} (z_{2018})$   | (`(dem_m@1 > 65.275) AND (dem_m@1 < 66.3)`) |
-| $z_{1}$              | (`(dem_m@1 > 65.275) AND (dem_m@1 < 67.3)`) |
-| $z_{2}$              | (`(dem_m@1 > 65.275) AND (dem_m@1 < 68.3)`) |
-| $z_{3} (z_{2024})$   | (`(dem_m@1 > 65.275) AND (dem_m@1 < 69.2)`) |
-
-: Formula for each surface area at the top of each slice. {#tbl:slices}
+@tbl-volumes shows the thickness and calculated volume of each slice, as well as that of $\Delta V$.  The estimate I ended up with is $\approx 2.43 \times 10^{7} \text{m}^{3})$ (or $1.97 \times 10^{4} \text{acre-feet}$, or 24 GL, or $2.06 \times 10^{-41} \text{ly}^{3}$). For reference, that much water has a mass of about is about $7.14 \times 10^{09}$ that of the largest racoon ever recorded! 
+ 
+::: {#tbl-volumes}
+| Slice         | $\Delta Z$ | Volume (m$^{2}$)    | Volume (% of reservoir) |
+|---------------|------------|---------------------|------|
+| $\Delta_v{0}$ | 1.03 m     | 7238959.47999483    | 3.03 |
+| $\Delta_v{1}$ | 1 m        | 8115992.07701729    | 3.50 |
+| $\Delta_v{2}$ | 0.9 m      | 8927327.7692682     | 4.28 |
+| $\Delta V$    |            | 2.43 $\times 10^{7}$ | 10.8 |         
+Volume of each slice. Percentage volumes are calculated as percentage of the estimated reservoir volume (from wikipedia ¯\_(ツ)_/¯ )
+:::

@@ -301,7 +301,59 @@ Figure&nbsp;8: Lake surface area with water level 1m higher than in in summer 20
 </figcaption>
 </figure>
 </div>
-<p>Now for the first slice (<span class="math inline">\(\Delta Z_{0}\)</span>) we have estimates for the area of the bottom (<span class="math inline">\(A_{0} \approx 6544034.000155964 \text{m}^{2}\)</span> ) and area of the top (<span class="math inline">\(A_{1} \approx 7512197.9998339815 \text{m}^{2}\)</span>), and we know the thickness of the slice is 1 m. Calculating an estimate for the volume of the slice using <a href="#eq-slice" class="quarto-xref">Equation&nbsp;1</a> gives <span class="math inline">\(\approx 2.5 \times 10^{13} m^{3}\)</span></p>
+<p>Now, for the first slice (<span class="math inline">\(\Delta Z_{0}\)</span>) we have estimates for the area of the bottom (<span class="math inline">\(A_{0} \approx 6544034.000155964 \text{m}^{2}\)</span> ) and area of the top (<span class="math inline">\(A_{1} \approx 7512197.9998339815 \text{m}^{2}\)</span>), and we know the thickness of the slice is 1 m. Calculating an estimate for the volume of the slice using <a href="#eq-slice" class="quarto-xref">Equation&nbsp;1</a> gives <span class="math inline">\(\approx 2.5 \times 10^{13} m^{3}\)</span></p>
+<p>This process is repeated for each 1 m thick slice (the final slice will be thinner as it is limited by <span class="math inline">\(Z_{2024}\)</span>). Formulas for calculating the lake surface area at each step are given in <a href="#tbl-slices" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div id="tbl-slices" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-slices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Formula for each surface area at the top of each slice, and its corresponding surface area.
+</figcaption>
+<div aria-describedby="tbl-slices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 67%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Surface</th>
+<th>Formula</th>
+<th>Area (m<span class="math inline">\(^{3}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(z_{0} (z_{2018})\)</span></td>
+<td><code>(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 66.3)</code></td>
+<td>6544034.000155964</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(z_{1}\)</span></td>
+<td><code>(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 67.3)</code></td>
+<td>7512197.9998339815</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(z_{2}\)</span></td>
+<td><code>(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 68.3)</code></td>
+<td>8719786.154200599</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(z_{3} (z_{2024})\)</span></td>
+<td><code>(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 69.2)</code></td>
+<td>11118719.999728722</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>It is important to note that the calculated surface may begin to include areas on the other side of the spillway, and the polygon will need to be split (<a href="#fig-split_poly" class="quarto-xref">Figure&nbsp;9</a>).</p>
 <div id="fig-split_poly" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-split_poly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -312,34 +364,58 @@ Figure&nbsp;9: At 2m above the 2018, the surface connects through the spillway t
 </figcaption>
 </figure>
 </div>
-<p>This process is repeated for each 1 m thick slice (the final slice will be thinner as it is limited by <span class="math inline">\(Z_{2024}\)</span>). Formulas for calculating the lake surface area at each step are given in <span class="citation" data-cites="tbl:slices">@tbl:slices</span>. It is important to note that the calculated surface may begin to include areas on the other side of the spillway, and the polygon will need to be split (<a href="#fig-split_poly" class="quarto-xref">Figure&nbsp;9</a>).</p>
+<p><a href="#tbl-volumes" class="quarto-xref">Table&nbsp;2</a> shows the thickness and calculated volume of each slice, as well as that of <span class="math inline">\(\Delta V\)</span>. The estimate I ended up with is <span class="math inline">\(\approx 2.43 \times 10^{7} \text{m}^{3})\)</span> (or <span class="math inline">\(1.97 \times 10^{4} \text{acre-feet}\)</span>, or 24 GL, or <span class="math inline">\(2.06 \times 10^{-41} \text{ly}^{3}\)</span>). For reference, that much water has a mass of about is about <span class="math inline">\(7.14 \times 10^{09}\)</span> that of the largest racoon ever recorded!</p>
+<div id="tbl-volumes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-volumes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Volume of each slice. Percentage volumes are calculated as percentage of the estimated reservoir volume (from wikipedia ¯_(ツ)_/¯ )
+</figcaption>
+<div aria-describedby="tbl-volumes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<caption>Formula for each surface area at the top of each slice. {#tbl:slices}</caption>
+<colgroup>
+<col style="width: 27%">
+<col style="width: 22%">
+<col style="width: 38%">
+<col style="width: 11%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Surface</th>
-<th>Formula</th>
+<th>Slice</th>
+<th><span class="math inline">\(\Delta Z\)</span></th>
+<th>Volume (m<span class="math inline">\(^{2}\)</span>)</th>
+<th>Volume (% of reservoir)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(z_{0} (z_{2018})\)</span></td>
-<td>(<code>(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 66.3)</code>)</td>
+<td><span class="math inline">\(\Delta_v{0}\)</span></td>
+<td>1.03 m</td>
+<td>7238959.47999483</td>
+<td>3.03</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(z_{1}\)</span></td>
-<td>(<code>(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 67.3)</code>)</td>
+<td><span class="math inline">\(\Delta_v{1}\)</span></td>
+<td>1 m</td>
+<td>8115992.07701729</td>
+<td>3.50</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(z_{2}\)</span></td>
-<td>(<code>(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 68.3)</code>)</td>
+<td><span class="math inline">\(\Delta_v{2}\)</span></td>
+<td>0.9 m</td>
+<td>8927327.7692682</td>
+<td>4.28</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(z_{3} (z_{2024})\)</span></td>
-<td>(<code>(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 69.2)</code>)</td>
+<td><span class="math inline">\(\Delta V\)</span></td>
+<td></td>
+<td>2.43 <span class="math inline">\(\times 10^{7}\)</span></td>
+<td>10.8</td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 
 
 </section>

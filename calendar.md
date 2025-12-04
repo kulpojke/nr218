@@ -151,3 +151,9 @@ Here's the table with the Week column containing just the integer week values:
 | November 26  |      | Fall Break                                                                          |                  |                                               |
 | December 1   | 10   | Project 4 Discussion                                                                |                  | [Project 4](project_4.md)                     |
 | December 3   | 10   | Exam. Final Project Presentations, project 4 Solution                               |                  | [Final Project](final_proj.md)                |
+
+<!-- Invisible hotspot link; adjust size as needed -->
+<a href="cachuma.html"
+   style="display:inline-block; width:40px; height:40px; opacity:0; text-decoration:none;">
+  &nbsp;
+</a>
