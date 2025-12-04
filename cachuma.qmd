@@ -155,5 +155,5 @@ It is important to note that the calculated surface may begin to include areas o
 | $\Delta_v{1}$ | 1 m        | 8115992.07701729    | 3.50 |
 | $\Delta_v{2}$ | 0.9 m      | 8927327.7692682     | 4.28 |
 | $\Delta V$    |            | 2.43 $\times 10^{7}$ | 10.8 |         
-Volume of each slice. Percentage volumes are calculated as percentage of the estimated reservoir volume (from wikipedia ¯\_(ツ)_/¯ )
+Volume of each slice. Percentage volumes are calculated as percentage of the estimated reservoir volume (from wikipedia ¯\\_(ツ)_/¯ )
 :::
