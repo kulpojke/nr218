@@ -9,6 +9,8 @@ project:
     - project_4.md    
     - final_proj.md
     - introduction.qmd
+    - computers.qmd
+    - computers_slides.qmd
     - terminals.qmd
     - what_is_gis.qmd
     - some_basic_gis_concepts.qmd

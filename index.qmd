@@ -49,7 +49,11 @@ Use arrows or menu in bottom left corner to navigate
 
 [Syllabus](syllabus.html)
 
+[Computers](computers.html)
+
 {{< include introduction.qmd >}}
+
+{{< include computers_slides.qmd >}}
 
 {{< include what_is_gis.qmd >}}
 

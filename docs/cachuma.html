@@ -166,7 +166,7 @@ window.Quarto = {
 </section>
 <section id="find-the-approximate-summer-2018-water-surface" class="level2">
 <h2 class="anchored" data-anchor-id="find-the-approximate-summer-2018-water-surface">Find the approximate summer 2018 Water surface</h2>
-<p>This can be done using the 208 S2 image, or the DEM. Here we will use the DEM for this step. THe method using the Sentinel-2 image would be similar to they way we will fine the area and elavation for th e 2024 sentinel image later int his tutorial.</p>
+<p>This can be done using the 208 S2 image, or the DEM. Here we will use the DEM for this step. The method using the Sentinel-2 image would be similar to they way we will fine the area and elavation for th e 2024 sentinel image later int his tutorial.</p>
 <p>To do this, first create a hillshade to visualize the DEM (here shown as red relief).The lake surface (as determined by the USGS) is easily visible as a perfectly flat area. Use the information tool <img src="img/info_tool.png" class="img-fluid" style="height: 1.2em" alt="Info tool icon"> to find the elevation of the lake surface (214.16 ft, shockingly close to sea level!). Then use the raster calculator and polygonize tool to segment out the lake surface (see <a href="#fig-surf2018" class="quarto-xref">Figure&nbsp;1</a>). Now you can calculate the 2018 lake surface area and you know the elevation (<span class="math inline">\(z_{2018} = 65.2759659112~\text{m}\)</span>). (Some people may be happy to use this DEM as is and calculate the change in volume in acre-feet, but I would much rather have it in <span class="math inline">\(m^3\)</span>, so I converted the DEM values from ft to m (<code>dem@1 / 3.28084</code> in raster calculator). We will call this new DEM <code>dem_m</code>.</p>
 <blockquote class="blockquote">
 <p>Note: For the raster calculator if you use <code>dem@1 = 214.16</code> you will probably get an empty raster. This is due to <a href="https://en.wikipedia.org/wiki/Floating-point_error_mitigation">floating-point representation</a> error. Instead use something like <code>dem@1 &gt; 214.15 AND dem@1 &lt; 214.17</code></p>
@@ -250,7 +250,7 @@ Figure&nbsp;5: Extracted points lying in fairly flat areas.
 </figure>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-hist-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram of extracted points with mean and median" width="566" height="429">
+<div id="fig-hist-2" class="quarto-float quarto-figure quarto-figure-center anchored" height="429" width="566" alt="Histogram of extracted points with mean and median">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-hist-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="cachuma_files/figure-html/fig-hist-output-2.png" id="fig-hist-2" data-ref-parent="fig-hist" alt="Histogram of extracted points with mean and median" width="566" height="429" class="figure-img">

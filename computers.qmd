@@ -1,0 +1,31 @@
+---
+title: ""
+format:
+  html:
+    theme: quartz
+bibliography: references.bib
+---
+
+# Computers
+
+## What is a computer?
+As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as _one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc._  Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument[ @campbell-kelly2023computer].
+  
+We will skip through decades of punch cards, tape ribbons, cold war military machinations, the develpoment of Silicon Valley, etc.. leading to the modern computer (see  @campbell-kelly2023computer if you want more detail).  There are , however, a couple of important developments that will be of importance going forward.  
+
+The first is the development of the __Unix operating system__ (and C programming language) at Bell Labs during 1969–1974. The use of C made Unix “portable,” so that it could be implemented on any computer system.  Up until this point, computers were centralized resources.  The clean, minimalist, functional design of Unix made it possible for users to create variants without affecting the inherent reliability of the system. This spawned versions such as the _Berkeley Software Distribution_ (BSD) in 1978, and later in the 1990s Linux [@campbell-kelly2023computer]. Mac OSX is also a Unix Variant [@apple2011osx-unix-users].  Another important development occurred in 1980 when IBM contracted Microsoft to create an operation system for their personal computer.  At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.  
+
+
+The modern definition of a computer that we will use for this class is, _a machine that manipulates data following a list of programmed instructions_.
+
+##
+
+
+
+### References
+
+::: {#refs}
+:::
+
+
+

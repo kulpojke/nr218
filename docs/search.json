@@ -42,6 +42,13 @@
     "text": "Class Icebreaker\nThree things in common\n\nGet is small groups\n\nTake 5 minutes to identify three things you have in common with each other\n\nChoose intresting things. The stranger, the better\nBoring examples:\n\n“We are a forest and fire sciences majors”\n“We are all from Southern California”"
   },
   {
+    "objectID": "index.html#what-is-a-computer",
+    "href": "index.html#what-is-a-computer",
+    "title": "NR 218",
+    "section": "What is a computer",
+    "text": "What is a computer\nA machine that manipulates data following a list of programmed instructions\n\nImage Source: Wikimedia commons"
+  },
+  {
     "objectID": "index.html#what-is-gis",
     "href": "index.html#what-is-gis",
     "title": "NR 218",
@@ -1673,6 +1680,13 @@
     "text": "Beautiful Maps\n\nQGIS Map gallery\nOceano Dunes (using plas.io)\nStackexchange thread of beautiful maps\nCal poly Tree map"
   },
   {
+    "objectID": "computers_slides.html#what-is-a-computer",
+    "href": "computers_slides.html#what-is-a-computer",
+    "title": "",
+    "section": "What is a computer",
+    "text": "What is a computer\n\n\n\n\nA machine that manipulates data following a list of programmed instructions\n\n\n\n\n\n\n\nImage Source: Wikimedia commons"
+  },
+  {
     "objectID": "introduction.html#class-details",
     "href": "introduction.html#class-details",
     "title": "",
@@ -1797,97 +1811,6 @@
     "title": "NR 218 Project 2: Vector Data Analysis",
     "section": "",
     "text": "Submit on Canvas:\n\nWritten Responses: Answers to written questions 1-4 above\nTutorial Documentation: Maps (png, jpeg, tiff, pdf format) and/or screenshots showing the outputs and final products of tutorials 1-5 in project work. Be sure to include dates/times in screenshots."
-  },
-  {
-    "objectID": "calendar.html",
-    "href": "calendar.html",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "",
-    "text": "Jump to class calendar"
-  },
-  {
-    "objectID": "calendar.html#class-details",
-    "href": "calendar.html#class-details",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Class Details",
-    "text": "Class Details\n\nBuilding 180 (Baker Hall)\nRoom 230\nTimes:\n\nMonday:\n5:10 - 6:00 Lecture\n6:10 - 9:00 Lab\n\nWednesday\n6:10 - 9:00 Lab"
-  },
-  {
-    "objectID": "calendar.html#instructor-details",
-    "href": "calendar.html#instructor-details",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Instructor Details",
-    "text": "Instructor Details\n\nMichael Huggins\nOffice Hours:\n\nBuilding 72 (Plant Conservatory) Room 107\nMondays 2:30 - 4:30s"
-  },
-  {
-    "objectID": "calendar.html#learning-goals",
-    "href": "calendar.html#learning-goals",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Learning Goals",
-    "text": "Learning Goals\n\nAnalyze spatial data\n\nCreate maps using geospatial software\nProduce quality graphics\nApply skills in remote sensing, GIS, and data science to solve a problem of your own design\nUnderstand basic principles of GIS"
-  },
-  {
-    "objectID": "calendar.html#project-assignments",
-    "href": "calendar.html#project-assignments",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Project Assignments",
-    "text": "Project Assignments\nThis course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other week (see calendar for dates). Late assignments will be deducted 5% per day late.\nThere is also a final project as well as an exam.\nFor your final project you will propose a novel GIS question and collect or analyze data to answer it."
-  },
-  {
-    "objectID": "calendar.html#assignment-weight",
-    "href": "calendar.html#assignment-weight",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Assignment Weight",
-    "text": "Assignment Weight\n\n\n\n\n\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nProject 1\n10\nMapping\n\n\nProject 2\n10\nVector Data Analysis\n\n\nProject 3\n10\nRaster Data Analysis\n\n\nProject 4\n15\nRemote Sensing, Image Analysis, and Modeling\n\n\nFinal Project\n25\n\n\n\nExam\n20\nWill be hard, but curved\n\n\nParticipation\n10\nWill be based on  and engagement\n\n\nAssignment 0\n1 (bonus)\nEasy bonus points"
-  },
-  {
-    "objectID": "calendar.html#grading",
-    "href": "calendar.html#grading",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Grading",
-    "text": "Grading\nA: ≥ 90%\nB: ≥ 80%\nC: ≥ 70%\nD: ≥ 60%\nF: &lt; 60%\nTotal 100%\nNote: Grading is not curved (Except exam)."
-  },
-  {
-    "objectID": "calendar.html#assignment-submission-policy",
-    "href": "calendar.html#assignment-submission-policy",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Assignment Submission Policy",
-    "text": "Assignment Submission Policy\nAssignments (except the final project) will be submitted on Canvas. Students are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline."
-  },
-  {
-    "objectID": "calendar.html#attendance-policy",
-    "href": "calendar.html#attendance-policy",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Attendance Policy",
-    "text": "Attendance Policy\nBefore leaving for each class you will need to turn in an “exit ticket”. The exit ticket is simply a short answer to a question that will given in class. The exit ticket will let me know that you were in class, and help me to gauge how well students are absorbing the material. You are allowed 3 unexcused absences. Beyond 3 unexcused absences, you will be deducted 2% of the total grade for each unauthorized absence."
-  },
-  {
-    "objectID": "calendar.html#academic-integrity",
-    "href": "calendar.html#academic-integrity",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nAll students should be familiar with and adhere to the university’s academic integrity policy, which can be found here: https://osrr.calpoly.edu/academic-integrity"
-  },
-  {
-    "objectID": "calendar.html#use-of-ai",
-    "href": "calendar.html#use-of-ai",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Use of AI",
-    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time! + Depending on AI prevents development of critical thinking, writing, and problem-solving skills + AI will sometimes lead you down a terrible, deep rabbit hole of confusion + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework + The struggle of working through difficult concepts is often where the most valuable learning occurs\nThat is not to say LLMs are never useful or appropriate to use, but you need to know their limitations."
-  },
-  {
-    "objectID": "calendar.html#textbook",
-    "href": "calendar.html#textbook",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Textbook",
-    "text": "Textbook\nWe will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found here"
-  },
-  {
-    "objectID": "calendar.html#tutorials",
-    "href": "calendar.html#tutorials",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Fall 2025",
-    "section": "Tutorials",
-    "text": "Tutorials\nWe will refer to a number of tutorial videos which describe QGIS processing. These will come primarily from two sources:\nUjaval Gandhi’s QGIS Tutorials and Tips\nQGIS Training Manual\nThere are many other helpful sources of information on GIS Software\nSpatial Thoughtsintroduction-to-qgis.html\nA Gentle Introduction to GISgentle_gis_introduction/index.html"
   },
   {
     "objectID": "project_1.html",
@@ -2021,6 +1944,20 @@
     "title": "NR 218 - Introduction to GIS Final Project",
     "section": "",
     "text": "For extra credit, communicate your findings to the class in a 10-minute presentation, mirroring the structure of the report. Be sure to include maps created during the analysis and other figures, graphs, and charts describing your study and findings."
+  },
+  {
+    "objectID": "computers.html",
+    "href": "computers.html",
+    "title": "Computers",
+    "section": "",
+    "text": "As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc. Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument(Campbell-Kelly et al. 2023).\n\nNote\nWe will skip through decades of punch cards, tape ribbons, cold war military machinations, the develpoment of Silicon Valley, etc.. leading to the modern computer (see Campbell-Kelly et al. (2023) if you want more detail). Some important milestones:\nUnix operating system, and C programming language - developed at Bell Labs during 1969–1974. The use of C made Unix “portable,” so that it could be implemented on any computer system. The clean, minimalist, functional design of Unix made it possible for users to create variants without affecting the inherent reliability of the system. This spawned versions such as the Berkeley Software Distribution (BSD) in 1978, and later in the 1990s Linux (Campbell-Kelly et al. 2023). Mac OSX is also a Unix Variant (Apple Inc. 2011).\nMS-DOS - In 1980, IBM contracted Microsoft to create an operation system fro their personal computer. At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.\nThe Internet - In the fall of 1990 there were just 313,000 computers attached to the Internet. By the end of 2000 their were more than 100 million (Campbell-Kelly et al. 2023)\n\nThe modern definition of a computer that we will use for this class is, a machine that manipulates data following a list of programmed instructions.\n\n\n\n\nApple Inc. 2011. “OS x for UNIX Users.” Apple Inc. https://images.apple.com/media/us/osx/2012/docs/OSX_for_UNIX_Users_TB_July2011.pdf.\n\n\nCampbell-Kelly, Martin, William F. Aspray, Jeffrey R. Yost, H. Tinn, and G. Con Díaz. 2023. Computer: A History of the Information Machine. 4th ed. Routledge. https://doi.org/10.4324/9781003263272."
+  },
+  {
+    "objectID": "computers.html#what-is-a-computer",
+    "href": "computers.html#what-is-a-computer",
+    "title": "Computers",
+    "section": "",
+    "text": "As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc. Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument(Campbell-Kelly et al. 2023).\n\nNote\nWe will skip through decades of punch cards, tape ribbons, cold war military machinations, the develpoment of Silicon Valley, etc.. leading to the modern computer (see Campbell-Kelly et al. (2023) if you want more detail). Some important milestones:\nUnix operating system, and C programming language - developed at Bell Labs during 1969–1974. The use of C made Unix “portable,” so that it could be implemented on any computer system. The clean, minimalist, functional design of Unix made it possible for users to create variants without affecting the inherent reliability of the system. This spawned versions such as the Berkeley Software Distribution (BSD) in 1978, and later in the 1990s Linux (Campbell-Kelly et al. 2023). Mac OSX is also a Unix Variant (Apple Inc. 2011).\nMS-DOS - In 1980, IBM contracted Microsoft to create an operation system fro their personal computer. At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.\nThe Internet - In the fall of 1990 there were just 313,000 computers attached to the Internet. By the end of 2000 their were more than 100 million (Campbell-Kelly et al. 2023)\n\nThe modern definition of a computer that we will use for this class is, a machine that manipulates data following a list of programmed instructions.\n\n\n\n\nApple Inc. 2011. “OS x for UNIX Users.” Apple Inc. https://images.apple.com/media/us/osx/2012/docs/OSX_for_UNIX_Users_TB_July2011.pdf.\n\n\nCampbell-Kelly, Martin, William F. Aspray, Jeffrey R. Yost, H. Tinn, and G. Con Díaz. 2023. Computer: A History of the Information Machine. 4th ed. Routledge. https://doi.org/10.4324/9781003263272."
   },
   {
     "objectID": "terminals.html#terminals-across-operating-systems",
@@ -2986,7 +2923,7 @@
     "href": "cachuma.html#find-the-approximate-summer-2018-water-surface",
     "title": "Cachuma Solution",
     "section": "Find the approximate summer 2018 Water surface",
-    "text": "Find the approximate summer 2018 Water surface\nThis can be done using the 208 S2 image, or the DEM. Here we will use the DEM for this step. THe method using the Sentinel-2 image would be similar to they way we will fine the area and elavation for th e 2024 sentinel image later int his tutorial.\nTo do this, first create a hillshade to visualize the DEM (here shown as red relief).The lake surface (as determined by the USGS) is easily visible as a perfectly flat area. Use the information tool  to find the elevation of the lake surface (214.16 ft, shockingly close to sea level!). Then use the raster calculator and polygonize tool to segment out the lake surface (see Figure 1). Now you can calculate the 2018 lake surface area and you know the elevation (\\(z_{2018} = 65.2759659112~\\text{m}\\)). (Some people may be happy to use this DEM as is and calculate the change in volume in acre-feet, but I would much rather have it in \\(m^3\\), so I converted the DEM values from ft to m (dem@1 / 3.28084 in raster calculator). We will call this new DEM dem_m.\n\nNote: For the raster calculator if you use dem@1 = 214.16 you will probably get an empty raster. This is due to floating-point representation error. Instead use something like dem@1 &gt; 214.15 AND dem@1 &lt; 214.17\n\n\n\n\n\n\n\nFigure 1: Lake surface in summer 2018 as estimated using the DEM"
+    "text": "Find the approximate summer 2018 Water surface\nThis can be done using the 208 S2 image, or the DEM. Here we will use the DEM for this step. The method using the Sentinel-2 image would be similar to they way we will fine the area and elavation for th e 2024 sentinel image later int his tutorial.\nTo do this, first create a hillshade to visualize the DEM (here shown as red relief).The lake surface (as determined by the USGS) is easily visible as a perfectly flat area. Use the information tool  to find the elevation of the lake surface (214.16 ft, shockingly close to sea level!). Then use the raster calculator and polygonize tool to segment out the lake surface (see Figure 1). Now you can calculate the 2018 lake surface area and you know the elevation (\\(z_{2018} = 65.2759659112~\\text{m}\\)). (Some people may be happy to use this DEM as is and calculate the change in volume in acre-feet, but I would much rather have it in \\(m^3\\), so I converted the DEM values from ft to m (dem@1 / 3.28084 in raster calculator). We will call this new DEM dem_m.\n\nNote: For the raster calculator if you use dem@1 = 214.16 you will probably get an empty raster. This is due to floating-point representation error. Instead use something like dem@1 &gt; 214.15 AND dem@1 &lt; 214.17\n\n\n\n\n\n\n\nFigure 1: Lake surface in summer 2018 as estimated using the DEM"
   },
   {
     "objectID": "cachuma.html#find-the-approximate-summer-2024-water-surface",
@@ -3001,5 +2938,12 @@
     "title": "Cachuma Solution",
     "section": "Calculate the volume of the reservoir",
     "text": "Calculate the volume of the reservoir\nIn order to calculate the volume of the reservoir, next we will calculate the volume of slices of the reservoir between \\(z_{2018}\\) and \\(z_{2024}\\) For a given slice,\n\\[  \nV_{n} \\approx \\Delta z \\times \\frac{A_{n}+A_{n+1}}{2}\n\\tag{1}\\]\n\\[\n\\Delta V = \\sum_{n=0}^{n} V_{n}\n\\tag{2}\\]\nwhere the volume of the slice \\(V_{n}\\) is approximated by the depth of the slice \\(\\Delta z\\) times the mean area of the top (\\(A_{n}+A_{n+1}\\)) and bottom (\\(A_{n}+A_{n}\\)) of the slice, and \\(\\Delta V\\) is the sum of all the slices. Figure 7 shows a schematic representation of the volume approximation method.\n\n\n\n\n\n\nFigure 7: Cross-sectional schematic of volume estimation method described in Equation 1 and Equation 2\n\n\n\nIn order to calculate \\(V_{n}\\) for each slice, starting from the 2018 water level, first pick a value for \\(\\Delta z\\), here we will use 1 m. Then find the surface area of the reservoir at \\(z_{2018} + \\Delta z\\). This can be done using the raster calculator to create a mask for pixels lying between the lake surface, and 1 m above the lake surface ((dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 66.3)). You can then polygonize the mask and extract the polygon representing the surface (see Figure 8).\n\n\n\n\n\n\nFigure 8: Lake surface area with water level 1m higher than in in summer 2018, estimated using the DEM\n\n\n\nNow, for the first slice (\\(\\Delta Z_{0}\\)) we have estimates for the area of the bottom (\\(A_{0} \\approx 6544034.000155964 \\text{m}^{2}\\) ) and area of the top (\\(A_{1} \\approx 7512197.9998339815 \\text{m}^{2}\\)), and we know the thickness of the slice is 1 m. Calculating an estimate for the volume of the slice using Equation 1 gives \\(\\approx 2.5 \\times 10^{13} m^{3}\\)\nThis process is repeated for each 1 m thick slice (the final slice will be thinner as it is limited by \\(Z_{2024}\\)). Formulas for calculating the lake surface area at each step are given in Table 1.\n\n\n\nTable 1: Formula for each surface area at the top of each slice, and its corresponding surface area.\n\n\n\n\n\n\n\n\n\n\nSurface\nFormula\nArea (m\\(^{3}\\))\n\n\n\n\n\\(z_{0} (z_{2018})\\)\n(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 66.3)\n6544034.000155964\n\n\n\\(z_{1}\\)\n(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 67.3)\n7512197.9998339815\n\n\n\\(z_{2}\\)\n(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 68.3)\n8719786.154200599\n\n\n\\(z_{3} (z_{2024})\\)\n(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 69.2)\n11118719.999728722\n\n\n\n\n\n\n\n\n\n\n\nIt is important to note that the calculated surface may begin to include areas on the other side of the spillway, and the polygon will need to be split (Figure 9).\n\n\n\n\n\n\nFigure 9: At 2m above the 2018, the surface connects through the spillway to areas outside of the lake. It needs to be separated by turning on editing and using the split features button.\n\n\n\nTable 2 shows the thickness and calculated volume of each slice, as well as that of \\(\\Delta V\\). The estimate I ended up with is \\(\\approx 2.43 \\times 10^{7} \\text{m}^{3})\\) (or \\(1.97 \\times 10^{4} \\text{acre-feet}\\), or 24 GL, or \\(2.06 \\times 10^{-41} \\text{ly}^{3}\\)). For reference, that much water has a mass of about is about \\(7.14 \\times 10^{09}\\) that of the largest racoon ever recorded!\n\n\n\nTable 2: Volume of each slice. Percentage volumes are calculated as percentage of the estimated reservoir volume (from wikipedia ¯\\(ツ)/¯ )\n\n\n\n\n\n\n\n\n\n\n\nSlice\n\\(\\Delta Z\\)\nVolume (m\\(^{2}\\))\nVolume (% of reservoir)\n\n\n\n\n\\(\\Delta_v{0}\\)\n1.03 m\n7238959.47999483\n3.03\n\n\n\\(\\Delta_v{1}\\)\n1 m\n8115992.07701729\n3.50\n\n\n\\(\\Delta_v{2}\\)\n0.9 m\n8927327.7692682\n4.28\n\n\n\\(\\Delta V\\)\n\n2.43 \\(\\times 10^{7}\\)\n10.8"
+  },
+  {
+    "objectID": "computers.html#what-is-a-computer-1",
+    "href": "computers.html#what-is-a-computer-1",
+    "title": "Computers",
+    "section": "What is a computer",
+    "text": "What is a computer\n\n\nA machine that manipulates data following a list of programmed instructions\n\n\n\n\nImage of an old but cool looking computer\n\n\n\nImage Source: Wikimedia commons"
   }
 ]
