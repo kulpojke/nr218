@@ -35,3 +35,10 @@ Image Source: [Wikimedia commons](https://commons.wikimedia.org/wiki/File:Sphere
 
 :::
 :::
+
+## Data
+
++ "Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation."
++ "Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form."
+-OED  
+
