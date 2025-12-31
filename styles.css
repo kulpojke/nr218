@@ -1,0 +1,4 @@
+.callout .callout-title,
+.callout .callout-title > * {
+  color: #9bb6f5;
+}

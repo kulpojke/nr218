@@ -36,9 +36,66 @@ Image Source: [Wikimedia commons](https://commons.wikimedia.org/wiki/File:Sphere
 :::
 :::
 
-## Data
+## Data {style="font-size:0.7"}
+
+::: {.r-stack}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;box-sizing:border-box; font-size:0.7"}
 
 + "Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation."
 + "Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form."
 -OED  
+:::
 
+::: {.fragment .absolute .fade-in-fade-out data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;box-sizing:border-box; font-size:0.7"}
+
+::: {.columns}
+
+::: {.column style="font-size:0.7em"}
+
++ Data is stored on a computer as zeros and ones .  
++ Data is stored at some physical location on the disk, and a pointer is saved which is later used to find the file.
++ The details of this are managed for you by applications or programming languages by representing this relationship as a path. 
+
+
+:::
+
+::: {.column}
+
+![A pointer (_a_) pointing to the memory address associated with a variable (b), i.e., _a_ contains the memory address 1008 of the variable _b_. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.](img/pointers.svg){fig-alt="Schematic showing pointer to a file or memory address" fig-cap="" style="font-size:0.7em; "}
+
+::: {.attribution style="font-size:0.4em"}
+
+Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=8861432)
+
+:::
+
+:::
+
+:::
+
+
+:::
+
+:::
+
+## File Paths and Directories
+
+:::{r-stack}
+:::{.fragment .fade-out data-fragment-index="1" style="position: absolute;"}
+![](img/linux-filesystem-hierarchy.png)
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index="1" style="position: absolute;"}
+![](img/windows_dir_structure.jpg)
+:::
+
+:::{.fragment .fade-in data-fragment-index="2" style="position: absolute;"}
+![](img/bash_paths.png)
+![](img/gui_paths.png){width=600}
+:::
+
+:::{.fragment .fade-in data-fragment-index="3" style="position: absolute; top: 165px; left: 0; width: 325px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::
