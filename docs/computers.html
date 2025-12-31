@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>computers</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-53b9468ac95cb2fade5b249ba61a8ae1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="computers" class="level1">
+<h1>Computers</h1>
+<section id="what-is-a-computer" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-computer">What is a computer?</h2>
+<p>As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as <em>one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc.</em> Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument<span class="citation" data-cites="campbell-kelly2023computer">(<a href="#ref-campbell-kelly2023computer" role="doc-biblioref">Campbell-Kelly et al. 2023</a>)</span>.</p>
+<p>We will skip through decades of punch cards, tape ribbons, cold war military machinations, the developments of Silicon Valley, etc.. leading to the modern computer (see <span class="citation" data-cites="campbell-kelly2023computer">Campbell-Kelly et al. (<a href="#ref-campbell-kelly2023computer" role="doc-biblioref">2023</a>)</span> if you want more detail). There are , however, a couple of important developments that will be of importance going forward.</p>
+<ul>
+<li>The first is the development of the <strong>Unix operating system</strong> (and C programming language) at Bell Labs during 1969–1974. The use of C made Unix “portable,” so that it could be implemented on any computer system. Up until this point, computers were centralized resources. The clean, minimalist, functional design of Unix made it possible for users to create variants without affecting the inherent reliability of the system. This spawned versions such as the <em>Berkeley Software Distribution</em> (BSD) in 1978, and later in the 1990s Linux <span class="citation" data-cites="campbell-kelly2023computer">(<a href="#ref-campbell-kelly2023computer" role="doc-biblioref">Campbell-Kelly et al. 2023</a>)</span>. Mac OSX is also a Unix Variant <span class="citation" data-cites="apple2011osx-unix-users">(<a href="#ref-apple2011osx-unix-users" role="doc-biblioref"><strong>apple2011osx-unix-users?</strong></a>)</span>.</li>
+<li>Another important development occurred in 1980 when IBM contracted Microsoft to create an operation system for their personal computer. At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.</li>
+</ul>
+<p>Unix variants and Windows are by far the most common operating systems on general-purpose computers (desktops, laptops, and servers). <a href="#fig-os-tree" class="quarto-xref">Figure&nbsp;1</a> shows the lineage of common operating systems. GIS applications are almost always run on one of these platforms. By in large computers with OSs derived from UNIX and MS-DOS behave in the same ways, but there are some important differences (for a simple overview of differences see <a href="https://www.linuxjournal.com/content/linux-vs-windows">this article</a>). A few of these differences will come up from time to time during this course. The computers in the lab are Windows machines (😐). Many of you are probably using Macs with OSX (🗿). Maybe some of you are Linux users (🔥, 💅).</p>
+<div id="fig-os-tree" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Schematic showing pointer to a file or memory address" data-fig-cap="">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-os-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/os_phylogeny.png" class="img-fluid figure-img" data-fig-cap="" alt="Schematic showing pointer to a file or memory address">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-os-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Family tree of modern general purpose operating systems. With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX.
+</figcaption>
+</figure>
+</div>
+<p>The <strong>definition of a computer that we will use for this class is, <em>a machine that manipulates data following a list of programmed instructions</em>.</strong> With this definition in mind, it seems that in order to take advantages of the capabilities of computers one must understand <em>data</em>, and how computers follow <em>programmed instructions</em>.</p>
+</section>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
+<p>A couple of relevant definitions of data taken from the Oxford English Dictionary are:</p>
+<ul>
+<li>“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”</li>
+<li>“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.”</li>
+</ul>
+<div class="columns">
+<div class="column">
+<p>Data is stored on a computer as zeros and ones (too simple, see <a href="#tip-example" class="quarto-xref">Tip&nbsp;1</a>). When you store a file, the data is stored at some physical location on the disk, and a pointer is saved which is later used to find the file (see <a href="#fig-pointers" class="quarto-xref">Figure&nbsp;2</a>). The details of this are managed for you by applications or programming languages by representing this relationship as human readable symbols.</p>
+<p>In most modern computers, files are arranged in a hierarchical file system. The standard Linux filesystem is shown in <a href="#fig-linux-filesys" class="quarto-xref">Figure&nbsp;3</a>. In a hierarchal filesystem, files are arranged within nested directories (sometimes called folders). For example,</p>
+</div><div class="column">
+<div id="fig-pointers" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Schematic showing pointer to a file or memory address" data-fig-cap="A pointer a pointing to the memory address associated with a variable b, i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pointers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pointers.svg" class="img-fluid figure-img" data-fig-cap="A pointer a pointing to the memory address associated with a variable b, i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case." alt="Schematic showing pointer to a file or memory address">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pointers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: A pointer (<em>a</em>) pointing to the memory address associated with a variable (b), i.e., <em>a</em> contains the memory address 1008 of the variable <em>b</em>. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="fig-linux-filesys" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The linux filesystem">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-linux-filesys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/linux-filesystem-hierarchy.png" class="img-fluid figure-img" alt="The linux filesystem">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linux-filesys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The linux filesystem
+</figcaption>
+</figure>
+</div>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="https://commons.wikimedia.org/w/index.php?curid=8861432">Wikimedia /Sven</a></p>
+</div>
+<section id="paths" class="level2">
+<h2 class="anchored" data-anchor-id="paths">Paths</h2>
+<div class="columns">
+<div class="column">
+<p>A <span style="font-size:1.3em"><strong><em>path</em></strong></span> is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. <a href="#fig-linux-paths" class="quarto-xref">Figure&nbsp;4</a> shows the path to <code>index.qmd</code> in a terminal. The bottom line of the terminal displays <code>/home/michael/CP/nr218/index.qmd</code>. This is the <em>full path</em> to <code>index.qmd</code>. The delimiters are the character <code>/</code>. If you look back to <a href="#fig-os-tree" class="quarto-xref">Figure&nbsp;1</a>, you see that the root directory is just <code>/</code>. The directory called “home” is directly below <code>/</code> in the hierarchy, thus the full path to home is <code>/home</code> (or <code>/home/</code>). Similarly the full path to the directory “michael” is <code>/home/michael</code> (or <code>/home/michael/</code>) etc… (but, <code>/home/michael/CP/nr218/index.qmd</code> would never be written <code>/home/michael/CP/nr218/index.qmd/</code> because <code>index.qmd</code> is not a directory, it does not contain other files). <strong>In order for an application to use a file, it must know the path to that file.</strong></p>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center" style="font-size:0.004em">
+<figure class="figure">
+<p><img src="img/bash_paths.png" class="img-fluid figure-img" style="width:90.0%" alt="Path to a file shown in a Bash shell."></p>
+<figcaption>&nbsp;</figcaption>
+</figure>
+</div>
+<div id="fig-linux-paths" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Path to a file shown in a GUI">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-linux-paths-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/gui_paths.png" class="img-fluid figure-img" style="width:90.0%" alt="Path to a file shown in a GUI">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linux-paths-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Top: Linux terminal showing the full path to index.qmd. Bottom the same file shown in the GUI file explorer.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="tip-example" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;1: Cross-Referencing a Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are saying to yourself, “<em>How are 0s and 1s stored in a computer, that makes no sense, numbers are abstractions but computers are physical objects?</em>”, that is reasonable. The ones and zeros are actually stored as sites holding an electrical charge, or not, but that is a deeper explanation than we need for this course.</p>
+</div>
+</div>
+</section>
+<section id="volatile-and-non-volatile-memory" class="level2">
+<h2 class="anchored" data-anchor-id="volatile-and-non-volatile-memory">Volatile and Non-Volatile Memory</h2>
+<p>Data can be stored on a disk (as we have previously alluded to). This type of memory isa called <strong><em>on-disk storage</em></strong>. We call on this type of storage <em>non-volatile</em> because when the program using the data is terminated, or the computer is turned off the data persists to be used later. This is in contrast to <strong><em>Random Access Memory</em></strong> (RAM), which is <em>volatile</em> (if the program terminates, the data held there is lost). In RAM the data sits in volatile memory cells addressed by numeric locations; the CPU accesses it directly with very low latency (quickly). All this is managed by the OS via pages and caches. Only in advanced cases does the user take an interest of the details of this process.</p>
+<p>When an application is running, it typically stores the data it is actively using in RAM (or if it is large in temporary files on-disk) This allows the application to run more quickly. When the user wants to save changes that are held in these temporary forms of memory they must specify a file to save it to.</p>
+<p>relative directories</p>
+<p>when you are working data in ram or saved as temporary files, need to save to avoid data loss</p>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-campbell-kelly2023computer" class="csl-entry" role="listitem">
+Campbell-Kelly, Martin, William F Aspray, Jeffrey R Yost, Honghong Tinn, and Gerardo Con Dı́az. 2023. <em>Computer: A History of the Information Machine</em>. Routledge.
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

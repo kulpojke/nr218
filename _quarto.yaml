@@ -31,7 +31,6 @@ project:
     - focal_filters.qmd
     - intro_excel_arc.qmd
     - intro_excel_arc_tmp.qmd
-    - cachuma.qmd
     - index.qmd
   resources:
     - .nojekyll

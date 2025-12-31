@@ -46,7 +46,21 @@
     "href": "index.html#what-is-a-computer",
     "title": "NR 218",
     "section": "What is a computer",
-    "text": "What is a computer\nA machine that manipulates data following a list of programmed instructions\n\nImage Source: Wikimedia commons"
+    "text": "What is a computer\n\n\n\n\nA machine that manipulates data following a list of programmed instructions\n\n\n\n\n\n\n\nImage Source: Wikimedia commons"
+  },
+  {
+    "objectID": "index.html#data",
+    "href": "index.html#data",
+    "title": "NR 218",
+    "section": "Data",
+    "text": "Data\n\n\n\n“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”\n“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.” -OED\n\n\n\n\n\n\n\nData is stored on a computer as zeros and ones .\n\nData is stored at some physical location on the disk, and a pointer is saved which is later used to find the file.\nThe details of this are managed for you by applications or programming languages by representing this relationship as a path.\n\n\n\n\n\nA pointer (a) pointing to the memory address associated with a variable (b), i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.\n\n\n\nImage Source: Wikimedia /Sven"
+  },
+  {
+    "objectID": "index.html#file-paths-and-directories",
+    "href": "index.html#file-paths-and-directories",
+    "title": "NR 218",
+    "section": "File Paths and Directories",
+    "text": "File Paths and Directories"
   },
   {
     "objectID": "index.html#what-is-gis",
@@ -231,8 +245,8 @@
     "text": "File types\n\nComputer programs only read certain file formats.\nFamiliarity with different file types is helpful.\nCommon GIS file types: .shp (along with its sidecar files .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
   },
   {
-    "objectID": "index.html#file-paths-and-directories",
-    "href": "index.html#file-paths-and-directories",
+    "objectID": "index.html#file-paths-and-directories-1",
+    "href": "index.html#file-paths-and-directories-1",
     "title": "NR 218",
     "section": "File Paths and Directories",
     "text": "File Paths and Directories"
@@ -1092,8 +1106,8 @@
     "text": "Point Count to Raster\nInput layer: Your point layer\nBurn in value: Set this to 1\nOutput raster size: resolution In map units\nAdditional creation parameters: -add (to sum the values for points in the same cell)"
   },
   {
-    "objectID": "index.html#data",
-    "href": "index.html#data",
+    "objectID": "index.html#data-1",
+    "href": "index.html#data-1",
     "title": "NR 218",
     "section": "Data",
     "text": "Data\n\nFor the Example:\n\noctober_ndvi.tif\n\nAlso bag these files for the challenge:\n\nSentinel-2 median composite image, near Susques Argentina, 2025-04-01 to 2025-10-26\nSentinel-2 max composite image, near Susques Argentina, 2025-04-01 to 2025-10-26"
@@ -1687,6 +1701,20 @@
     "text": "What is a computer\n\n\n\n\nA machine that manipulates data following a list of programmed instructions\n\n\n\n\n\n\n\nImage Source: Wikimedia commons"
   },
   {
+    "objectID": "computers_slides.html#data",
+    "href": "computers_slides.html#data",
+    "title": "",
+    "section": "Data",
+    "text": "Data\n\n\n\n“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”\n“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.” -OED\n\n\n\n\n\n\n\nData is stored on a computer as zeros and ones .\n\nData is stored at some physical location on the disk, and a pointer is saved which is later used to find the file.\nThe details of this are managed for you by applications or programming languages by representing this relationship as a path.\n\n\n\n\n\nA pointer (a) pointing to the memory address associated with a variable (b), i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.\n\n\n\nImage Source: Wikimedia /Sven"
+  },
+  {
+    "objectID": "computers_slides.html#file-paths-and-directories",
+    "href": "computers_slides.html#file-paths-and-directories",
+    "title": "",
+    "section": "File Paths and Directories",
+    "text": "File Paths and Directories"
+  },
+  {
     "objectID": "introduction.html#class-details",
     "href": "introduction.html#class-details",
     "title": "",
@@ -1950,14 +1978,28 @@
     "href": "computers.html",
     "title": "Computers",
     "section": "",
-    "text": "As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc. Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument(Campbell-Kelly et al. 2023).\nWe will skip through decades of punch cards, tape ribbons, cold war military machinations, the developments of Silicon Valley, etc.. leading to the modern computer (see Campbell-Kelly et al. (2023) if you want more detail). There are , however, a couple of important developments that will be of importance going forward.\n\nThe first is the development of the Unix operating system (and C programming language) at Bell Labs during 1969–1974. The use of C made Unix “portable,” so that it could be implemented on any computer system. Up until this point, computers were centralized resources. The clean, minimalist, functional design of Unix made it possible for users to create variants without affecting the inherent reliability of the system. This spawned versions such as the Berkeley Software Distribution (BSD) in 1978, and later in the 1990s Linux (Campbell-Kelly et al. 2023). Mac OSX is also a Unix Variant (apple2011osx-unix-users?).\nAnother important development occurred in 1980 when IBM contracted Microsoft to create an operation system for their personal computer. At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.\n\nThe definition of a computer that we will use for this class is, a machine that manipulates data following a list of programmed instructions. With this definition in mind, it seems that in order to take advantages of the capabilities of computers one must understand data, and how computers follow programmed instructions.\nUnix variants and Windows are by far the most common operating systems on general-purpose computers (desktops, laptops, and servers). GIS applications are almost always run on one of these platforms.\n\n\n\n\n\n\nFigure 1: Family tree of modern general purpose operating systems. With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX."
+    "text": "As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc. Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument(Campbell-Kelly et al. 2023).\nWe will skip through decades of punch cards, tape ribbons, cold war military machinations, the developments of Silicon Valley, etc.. leading to the modern computer (see Campbell-Kelly et al. (2023) if you want more detail). There are , however, a couple of important developments that will be of importance going forward.\n\nThe first is the development of the Unix operating system (and C programming language) at Bell Labs during 1969–1974. The use of C made Unix “portable,” so that it could be implemented on any computer system. Up until this point, computers were centralized resources. The clean, minimalist, functional design of Unix made it possible for users to create variants without affecting the inherent reliability of the system. This spawned versions such as the Berkeley Software Distribution (BSD) in 1978, and later in the 1990s Linux (Campbell-Kelly et al. 2023). Mac OSX is also a Unix Variant (apple2011osx-unix-users?).\nAnother important development occurred in 1980 when IBM contracted Microsoft to create an operation system for their personal computer. At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.\n\nUnix variants and Windows are by far the most common operating systems on general-purpose computers (desktops, laptops, and servers). Figure 1 shows the lineage of common operating systems. GIS applications are almost always run on one of these platforms. By in large computers with OSs derived from UNIX and MS-DOS behave in the same ways, but there are some important differences (for a simple overview of differences see this article). A few of these differences will come up from time to time during this course. The computers in the lab are Windows machines (😐). Many of you are probably using Macs with OSX (🗿). Maybe some of you are Linux users (🔥, 💅).\n\n\n\n\n\n\nFigure 1: Family tree of modern general purpose operating systems. With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX.\n\n\n\nThe definition of a computer that we will use for this class is, a machine that manipulates data following a list of programmed instructions. With this definition in mind, it seems that in order to take advantages of the capabilities of computers one must understand data, and how computers follow programmed instructions."
   },
   {
     "objectID": "computers.html#what-is-a-computer",
     "href": "computers.html#what-is-a-computer",
     "title": "Computers",
     "section": "",
-    "text": "As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc. Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument(Campbell-Kelly et al. 2023).\nWe will skip through decades of punch cards, tape ribbons, cold war military machinations, the developments of Silicon Valley, etc.. leading to the modern computer (see Campbell-Kelly et al. (2023) if you want more detail). There are , however, a couple of important developments that will be of importance going forward.\n\nThe first is the development of the Unix operating system (and C programming language) at Bell Labs during 1969–1974. The use of C made Unix “portable,” so that it could be implemented on any computer system. Up until this point, computers were centralized resources. The clean, minimalist, functional design of Unix made it possible for users to create variants without affecting the inherent reliability of the system. This spawned versions such as the Berkeley Software Distribution (BSD) in 1978, and later in the 1990s Linux (Campbell-Kelly et al. 2023). Mac OSX is also a Unix Variant (apple2011osx-unix-users?).\nAnother important development occurred in 1980 when IBM contracted Microsoft to create an operation system for their personal computer. At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.\n\nThe definition of a computer that we will use for this class is, a machine that manipulates data following a list of programmed instructions. With this definition in mind, it seems that in order to take advantages of the capabilities of computers one must understand data, and how computers follow programmed instructions.\nUnix variants and Windows are by far the most common operating systems on general-purpose computers (desktops, laptops, and servers). GIS applications are almost always run on one of these platforms.\n\n\n\n\n\n\nFigure 1: Family tree of modern general purpose operating systems. With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX."
+    "text": "As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc. Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument(Campbell-Kelly et al. 2023).\nWe will skip through decades of punch cards, tape ribbons, cold war military machinations, the developments of Silicon Valley, etc.. leading to the modern computer (see Campbell-Kelly et al. (2023) if you want more detail). There are , however, a couple of important developments that will be of importance going forward.\n\nThe first is the development of the Unix operating system (and C programming language) at Bell Labs during 1969–1974. The use of C made Unix “portable,” so that it could be implemented on any computer system. Up until this point, computers were centralized resources. The clean, minimalist, functional design of Unix made it possible for users to create variants without affecting the inherent reliability of the system. This spawned versions such as the Berkeley Software Distribution (BSD) in 1978, and later in the 1990s Linux (Campbell-Kelly et al. 2023). Mac OSX is also a Unix Variant (apple2011osx-unix-users?).\nAnother important development occurred in 1980 when IBM contracted Microsoft to create an operation system for their personal computer. At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.\n\nUnix variants and Windows are by far the most common operating systems on general-purpose computers (desktops, laptops, and servers). Figure 1 shows the lineage of common operating systems. GIS applications are almost always run on one of these platforms. By in large computers with OSs derived from UNIX and MS-DOS behave in the same ways, but there are some important differences (for a simple overview of differences see this article). A few of these differences will come up from time to time during this course. The computers in the lab are Windows machines (😐). Many of you are probably using Macs with OSX (🗿). Maybe some of you are Linux users (🔥, 💅).\n\n\n\n\n\n\nFigure 1: Family tree of modern general purpose operating systems. With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX.\n\n\n\nThe definition of a computer that we will use for this class is, a machine that manipulates data following a list of programmed instructions. With this definition in mind, it seems that in order to take advantages of the capabilities of computers one must understand data, and how computers follow programmed instructions."
+  },
+  {
+    "objectID": "computers.html#paths",
+    "href": "computers.html#paths",
+    "title": "Computers",
+    "section": "Paths",
+    "text": "Paths\n\n\nA path is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. Figure 4 shows the path to index.qmd in a terminal. The bottom line of the terminal displays /home/michael/CP/nr218/index.qmd. This is the full path to index.qmd. The delimiters are the character /. If you look back to Figure 1, you see that the root directory is just /. The directory called “home” is directly below / in the hierarchy, thus the full path to home is /home (or /home/). Similarly the full path to the directory “michael” is /home/michael (or /home/michael/) etc… (but, /home/michael/CP/nr218/index.qmd would never be written /home/michael/CP/nr218/index.qmd/ because index.qmd is not a directory, it does not contain other files). In order for an application to use a file, it must know the path to that file.\n\n\n\n\n \n\n\n\n\n\n\n\n\nFigure 4: Top: Linux terminal showing the full path to index.qmd. Bottom the same file shown in the GUI file explorer.\n\n\n\n\n\n\n\n\n\n\n\nTip 1: Cross-Referencing a Tip\n\n\n\nIf you are saying to yourself, “How are 0s and 1s stored in a computer, that makes no sense, numbers are abstractions but computers are physical objects?”, that is reasonable. The ones and zeros are actually stored as sites holding an electrical charge, or not, but that is a deeper explanation than we need for this course."
+  },
+  {
+    "objectID": "computers.html#volatile-and-non-volatile-memory",
+    "href": "computers.html#volatile-and-non-volatile-memory",
+    "title": "Computers",
+    "section": "Volatile and Non-Volatile Memory",
+    "text": "Volatile and Non-Volatile Memory\nData can be stored on a disk (as we have previously alluded to). This type of memory isa called on-disk storage. We call on this type of storage non-volatile because when the program using the data is terminated, or the computer is turned off the data persists to be used later. This is in contrast to Random Access Memory (RAM), which is volatile (if the program terminates, the data held there is lost). In RAM the data sits in volatile memory cells addressed by numeric locations; the CPU accesses it directly with very low latency (quickly). All this is managed by the OS via pages and caches. Only in advanced cases does the user take an interest of the details of this process.\nWhen an application is running, it typically stores the data it is actively using in RAM (or if it is large in temporary files on-disk) This allows the application to run more quickly. When the user wants to save changes that are held in these temporary forms of memory they must specify a file to save it to.\nrelative directories\nwhen you are working data in ram or saved as temporary files, need to save to avoid data loss\n\nReferences\n\n\nCampbell-Kelly, Martin, William F Aspray, Jeffrey R Yost, Honghong Tinn, and Gerardo Con Dı́az. 2023. Computer: A History of the Information Machine. Routledge."
   },
   {
     "objectID": "terminals.html#terminals-across-operating-systems",
@@ -2903,75 +2945,5 @@
     "title": "",
     "section": "Project 4 Overview (Due 11/20)",
     "text": "Project 4 Overview (Due 11/20)\n\nGoal: select the optimal Swanton Ranch site for one option:\n\nStudent housing, Hemp farm, or Helicopter landing.\n\nProduce a report explaining site selection criteria and analysis.\nWork in groups of 2–3; coordinate today and check in if you need a team."
-  },
-  {
-    "objectID": "cachuma.html#solution",
-    "href": "cachuma.html#solution",
-    "title": "Cachuma Solution",
-    "section": "Solution",
-    "text": "Solution\nIn order to calculate the volume of the reservoir we will perform a 1D numerical integration by stacking prismoidal estimates of volume."
-  },
-  {
-    "objectID": "cachuma.html#mosaic-dem",
-    "href": "cachuma.html#mosaic-dem",
-    "title": "Cachuma Solution",
-    "section": "Mosaic DEM",
-    "text": "Mosaic DEM\nThe DEM is in tiles so you need to mosaic it. I used Raster &gt; Conversion &gt; Polygonize. Here we will call the mosaicked DEM, dem."
-  },
-  {
-    "objectID": "cachuma.html#find-the-approximate-summer-2018-water-surface",
-    "href": "cachuma.html#find-the-approximate-summer-2018-water-surface",
-    "title": "Cachuma Solution",
-    "section": "Find the approximate summer 2018 Water surface",
-    "text": "Find the approximate summer 2018 Water surface\nThis can be done using the 208 S2 image, or the DEM. Here we will use the DEM for this step. The method using the Sentinel-2 image would be similar to they way we will fine the area and elavation for th e 2024 sentinel image later int his tutorial.\nTo do this, first create a hillshade to visualize the DEM (here shown as red relief).The lake surface (as determined by the USGS) is easily visible as a perfectly flat area. Use the information tool  to find the elevation of the lake surface (214.16 ft, shockingly close to sea level!). Then use the raster calculator and polygonize tool to segment out the lake surface (see Figure 1). Now you can calculate the 2018 lake surface area and you know the elevation (\\(z_{2018} = 65.2759659112~\\text{m}\\)). (Some people may be happy to use this DEM as is and calculate the change in volume in acre-feet, but I would much rather have it in \\(m^3\\), so I converted the DEM values from ft to m (dem@1 / 3.28084 in raster calculator). We will call this new DEM dem_m.\n\nNote: For the raster calculator if you use dem@1 = 214.16 you will probably get an empty raster. This is due to floating-point representation error. Instead use something like dem@1 &gt; 214.15 AND dem@1 &lt; 214.17\n\n\n\n\n\n\n\nFigure 1: Lake surface in summer 2018 as estimated using the DEM"
-  },
-  {
-    "objectID": "cachuma.html#find-the-approximate-summer-2024-water-surface",
-    "href": "cachuma.html#find-the-approximate-summer-2024-water-surface",
-    "title": "Cachuma Solution",
-    "section": "Find the approximate summer 2024 Water surface",
-    "text": "Find the approximate summer 2024 Water surface\nNext we will find the surface area and elevation of the lake surface in February, 2024. The process is similar to what that for 2018, but this time you will need to use the S2 image. Use the Modified Normalized Difference Water Index (MNDWI) to segment the lake surface. Calculate it with the raster calculator. Results should be similar to Figure 2.\n\\[\n\\mathrm{MNDWI} = \\frac{green - SWIR}{green + SWIR}\n\\]\n\nNote: There are two SWIR bands in S2 imagery. After trying both I determined SWIR1 was better in this case. This makes sense, because SWIR2 is more sensitive to soil moisture. Here we only want the water surface.\n\n\n\n\n\n\n\nFigure 2: MNDWI calculated using SWIR1 from Sentinel-2 median composite imagery for February 2024.\n\n\n\nThen create a mask layer (MNDWI &gt; 0) and polygonize (there will be other small polygons of small detached pools in the river above the reservoir, and below the dam. Extract the polygon of interest.) Now you have the surfaces (or inundation areas) for 2018 and 2024 as shown in Figure 3.\n\n\n\n\n\n\nFigure 3: Approxinate extent of water in Lake Cachuma in summer, 2018 and February, 2024.\n\n\n\nIf you use the “Add geometry attributes” tool on the two surface areas (you may need to use “Fix geometries” first) then you now have \\(z_{2018}\\), \\(A_{2018}\\), and \\(A_{2024}\\). Now you need \\(z_{2024}\\). To get this, create points along the 2024 polygon (“Points along geometry”, I used 10m as interval). Now sample the raster at those points (“Sample raster values”). If you look closely at the map, and as can be seen in Figure 4, you will notice that many of the points actually fall a little inside the 2018 boundary, i.e. on the water surface from 2018. This is due to registration error (misalignment) and differences in resolution.\n\n\n\n\n\n\nFigure 4: Some points in the 2024 water boundary fall inside of the 2018 boundary, which is nonsense.\n\n\n\nOne way of reducing the error from this phenomenon is to extract some points from places where the 2024 water boundary runs across relatively flay areas. In the locations horizontal displacements will only result in small vertical displacements (Figure 5)\n\n\n\n\n\n\nFigure 5: Extracted points lying in fairly flat areas.\n\n\n\nNow use Excel, QGIS plotting tools (which kind of stink), or some other software of your choice to create a histogram of the extracted points elevations (Figure 6).\n\n\n\n\n\n\n\nText(0.5, 0, 'Elevation (m)')\n\n\n(a) Histogram of extracted points with mean and median.\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\nFigure 6\n\n\n\n\nSince the mean and median values are both \\(\\approx\\) 69.2 m, it would appear to be a good value to choose for \\(z_{2024}\\)."
-  },
-  {
-    "objectID": "cachuma.html#calculate-the-volume-of-the-reservoir",
-    "href": "cachuma.html#calculate-the-volume-of-the-reservoir",
-    "title": "Cachuma Solution",
-    "section": "Calculate the volume of the reservoir",
-    "text": "Calculate the volume of the reservoir\nIn order to calculate the volume of the reservoir, next we will calculate the volume of slices of the reservoir between \\(z_{2018}\\) and \\(z_{2024}\\) For a given slice,\n\\[  \nV_{n} \\approx \\Delta z \\times \\frac{A_{n}+A_{n+1}}{2}\n\\tag{1}\\]\n\\[\n\\Delta V = \\sum_{n=0}^{n} V_{n}\n\\tag{2}\\]\nwhere the volume of the slice \\(V_{n}\\) is approximated by the depth of the slice \\(\\Delta z\\) times the mean area of the top (\\(A_{n}+A_{n+1}\\)) and bottom (\\(A_{n}+A_{n}\\)) of the slice, and \\(\\Delta V\\) is the sum of all the slices. Figure 7 shows a schematic representation of the volume approximation method.\n\n\n\n\n\n\nFigure 7: Cross-sectional schematic of volume estimation method described in Equation 1 and Equation 2\n\n\n\nIn order to calculate \\(V_{n}\\) for each slice, starting from the 2018 water level, first pick a value for \\(\\Delta z\\), here we will use 1 m. Then find the surface area of the reservoir at \\(z_{2018} + \\Delta z\\). This can be done using the raster calculator to create a mask for pixels lying between the lake surface, and 1 m above the lake surface ((dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 66.3)). You can then polygonize the mask and extract the polygon representing the surface (see Figure 8).\n\n\n\n\n\n\nFigure 8: Lake surface area with water level 1m higher than in in summer 2018, estimated using the DEM\n\n\n\nNow, for the first slice (\\(\\Delta Z_{0}\\)) we have estimates for the area of the bottom (\\(A_{0} \\approx 6544034.000155964 \\text{m}^{2}\\) ) and area of the top (\\(A_{1} \\approx 7512197.9998339815 \\text{m}^{2}\\)), and we know the thickness of the slice is 1 m. Calculating an estimate for the volume of the slice using Equation 1 gives \\(\\approx 2.5 \\times 10^{13} m^{3}\\)\nThis process is repeated for each 1 m thick slice (the final slice will be thinner as it is limited by \\(Z_{2024}\\)). Formulas for calculating the lake surface area at each step are given in Table 1.\n\n\n\nTable 1: Formula for each surface area at the top of each slice, and its corresponding surface area.\n\n\n\n\n\n\n\n\n\n\nSurface\nFormula\nArea (m\\(^{3}\\))\n\n\n\n\n\\(z_{0} (z_{2018})\\)\n(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 66.3)\n6544034.000155964\n\n\n\\(z_{1}\\)\n(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 67.3)\n7512197.9998339815\n\n\n\\(z_{2}\\)\n(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 68.3)\n8719786.154200599\n\n\n\\(z_{3} (z_{2024})\\)\n(dem_m@1 &gt; 65.275) AND (dem_m@1 &lt; 69.2)\n11118719.999728722\n\n\n\n\n\n\n\n\n\n\n\nIt is important to note that the calculated surface may begin to include areas on the other side of the spillway, and the polygon will need to be split (Figure 9).\n\n\n\n\n\n\nFigure 9: At 2m above the 2018, the surface connects through the spillway to areas outside of the lake. It needs to be separated by turning on editing and using the split features button.\n\n\n\nTable 2 shows the thickness and calculated volume of each slice, as well as that of \\(\\Delta V\\). The estimate I ended up with is \\(\\approx 2.43 \\times 10^{7} \\text{m}^{3})\\) (or \\(1.97 \\times 10^{4} \\text{acre-feet}\\), or 24 GL, or \\(2.06 \\times 10^{-41} \\text{ly}^{3}\\)). For reference, that much water has a mass of about is about \\(7.14 \\times 10^{09}\\) that of the largest racoon ever recorded!\n\n\n\nTable 2: Volume of each slice. Percentage volumes are calculated as percentage of the estimated reservoir volume (from wikipedia ¯\\(ツ)/¯ )\n\n\n\n\n\n\n\n\n\n\n\nSlice\n\\(\\Delta Z\\)\nVolume (m\\(^{2}\\))\nVolume (% of reservoir)\n\n\n\n\n\\(\\Delta_v{0}\\)\n1.03 m\n7238959.47999483\n3.03\n\n\n\\(\\Delta_v{1}\\)\n1 m\n8115992.07701729\n3.50\n\n\n\\(\\Delta_v{2}\\)\n0.9 m\n8927327.7692682\n4.28\n\n\n\\(\\Delta V\\)\n\n2.43 \\(\\times 10^{7}\\)\n10.8"
-  },
-  {
-    "objectID": "computers.html#what-is-a-computer-1",
-    "href": "computers.html#what-is-a-computer-1",
-    "title": "Computers",
-    "section": "What is a computer",
-    "text": "What is a computer\n\n\nA machine that manipulates data following a list of programmed instructions\n\n\n\n\nImage of an old but cool looking computer\n\n\n\nImage Source: Wikimedia commons"
-  },
-  {
-    "objectID": "computers.html#section",
-    "href": "computers.html#section",
-    "title": "Computers",
-    "section": "",
-    "text": "Apple Inc. 2011. “OS x for UNIX Users.” Apple Inc. https://images.apple.com/media/us/osx/2012/docs/OSX_for_UNIX_Users_TB_July2011.pdf.\n\n\nCampbell-Kelly, Martin, William F. Aspray, Jeffrey R. Yost, H. Tinn, and G. Con Díaz. 2023. Computer: A History of the Information Machine. 4th ed. Routledge. https://doi.org/10.4324/9781003263272."
-  },
-  {
-    "objectID": "computers_slides.html#data",
-    "href": "computers_slides.html#data",
-    "title": "",
-    "section": "Data",
-    "text": "Data\n\n\n\n“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”\n“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.” -OED\n\n\n\n\n\n\n\nData is stored on a computer as zeros and ones .\n\nData is stored at some physical location on the disk, and a pointer is saved which is later used to find the file.\nThe details of this are managed for you by applications or programming languages by representing this relationship as a path.\n\n\n\n\n\nA pointer (a) pointing to the memory address associated with a variable (b), i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.\n\n\n\nImage Source: Wikimedia /Sven"
-  },
-  {
-    "objectID": "computers_slides.html#file-paths-and-directories",
-    "href": "computers_slides.html#file-paths-and-directories",
-    "title": "",
-    "section": "File Paths and Directories",
-    "text": "File Paths and Directories"
-  },
-  {
-    "objectID": "computers.html#filesystems-and-paths",
-    "href": "computers.html#filesystems-and-paths",
-    "title": "Computers",
-    "section": "Filesystems and Paths",
-    "text": "Filesystems and Paths\nIn most modern computers, files are arranged in a hierarchical file system.\nA path is a string that uniquely identifies an item in . Generally, a path is composed of directory names, special format specifiers, and optionally a filename, all separated by delimiters."
   }
 ]

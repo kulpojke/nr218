@@ -30,53 +30,66 @@ A couple of relevant definitions of data taken from the Oxford English Dictionar
 + "Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation."
 + "Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form."
 
-__explain RAM vs disk__
-
-
 ::: {.columns}
-
 ::: {.column}
 
-Data is stored on a computer as zeros and ones (too simple, see @tip-example).  When you store a file, the data is stored at some physical location on the disk, and a pointer is saved which is later used to find the file (see @fig-pointers).  The details of this are managed for you by applications or programming languages by representing this relationship as human readable symbols. 
+Data is stored on a computer as zeros and ones (too simple, see @tip-example). When you store a file, the data is stored at some physical location on the disk, and a pointer is saved which is later used to find the file (see @fig-pointers). The details of this are managed for you by applications or programming languages by representing this relationship as human readable symbols.
 
-In most modern computers, files are arranged in a hierarchical file system. The standard Linux filesystem is shown in @fig-linux-filesys. In a hierarchal filesystem, files are arranged within nested directories (sometimes called folders). For example, 
-
-A path is a string that uniquely identifies an item in . Generally, a path is composed of directory names, special format specifiers, and optionally a filename, all separated by delimiters.  
+In most modern computers, files are arranged in a hierarchical file system. The standard Linux filesystem is shown in @fig-linux-filesys. In a hierarchal filesystem, files are arranged within nested directories (sometimes called folders). For example,
 
 :::
-
 ::: {.column}
 
 ![A pointer (_a_) pointing to the memory address associated with a variable (b), i.e., _a_ contains the memory address 1008 of the variable _b_. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.](img/pointers.svg){#fig-pointers fig-alt="Schematic showing pointer to a file or memory address" fig-cap="A pointer a pointing to the memory address associated with a variable b, i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case."}
 
 :::
+:::
 
 ![The linux filesystem](img/linux-filesystem-hierarchy.png){#fig-linux-filesys fig-alt="The linux filesystem"}
 
 ::: {.attribution style="font-size:0.4em"}
-
 Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=8861432)
-
-
-
 :::
 
+## Paths
+
+::: {.columns}
+::: {.column}
+
+A [___path___]{style="font-size:1.3em"} is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. @fig-linux-paths shows the path to `index.qmd` in a terminal. The bottom line of the terminal displays `/home/michael/CP/nr218/index.qmd`. This is the _full path_ to `index.qmd`.  The delimiters are the character `/`. If you look back to @fig-os-tree, you see that the root directory is just `/`. The directory called "home" is directly below `/` in the hierarchy, thus the full path to home is `/home` (or `/home/`). Similarly the full path to the directory "michael" is `/home/michael` (or `/home/michael/`) etc... (but, `/home/michael/CP/nr218/index.qmd` would never be written `/home/michael/CP/nr218/index.qmd/` because `index.qmd` is not a directory, it does not contain other files). __In order for an application to use a file, it must know the path to that file.__
+
+:::
+::: {.column}
+
+
+![&nbsp;](img/bash_paths.png){fig-alt="Path to a file shown in a Bash shell." width="90%" style="font-size:0.004em"}  
+
+![Top: Linux terminal showing the full path to index.qmd.   Bottom the same file shown in the GUI file explorer.](img/gui_paths.png){ #fig-linux-paths fig-alt="Path to a file shown in a GUI" width="90%"}
+
+:::
 :::
 
-
-
-::: {#tip-example .callout-tip}
+::: {#tip-example .callout-tip}  
 ## Cross-Referencing a Tip
 
 If you are saying to yourself, "_How are 0s and 1s stored in a computer, that makes no sense, numbers are abstractions but computers are physical objects?_", that is reasonable.  The ones and zeros are actually stored as sites holding an electrical charge, or not, but that is a deeper explanation than we need for this course.
 :::
 
+## Volatile and Non-Volatile Memory
 
+Data can be stored on a disk (as we have previously alluded to).  This type of memory isa called ___on-disk storage___.  We call on this type of storage _non-volatile_ because when the program using the data is terminated, or the computer is turned off the data persists to be used later.  This is in contrast to ___Random Access Memory___ (RAM), which is _volatile_ (if the program terminates, the data held there is lost).  In RAM the data sits in volatile memory cells addressed by numeric locations; the CPU accesses it directly with very low latency (quickly). All this is managed by the OS via pages and caches.  Only in advanced cases does the user take an interest of the details of this process.
+
+When an application is running, it typically stores the data it is actively using in RAM (or if it is large in temporary files on-disk)  This allows the application to run more quickly.  When the user wants to save changes that are held in these temporary forms of memory they must specify a file to save it to.  
+
+
+
+
+relative directories
+
+when you are working data in ram or saved as temporary files, need to save to avoid data loss
 
 
 ### References
 
 ::: {#refs}
 :::
-
-
