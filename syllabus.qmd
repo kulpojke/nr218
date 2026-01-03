@@ -118,25 +118,25 @@ There are many other helpful sources of information on GIS Software
 
 Here's the table with the Week column containing just the integer week values:
 
-| Date         | Week | Lecture                                                                                  | Lab  | Reading          | Due Dates                                     |
-|--------------|------|------------------------------------------------------------------------------------------|------|------------------|-----------------------------------------------|
-| January 5    | 1    | Introduction, Computers                                                                  | | ch. 1 and 2 |                                               |
-| January 7    | 1    | Basic GIS Concepts,  Scale, Coordinate systems, and Map Projections                      | |             |                                               |
-| January 12   | 2    | Spatial Data Models and File Formats                                                     | | ch. 3 and 4 |                                            |
-| January 14   | 2    |                                                                                          | |             |                                               |
-| __January 20*__ | 3 | Coordinate Systems, Map Projections, Datums, Reprojection                                | | ch. 5 and 6 | [Project 1](project_1.html)                   |
-| January 21   | 3    | GeoProcessing and Vector Operations                                                      | |             |                                               |
-| January 26   | 4    | Data Creation, Editing, Topology Basics                                                  | | ch. 7 and 8 |                                               |
-| January 28   | 4    | Rasters and Elevation Data                                                               | |             | [Final Project Brainstorm Due](final_proj.md) |
-| February 2   | 5    | Raster Analysis: Map Algebra, Resampling, Reprojection                                   | | ch. 9 and 10| [Project 2](project_2.html)                   |
-| February 4   | 5    |                                                                                          | |             |                                               |
-| February 9   | 6    | Remote Sensing and Spectral Indices                                                      | |             |                                               |
-| February 11  | 6    |                                                                                          | |             | [Final Project Outline Due](final_proj.md)    |
-| February 18  | 7    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling, continued           | |             |                                               |
-| February 23  | 7    |                                                                                          | |             | [Project 3](project_3.md)                     |
-| February 25  | 8    | Workflow Design and Geoprocessing Models                                                 | |             |                                               |
-| November 11  | 8    |                                                | |             |                                               |
-| March 2      | 8    |                                                                                 | |             |                                               |
-| March 4      | 9    |                                                                            | |             |                                               |
-| March 9      | 9    |                                                                           | |             | Final Project Draft \[optional\]              | | 
-\*This is s a Tuesday on Monday schedule
+| Date         | Week | Lecture                                                              | Lab  | Reading      | Due Dates                                     |
+|--------------|------|----------------------------------------------------------------------|------|--------------|-----------------------------------------------|
+| January 5    | 1    | Introduction, Computers                                              |      | ch. 1 and 2  |                                               |
+| January 7    | 1    | Basic GIS Concepts,  Scale, Coordinate systems, and Map Projections  |      |              |                                               |
+| January 12   | 2    | Spatial Data Models and File Formats                                 |      | ch. 3 and 4  |                                               |
+| January 14   | 2    |                                                                      |      |              |                                               |
+| __January 20*__ | 3 | Coordinate Systems, Map Projections, Datums, Reprojection            |      | ch. 5 and 6  | [Project 1](project_1.html)                   |
+| January 21   | 3    | GeoProcessing and Vector Operations                                  |      |              |                                               |
+| January 26   | 4    | Data Creation, Editing, Topology Basics                              |      | ch. 7 and 8  |                                               |
+| January 28   | 4    | Rasters and Elevation Data                                           |      |              | [Final Project Brainstorm Due](final_proj.md) |
+| February 2   | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       |      | ch. 9 and 10 | [Project 2](project_2.html)                   |
+| February 4   | 5    | Remote Sensing and Spectral Indices                                  |      |              |                                               |
+| February 9   | 6    |                                                                      |      |              |                                               |
+| February 11  | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  |      |              | [Final Project Outline Due](final_proj.md)    |
+| February 18  | 7    |                                                                      |      |              |                                               |
+| February 23  | 7    | Workflow Design and Geoprocessing Models                             |      |              | [Project 3](project_3.md)                     |
+| February 25  | 8    |                                                                      |      |              |                                               |
+| March 2      | 8    | Advanced Topics (tbd)                                                |      |              |                                               |
+| March 4      | 9    |                                                                      |      |              |                                               |
+| March 9      | 9    | Modern Map Making                                                    |      |              | Final Project Draft \[optional\]              | 
+| March 13     | 10   |                                                                      |      |              |                                               |
+\*This is s a Tuesday on Monday schedule          
