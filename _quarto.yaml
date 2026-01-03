@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
   render:
-    - calendar.md
+    - syllabus.qmd
     - project_1.md
     - project_2.md
     - project_3.md

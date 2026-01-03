@@ -1841,6 +1841,97 @@
     "text": "Submit on Canvas:\n\nWritten Responses: Answers to written questions 1-4 above\nTutorial Documentation: Maps (png, jpeg, tiff, pdf format) and/or screenshots showing the outputs and final products of tutorials 1-5 in project work. Be sure to include dates/times in screenshots."
   },
   {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "",
+    "text": "Jump to class calendar"
+  },
+  {
+    "objectID": "syllabus.html#class-details",
+    "href": "syllabus.html#class-details",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Class Details",
+    "text": "Class Details\nBuilding 10 (Erhart Agriculture, a.k.a. part of Aglish), Room 204\nMonday: 9:10 - 1:00\nWednesday: (9:10 - 12:00)"
+  },
+  {
+    "objectID": "syllabus.html#instructor-details",
+    "href": "syllabus.html#instructor-details",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Instructor Details",
+    "text": "Instructor Details\nMichael Huggins\nOffice Hours: Mondays 2:30 - 4:30\nBuilding 72-107 (Plant Conservatory)"
+  },
+  {
+    "objectID": "syllabus.html#learning-goals",
+    "href": "syllabus.html#learning-goals",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Learning Goals",
+    "text": "Learning Goals\n\nHow to formulate and answer problems using spatial data\n\nHow to create quality maps and graphics\nApply skills in remote sensing, GIS, and data science to solve a problem of your own design\nUnderstand basic principles of GIS"
+  },
+  {
+    "objectID": "syllabus.html#project-assignments",
+    "href": "syllabus.html#project-assignments",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Project Assignments",
+    "text": "Project Assignments\nThis course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other week (see calendar for dates). Late assignments will be deducted 5% per day late.\nThere is also a final project as well as an exam.\nFor your final project you will propose a novel GIS question and collect or analyze data to answer it."
+  },
+  {
+    "objectID": "syllabus.html#assignment-weight",
+    "href": "syllabus.html#assignment-weight",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Assignment Weight",
+    "text": "Assignment Weight\n\n\n\n\n\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nProject 1\n10\nMapping\n\n\nProject 2\n10\nVector Data Analysis\n\n\nProject 3\n10\nRaster Data Analysis\n\n\nProject 4\n15\nRemote Sensing, Image Analysis, and Modeling\n\n\nFinal Project\n25\n\n\n\nExam\n20\nWill be hard, but curved\n\n\nParticipation\n10\nWill be based on  and engagement\n\n\nAssignment 0\n1 (bonus)\nEasy bonus points"
+  },
+  {
+    "objectID": "syllabus.html#grading",
+    "href": "syllabus.html#grading",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Grading",
+    "text": "Grading\nA: ≥ 90%\nB: ≥ 80%\nC: ≥ 70%\nD: ≥ 60%\nF: &lt; 60%\nTotal 100%\nNote: Grading is not curved (Except exam)."
+  },
+  {
+    "objectID": "syllabus.html#assignment-submission-policy",
+    "href": "syllabus.html#assignment-submission-policy",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Assignment Submission Policy",
+    "text": "Assignment Submission Policy\nAssignments (except the final project) will be submitted on Canvas. Students are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline."
+  },
+  {
+    "objectID": "syllabus.html#attendance-policy",
+    "href": "syllabus.html#attendance-policy",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Attendance Policy",
+    "text": "Attendance Policy\nBefore leaving for each class you will need to turn in an “exit ticket”. The exit ticket is simply a short answer to a question that will given in class. The exit ticket will let me know that you were in class, and help me to gauge how well students are absorbing the material. You are allowed 3 unexcused absences. Beyond 3 unexcused absences, you will be deducted 2% of the total grade for each unauthorized absence."
+  },
+  {
+    "objectID": "syllabus.html#academic-integrity",
+    "href": "syllabus.html#academic-integrity",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nAll students should be familiar with and adhere to the university’s academic integrity policy, which can be found here: https://osrr.calpoly.edu/academic-integrity"
+  },
+  {
+    "objectID": "syllabus.html#use-of-ai",
+    "href": "syllabus.html#use-of-ai",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Use of AI",
+    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time! + Depending on AI prevents development of critical thinking, writing, and problem-solving skills + AI will sometimes lead you down a terrible, deep rabbit hole of confusion + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework + The struggle of working through difficult concepts is often where the most valuable learning occurs\nThat is not to say LLMs are never useful or appropriate to use, but you need to know their limitations."
+  },
+  {
+    "objectID": "syllabus.html#textbook",
+    "href": "syllabus.html#textbook",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Textbook",
+    "text": "Textbook\nWe will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found here"
+  },
+  {
+    "objectID": "syllabus.html#tutorials",
+    "href": "syllabus.html#tutorials",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Tutorials",
+    "text": "Tutorials\nWe will refer to a number of tutorial videos which describe QGIS processing. These will come primarily from two sources:\nUjaval Gandhi’s QGIS Tutorials and Tips\nQGIS Training Manual\nThere are many other helpful sources of information on GIS Software\nSpatial Thoughtsintroduction-to-qgis.html\nA Gentle Introduction to GISgentle_gis_introduction/index.html"
+  },
+  {
     "objectID": "project_1.html",
     "href": "project_1.html",
     "title": "NR 218 Project 1: Mapping",
@@ -1999,7 +2090,7 @@
     "href": "computers.html#volatile-and-non-volatile-memory",
     "title": "Computers",
     "section": "Volatile and Non-Volatile Memory",
-    "text": "Volatile and Non-Volatile Memory\nData can be stored on a disk (as we have previously alluded to). This type of memory isa called on-disk storage. We call on this type of storage non-volatile because when the program using the data is terminated, or the computer is turned off the data persists to be used later. This is in contrast to Random Access Memory (RAM), which is volatile (if the program terminates, the data held there is lost). In RAM the data sits in volatile memory cells addressed by numeric locations; the CPU accesses it directly with very low latency (quickly). All this is managed by the OS via pages and caches. Only in advanced cases does the user take an interest of the details of this process.\nWhen an application is running, it typically stores the data it is actively using in RAM (or if it is large in temporary files on-disk) This allows the application to run more quickly. When the user wants to save changes that are held in these temporary forms of memory they must specify a file to save it to.\nrelative directories\nwhen you are working data in ram or saved as temporary files, need to save to avoid data loss\n\nReferences\n\n\nCampbell-Kelly, Martin, William F Aspray, Jeffrey R Yost, Honghong Tinn, and Gerardo Con Dı́az. 2023. Computer: A History of the Information Machine. Routledge."
+    "text": "Volatile and Non-Volatile Memory\nData can be stored on a disk (as we have previously alluded to). This type of memory is called on-disk storage. We call on this type of storage non-volatile because when the program using the data is terminated, or the computer is turned off the data persists to be used later. This is in contrast to Random Access Memory (RAM), which is volatile (if the program terminates, the data held there is lost). In RAM the data sits in volatile memory cells addressed by numeric locations; the CPU accesses it directly with very low latency (quickly). All this is managed by the OS via pages and caches. Only in advanced cases does the user take an interest of the details of this process.\nWhen an application is running, it typically stores the data it is actively using in RAM (or if it is large in temporary files on-disk) This allows the application to run more quickly. When the user wants to save changes that are held in these temporary forms of memory they must specify a file to save it to.\nrelative directories\nwhen you are working data in ram or saved as temporary files, need to save to avoid data loss\n\nReferences\n\n\nCampbell-Kelly, Martin, William F Aspray, Jeffrey R Yost, Honghong Tinn, and Gerardo Con Dı́az. 2023. Computer: A History of the Information Machine. Routledge."
   },
   {
     "objectID": "terminals.html#terminals-across-operating-systems",
