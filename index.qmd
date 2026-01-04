@@ -45,11 +45,13 @@ navigation-mode: vertical
 
 # NR 218
 
-Use arrows or menu in bottom left corner to navigate
+Use arrows or menu in bottom left corner to navigate amongst slides.
 
 [Syllabus](syllabus.html)
 
 [Computers](computers.html)
+
+[Lab 1](computers_lab.qmd)
 
 {{< include introduction.qmd >}}
 
