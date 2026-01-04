@@ -121,10 +121,10 @@ Here's the table with the Week column containing just the integer week values:
 | Date         | Week | Lecture                                                              | Lab  | Reading      | Due Dates                                     |
 |--------------|------|----------------------------------------------------------------------|------|--------------|-----------------------------------------------|
 | January 5    | 1    | Introduction, Computers                                              |      | ch. 1 and 2  |                                               |
-| January 7    | 1    | Basic GIS Concepts,  Scale, Coordinate systems, and Map Projections  |      |              |                                               |
-| January 12   | 2    | Spatial Data Models and File Formats                                 |      | ch. 3 and 4  |                                               |
+| January 7    | 1    | Basic GIS Concepts,  Scale, Coordinate systems, and Map Projections  |      |              |  Lab 1 ()                                             |
+| January 12   | 2    | Spatial Data Models and File Formats                                 |      | ch. 3 and 4  |                                |
 | January 14   | 2    |                                                                      |      |              |                                               |
-| __January 20*__ | 3 | Coordinate Systems, Map Projections, Datums, Reprojection            |      | ch. 5 and 6  | [Project 1](project_1.html)                   |
+| January 20*  | 3    | Coordinate Systems, Map Projections, Datums, Reprojection            |      | ch. 5 and 6  | [Project 1](project_1.html)                   |
 | January 21   | 3    | GeoProcessing and Vector Operations                                  |      |              |                                               |
 | January 26   | 4    | Data Creation, Editing, Topology Basics                              |      | ch. 7 and 8  |                                               |
 | January 28   | 4    | Rasters and Elevation Data                                           |      |              | [Final Project Brainstorm Due](final_proj.md) |

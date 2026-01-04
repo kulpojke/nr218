@@ -1,0 +1,68 @@
+---
+title: "Using computers well enough for GIS"
+format:
+  html:
+    theme: quartz
+    css: styles.css
+---
+
+In this lab you will learn some important skills for working with computers.  
+
+## Task 1: Explore a Directory Structure
+
+- Download [toy data]()
+- By default the downloaded file will be in your Downloads folder
+- Create a working directory, `nr218` for the class in your home folder directory (see @tip-home).
+- Extract the zip into that directory (or move the unzipped folder/files into it).
+- Open a shell and `cd` into the directory (macOS/Linux: Terminal; Windows: PowerShell).
+- View the layout:
+  - macOS/Linux: `tree` (install if missing: `brew install tree` or `sudo apt install tree`).
+  - Windows PowerShell: `tree` (or `Get-ChildItem -Recurse` if you love typing).
+- Capture the output (screenshot or copy/paste) and answer briefly:
+  - What are the top-level folders?
+  - Where do data files live vs scripts/docs?
+  - One benefit of keeping a clear directory structure.
+
+::: {#tip-home .callout-tip}
+## Where is my home folder?
+
+- Windows: `C:\Users\<username>` (shows as “This PC > Windows (C:) > Users > <username>` in File Explorer).
+- macOS: `/Users/<username>`; Finder shows it with a house icon under Go → Home.
+- Linux: `/home/<username>` (or occasionally `/Users/<username>`); in a terminal it’s `~`, and file managers usually label it “Home.”
+:::
+
+::: {#tip-zip .callout-tip}
+## How do I unzip the starter archive?
+
+- Windows (GUI): In File Explorer, find the `.zip`, right-click → “Extract All…,” choose your `nr218` folder, click Extract.
+- macOS (GUI): In Finder, double-click the `.zip` to expand it, then drag/move the extracted folder into your `nr218` folder.
+- Linux (terminal): `cd ~/Downloads` (or wherever it landed), then run `unzip SPR_data.zip -d ~/nr218` (install unzip if missing: `sudo apt install unzip`).
+:::
+
+## Task 2: Set Up OneDrive Sync (Cal Poly Account)
+
+Use the OneDrive client for your platform to sync your Cal Poly OneDrive. Keep a short log of what you did and any errors.
+
+### Windows (OneDrive client)
+
+- Open OneDrive from the Start menu and sign in with your Cal Poly email; complete campus SSO/MFA.
+- Choose a local folder location (default is fine) and finish setup.
+- Confirm the OneDrive folder appears in File Explorer and shows sync status icons.
+- Right-click a class folder → “Always keep on this device” to make sure it is offline-ready.
+
+### macOS (OneDrive client)
+
+- Install OneDrive from the Mac App Store (or Microsoft download if allowed).
+- Launch, sign in with your Cal Poly email, and complete campus SSO/MFA.
+- Pick the local sync folder location and finish setup.
+- In Finder, confirm the OneDrive folder exists and shows status icons; choose “Always Keep on This Device” for the class folder.
+
+### Linux (rclone)
+
+- Install rclone (e.g., `sudo apt install rclone`).
+- Run `rclone config` → `n` for new remote → name it (e.g., `calpoly-onedrive`) → storage type `onedrive`.
+- Use the browser flow to sign in with your Cal Poly email and complete SSO/MFA when prompted.
+- Create a local sync folder (e.g., `mkdir ~/CalPolyOneDrive`).
+- One-time sync: `rclone sync calpoly-onedrive: ~/CalPolyOneDrive`.
+- Optional mount for live access (requires FUSE): `rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes` (keep terminal open).
+- Note any errors and how you resolved them (e.g., MFA prompts, permission issues).

@@ -3,6 +3,7 @@ project:
   output-dir: docs
   render:
     - syllabus.qmd
+    - computers_lab.qmd
     - project_1.md
     - project_2.md
     - project_3.md

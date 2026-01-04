@@ -3036,5 +3036,26 @@
     "title": "",
     "section": "Project 4 Overview (Due 11/20)",
     "text": "Project 4 Overview (Due 11/20)\n\nGoal: select the optimal Swanton Ranch site for one option:\n\nStudent housing, Hemp farm, or Helicopter landing.\n\nProduce a report explaining site selection criteria and analysis.\nWork in groups of 2–3; coordinate today and check in if you need a team."
+  },
+  {
+    "objectID": "computers_lab.html",
+    "href": "computers_lab.html",
+    "title": "Using computers well enough for GIS",
+    "section": "",
+    "text": "Download SPR_data.zip (right-click and “save link as”)\nBy default the downloaded file will be in your Downloads folder\nCreate a working directory, nr218 for the class in your home folder directory (see Tip 1).\nExtract the zip into that directory (or move the unzipped folder/files into it).\nOpen a shell and cd into the directory (macOS/Linux: Terminal; Windows: PowerShell).\nView the layout:\n\nmacOS/Linux: tree (install if missing: brew install tree or sudo apt install tree).\nWindows PowerShell: tree or Get-ChildItem -Recurse.\n\nCapture the output (screenshot or copy/paste) and answer briefly:\n\nWhat are the top-level folders?\nWhere do data files live vs scripts/docs?\nOne benefit of keeping a clear directory structure.\n\n\n\n\n\n\n\n\nTip 1: Where is my home folder?\n\n\n\n\nWindows: C:\\Users\\&lt;username&gt; (shows as “This PC &gt; Windows (C:) &gt; Users &gt; ` in File Explorer).\nmacOS: /Users/&lt;username&gt;; Finder shows it with a house icon under Go → Home.\nLinux: /home/&lt;username&gt; (or occasionally /Users/&lt;username&gt;); in a terminal it’s ~, and file managers usually label it “Home.”"
+  },
+  {
+    "objectID": "computers_lab.html#task-1-explore-a-directory-structure",
+    "href": "computers_lab.html#task-1-explore-a-directory-structure",
+    "title": "Using computers well enough for GIS",
+    "section": "",
+    "text": "Download SPR_data.zip (right-click and “save link as”)\nBy default the downloaded file will be in your Downloads folder\nCreate a working directory, nr218 for the class in your home folder directory (see Tip 1).\nExtract the zip into that directory (or move the unzipped folder/files into it).\nOpen a shell and cd into the directory (macOS/Linux: Terminal; Windows: PowerShell).\nView the layout:\n\nmacOS/Linux: tree (install if missing: brew install tree or sudo apt install tree).\nWindows PowerShell: tree or Get-ChildItem -Recurse.\n\nCapture the output (screenshot or copy/paste) and answer briefly:\n\nWhat are the top-level folders?\nWhere do data files live vs scripts/docs?\nOne benefit of keeping a clear directory structure.\n\n\n\n\n\n\n\n\nTip 1: Where is my home folder?\n\n\n\n\nWindows: C:\\Users\\&lt;username&gt; (shows as “This PC &gt; Windows (C:) &gt; Users &gt; ` in File Explorer).\nmacOS: /Users/&lt;username&gt;; Finder shows it with a house icon under Go → Home.\nLinux: /home/&lt;username&gt; (or occasionally /Users/&lt;username&gt;); in a terminal it’s ~, and file managers usually label it “Home.”"
+  },
+  {
+    "objectID": "computers_lab.html#task-2-set-up-onedrive-sync-cal-poly-account",
+    "href": "computers_lab.html#task-2-set-up-onedrive-sync-cal-poly-account",
+    "title": "Using computers well enough for GIS",
+    "section": "Task 2: Set Up OneDrive Sync (Cal Poly Account)",
+    "text": "Task 2: Set Up OneDrive Sync (Cal Poly Account)\nUse the OneDrive client for your platform to sync your Cal Poly OneDrive. Keep a short log of what you did and any errors.\n\nWindows (OneDrive client)\n\nOpen OneDrive from the Start menu and sign in with your Cal Poly email; complete campus SSO/MFA.\nChoose a local folder location (default is fine) and finish setup.\nConfirm the OneDrive folder appears in File Explorer and shows sync status icons.\nRight-click a class folder → “Always keep on this device” to make sure it is offline-ready.\n\n\n\nmacOS (OneDrive client)\n\nInstall OneDrive from the Mac App Store (or Microsoft download if allowed).\nLaunch, sign in with your Cal Poly email, and complete campus SSO/MFA.\nPick the local sync folder location and finish setup.\nIn Finder, confirm the OneDrive folder exists and shows status icons; choose “Always Keep on This Device” for the class folder.\n\n\n\nLinux (rclone)\n\nInstall rclone (e.g., sudo apt install rclone).\nRun rclone config → n for new remote → name it (e.g., calpoly-onedrive) → storage type onedrive.\nUse the browser flow to sign in with your Cal Poly email and complete SSO/MFA when prompted.\nCreate a local sync folder (e.g., mkdir ~/CalPolyOneDrive).\nOne-time sync: rclone sync calpoly-onedrive: ~/CalPolyOneDrive.\nOptional mount for live access (requires FUSE): rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes (keep terminal open).\nNote any errors and how you resolved them (e.g., MFA prompts, permission issues)."
   }
 ]
