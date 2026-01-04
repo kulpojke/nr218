@@ -6,42 +6,83 @@ format:
     css: styles.css
 ---
 
-In this lab you will learn some important skills for working with computers.  
+In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others.  We will practice organizing data on a computer and extracting zipped archives.
+
+In this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful.  If you learn how to use the terminal well you will probably use it frequently.
+
+That said, you will not have to be great at it for this class.  It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.
 
 ## Task 1: Explore a Directory Structure
 
-- Download [toy data]()
-- By default the downloaded file will be in your Downloads folder
-- Create a working directory, `nr218` for the class in your home folder directory (see @tip-home).
-- Extract the zip into that directory (or move the unzipped folder/files into it).
-- Open a shell and `cd` into the directory (macOS/Linux: Terminal; Windows: PowerShell).
-- View the layout:
-  - macOS/Linux: `tree` (install if missing: `brew install tree` or `sudo apt install tree`).
-  - Windows PowerShell: `tree` (or `Get-ChildItem -Recurse` if you love typing).
-- Capture the output (screenshot or copy/paste) and answer briefly:
-  - What are the top-level folders?
-  - Where do data files live vs scripts/docs?
-  - One benefit of keeping a clear directory structure.
+1. Download the toy data [here](https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip) (rigth-click -> Save Link As). By default the downloaded file will be in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration.  For now, we will do just that, so unzip `toy_data.zip` right into the download folder (see @tip-zip for how to do this.).  
+
+::: {#tip-zip .callout-tip}
+## How do I unzip a zip archive? What is a zip archive?
+__To unzip:__  
+
+- Windows (GUI): In File Explorer, find the `.zip`, right-click → “Extract All…,” choose your desired destination folder, click Extract.
+- macOS (GUI): In Finder, double-click the `.zip` to expand it, then drag/move the extracted folder into your destination folder.
+- Linux (terminal): `cd ~/Downloads` (or wherever it landed), then run `unzip SPR_data.zip -d <destination directory>` (replace `<destination directory>` with your actual destination directory. Install unzip if missing: `sudo apt install unzip`).
+
+__What is a zip file?__
+A zip file is a compressed archive.  Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure.  When you unzip, or extract the data you get back an uncompressed copy.  Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use.  __Do not work directly with files compressed in a zip!__ .While QGIS and other applications _can_ read files from inside of a zip, it is a bad idea to do so.  There are many processing tools that cannot work with the compressed file.  Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.
+:::
+
+2. Create a working directory, `nr218` for the class in your home folder directory (see @tip-home).
 
 ::: {#tip-home .callout-tip}
 ## Where is my home folder?
 
 - Windows: `C:\Users\<username>` (shows as “This PC > Windows (C:) > Users > <username>` in File Explorer).
 - macOS: `/Users/<username>`; Finder shows it with a house icon under Go → Home.
-- Linux: `/home/<username>` (or occasionally `/Users/<username>`); in a terminal it’s `~`, and file managers usually label it “Home.”
+- Linux: `/home/<username>` (or occasionally `/Users/<username>`); in a terminal it can also be called `~`, and file managers usually label it “Home.”
 :::
 
-::: {#tip-zip .callout-tip}
-## How do I unzip the starter archive?
+3. Open QGIS and start a blank project.
+  + Press `Ctrl+S`. This opens a dialogue for saving the QGIS project.  Navigate to the `nr218` directory you just created.  Name the project after you CalPoly email address (e.g. `mthuggin`. Note that this would be a terrible thing to actually name a project).  You have now saved a file containing the project.
+  + Press `Ctrl+Shift+V`, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to `~/Downloads/toy_data` and select `Eaton_Perimeter_20250121.geojson`. You should now see a polygon in in the map (@fig-eaton)
 
-- Windows (GUI): In File Explorer, find the `.zip`, right-click → “Extract All…,” choose your `nr218` folder, click Extract.
-- macOS (GUI): In Finder, double-click the `.zip` to expand it, then drag/move the extracted folder into your `nr218` folder.
-- Linux (terminal): `cd ~/Downloads` (or wherever it landed), then run `unzip SPR_data.zip -d ~/nr218` (install unzip if missing: `sudo apt install unzip`).
+  ![You should se something like this after opening `Eaton_Perimeter_20250121.geojson.  It is a polygon showing the Eaton Fire perimeter` ](img/eaton_perim.png){#fig-eaton fig-alt="Image showing the eaton fire perimeter polygon within QGIS" fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter"}
+  
+4. Close the project (_Project -> Close_ in drop down menus).
+5. Move the `toy_data` folder from your Downloads folder to `~/nr218`
+6. Open the project you previously saved (_Project -> Open Recent_ in drop down menus)
+  + Now QGIS cannot find the Eaton Fire perimeter data because the _relative path_ to the data has changed (see @tip-paths). A dialogue such as the one shown in @fig-unavailable will appear. Don't worry about trying to fix the problem yet.
+
+![When the relative path to data changes (or the data is deleted) QGIS cannot find it.` ](img/unavailable.png){#fig-unavailable fig-alt="Image showing the handle unavailable data dialogue window in QGIS" fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it."}
+
+7. Open a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, `cd ~/nr218`.
+8. Create a document in a text editor (e.g. notepad on Windows). Name it `<your_name>_lab1.txt` and save it in `~/nr218`.
+9. View the contents of the directory:
+  - In the terminal (while in `~/nr218`) type `tree`
+    - macOS/Linux, install if missing: `brew install tree` / `sudo apt install tree`.
+    - Windows PowerShell: `tree` should be present.  If you love typing you can use `Get-ChildItem -Recurse`.
+  - Copy the output  and paste at the top of your text document.
+  - In your text document answer the following questions.
+    - 1) Type pwd in the terminal, this shows the path to the present working directory, what is the output (paste it)?
+    - 2) Based on the contents of the directory, what do you think are some best practices for naming files?
+    - 3) Why do you think working on files that are in your download folder is a bad idea?
+
+You will use `tree` and `pwd` throughout the quarter to show me how you are organizing your data.  In order to do this you will also need to know how to navigate into your working directory (see @tip-paths).  
+
+
+
+::: {#tip-paths .callout-tip}
+## What is a Path?
+
+A [___path___]{style="font-size:1.3em"} is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. 
+
+QGIS, and other applications keep track of where data using _relative paths_, as opposed to _absolute paths_. An absolute (or full path) is the path to the file relative to the root directory, for example, on my laptop the directory for this class has an absolute path `/home/michael/CP/nr218`, where the root directory is just `/`. The directory called _home_ is directly below `/` in the hierarchy, thus the full path to home is `/home` (or `/home/`, a directory can be written with a trailing slash). Similarly the full path to the directory _michael_  is `/home/michael` (or `/home/michael/`, or using its alias `~`, see @tip-home).
+
+A relative path is the position of a file relative to the position of the file that is looking for it.  For the QGIS project file in your `nr218` directory, the relative path to the `Eaton_Perimeter_20250121.geojson` _was_ `../Downloads/toy_data/WellNamedFiles/Eaton_Perimeter_20250121.geojson` (`../` means _parent directory_ or _up one level_).  When you moved it, the relative path changed to `WellNamedFiles/Eaton_Perimeter_20250121.geojson` (or `./WellNamedFiles/Eaton_Perimeter_20250121.geojson`, where `.` means the present directory).  When you re-opened the project after moving the data, QGIS read the project file which told it, "Load the Eaton perimeter file found at `../Downloads/toy_data/WellNamedFiles/Eaton_Perimeter_20250121.geojson`." QGIS looked at that relative location, and the file was missing, so it complained to you with the dialogue box.  __In order for an application to use a file, it must know the path to that file.__
+
+In a (bash-like) terminal you can change directories using the `cd` command to navigate to a directory by giving ita path. You can use and absolute path, e.g. `cd  /home/michael/CP/nr218` or  equivalently `cd ~/CP/nr218`. Or you can use a relative path, `cd ../` to go to the parent directory, `cd ../../` to go up two levels in the directory hierarchy.  If you are in  `/home/michael`,  `cd CP/nr218` would do the same thing as `cd  /home/michael/CP/nr218`.
 :::
 
 ## Task 2: Set Up OneDrive Sync (Cal Poly Account)
 
-Use the OneDrive client for your platform to sync your Cal Poly OneDrive. Keep a short log of what you did and any errors.
+For this class you will need to use the OneDrive client (or rclone) for your platform to sync your Cal Poly OneDrive. Short directions for setting up OneDrive are given here, if you are having trouble refer to the [guide](https://calpoly.atlassian.net/wiki/spaces/CPKB/pages/732921936/Access+OneDrive+and+SharePoint+from+my+Computer).
+
 
 ### Windows (OneDrive client)
 
@@ -66,3 +107,5 @@ Use the OneDrive client for your platform to sync your Cal Poly OneDrive. Keep a
 - One-time sync: `rclone sync calpoly-onedrive: ~/CalPolyOneDrive`.
 - Optional mount for live access (requires FUSE): `rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes` (keep terminal open).
 - Note any errors and how you resolved them (e.g., MFA prompts, permission issues).
+
+You may have to ask the IT department to approve rclone to attach to your OneDrive (and wait for them to do so), if this is the case it will prompt you to do so. If you are having problems consult the [rclone documentation](https://github.com/rclone/rclone).

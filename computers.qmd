@@ -70,7 +70,7 @@ A [___path___]{style="font-size:1.3em"} is a string that uniquely identifies an 
 :::
 
 ::: {#tip-example .callout-tip}  
-## Cross-Referencing a Tip
+## Data storage
 
 If you are saying to yourself, "_How are 0s and 1s stored in a computer, that makes no sense, numbers are abstractions but computers are physical objects?_", that is reasonable.  The ones and zeros are actually stored as sites holding an electrical charge, or not, but that is a deeper explanation than we need for this course.
 :::
