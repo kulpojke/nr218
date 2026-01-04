@@ -12,7 +12,7 @@ In this lab you will also be introduced to using the terminal. Having some famil
 
 That said, you will not have to be great at it for this class.  It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.
 
-## Task 1: Explore a Directory Structure
+## Task 1: Exploring a Directory Structure and unzipping files
 
 1. Download the toy data [here](https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip) (rigth-click -> Save Link As). By default the downloaded file will be in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration.  For now, we will do just that, so unzip `toy_data.zip` right into the download folder (see @tip-zip for how to do this.).  
 
