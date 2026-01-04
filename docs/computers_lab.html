@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>project_4</title>
+<title>Using computers well enough for GIS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,10 +34,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-10e7899fb7f66198667b989b776f2332.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-53b9468ac95cb2fade5b249ba61a8ae1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -66,36 +66,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="fullcontent">
@@ -107,170 +79,185 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Using computers well enough for GIS</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<p><strong>Changes:</strong></p>
-<ul>
-<li><strong>2025-11-11 - Band information in section 3 of part 1 was incorrect.</strong>
-<ul>
-<li>The table has been changed and now reflects the proper band values (band 58 is red, band 90 is NIR)</li>
-<li>also, band 90 was missing coordinate data, you may have notices it would not work with the vrt building step. This is because band 90 was plotting into a 1m <span class="math inline">\(\times\)</span> 1m square on the prime meridian and equator. As a result, the build vrt function was trying to buils a vrt with 1m resolution than included the actual site, and <a href="https://en.wikipedia.org/wiki/Null_Island">Null Island</a>.</li>
-<li>A fixeD version of band 90 can be downloaded <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZHfrzYO7KZMniR4iCj4nYABFfDmEmYGbNlHaKVGeIkLBw?e=W4m1ug">herE</a></li>
-</ul></li>
-</ul>
-<section id="project-4" class="level1">
-<h1>Project 4</h1>
-<p>There are two parts; a tutorial, and a challenging task for you to figure out.</p>
-</section>
-<section id="part-1-qgis-raster-workflow-with-neon-data" class="level1">
-<h1>Part 1: QGIS Raster Workflow with NEON Data</h1>
-<p>This project is adabted from the <a href="https://www.neonscience.org/resources/learning-hub/tutorials/raster-data-r">NEON “Raster Data in R”</a> tutorial, but every task is completed in QGIS instead of R. Follow the workflow below, document your process with screenshots, and answer the reflection prompts at the end.</p>
-<p>If you are not familiar with National Ecological Observatory Network (NEON), it is the U.S National Science Foundation’s continental-scale observation facility. It is designed to collect long-term ecological data. Click <a href="https://www.neonscience.org/">here</a> for more information about NEON.</p>
-<section id="learning-goals" class="level2">
-<h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
-<ul>
-<li>Practice downloading and organizing remote sensing raster products</li>
-<li>Inspect spatial metadata, bit depth, and NoData handling inside QGIS</li>
-<li>Build multi-band raster composites and derive tree canopy/surface metrics with Raster Calculator</li>
-<li>Clip and summarize rasters with study-area polygons using built-in QGIS geoprocessing tools</li>
-<li>Export publication-ready rasters and QA plots that match the NEON tutorial outputs</li>
-</ul>
-</section>
-<section id="downloading-data-and-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="downloading-data-and-preparation">Downloading Data and Preparation</h2>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others. We will practice organizing data on a computer and extracting zipped archives.</p>
+<p>In this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful. If you learn how to use the terminal well you will probably use it frequently.</p>
+<p>That said, you will not have to be great at it for this class. It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.</p>
+<section id="task-1-exploring-a-directory-structure-and-unzipping-files" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-exploring-a-directory-structure-and-unzipping-files">Task 1: Exploring a Directory Structure and unzipping files</h2>
 <ol type="1">
-<li><p><strong>Download the NEON SJER raster sample bundle</strong> used in the NEON tutorial <a href="https://ndownloader.figshare.com/files/7907590">here</a>. This data comes from the <a href="https://www.neonscience.org/field-sites/field-sites-map/SJER">San Joaquin Experimental Range</a> field site (SJER). It includes a digital surface model (DSM), digital terrain model (DTM), RGB imagery, canopy height model (CHM), and a shapefile of the SJER plot boundary.</p></li>
-<li><p>Extract the archive to a directory called <code>project_4/</code> (Wherever you are storing your files for nr218, NOT IN DOWNLOADS!). Keep the folder names (e.g.&nbsp;<code>NEON-DS-Field-Site-Spatial-Data/SJER/</code>) intact so that layer names match the instructions.<br>
-<u><strong>Take a screenshot of your file explorer, showing the <code>project 4</code> directory and include it in your submission.</strong></u></p></li>
-<li><p>Launch QGIS and create a project file <code>project_4_sjer.qgz</code> in the same directory. Set the default CRS to <code>EPSG:32611</code> (UTM Zone 11N) to match the NEON raster products.</p></li>
+<li>Download the toy data <a href="https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip">here</a> (rigth-click -&gt; Save Link As). By default the downloaded file will be in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. For now, we will do just that, so unzip <code>toy_data.zip</code> right into the download folder (see <a href="#tip-zip" class="quarto-xref">Tip&nbsp;1</a> for how to do this.).</li>
 </ol>
-<blockquote class="blockquote">
-<p><strong>Tip:</strong> You can add the folders inside <code>data/project_4</code> to the QGIS Browser Favorites so you can drag files in quickly.</p>
-</blockquote>
-</section>
-<section id="guided-qgis-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="guided-qgis-workflow">Guided QGIS Workflow</h2>
-<section id="inspect-raster-metadata" class="level3">
-<h3 class="anchored" data-anchor-id="inspect-raster-metadata">1. Inspect Raster Metadata</h3>
+<div id="tip-zip" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;1: How do I unzip a zip archive? What is a zip archive?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>To unzip:</strong></p>
 <ul>
-<li>Open <code>project_4/NEON-DS-Field-Site-Spatial-Data/SJER/DigitalSurfaceModel/SJER2013_DSM.tif</code> and <code>project_4/NEON-DS-Field-Site-Spatial-Data/SJER/DigitalTerrainModel/SJER2013_DTM.tif</code>.</li>
-<li>Open <strong>Layer Properties ▸ Information</strong> and record:
+<li>Windows (GUI): In File Explorer, find the <code>.zip</code>, right-click → “Extract All…,” choose your desired destination folder, click Extract.</li>
+<li>macOS (GUI): In Finder, double-click the <code>.zip</code> to expand it, then drag/move the extracted folder into your destination folder.</li>
+<li>Linux (terminal): <code>cd ~/Downloads</code> (or wherever it landed), then run <code>unzip SPR_data.zip -d &lt;destination directory&gt;</code> (replace <code>&lt;destination directory&gt;</code> with your actual destination directory. Install unzip if missing: <code>sudo apt install unzip</code>).</li>
+</ul>
+<p><strong>What is a zip file?</strong> A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use. <strong>Do not work directly with files compressed in a zip!</strong> .While QGIS and other applications <em>can</em> read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Create a working directory, <code>nr218</code> for the class in your home folder directory (see <a href="#tip-home" class="quarto-xref">Tip&nbsp;2</a>).</li>
+</ol>
+<div id="tip-home" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;2: Where is my home folder?
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>CRS</li>
-<li>resolution</li>
-<li>pixel count</li>
-<li>NoData value</li>
-<li>and min/max elevation.</li>
+<li>Windows: <code>C:\Users\&lt;username&gt;</code> (shows as “This PC &gt; Windows (C:) &gt; Users &gt; <username>` in File Explorer).</username></li>
+<li>macOS: <code>/Users/&lt;username&gt;</code>; Finder shows it with a house icon under Go → Home.</li>
+<li>Linux: <code>/home/&lt;username&gt;</code> (or occasionally <code>/Users/&lt;username&gt;</code>); in a terminal it can also be called <code>~</code>, and file managers usually label it “Home.”</li>
+</ul>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Open QGIS and start a blank project.</li>
+</ol>
+<ul>
+<li>Press <code>Ctrl+S</code>. This opens a dialogue for saving the QGIS project. Navigate to the <code>nr218</code> directory you just created. Name the project after you CalPoly email address (e.g.&nbsp;<code>mthuggin</code>. Note that this would be a terrible thing to actually name a project). You have now saved a file containing the project.</li>
+<li>Press <code>Ctrl+Shift+V</code>, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to <code>~/Downloads/toy_data</code> and select <code>Eaton_Perimeter_20250121.geojson</code>. You should now see a polygon in in the map (<a href="#fig-eaton" class="quarto-xref">Figure&nbsp;1</a>)</li>
+</ul>
+<div id="fig-eaton" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the eaton fire perimeter polygon within QGIS" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eaton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/eaton_perim.png" class="img-fluid figure-img" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter" alt="Image showing the eaton fire perimeter polygon within QGIS">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eaton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: You should se something like this after opening <code>Eaton_Perimeter_20250121.geojson.  It is a polygon showing the Eaton Fire perimeter</code>
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Close the project (<em>Project -&gt; Close</em> in drop down menus).</li>
+<li>Move the <code>toy_data</code> folder from your Downloads folder to <code>~/nr218</code></li>
+<li>Open the project you previously saved (<em>Project -&gt; Open Recent</em> in drop down menus)</li>
+</ol>
+<ul>
+<li>Now QGIS cannot find the Eaton Fire perimeter data because the <em>relative path</em> to the data has changed (see <a href="#tip-paths" class="quarto-xref">Tip&nbsp;3</a>). A dialogue such as the one shown in <a href="#fig-unavailable" class="quarto-xref">Figure&nbsp;2</a> will appear. Don’t worry about trying to fix the problem yet.</li>
+</ul>
+<div id="fig-unavailable" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the handle unavailable data dialogue window in QGIS" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-unavailable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/unavailable.png" class="img-fluid figure-img" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it." alt="Image showing the handle unavailable data dialogue window in QGIS">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unavailable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: When the relative path to data changes (or the data is deleted) QGIS cannot find it.`
+</figcaption>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>Open a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, <code>cd ~/nr218</code>.</li>
+<li>Create a document in a text editor (e.g.&nbsp;notepad on Windows). Name it <code>&lt;your_name&gt;_lab1.txt</code> and save it in <code>~/nr218</code>.</li>
+<li>View the contents of the directory:</li>
+</ol>
+<ul>
+<li>In the terminal (while in <code>~/nr218</code>) type <code>tree</code>
+<ul>
+<li>macOS/Linux, install if missing: <code>brew install tree</code> / <code>sudo apt install tree</code>.</li>
+<li>Windows PowerShell: <code>tree</code> should be present. If you love typing you can use <code>Get-ChildItem -Recurse</code>.</li>
+</ul></li>
+<li>Copy the output and paste at the top of your text document.</li>
+<li>In your text document answer the following questions.
+<ul>
+<li><ol type="1">
+<li>Type pwd in the terminal, this shows the path to the present working directory, what is the output (paste it)?</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Based on the contents of the directory, what do you think are some best practices for naming files?</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Why do you think working on files that are in your download folder is a bad idea?</li>
+</ol></li>
 </ul></li>
 </ul>
-<p><u><strong>Screenshot the Information panel and include it in your submission.</strong></u></p>
+<p>You will use <code>tree</code> and <code>pwd</code> throughout the quarter to show me how you are organizing your data. In order to do this you will also need to know how to navigate into your working directory (see <a href="#tip-paths" class="quarto-xref">Tip&nbsp;3</a>).</p>
+<div id="tip-paths" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;3: What is a Path?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span style="font-size:1.3em"><strong><em>path</em></strong></span> is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters.</p>
+<p>QGIS, and other applications keep track of where data using <em>relative paths</em>, as opposed to <em>absolute paths</em>. An absolute (or full path) is the path to the file relative to the root directory, for example, on my laptop the directory for this class has an absolute path <code>/home/michael/CP/nr218</code>, where the root directory is just <code>/</code>. The directory called <em>home</em> is directly below <code>/</code> in the hierarchy, thus the full path to home is <code>/home</code> (or <code>/home/</code>, a directory can be written with a trailing slash). Similarly the full path to the directory <em>michael</em> is <code>/home/michael</code> (or <code>/home/michael/</code>, or using its alias <code>~</code>, see <a href="#tip-home" class="quarto-xref">Tip&nbsp;2</a>).</p>
+<p>A relative path is the position of a file relative to the position of the file that is looking for it. For the QGIS project file in your <code>nr218</code> directory, the relative path to the <code>Eaton_Perimeter_20250121.geojson</code> <em>was</em> <code>../Downloads/toy_data/WellNamedFiles/Eaton_Perimeter_20250121.geojson</code> (<code>../</code> means <em>parent directory</em> or <em>up one level</em>). When you moved it, the relative path changed to <code>WellNamedFiles/Eaton_Perimeter_20250121.geojson</code> (or <code>./WellNamedFiles/Eaton_Perimeter_20250121.geojson</code>, where <code>.</code> means the present directory). When you re-opened the project after moving the data, QGIS read the project file which told it, “Load the Eaton perimeter file found at <code>../Downloads/toy_data/WellNamedFiles/Eaton_Perimeter_20250121.geojson</code>.” QGIS looked at that relative location, and the file was missing, so it complained to you with the dialogue box. <strong>In order for an application to use a file, it must know the path to that file.</strong></p>
+<p>In a (bash-like) terminal you can change directories using the <code>cd</code> command to navigate to a directory by giving ita path. You can use and absolute path, e.g.&nbsp;<code>cd  /home/michael/CP/nr218</code> or equivalently <code>cd ~/CP/nr218</code>. Or you can use a relative path, <code>cd ../</code> to go to the parent directory, <code>cd ../../</code> to go up two levels in the directory hierarchy. If you are in <code>/home/michael</code>, <code>cd CP/nr218</code> would do the same thing as <code>cd  /home/michael/CP/nr218</code>.</p>
+</div>
+</div>
 </section>
-<section id="visualize-single-band-elevation-rasters" class="level3">
-<h3 class="anchored" data-anchor-id="visualize-single-band-elevation-rasters">2. Visualize Single-Band Elevation Rasters</h3>
+<section id="task-2-set-up-onedrive-sync-cal-poly-account" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-set-up-onedrive-sync-cal-poly-account">Task 2: Set Up OneDrive Sync (Cal Poly Account)</h2>
+<p>For this class you will need to use the OneDrive client (or rclone) for your platform to sync your Cal Poly OneDrive. Short directions for setting up OneDrive are given here, if you are having trouble refer to the <a href="https://calpoly.atlassian.net/wiki/spaces/CPKB/pages/732921936/Access+OneDrive+and+SharePoint+from+my+Computer">guide</a>.</p>
+<section id="windows-onedrive-client" class="level3">
+<h3 class="anchored" data-anchor-id="windows-onedrive-client">Windows (OneDrive client)</h3>
 <ul>
-<li>With <code>SJER2013_DSM.tif</code> selected, open <strong>Symbology</strong> and switch to <strong>Singleband pseudocolor</strong>.</li>
-<li>Choose the <code>Spectral</code> color ramp, set the min/max to the reported DSM range, under “Min / Max Value Settings” enable “Cumulative count cut”.</li>
-<li>Duplicate the layer styling for the DTM (right-click ▸ Styles ▸ Copy/Paste).</li>
-<li>Export both styled rasters as PNGs (<strong>Project ▸ Import/Export ▸ Export map to image</strong>) named <code>dsm_render.png</code> and <code>dtm_render.png</code>.</li>
+<li>Open OneDrive from the Start menu and sign in with your Cal Poly email; complete campus SSO/MFA.</li>
+<li>Choose a local folder location (default is fine) and finish setup.</li>
+<li>Confirm the OneDrive folder appears in File Explorer and shows sync status icons.</li>
+<li>Right-click a class folder → “Always keep on this device” to make sure it is offline-ready.</li>
 </ul>
 </section>
-<section id="build-a-multi-band-rgb-composite" class="level3">
-<h3 class="anchored" data-anchor-id="build-a-multi-band-rgb-composite">3. Build a Multi-Band RGB Composite</h3>
+<section id="macos-onedrive-client" class="level3">
+<h3 class="anchored" data-anchor-id="macos-onedrive-client">macOS (OneDrive client)</h3>
 <ul>
-<li>Add the three files corresponding to red, green, and blue bands from <code>project_4/NEON-DS-Field-Site-Spatial-Data/SJER/RGB</code></li>
-</ul>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Band</th>
-<th>Approx. wavelength (nm)</th>
-<th>Spectral region</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>19</td>
-<td>~450</td>
-<td>Blue</td>
-</tr>
-<tr class="even">
-<td>34</td>
-<td>~520</td>
-<td>Green</td>
-</tr>
-<tr class="odd">
-<td>58</td>
-<td>~610</td>
-<td>Red</td>
-</tr>
-<tr class="even">
-<td>90</td>
-<td>~660</td>
-<td>NIR</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Use <strong>Raster ▸ Miscellaneous ▸ Build Virtual Raster (VRT)</strong> to stack them into <code>SJER_RGB.vrt</code>. arange the bands from top to bottom as Red, Green, Blue, and check “Place each file in seperate band”</li>
-<li>Load the VRT, change <strong>Render type</strong> to <code>Multiband color</code>, assign bands accordingly, and apply a slight saturation boost via <strong>Layer Rendering ▸ Contrast</strong>.</li>
-<li>Save the styled RGB map as <code>sjer_rgb_map.png</code>.</li>
+<li>Install OneDrive from the Mac App Store (or Microsoft download if allowed).</li>
+<li>Launch, sign in with your Cal Poly email, and complete campus SSO/MFA.</li>
+<li>Pick the local sync folder location and finish setup.</li>
+<li>In Finder, confirm the OneDrive folder exists and shows status icons; choose “Always Keep on This Device” for the class folder.</li>
 </ul>
 </section>
-<section id="derive-a-canopy-height-model-dsm-dtm" class="level3">
-<h3 class="anchored" data-anchor-id="derive-a-canopy-height-model-dsm-dtm">4. Derive a Canopy Height Model (DSM − DTM)</h3>
+<section id="linux-rclone" class="level3">
+<h3 class="anchored" data-anchor-id="linux-rclone">Linux (rclone)</h3>
 <ul>
-<li>Open <strong>Raster ▸ Raster Calculator</strong> and compute <code>"SJER2013_DSM.tif" - "SJER2013_DTM.tif"</code>.</li>
-<li>Save the output as <code>SJER_chm_qgis.tif</code> inside <code>data/project_4/outputs</code>. In the export/ save file dialogue, set the NoData equal to <code>-9999</code> (scroll to the bottom of the dialogue to do the NoData).</li>
-<li>Bring the CHM into the map, apply a graduated style with 2 m class breaks (0–2, 2–5, 5–10, 10–20, &gt;20 m) by using singleband pseudocolor as the render type, and discrete interpolation. Label the legend classes clearly.</li>
+<li>Install rclone (e.g., <code>sudo apt install rclone</code>).</li>
+<li>Run <code>rclone config</code> → <code>n</code> for new remote → name it (e.g., <code>calpoly-onedrive</code>) → storage type <code>onedrive</code>.</li>
+<li>Use the browser flow to sign in with your Cal Poly email and complete SSO/MFA when prompted.</li>
+<li>Create a local sync folder (e.g., <code>mkdir ~/CalPolyOneDrive</code>).</li>
+<li>One-time sync: <code>rclone sync calpoly-onedrive: ~/CalPolyOneDrive</code>.</li>
+<li>Optional mount for live access (requires FUSE): <code>rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes</code> (keep terminal open).</li>
+<li>Note any errors and how you resolved them (e.g., MFA prompts, permission issues).</li>
 </ul>
-</section>
-<section id="summarize-elevation-and-canopy-stats" class="level3">
-<h3 class="anchored" data-anchor-id="summarize-elevation-and-canopy-stats">5. Summarize Elevation and Canopy Stats</h3>
-<ul>
-<li>Create a plot boundary vector file by extracting the extent of the DSM, use a scratch layer.</li>
-<li>Run <strong>Raster ▸ Zonal statistics</strong> twice: once for DSM, once for CHM. Calculate mean, min, max, standard deviation, and count; write results into fields prefixed <code>DSM_</code> and <code>CHM_</code>. Save the resulting vector as `project_4/NEON-DS-Field-Site-Spatial-Data/SJER/plot.geogjson’.</li>
-</ul>
-<p><u><strong>Capture a screenshot of the attribute table showing the computed stats.</strong></u></p>
-</section>
-</section>
-<section id="reflection-deliverables" class="level2">
-<h2 class="anchored" data-anchor-id="reflection-deliverables">Reflection &amp; Deliverables</h2>
-<ul>
-<li>Table displaying zonal stats results</li>
-<li><code>dsm_render.png</code>, <code>dtm_render.png</code>, <code>sjer_rgb_map.png</code></li>
-<li>Screenshots of metadata panels, zonal statistics table (include timestamps).</li>
-</ul>
-</section>
-</section>
-<section id="part-2" class="level1">
-<h1>Part 2</h1>
-<p><strong>Download data</strong> for <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/IgAhORxF2PtRRrtnycd25E56AXpYGpyTdPoqMhJC_xQJsL4?e=e3RMlj">Cachuma Reservoir</a></p>
-<p>It includes:</p>
-<ul>
-<li>a DEM from summer of 2018 (as tiles)</li>
-<li>Sentinel-2 image from July, 2018</li>
-<li>Sentinel-2 image from February, 2014</li>
-</ul>
-<section id="task" class="level2">
-<h2 class="anchored" data-anchor-id="task">Task</h2>
-<p>Estimate the change in the volume of water that was in the reservoir between summer, 2018 and February, 2024. This can be done using tools that we have already used in this class.</p>
-</section>
-<section id="deliverables" class="level2">
-<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
-<p>A short document with:</p>
-<ul>
-<li>Methods: Write a clear explanation of what you did, and why. Document the steps you took, using figures where needed.<br>
-</li>
-<li>Solution: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.</li>
-</ul>
-<blockquote class="blockquote">
-<p>Hints:<br>
-You will need to mosaic the raster tiles. You used build vrt in the section above to stack bands. Now use it to mosaic tiles. Think about the differences between mosaicing and stacking.<br>
-For a sanity check on your solution, the total volume of the reservoir is currently estimated as 232,000,000 <span class="math inline">\(m^{3}\)</span></p>
-</blockquote>
+<p>You may have to ask the IT department to approve rclone to attach to your OneDrive (and wait for them to do so), if this is the case it will prompt you to do so. If you are having problems consult the <a href="https://github.com/rclone/rclone">rclone documentation</a>.</p>
 
 
 </section>
