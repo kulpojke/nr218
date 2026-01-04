@@ -2,28 +2,20 @@
 
 
 ## Class Details
-+ _Location_  
-+ Times:
-  - [Monday:]{style="font-size:0.8em"}  
-    [5:10 - 6:00 Lecture]{style="font-size:0.8em"}  
-    [6:10 - 9:00 Lab]{style="font-size:0.8em"}  
-  - [Wednesday]{style="font-size:0.8em"}  
-    [6:10 - 9:00 Lab]{style="font-size:0.8em"}  
+Building 10 (Erhart Agriculture, a.k.a. part of _Aglish_), Room 204 
 
+Monday: 9:10 - 1:00  
+Wednesday: (9:10 - 12:00) 
 
 ## Instructor Details
-+ Michael Huggins
-+ Office Hours:  
-  - Building 72 (Plant Conservatory)
-    Room 107  
-    Mondays 2:30 - 4:30s  
-
-
+Michael Huggins  
+Office Hours: Mondays 2:30 - 4:30  
+Building 72-107 (Plant Conservatory)   
+    
 ## Learning Goals
-+ Analyze spatial data  
-+ Create maps using geospatial software
-+ Produce quality graphics
-+ Apply skills in Remote Sensing, GIS, and data science to solve a problem of your own design
++ How to formulate and answer problems using spatial data  
++ How to create quality maps and graphics
++ Apply skills in remote sensing, GIS, and data science to solve a problem of your own design
 + Understand basic principles of GIS
 
 
