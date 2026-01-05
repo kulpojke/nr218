@@ -79,6 +79,10 @@ Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=
 
 :::
 
+##
+
+![Family tree of modern general purpose operating systems.  With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX.](img/os_phylogeny.png){fig-alt="Schematic showing pointer to a file or memory address" fig-cap=""}
+
 ## File Paths and Directories
 
 :::{r-stack}
@@ -99,3 +103,43 @@ Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=
 :::
 
 :::
+
+## Terminals and Shells 
+
+If you have a deep emotional connection to MS Windows, prepare to be offended!
+
+## Terminals Across Operating Systems {style="font-size:0.7em"}
+
+- **Linux**: terminals are native; `/bin/bash`, `/bin/zsh`, or others under the same POSIX conventions.
+- **macOS**: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.
+- **Windows**: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages.
+
+## The Windows Terminal Zoo {style="font-size:0.7em"}
+
+- **Command Prompt (`cmd.exe`)**: legacy DOS-style environment with limited scripting features.
+- **PowerShell (5.x)** vs **PowerShell 7+**: different .NET runtimes, different module compatibility.
+- **Git Bash / MSYS2**: provides a GNU userland inside Windows; paths need translation.
+- **Environment-specific shells**: `Anaconda Prompt`, `OSGeo4W Shell`, etc., inject toolchains and custom env vars; each behaves slightly differently.
+
+## Why Does `cmd.exe` Feel Janky? {style="font-size:0.7em"}
+
+- Command language rooted in DOS; minimal quoting, no pipelines beyond simple `|`.
+- Lacks native concepts like environment exports.
+- Encoding quirks (Code Page 437 vs UTF-8) cause unexpected character issues.
+- File globbing and path separators differ (`\` vs `/`), breaking cross-platform scripts.
+
+## PowerShell vs Bash {style="font-size:0.7em"}
+
+- PowerShell is object-oriented: pipelines pass .NET objects, not plain strings.
+- Bash pipelines stream text; tools like `cat`, `grep`, `awk` compose seamlessly.
+- Example (Bash):
+
+```bash
+cat access.log | grep "GET /api" | wc -l
+```
+
+- PowerShell equivalent:
+
+```powershell
+Get-Content access.log | Select-String "GET /api" | Measure-Object | Select-Object -ExpandProperty Count
+```

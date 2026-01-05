@@ -56,11 +56,53 @@
     "text": "Data\n\n\n\n“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”\n“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.” -OED\n\n\n\n\n\n\n\nData is stored on a computer as zeros and ones .\n\nData is stored at some physical location on the disk, and a pointer is saved which is later used to find the file.\nThe details of this are managed for you by applications or programming languages by representing this relationship as a path.\n\n\n\n\n\nA pointer (a) pointing to the memory address associated with a variable (b), i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.\n\n\n\nImage Source: Wikimedia /Sven"
   },
   {
+    "objectID": "index.html#section-1",
+    "href": "index.html#section-1",
+    "title": "NR 218",
+    "section": "",
+    "text": "Family tree of modern general purpose operating systems. With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX."
+  },
+  {
     "objectID": "index.html#file-paths-and-directories",
     "href": "index.html#file-paths-and-directories",
     "title": "NR 218",
     "section": "File Paths and Directories",
     "text": "File Paths and Directories"
+  },
+  {
+    "objectID": "index.html#terminals-and-shells",
+    "href": "index.html#terminals-and-shells",
+    "title": "NR 218",
+    "section": "Terminals and Shells",
+    "text": "Terminals and Shells\nIf you have a deep emotional connection to MS Windows, prepare to be offended!"
+  },
+  {
+    "objectID": "index.html#terminals-across-operating-systems",
+    "href": "index.html#terminals-across-operating-systems",
+    "title": "NR 218",
+    "section": "Terminals Across Operating Systems",
+    "text": "Terminals Across Operating Systems\n\nLinux: terminals are native; /bin/bash, /bin/zsh, or others under the same POSIX conventions.\nmacOS: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.\nWindows: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages."
+  },
+  {
+    "objectID": "index.html#the-windows-terminal-zoo",
+    "href": "index.html#the-windows-terminal-zoo",
+    "title": "NR 218",
+    "section": "The Windows Terminal Zoo",
+    "text": "The Windows Terminal Zoo\n\nCommand Prompt (cmd.exe): legacy DOS-style environment with limited scripting features.\nPowerShell (5.x) vs PowerShell 7+: different .NET runtimes, different module compatibility.\nGit Bash / MSYS2: provides a GNU userland inside Windows; paths need translation.\nEnvironment-specific shells: Anaconda Prompt, OSGeo4W Shell, etc., inject toolchains and custom env vars; each behaves slightly differently."
+  },
+  {
+    "objectID": "index.html#why-does-cmd.exe-feel-janky",
+    "href": "index.html#why-does-cmd.exe-feel-janky",
+    "title": "NR 218",
+    "section": "Why Does cmd.exe Feel Janky?",
+    "text": "Why Does cmd.exe Feel Janky?\n\nCommand language rooted in DOS; minimal quoting, no pipelines beyond simple |.\nLacks native concepts like environment exports.\nEncoding quirks (Code Page 437 vs UTF-8) cause unexpected character issues.\nFile globbing and path separators differ (\\ vs /), breaking cross-platform scripts."
+  },
+  {
+    "objectID": "index.html#powershell-vs-bash",
+    "href": "index.html#powershell-vs-bash",
+    "title": "NR 218",
+    "section": "PowerShell vs Bash",
+    "text": "PowerShell vs Bash\n\nPowerShell is object-oriented: pipelines pass .NET objects, not plain strings.\nBash pipelines stream text; tools like cat, grep, awk compose seamlessly.\nExample (Bash):\n\ncat access.log | grep \"GET /api\" | wc -l\n\nPowerShell equivalent:\n\nGet-Content access.log | Select-String \"GET /api\" | Measure-Object | Select-Object -ExpandProperty Count"
   },
   {
     "objectID": "index.html#what-is-gis",
@@ -119,8 +161,8 @@
     "text": "Direction\nThe position of a feature or phenomenon on the surface of the earth relative to some reference point\n\nEgocentric location, to my left\nLandmark direction, towards the mountain\n\nIn geography and GIS, there are three more standard benchmarks that are used to define the directions:\nTrue north (and south) is towards the point at which the axis of the earth’s rotation intersects the earth’s surface\nMagnetic north is towards where the Earth’s magnetic fields merge in the North\nGrid north is the northward direction of the grid lines of latitude and longitude on a map"
   },
   {
-    "objectID": "index.html#section-1",
-    "href": "index.html#section-1",
+    "objectID": "index.html#section-2",
+    "href": "index.html#section-2",
     "title": "NR 218",
     "section": "",
     "text": "True north\n\n\nMagnetic north\n\n\nGrid north"
@@ -168,8 +210,8 @@
     "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
   },
   {
-    "objectID": "index.html#section-2",
-    "href": "index.html#section-2",
+    "objectID": "index.html#section-3",
+    "href": "index.html#section-3",
     "title": "NR 218",
     "section": "",
     "text": "Right-click layer –&gt; Open Attribute Table"
@@ -217,8 +259,8 @@
     "text": "What is Metadata\n\nData about the data, e.g. units, date collected, instruments used…"
   },
   {
-    "objectID": "index.html#section-3",
-    "href": "index.html#section-3",
+    "objectID": "index.html#section-4",
+    "href": "index.html#section-4",
     "title": "NR 218",
     "section": "",
     "text": "Checkout Ticket - Some Basic GIS Concepts\n\n    \n    \n    Submit"
@@ -273,29 +315,29 @@
     "text": "Cloud Storage\nMany options, but mounting Cal Poly One Drive as a disk is is probably the simplest.\nSee the Cal Poly tutorial here or try this, for Linux users or the computer savvy."
   },
   {
-    "objectID": "index.html#section-4",
-    "href": "index.html#section-4",
-    "title": "NR 218",
-    "section": "",
-    "text": "Download SPR_data.zip here (right-click and “save link as”)\nExtract the file (Linux, Windows, Mac), and place in appropriate file location (Remember, organize your files!)\nOpen QGIS"
-  },
-  {
     "objectID": "index.html#section-5",
     "href": "index.html#section-5",
     "title": "NR 218",
     "section": "",
-    "text": "Open the files from the directory you just extracted\n\nMethod 1\n\nUse the file location in the ‘Browser’ panel\n\nDrag and and drop files into the Layers Panel \n\n\nMethod 2\n\nPress ctrl-shift-v (cmd-shift-v on Mac)\nClick  to browse for file then click .\n\nYou can select multiple files at once when browsing\nClose window when finished."
+    "text": "Download SPR_data.zip here (right-click and “save link as”)\nExtract the file (Linux, Windows, Mac), and place in appropriate file location (Remember, organize your files!)\nOpen QGIS"
   },
   {
     "objectID": "index.html#section-6",
     "href": "index.html#section-6",
     "title": "NR 218",
     "section": "",
-    "text": "Now the layers should be visible in the panel, and on the map\n\n\n\n\n\n\n\n\nToggle on/off layers by clicking checkboxes\nChange layer order by dragging within panel\nWhat do the little icons between the check and the layer name mean?\nRight click a layer, select Open Attribute Table\nSelect rows of attribute table by clicking on the left edge (where they are numbered)\n\nNote that the corresponding features are highlighted on the map"
+    "text": "Open the files from the directory you just extracted\n\nMethod 1\n\nUse the file location in the ‘Browser’ panel\n\nDrag and and drop files into the Layers Panel \n\n\nMethod 2\n\nPress ctrl-shift-v (cmd-shift-v on Mac)\nClick  to browse for file then click .\n\nYou can select multiple files at once when browsing\nClose window when finished."
   },
   {
     "objectID": "index.html#section-7",
     "href": "index.html#section-7",
+    "title": "NR 218",
+    "section": "",
+    "text": "Now the layers should be visible in the panel, and on the map\n\n\n\n\n\n\n\n\nToggle on/off layers by clicking checkboxes\nChange layer order by dragging within panel\nWhat do the little icons between the check and the layer name mean?\nRight click a layer, select Open Attribute Table\nSelect rows of attribute table by clicking on the left edge (where they are numbered)\n\nNote that the corresponding features are highlighted on the map"
+  },
+  {
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
     "title": "NR 218",
     "section": "",
     "text": "Panning and zooming (The mouse wheel also zooms while in pan mode)\n\n\nSelect tools\n\n\nInfo"
@@ -357,8 +399,8 @@
     "text": "Export map\n\nOnce you have something satisfactory, create an export of your map to share.\n\nLayout &gt; Export as image\n\nChoose file type\n\nSet save location\n\n\n\n\nOpen the image file we just saved to verify results"
   },
   {
-    "objectID": "index.html#section-8",
-    "href": "index.html#section-8",
+    "objectID": "index.html#section-9",
+    "href": "index.html#section-9",
     "title": "NR 218",
     "section": "",
     "text": "What Are some problems here"
@@ -469,8 +511,8 @@
     "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a developable surface (flattenable surface).\n\n\nThere are three commonly used developable surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe developable surface can be oriented in many ways.\n\nEach developable surface can be in one of two cases tangent and secant\n\n\n\n\nThe aspect of the projection is the orientation of the developable surface relative to the axis of the earth\n\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection (with normal aspect) is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nLike the Waterman Butterfly\n\n\n\n\nExamine the size distortions on a Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
   },
   {
-    "objectID": "index.html#section-9",
-    "href": "index.html#section-9",
+    "objectID": "index.html#section-10",
+    "href": "index.html#section-10",
     "title": "NR 218",
     "section": "",
     "text": "Real-time Waterman Wind Map"
@@ -595,29 +637,29 @@
     "text": "Tutorial - Copernicus Browser\n\nOpen Copernicus Browser (right click to open in new tab)\nFirst, make an account!\n\n\nregistration is free and helps track use of the tool (and manage processing quotas)"
   },
   {
-    "objectID": "index.html#section-11",
-    "href": "index.html#section-11",
-    "title": "NR 218",
-    "section": "",
-    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel\nFollow the steps to register, confirm your email, and then go back to the main page."
-  },
-  {
     "objectID": "index.html#section-12",
     "href": "index.html#section-12",
     "title": "NR 218",
     "section": "",
-    "text": "Now let’s get a feel for what the tool can do!"
+    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel\nFollow the steps to register, confirm your email, and then go back to the main page."
   },
   {
     "objectID": "index.html#section-13",
     "href": "index.html#section-13",
     "title": "NR 218",
     "section": "",
+    "text": "Now let’s get a feel for what the tool can do!"
+  },
+  {
+    "objectID": "index.html#section-14",
+    "href": "index.html#section-14",
+    "title": "NR 218",
+    "section": "",
     "text": "Look at the Garnet Fire on CalFire inciweb.\n\n\n\nIn Copernicus Browser (in visualize mode), paste the lat, lon into the search, hit enter\n\n\n\n\nChange the date to 2025-09-07\n\n\n\n\nAdjust image so the fire is in view\n\n\n\n\n\n\n\nLets try a different visualization\nCopernicus offers a SWIR based composite visualization that is quite good for burn detection."
   },
   {
-    "objectID": "index.html#section-15",
-    "href": "index.html#section-15",
+    "objectID": "index.html#section-16",
+    "href": "index.html#section-16",
     "title": "NR 218",
     "section": "",
     "text": "That is a nice way to visualize but for actual detection purposed using a spectral index is better\nNormalized Burn Ratio (NBR) is the most obvious choice here. \\[\n\\begin{align}\nNBR &= \\frac{NIR - SWIR2}{NIR + SWIR2} \\\\\n  &= \\frac{B8 - B12}{B8 + B12}  \\mathrm{For Sentinel 2}\n\\end{align}\n\\]\n\nExercise - Create and download a NBR geotiff for before and after the fire."
@@ -644,29 +686,29 @@
     "text": "Step One - Registering for GEE\n\n\nTo connect your Google account, go to https://code.earthengine.google.com/\nOnce you’ve logged in, you should see something like this:\n\n\n\nWe want to register a new project"
   },
   {
-    "objectID": "index.html#section-16",
-    "href": "index.html#section-16",
-    "title": "NR 218",
-    "section": "",
-    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
-  },
-  {
     "objectID": "index.html#section-17",
     "href": "index.html#section-17",
     "title": "NR 218",
     "section": "",
-    "text": "This will take you to a form where you can confirm your eligibility. Here’s an example of how to fill it out:"
+    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
   },
   {
     "objectID": "index.html#section-18",
     "href": "index.html#section-18",
     "title": "NR 218",
     "section": "",
-    "text": "Now let’s go back to the Code Editor."
+    "text": "This will take you to a form where you can confirm your eligibility. Here’s an example of how to fill it out:"
   },
   {
     "objectID": "index.html#section-19",
     "href": "index.html#section-19",
+    "title": "NR 218",
+    "section": "",
+    "text": "Now let’s go back to the Code Editor."
+  },
+  {
+    "objectID": "index.html#section-20",
+    "href": "index.html#section-20",
     "title": "NR 218",
     "section": "",
     "text": "These are the main panels to be aware of:"
@@ -679,29 +721,29 @@
     "text": "Step Two - Editing and Running a Script\n\n\nIn the scripts panel, select New &gt; File and name it something useful\nYou should see it show up under the Owner dropdown:\n\n\n\n\n\nClick on the file to open it, and then move to the Code Editor. It should be blank to start."
   },
   {
-    "objectID": "index.html#section-20",
-    "href": "index.html#section-20",
-    "title": "NR 218",
-    "section": "",
-    "text": "Let’s try running some code! In the editor window, type the following command:\n\n\n\nThen hit run. Look at the console - what do you see?"
-  },
-  {
     "objectID": "index.html#section-21",
     "href": "index.html#section-21",
     "title": "NR 218",
     "section": "",
-    "text": "Now let’s try something a little more complicated:\n// Note - lines that start like this (//) are comments, meaning they won't be run like regular code\n\n// These are the 5 largest cities in the world: \n// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo\n\n// Create a list named 'largeCities' with the names of all the above cities\n\nvar largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; \n\n// Print the list \n\nprint(largeCities)\nCopy the code above and paste it into your code editor, hit run, and explore the output in the console."
+    "text": "Let’s try running some code! In the editor window, type the following command:\n\n\n\nThen hit run. Look at the console - what do you see?"
   },
   {
     "objectID": "index.html#section-22",
     "href": "index.html#section-22",
     "title": "NR 218",
     "section": "",
-    "text": "Next, we’re going to explore some spatial data.\n\nIn the search bar at the top of page, type in “California Polytechnic State University”\nClick on the search result, and the map view should update accordingly\n\n\n\n\nAdd a marker to the map by clicking this icon:\n\n\n\nPlace the point somewhere in the middle of campus:\n\n\n\n\n\n\nAt the top of the code editor, you should now see a new var called “geometry”, which gives us the coordinates of our point\n\n\n\n\n\nWe can now reference the point in new lines of code, like we did with “largeCities”"
+    "text": "Now let’s try something a little more complicated:\n// Note - lines that start like this (//) are comments, meaning they won't be run like regular code\n\n// These are the 5 largest cities in the world: \n// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo\n\n// Create a list named 'largeCities' with the names of all the above cities\n\nvar largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; \n\n// Print the list \n\nprint(largeCities)\nCopy the code above and paste it into your code editor, hit run, and explore the output in the console."
   },
   {
     "objectID": "index.html#section-23",
     "href": "index.html#section-23",
+    "title": "NR 218",
+    "section": "",
+    "text": "Next, we’re going to explore some spatial data.\n\nIn the search bar at the top of page, type in “California Polytechnic State University”\nClick on the search result, and the map view should update accordingly\n\n\n\n\nAdd a marker to the map by clicking this icon:\n\n\n\nPlace the point somewhere in the middle of campus:\n\n\n\n\n\n\nAt the top of the code editor, you should now see a new var called “geometry”, which gives us the coordinates of our point\n\n\n\n\n\nWe can now reference the point in new lines of code, like we did with “largeCities”"
+  },
+  {
+    "objectID": "index.html#section-24",
+    "href": "index.html#section-24",
     "title": "NR 218",
     "section": "",
     "text": "To add in other data layers, let’s look in the Earth Engine Data Catalog\nUsing the search bar, find the Sentinel-2 Dataset and click on the Level-1C option\n\n\n\n\nScroll down to the “Explore with Earth Engine” section, and copy the JavaScript code\nGo back to the code editor, and paste the code onto a new line\n\n\n\nBefore we run it, let’s make a few changes to the code.\n\nFirst, let’s change these dates to be more recent:\n\n\n\nPick a month in 2025, and set the dates to be the first and end of the month\n\n\n\n\n\nNext, let’s change the center point of the map to the point we dropped earlier:\n\n\n\n\n\nReplace the entire line with the following code:\n\n\nMap.centerObject(geometry, 12);\n\n\nAlternatively, you can just replace the first two numbers with the coordinate values saved to “geometry”\n\n\n\n\nHit run, and watch what happens in the map viewer! It may take a second for the layer to load."
@@ -714,8 +756,8 @@
     "text": "What is this code doing?\n\nThe quality of satellite imagery can be significantly affected by the cloud cover on any given day\nTo compensate for this, it can be helpful to generate a composite image of only the days with clear visibility over a month"
   },
   {
-    "objectID": "index.html#section-24",
-    "href": "index.html#section-24",
+    "objectID": "index.html#section-25",
+    "href": "index.html#section-25",
     "title": "NR 218",
     "section": "",
     "text": "From here, we could clip (or mask, in the case of raster images) the Sentinel image to a set boundary by uploading a shapefile or geojson\nWe can also export map layers, which will be saved to our Google Drive"
@@ -728,8 +770,8 @@
     "text": "Google Earth Engine QGIS Plugin\nThere is also a GEE plugin for QGIS!"
   },
   {
-    "objectID": "index.html#section-25",
-    "href": "index.html#section-25",
+    "objectID": "index.html#section-26",
+    "href": "index.html#section-26",
     "title": "NR 218",
     "section": "",
     "text": "We can do the same operation we just did through the plugin:"
@@ -763,15 +805,15 @@
     "text": "Spatial overlays\n\n\n\nIntersect soils with bufffer, look at attributes\nIntersect buffer with soils, look at attributes\n\n\n\n\nUnion\n\n\n\nSymmetric Difference\n\nTry it with buffer and soils"
   },
   {
-    "objectID": "index.html#section-26",
-    "href": "index.html#section-26",
+    "objectID": "index.html#section-27",
+    "href": "index.html#section-27",
     "title": "NR 218",
     "section": "",
     "text": "Check topology Vector --&gt; Geometry --&gt; Check Validity"
   },
   {
-    "objectID": "index.html#section-27",
-    "href": "index.html#section-27",
+    "objectID": "index.html#section-28",
+    "href": "index.html#section-28",
     "title": "NR 218",
     "section": "",
     "text": "Link to tutorial about editing vectors."
@@ -812,8 +854,8 @@
     "text": "Spatial Joins\nDownload Cities\n\nUse the “join attributes by location” tool from the geoprocessing toolbox to join cities to counties\nWhy someone would do this particular join I don now know, but it illustrates the point.\nThere will be problems. Hint: “validate geometries and”fix geometries” tools will be useful.\n\nChallenge - Figure out how to join counties to cities, and calculate total urban area for each county."
   },
   {
-    "objectID": "index.html#section-28",
-    "href": "index.html#section-28",
+    "objectID": "index.html#section-29",
+    "href": "index.html#section-29",
     "title": "NR 218",
     "section": "",
     "text": "Start Downloads:\n\nfire perimeters\nNAIP image\n\nAlternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:\n\nfire_example/\n├── data/\n│   ├── subset_of_cal_hist_fires.geojson\n│   └── naip_2022.tif\n└── docs/"
@@ -840,8 +882,8 @@
     "text": "NAIP Imagery\n\nNational Agriculture Imagery Program (NAIP)\n\nHigh-resolution aerial imagery of the continental United States\nCollected during agricultural growing seasons\nTypically 4-band: Red, Green, Blue, Near-Infrared (NIR)\n60 cm (or better) spatial resolution\nUpdated on a 2-3 year cycle for each state\n\nLearn more: USDA NAIP Program"
   },
   {
-    "objectID": "index.html#section-29",
-    "href": "index.html#section-29",
+    "objectID": "index.html#section-30",
+    "href": "index.html#section-30",
     "title": "NR 218",
     "section": "",
     "text": "Hopefully by now you have this data.\n\nfire perimeters\nNAIP image\n\nFire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from \n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf"
@@ -875,8 +917,8 @@
     "text": "Fire Example (4)\nNDVI values\n\n\n\nValue Range\nInterpretation\n\n\n\n\n0\nWater, clouds, or non-vegetated surfaces.\n\n\n0 to 0.1\nExposed rock, sand, or snow.\n\n\n0.2 to 0.5\nSparse vegetation,\n\n\n0.6 to 0.9\nDense Vegetation"
   },
   {
-    "objectID": "index.html#section-30",
-    "href": "index.html#section-30",
+    "objectID": "index.html#section-31",
+    "href": "index.html#section-31",
     "title": "NR 218",
     "section": "",
     "text": "\\[\nSAVI = \\frac{(NIR - Red) \\times (1 + L)}{NIR + Red + L}\n\\]\nWhere \\(L\\) is often 0.5, but adjusted for exposed soil"
@@ -917,8 +959,8 @@
     "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, as seen to the right.\nFinally, download this Land use raster and save.\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   ├── dem_1m_6339.tif\n│   └── 2016...classification.tiff\n│\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
   },
   {
-    "objectID": "index.html#section-31",
-    "href": "index.html#section-31",
+    "objectID": "index.html#section-32",
+    "href": "index.html#section-32",
     "title": "NR 218",
     "section": "",
     "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\nUse the AOI and the three layers you just found to make a polygon called unburned, i.e neither.\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin."
@@ -1673,11 +1715,53 @@
     "text": "Data\n\n\n\n“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”\n“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.” -OED\n\n\n\n\n\n\n\nData is stored on a computer as zeros and ones .\n\nData is stored at some physical location on the disk, and a pointer is saved which is later used to find the file.\nThe details of this are managed for you by applications or programming languages by representing this relationship as a path.\n\n\n\n\n\nA pointer (a) pointing to the memory address associated with a variable (b), i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.\n\n\n\nImage Source: Wikimedia /Sven"
   },
   {
+    "objectID": "computers_slides.html#section",
+    "href": "computers_slides.html#section",
+    "title": "",
+    "section": "",
+    "text": "Family tree of modern general purpose operating systems. With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX."
+  },
+  {
     "objectID": "computers_slides.html#file-paths-and-directories",
     "href": "computers_slides.html#file-paths-and-directories",
     "title": "",
     "section": "File Paths and Directories",
     "text": "File Paths and Directories"
+  },
+  {
+    "objectID": "computers_slides.html#terminals-and-shells",
+    "href": "computers_slides.html#terminals-and-shells",
+    "title": "",
+    "section": "Terminals and Shells",
+    "text": "Terminals and Shells\nIf you have a deep emotional connection to MS Windows, prepare to be offended!"
+  },
+  {
+    "objectID": "computers_slides.html#terminals-across-operating-systems",
+    "href": "computers_slides.html#terminals-across-operating-systems",
+    "title": "",
+    "section": "Terminals Across Operating Systems",
+    "text": "Terminals Across Operating Systems\n\nLinux: terminals are native; /bin/bash, /bin/zsh, or others under the same POSIX conventions.\nmacOS: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.\nWindows: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages."
+  },
+  {
+    "objectID": "computers_slides.html#the-windows-terminal-zoo",
+    "href": "computers_slides.html#the-windows-terminal-zoo",
+    "title": "",
+    "section": "The Windows Terminal Zoo",
+    "text": "The Windows Terminal Zoo\n\nCommand Prompt (cmd.exe): legacy DOS-style environment with limited scripting features.\nPowerShell (5.x) vs PowerShell 7+: different .NET runtimes, different module compatibility.\nGit Bash / MSYS2: provides a GNU userland inside Windows; paths need translation.\nEnvironment-specific shells: Anaconda Prompt, OSGeo4W Shell, etc., inject toolchains and custom env vars; each behaves slightly differently."
+  },
+  {
+    "objectID": "computers_slides.html#why-does-cmd.exe-feel-janky",
+    "href": "computers_slides.html#why-does-cmd.exe-feel-janky",
+    "title": "",
+    "section": "Why Does cmd.exe Feel Janky?",
+    "text": "Why Does cmd.exe Feel Janky?\n\nCommand language rooted in DOS; minimal quoting, no pipelines beyond simple |.\nLacks native concepts like environment exports.\nEncoding quirks (Code Page 437 vs UTF-8) cause unexpected character issues.\nFile globbing and path separators differ (\\ vs /), breaking cross-platform scripts."
+  },
+  {
+    "objectID": "computers_slides.html#powershell-vs-bash",
+    "href": "computers_slides.html#powershell-vs-bash",
+    "title": "",
+    "section": "PowerShell vs Bash",
+    "text": "PowerShell vs Bash\n\nPowerShell is object-oriented: pipelines pass .NET objects, not plain strings.\nBash pipelines stream text; tools like cat, grep, awk compose seamlessly.\nExample (Bash):\n\ncat access.log | grep \"GET /api\" | wc -l\n\nPowerShell equivalent:\n\nGet-Content access.log | Select-String \"GET /api\" | Measure-Object | Select-Object -ExpandProperty Count"
   },
   {
     "objectID": "introduction.html#class-details",

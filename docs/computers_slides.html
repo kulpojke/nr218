@@ -27,6 +27,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-e9506f4cf0740638825fabafd1e71958.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -184,6 +249,10 @@
 </div>
 </div>
 </section>
+<section id="section" class="slide level2 center">
+<h2></h2>
+
+<img data-src="img/os_phylogeny.png" alt="Schematic showing pointer to a file or memory address" class="r-stretch quarto-figure-center"><p class="caption">Family tree of modern general purpose operating systems. With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX.</p></section>
 <section id="file-paths-and-directories" class="slide level2 center">
 <h2>File Paths and Directories</h2>
 <div class="{r-stack}">
@@ -200,6 +269,49 @@
 
 </div>
 </div>
+</section>
+<section id="terminals-and-shells" class="slide level2 center">
+<h2>Terminals and Shells</h2>
+<p>If you have a deep emotional connection to MS Windows, prepare to be offended!</p>
+</section>
+<section id="terminals-across-operating-systems" class="slide level2 center" style="font-size:0.7em">
+<h2>Terminals Across Operating Systems</h2>
+<ul>
+<li><strong>Linux</strong>: terminals are native; <code>/bin/bash</code>, <code>/bin/zsh</code>, or others under the same POSIX conventions.</li>
+<li><strong>macOS</strong>: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.</li>
+<li><strong>Windows</strong>: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages.</li>
+</ul>
+</section>
+<section id="the-windows-terminal-zoo" class="slide level2 center" style="font-size:0.7em">
+<h2>The Windows Terminal Zoo</h2>
+<ul>
+<li><strong>Command Prompt (<code>cmd.exe</code>)</strong>: legacy DOS-style environment with limited scripting features.</li>
+<li><strong>PowerShell (5.x)</strong> vs <strong>PowerShell 7+</strong>: different .NET runtimes, different module compatibility.</li>
+<li><strong>Git Bash / MSYS2</strong>: provides a GNU userland inside Windows; paths need translation.</li>
+<li><strong>Environment-specific shells</strong>: <code>Anaconda Prompt</code>, <code>OSGeo4W Shell</code>, etc., inject toolchains and custom env vars; each behaves slightly differently.</li>
+</ul>
+</section>
+<section id="why-does-cmd.exe-feel-janky" class="slide level2 center" style="font-size:0.7em">
+<h2>Why Does <code>cmd.exe</code> Feel Janky?</h2>
+<ul>
+<li>Command language rooted in DOS; minimal quoting, no pipelines beyond simple <code>|</code>.</li>
+<li>Lacks native concepts like environment exports.</li>
+<li>Encoding quirks (Code Page 437 vs UTF-8) cause unexpected character issues.</li>
+<li>File globbing and path separators differ (<code>\</code> vs <code>/</code>), breaking cross-platform scripts.</li>
+</ul>
+</section>
+<section id="powershell-vs-bash" class="slide level2 center" style="font-size:0.7em">
+<h2>PowerShell vs Bash</h2>
+<ul>
+<li>PowerShell is object-oriented: pipelines pass .NET objects, not plain strings.</li>
+<li>Bash pipelines stream text; tools like <code>cat</code>, <code>grep</code>, <code>awk</code> compose seamlessly.</li>
+<li>Example (Bash):</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="fu">cat</span> access.log <span class="kw">|</span> <span class="fu">grep</span> <span class="st">"GET /api"</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>PowerShell equivalent:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a></a><span class="fu">Get-Content</span> access<span class="op">.</span><span class="fu">log</span> <span class="op">|</span> <span class="fu">Select-String</span> <span class="st">"GET /api"</span> <span class="op">|</span> <span class="fu">Measure-Object</span> <span class="op">|</span> <span class="fu">Select-Object</span> <span class="op">-</span>ExpandProperty Count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section></section>
