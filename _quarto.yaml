@@ -7,7 +7,8 @@ project:
     - project_1.md
     - project_2.md
     - project_3.md
-    - project_4.md    
+    - project_4.md
+    - lab_11.qmd
     - final_proj.md
     - introduction.qmd
     - computers.qmd

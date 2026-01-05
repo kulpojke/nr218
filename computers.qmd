@@ -56,7 +56,8 @@ Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=
 ::: {.columns}
 ::: {.column}
 
-A [___path___]{style="font-size:1.3em"} is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. @fig-linux-paths shows the path to `index.qmd` in a terminal. The bottom line of the terminal displays `/home/michael/CP/nr218/index.qmd`. This is the _full path_ to `index.qmd`.  The delimiters are the character `/`. If you look back to @fig-os-tree, you see that the root directory is just `/`. The directory called "home" is directly below `/` in the hierarchy, thus the full path to home is `/home` (or `/home/`). Similarly the full path to the directory "michael" is `/home/michael` (or `/home/michael/`) etc... (but, `/home/michael/CP/nr218/index.qmd` would never be written `/home/michael/CP/nr218/index.qmd/` because `index.qmd` is not a directory, it does not contain other files). __In order for an application to use a file, it must know the path to that file.__
+A [___path___]{style="font-size:1.3em"} is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. @fig-linux-paths shows the path to `index.qmd` in a terminal. The bottom line of the terminal displays `/home/michael/CP/nr218/index.qmd`. This is the  _absolute path_ or _full path_ to `index.qmd`.  The delimiters are the character `/`. If you look back to @fig-os-tree, you see that the root directory is just `/`. The directory called "home" is directly below `/` in the hierarchy, thus the full path to home is `/home` (or `/home/`). Similarly the full path to the directory "michael" is `/home/michael` (or `/home/michael/`) etc... (but, `/home/michael/CP/nr218/index.qmd` would never be written `/home/michael/CP/nr218/index.qmd/` because `index.qmd` is not a directory, it does not contain other files). 
+
 
 :::
 ::: {.column}
@@ -68,6 +69,21 @@ A [___path___]{style="font-size:1.3em"} is a string that uniquely identifies an 
 
 :::
 :::
+
+Paths can also be written relative to the current directory, for example, when QGIS opens a saved project, the project file tells QGIS to load data from other files.  It does this by telling it where to find them relative to the project file.  For example if a project file `project.qgz` is stored in `/home/michael/CP/nr218/project` along with some data in a subdirectory, as shown below, the relative path to `some_data.tif` would be `data/some_data.tif`.  
+
+```
+project
+│
+├── data
+│   └── some_data.tif
+└── project.qgz
+```
+The advantage of using relative paths emerges when files are organized all within a project directory.  If one were to move the entire project directory to another parent directory, the project file still points to the needed files.  If files are outside of the project directory, or full paths were used, this would not be the case.
+
+
+__In order for an application to use a file, it must know the path to that file.__
+
 
 ::: {#tip-example .callout-tip}  
 ## Data storage
@@ -81,12 +97,7 @@ Data can be stored on a disk (as we have previously alluded to).  This type of m
 
 When an application is running, it typically stores the data it is actively using in RAM (or if it is large in temporary files on-disk)  This allows the application to run more quickly.  When the user wants to save changes that are held in these temporary forms of memory they must specify a file to save it to.  In most GUI based applications this is done via the _File_ menu, or using the keyboard shortcut, `Ctrl+S` (`Cmd+S` on macOS). 
 
-
-
-
-relative directories
-
-when you are working data in ram or saved as temporary files, need to save to avoid data loss
+When you are working in QGIS or any other GIS (or most other types of) application, you need to save to avoid data loss.  It is a good idea to frequently save your work by pressing `Ctrl+S` (`Cmd+S` on macOS).
 
 
 ### References

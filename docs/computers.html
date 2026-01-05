@@ -115,7 +115,7 @@ div.csl-indent {
 <li>Another important development occurred in 1980 when IBM contracted Microsoft to create an operation system for their personal computer. At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.</li>
 </ul>
 <p>Unix variants and Windows are by far the most common operating systems on general-purpose computers (desktops, laptops, and servers). <a href="#fig-os-tree" class="quarto-xref">Figure&nbsp;1</a> shows the lineage of common operating systems. GIS applications are almost always run on one of these platforms. By in large computers with OSs derived from UNIX and MS-DOS behave in the same ways, but there are some important differences (for a simple overview of differences see <a href="https://www.linuxjournal.com/content/linux-vs-windows">this article</a>). A few of these differences will come up from time to time during this course. The computers in the lab are Windows machines (😐). Many of you are probably using Macs with OSX (🗿). Maybe some of you are Linux users (🔥, 💅).</p>
-<div id="fig-os-tree" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Schematic showing pointer to a file or memory address" data-fig-cap="">
+<div id="fig-os-tree" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="" alt="Schematic showing pointer to a file or memory address">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-os-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/os_phylogeny.png" class="img-fluid figure-img" data-fig-cap="" alt="Schematic showing pointer to a file or memory address">
@@ -140,7 +140,7 @@ Figure&nbsp;1: Family tree of modern general purpose operating systems. With the
 <p>Data is stored on a computer as zeros and ones (too simple, see <a href="#tip-example" class="quarto-xref">Tip&nbsp;1</a>). When you store a file, the data is stored at some physical location on the disk, and a pointer is saved which is later used to find the file (see <a href="#fig-pointers" class="quarto-xref">Figure&nbsp;2</a>). The details of this are managed for you by applications or programming languages by representing this relationship as human readable symbols.</p>
 <p>In most modern computers, files are arranged in a hierarchical file system. The standard Linux filesystem is shown in <a href="#fig-linux-filesys" class="quarto-xref">Figure&nbsp;3</a>. In a hierarchal filesystem, files are arranged within nested directories (sometimes called folders). For example,</p>
 </div><div class="column">
-<div id="fig-pointers" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Schematic showing pointer to a file or memory address" data-fig-cap="A pointer a pointing to the memory address associated with a variable b, i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.">
+<div id="fig-pointers" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="A pointer a pointing to the memory address associated with a variable b, i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case." alt="Schematic showing pointer to a file or memory address">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pointers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/pointers.svg" class="img-fluid figure-img" data-fig-cap="A pointer a pointing to the memory address associated with a variable b, i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case." alt="Schematic showing pointer to a file or memory address">
@@ -169,7 +169,7 @@ Figure&nbsp;3: The linux filesystem
 <h2 class="anchored" data-anchor-id="paths">Paths</h2>
 <div class="columns">
 <div class="column">
-<p>A <span style="font-size:1.3em"><strong><em>path</em></strong></span> is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. <a href="#fig-linux-paths" class="quarto-xref">Figure&nbsp;4</a> shows the path to <code>index.qmd</code> in a terminal. The bottom line of the terminal displays <code>/home/michael/CP/nr218/index.qmd</code>. This is the <em>full path</em> to <code>index.qmd</code>. The delimiters are the character <code>/</code>. If you look back to <a href="#fig-os-tree" class="quarto-xref">Figure&nbsp;1</a>, you see that the root directory is just <code>/</code>. The directory called “home” is directly below <code>/</code> in the hierarchy, thus the full path to home is <code>/home</code> (or <code>/home/</code>). Similarly the full path to the directory “michael” is <code>/home/michael</code> (or <code>/home/michael/</code>) etc… (but, <code>/home/michael/CP/nr218/index.qmd</code> would never be written <code>/home/michael/CP/nr218/index.qmd/</code> because <code>index.qmd</code> is not a directory, it does not contain other files). <strong>In order for an application to use a file, it must know the path to that file.</strong></p>
+<p>A <span style="font-size:1.3em"><strong><em>path</em></strong></span> is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. <a href="#fig-linux-paths" class="quarto-xref">Figure&nbsp;4</a> shows the path to <code>index.qmd</code> in a terminal. The bottom line of the terminal displays <code>/home/michael/CP/nr218/index.qmd</code>. This is the <em>absolute path</em> or <em>full path</em> to <code>index.qmd</code>. The delimiters are the character <code>/</code>. If you look back to <a href="#fig-os-tree" class="quarto-xref">Figure&nbsp;1</a>, you see that the root directory is just <code>/</code>. The directory called “home” is directly below <code>/</code> in the hierarchy, thus the full path to home is <code>/home</code> (or <code>/home/</code>). Similarly the full path to the directory “michael” is <code>/home/michael</code> (or <code>/home/michael/</code>) etc… (but, <code>/home/michael/CP/nr218/index.qmd</code> would never be written <code>/home/michael/CP/nr218/index.qmd/</code> because <code>index.qmd</code> is not a directory, it does not contain other files).</p>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center" style="font-size:0.004em">
 <figure class="figure">
@@ -189,6 +189,14 @@ Figure&nbsp;4: Top: Linux terminal showing the full path to index.qmd. Bottom th
 </div>
 </div>
 </div>
+<p>Paths can also be written relative to the current directory, for example, when QGIS opens a saved project, the project file tells QGIS to load data from other files. It does this by telling it where to find them relative to the project file. For example if a project file <code>project.qgz</code> is stored in <code>/home/michael/CP/nr218/project</code> along with some data in a subdirectory, as shown below, the relative path to <code>some_data.tif</code> would be <code>data/some_data.tif</code>.</p>
+<pre><code>project
+│
+├── data
+│&nbsp;&nbsp; └── some_data.tif
+└── project.qgz</code></pre>
+<p>The advantage of using relative paths emerges when files are organized all within a project directory. If one were to move the entire project directory to another parent directory, the project file still points to the needed files. If files are outside of the project directory, or full paths were used, this would not be the case.</p>
+<p><strong>In order for an application to use a file, it must know the path to that file.</strong></p>
 <div id="tip-example" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -207,8 +215,7 @@ Tip&nbsp;1: Data storage
 <h2 class="anchored" data-anchor-id="volatile-and-non-volatile-memory">Volatile and Non-Volatile Memory</h2>
 <p>Data can be stored on a disk (as we have previously alluded to). This type of memory is called <strong><em>on-disk storage</em></strong>. We call on this type of storage <em>non-volatile</em> because when the program using the data is terminated, or the computer is turned off the data persists to be used later. This is in contrast to <strong><em>Random Access Memory</em></strong> (RAM), which is <em>volatile</em> (if the program terminates, the data held there is lost). In RAM the data sits in volatile memory cells addressed by numeric locations; the CPU accesses it directly with very low latency (quickly). All this is managed by the OS via pages and caches. Only in advanced cases does the user take an interest of the details of this process.</p>
 <p>When an application is running, it typically stores the data it is actively using in RAM (or if it is large in temporary files on-disk) This allows the application to run more quickly. When the user wants to save changes that are held in these temporary forms of memory they must specify a file to save it to. In most GUI based applications this is done via the <em>File</em> menu, or using the keyboard shortcut, <code>Ctrl+S</code> (<code>Cmd+S</code> on macOS).</p>
-<p>relative directories</p>
-<p>when you are working data in ram or saved as temporary files, need to save to avoid data loss</p>
+<p>When you are working in QGIS or any other GIS (or most other types of) application, you need to save to avoid data loss. It is a good idea to frequently save your work by pressing <code>Ctrl+S</code> (<code>Cmd+S</code> on macOS).</p>
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references">References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

@@ -2,19 +2,8 @@
 title: ""
 format:
   html:
-    theme: cyborg
+    theme: quartz
 ---
-
-__Changes:__
-
-+ __2025-11-11 - Band information in section 3 of part 1 was incorrect.__
-   + The table has been changed and now reflects the proper band values (band 58 is red, band 90 is NIR)
-   + also, band 90 was missing coordinate data, you may have notices it
-   would not work with the vrt building step.  This is because band 90 was plotting
-   into a 1m $\times$ 1m square on the prime meridian and equator.  As a result, the
-   build vrt function was trying to buils a vrt with 1m resolution than included
-   the actual site, and [Null Island](https://en.wikipedia.org/wiki/Null_Island).
-   + A fixeD version of band 90 can be downloaded [herE](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZHfrzYO7KZMniR4iCj4nYABFfDmEmYGbNlHaKVGeIkLBw?e=W4m1ug)
 
 # Project 4
 
