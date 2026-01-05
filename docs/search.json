@@ -735,20 +735,6 @@
     "text": "We can do the same operation we just did through the plugin:"
   },
   {
-    "objectID": "index.html#events",
-    "href": "index.html#events",
-    "title": "NR 218",
-    "section": "Events",
-    "text": "Events"
-  },
-  {
-    "objectID": "index.html#final-project-brainstorm",
-    "href": "index.html#final-project-brainstorm",
-    "title": "NR 218",
-    "section": "Final Project Brainstorm",
-    "text": "Final Project Brainstorm\nDue October 15th\nCome up with your own geospatial analysis idea. Submit a well thought out paragraph which describes:\n\nThe question/problem you have identified\nThe geographic data you will use to answer the question\nThe geoprocessing steps you will perform on the data\nThe expected outputs of your analysis\n\nYou may also frame your question as a hypothesis test (as in the Scientific Method)\n\nSubmit 1 pdf per group.\nIf you are having a hard time coming up with an idea come to me."
-  },
-  {
     "objectID": "index.html#buffer",
     "href": "index.html#buffer",
     "title": "NR 218",
@@ -777,15 +763,15 @@
     "text": "Spatial overlays\n\n\n\nIntersect soils with bufffer, look at attributes\nIntersect buffer with soils, look at attributes\n\n\n\n\nUnion\n\n\n\nSymmetric Difference\n\nTry it with buffer and soils"
   },
   {
-    "objectID": "index.html#section-28",
-    "href": "index.html#section-28",
+    "objectID": "index.html#section-26",
+    "href": "index.html#section-26",
     "title": "NR 218",
     "section": "",
     "text": "Check topology Vector --&gt; Geometry --&gt; Check Validity"
   },
   {
-    "objectID": "index.html#section-29",
-    "href": "index.html#section-29",
+    "objectID": "index.html#section-27",
+    "href": "index.html#section-27",
     "title": "NR 218",
     "section": "",
     "text": "Link to tutorial about editing vectors."
@@ -826,8 +812,8 @@
     "text": "Spatial Joins\nDownload Cities\n\nUse the “join attributes by location” tool from the geoprocessing toolbox to join cities to counties\nWhy someone would do this particular join I don now know, but it illustrates the point.\nThere will be problems. Hint: “validate geometries and”fix geometries” tools will be useful.\n\nChallenge - Figure out how to join counties to cities, and calculate total urban area for each county."
   },
   {
-    "objectID": "index.html#section-30",
-    "href": "index.html#section-30",
+    "objectID": "index.html#section-28",
+    "href": "index.html#section-28",
     "title": "NR 218",
     "section": "",
     "text": "Start Downloads:\n\nfire perimeters\nNAIP image\n\nAlternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:\n\nfire_example/\n├── data/\n│   ├── subset_of_cal_hist_fires.geojson\n│   └── naip_2022.tif\n└── docs/"
@@ -854,8 +840,8 @@
     "text": "NAIP Imagery\n\nNational Agriculture Imagery Program (NAIP)\n\nHigh-resolution aerial imagery of the continental United States\nCollected during agricultural growing seasons\nTypically 4-band: Red, Green, Blue, Near-Infrared (NIR)\n60 cm (or better) spatial resolution\nUpdated on a 2-3 year cycle for each state\n\nLearn more: USDA NAIP Program"
   },
   {
-    "objectID": "index.html#section-31",
-    "href": "index.html#section-31",
+    "objectID": "index.html#section-29",
+    "href": "index.html#section-29",
     "title": "NR 218",
     "section": "",
     "text": "Hopefully by now you have this data.\n\nfire perimeters\nNAIP image\n\nFire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from \n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf"
@@ -889,8 +875,8 @@
     "text": "Fire Example (4)\nNDVI values\n\n\n\nValue Range\nInterpretation\n\n\n\n\n0\nWater, clouds, or non-vegetated surfaces.\n\n\n0 to 0.1\nExposed rock, sand, or snow.\n\n\n0.2 to 0.5\nSparse vegetation,\n\n\n0.6 to 0.9\nDense Vegetation"
   },
   {
-    "objectID": "index.html#section-32",
-    "href": "index.html#section-32",
+    "objectID": "index.html#section-30",
+    "href": "index.html#section-30",
     "title": "NR 218",
     "section": "",
     "text": "\\[\nSAVI = \\frac{(NIR - Red) \\times (1 + L)}{NIR + Red + L}\n\\]\nWhere \\(L\\) is often 0.5, but adjusted for exposed soil"
@@ -931,8 +917,8 @@
     "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, as seen to the right.\nFinally, download this Land use raster and save.\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   ├── dem_1m_6339.tif\n│   └── 2016...classification.tiff\n│\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
   },
   {
-    "objectID": "index.html#section-33",
-    "href": "index.html#section-33",
+    "objectID": "index.html#section-31",
+    "href": "index.html#section-31",
     "title": "NR 218",
     "section": "",
     "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\nUse the AOI and the three layers you just found to make a polygon called unburned, i.e neither.\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin."
@@ -1104,27 +1090,6 @@
     "title": "NR 218",
     "section": "Point Count to Raster",
     "text": "Point Count to Raster\nInput layer: Your point layer\nBurn in value: Set this to 1\nOutput raster size: resolution In map units\nAdditional creation parameters: -add (to sum the values for points in the same cell)"
-  },
-  {
-    "objectID": "index.html#data-1",
-    "href": "index.html#data-1",
-    "title": "NR 218",
-    "section": "Data",
-    "text": "Data\n\nFor the Example:\n\noctober_ndvi.tif\n\nAlso bag these files for the challenge:\n\nSentinel-2 median composite image, near Susques Argentina, 2025-04-01 to 2025-10-26\nSentinel-2 max composite image, near Susques Argentina, 2025-04-01 to 2025-10-26"
-  },
-  {
-    "objectID": "index.html#a-simple-example-of-segmentation",
-    "href": "index.html#a-simple-example-of-segmentation",
-    "title": "NR 218",
-    "section": "A simple example of segmentation",
-    "text": "A simple example of segmentation\nStart a QGIS project ad set the project crs 20 EPSG:6339.\n\nOpen october_ndvi.tif.\nWhat should you do before starting? \nUse the raster calculator to create a binary raster where NDVI &gt; 0.2.\nUse Raster &gt; Conversion &gt; Polygonize to make polygons from the raster\nUse the field calculator to calculate are (expression: $area)\nWhat units is area in?\nRemove tiny polygons based on area.\nWhat did you do?"
-  },
-  {
-    "objectID": "index.html#challenge",
-    "href": "index.html#challenge",
-    "title": "NR 218",
-    "section": "Challenge!",
-    "text": "Challenge!\nYou Know about spectral indices. You know about (very basic) segmentation. You know about zonal ststistics.\n\nSegment the Lithium Brine Evaporation Ponds using Sentinel-2 median composite image, Sentinel-2 maximum composite image (near Susques Argentina, 2025-04-01 to 2025-10-26).\nCalculate their total area.\nWhat is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?"
   },
   {
     "objectID": "index.html#rasterizing-by-attributes-1",
@@ -1831,7 +1796,7 @@
     "href": "project_1.html",
     "title": "NR 218 Project 1: Mapping",
     "section": "",
-    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\n\n\n\n\nProvide written responses to the following Questions:\n\nMap Scale Analysis: Determine and discuss the most appropriate (approximate) representative fractions for the following verbal map scale descriptions: (a) individual person, (b) neighborhood, (c) urban, (d) regional, (e) national, and (f) global.\nMap Projections Research: Go to the National Atlas website and read about map projections (archived link). Define the following terms:\n\ndatum\ndevelopable surface\nsecant\nazimuth\nrhumb line\nzenithal\n\nProjection Properties: Describe the general properties of the following projections:\n\nUniversal Transverse Mercator (UTM)\nState plane system\nRobinson projection\n\nUSGS Topographic Maps:\n\nDownload a map for your place of residence from: https://ngmdb.usgs.gov/topoview/\nWhat are the scale, projection, and contour interval of the USGS topographic map that you downloaded for your place of residence?\n\nCoordinate Systems: Find the latitude and longitude of your hometown. Explain how you can convert the coordinates from DD to DMS or vice versa.\n\n\n\n\n\nComplete the following tutorials and submit screenshots of the final product:\n\nWorking With Attributes\nBasic Vector Styling\nCalculating Line Lengths and Statistics\n\n\n\n\n\n\n\n[Optional] Carefully follow the instructions to install QGIS on your personal computer - if you are not comfortable using your own machine, skip this step and use the machines in the classroom. Allow 5-10 mins to download and install, depending on your internet connection: https://courses.spatialthoughts.com/install-qgis-ltr.html\nMake your first (production quality) map! - Look through the Making a Map tutorial - Use what you have learned in lecture and the previous tutorials to make you first map + Use the SPR_data.zip from the files section of Canvas (we already used it in class) + Make a map showing either vegetation type, soil type, timber type, or or land use + Be sure to include standard elements such as scale and north arrow.\n+ Decisions about what style and elements will best convey the information are up to you - Submit a PDF image of the final map you created at the end of the tutorial\n\n\n\n\nSubmit the following items:\n\nWritten Responses: Answers to Questions 1-6 above\n[Optional] A screenshot showing that you successfully installed QGIS (include the time and date in the screenshot)\nFirst Map: An image of your first map (.tiff, .jpeg, .png, or .pdf format) created from Tutorial 1\n\nBe sure to include all the necessary elements required for a high quality map (i.e. scale bar, north arrow, legend, gridlines, coordinate labels)\n\nTutorial Screenshots: Screenshots of the final outputs and processing steps of the (1) Working With Attributes Tutorial, (2) Basic Vector Styling Tutorial, and (3) Calculating Line Lengths and Statistics Tutorial"
+    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\n\n\n\n\nProvide written responses to the following Questions:\n\nMap Scale Analysis: Determine and discuss the most appropriate (approximate) representative fractions for the following verbal map scale descriptions: (a) individual person, (b) neighborhood, (c) urban, (d) regional, (e) national, and (f) global.\nMap Projections Research: Go to the National Atlas website and read about map projections (archived link). Define the following terms:\n\ndatum\ndevelopable surface\nsecant\nazimuth\nrhumb line\nzenithal\n\nProjection Properties: Describe the general properties of the following projections:\n\nUniversal Transverse Mercator (UTM)\nState plane system\nRobinson projection\n\nUSGS Topographic Maps:\n\nDownload a map for your place of residence from: https://ngmdb.usgs.gov/topoview/\nWhat are the scale, projection, and contour interval of the USGS topographic map that you downloaded for your place of residence?\n\nCoordinate Systems: Find the latitude and longitude of your hometown. Explain how you can convert the coordinates from DD to DMS or vice versa.\n\n\n\n\n\nComplete the following tutorials and submit screenshots of the final product:\n\nWorking With Attributes\nBasic Vector Styling\nCalculating Line Lengths and Statistics\n\n\n\n\n\n\n\n[Optional] Carefully follow the instructions to install QGIS on your personal computer - if you are not comfortable using your own machine, skip this step and use the machines in the classroom. Allow 5-10 mins to download and install, depending on your internet connection: https://courses.spatialthoughts.com/install-qgis-ltr.html\nMake your first (production quality) map! - Look through the Making a Map tutorial - Use what you have learned in lecture and the previous tutorials to make your first map - Submit a PDF image of the final map you created at the end of the tutorial\n\n\n\n\nSubmit the following items:\n\nWritten Responses: Answers to Questions 1-6 above\n[Optional] A screenshot showing that you successfully installed QGIS (include the time and date in the screenshot)\nFirst Map: An image of your first map (.tiff, .jpeg, .png, or .pdf format) created from Tutorial 1\n\nBe sure to include all the necessary elements required for a high quality map (i.e. scale bar, north arrow, legend, gridlines, coordinate labels)\n\nTutorial Screenshots: Screenshots of the final outputs and processing steps of the (1) Working With Attributes Tutorial, (2) Basic Vector Styling Tutorial, and (3) Calculating Line Lengths and Statistics Tutorial"
   },
   {
     "objectID": "project_1.html#learning-goals",
@@ -1859,7 +1824,7 @@
     "href": "project_1.html#project-work-4-pts",
     "title": "NR 218 Project 1: Mapping",
     "section": "",
-    "text": "[Optional] Carefully follow the instructions to install QGIS on your personal computer - if you are not comfortable using your own machine, skip this step and use the machines in the classroom. Allow 5-10 mins to download and install, depending on your internet connection: https://courses.spatialthoughts.com/install-qgis-ltr.html\nMake your first (production quality) map! - Look through the Making a Map tutorial - Use what you have learned in lecture and the previous tutorials to make you first map + Use the SPR_data.zip from the files section of Canvas (we already used it in class) + Make a map showing either vegetation type, soil type, timber type, or or land use + Be sure to include standard elements such as scale and north arrow.\n+ Decisions about what style and elements will best convey the information are up to you - Submit a PDF image of the final map you created at the end of the tutorial"
+    "text": "[Optional] Carefully follow the instructions to install QGIS on your personal computer - if you are not comfortable using your own machine, skip this step and use the machines in the classroom. Allow 5-10 mins to download and install, depending on your internet connection: https://courses.spatialthoughts.com/install-qgis-ltr.html\nMake your first (production quality) map! - Look through the Making a Map tutorial - Use what you have learned in lecture and the previous tutorials to make your first map - Submit a PDF image of the final map you created at the end of the tutorial"
   },
   {
     "objectID": "project_1.html#submission-requirements",
@@ -1901,35 +1866,42 @@
     "href": "syllabus.html#project-assignments",
     "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
     "section": "Project Assignments",
-    "text": "Project Assignments\nThis course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other week (see calendar for dates). Late assignments will be deducted 5% per day late.\nThere is also a final project as well as an exam.\nFor your final project you will propose a novel GIS question and collect or analyze data to answer it."
+    "text": "Project Assignments\nThis course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. See the calendar for due dates. Late assignments will be deducted 5% per day late."
+  },
+  {
+    "objectID": "syllabus.html#labs",
+    "href": "syllabus.html#labs",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Labs",
+    "text": "Labs\nNot every lab requires you turn in your results. The calendar lists due dates for the labs that need to be turned in."
+  },
+  {
+    "objectID": "syllabus.html#quizzes",
+    "href": "syllabus.html#quizzes",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
+    "section": "Quizzes",
+    "text": "Quizzes\nQuizzes can happen any time! How many will there be? 1? 10? Who knows? Quizzes cannot be made up unless you are sick, or have an excused absence (sports, clubs etc…). If you are sick, you need to email me promptly (ideally before class) to let me know."
   },
   {
     "objectID": "syllabus.html#assignment-weight",
     "href": "syllabus.html#assignment-weight",
     "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
     "section": "Assignment Weight",
-    "text": "Assignment Weight\n\n\n\n\n\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nProject 1\n10\nMapping\n\n\nProject 2\n10\nVector Data Analysis\n\n\nProject 3\n10\nRaster Data Analysis\n\n\nProject 4\n15\nRemote Sensing, Image Analysis, and Modeling\n\n\nFinal Project\n25\n\n\n\nExam\n20\nWill be hard, but curved\n\n\nParticipation\n10\nWill be based on  and engagement\n\n\nAssignment 0\n1 (bonus)\nEasy bonus points"
+    "text": "Assignment Weight\n\n\n\n\n\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nProject 1\n10\nMapping\n\n\nProject 2\n10\nVector Data Analysis\n\n\nProject 3\n10\nRaster Data Analysis\n\n\nProject 4\n20\nRemote Sensing, Image Analysis, and Modeling\n\n\nLab exercises\n30\nNot all labs have exercises due, see calendar\n\n\nQuizzes\n15\nQuizzes can happen any time!\n\n\nParticipation\n5\nWill be based on participation and engagement"
   },
   {
     "objectID": "syllabus.html#grading",
     "href": "syllabus.html#grading",
     "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
     "section": "Grading",
-    "text": "Grading\nA: ≥ 90%\nB: ≥ 80%\nC: ≥ 70%\nD: ≥ 60%\nF: &lt; 60%\nTotal 100%\nNote: Grading is not curved (Except exam)."
+    "text": "Grading\nA: ≥ 90%\nB: ≥ 80%\nC: ≥ 70%\nD: ≥ 60%\nF: &lt; 60%\nNote: Grading is not curved."
   },
   {
     "objectID": "syllabus.html#assignment-submission-policy",
     "href": "syllabus.html#assignment-submission-policy",
     "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
     "section": "Assignment Submission Policy",
-    "text": "Assignment Submission Policy\nAssignments (except the final project) will be submitted on Canvas. Students are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline."
-  },
-  {
-    "objectID": "syllabus.html#attendance-policy",
-    "href": "syllabus.html#attendance-policy",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
-    "section": "Attendance Policy",
-    "text": "Attendance Policy\nBefore leaving for each class you will need to turn in an “exit ticket”. The exit ticket is simply a short answer to a question that will given in class. The exit ticket will let me know that you were in class, and help me to gauge how well students are absorbing the material. You are allowed 3 unexcused absences. Beyond 3 unexcused absences, you will be deducted 2% of the total grade for each unauthorized absence."
+    "text": "Assignment Submission Policy\nAssignments will be submitted on Canvas. Late assignments will be penalized by 5% for every day they are late."
   },
   {
     "objectID": "syllabus.html#academic-integrity",
@@ -1943,42 +1915,49 @@
     "href": "syllabus.html#use-of-ai",
     "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
     "section": "Use of AI",
-    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time! + Depending on AI prevents development of critical thinking, writing, and problem-solving skills + AI will sometimes lead you down a terrible, deep rabbit hole of confusion + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework + The struggle of working through difficult concepts is often where the most valuable learning occurs\nThat is not to say LLMs are never useful or appropriate to use, but you need to know their limitations."
+    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid (See this study for example) and waste your time!\n\nDepending on AI prevents development of critical thinking, writing, and problem-solving skills\nAI will often lead you down a terrible, deep rabbit hole of confusion\nGetting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework\nThe struggle of working through difficult concepts is often where the most valuable learning occurs\nAI uses heaps of electricity\n\nThat is not to say LLMs are never useful or appropriate to use, but you need to know their limitations. I suggest reading this critical AI literacy guide from Rutgers University."
   },
   {
     "objectID": "syllabus.html#textbook",
     "href": "syllabus.html#textbook",
     "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
     "section": "Textbook",
-    "text": "Textbook\nWe will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found here"
+    "text": "Textbook\nYou will read excerpts from Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found here."
   },
   {
     "objectID": "syllabus.html#tutorials",
     "href": "syllabus.html#tutorials",
     "title": "Syllabus - NR 218 - Introduction to GIS - Winter 2026",
     "section": "Tutorials",
-    "text": "Tutorials\nWe will refer to a number of tutorial videos which describe QGIS processing. These will come primarily from two sources:\nUjaval Gandhi’s QGIS Tutorials and Tips\nQGIS Training Manual\nThere are many other helpful sources of information on GIS Software\nSpatial Thoughtsintroduction-to-qgis.html\nA Gentle Introduction to GISgentle_gis_introduction/index.html"
+    "text": "Tutorials\nWe will refer to a number of tutorial videos which describe QGIS processing. These will come primarily from two sources:\nUjaval Gandhi’s QGIS Tutorials and Tips\nQGIS Training Manual\nThere are many other helpful sources of information on GIS Software, here area couple:\nSpatial Thoughts introduction-to-qgis.html\nA Gentle Introduction to GIS gentle_gis_introduction/index.html"
   },
   {
     "objectID": "computers_lab.html",
     "href": "computers_lab.html",
     "title": "Using computers well enough for GIS",
     "section": "",
-    "text": "In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others. We will practice organizing data on a computer and extracting zipped archives.\nIn this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful. If you learn how to use the terminal well you will probably use it frequently.\nThat said, you will not have to be great at it for this class. It will only be used for a couple of basic things, most importantly showing me how you are organizing your data."
+    "text": "In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others. We will practice organizing data on a computer and extracting zipped archives.\nIn this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful. If you learn how to use the terminal well you will probably use it frequently.\nThat said, you will not have to be great at it for this class. It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.\nFor this lab you should turn in the text document you create in steps 8, and 9 of Task 1 on Canvas. You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter."
+  },
+  {
+    "objectID": "computers_lab.html#introduction",
+    "href": "computers_lab.html#introduction",
+    "title": "Using computers well enough for GIS",
+    "section": "",
+    "text": "In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others. We will practice organizing data on a computer and extracting zipped archives.\nIn this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful. If you learn how to use the terminal well you will probably use it frequently.\nThat said, you will not have to be great at it for this class. It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.\nFor this lab you should turn in the text document you create in steps 8, and 9 of Task 1 on Canvas. You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter."
   },
   {
     "objectID": "computers_lab.html#task-1-exploring-a-directory-structure-and-unzipping-files",
     "href": "computers_lab.html#task-1-exploring-a-directory-structure-and-unzipping-files",
     "title": "Using computers well enough for GIS",
     "section": "Task 1: Exploring a Directory Structure and unzipping files",
-    "text": "Task 1: Exploring a Directory Structure and unzipping files\n\nDownload the toy data here (rigth-click -&gt; Save Link As). By default the downloaded file will be in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. For now, we will do just that, so unzip toy_data.zip right into the download folder (see Tip 1 for how to do this.).\n\n\n\n\n\n\n\nTip 1: How do I unzip a zip archive? What is a zip archive?\n\n\n\nTo unzip:\n\nWindows (GUI): In File Explorer, find the .zip, right-click → “Extract All…,” choose your desired destination folder, click Extract.\nmacOS (GUI): In Finder, double-click the .zip to expand it, then drag/move the extracted folder into your destination folder.\nLinux (terminal): cd ~/Downloads (or wherever it landed), then run unzip SPR_data.zip -d &lt;destination directory&gt; (replace &lt;destination directory&gt; with your actual destination directory. Install unzip if missing: sudo apt install unzip).\n\nWhat is a zip file? A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use. Do not work directly with files compressed in a zip! .While QGIS and other applications can read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.\n\n\n\nCreate a working directory, nr218 for the class in your home folder directory (see Tip 2).\n\n\n\n\n\n\n\nTip 2: Where is my home folder?\n\n\n\n\nWindows: C:\\Users\\&lt;username&gt; (shows as “This PC &gt; Windows (C:) &gt; Users &gt; ` in File Explorer).\nmacOS: /Users/&lt;username&gt;; Finder shows it with a house icon under Go → Home.\nLinux: /home/&lt;username&gt; (or occasionally /Users/&lt;username&gt;); in a terminal it can also be called ~, and file managers usually label it “Home.”\n\n\n\n\nOpen QGIS and start a blank project.\n\n\nPress Ctrl+S. This opens a dialogue for saving the QGIS project. Navigate to the nr218 directory you just created. Name the project after you CalPoly email address (e.g. mthuggin. Note that this would be a terrible thing to actually name a project). You have now saved a file containing the project.\nPress Ctrl+Shift+V, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to ~/Downloads/toy_data and select Eaton_Perimeter_20250121.geojson. You should now see a polygon in in the map (Figure 1)\n\n\n\n\n\n\n\nFigure 1: You should se something like this after opening Eaton_Perimeter_20250121.geojson.  It is a polygon showing the Eaton Fire perimeter\n\n\n\n\nClose the project (Project -&gt; Close in drop down menus).\nMove the toy_data folder from your Downloads folder to ~/nr218\nOpen the project you previously saved (Project -&gt; Open Recent in drop down menus)\n\n\nNow QGIS cannot find the Eaton Fire perimeter data because the relative path to the data has changed (see Tip 3). A dialogue such as the one shown in Figure 2 will appear. Don’t worry about trying to fix the problem yet.\n\n\n\n\n\n\n\nFigure 2: When the relative path to data changes (or the data is deleted) QGIS cannot find it.`\n\n\n\n\nOpen a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, cd ~/nr218.\nCreate a document in a text editor (e.g. notepad on Windows). Name it &lt;your_name&gt;_lab1.txt and save it in ~/nr218.\nView the contents of the directory:\n\n\nIn the terminal (while in ~/nr218) type tree\n\nmacOS/Linux, install if missing: brew install tree / sudo apt install tree.\nWindows PowerShell: tree should be present. If you love typing you can use Get-ChildItem -Recurse.\n\nCopy the output and paste at the top of your text document.\nIn your text document answer the following questions.\n\n\nType pwd in the terminal, this shows the path to the present working directory, what is the output (paste it)?\n\n\nBased on the contents of the directory, what do you think are some best practices for naming files?\n\n\nWhy do you think working on files that are in your download folder is a bad idea?\n\n\n\nYou will use tree and pwd throughout the quarter to show me how you are organizing your data. In order to do this you will also need to know how to navigate into your working directory (see Tip 3).\n\n\n\n\n\n\nTip 3: What is a Path?\n\n\n\nA path is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters.\nQGIS, and other applications keep track of where data using relative paths, as opposed to absolute paths. An absolute (or full path) is the path to the file relative to the root directory, for example, on my laptop the directory for this class has an absolute path /home/michael/CP/nr218, where the root directory is just /. The directory called home is directly below / in the hierarchy, thus the full path to home is /home (or /home/, a directory can be written with a trailing slash). Similarly the full path to the directory michael is /home/michael (or /home/michael/, or using its alias ~, see Tip 2).\nA relative path is the position of a file relative to the position of the file that is looking for it. For the QGIS project file in your nr218 directory, the relative path to the Eaton_Perimeter_20250121.geojson was ../Downloads/toy_data/WellNamedFiles/Eaton_Perimeter_20250121.geojson (../ means parent directory or up one level). When you moved it, the relative path changed to WellNamedFiles/Eaton_Perimeter_20250121.geojson (or ./WellNamedFiles/Eaton_Perimeter_20250121.geojson, where . means the present directory). When you re-opened the project after moving the data, QGIS read the project file which told it, “Load the Eaton perimeter file found at ../Downloads/toy_data/WellNamedFiles/Eaton_Perimeter_20250121.geojson.” QGIS looked at that relative location, and the file was missing, so it complained to you with the dialogue box. In order for an application to use a file, it must know the path to that file.\nIn a (bash-like) terminal you can change directories using the cd command to navigate to a directory by giving ita path. You can use and absolute path, e.g. cd  /home/michael/CP/nr218 or equivalently cd ~/CP/nr218. Or you can use a relative path, cd ../ to go to the parent directory, cd ../../ to go up two levels in the directory hierarchy. If you are in /home/michael, cd CP/nr218 would do the same thing as cd  /home/michael/CP/nr218."
+    "text": "Task 1: Exploring a Directory Structure and unzipping files\n\nDownload the toy data here (rigth-click -&gt; Save Link As). By default the downloaded file will be in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. For now, we will do just that, so unzip toy_data.zip right into the download folder (see Tip 1 for how to do this.).\n\n\n\n\n\n\n\nTip 1: How do I unzip a zip archive? What is a zip archive?\n\n\n\nTo unzip:\n\nWindows (GUI): In File Explorer, find the .zip, right-click → “Extract All…,” choose your desired destination folder, click Extract.\nmacOS (GUI): In Finder, double-click the .zip to expand it, then drag/move the extracted folder into your destination folder.\nLinux (terminal): cd ~/Downloads (or wherever it landed), then run unzip SPR_data.zip -d &lt;destination directory&gt; (replace &lt;destination directory&gt; with your actual destination directory. Install unzip if missing: sudo apt install unzip).\n\nWhat is a zip file? A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use. Do not work directly with files compressed in a zip! .While QGIS and other applications can read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.\n\n\n\nCreate a working directory, nr218 for the class in your home folder directory (see Tip 2).\n\n\n\n\n\n\n\nTip 2: Where is my home folder?\n\n\n\n\nWindows: C:\\Users\\&lt;username&gt; (shows as “This PC &gt; Windows (C:) &gt; Users &gt; ` in File Explorer).\nmacOS: /Users/&lt;username&gt;; Finder shows it with a house icon under Go → Home.\nLinux: /home/&lt;username&gt; (or occasionally /Users/&lt;username&gt;); in a terminal it can also be called ~, and file managers usually label it “Home.”\n\n\n\n\nOpen QGIS and start a blank project.\n\n\nPress Ctrl+S. This opens a dialogue for saving the QGIS project. Navigate to the nr218 directory you just created. Name the project after you CalPoly email address (e.g. mthuggin. Note that this would be a terrible thing to actually name a project). You have now saved a file containing the project.\nPress Ctrl+Shift+V, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to ~/Downloads/toy_data and select Eaton_Perimeter_20250121.geojson. You should now see a polygon in in the map (Figure 1)\n\n\n\n\n\n\n\nFigure 1: You should se something like this after opening Eaton_Perimeter_20250121.geojson.  It is a polygon showing the Eaton Fire perimeter\n\n\n\n\nClose the project (Project -&gt; Close in drop down menus).\nMove the toy_data folder from your Downloads folder to ~/nr218\nOpen the project you previously saved (Project -&gt; Open Recent in drop down menus)\n\n\nNow QGIS cannot find the Eaton Fire perimeter data because the relative path to the data has changed (see Tip 3). A dialogue such as the one shown in Figure 2 will appear. Don’t worry about trying to fix the problem yet.\n\n\n\n\n\n\n\nFigure 2: When the relative path to data changes (or the data is deleted) QGIS cannot find it.`\n\n\n\n\nOpen a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, cd ~/nr218.\nCreate a document in a text editor (e.g. notepad on Windows). Name it gustav_adolf_lab1.txt (use your own name) and save it in ~/nr218.\nView the contents of the directory:\n\n\nIn the terminal (while in ~/nr218) type tree\n\nmacOS/Linux, install if missing: brew install tree / sudo apt install tree.\nWindows PowerShell: tree should be present. If you love typing you can use Get-ChildItem -Recurse.\n\nCopy the output and paste at the top of your text document.\nIn your text document answer the following questions.\n\n\nType pwd in the terminal, this shows the path to the present working directory, what is the output (paste it)?\n\n\nBased on the contents of the directory, what do you think are some best practices for naming files?\n\n\nWhy do you think working on files that are in your download folder is a bad idea?\n\n\n\nYou will use tree and pwd throughout the quarter to show me how you are organizing your data. In order to do this you will also need to know how to navigate into your working directory (see Tip 3).\n\n\n\n\n\n\nTip 3: What is a Path?\n\n\n\nA path is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters.\nQGIS, and other applications keep track of where data using relative paths, as opposed to absolute paths. An absolute (or full path) is the path to the file relative to the root directory, for example, on my laptop the directory for this class has an absolute path /home/michael/CP/nr218, where the root directory is just /. The directory called home is directly below / in the hierarchy, thus the full path to home is /home (or /home/, a directory can be written with a trailing slash). Similarly the full path to the directory michael is /home/michael (or /home/michael/, or using its alias ~, see Tip 2).\nA relative path is the position of a file relative to the position of the file that is looking for it. For the QGIS project file in your nr218 directory, the relative path to the Eaton_Perimeter_20250121.geojson was ../Downloads/toy_data/WellNamedFiles/Eaton_Perimeter_20250121.geojson (../ means parent directory or up one level). When you moved it, the relative path changed to WellNamedFiles/Eaton_Perimeter_20250121.geojson (or ./WellNamedFiles/Eaton_Perimeter_20250121.geojson, where . means the present directory). When you re-opened the project after moving the data, QGIS read the project file which told it, “Load the Eaton perimeter file found at ../Downloads/toy_data/WellNamedFiles/Eaton_Perimeter_20250121.geojson.” QGIS looked at that relative location, and the file was missing, so it complained to you with the dialogue box. In order for an application to use a file, it must know the path to that file.\nIn a (bash-like) terminal you can change directories using the cd command to navigate to a directory by giving ita path. You can use and absolute path, e.g. cd  /home/michael/CP/nr218 or equivalently cd ~/CP/nr218. Or you can use a relative path, cd ../ to go to the parent directory, cd ../../ to go up two levels in the directory hierarchy. If you are in /home/michael, cd CP/nr218 would do the same thing as cd  /home/michael/CP/nr218."
   },
   {
     "objectID": "computers_lab.html#task-2-set-up-onedrive-sync-cal-poly-account",
     "href": "computers_lab.html#task-2-set-up-onedrive-sync-cal-poly-account",
     "title": "Using computers well enough for GIS",
     "section": "Task 2: Set Up OneDrive Sync (Cal Poly Account)",
-    "text": "Task 2: Set Up OneDrive Sync (Cal Poly Account)\nFor this class you will need to use the OneDrive client (or rclone) for your platform to sync your Cal Poly OneDrive. Short directions for setting up OneDrive are given here, if you are having trouble refer to the guide.\n\nWindows (OneDrive client)\n\nOpen OneDrive from the Start menu and sign in with your Cal Poly email; complete campus SSO/MFA.\nChoose a local folder location (default is fine) and finish setup.\nConfirm the OneDrive folder appears in File Explorer and shows sync status icons.\nRight-click a class folder → “Always keep on this device” to make sure it is offline-ready.\n\n\n\nmacOS (OneDrive client)\n\nInstall OneDrive from the Mac App Store (or Microsoft download if allowed).\nLaunch, sign in with your Cal Poly email, and complete campus SSO/MFA.\nPick the local sync folder location and finish setup.\nIn Finder, confirm the OneDrive folder exists and shows status icons; choose “Always Keep on This Device” for the class folder.\n\n\n\nLinux (rclone)\n\nInstall rclone (e.g., sudo apt install rclone).\nRun rclone config → n for new remote → name it (e.g., calpoly-onedrive) → storage type onedrive.\nUse the browser flow to sign in with your Cal Poly email and complete SSO/MFA when prompted.\nCreate a local sync folder (e.g., mkdir ~/CalPolyOneDrive).\nOne-time sync: rclone sync calpoly-onedrive: ~/CalPolyOneDrive.\nOptional mount for live access (requires FUSE): rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes (keep terminal open).\nNote any errors and how you resolved them (e.g., MFA prompts, permission issues).\n\nYou may have to ask the IT department to approve rclone to attach to your OneDrive (and wait for them to do so), if this is the case it will prompt you to do so. If you are having problems consult the rclone documentation."
+    "text": "Task 2: Set Up OneDrive Sync (Cal Poly Account)\nFor this class you will need to use the OneDrive client (or rclone) for your platform to sync your Cal Poly OneDrive. Short directions for setting up OneDrive are given here, if you are having trouble refer to the guide.\n\nWindows (OneDrive client)\n\nOpen OneDrive from the Start menu and sign in with your Cal Poly email; complete campus SSO/MFA.\nChoose a local folder location (default is fine) and finish setup.\nConfirm the OneDrive folder appears in File Explorer and shows sync status icons.\nRight-click a class folder → “Always keep on this device” to make sure it is offline-ready.\n\n\n\nmacOS (OneDrive client)\n\nInstall OneDrive from the Mac App Store (or Microsoft download if allowed).\nLaunch, sign in with your Cal Poly email, and complete campus SSO/MFA.\nPick the local sync folder location and finish setup.\nIn Finder, confirm the OneDrive folder exists and shows status icons; choose “Always Keep on This Device” for the class folder.\n\n\n\nLinux (rclone)\n\nInstall rclone (e.g., sudo apt install rclone).\nRun rclone config → n for new remote → name it (e.g., calpoly-onedrive) → storage type onedrive.\nUse the browser flow to sign in with your Cal Poly email and complete SSO/MFA when prompted.\nCreate a local sync folder (e.g., mkdir ~/CalPolyOneDrive).\nOne-time sync: rclone sync calpoly-onedrive: ~/CalPolyOneDrive.\nOptional mount for live access (requires FUSE): rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes & (keep terminal open).\nNote any errors and how you resolved them (e.g., MFA prompts, permission issues).\nAlternately figure install this OneDrive Client, and tell me if it works out for you (I have not tried it).\n\nYou may have to ask the IT department to approve rclone to attach to your OneDrive (and wait for them to do so), if this is the case it will prompt you to do so. If you are having problems consult the rclone documentation."
   },
   {
     "objectID": "project_2.html",

@@ -6,11 +6,14 @@ format:
     css: styles.css
 ---
 
+## Introduction
 In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others.  We will practice organizing data on a computer and extracting zipped archives.
 
 In this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful.  If you learn how to use the terminal well you will probably use it frequently.
 
 That said, you will not have to be great at it for this class.  It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.
+
+For this lab you should <strong><u>turn in the text document you create in steps 8, and 9 of Task 1</u></strong> on Canvas.  You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter.
 
 ## Task 1: Exploring a Directory Structure and unzipping files
 
@@ -52,7 +55,7 @@ A zip file is a compressed archive.  Zipping a folder full of sub-directories an
 ![When the relative path to data changes (or the data is deleted) QGIS cannot find it.` ](img/unavailable.png){#fig-unavailable fig-alt="Image showing the handle unavailable data dialogue window in QGIS" fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it."}
 
 7. Open a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, `cd ~/nr218`.
-8. Create a document in a text editor (e.g. notepad on Windows). Name it `<your_name>_lab1.txt` and save it in `~/nr218`.
+8. Create a document in a text editor (e.g. notepad on Windows). Name it `gustav_adolf_lab1.txt` (use your own name) and save it in `~/nr218`.
 9. View the contents of the directory:
   - In the terminal (while in `~/nr218`) type `tree`
     - macOS/Linux, install if missing: `brew install tree` / `sudo apt install tree`.
@@ -105,7 +108,8 @@ For this class you will need to use the OneDrive client (or rclone) for your pla
 - Use the browser flow to sign in with your Cal Poly email and complete SSO/MFA when prompted.
 - Create a local sync folder (e.g., `mkdir ~/CalPolyOneDrive`).
 - One-time sync: `rclone sync calpoly-onedrive: ~/CalPolyOneDrive`.
-- Optional mount for live access (requires FUSE): `rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes` (keep terminal open).
+- Optional mount for live access (requires FUSE): `rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes &` (keep terminal open).
 - Note any errors and how you resolved them (e.g., MFA prompts, permission issues).
+- Alternately figure install this [OneDrive Client](https://github.com/abraunegg/onedrive/blob/master/readme.md), and tell me if it works out for you (I have not tried it).
 
 You may have to ask the IT department to approve rclone to attach to your OneDrive (and wait for them to do so), if this is the case it will prompt you to do so. If you are having problems consult the [rclone documentation](https://github.com/rclone/rclone).

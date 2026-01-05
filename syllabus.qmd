@@ -28,13 +28,13 @@ Building 72-107 (Plant Conservatory)
 
 
 ## Project Assignments
+This course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. See the [calendar](#fall-term-calendar-2025) for due dates.  Late assignments will be deducted 5% per day late. 
 
-This course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. Projects are due every other week (see [calendar](#fall-term-calendar-2025) for dates).  Late assignments will be deducted 5% per day late. 
+## Labs
+Not every lab requires you turn in your results. The [calendar](#fall-term-calendar-2025) lists due dates for the labs that need to be turned in.
 
-There is also a final project as well as an exam.
-
-For your final project you will propose a novel GIS question and collect or analyze data to answer it.  
-
+## Quizzes
+Quizzes can happen any time! How many will there be? 1? 10? Who knows? Quizzes cannot be made up unless you are sick, or have an excused absence (sports, clubs etc...).  If you are sick, you need to email me promptly (ideally before class) to let me know.
 
 ## Assignment Weight
 | Assignment     | Percentage of Grade| Description  |
@@ -42,15 +42,11 @@ For your final project you will propose a novel GIS question and collect or anal
 | Project 1      | 10  |  Mapping  |
 | Project 2      | 10  |  Vector Data Analysis  |
 | Project 3      | 10  |  Raster Data Analysis  |
-| Project 4      | 15  |  Remote Sensing, Image Analysis, and Modeling  |
-| Final Project  | 25  |  ![See description](final_proj.md)   |
-| Exam           | 20  |  Will be hard, but curved  |
-| Participation  | 10  |  Will be based on ![exit tickets](#attendance-policy) and engagement  |
-| Assignment 0   | 1 (bonus) | Easy bonus points
+| Project 4      | 20  |  Remote Sensing, Image Analysis, and Modeling  |
+| Lab exercises  | 30  |  Not all labs have exercises due, see calendar  |
+| Quizzes        | 15  |  Quizzes can happen any time! |
+| Participation  |  5  |  Will be based on participation and engagement  |  
 
-
-
- 
 ## Grading
 
 A: ≥ 90%  
@@ -59,84 +55,67 @@ C: ≥ 70%
 D: ≥ 60%  
 F: < 60%  
 
-Total 100%  
-
-Note: Grading is not curved (Except exam).
+Note: Grading is not curved.
 
 
 ## Assignment Submission Policy 
-
-Assignments (except the final project) will be submitted on Canvas.  Students are allowed a 48-hour ‘no questions’ asked grace period on assignment submissions. You do not need to give any reason as to why your submission is late, as long as it is submitted within 48 hours of the deadline.
-
-## Attendance Policy 
-
-Before leaving for each class you will need to turn in an "exit ticket". The exit ticket is simply a short answer to a question that will given in class. The exit ticket will let me know that you were in class, and help me to gauge how well students are absorbing the material.  You are allowed 3 unexcused absences. Beyond 3 unexcused absences, you will be deducted 2% of the total grade for each unauthorized absence.
+Assignments  will be submitted on Canvas.  Late assignments will be penalized by 5% for every day they are late.
 
 ## Academic Integrity
-
 All students should be familiar with and adhere to the university’s academic integrity policy, which can be found here: https://osrr.calpoly.edu/academic-integrity 
 
-
 ## Use of AI
-
 AI generated text __may not be used__ for any writing.
 
-Students can seek AI assistance for project work, but it is important to consider that AI will make you stupid and waste your time!
-    + Depending on AI prevents development of critical thinking, writing, and problem-solving skills
-    + AI will sometimes lead you down a terrible, deep rabbit hole of confusion
-    + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework
-    + The struggle of working through difficult concepts is often where the most valuable learning occurs
+Students can seek AI assistance for project work, but it is important to consider that AI will make you stupid ([See this study for example](https://www.researchgate.net/publication/392560878_Your_Brain_on_ChatGPT_Accumulation_of_Cognitive_Debt_when_Using_an_AI_Assistant_for_Essay_Writing_Task)) and waste your time!
 
-That is not to say LLMs are never useful or appropriate to use, but you need to know their limitations.
+  + Depending on AI prevents development of critical thinking, writing, and problem-solving skills
+  + AI will often lead you down a terrible, deep rabbit hole of confusion
+  + Getting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework
+  + The struggle of working through difficult concepts is often where the most valuable learning occurs
+  + AI uses heaps of electricity
+
+That is not to say LLMs are never useful or appropriate to use, but you need to know their limitations.  I suggest reading this [critical AI literacy guide](https://rutgers.app.box.com/s/v1ywq3701cb6pvnewz5ptuhojwwppmsg/file/1640499870205) from Rutgers University.
 
  
 ## Textbook
+You will read excerpts from Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found [here](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems).
 
-We will read Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found [here](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems)
 
-
- 
 ## Tutorials
-
 We will refer to a number of tutorial videos which describe QGIS processing. These will come primarily from two sources: 
 
-[Ujaval Gandhi's QGIS Tutorials and Tips](https://www.qgistutorials.com/en/index.html )
-
-
+[Ujaval Gandhi's QGIS Tutorials and Tips](https://www.qgistutorials.com/en/index.html)  
 [QGIS Training Manual](https://docs.qgis.org/3.34/en/docs/training_manual/index.html)
 
+There are many other helpful sources of information on GIS Software, here area couple:
 
-There are many other helpful sources of information on GIS Software
-
-[Spatial Thoughts](https://courses.spatialthoughts.com/)introduction-to-qgis.html
-
-[A Gentle Introduction to GIS](https://docs.qgis.org/3.40/en/docs/)gentle_gis_introduction/index.html
+[Spatial Thoughts introduction-to-qgis.html ](https://courses.spatialthoughts.com/)   
+[A Gentle Introduction to GIS  gentle_gis_introduction/index.html](https://docs.qgis.org/3.40/en/docs/)
 
 
 
 # Winter Term Calendar 2026
 
-Here's the table with the Week column containing just the integer week values:
-
 | Date         | Week | Lecture                                                              | Lab    | Reading      | Due Dates                                     |
 |--------------|------|----------------------------------------------------------------------|--------|--------------|-----------------------------------------------|
-| January 5    | 1    | Introduction, Computers                                              | Lab 1  | ch. 1 and 2  |                                               |
+| January 5    | 1    | Introduction, Computers                                              | Lab 1  | ch. 1 and 2 as well as [this page about computers](computers.html) | |
 | January 7    | 1    | Basic GIS Concepts,  Scale, Coordinate systems, and Map Projections  | Lab 2  |              | [Lab 1](computers_lab.html)                   |
 | January 12   | 2    | Spatial Data Models and File Formats                                 | Lab 3  | ch. 3 and 4  |                                               |
 | January 14   | 2    |                                                                      | Lab 4  |              |                                               |
-| January 20*  | 3    | Coordinate Systems, Map Projections, Datums, Reprojection            | Lab 5  | ch. 5 and 6  | [Project 1](project_1.html)                   |
+| January 20 (Tuesday) | 3 | Coordinate Systems, Map Projections, Datums, Reprojection       | Lab 5  | ch. 5 and 6  | [Project 1](project_1.html)                   |
 | January 21   | 3    | GeoProcessing and Vector Operations                                  | Lab 6  |              |                                               |
 | January 26   | 4    | Data Creation, Editing, Topology Basics                              | Lab 7  | ch. 7 and 8  |                                               |
-| January 28   | 4    | Rasters and Elevation Data                                           | Lab 8  |              | [Final Project Brainstorm](final_proj.md) |
+| January 28   | 4    | Rasters and Elevation Data                                           | Lab 8  |              |                                                |
 | February 2   | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | Lab 9  | ch. 9 and 10 | [Project 2](project_2.html)                   |
-| February 4   | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              |                                               |
+| February 4   | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              | Lab 8                                             |
 | February 9   | 6    | Segmentation                                                         | Lab 11 |              |                                               |
-| February 11  | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | Lab 12 |              | [Lab 11](lab_11.html)    |
-| February 18  | 7    |                                                                      | Lab 13 |              |                                               |
+| February 11  | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | Lab 12 |              | Lab 10                                        |
+| February 18  | 7    |                                                                      | Lab 13 |              | [Lab 11](lab_11.html)                         |
 | February 23  | 7    | Workflow Design and Geoprocessing Models                             | Lab 14 |              | [Project 3](project_3.md)                     |
-| February 25  | 8    |                                                                      | Lab 15 |              |                                               |
-| March 2      | 8    | Advanced Topics (tbd)                                                | Lab 16 |              | Lab 14         |
-| March 4      | 9    |                                                                      | Lab 17 |              |                                               |
-| March 9      | 9    | Modern Map Making                                                    | Lab 17 |              | [Project 4]((project_4.md))                   | 
-| March 13     | 10   |                                                                      | Lab 19 |              |                                               |
-\*This is s a Tuesday on Monday schedule          
+| February 25  | 8    | Georeferencing                                                       | Lab 15 |              |                                               |
+| March 2      | 8    | Advanced Topics (tbd)                                                | Lab 16 |              | Lab 14                                        |
+| March 4      | 9    |                                                                      | Lab 17 |              | Lab 15                                        |
+| March 9      | 9    | Modern Map Making                                                    | Lab 17 |              |                                               |  
+| March 13     | 10   |                                                                      | Lab 19 |              | [Project 4]((project_4.md))                                              |
+       

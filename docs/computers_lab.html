@@ -100,9 +100,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others. We will practice organizing data on a computer and extracting zipped archives.</p>
 <p>In this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful. If you learn how to use the terminal well you will probably use it frequently.</p>
 <p>That said, you will not have to be great at it for this class. It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.</p>
+<p>For this lab you should <strong><u>turn in the text document you create in steps 8, and 9 of Task 1</u></strong> on Canvas. You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter.</p>
+</section>
 <section id="task-1-exploring-a-directory-structure-and-unzipping-files" class="level2">
 <h2 class="anchored" data-anchor-id="task-1-exploring-a-directory-structure-and-unzipping-files">Task 1: Exploring a Directory Structure and unzipping files</h2>
 <ol type="1">
@@ -154,7 +158,7 @@ Tip&nbsp;2: Where is my home folder?
 <li>Press <code>Ctrl+S</code>. This opens a dialogue for saving the QGIS project. Navigate to the <code>nr218</code> directory you just created. Name the project after you CalPoly email address (e.g.&nbsp;<code>mthuggin</code>. Note that this would be a terrible thing to actually name a project). You have now saved a file containing the project.</li>
 <li>Press <code>Ctrl+Shift+V</code>, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to <code>~/Downloads/toy_data</code> and select <code>Eaton_Perimeter_20250121.geojson</code>. You should now see a polygon in in the map (<a href="#fig-eaton" class="quarto-xref">Figure&nbsp;1</a>)</li>
 </ul>
-<div id="fig-eaton" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter" alt="Image showing the eaton fire perimeter polygon within QGIS">
+<div id="fig-eaton" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the eaton fire perimeter polygon within QGIS" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eaton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/eaton_perim.png" class="img-fluid figure-img" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter" alt="Image showing the eaton fire perimeter polygon within QGIS">
@@ -172,7 +176,7 @@ Figure&nbsp;1: You should se something like this after opening <code>Eaton_Perim
 <ul>
 <li>Now QGIS cannot find the Eaton Fire perimeter data because the <em>relative path</em> to the data has changed (see <a href="#tip-paths" class="quarto-xref">Tip&nbsp;3</a>). A dialogue such as the one shown in <a href="#fig-unavailable" class="quarto-xref">Figure&nbsp;2</a> will appear. Don’t worry about trying to fix the problem yet.</li>
 </ul>
-<div id="fig-unavailable" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it." alt="Image showing the handle unavailable data dialogue window in QGIS">
+<div id="fig-unavailable" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the handle unavailable data dialogue window in QGIS" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-unavailable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/unavailable.png" class="img-fluid figure-img" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it." alt="Image showing the handle unavailable data dialogue window in QGIS">
@@ -184,7 +188,7 @@ Figure&nbsp;2: When the relative path to data changes (or the data is deleted) Q
 </div>
 <ol start="7" type="1">
 <li>Open a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, <code>cd ~/nr218</code>.</li>
-<li>Create a document in a text editor (e.g.&nbsp;notepad on Windows). Name it <code>&lt;your_name&gt;_lab1.txt</code> and save it in <code>~/nr218</code>.</li>
+<li>Create a document in a text editor (e.g.&nbsp;notepad on Windows). Name it <code>gustav_adolf_lab1.txt</code> (use your own name) and save it in <code>~/nr218</code>.</li>
 <li>View the contents of the directory:</li>
 </ol>
 <ul>
@@ -254,8 +258,9 @@ Tip&nbsp;3: What is a Path?
 <li>Use the browser flow to sign in with your Cal Poly email and complete SSO/MFA when prompted.</li>
 <li>Create a local sync folder (e.g., <code>mkdir ~/CalPolyOneDrive</code>).</li>
 <li>One-time sync: <code>rclone sync calpoly-onedrive: ~/CalPolyOneDrive</code>.</li>
-<li>Optional mount for live access (requires FUSE): <code>rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes</code> (keep terminal open).</li>
+<li>Optional mount for live access (requires FUSE): <code>rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes &amp;</code> (keep terminal open).</li>
 <li>Note any errors and how you resolved them (e.g., MFA prompts, permission issues).</li>
+<li>Alternately figure install this <a href="https://github.com/abraunegg/onedrive/blob/master/readme.md">OneDrive Client</a>, and tell me if it works out for you (I have not tried it).</li>
 </ul>
 <p>You may have to ask the IT department to approve rclone to attach to your OneDrive (and wait for them to do so), if this is the case it will prompt you to do so. If you are having problems consult the <a href="https://github.com/rclone/rclone">rclone documentation</a>.</p>
 

@@ -56,11 +56,7 @@ Provide written responses to the following Questions:
 
 **Make your first (production quality) map!** 
 - Look through the  [Making a Map tutorial](https://www.qgistutorials.com/en/docs/3/making_a_map.html)
-- Use what you have learned in lecture and the previous tutorials to make you first map
-   + Use the `SPR_data.zip` from the files section of Canvas (we already used it in class)
-   + Make a map showing either vegetation type, soil type, timber type, or or land use
-   + Be sure to include standard elements such as scale and north arrow.  
-   + Decisions about what style and elements will best convey the information are up to you
+- Use what you have learned in lecture and the previous tutorials to make your first map
 - Submit a PDF image of the final map you created at the end of the tutorial
 
 
