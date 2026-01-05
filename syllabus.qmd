@@ -118,25 +118,25 @@ There are many other helpful sources of information on GIS Software
 
 Here's the table with the Week column containing just the integer week values:
 
-| Date         | Week | Lecture                                                              | Lab  _| Reading      | Due Dates                                     |
-|--------------|------|----------------------------------------------------------------------|-------|--------------|-----------------------------------------------|
-| January 5    | 1    | Introduction, Computers                                              | 1  | ch. 1 and 2  |                                               |
-| January 7    | 1    | Basic GIS Concepts,  Scale, Coordinate systems, and Map Projections  | 2  |              | [Lab 1](computers_lab.html)                   |
-| January 12   | 2    | Spatial Data Models and File Formats                                 | 3  | ch. 3 and 4  |                                               |
-| January 14   | 2    |                                                                      | 4  |              |                                               |
-| January 20*  | 3    | Coordinate Systems, Map Projections, Datums, Reprojection            | 5  | ch. 5 and 6  | [Project 1](project_1.html)                   |
-| January 21   | 3    | GeoProcessing and Vector Operations                                  | 6  |              |                                               |
-| January 26   | 4    | Data Creation, Editing, Topology Basics                              | 7  | ch. 7 and 8  |                                               |
-| January 28   | 4    | Rasters and Elevation Data                                           | 8  |              | [Final Project Brainstorm](final_proj.md) |
-| February 2   | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | 9  | ch. 9 and 10 | [Project 2](project_2.html)                   |
-| February 4   | 5    | Remote Sensing and Spectral Indices                                  | 10 |              |                                               |
-| February 9   | 6    | Segmentation                                                         | 11 |              |                                               |
-| February 11  | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | 12 |              | [Lab 11](lab_11.html)    |
-| February 18  | 7    |                                                                      | 13 |              |                                               |
-| February 23  | 7    | Workflow Design and Geoprocessing Models                             | 14 |              | [Project 3](project_3.md)                     |
-| February 25  | 8    |                                                                      | 15 |              |                                               |
-| March 2      | 8    | Advanced Topics (tbd)                                                | 16 |              | [Final Project Draft](final_proj.md)          |
-| March 4      | 9    |                                                                      | 17 |              |                                               |
-| March 9      | 9    | Modern Map Making                                                    | 17 |              | [Project 4]((project_4.md))                   | 
-| March 13     | 10   |                                                                      | 19 |              |                                               |
+| Date         | Week | Lecture                                                              | Lab    | Reading      | Due Dates                                     |
+|--------------|------|----------------------------------------------------------------------|--------|--------------|-----------------------------------------------|
+| January 5    | 1    | Introduction, Computers                                              | Lab 1  | ch. 1 and 2  |                                               |
+| January 7    | 1    | Basic GIS Concepts,  Scale, Coordinate systems, and Map Projections  | Lab 2  |              | [Lab 1](computers_lab.html)                   |
+| January 12   | 2    | Spatial Data Models and File Formats                                 | Lab 3  | ch. 3 and 4  |                                               |
+| January 14   | 2    |                                                                      | Lab 4  |              |                                               |
+| January 20*  | 3    | Coordinate Systems, Map Projections, Datums, Reprojection            | Lab 5  | ch. 5 and 6  | [Project 1](project_1.html)                   |
+| January 21   | 3    | GeoProcessing and Vector Operations                                  | Lab 6  |              |                                               |
+| January 26   | 4    | Data Creation, Editing, Topology Basics                              | Lab 7  | ch. 7 and 8  |                                               |
+| January 28   | 4    | Rasters and Elevation Data                                           | Lab 8  |              | [Final Project Brainstorm](final_proj.md) |
+| February 2   | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | Lab 9  | ch. 9 and 10 | [Project 2](project_2.html)                   |
+| February 4   | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              |                                               |
+| February 9   | 6    | Segmentation                                                         | Lab 11 |              |                                               |
+| February 11  | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | Lab 12 |              | [Lab 11](lab_11.html)    |
+| February 18  | 7    |                                                                      | Lab 13 |              |                                               |
+| February 23  | 7    | Workflow Design and Geoprocessing Models                             | Lab 14 |              | [Project 3](project_3.md)                     |
+| February 25  | 8    |                                                                      | Lab 15 |              |                                               |
+| March 2      | 8    | Advanced Topics (tbd)                                                | Lab 16 |              | Lab 14         |
+| March 4      | 9    |                                                                      | Lab 17 |              |                                               |
+| March 9      | 9    | Modern Map Making                                                    | Lab 17 |              | [Project 4]((project_4.md))                   | 
+| March 13     | 10   |                                                                      | Lab 19 |              |                                               |
 \*This is s a Tuesday on Monday schedule          
