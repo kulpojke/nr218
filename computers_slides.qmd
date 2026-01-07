@@ -114,7 +114,7 @@ If you have a deep emotional connection to MS Windows, prepare to be offended!
 - **macOS**: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.
 - **Windows**: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages.
 
-## The Windows Terminal Zoo {style="font-size:0.7em"}
+## The Windows Terminal Dumpsterfire {style="font-size:0.7em"}
 
 - **Command Prompt (`cmd.exe`)**: legacy DOS-style environment with limited scripting features.
 - **PowerShell (5.x)** vs **PowerShell 7+**: different .NET runtimes, different module compatibility.

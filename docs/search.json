@@ -84,11 +84,11 @@
     "text": "Terminals Across Operating Systems\n\nLinux: terminals are native; /bin/bash, /bin/zsh, or others under the same POSIX conventions.\nmacOS: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.\nWindows: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages."
   },
   {
-    "objectID": "index.html#the-windows-terminal-zoo",
-    "href": "index.html#the-windows-terminal-zoo",
+    "objectID": "index.html#the-windows-terminal-dumpsterfire",
+    "href": "index.html#the-windows-terminal-dumpsterfire",
     "title": "NR 218",
-    "section": "The Windows Terminal Zoo",
-    "text": "The Windows Terminal Zoo\n\nCommand Prompt (cmd.exe): legacy DOS-style environment with limited scripting features.\nPowerShell (5.x) vs PowerShell 7+: different .NET runtimes, different module compatibility.\nGit Bash / MSYS2: provides a GNU userland inside Windows; paths need translation.\nEnvironment-specific shells: Anaconda Prompt, OSGeo4W Shell, etc., inject toolchains and custom env vars; each behaves slightly differently."
+    "section": "The Windows Terminal Dumpsterfire",
+    "text": "The Windows Terminal Dumpsterfire\n\nCommand Prompt (cmd.exe): legacy DOS-style environment with limited scripting features.\nPowerShell (5.x) vs PowerShell 7+: different .NET runtimes, different module compatibility.\nGit Bash / MSYS2: provides a GNU userland inside Windows; paths need translation.\nEnvironment-specific shells: Anaconda Prompt, OSGeo4W Shell, etc., inject toolchains and custom env vars; each behaves slightly differently."
   },
   {
     "objectID": "index.html#why-does-cmd.exe-feel-janky",
@@ -1743,11 +1743,11 @@
     "text": "Terminals Across Operating Systems\n\nLinux: terminals are native; /bin/bash, /bin/zsh, or others under the same POSIX conventions.\nmacOS: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.\nWindows: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages."
   },
   {
-    "objectID": "computers_slides.html#the-windows-terminal-zoo",
-    "href": "computers_slides.html#the-windows-terminal-zoo",
+    "objectID": "computers_slides.html#the-windows-terminal-dumpsterfire",
+    "href": "computers_slides.html#the-windows-terminal-dumpsterfire",
     "title": "",
-    "section": "The Windows Terminal Zoo",
-    "text": "The Windows Terminal Zoo\n\nCommand Prompt (cmd.exe): legacy DOS-style environment with limited scripting features.\nPowerShell (5.x) vs PowerShell 7+: different .NET runtimes, different module compatibility.\nGit Bash / MSYS2: provides a GNU userland inside Windows; paths need translation.\nEnvironment-specific shells: Anaconda Prompt, OSGeo4W Shell, etc., inject toolchains and custom env vars; each behaves slightly differently."
+    "section": "The Windows Terminal Dumpsterfire",
+    "text": "The Windows Terminal Dumpsterfire\n\nCommand Prompt (cmd.exe): legacy DOS-style environment with limited scripting features.\nPowerShell (5.x) vs PowerShell 7+: different .NET runtimes, different module compatibility.\nGit Bash / MSYS2: provides a GNU userland inside Windows; paths need translation.\nEnvironment-specific shells: Anaconda Prompt, OSGeo4W Shell, etc., inject toolchains and custom env vars; each behaves slightly differently."
   },
   {
     "objectID": "computers_slides.html#why-does-cmd.exe-feel-janky",
