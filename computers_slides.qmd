@@ -8,7 +8,7 @@
 
 ::: { .r-stack style="width:100%; position: relative;"}
 
-::: {.fragment .absolute .fade-out data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%; box-sizing:border-box;"}
+::: {.fragment .absolute data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%; box-sizing:border-box;"}
 A machine that manipulates data following a list of programmed instructions
 :::
 
@@ -21,7 +21,7 @@ A machine that manipulates data following a list of programmed instructions
 
 ::: { .r-stack style="width:100%; position: relative;"}
 
-::: {.fragment .absolute .fade-out data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%; box-sizing:border-box;"}
+::: {.fragment .absolute  data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%; box-sizing:border-box;"}
 ![](img/Sphere_300_Computer.jpg){fig-alt="Image of an old but cool looking computer" fig-cap=""}
 
 ::: {.attribution style="font-size:0.4em"} 
