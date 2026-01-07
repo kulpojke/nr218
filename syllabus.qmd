@@ -106,16 +106,17 @@ There are many other helpful sources of information on GIS Software, here area c
 | January 20 (Tuesday) | 3 | Coordinate Systems, Map Projections, Datums, Reprojection       | Lab 5  | ch. 5 and 6  | [Project 1](project_1.html)                   |
 | January 21   | 3    | GeoProcessing and Vector Operations                                  | Lab 6  |              |                                               |
 | January 26   | 4    | Data Creation, Editing, Topology Basics                              | Lab 7  | ch. 7 and 8  |                                               |
-| January 28   | 4    | Rasters and Elevation Data                                           | Lab 8  |              |                                                |
+| January 28   | 4    | Rasters and Elevation Data                                           | Lab 8  |              |                                               |
 | February 2   | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | Lab 9  | ch. 9 and 10 | [Project 2](project_2.html)                   |
-| February 4   | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              | Lab 8                                             |
+| February 4   | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              | Lab 8                                         |
 | February 9   | 6    | Segmentation                                                         | Lab 11 |              |                                               |
 | February 11  | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | Lab 12 |              | Lab 10                                        |
+| February 16  | 7    | Holiday - NO CLASS                                                   |        |              |                                               |  
 | February 18  | 7    |                                                                      | Lab 13 |              | [Lab 11](lab_11.html)                         |
-| February 23  | 7    | Workflow Design and Geoprocessing Models                             | Lab 14 |              | [Project 3](project_3.md)                     |
+| February 23  | 8    | Workflow Design and Geoprocessing Models                             | Lab 14 |              | [Project 3](project_3.md)                     |
 | February 25  | 8    | Georeferencing                                                       | Lab 15 |              |                                               |
-| March 2      | 8    | Advanced Topics (tbd)                                                | Lab 16 |              | Lab 14                                        |
+| March 2      | 9    | Advanced Topics (tbd)                                                | Lab 16 |              | Lab 14                                        |
 | March 4      | 9    |                                                                      | Lab 17 |              | Lab 15                                        |
-| March 9      | 9    | Modern Map Making                                                    | Lab 17 |              |                                               |  
-| March 13     | 10   |                                                                      | Lab 19 |              | [Project 4]((project_4.md))                                              |
+| March 9      | 10   | Modern Map Making                                                    | Lab 17 |              |                                               |  
+| March 11     | 10   |                                                                      | Lab 19 |              | [Project 4]((project_4.md))                                              |
        
