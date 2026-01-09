@@ -17,8 +17,15 @@ Wednesday: (9:10 - 12:00)
 
 ## Instructor Details
 Michael Huggins  
+&#9993; [mthuggin@calpoly.edu](mailto:mthuggin@calpoly.edu)
 Office Hours: Mondays 2:30 - 4:30  
-Building 72-107 (Plant Conservatory)   
+Building 72-107 (Plant Conservatory)  
+
+__TA:__ Dillen Corlett
+
+&#9993; [dicorlet@calpoly.edu](mailto:dicorlet@calpoly.edu)
+
+Dillen will host remote office hours, by appointment, during the quarter for those who cannot make my office hours.  Follow this [link to her schedule](https://calendar.app.google/kKshuBDibeA6inss7) to view available times.
     
 ## Learning Goals
 + How to formulate and answer problems using spatial data  
