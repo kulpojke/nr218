@@ -112,11 +112,11 @@
     "text": "Differences in tree command across platforms\nOn Unix like systems, like Mac OSX and Linux, by default tree shows files.\n.\n├── PoorlyNamedFiles\n│   ├── basin.geojson\n│   ├── do not put spaces in filenames.geojson\n│   ├── Junk\n│   │   └── toadstools\n│   └── xp23_99.csv\n├── README.md\n└── WellNamedFiles\n    ├── cal_median_household.csv\n    ├── Eaton_Perimeter_20250121.geojson\n    └── san_simeon_creek_basin_4326.geojson\n\nIn PowerShell, files are omitted by default\n.\n├── PoorlyNamedFiles\n│   └── Junk\n└── WellNamedFiles\nIn order to show files in PowerShell use the F flag, tree /F"
   },
   {
-    "objectID": "index.html#if-you-want-to-know-more-about-using-teminals",
-    "href": "index.html#if-you-want-to-know-more-about-using-teminals",
+    "objectID": "index.html#project-1",
+    "href": "index.html#project-1",
     "title": "NR 218",
-    "section": "If you want to know more about using teminals",
-    "text": "If you want to know more about using teminals\nTry Terminal Tutor"
+    "section": "Project 1",
+    "text": "Project 1\nSun 11 Jan 2026 01:57:25 PM PST I made some changes to Project 1. If you have started, be sure to look at the updates."
   },
   {
     "objectID": "index.html#what-is-gis",
@@ -1887,42 +1887,21 @@
     "href": "project_1.html",
     "title": "NR 218 Project 1: Mapping",
     "section": "",
-    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\n\n\n\n\nProvide written responses to the following Questions:\n\nMap Scale Analysis: Determine and discuss the most appropriate (approximate) representative fractions for the following verbal map scale descriptions: (a) individual person, (b) neighborhood, (c) urban, (d) regional, (e) national, and (f) global.\nMap Projections Research: Go to the National Atlas website and read about map projections (archived link). Define the following terms:\n\ndatum\ndevelopable surface\nsecant\nazimuth\nrhumb line\nzenithal\n\nProjection Properties: Describe the general properties of the following projections:\n\nUniversal Transverse Mercator (UTM)\nState plane system\nRobinson projection\n\nUSGS Topographic Maps:\n\nDownload a map for your place of residence from: https://ngmdb.usgs.gov/topoview/\nWhat are the scale, projection, and contour interval of the USGS topographic map that you downloaded for your place of residence?\n\nCoordinate Systems: Find the latitude and longitude of your hometown. Explain how you can convert the coordinates from DD to DMS or vice versa.\n\n\n\n\n\nComplete the following tutorials and submit screenshots of the final product:\n\nWorking With Attributes\nBasic Vector Styling\nCalculating Line Lengths and Statistics\n\n\n\n\n\n\n\n[Optional] Carefully follow the instructions to install QGIS on your personal computer - if you are not comfortable using your own machine, skip this step and use the machines in the classroom. Allow 5-10 mins to download and install, depending on your internet connection: https://courses.spatialthoughts.com/install-qgis-ltr.html\nMake your first (production quality) map! - Look through the Making a Map tutorial - Use what you have learned in lecture and the previous tutorials to make your first map - Submit a PDF image of the final map you created at the end of the tutorial\n\n\n\n\nSubmit the following items:\n\nWritten Responses: Answers to Questions 1-6 above\n[Optional] A screenshot showing that you successfully installed QGIS (include the time and date in the screenshot)\nFirst Map: An image of your first map (.tiff, .jpeg, .png, or .pdf format) created from Tutorial 1\n\nBe sure to include all the necessary elements required for a high quality map (i.e. scale bar, north arrow, legend, gridlines, coordinate labels)\n\nTutorial Screenshots: Screenshots of the final outputs and processing steps of the (1) Working With Attributes Tutorial, (2) Basic Vector Styling Tutorial, and (3) Calculating Line Lengths and Statistics Tutorial"
+    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\nPractice organizing files\n\n\n\n\nThis assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.\nMake a Folder called NR218 in you OneDrive sync folder. Make a subdirectory, project_1 inside of NR218"
   },
   {
     "objectID": "project_1.html#learning-goals",
     "href": "project_1.html#learning-goals",
     "title": "NR 218 Project 1: Mapping",
     "section": "",
-    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling"
+    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\nPractice organizing files"
   },
   {
-    "objectID": "project_1.html#written-responses-3-pts",
-    "href": "project_1.html#written-responses-3-pts",
+    "objectID": "project_1.html#introduction",
+    "href": "project_1.html#introduction",
     "title": "NR 218 Project 1: Mapping",
     "section": "",
-    "text": "Provide written responses to the following Questions:\n\nMap Scale Analysis: Determine and discuss the most appropriate (approximate) representative fractions for the following verbal map scale descriptions: (a) individual person, (b) neighborhood, (c) urban, (d) regional, (e) national, and (f) global.\nMap Projections Research: Go to the National Atlas website and read about map projections (archived link). Define the following terms:\n\ndatum\ndevelopable surface\nsecant\nazimuth\nrhumb line\nzenithal\n\nProjection Properties: Describe the general properties of the following projections:\n\nUniversal Transverse Mercator (UTM)\nState plane system\nRobinson projection\n\nUSGS Topographic Maps:\n\nDownload a map for your place of residence from: https://ngmdb.usgs.gov/topoview/\nWhat are the scale, projection, and contour interval of the USGS topographic map that you downloaded for your place of residence?\n\nCoordinate Systems: Find the latitude and longitude of your hometown. Explain how you can convert the coordinates from DD to DMS or vice versa."
-  },
-  {
-    "objectID": "project_1.html#tutorial-assignments-3-pts",
-    "href": "project_1.html#tutorial-assignments-3-pts",
-    "title": "NR 218 Project 1: Mapping",
-    "section": "",
-    "text": "Complete the following tutorials and submit screenshots of the final product:\n\nWorking With Attributes\nBasic Vector Styling\nCalculating Line Lengths and Statistics"
-  },
-  {
-    "objectID": "project_1.html#project-work-4-pts",
-    "href": "project_1.html#project-work-4-pts",
-    "title": "NR 218 Project 1: Mapping",
-    "section": "",
-    "text": "[Optional] Carefully follow the instructions to install QGIS on your personal computer - if you are not comfortable using your own machine, skip this step and use the machines in the classroom. Allow 5-10 mins to download and install, depending on your internet connection: https://courses.spatialthoughts.com/install-qgis-ltr.html\nMake your first (production quality) map! - Look through the Making a Map tutorial - Use what you have learned in lecture and the previous tutorials to make your first map - Submit a PDF image of the final map you created at the end of the tutorial"
-  },
-  {
-    "objectID": "project_1.html#submission-requirements",
-    "href": "project_1.html#submission-requirements",
-    "title": "NR 218 Project 1: Mapping",
-    "section": "",
-    "text": "Submit the following items:\n\nWritten Responses: Answers to Questions 1-6 above\n[Optional] A screenshot showing that you successfully installed QGIS (include the time and date in the screenshot)\nFirst Map: An image of your first map (.tiff, .jpeg, .png, or .pdf format) created from Tutorial 1\n\nBe sure to include all the necessary elements required for a high quality map (i.e. scale bar, north arrow, legend, gridlines, coordinate labels)\n\nTutorial Screenshots: Screenshots of the final outputs and processing steps of the (1) Working With Attributes Tutorial, (2) Basic Vector Styling Tutorial, and (3) Calculating Line Lengths and Statistics Tutorial"
+    "text": "This assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.\nMake a Folder called NR218 in you OneDrive sync folder. Make a subdirectory, project_1 inside of NR218"
   },
   {
     "objectID": "syllabus.html",

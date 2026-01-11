@@ -13,10 +13,17 @@ format:
 - Start working with geographic data 
 - Make your first map!
 - Start working with map attributes and styling
+- Practice organizing files
 
-## Written Responses (3 pts)
+## Introduction
 
-Provide written responses to the following Questions:
+This assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.
+
+Make a Folder called `NR218` in you OneDrive sync folder. Make a subdirectory, `project_1` inside of `NR218`  
+
+# Written Responses (3 pts)
+
+__Provide written responses to the following Questions in a pdf__. Name the document `answers.pdf` save it in your`NR218/project_1` folder.
 
 1. **Map Scale Analysis**: Determine and discuss the most appropriate (approximate) representative fractions for the following verbal map scale descriptions: (a) individual person, (b) neighborhood, (c) urban, (d) regional, (e) national, and (f) global.
 
@@ -40,36 +47,25 @@ Provide written responses to the following Questions:
 6. **Coordinate Systems**: Find the latitude and longitude of your hometown. Explain how you can convert the coordinates from DD to DMS or vice versa.
 
 
-## Tutorial Assignments (3 pts)
+# Tutorial Assignments (3 pts)
+Make a subdirectory called `tutorials` within your `NR218/project_1` directory.
 
-1. **Complete the following tutorials** and submit screenshots of the final product:
-   - [Working With Attributes](https://www.qgistutorials.com/en/docs/3/working_with_attributes.html)
-   - [Basic Vector Styling](https://www.qgistutorials.com/en/docs/3/basic_vector_styling.htm)
-   - [Calculating Line Lengths and Statistics](https://www.qgistutorials.com/en/docs/3/calculating_line_lengths.html )
+Complete the following tutorials.  Make a subdirectory (with a reasonable name) for each(with the exception of terminal tutor, nothing to save there) within `NR218/project_1/tutorials`.  __Submit screenshots of the final product for each__:
+- [Terminal Tutor](https://www.terminaltutor.com/) (You just need to do part 2, _Navigating Directories_. Feel free to do the first part too if you want.  Take a screenshot when you are done.)
+- [Working With Attributes](https://www.qgistutorials.com/en/docs/3/working_with_attributes.html)
+- [Basic Vector Styling](https://www.qgistutorials.com/en/docs/3/basic_vector_styling.htm)
+- [Calculating Line Lengths and Statistics](https://www.qgistutorials.com/en/docs/3/calculating_line_lengths.html )
 
 
-## Project Work (4 pts)
-
-### Setup (Optional)
-**[Optional]** Carefully follow the instructions to install QGIS on your personal computer - if you are not comfortable using your own machine, skip this step and use the machines in the classroom. Allow 5-10 mins to download and install, depending on your internet connection: https://courses.spatialthoughts.com/install-qgis-ltr.html
-
+# Making a Map (3 pts)
 
 **Make your first (production quality) map!** 
-- Look through the  [Making a Map tutorial](https://www.qgistutorials.com/en/docs/3/making_a_map.html)
-- Use what you have learned in lecture and the previous tutorials to make your first map
-- Submit a PDF image of the final map you created at the end of the tutorial
+- Make a subdirectory called `map` within your `NR218/project_1` directory in which to store files for this part.
+- Comlete the [Making a Map tutorial](https://www.qgistutorials.com/en/docs/3/making_a_map.html)
+- __Submit a PDF image of the final map you created at the end of the tutorial__
+
+# Show your directory structure (1 pt)
+
+In the terminal navigate to your `NR218/project_1` folder.  Use `tree` (or in PowerShell `tree /F` to show the directory structure).  __Paste the tree output into a text file and submit__.
 
 
-
-## Submission Requirements
-
-Submit the following items:
-
-1. **Written Responses**: Answers to Questions 1-6 above
-
-2. **[Optional]** A screenshot showing that you successfully installed QGIS (include the time and date in the screenshot)
-
-3. **First Map**: An image of your first map (.tiff, .jpeg, .png, or .pdf format) created from Tutorial 1
-   - Be sure to include all the necessary elements required for a high quality map (i.e. scale bar, north arrow, legend, gridlines, coordinate labels)
-
-4. **Tutorial Screenshots**: Screenshots of the final outputs and processing steps of the (1) Working With Attributes Tutorial, (2) Basic Vector Styling Tutorial, and (3) Calculating Line Lengths and Statistics Tutorial
