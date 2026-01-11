@@ -123,7 +123,7 @@ __Method 2__
 
 ::: {.r-stack}
 ::: {.fragment .fade-in-then-out data-fragment-index="1"}
-![](img/symbology.png){style="height: 45vh; width: auto; max-width: 100%; object-fit: contain;"}
+![](img/symbology.png){style="height: 35vh; width: auto; max-width: 100%; object-fit: contain;"}
 :::
 
 ::: {.fragment .fade-in-then-out data-fragment-index="2" style="display: flex; flex-direction: column; align-items: center; gap: 10px;"}
