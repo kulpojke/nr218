@@ -57,7 +57,7 @@ A zip file is a compressed archive.  Zipping a folder full of sub-directories an
 7. Open a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, `cd ~/nr218`.
 8. Create a document in a text editor (e.g. notepad on Windows). Name it `gustav_adolf_lab1.txt` (use your own name) and save it in `~/nr218`.
 9. View the contents of the directory:
-  - In the terminal (while in `~/nr218`) type `tree`
+  - In the terminal (while in `~/nr218`) type `tree` (on Windows `tree` omits files by default, so use `tree /F`)
     - macOS/Linux, install if missing: `brew install tree` / `sudo apt install tree`.
     - Windows PowerShell: `tree` should be present.  If you love typing you can use `Get-ChildItem -Recurse`.
   - Copy the output  and paste at the top of your text document.

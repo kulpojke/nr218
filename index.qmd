@@ -57,6 +57,8 @@ Use arrows or menu in bottom left corner to navigate amongst slides.
 
 {{< include computers_slides.qmd >}}
 
+{{< include notes_lab_1.qmd >}}
+
 {{< include what_is_gis.qmd >}}
 
 {{< include some_basic_gis_concepts.qmd >}}

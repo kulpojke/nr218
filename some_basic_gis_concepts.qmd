@@ -19,9 +19,7 @@
   
 ## Direction {style="font-size: 0.6em" auto-animate=true auto-animate-easing="ease-in-out"}
 
-
-
-The position of a feature or phenomenon on the surface of the earth
+The angle from feature or phenomenon on the surface of the earth
 relative to some reference point
 
 + Egocentric location, _to my left_
@@ -29,28 +27,14 @@ relative to some reference point
 
 In geography and GIS, there are three more standard benchmarks that are used to define the directions:
 
++ __True north__ is towards the point at which the axis of the
+earth’s rotation intersects the earth’s surface in the norther hemisphere
 
++ __Magnetic north__ is towards where the Earth's magnetic fields merge in the the norther hemisphere  
 
-[True north]{data-id="1"} (and south) is towards the point at which the axis of the
-earth’s rotation intersects the earth’s surface
-
-[Magnetic north]{data-id="2"} is towards where the Earth's magnetic fields merge in the North  
-
-[Grid north]{data-id="3"} is the northward direction of the grid lines of latitude and longitude on a map
++ __Grid north__ is the northward direction of the grid lines of latitude and longitude on a map
 
 ## {auto-animate=true auto-animate-easing="ease-in-out"}
-
-::: {.absolute style="top: 10px; left: 50px; font-size: 0.8em;" data-id="1"}
-True north
-:::
-
-::: {.absolute style="top: 10px; left: 50%; transform: translateX(-50%); font-size: 0.8em;" data-id="2"}
-Magnetic north
-:::
-
-::: {.absolute style="top: 10px; right: 50px; font-size: 0.8em;" data-id="3"}
-Grid north
-:::
 
 :::{.absolute style="top: 40px; left: 50px; font-size: 0.8em;" data-id="1"}
 ![](img/Utm-latlon_grid_en.svg.png){width=400px top=10 right=0}
@@ -98,7 +82,7 @@ All GIS systems have a database that can relate spatial-data and attribute data.
 
 + Spatial data is made up of points, lines, polygons, etc... which represent locations or features in the real world, e.g. a linestring representing a river.
 
-+ Attributes are data associated with the features, e.g. the population ofa city. 
++ Attributes are data associated with the features, e.g. the population of a city. 
 
 ## Layers {style="font-size:0.6em"}
 Models representing different aspects of the physical world
@@ -136,9 +120,16 @@ Reference - shows location information, tend to represent geographic reality acc
 
 :::{.fragment .fade-in-then-out style="position: absolute; width: 50%; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.8em;" data-fragment-index="3"}
 
+Reference - shows location information, __tend__ to represent geographic reality accurately, topographic maps for example
+:::
+
+
+:::{.fragment .fade-in-then-out style="position: absolute; width: 50%; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.8em;" data-fragment-index="4"}
+
 Thematic - shows how one or more factors are
 distributed across space, such as a map of malaria infection rates
 :::
+
 
 
 :::
@@ -152,13 +143,18 @@ distributed across space, such as a map of malaria infection rates
 :::
 
 ::: {.fragment .fade-in-then-out style="position: absolute;" data-fragment-index="3"}
+![Subway map - topological diagram for navigating a system ](img/subway-map-2019a.png){height="50%}
+:::
+
+
+::: {.fragment .fade-in-then-out style="position: absolute;" data-fragment-index="4"}
 ![European GDP](img/euro-gdp-map.png)
 :::
 
 :::
 :::
 
-::: {.fragment .fade-in style="position: absolute top=0; font-size:0.5em" data-fragment-index="4"}
+::: {.fragment .fade-in style="position: absolute top=0; font-size:0.5em" data-fragment-index="5"}
 __Dynamic / Interactive__  
 - maps that change depending on user input
 ```{python}
