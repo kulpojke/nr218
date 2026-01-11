@@ -23,7 +23,6 @@ On Unix like systems, like Mac OSX and Linux, by default `tree` shows files.
 ```
 :::
 
-:::{r-stack}
 :::{.fragment .fade-in data-fragment-index="1" style="position: absolute;"}
 
 In PowerShell, files are omitted by default
