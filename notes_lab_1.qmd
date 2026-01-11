@@ -1,0 +1,45 @@
+# Notes on Lab 1 
+
+## Differences in `tree` command across platforms
+
+:::{r-stack}
+:::{.fragment .fade-out data-fragment-index="1" style="position: absolute;"}
+On Unix like systems, like Mac OSX and Linux, by default `tree` shows files.
+
+```
+.
+├── PoorlyNamedFiles
+│   ├── basin.geojson
+│   ├── do not put spaces in filenames.geojson
+│   ├── Junk
+│   │   └── toadstools
+│   └── xp23_99.csv
+├── README.md
+└── WellNamedFiles
+    ├── cal_median_household.csv
+    ├── Eaton_Perimeter_20250121.geojson
+    └── san_simeon_creek_basin_4326.geojson
+
+```
+:::
+
+:::{r-stack}
+:::{.fragment .fade-in data-fragment-index="1" style="position: absolute;"}
+
+In PowerShell, files are omitted by default
+
+```
+.
+├── PoorlyNamedFiles
+│   └── Junk
+└── WellNamedFiles
+```
+
+In order to show files in PowerShell use the F flag, `tree /F`
+
+:::
+:::
+
+## Project 1
+
+Sun 11 Jan 2026 01:57:25 PM PST I made some changes to Project 1.  If you have started, be sure to look at the updates.
