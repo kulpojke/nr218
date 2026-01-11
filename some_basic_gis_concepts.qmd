@@ -98,7 +98,7 @@ file = Path('assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson')
 df = gpd.read_file(file)
 df.head()
 ```
-Attributes of `assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson`
+Attributes of [`assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson`](assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson)
 
 ##
 ![Right-click layer --> Open Attribute Table](img/qgis-attrubute-table.png)
@@ -142,8 +142,10 @@ distributed across space, such as a map of malaria infection rates
 ![USGS Topographic Map of Boulder, CO](img/boulder-topo.png)
 :::
 
-::: {.fragment .fade-in-then-out style="position: absolute;" data-fragment-index="3"}
-![Subway map - topological diagram for navigating a system ](img/subway-map-2019a.png){height="50%}
+::: {.fragment .fade-in-then-out style="position: absolute; height:65vh; width:100%; overflow:hidden;" data-fragment-index="3"}
+<div style="height:90%; width:100%; display:flex; align-items:flex-start; justify-content:center;">
+  <img src="img/subway-map-2019a.png" alt="Subway map - topological diagram for navigating a system" style="max-height:25%; width:40%; object-fit:contain;" />
+</div>
 :::
 
 
@@ -198,7 +200,7 @@ map
 
 
 
-## Mental/Cognitive Maps
+## Mental/Cognitive Maps {.smaller}
 
 + Psychological tools that we all use every day. 
 + Stored in our brain
@@ -235,41 +237,3 @@ Data with a geographic and/or  spatial component.
 Data about the data, e.g. units, date collected, instruments used...
 :::
 
-## 
-Checkout Ticket - Some Basic GIS Concepts
-
-```{=html}
-<div class="passphrase-container" style="text-align: center; margin-top: 50px;">
-    <input type="password" id="passphraseInput" style="padding: 10px; font-size: 1.2em; border: 2px solid #ccc; border-radius: 5px; margin: 10px; width: 300px;" placeholder="Enter passphrase...">
-    <br>
-    <button onclick="checkPassphrase()" style="padding: 10px 20px; font-size: 1.2em; background-color: #007acc; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px;">Submit</button>
-    
-    <div id="response" style="margin-top: 20px; padding: 15px; border-radius: 5px; font-size: 1.1em; display: none;"></div>
-</div>
-
-<script>
-function checkPassphrase() {
-    const input = document.getElementById('passphraseInput');
-    const response = document.getElementById('response');
-    const passphrase = input.value.toLowerCase().trim();
-    
-    const passphrases = {
-        'sajaboys': 'Are the concepts of true north, magnetic north, and grid north more important for reference maps or thematic maps?  Why?.',
-    };
-    
-    response.style.display = 'block';
-    
-    if (passphrases[passphrase]) {
-        response.style.backgroundColor = '#d4edda';
-        response.style.color = '#155724';
-        response.textContent = passphrases[passphrase];
-    } else {
-        response.style.backgroundColor = '#f8d7da';
-        response.style.color = '#721c24';
-        response.textContent = 'Incorrect passphrase. Try again!';
-    }
-    
-    input.value = '';
-}
-</script>
-```
