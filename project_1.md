@@ -67,6 +67,14 @@ Complete the following tutorials.  Make a subdirectory (with a reasonable name) 
 
 # Show your directory structure (1 pt)
 
-In the terminal navigate to your `NR218/project_1` folder.  Use `tree` (or in PowerShell `tree /F` to show the directory structure).  __Paste the tree output into a text file and submit__.
+In the terminal navigate to your `NR218/project_1` folder.  Use `tree` (or in PowerShell `tree /F` to show the directory structure).  __Paste the tree output into a text file called `tree.txt` (or .rtf) and save to you `project_1` folder__.
+
+# How to submit
+
+Make a zip of your project 1 folder.  Submit it on Canvas.
+
+[How to zip stuff on OSX](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac)
+
+[How to zip stuff on Windows](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5)
 
 
