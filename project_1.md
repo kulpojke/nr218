@@ -73,7 +73,7 @@ In the terminal navigate to your `NR218/project_1` folder.  Use `tree` (or in Po
 
 Add a folder `project_1/screenshots/' and put you screenshots inside. (Please name screenshots so that I can figure out what they are.)
 
-Make a zip of your 'project_1' folder.  Submit it on Canvas.
+Make a zip of your `project_1` folder.  Submit it on Canvas.
 
 [How to zip stuff on OSX](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac)
 
