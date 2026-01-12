@@ -536,14 +536,14 @@
     "href": "index.html#data-types",
     "title": "NR 218",
     "section": "Data Types",
-    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Points - negatives, decimal values (32 bit precision)"
+    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Point (float) - negatives, decimal values (32 bit precision)"
   },
   {
-    "objectID": "index.html#data-types---continuous-vs-discrete",
-    "href": "index.html#data-types---continuous-vs-discrete",
+    "objectID": "index.html#continuous-vs-discrete-data",
+    "href": "index.html#continuous-vs-discrete-data",
     "title": "NR 218",
-    "section": "Data Types - Continuous vs Discrete",
-    "text": "Data Types - Continuous vs Discrete\n\nContinuous data consists of numerical values\nDiscrete data consists of a limited number of possible values, groups, or categories"
+    "section": "Continuous vs Discrete Data",
+    "text": "Continuous vs Discrete Data\n\nContinuous data consists of numerical values\nDiscrete data consists of a limited number of possible values, groups, or categories\n\nIn some cases could be represented with integers\nCould be some continuous quantity chopped into bins, e.g. income as “high”. “middle”, “low”"
   },
   {
     "objectID": "index.html#levels-of-measurement",
@@ -2412,14 +2412,14 @@
     "href": "spatial_data_models.html#data-types",
     "title": "",
     "section": "Data Types",
-    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Points - negatives, decimal values (32 bit precision)"
+    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Point (float) - negatives, decimal values (32 bit precision)"
   },
   {
-    "objectID": "spatial_data_models.html#data-types---continuous-vs-discrete",
-    "href": "spatial_data_models.html#data-types---continuous-vs-discrete",
+    "objectID": "spatial_data_models.html#continuous-vs-discrete-data",
+    "href": "spatial_data_models.html#continuous-vs-discrete-data",
     "title": "",
-    "section": "Data Types - Continuous vs Discrete",
-    "text": "Data Types - Continuous vs Discrete\n\nContinuous data consists of numerical values\nDiscrete data consists of a limited number of possible values, groups, or categories"
+    "section": "Continuous vs Discrete Data",
+    "text": "Continuous vs Discrete Data\n\nContinuous data consists of numerical values\nDiscrete data consists of a limited number of possible values, groups, or categories\n\nIn some cases could be represented with integers\nCould be some continuous quantity chopped into bins, e.g. income as “high”. “middle”, “low”"
   },
   {
     "objectID": "spatial_data_models.html#levels-of-measurement",

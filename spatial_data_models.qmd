@@ -57,15 +57,17 @@ What are Metadata?
 
     ::: {style="font-size:0.8em"}
     + **Integers (ints)** - numerical values (8 bit or 16 bit precision)
-    + **Floating Points** - negatives, decimal values (32 bit precision)
+    + **Floating Point (float)** - negatives, decimal values (32 bit precision)
     :::
   
   :::
 
-## Data Types - Continuous vs Discrete
+## Continuous vs Discrete Data {.smaller}
 
 + **Continuous** data consists of numerical values
 + **Discrete** data consists of a limited number of possible values, groups, or categories
+  + In some cases could be represented with integers
+  + Could be some continuous quantity chopped into bins, e.g. income as "high". "middle", "low"
 
 ## Levels of Measurement
 
