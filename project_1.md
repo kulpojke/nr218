@@ -51,6 +51,7 @@ __Provide written responses to the following Questions in a pdf__. Name the docu
 Make a subdirectory called `tutorials` within your `NR218/project_1` directory.
 
 Complete the following tutorials.  Make a subdirectory (with a reasonable name) for each(with the exception of terminal tutor, nothing to save there) within `NR218/project_1/tutorials`.  __Submit screenshots of the final product for each__:
+
 - [Terminal Tutor](https://www.terminaltutor.com/) (You just need to do part 2, _Navigating Directories_. Feel free to do the first part too if you want.  Take a screenshot when you are done.)
 - [Working With Attributes](https://www.qgistutorials.com/en/docs/3/working_with_attributes.html)
 - [Basic Vector Styling](https://www.qgistutorials.com/en/docs/3/basic_vector_styling.htm)
