@@ -494,14 +494,14 @@
     "href": "index.html#datums",
     "title": "NR 218",
     "section": "Datums",
-    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum uses matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond"
+    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond"
   },
   {
     "objectID": "index.html#projections",
     "href": "index.html#projections",
     "title": "NR 218",
     "section": "Projections",
-    "text": "Projections\n\n\nMathematical formulas for transform 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
+    "text": "Projections\n\n\nMathematical formulas for transforming 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
   },
   {
     "objectID": "index.html#projections-1",
@@ -1537,14 +1537,14 @@
     "href": "projections_etc.html#datums",
     "title": "",
     "section": "Datums",
-    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum uses matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond"
+    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond"
   },
   {
     "objectID": "projections_etc.html#projections",
     "href": "projections_etc.html#projections",
     "title": "",
     "section": "Projections",
-    "text": "Projections\n\n\nMathematical formulas for transform 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
+    "text": "Projections\n\n\nMathematical formulas for transforming 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
   },
   {
     "objectID": "projections_etc.html#projections-1",

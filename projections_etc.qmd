@@ -223,7 +223,7 @@ Image Source: [Manny Gimond](http://mgimond.github.io/)
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
-+ A local datum uses matches a geoid to an ellipsoid to fit a local context, e.g.
++ A local datum matches a geoid to an ellipsoid to fit a local context, e.g.
   + NAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.
   + ED50 (European Datum of 1950) is common in Western Europe.
 
@@ -250,7 +250,7 @@ Image Source: [Manny Gimond](http://mgimond.github.io/)
 
 ::: {.column width="50%"}
 
-+ Mathematical formulas for transform 3D Earth to 2D map
++ Mathematical formulas for transforming 3D Earth to 2D map
 + i.e. project the latitude and longitude to x any coordinates on a plane
 + There are infinite ways to do this, they all cause distortion
 
