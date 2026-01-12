@@ -105,20 +105,6 @@
     "text": "PowerShell vs Bash\n\nPowerShell is object-oriented: pipelines pass .NET objects, not plain strings.\nBash pipelines stream text; tools like cat, grep, awk compose seamlessly.\nExample (Bash):\n\ncat access.log | grep \"GET /api\" | wc -l\n\nPowerShell equivalent:\n\nGet-Content access.log | Select-String \"GET /api\" | Measure-Object | Select-Object -ExpandProperty Count"
   },
   {
-    "objectID": "index.html#differences-in-tree-command-across-platforms",
-    "href": "index.html#differences-in-tree-command-across-platforms",
-    "title": "NR 218",
-    "section": "Differences in tree command across platforms",
-    "text": "Differences in tree command across platforms\n\n\nOn Unix like systems, like Mac OSX and Linux, by default tree shows files.\n.\n├── PoorlyNamedFiles\n│   ├── basin.geojson\n│   ├── do not put spaces in filenames.geojson\n│   ├── Junk\n│   │   └── toadstools\n│   └── xp23_99.csv\n├── README.md\n└── WellNamedFiles\n    ├── cal_median_household.csv\n    ├── Eaton_Perimeter_20250121.geojson\n    └── san_simeon_creek_basin_4326.geojson\n\n\n\nIn PowerShell, files are omitted by default\n.\n├── PoorlyNamedFiles\n│   └── Junk\n└── WellNamedFiles\nIn order to show files in PowerShell use the F flag, tree /F"
-  },
-  {
-    "objectID": "index.html#project-1",
-    "href": "index.html#project-1",
-    "title": "NR 218",
-    "section": "Project 1",
-    "text": "Project 1\nSun 11 Jan 2026 01:57:25 PM PST I made some changes to Project 1. If you have started, be sure to look at the updates."
-  },
-  {
     "objectID": "index.html#what-is-gis",
     "href": "index.html#what-is-gis",
     "title": "NR 218",
@@ -159,6 +145,20 @@
     "title": "NR 218",
     "section": "Beautiful Maps",
     "text": "Beautiful Maps\n\nQGIS Map gallery\nOceano Dunes (using plas.io)\nStackexchange thread of beautiful maps\nCal poly Tree map"
+  },
+  {
+    "objectID": "index.html#differences-in-tree-command-across-platforms",
+    "href": "index.html#differences-in-tree-command-across-platforms",
+    "title": "NR 218",
+    "section": "Differences in tree command across platforms",
+    "text": "Differences in tree command across platforms\n\n\nOn Unix like systems, like Mac OSX and Linux, by default tree shows files.\n.\n├── PoorlyNamedFiles\n│   ├── basin.geojson\n│   ├── do not put spaces in filenames.geojson\n│   ├── Junk\n│   │   └── toadstools\n│   └── xp23_99.csv\n├── README.md\n└── WellNamedFiles\n    ├── cal_median_household.csv\n    ├── Eaton_Perimeter_20250121.geojson\n    └── san_simeon_creek_basin_4326.geojson\n\n\n\nIn PowerShell, files are omitted by default\n.\n├── PoorlyNamedFiles\n│   └── Junk\n└── WellNamedFiles\nIn order to show files in PowerShell use the F flag, tree /F"
+  },
+  {
+    "objectID": "index.html#project-1",
+    "href": "index.html#project-1",
+    "title": "NR 218",
+    "section": "Project 1",
+    "text": "Project 1\nSunday the 11th of Jan 2026 at 01:57:25 PM, I made some changes to Project 1. If you started working on it before then, be sure to look at the updates."
   },
   {
     "objectID": "index.html#location",
@@ -228,7 +228,7 @@
     "href": "index.html#map-types",
     "title": "NR 218",
     "section": "Map Types",
-    "text": "Map Types\nThere are a few types of maps:\n\n\n\nMental Maps\n\n\nReference - shows location information, tend to represent geographic reality accurately, topographic maps for example\n\n\nReference - shows location information, tend to represent geographic reality accurately, topographic maps for example\n\n\nThematic - shows how one or more factors are distributed across space, such as a map of malaria infection rates\n\n\n\n\n\n\n\n\nUSGS Topographic Map of Boulder, CO\n\n\n\n\n\n\n\n\n\n\n\n\nEuropean GDP\n\n\n\n\n\nDynamic / Interactive\n- maps that change depending on user input\n\n\n\nShow code\nfrom pathlib import Path\n\nimport folium\nimport geopandas as gpd\n\naoi_path = Path('assets/Eaton_Perimeter_20250121.geojson')\naoi = gpd.read_file(aoi_path)\n\n# grab centroids\nc = aoi.to_crs(epsg=26910).dissolve().centroid.to_crs(epsg=4326).item()\n\n# map\nmap = folium.Map(\n  location=[c.y, c.x],\n  tiles='OpenStreetMap',\n  zoom_start=12\n)\n\n# perimeter\ngeo_j = folium.GeoJson(data=aoi.__geo_interface__,\n  style_function=lambda feature: {\n    'color': 'red',\n    'weight': 2,\n    'fill': False,\n    },\n    name='Fire Perimeter'\n  ).add_to(map)\n# layer control\n\nmap\n\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
+    "text": "Map Types\nThere are a few types of maps:\n\n\n\nMental Maps\n\n\nReference - shows location information, often represent geographic reality accurately, topographic maps for example\n\n\nReference - shows location information, often represent geographic reality accurately…\nBut not always. A subway map is also a reference map. It represents topological relationships accurately in a schematic way for ease of navigation\n\n\nThematic - shows how one or more factors are distributed across space, such as a map of malaria infection rates\n\n\n\n\n\n\n\n\nUSGS Topographic Map of Boulder, CO\n\n\n\n\n\n\n\n\n\n\n\n\nEuropean GDP\n\n\n\n\n\nDynamic / Interactive\n- maps that change depending on user input\n\n\n\nShow code\nfrom pathlib import Path\n\nimport folium\nimport geopandas as gpd\n\naoi_path = Path('assets/Eaton_Perimeter_20250121.geojson')\naoi = gpd.read_file(aoi_path)\n\n# grab centroids\nc = aoi.to_crs(epsg=26910).dissolve().centroid.to_crs(epsg=4326).item()\n\n# map\nmap = folium.Map(\n  location=[c.y, c.x],\n  tiles='OpenStreetMap',\n  zoom_start=12\n)\n\n# perimeter\ngeo_j = folium.GeoJson(data=aoi.__geo_interface__,\n  style_function=lambda feature: {\n    'color': 'red',\n    'weight': 2,\n    'fill': False,\n    },\n    name='Fire Perimeter'\n  ).add_to(map)\n# layer control\n\nmap\n\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
   },
   {
     "objectID": "index.html#mentalcognitive-maps",
@@ -2286,7 +2286,7 @@
     "href": "some_basic_gis_concepts.html#map-types",
     "title": "Some basic GIS Concepts",
     "section": "Map Types",
-    "text": "Map Types\nThere are a few types of maps:\n\n\n\nMental Maps\n\n\nReference - shows location information, tend to represent geographic reality accurately, topographic maps for example\n\n\nReference - shows location information, tend to represent geographic reality accurately, topographic maps for example\n\n\nThematic - shows how one or more factors are distributed across space, such as a map of malaria infection rates\n\n\n\n\n\n\n\n\nUSGS Topographic Map of Boulder, CO\n\n\n\n\n\n\n\n\n\n\n\n\nEuropean GDP\n\n\n\n\n\nDynamic / Interactive\n- maps that change depending on user input\n\n\nShow code\nfrom pathlib import Path\n\nimport folium\nimport geopandas as gpd\n\naoi_path = Path('assets/Eaton_Perimeter_20250121.geojson')\naoi = gpd.read_file(aoi_path)\n\n# grab centroids\nc = aoi.to_crs(epsg=26910).dissolve().centroid.to_crs(epsg=4326).item()\n\n# map\nmap = folium.Map(\n  location=[c.y, c.x],\n  tiles='OpenStreetMap',\n  zoom_start=12\n)\n\n# perimeter\ngeo_j = folium.GeoJson(data=aoi.__geo_interface__,\n  style_function=lambda feature: {\n    'color': 'red',\n    'weight': 2,\n    'fill': False,\n    },\n    name='Fire Perimeter'\n  ).add_to(map)\n# layer control\n\nmap\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
+    "text": "Map Types\nThere are a few types of maps:\n\n\n\nMental Maps\n\n\nReference - shows location information, often represent geographic reality accurately, topographic maps for example\n\n\nReference - shows location information, often represent geographic reality accurately…\nBut not always. A subway map is also a reference map. It represents topological relationships accurately in a schematic way for ease of navigation\n\n\nThematic - shows how one or more factors are distributed across space, such as a map of malaria infection rates\n\n\n\n\n\n\n\n\nUSGS Topographic Map of Boulder, CO\n\n\n\n\n\n\n\n\n\n\n\n\nEuropean GDP\n\n\n\n\n\nDynamic / Interactive\n- maps that change depending on user input\n\n\nShow code\nfrom pathlib import Path\n\nimport folium\nimport geopandas as gpd\n\naoi_path = Path('assets/Eaton_Perimeter_20250121.geojson')\naoi = gpd.read_file(aoi_path)\n\n# grab centroids\nc = aoi.to_crs(epsg=26910).dissolve().centroid.to_crs(epsg=4326).item()\n\n# map\nmap = folium.Map(\n  location=[c.y, c.x],\n  tiles='OpenStreetMap',\n  zoom_start=12\n)\n\n# perimeter\ngeo_j = folium.GeoJson(data=aoi.__geo_interface__,\n  style_function=lambda feature: {\n    'color': 'red',\n    'weight': 2,\n    'fill': False,\n    },\n    name='Fire Perimeter'\n  ).add_to(map)\n# layer control\n\nmap\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
   },
   {
     "objectID": "some_basic_gis_concepts.html#mentalcognitive-maps",

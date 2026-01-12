@@ -115,12 +115,14 @@ Mental Maps
 
 :::{.fragment .fade-in-then-out style="position: absolute; width: 50%; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.8em;" data-fragment-index="2"}
 
-Reference - shows location information, tend to represent geographic reality accurately, topographic maps for example
+Reference - shows location information, often represent geographic reality accurately, topographic maps for example
 :::
 
 :::{.fragment .fade-in-then-out style="position: absolute; width: 50%; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.8em;" data-fragment-index="3"}
 
-Reference - shows location information, __tend__ to represent geographic reality accurately, topographic maps for example
+Reference - shows location information, often represent geographic reality accurately...
+
+But not always.  A subway map is also a reference map.  It represents topological relationships accurately in a schematic way for ease of navigation
 :::
 
 

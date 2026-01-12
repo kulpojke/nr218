@@ -41,4 +41,4 @@ In order to show files in PowerShell use the F flag, `tree /F`
 
 ## Project 1
 
-Sun 11 Jan 2026 01:57:25 PM PST I made some changes to Project 1.  If you have started, be sure to look at the updates.
+Sunday the 11th of Jan 2026 at 01:57:25 PM,  I made some changes to Project 1.  If you started working on it before then, be sure to look at the updates.
