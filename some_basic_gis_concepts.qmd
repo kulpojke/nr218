@@ -111,6 +111,15 @@ There are a few types of maps:
 
 :::{.fragment .fade-in-then-out style="position: absolute; font-size: 0.8em;" data-fragment-index="1"}
 Mental Maps
+
++ Psychological tools that we all use every day. 
++ Stored in our brain
++ To get from one place to another, or to understand and situate events that we hear about
++ Reflect the amount and extent of geographic knowledge and spatial awareness that we possess
+
+Using a blank sheet of paper, take five minutes to
+draw a map from memory of San Luis Obispo
+
 :::
 
 :::{.fragment .fade-in-then-out style="position: absolute; width: 50%; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.8em;" data-fragment-index="2"}
@@ -199,24 +208,6 @@ map
 ```
 
 :::
-
-
-
-## Mental/Cognitive Maps {.smaller}
-
-+ Psychological tools that we all use every day. 
-+ Stored in our brain
-+ To get from one place to another, or to understand and situate events that we hear about
-+ Reflect the amount and extent of geographic knowledge and spatial awareness that we possess
-
-Using a blank sheet of paper, take five minutes to
-draw a map from memory of San Luis Obispo
-
-
-
-
-
-
 
 
 ## What is data? (_What are data?_) 
