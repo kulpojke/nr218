@@ -42,3 +42,14 @@ In order to show files in PowerShell use the F flag, `tree /F`
 ## Project 1
 
 Sunday the 11th of Jan 2026 at 01:57:25 PM,  I made some changes to Project 1.  If you started working on it before then, be sure to look at the updates.
+
+## Office hours
+Michael Huggins  
+Office Hours: Mondays 2:30 - 4:30  
+Building 72-107 (Plant Conservatory)  
+
+__TA:__ Dillen Corlett
+
+&#9993;  (dicorlet@calpoly.edu)[mailto: dicorlet@calpoly.edu]
+
+Dillen will host remote office hours, by appointment, during the quarter for those who cannot make my office hours.  Follow this [link to her schedule](https://calendar.app.google/kKshuBDibeA6inss7) to view available times.
