@@ -45,6 +45,7 @@ navigation-mode: vertical
 
 # NR 218
 
+::: {.smaller}
 Use arrows or menu in bottom left corner to navigate amongst slides.
 
 [Syllabus](syllabus.html)
@@ -52,6 +53,10 @@ Use arrows or menu in bottom left corner to navigate amongst slides.
 [Computers](computers.html)
 
 [Lab 1](computers_lab.qmd)
+
+[Project 1](project_1.html)
+
+:::
 
 {{< include introduction.qmd >}}
 

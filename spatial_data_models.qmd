@@ -62,6 +62,11 @@ What are Metadata?
   
   :::
 
+::: notes
+Which of these dtypes do you think tends to be most memory intensive memory?
+:::
+
+
 ## Continuous vs Discrete Data {.smaller}
 
 + **Continuous** data consists of numerical values
@@ -73,14 +78,26 @@ What are Metadata?
 
 ::: {.r-stack}
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.7em"}
+::: {.fragment .absolute .fade-out data-fragment-index="1" style="font-size:0.7em"}
 + **Nominal** - Names or identifiers of objects
 + **Ordinal** - Ranked categories based on a measure
 + **Ratio** - have a 0 value that indicates absence of the quantity of interest
-    + [e.g. Mass, distance, Temperature in Kelvins]{style="font-size:0.5em"}
 + **Interval** - have a regular scale, but not a meaningful 0 value
-    + [e.g. Date, temperature in C or F ]{style="font-size:0.5em"}
 :::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.7em"}
+
+**Nominal** - Names or identifiers of objects
+
+<span style="display:block; margin-left:1.5em;">e.g. Land Cover: "Oak Woodland", "Grassland", "Forest", etc...</span>
+
+**Ordinal** - Ranked categories based on a measure
+
+<span style="display:block; margin-left:1.5em;">e.g. Fire Hazard: "Low", "Medium", "High"</span>
+
+
+:::
+
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="font-size:0.7em"}
 
@@ -105,6 +122,11 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 :::
 
 :::
+
+::: notes
+Which of these do you think would be discrete?  Which are Continuos? 
+:::
+
 
 ## Geospatial Data Types: Vector vs. Raster {style="font-size:0.7em"}
 
@@ -141,7 +163,7 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 
 ::: {.column width = "40%"}
 ::: {style="font-size:0.7em"}
-+ Stored as tabular data files with geographic metadata
++ Often stored as tabular data files with geographic metadata
 + Points, lines, and polygons represent the spatial features
 + Topology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon
 :::
@@ -165,8 +187,8 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 
 ::: {style="font-size:0.7em"}
 + Zero-dimensional objects containing a **single coordinate pair.**
-  + Ex: Lat/Lon coordinates denoting a city, building, address, etc
-+ X,Y coordinates on a cartesian plane
+  + Ex: Lat, Lon (sometimes elevation) coordinates denoting a city, building, address, etc
++ X,Y (,Z) coordinates on a Cartesian plane (or Euclidean space)
 :::
 
 :::
@@ -311,7 +333,7 @@ Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kel
 :::
 
 
-## 
+## Raster Data
 
 ![](img/amazon1.gif)
 
@@ -460,4 +482,3 @@ Image Source: University of Texas at Austin, Center for Space Research via [ESA]
 :::
 
 :::
-

@@ -543,7 +543,7 @@
     "href": "index.html#data-types",
     "title": "NR 218",
     "section": "Data Types",
-    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Point (float) - negatives, decimal values (32 bit precision)"
+    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Point (float) - negatives, decimal values (32 bit precision)\n\n\n\n\n\n\nWhich of these dtypes do you think tends to be most memory intensive memory?"
   },
   {
     "objectID": "index.html#continuous-vs-discrete-data",
@@ -557,7 +557,7 @@
     "href": "index.html#levels-of-measurement",
     "title": "NR 218",
     "section": "Levels of Measurement",
-    "text": "Levels of Measurement\n\n\n\nNominal - Names or identifiers of objects\nOrdinal - Ranked categories based on a measure\nRatio - have a 0 value that indicates absence of the quantity of interest\n\ne.g. Mass, distance, Temperature in Kelvins\n\nInterval - have a regular scale, but not a meaningful 0 value\n\ne.g. Date, temperature in C or F\n\n\n\n\nRatio - Multiplication makes sense, e.g. 200 K is twice as hot as 100 K \\[\n2 \\times 100 \\mathrm{K} = 200 \\mathrm{K}\n\\]\nInterval - Multiplication does not make sense, e.g. 200°C is not twice as hot as 100°C \\[\n2 \\times 100°\\mathrm{C} \\neq 200°\\mathrm{C}\n\\]\n\n\nImage Source: wikimedia"
+    "text": "Levels of Measurement\n\n\n\nNominal - Names or identifiers of objects\nOrdinal - Ranked categories based on a measure\nRatio - have a 0 value that indicates absence of the quantity of interest\nInterval - have a regular scale, but not a meaningful 0 value\n\n\n\nNominal - Names or identifiers of objects\ne.g. Land Cover: “Oak Woodland”, “Grassland”, “Forest”, etc…\nOrdinal - Ranked categories based on a measure\ne.g. Fire Hazard: “Low”, “Medium”, “High”\n\n\nRatio - Multiplication makes sense, e.g. 200 K is twice as hot as 100 K \\[\n2 \\times 100 \\mathrm{K} = 200 \\mathrm{K}\n\\]\nInterval - Multiplication does not make sense, e.g. 200°C is not twice as hot as 100°C \\[\n2 \\times 100°\\mathrm{C} \\neq 200°\\mathrm{C}\n\\]\n\n\nImage Source: wikimedia\n\n\n\n\nWhich of these do you think would be discrete? Which are Continuos?"
   },
   {
     "objectID": "index.html#geospatial-data-types-vector-vs.-raster",
@@ -571,7 +571,7 @@
     "href": "index.html#vector-data",
     "title": "NR 218",
     "section": "Vector Data",
-    "text": "Vector Data\n\n\n\n\n\n\nCan be described by points, lines, polygons\n\nEx: roads, rivers, train tracks, hiking trails, sidewalks, building footprints, county boundaries\n\nNOT images, do NOT contain any pixels\nThe kind of data we’ve been working with so far\n\n\n\n\n\n\n\n\n\n\n\n\n\nStored as tabular data files with geographic metadata\nPoints, lines, and polygons represent the spatial features\nTopology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon\n\n\n\n\n\n\n\n\n\n\n\nPoints\n\n\nZero-dimensional objects containing a single coordinate pair.\n\nEx: Lat/Lon coordinates denoting a city, building, address, etc\n\nX,Y coordinates on a cartesian plane\n\n\n\n\n\n\n\n\n\n\n\nLines\n\n\nOne-dimensional objects composed of multiple, explicitly connected points.\nLines have the property of length.\nAlso called an “arc.”\n\n\n\n\n\n\n\n\n\n\n\nPolygons\n\n\nTwo-dimensional features created by multiple lines to create a “closed” feature.\nFirst point on the first line segment is the same as the last point on the last line.\nCan represent city boundaries, buildings, lakes, soils, etc.\nHave the properties of area and perimeter."
+    "text": "Vector Data\n\n\n\n\n\n\nCan be described by points, lines, polygons\n\nEx: roads, rivers, train tracks, hiking trails, sidewalks, building footprints, county boundaries\n\nNOT images, do NOT contain any pixels\nThe kind of data we’ve been working with so far\n\n\n\n\n\n\n\n\n\n\n\n\n\nOften stored as tabular data files with geographic metadata\nPoints, lines, and polygons represent the spatial features\nTopology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon\n\n\n\n\n\n\n\n\n\n\n\nPoints\n\n\nZero-dimensional objects containing a single coordinate pair.\n\nEx: Lat, Lon (sometimes elevation) coordinates denoting a city, building, address, etc\n\nX,Y (,Z) coordinates on a Cartesian plane (or Euclidean space)\n\n\n\n\n\n\n\n\n\n\n\nLines\n\n\nOne-dimensional objects composed of multiple, explicitly connected points.\nLines have the property of length.\nAlso called an “arc.”\n\n\n\n\n\n\n\n\n\n\n\nPolygons\n\n\nTwo-dimensional features created by multiple lines to create a “closed” feature.\nFirst point on the first line segment is the same as the last point on the last line.\nCan represent city boundaries, buildings, lakes, soils, etc.\nHave the properties of area and perimeter."
   },
   {
     "objectID": "index.html#structuring-vector-data",
@@ -606,6 +606,13 @@
     "href": "index.html#raster-data",
     "title": "NR 218",
     "section": "Raster Data",
+    "text": "Raster Data"
+  },
+  {
+    "objectID": "index.html#raster-data-1",
+    "href": "index.html#raster-data-1",
+    "title": "NR 218",
+    "section": "Raster Data",
     "text": "Raster Data\n\n\n\n\n\n\nDerived from a grid-based system of contiguous cells containing specific attribute information.\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\nWidely used by technologies such as digital images and LCD monitors.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRaster (latin) means “screen”!\n\nGrids of numbers\nThings with pixels!\nIf it’s pixelated:\n\nIt’s a raster\n\nIf it’s a photo:\n\nIt’s a raster\n\nIf it’s a digital image\n\nIt’s a raster!\n\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\nAKA pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
   },
   {
@@ -637,29 +644,29 @@
     "text": "Tutorial - Copernicus Browser\n\nOpen Copernicus Browser (right click to open in new tab)\nFirst, make an account!\n\n\nregistration is free and helps track use of the tool (and manage processing quotas)"
   },
   {
+    "objectID": "index.html#section-10",
+    "href": "index.html#section-10",
+    "title": "NR 218",
+    "section": "",
+    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel\nFollow the steps to register, confirm your email, and then go back to the main page."
+  },
+  {
     "objectID": "index.html#section-11",
     "href": "index.html#section-11",
     "title": "NR 218",
     "section": "",
-    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel\nFollow the steps to register, confirm your email, and then go back to the main page."
+    "text": "Now let’s get a feel for what the tool can do!"
   },
   {
     "objectID": "index.html#section-12",
     "href": "index.html#section-12",
     "title": "NR 218",
     "section": "",
-    "text": "Now let’s get a feel for what the tool can do!"
-  },
-  {
-    "objectID": "index.html#section-13",
-    "href": "index.html#section-13",
-    "title": "NR 218",
-    "section": "",
     "text": "Look at the Garnet Fire on CalFire inciweb.\n\n\n\nIn Copernicus Browser (in visualize mode), paste the lat, lon into the search, hit enter\n\n\n\n\nChange the date to 2025-09-07\n\n\n\n\nAdjust image so the fire is in view\n\n\n\n\n\n\n\nLets try a different visualization\nCopernicus offers a SWIR based composite visualization that is quite good for burn detection."
   },
   {
-    "objectID": "index.html#section-15",
-    "href": "index.html#section-15",
+    "objectID": "index.html#section-14",
+    "href": "index.html#section-14",
     "title": "NR 218",
     "section": "",
     "text": "That is a nice way to visualize but for actual detection purposed using a spectral index is better\nNormalized Burn Ratio (NBR) is the most obvious choice here. \\[\n\\begin{align}\nNBR &= \\frac{NIR - SWIR2}{NIR + SWIR2} \\\\\n  &= \\frac{B8 - B12}{B8 + B12}  \\mathrm{For Sentinel 2}\n\\end{align}\n\\]\n\nExercise - Create and download a NBR geotiff for before and after the fire."
@@ -686,29 +693,29 @@
     "text": "Step One - Registering for GEE\n\n\nTo connect your Google account, go to https://code.earthengine.google.com/\nOnce you’ve logged in, you should see something like this:\n\n\n\nWe want to register a new project"
   },
   {
+    "objectID": "index.html#section-15",
+    "href": "index.html#section-15",
+    "title": "NR 218",
+    "section": "",
+    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
+  },
+  {
     "objectID": "index.html#section-16",
     "href": "index.html#section-16",
     "title": "NR 218",
     "section": "",
-    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
+    "text": "This will take you to a form where you can confirm your eligibility. Here’s an example of how to fill it out:"
   },
   {
     "objectID": "index.html#section-17",
     "href": "index.html#section-17",
     "title": "NR 218",
     "section": "",
-    "text": "This will take you to a form where you can confirm your eligibility. Here’s an example of how to fill it out:"
+    "text": "Now let’s go back to the Code Editor."
   },
   {
     "objectID": "index.html#section-18",
     "href": "index.html#section-18",
-    "title": "NR 218",
-    "section": "",
-    "text": "Now let’s go back to the Code Editor."
-  },
-  {
-    "objectID": "index.html#section-19",
-    "href": "index.html#section-19",
     "title": "NR 218",
     "section": "",
     "text": "These are the main panels to be aware of:"
@@ -721,29 +728,29 @@
     "text": "Step Two - Editing and Running a Script\n\n\nIn the scripts panel, select New &gt; File and name it something useful\nYou should see it show up under the Owner dropdown:\n\n\n\n\n\nClick on the file to open it, and then move to the Code Editor. It should be blank to start."
   },
   {
+    "objectID": "index.html#section-19",
+    "href": "index.html#section-19",
+    "title": "NR 218",
+    "section": "",
+    "text": "Let’s try running some code! In the editor window, type the following command:\n\n\n\nThen hit run. Look at the console - what do you see?"
+  },
+  {
     "objectID": "index.html#section-20",
     "href": "index.html#section-20",
     "title": "NR 218",
     "section": "",
-    "text": "Let’s try running some code! In the editor window, type the following command:\n\n\n\nThen hit run. Look at the console - what do you see?"
+    "text": "Now let’s try something a little more complicated:\n// Note - lines that start like this (//) are comments, meaning they won't be run like regular code\n\n// These are the 5 largest cities in the world: \n// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo\n\n// Create a list named 'largeCities' with the names of all the above cities\n\nvar largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; \n\n// Print the list \n\nprint(largeCities)\nCopy the code above and paste it into your code editor, hit run, and explore the output in the console."
   },
   {
     "objectID": "index.html#section-21",
     "href": "index.html#section-21",
     "title": "NR 218",
     "section": "",
-    "text": "Now let’s try something a little more complicated:\n// Note - lines that start like this (//) are comments, meaning they won't be run like regular code\n\n// These are the 5 largest cities in the world: \n// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo\n\n// Create a list named 'largeCities' with the names of all the above cities\n\nvar largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; \n\n// Print the list \n\nprint(largeCities)\nCopy the code above and paste it into your code editor, hit run, and explore the output in the console."
+    "text": "Next, we’re going to explore some spatial data.\n\nIn the search bar at the top of page, type in “California Polytechnic State University”\nClick on the search result, and the map view should update accordingly\n\n\n\n\nAdd a marker to the map by clicking this icon:\n\n\n\nPlace the point somewhere in the middle of campus:\n\n\n\n\n\n\nAt the top of the code editor, you should now see a new var called “geometry”, which gives us the coordinates of our point\n\n\n\n\n\nWe can now reference the point in new lines of code, like we did with “largeCities”"
   },
   {
     "objectID": "index.html#section-22",
     "href": "index.html#section-22",
-    "title": "NR 218",
-    "section": "",
-    "text": "Next, we’re going to explore some spatial data.\n\nIn the search bar at the top of page, type in “California Polytechnic State University”\nClick on the search result, and the map view should update accordingly\n\n\n\n\nAdd a marker to the map by clicking this icon:\n\n\n\nPlace the point somewhere in the middle of campus:\n\n\n\n\n\n\nAt the top of the code editor, you should now see a new var called “geometry”, which gives us the coordinates of our point\n\n\n\n\n\nWe can now reference the point in new lines of code, like we did with “largeCities”"
-  },
-  {
-    "objectID": "index.html#section-23",
-    "href": "index.html#section-23",
     "title": "NR 218",
     "section": "",
     "text": "To add in other data layers, let’s look in the Earth Engine Data Catalog\nUsing the search bar, find the Sentinel-2 Dataset and click on the Level-1C option\n\n\n\n\nScroll down to the “Explore with Earth Engine” section, and copy the JavaScript code\nGo back to the code editor, and paste the code onto a new line\n\n\n\nBefore we run it, let’s make a few changes to the code.\n\nFirst, let’s change these dates to be more recent:\n\n\n\nPick a month in 2025, and set the dates to be the first and end of the month\n\n\n\n\n\nNext, let’s change the center point of the map to the point we dropped earlier:\n\n\n\n\n\nReplace the entire line with the following code:\n\n\nMap.centerObject(geometry, 12);\n\n\nAlternatively, you can just replace the first two numbers with the coordinate values saved to “geometry”\n\n\n\n\nHit run, and watch what happens in the map viewer! It may take a second for the layer to load."
@@ -756,8 +763,8 @@
     "text": "What is this code doing?\n\nThe quality of satellite imagery can be significantly affected by the cloud cover on any given day\nTo compensate for this, it can be helpful to generate a composite image of only the days with clear visibility over a month"
   },
   {
-    "objectID": "index.html#section-24",
-    "href": "index.html#section-24",
+    "objectID": "index.html#section-23",
+    "href": "index.html#section-23",
     "title": "NR 218",
     "section": "",
     "text": "From here, we could clip (or mask, in the case of raster images) the Sentinel image to a set boundary by uploading a shapefile or geojson\nWe can also export map layers, which will be saved to our Google Drive"
@@ -770,8 +777,8 @@
     "text": "Google Earth Engine QGIS Plugin\nThere is also a GEE plugin for QGIS!"
   },
   {
-    "objectID": "index.html#section-25",
-    "href": "index.html#section-25",
+    "objectID": "index.html#section-24",
+    "href": "index.html#section-24",
     "title": "NR 218",
     "section": "",
     "text": "We can do the same operation we just did through the plugin:"
@@ -805,15 +812,15 @@
     "text": "Spatial overlays\n\n\n\nIntersect soils with bufffer, look at attributes\nIntersect buffer with soils, look at attributes\n\n\n\n\nUnion\n\n\n\nSymmetric Difference\n\nTry it with buffer and soils"
   },
   {
-    "objectID": "index.html#section-26",
-    "href": "index.html#section-26",
+    "objectID": "index.html#section-25",
+    "href": "index.html#section-25",
     "title": "NR 218",
     "section": "",
     "text": "Check topology Vector --&gt; Geometry --&gt; Check Validity"
   },
   {
-    "objectID": "index.html#section-27",
-    "href": "index.html#section-27",
+    "objectID": "index.html#section-26",
+    "href": "index.html#section-26",
     "title": "NR 218",
     "section": "",
     "text": "Link to tutorial about editing vectors."
@@ -854,8 +861,8 @@
     "text": "Spatial Joins\nDownload Cities\n\nUse the “join attributes by location” tool from the geoprocessing toolbox to join cities to counties\nWhy someone would do this particular join I don now know, but it illustrates the point.\nThere will be problems. Hint: “validate geometries and”fix geometries” tools will be useful.\n\nChallenge - Figure out how to join counties to cities, and calculate total urban area for each county."
   },
   {
-    "objectID": "index.html#section-28",
-    "href": "index.html#section-28",
+    "objectID": "index.html#section-27",
+    "href": "index.html#section-27",
     "title": "NR 218",
     "section": "",
     "text": "Start Downloads:\n\nfire perimeters\nNAIP image\n\nAlternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:\n\nfire_example/\n├── data/\n│   ├── subset_of_cal_hist_fires.geojson\n│   └── naip_2022.tif\n└── docs/"
@@ -882,8 +889,8 @@
     "text": "NAIP Imagery\n\nNational Agriculture Imagery Program (NAIP)\n\nHigh-resolution aerial imagery of the continental United States\nCollected during agricultural growing seasons\nTypically 4-band: Red, Green, Blue, Near-Infrared (NIR)\n60 cm (or better) spatial resolution\nUpdated on a 2-3 year cycle for each state\n\nLearn more: USDA NAIP Program"
   },
   {
-    "objectID": "index.html#section-29",
-    "href": "index.html#section-29",
+    "objectID": "index.html#section-28",
+    "href": "index.html#section-28",
     "title": "NR 218",
     "section": "",
     "text": "Hopefully by now you have this data.\n\nfire perimeters\nNAIP image\n\nFire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from \n\n\n\n\nMake a project folder for this on your OneDrive, call it fire_example\ninside of fire_example create a ‘data’ directory and a ‘docs’ directory\n\nyou will store your data in data\nyou will store your non-GIS file outputs in docs\nyour project qgz file in fire_example\n\n\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   └── naip.tif\n└── docs/\n    └── map1.pdf"
@@ -917,8 +924,8 @@
     "text": "Fire Example (4)\nNDVI values\n\n\n\nValue Range\nInterpretation\n\n\n\n\n0\nWater, clouds, or non-vegetated surfaces.\n\n\n0 to 0.1\nExposed rock, sand, or snow.\n\n\n0.2 to 0.5\nSparse vegetation,\n\n\n0.6 to 0.9\nDense Vegetation"
   },
   {
-    "objectID": "index.html#section-30",
-    "href": "index.html#section-30",
+    "objectID": "index.html#section-29",
+    "href": "index.html#section-29",
     "title": "NR 218",
     "section": "",
     "text": "\\[\nSAVI = \\frac{(NIR - Red) \\times (1 + L)}{NIR + Red + L}\n\\]\nWhere \\(L\\) is often 0.5, but adjusted for exposed soil"
@@ -959,8 +966,8 @@
     "text": "Back to the exercise\n\n\n\nOpen this link (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.\nUnzip them and put them into a new directory, called s2, in your fire_example\nDo the same for this other link but put them into s2_nbr\nDownload this DEM and put them into the data directory in your fire_example, as seen to the right.\nFinally, download this Land use raster and save.\n\n\nfire_example/\n├── fire_example.qgz\n├── data/\n│   ├── fire_perimeters.geojson\n│   ├── naip.tif\n│   ├── dem_1m_6339.tif\n│   └── 2016...classification.tiff\n│\n│\n├── s2/\n│   ├── s2_2016_NBR.tif\n│   └── ...\n│   └── s2_2025_NBR.tif\n│\n├── s2_nbr/\n│   ├── s2_2016.tif\n│   └── ...\n│   └── s2_2025.tif\n│\n└── docs/"
   },
   {
-    "objectID": "index.html#section-31",
-    "href": "index.html#section-31",
+    "objectID": "index.html#section-30",
+    "href": "index.html#section-30",
     "title": "NR 218",
     "section": "",
     "text": "Using extract selection or extract by attribute, make separate Coffee and River layers from your fires in AOI layer.\nSpatial Overlays:\n\nFind the difference between the River and Coffee layers, call it river only\nFind the difference between the Coffee and River layers, call it coffee only\nFind the intersection between the Coffee and River layers, call it both\nUse the AOI and the three layers you just found to make a polygon called unburned, i.e neither.\n\nIn GeoProcessing Toolbox find “Raster Calculator”.\n\nright click it and select “Execute as Batch Process”\n\nMake random points inside of coffee only river only and both using the “Random Points Inside Polygons” tool with:\n\nSampling Strategy = point density\nPoint Count or Point Density = 0.000001 (this is per m\\(^{2}\\))\n\nInstall Point Sampling Tool pluggin."
@@ -2419,7 +2426,7 @@
     "href": "spatial_data_models.html#data-types",
     "title": "",
     "section": "Data Types",
-    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Point (float) - negatives, decimal values (32 bit precision)"
+    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Point (float) - negatives, decimal values (32 bit precision)\n\n\n\n\n\n\nWhich of these dtypes do you think tends to be most memory intensive memory?"
   },
   {
     "objectID": "spatial_data_models.html#continuous-vs-discrete-data",
@@ -2433,7 +2440,7 @@
     "href": "spatial_data_models.html#levels-of-measurement",
     "title": "",
     "section": "Levels of Measurement",
-    "text": "Levels of Measurement\n\n\n\nNominal - Names or identifiers of objects\nOrdinal - Ranked categories based on a measure\nRatio - have a 0 value that indicates absence of the quantity of interest\n\ne.g. Mass, distance, Temperature in Kelvins\n\nInterval - have a regular scale, but not a meaningful 0 value\n\ne.g. Date, temperature in C or F\n\n\n\n\nRatio - Multiplication makes sense, e.g. 200 K is twice as hot as 100 K \\[\n2 \\times 100 \\mathrm{K} = 200 \\mathrm{K}\n\\]\nInterval - Multiplication does not make sense, e.g. 200°C is not twice as hot as 100°C \\[\n2 \\times 100°\\mathrm{C} \\neq 200°\\mathrm{C}\n\\]\n\n\nImage Source: wikimedia"
+    "text": "Levels of Measurement\n\n\n\nNominal - Names or identifiers of objects\nOrdinal - Ranked categories based on a measure\nRatio - have a 0 value that indicates absence of the quantity of interest\nInterval - have a regular scale, but not a meaningful 0 value\n\n\n\nNominal - Names or identifiers of objects\ne.g. Land Cover: “Oak Woodland”, “Grassland”, “Forest”, etc…\nOrdinal - Ranked categories based on a measure\ne.g. Fire Hazard: “Low”, “Medium”, “High”\n\n\nRatio - Multiplication makes sense, e.g. 200 K is twice as hot as 100 K \\[\n2 \\times 100 \\mathrm{K} = 200 \\mathrm{K}\n\\]\nInterval - Multiplication does not make sense, e.g. 200°C is not twice as hot as 100°C \\[\n2 \\times 100°\\mathrm{C} \\neq 200°\\mathrm{C}\n\\]\n\n\nImage Source: wikimedia\n\n\n\n\nWhich of these do you think would be discrete? Which are Continuos?"
   },
   {
     "objectID": "spatial_data_models.html#geospatial-data-types-vector-vs.-raster",
@@ -2447,7 +2454,7 @@
     "href": "spatial_data_models.html#vector-data",
     "title": "",
     "section": "Vector Data",
-    "text": "Vector Data\n\n\n\n\n\n\nCan be described by points, lines, polygons\n\nEx: roads, rivers, train tracks, hiking trails, sidewalks, building footprints, county boundaries\n\nNOT images, do NOT contain any pixels\nThe kind of data we’ve been working with so far\n\n\n\n\n\n\n\n\n\n\n\n\n\nStored as tabular data files with geographic metadata\nPoints, lines, and polygons represent the spatial features\nTopology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon\n\n\n\n\n\n\n\n\n\n\n\nPoints\n\n\nZero-dimensional objects containing a single coordinate pair.\n\nEx: Lat/Lon coordinates denoting a city, building, address, etc\n\nX,Y coordinates on a cartesian plane\n\n\n\n\n\n\n\n\n\n\n\nLines\n\n\nOne-dimensional objects composed of multiple, explicitly connected points.\nLines have the property of length.\nAlso called an “arc.”\n\n\n\n\n\n\n\n\n\n\n\nPolygons\n\n\nTwo-dimensional features created by multiple lines to create a “closed” feature.\nFirst point on the first line segment is the same as the last point on the last line.\nCan represent city boundaries, buildings, lakes, soils, etc.\nHave the properties of area and perimeter."
+    "text": "Vector Data\n\n\n\n\n\n\nCan be described by points, lines, polygons\n\nEx: roads, rivers, train tracks, hiking trails, sidewalks, building footprints, county boundaries\n\nNOT images, do NOT contain any pixels\nThe kind of data we’ve been working with so far\n\n\n\n\n\n\n\n\n\n\n\n\n\nOften stored as tabular data files with geographic metadata\nPoints, lines, and polygons represent the spatial features\nTopology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon\n\n\n\n\n\n\n\n\n\n\n\nPoints\n\n\nZero-dimensional objects containing a single coordinate pair.\n\nEx: Lat, Lon (sometimes elevation) coordinates denoting a city, building, address, etc\n\nX,Y (,Z) coordinates on a Cartesian plane (or Euclidean space)\n\n\n\n\n\n\n\n\n\n\n\nLines\n\n\nOne-dimensional objects composed of multiple, explicitly connected points.\nLines have the property of length.\nAlso called an “arc.”\n\n\n\n\n\n\n\n\n\n\n\nPolygons\n\n\nTwo-dimensional features created by multiple lines to create a “closed” feature.\nFirst point on the first line segment is the same as the last point on the last line.\nCan represent city boundaries, buildings, lakes, soils, etc.\nHave the properties of area and perimeter."
   },
   {
     "objectID": "spatial_data_models.html#structuring-vector-data",
@@ -2480,6 +2487,13 @@
   {
     "objectID": "spatial_data_models.html#raster-data",
     "href": "spatial_data_models.html#raster-data",
+    "title": "",
+    "section": "Raster Data",
+    "text": "Raster Data"
+  },
+  {
+    "objectID": "spatial_data_models.html#raster-data-1",
+    "href": "spatial_data_models.html#raster-data-1",
     "title": "",
     "section": "Raster Data",
     "text": "Raster Data\n\n\n\n\n\n\nDerived from a grid-based system of contiguous cells containing specific attribute information.\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\nWidely used by technologies such as digital images and LCD monitors.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRaster (latin) means “screen”!\n\nGrids of numbers\nThings with pixels!\nIf it’s pixelated:\n\nIt’s a raster\n\nIf it’s a photo:\n\nIt’s a raster\n\nIf it’s a digital image\n\nIt’s a raster!\n\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\nAKA pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"

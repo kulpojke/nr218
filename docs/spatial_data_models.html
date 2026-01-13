@@ -192,6 +192,19 @@
 </ul>
 </div></li>
 </ul>
+<aside class="notes">
+<p>Which of these dtypes do you think tends to be most memory intensive memory?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="continuous-vs-discrete-data" class="slide level2 smaller center">
 <h2>Continuous vs Discrete Data</h2>
@@ -207,19 +220,19 @@
 <section id="levels-of-measurement" class="slide level2 center">
 <h2>Levels of Measurement</h2>
 <div class="r-stack">
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="font-size:0.7em">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="font-size:0.7em">
 <ul>
 <li><strong>Nominal</strong> - Names or identifiers of objects</li>
 <li><strong>Ordinal</strong> - Ranked categories based on a measure</li>
-<li><strong>Ratio</strong> - have a 0 value that indicates absence of the quantity of interest
-<ul>
-<li><span style="font-size:0.5em">e.g.&nbsp;Mass, distance, Temperature in Kelvins</span></li>
-</ul></li>
-<li><strong>Interval</strong> - have a regular scale, but not a meaningful 0 value
-<ul>
-<li><span style="font-size:0.5em">e.g.&nbsp;Date, temperature in C or F</span></li>
-</ul></li>
+<li><strong>Ratio</strong> - have a 0 value that indicates absence of the quantity of interest</li>
+<li><strong>Interval</strong> - have a regular scale, but not a meaningful 0 value</li>
 </ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="font-size:0.7em">
+<p><strong>Nominal</strong> - Names or identifiers of objects</p>
+<p><span style="display:block; margin-left:1.5em;">e.g.&nbsp;Land Cover: “Oak Woodland”, “Grassland”, “Forest”, etc…</span></p>
+<p><strong>Ordinal</strong> - Ranked categories based on a measure</p>
+<p><span style="display:block; margin-left:1.5em;">e.g.&nbsp;Fire Hazard: “Low”, “Medium”, “High”</span></p>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="font-size:0.7em">
 <p><strong>Ratio</strong> - Multiplication makes sense, e.g.&nbsp;200 K is twice as hot as 100 K <span class="math display">\[
@@ -234,6 +247,19 @@
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>Which of these do you think would be discrete? Which are Continuos?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="geospatial-data-types-vector-vs.-raster" class="slide level2 center" style="font-size:0.7em">
 <h2>Geospatial Data Types: Vector vs.&nbsp;Raster</h2>
@@ -268,7 +294,7 @@
 <div class="column" style="width:40%;">
 <div style="font-size:0.7em">
 <ul>
-<li>Stored as tabular data files with geographic metadata</li>
+<li>Often stored as tabular data files with geographic metadata</li>
 <li>Points, lines, and polygons represent the spatial features</li>
 <li>Topology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon</li>
 </ul>
@@ -287,9 +313,9 @@
 <ul>
 <li>Zero-dimensional objects containing a <strong>single coordinate pair.</strong>
 <ul>
-<li>Ex: Lat/Lon coordinates denoting a city, building, address, etc</li>
+<li>Ex: Lat, Lon (sometimes elevation) coordinates denoting a city, building, address, etc</li>
 </ul></li>
-<li>X,Y coordinates on a cartesian plane</li>
+<li>X,Y (,Z) coordinates on a Cartesian plane (or Euclidean space)</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
@@ -484,11 +510,11 @@
 </div>
 </div>
 </section>
-<section id="section" class="slide level2 center">
-<h2></h2>
+<section id="raster-data" class="slide level2 center">
+<h2>Raster Data</h2>
 
 <img data-src="img/amazon1.gif" class="r-stretch"></section>
-<section id="raster-data" class="slide level2 center">
+<section id="raster-data-1" class="slide level2 center">
 <h2>Raster Data</h2>
 <div class="r-stack">
 <div class="fragment fade-in-then-out">
