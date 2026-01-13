@@ -394,7 +394,7 @@ Which of these do you think would be discrete?  Which are Continuos?
 ::: {.column width = "40%"}
 ::: {style="font-size:0.7em"}
 + The **spatial resolution** of a raster dataset represents a measure of the precision or detail of the displayed information.
-  + AKA pixel size
+  + a.k.a. pixel size
   + Ex: 1mm, 1cm, or 1m
 + So when you hear that a camera has N megapixels - this just means it has many millions of pixels 
 
@@ -418,7 +418,7 @@ Which of these do you think would be discrete?  Which are Continuos?
 ::: {.fragment .fade-in-then-out}
 
 ::: {style="font-size:0.7em"}
-The **spatial resolution** of a raster dataset represents a measure of the accuracy or detail of the displayed information.
+The **spatial resolution** of a raster dataset represents a measure of the precision or detail of the displayed information.
 :::
 
 ![](img/spatial_resolution.png){fig-align="center"}
@@ -428,7 +428,7 @@ The **spatial resolution** of a raster dataset represents a measure of the accur
 ::: {.fragment .fade-in}
 
 ::: {style="font-size:0.7em"}
-The **spatial resolution** of a raster dataset represents a measure of the accuracy or detail of the displayed information.
+The **spatial resolution** of a raster dataset represents a measure of the precision or detail of the displayed information.
 :::
 
 ![](img/spatial_resolution2.png){fig-align="center"}

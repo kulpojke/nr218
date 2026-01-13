@@ -613,14 +613,14 @@
     "href": "index.html#raster-data-1",
     "title": "NR 218",
     "section": "Raster Data",
-    "text": "Raster Data\n\n\n\n\n\n\nDerived from a grid-based system of contiguous cells containing specific attribute information.\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\nWidely used by technologies such as digital images and LCD monitors.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRaster (latin) means “screen”!\n\nGrids of numbers\nThings with pixels!\nIf it’s pixelated:\n\nIt’s a raster\n\nIf it’s a photo:\n\nIt’s a raster\n\nIf it’s a digital image\n\nIt’s a raster!\n\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\nAKA pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
+    "text": "Raster Data\n\n\n\n\n\n\nDerived from a grid-based system of contiguous cells containing specific attribute information.\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\nWidely used by technologies such as digital images and LCD monitors.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRaster (latin) means “screen”!\n\nGrids of numbers\nThings with pixels!\nIf it’s pixelated:\n\nIt’s a raster\n\nIf it’s a photo:\n\nIt’s a raster\n\nIf it’s a digital image\n\nIt’s a raster!\n\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\na.k.a. pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
   },
   {
     "objectID": "index.html#spatial-resolution",
     "href": "index.html#spatial-resolution",
     "title": "NR 218",
     "section": "Spatial Resolution",
-    "text": "Spatial Resolution\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the accuracy or detail of the displayed information.\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the accuracy or detail of the displayed information."
+    "text": "Spatial Resolution\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information."
   },
   {
     "objectID": "index.html#spectral-resolution",
@@ -2496,14 +2496,14 @@
     "href": "spatial_data_models.html#raster-data-1",
     "title": "",
     "section": "Raster Data",
-    "text": "Raster Data\n\n\n\n\n\n\nDerived from a grid-based system of contiguous cells containing specific attribute information.\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\nWidely used by technologies such as digital images and LCD monitors.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRaster (latin) means “screen”!\n\nGrids of numbers\nThings with pixels!\nIf it’s pixelated:\n\nIt’s a raster\n\nIf it’s a photo:\n\nIt’s a raster\n\nIf it’s a digital image\n\nIt’s a raster!\n\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\nAKA pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
+    "text": "Raster Data\n\n\n\n\n\n\nDerived from a grid-based system of contiguous cells containing specific attribute information.\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\nWidely used by technologies such as digital images and LCD monitors.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRaster (latin) means “screen”!\n\nGrids of numbers\nThings with pixels!\nIf it’s pixelated:\n\nIt’s a raster\n\nIf it’s a photo:\n\nIt’s a raster\n\nIf it’s a digital image\n\nIt’s a raster!\n\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\na.k.a. pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
   },
   {
     "objectID": "spatial_data_models.html#spatial-resolution",
     "href": "spatial_data_models.html#spatial-resolution",
     "title": "",
     "section": "Spatial Resolution",
-    "text": "Spatial Resolution\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the accuracy or detail of the displayed information.\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the accuracy or detail of the displayed information."
+    "text": "Spatial Resolution\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information."
   },
   {
     "objectID": "spatial_data_models.html#spectral-resolution",
