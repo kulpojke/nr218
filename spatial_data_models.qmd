@@ -436,8 +436,10 @@ The **spatial resolution** of a raster dataset represents a measure of the preci
 :::
 :::
 
+## Stop here, below is incomplete
 
 ## Spectral Resolution
+
 ::: {.r-stack}
 ::: {.fragment .fade-in-then-out}
 ![](img/spectrumZoomed.png)
