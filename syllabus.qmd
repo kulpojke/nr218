@@ -17,7 +17,7 @@ Wednesday: (9:10 - 12:00)
 
 ## Instructor Details
 Michael Huggins  
-&#9993; [mthuggin@calpoly.edu](mailto:mthuggin@calpoly.edu)
+&#9993; [mthuggin@calpoly.edu](mailto:mthuggin@calpoly.edu)  
 Office Hours: Mondays 2:30 - 4:30  
 Building 72-107 (Plant Conservatory)  
 
@@ -46,10 +46,10 @@ Quizzes can happen any time! How many will there be? 1? 10? Who knows? Quizzes c
 ## Assignment Weight
 | Assignment     | Percentage of Grade| Description  |
 |----------------|------|----|
-| Project 1      | 10  |  Mapping  |
-| Project 2      | 10  |  Vector Data Analysis  |
-| Project 3      | 10  |  Raster Data Analysis  |
-| Project 4      | 20  |  Remote Sensing, Image Analysis, and Modeling  |
+| [Project 1](project_1.html)      | 10  |  Mapping  |
+| [Project 2](project_2.html)      | 10  |  Vector Data Analysis  |
+| [Project 3](project_3.html)      | 10  |  Raster Data Analysis  |
+| [Project 4](project_4.html)      | 20  |  Remote Sensing, Image Analysis, and Modeling  |
 | Lab exercises  | 30  |  Not all labs have exercises due, see calendar  |
 | Quizzes        | 15  |  Quizzes can happen any time! |
 | Participation  |  5  |  Will be based on participation and engagement  |  
