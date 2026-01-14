@@ -1,0 +1,31 @@
+---
+title: ""
+page-layout: full
+format: 
+  html:
+    theme: quartz
+---
+
+# TODO: make a title
+
+In this exercise blah blah blah....
+ 
+## 
+First we will need the data:
+
++ [fire perimeters](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDiOQnn5iZ2SoC9RFOZXMQ6AYohr1UK1PuzRVCWknsOpLQ?e=iYy6tc)
++ [NAIP image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC4SX4KSSrKQZEguH7aIaGnATBJndw0cRt9vi8a-KiAw0A?e=xlgu0Q)
+
+Alternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:
+
+::: {style="text-align: center;"}
+```
+fire_example/
+├── data/
+│   ├── subset_of_cal_hist_fires.geojson
+│   └── naip_2022.tif
+└── docs/
+    
+```
+:::
+
