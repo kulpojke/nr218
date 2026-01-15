@@ -4,28 +4,100 @@ page-layout: full
 format: 
   html:
     theme: quartz
+    css: styles.css
+    
 ---
 
 # TODO: make a title
 
 In this exercise blah blah blah....
  
-## 
-First we will need the data:
+## Data and directory structure
+First we will need the data.  Downaload the vector file of fire perimeters and 2022 NAIP (see @tip-naip for information about NAIP ) image below. 
 
 + [fire perimeters](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDiOQnn5iZ2SoC9RFOZXMQ6AYohr1UK1PuzRVCWknsOpLQ?e=iYy6tc)
 + [NAIP image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC4SX4KSSrKQZEguH7aIaGnATBJndw0cRt9vi8a-KiAw0A?e=xlgu0Q)
 
-Alternately, you can create a project folder on OneDrive and copy the data directly there arranging your directory like this:
+[The fire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from [California Open Data Portal](https://data.ca.gov/group/fire)]{style="font-size:0.3.5em"}. 
 
-::: {style="text-align: center;"}
+::: {#tip-naip .callout-tip}
+## What is NAIP
+
+The National Agriculture Imagery Program (NAIP) acquires aerial imagery during the agricultural growing seasons in the United States. It is generally made available to governmental agencies and the public within a year of acquisition.
+
++ High-resolution aerial imagery of the continental United States
++ Collected during agricultural growing seasons
++ Typically 4-band: Red, Green, Blue, Near-Infrared (NIR)
++ 60 cm (or better) spatial resolution
++ Updated on a 2-3 year cycle for each state
+
+
+:::
+
+
+Create a working directory, called `lab_10`, for this lab in you nr218 Folder. Create a `data` folder and put the downloaded data inside.  Also create a `docs` directory in the lab directory. You will store your outputs in `docs`
+
+Open QGIS, start a new project, and save it in the `lab_10` folder as `lab10_your_name.qgz` (use your actual name)
+
+You should then have something like this.
+
 ```
-fire_example/
+lab_10/
+├── lab10_your_name.qgz
 ├── data/
 │   ├── subset_of_cal_hist_fires.geojson
 │   └── naip_2022.tif
 └── docs/
     
 ```
-:::
 
+##
+
+1. Open the fire perimeters dataset in QGIS
+2. Extract the perimeter of the Coffee Fire (`FIRE_NAME` is `COFFEE`) 
+    a. There are a few ways you can do this, your choice
+    b. Name the resulting layer `Coffee`
+3. Reduce `scratch_1` by selecting only fires that have happened since 2014 (Hint: extract by attribute)
+    b. i.e. `YEAR_ > 2013`
+    a. Name the resulting layer `scratch_1`
+4. Now extract all of the polygons which _overlap_ the `Coffee` (Hint: "select by location")
+    c. Name the result, `scratch_2`
+5. Use the "Extract layer extent" tool to get a polygon of the extent of the Coffee fire
+    a. Name the result `extent`
+6. Buffer "extent" by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference)
+    a. name the buffered layer, our area of interest, "AOI"
+7. Clip `scratch_2` by the AOI
+    a. Save the results as `fires_in_AOI`
+8. When you are satisfied that `fires_in_AOI` turned out correctly you can delete `scratch_1`, `scratch_2', `Coffee`, and `extent`
+
+9. Open `naip_2022`
+    a. Open the Layer Properties dialog 
+    b. Go to the Transparency tab on the left.
+    c. Change Transparency Band to None (what is band 4?)
+10. Clip `naip_2022 to the AOI.  `Raster` -> `Extraction` -> `Clip Raster By Mask Layer`
+11. Name the result `naip_2022_clipped`
+12. Now lets view it as False color
+    a. Recall from earlier, that is NIR, G, R
+    b. Open symbology and change the band order
+
+13. Calculate Normalized Difference Vegetation Index
+    a. $$NDVI = \frac{NIR - Red}{NIR + Red}$$
+    b. Open Raster Calculator ( _Raster_ -> _Raster Calculator_)
+    c . enter ` ( "naip_2022_clipped@4"  - "naip_2022_clipped@1" )  /  ( "naip_2022_clipped@4" + "naip_2022_clipped@1" )` 
+    d. check the "create on the fly raster ..." box at the top under "Result Layer"
+    e. Run
+
+    NDVI values
+
+| Value Range | Interpretation |
+|-------------|----------------|
+| 0 | Water, clouds, or non-vegetated surfaces.|
+| 0 to 0.1 | Exposed rock, sand, or snow. |
+| 0.2 to 0.5 | Sparse vegetation, |
+| 0.6 to 0.9 | Dense Vegetation |
+
+$$
+SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L} 
+$$
+
+Where $L$ is often 0.5, but adjusted for exposed soil
