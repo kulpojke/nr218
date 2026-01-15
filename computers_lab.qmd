@@ -43,7 +43,7 @@ A zip file is a compressed archive.  Zipping a folder full of sub-directories an
 
 3. Open QGIS and start a blank project.
   + Press `Ctrl+S`. This opens a dialogue for saving the QGIS project.  Navigate to the `nr218` directory you just created.  Name the project after you CalPoly email address (e.g. `mthuggin`. Note that this would be a terrible thing to actually name a project).  You have now saved a file containing the project.
-  + Press `Ctrl+Shift+V`, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to `~/Downloads/toy_data` and select `Eaton_Perimeter_20250121.geojson`. You should now see a polygon in in the map (@fig-eaton)
+  + Press `Ctrl+Shift+V`, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to `~/Downloads/toy_data/WellNamedFiles` and select `Eaton_Perimeter_20250121.geojson`. You should now see a polygon in in the map (@fig-eaton)
 
   ![You should se something like this after opening `Eaton_Perimeter_20250121.geojson.  It is a polygon showing the Eaton Fire perimeter` ](img/eaton_perim.png){#fig-eaton fig-alt="Image showing the eaton fire perimeter polygon within QGIS" fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter"}
   
