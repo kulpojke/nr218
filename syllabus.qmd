@@ -110,7 +110,7 @@ There are many other helpful sources of information on GIS Software, here area c
 | January 7    | 1    | Basic GIS Concepts,  Scale, Coordinate systems, and Map Projections  | Lab 2  |              | [Lab 1](computers_lab.html)                   |
 | January 12   | 2    | Spatial Data Models and File Formats                                 | Lab 3  | ch. 3 and 4  |                                               |
 | January 14   | 2    |                                                                      | Lab 4  |              |                                               |
-| January 20 (Tuesday) | 3 | Coordinate Systems, Map Projections, Datums, Reprojection       | Lab 5  | ch. 5 and 6  | [Project 1](project_1.html)                   |
+| January 20 (Tuesday) | 3 | Review: Coordinate Systems, Map Projections, Datums; Reprojection; GeoProcessing and Vector Operations  | Lab 5 | ch. 5 and 6  | [Project 1](project_1.html)                   |
 | January 21   | 3    | GeoProcessing and Vector Operations                                  | Lab 6  |              |                                               |
 | January 26   | 4    | Data Creation, Editing, Topology Basics                              | Lab 7  | ch. 7 and 8  |                                               |
 | January 28   | 4    | Rasters and Elevation Data                                           | Lab 8  |              |                                               |

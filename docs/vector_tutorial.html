@@ -131,6 +131,45 @@
 <h1>Vector Operations</h1>
 
 </section>
+<section id="vector-data-review" class="slide level2 center">
+<h2>Vector Data (Review)</h2>
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="font-size:0.7em">
+<ul>
+<li>Can be described by points, lines, polygons
+<ul>
+<li>Ex: roads, rivers, train tracks, hiking trails, sidewalks, building footprints, county boundaries</li>
+</ul></li>
+<li>NOT images, do NOT contain any pixels</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="figure" style="text-align: right; margin: 0 auto;">
+<p><img data-src="img/vector_example.png" style="height: 500px;"></p>
+</div>
+</div></div>
+</div>
+<div class="fragment fade-in-then-out">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="font-size:0.7em">
+<ul>
+<li>Often stored as tabular data files with geographic metadata</li>
+<li>Points, lines, and polygons represent the spatial features</li>
+<li>Topology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="figure" style="text-align: right; margin: 0 auto;">
+<p><img data-src="img/vector_table.png" style="height: 500px;"></p>
+</div>
+</div></div>
+</div>
+</div>
+</section>
 <section id="buffer" class="slide level2 center">
 <h2>Buffer</h2>
 <div class="r-stack">
@@ -142,13 +181,19 @@
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
 <ol type="1">
-<li>Open QGIS and open the ‘sprStreams.geojson’</li>
-<li>Vector –&gt; Geoprocessing tools –&gt; Buffer</li>
+<li>Open QGIS and open the ‘sprStreams.geojson’ from the SPR data we used the other day. (If you do not have it any longer it can be downloaded <a href="https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/SPR_data.zip">here</a>)</li>
+<li>In the drop down menu go to, Vector –&gt; Geoprocessing tools –&gt; Buffer</li>
 </ol>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/buffer_dropdown.png" alt="IMage showing the buffer tool situated within the vector dropdown menu."></p>
+<figcaption>The buffer tool situated within the vector dropdown menu.</figcaption>
+</figure>
+</div>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="">
-<p><span style="font-size:0.7em">Notice the Units! Buffering in degrees makes no sense. Reproject it first! What is a good projection?</span></p>
-<p><img data-src="img/degree_buf.png" style="max-height: 50vh;"></p>
+<p><span style="font-size:0.6em">Notice the Units! Buffering in degrees makes no sense. Reproject it first! What is a good projection to use?</span></p>
+<p><img data-src="img/degree_buf.png" alt="QGIS warning about buffering in degrees">{fig-alt=“QGIS warning about buffering in degrees”, width=“30vw;”}</p>
 </div>
 </div>
 </section>
@@ -220,7 +265,7 @@
 <li><p>add the counties layer</p></li>
 <li><p>add the income csv (you must select “no geometry (attribute only table)”)</p></li>
 <li><p>Open the attribute tables for each look at the names for the columns containing county name</p></li>
-<li><p>In the Processing Toolbox search :join” and select “join attributes by field”</p>
+<li><p>In the Processing Toolbox search “join” and select “join attributes by field”</p>
 <ul>
 <li>Input layer 1 is counties, input layer 2 is<br>
 </li>
@@ -254,10 +299,9 @@ You might use a merge to combine two adjacent land parcels into a single, larger
 <p>Download <a href="https://gis.data.ca.gov/api/download/v1/items/8cd5d2038c5547ba911eea7bec48e28b/geojson?layers=2">Cities</a></p>
 <ul>
 <li>Use the “join attributes by location” tool from the geoprocessing toolbox to join cities to counties</li>
-<li>Why someone would do this particular join I don now know, but it illustrates the point.</li>
 <li>There will be problems. Hint: “validate geometries and”fix geometries” tools will be useful.</li>
 </ul>
-<p><strong>Challenge</strong> - Figure out how to join counties to cities, and calculate total urban area for each county.</p>
+<p><strong>Challenge</strong> - Join counties to cities, and calculate total urban area for each county.</p>
 
 
 </section></section>

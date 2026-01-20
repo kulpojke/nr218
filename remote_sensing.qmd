@@ -317,67 +317,7 @@ $$
 
 :::
 
-## Back to the exercise
 
-:::: {.columns style="font-size:0.6em"}
-
-::: {.column width="50%"}
-1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.
-
-2. Unzip them and put them into a new directory, called `s2`, in your fire_example
-
-3. Do the same for [this other link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM) but put them into `s2_nbr`
-
-4. Download this [DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2) and put them into the data directory in your fire_example, as seen to the right.
-
-5. Finally, download this [Land use](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EcppyDdlx-lDggbCMv4zEXMBH_ps-0EcglHWZgZXUz1dsg?e=FQ1REl) raster and save.
-:::
-
-::: {.column width="50%"}
-```
-fire_example/
-├── fire_example.qgz
-├── data/
-│   ├── fire_perimeters.geojson
-│   ├── naip.tif
-│   ├── dem_1m_6339.tif
-│   └── 2016...classification.tiff
-│
-│
-├── s2/
-│   ├── s2_2016_NBR.tif
-│   └── ...
-│   └── s2_2025_NBR.tif
-│
-├── s2_nbr/
-│   ├── s2_2016.tif
-│   └── ...
-│   └── s2_2025.tif
-│
-└── docs/
-```
-:::
-
-::::
-
-## {style="font-size:0.7em"}
-
-5. Using extract selection or extract by attribute, make separate `Coffee` and `River` layers from your `fires in AOI` layer.
-
-6. Spatial Overlays:
-    a. Find the difference between the `River` and `Coffee` layers, call it `river only`
-    b. Find the difference between the `Coffee` and `River` layers, call it `coffee only`
-    c. Find the intersection between the `Coffee` and `River` layers, call it `both`
-    d. __Use the AOI and the three layers you just found to make a polygon called `unburned`, i.e neither.__
-
-7. In GeoProcessing Toolbox find "Raster Calculator".
-    a. right click it and select "Execute as Batch Process"
-
-8. Make random points inside of `coffee only` `river only` and `both` using the "Random Points Inside Polygons" tool with:
-    a. Sampling Strategy = point density
-    b. Point Count or Point Density = 0.000001 (this is per m$^{2}$)
-
-9. Install Point Sampling Tool pluggin.
 
 ## A Digression - Visualizing Elevation {style="font-size:0.6em"}
 

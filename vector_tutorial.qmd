@@ -1,5 +1,50 @@
 # Vector Operations
 
+## Vector Data (Review)
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+::: {.columns}
+
+::: {.column width = "40%"}
+::: {style="font-size:0.7em"}
++ Can be described by points, lines, polygons
+  + Ex: roads, rivers, train tracks, hiking trails, sidewalks, building footprints, county boundaries
++ NOT images, do NOT contain any pixels
+:::
+:::
+
+::: {.column width = "50%"}
+::: {.figure style="text-align: right; margin: 0 auto;"}
+![](img/vector_example.png){style="height: 500px;"}
+:::
+:::
+
+:::
+:::
+
+::: {.fragment .fade-in-then-out}
+::: {.columns}
+
+::: {.column width = "40%"}
+::: {style="font-size:0.7em"}
++ Often stored as tabular data files with geographic metadata
++ Points, lines, and polygons represent the spatial features
++ Topology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon
+:::
+:::
+
+::: {.column width = "50%"}
+::: {.figure style="text-align: right; margin: 0 auto;"}
+![](img/vector_table.png){style="height: 500px;"}
+:::
+:::
+
+:::
+:::
+
+:::
+
 ## Buffer
 
 ::: {.r-stack}
@@ -14,14 +59,17 @@
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
 
-1. Open QGIS and open the 'sprStreams.geojson'
-2. Vector --> Geoprocessing tools --> Buffer
+1. Open QGIS and open the 'sprStreams.geojson' from the SPR data we used the other day. (If you do not have it any longer it can be downloaded [here](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/SPR_data.zip))
+2. In the drop down menu go to, Vector --> Geoprocessing tools --> Buffer
+
+![The buffer tool situated within the vector dropdown menu.](img/buffer_dropdown.png){fig-alt="IMage showing the buffer tool situated within the vector dropdown menu." fig-cap="The buffer tool situated within the vector dropdown menu."}
+
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
-[Notice the Units!  Buffering in degrees makes no sense. Reproject it first! What is a good projection?]{style="font-size:0.7em"}
+[Notice the Units!  Buffering in degrees makes no sense. Reproject it first! What is a good projection to use?]{style="font-size:0.6em"}
 
-![](img/degree_buf.png){style="max-height: 50vh;"}
+![QGIS warning about buffering in degrees](img/degree_buf.png){fig-alt="QGIS warning about buffering in degrees", width="30vw;"}
 :::
 
 :::
@@ -110,7 +158,7 @@ Spatial joins transfer attributes based on how features relate in space (interse
 
 3. Open the attribute tables for each look at the names for the columns containing county name
 
-4. In the Processing Toolbox search :join" and select "join attributes by field"
+4. In the Processing Toolbox search "join" and select "join attributes by field"
     + Input layer 1 is counties, input layer 2 is  
     + use appropriate column names
 
@@ -146,8 +194,6 @@ Download [Cities](https://gis.data.ca.gov/api/download/v1/items/8cd5d2038c5547ba
 
 
 + Use the "join attributes by location" tool from the geoprocessing toolbox to join cities to counties 
-+ Why someone would do this particular join I don now know, but it illustrates the point.
 + There will be problems. Hint: "validate geometries and "fix geometries" tools will be useful.
 
-__Challenge__ - Figure out how to join counties to cities, and calculate total urban area for each county.
-
+__Challenge__ - Join counties to cities, and calculate total urban area for each county.

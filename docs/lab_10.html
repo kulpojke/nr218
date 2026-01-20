@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>computers</title>
+<title>lab_10</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -86,146 +66,227 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-search-results"></div>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<section id="computers" class="level1">
-<h1>Computers</h1>
-<section id="what-is-a-computer" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-computer">What is a computer?</h2>
-<p>As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as <em>one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc.</em> Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument<span class="citation" data-cites="campbell-kelly2023computer">(<a href="#ref-campbell-kelly2023computer" role="doc-biblioref">Campbell-Kelly et al. 2023</a>)</span>.</p>
-<p>We will skip through decades of punch cards, tape ribbons, cold war military machinations, the developments of Silicon Valley, etc.. leading to the modern computer (see <span class="citation" data-cites="campbell-kelly2023computer">Campbell-Kelly et al. (<a href="#ref-campbell-kelly2023computer" role="doc-biblioref">2023</a>)</span> if you want more detail). There are , however, a couple of important developments that will be of importance going forward.</p>
+<section id="todo-make-a-title" class="level1">
+<h1>TODO: make a title</h1>
+<p>In this exercise blah blah blah….</p>
+<section id="data-and-directory-structure" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-directory-structure">Data and directory structure</h2>
+<p>First we will need the data. Downaload the vector file of fire perimeters and 2022 NAIP (see <a href="#tip-naip" class="quarto-xref">Tip&nbsp;1</a> for information about NAIP ) image below.</p>
 <ul>
-<li>The first is the development of the <strong>Unix operating system</strong> (and C programming language) at Bell Labs during 1969–1974. The use of C made Unix “portable,” so that it could be implemented on any computer system. Up until this point, computers were centralized resources. The clean, minimalist, functional design of Unix made it possible for users to create variants without affecting the inherent reliability of the system. This spawned versions such as the <em>Berkeley Software Distribution</em> (BSD) in 1978, and later in the 1990s Linux <span class="citation" data-cites="campbell-kelly2023computer">(<a href="#ref-campbell-kelly2023computer" role="doc-biblioref">Campbell-Kelly et al. 2023</a>)</span>. Mac OSX is also a Unix Variant <span class="citation" data-cites="apple2011osx-unix-users">(<a href="#ref-apple2011osx-unix-users" role="doc-biblioref"><strong>apple2011osx-unix-users?</strong></a>)</span>.</li>
-<li>Another important development occurred in 1980 when IBM contracted Microsoft to create an operation system for their personal computer. At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.</li>
+<li><a href="https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDiOQnn5iZ2SoC9RFOZXMQ6AYohr1UK1PuzRVCWknsOpLQ?e=iYy6tc">fire perimeters</a></li>
+<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC4SX4KSSrKQZEguH7aIaGnATBJndw0cRt9vi8a-KiAw0A?e=xlgu0Q">NAIP image</a></li>
 </ul>
-<p>Unix variants and Windows are by far the most common operating systems on general-purpose computers (desktops, laptops, and servers). <a href="#fig-os-tree" class="quarto-xref">Figure&nbsp;1</a> shows the lineage of common operating systems. GIS applications are almost always run on one of these platforms. By in large computers with OSs derived from UNIX and MS-DOS behave in the same ways, but there are some important differences (for a simple overview of differences see <a href="https://www.linuxjournal.com/content/linux-vs-windows">this article</a>). A few of these differences will come up from time to time during this course. The computers in the lab are Windows machines (😐). Many of you are probably using Macs with OSX (🗿). Maybe some of you are Linux users (🔥, 💅).</p>
-<div id="fig-os-tree" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Schematic showing pointer to a file or memory address" data-fig-cap="">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-os-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/os_phylogeny.png" class="img-fluid figure-img" data-fig-cap="" alt="Schematic showing pointer to a file or memory address">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-os-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Family tree of modern general purpose operating systems. With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX.
-</figcaption>
-</figure>
-</div>
-<p>The <strong>definition of a computer that we will use for this class is, <em>a machine that manipulates data following a list of programmed instructions</em>.</strong> With this definition in mind, it seems that in order to take advantages of the capabilities of computers one must understand <em>data</em>, and how computers follow <em>programmed instructions</em>.</p>
-</section>
-</section>
-<section id="data" class="level1">
-<h1>Data</h1>
-<p>A couple of relevant definitions of data taken from the Oxford English Dictionary are:</p>
-<ul>
-<li>“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”</li>
-<li>“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.”</li>
-</ul>
-<div class="columns">
-<div class="column">
-<p>Data is stored on a computer as zeros and ones (too simple, see <a href="#tip-example" class="quarto-xref">Tip&nbsp;1</a>). When you store a file, the data is stored at some physical location on the disk, and a pointer is saved which is later used to find the file (see <a href="#fig-pointers" class="quarto-xref">Figure&nbsp;2</a>). The details of this are managed for you by applications or programming languages by representing this relationship as human readable symbols.</p>
-<p>In most modern computers, files are arranged in a hierarchical file system. The standard Linux filesystem is shown in <a href="#fig-linux-filesys" class="quarto-xref">Figure&nbsp;3</a>. In a hierarchal filesystem, files are arranged within nested directories (sometimes called folders). For example,</p>
-</div><div class="column">
-<div id="fig-pointers" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Schematic showing pointer to a file or memory address" data-fig-cap="A pointer a pointing to the memory address associated with a variable b, i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-pointers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/pointers.svg" class="img-fluid figure-img" data-fig-cap="A pointer a pointing to the memory address associated with a variable b, i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case." alt="Schematic showing pointer to a file or memory address">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pointers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: A pointer (<em>a</em>) pointing to the memory address associated with a variable (b), i.e., <em>a</em> contains the memory address 1008 of the variable <em>b</em>. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div id="fig-linux-filesys" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The linux filesystem">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-linux-filesys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/linux-filesystem-hierarchy.png" class="img-fluid figure-img" alt="The linux filesystem">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linux-filesys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: The linux filesystem
-</figcaption>
-</figure>
-</div>
-<div class="attribution" style="font-size:0.4em">
-<p>Image Source: <a href="https://commons.wikimedia.org/w/index.php?curid=8861432">Wikimedia /Sven</a></p>
-</div>
-<section id="paths" class="level2">
-<h2 class="anchored" data-anchor-id="paths">Paths</h2>
-<div class="columns">
-<div class="column">
-<p>A <span style="font-size:1.3em"><strong><em>path</em></strong></span> is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. <a href="#fig-linux-paths" class="quarto-xref">Figure&nbsp;4</a> shows the path to <code>index.qmd</code> in a terminal. The bottom line of the terminal displays <code>/home/michael/CP/nr218/index.qmd</code>. This is the <em>absolute path</em> or <em>full path</em> to <code>index.qmd</code>. The delimiters are the character <code>/</code>. If you look back to <a href="#fig-os-tree" class="quarto-xref">Figure&nbsp;1</a>, you see that the root directory is just <code>/</code>. The directory called “home” is directly below <code>/</code> in the hierarchy, thus the full path to home is <code>/home</code> (or <code>/home/</code>). Similarly the full path to the directory “michael” is <code>/home/michael</code> (or <code>/home/michael/</code>) etc… (but, <code>/home/michael/CP/nr218/index.qmd</code> would never be written <code>/home/michael/CP/nr218/index.qmd/</code> because <code>index.qmd</code> is not a directory, it does not contain other files).</p>
-</div><div class="column">
-<div class="quarto-figure quarto-figure-center" style="font-size:0.004em">
-<figure class="figure">
-<p><img src="img/bash_paths.png" class="img-fluid figure-img" style="width:90.0%" alt="Path to a file shown in a Bash shell."></p>
-<figcaption>&nbsp;</figcaption>
-</figure>
-</div>
-<div id="fig-linux-paths" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Path to a file shown in a GUI">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-linux-paths-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/gui_paths.png" class="img-fluid figure-img" style="width:90.0%" alt="Path to a file shown in a GUI">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linux-paths-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Top: Linux terminal showing the full path to index.qmd. Bottom the same file shown in the GUI file explorer.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Paths can also be written relative to the current directory, for example, when QGIS opens a saved project, the project file tells QGIS to load data from other files. It does this by telling it where to find them relative to the project file. For example if a project file <code>project.qgz</code> is stored in <code>/home/michael/CP/nr218/project</code> along with some data in a subdirectory, as shown below, the relative path to <code>some_data.tif</code> would be <code>data/some_data.tif</code>.</p>
-<pre><code>project
-│
-├── data
-│&nbsp;&nbsp; └── some_data.tif
-└── project.qgz</code></pre>
-<p>The advantage of using relative paths emerges when files are organized all within a project directory. If one were to move the entire project directory to another parent directory, the project file still points to the needed files. If files are outside of the project directory, or full paths were used, this would not be the case.</p>
-<p><strong>In order for an application to use a file, it must know the path to that file.</strong></p>
-<div id="tip-example" class="callout callout-style-default callout-tip callout-titled">
+<p><span style="font-size:0.3.5em">The fire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from <a href="https://data.ca.gov/group/fire">California Open Data Portal</a></span>.</p>
+<div id="tip-naip" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;1: Data storage
+Tip&nbsp;1: What is NAIP
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you are saying to yourself, “<em>How are 0s and 1s stored in a computer, that makes no sense, numbers are abstractions but computers are physical objects?</em>”, that is reasonable. The ones and zeros are actually stored as sites holding an electrical charge, or not, but that is a deeper explanation than we need for this course.</p>
+<p>The National Agriculture Imagery Program (NAIP) acquires aerial imagery during the agricultural growing seasons in the United States. It is generally made available to governmental agencies and the public within a year of acquisition.</p>
+<ul>
+<li>High-resolution aerial imagery of the continental United States</li>
+<li>Collected during agricultural growing seasons</li>
+<li>Typically 4-band: Red, Green, Blue, Near-Infrared (NIR)</li>
+<li>60 cm (or better) spatial resolution</li>
+<li>Updated on a 2-3 year cycle for each state</li>
+</ul>
 </div>
 </div>
+<p>Create a working directory, called <code>lab_10</code>, for this lab in you nr218 Folder. Create a <code>data</code> folder and put the downloaded data inside. Also create a <code>docs</code> directory in the lab directory. You will store your outputs in <code>docs</code></p>
+<p>Open QGIS, start a new project, and save it in the <code>lab_10</code> folder as <code>lab10_your_name.qgz</code> (use your actual name)</p>
+<p>You should then have something like this.</p>
+<pre><code>lab_10/
+├── lab10_your_name.qgz
+├── data/
+│   ├── subset_of_cal_hist_fires.geojson
+│   └── naip_2022.tif
+└── docs/
+    </code></pre>
 </section>
-<section id="volatile-and-non-volatile-memory" class="level2">
-<h2 class="anchored" data-anchor-id="volatile-and-non-volatile-memory">Volatile and Non-Volatile Memory</h2>
-<p>Data can be stored on a disk (as we have previously alluded to). This type of memory is called <strong><em>on-disk storage</em></strong>. We call on this type of storage <em>non-volatile</em> because when the program using the data is terminated, or the computer is turned off the data persists to be used later. This is in contrast to <strong><em>Random Access Memory</em></strong> (RAM), which is <em>volatile</em> (if the program terminates, the data held there is lost). In RAM the data sits in volatile memory cells addressed by numeric locations; the CPU accesses it directly with very low latency (quickly). All this is managed by the OS via pages and caches. Only in advanced cases does the user take an interest of the details of this process.</p>
-<p>When an application is running, it typically stores the data it is actively using in RAM (or if it is large in temporary files on-disk) This allows the application to run more quickly. When the user wants to save changes that are held in these temporary forms of memory they must specify a file to save it to. In most GUI based applications this is done via the <em>File</em> menu, or using the keyboard shortcut, <code>Ctrl+S</code> (<code>Cmd+S</code> on macOS).</p>
-<p>When you are working in QGIS or any other GIS (or most other types of) application, you need to save to avoid data loss. It is a good idea to frequently save your work by pressing <code>Ctrl+S</code> (<code>Cmd+S</code> on macOS).</p>
-<section id="references" class="level3">
-<h3 class="anchored" data-anchor-id="references">References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-campbell-kelly2023computer" class="csl-entry" role="listitem">
-Campbell-Kelly, Martin, William F Aspray, Jeffrey R Yost, Honghong Tinn, and Gerardo Con Dı́az. 2023. <em>Computer: A History of the Information Machine</em>. Routledge.
-</div>
-</div>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<ol type="1">
+<li><p>Open the fire perimeters dataset in QGIS</p></li>
+<li><p>Extract the perimeter of the Coffee Fire (<code>FIRE_NAME</code> is <code>COFFEE</code>)</p>
+<ol type="a">
+<li>There are a few ways you can do this, your choice</li>
+<li>Name the resulting layer <code>Coffee</code></li>
+</ol></li>
+<li><p>Reduce <code>scratch_1</code> by selecting only fires that have happened since 2014 (Hint: extract by attribute)</p>
+<ol start="2" type="a">
+<li>i.e.&nbsp;<code>YEAR_ &gt; 2013</code></li>
+<li>Name the resulting layer <code>scratch_1</code></li>
+</ol></li>
+<li><p>Now extract all of the polygons which <em>overlap</em> the <code>Coffee</code> (Hint: “select by location”)</p>
+<ol start="3" type="a">
+<li>Name the result, <code>scratch_2</code></li>
+</ol></li>
+<li><p>Use the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire</p>
+<ol type="a">
+<li>Name the result <code>extent</code></li>
+</ol></li>
+<li><p>Buffer “extent” by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference)</p>
+<ol type="a">
+<li>name the buffered layer, our area of interest, “AOI”</li>
+</ol></li>
+<li><p>Clip <code>scratch_2</code> by the AOI</p>
+<ol type="a">
+<li>Save the results as <code>fires_in_AOI</code></li>
+</ol></li>
+<li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly you can delete <code>scratch_1</code>, <code>scratch_2',</code>Coffee<code>, and</code>extent`</p></li>
+<li><p>Open <code>naip_2022</code></p>
+<ol type="a">
+<li>Open the Layer Properties dialog</li>
+<li>Go to the Transparency tab on the left.</li>
+<li>Change Transparency Band to None (what is band 4?)</li>
+</ol></li>
+<li><p>Clip <code>naip_2022 to the AOI.</code>Raster<code>-&gt;</code>Extraction<code>-&gt;</code>Clip Raster By Mask Layer`</p></li>
+<li><p>Name the result <code>naip_2022_clipped</code></p></li>
+<li><p>Now lets view it as False color</p>
+<ol type="a">
+<li>Recall from earlier, that is NIR, G, R</li>
+<li>Open symbology and change the band order</li>
+</ol></li>
+<li><p>Calculate Normalized Difference Vegetation Index</p>
+<ol type="a">
+<li><span class="math display">\[NDVI = \frac{NIR - Red}{NIR + Red}\]</span></li>
+<li>Open Raster Calculator ( <em>Raster</em> -&gt; <em>Raster Calculator</em>) c . enter <code>( "naip_2022_clipped@4"  - "naip_2022_clipped@1" )  /  ( "naip_2022_clipped@4" + "naip_2022_clipped@1" )</code></li>
+<li>check the “create on the fly raster …” box at the top under “Result Layer”</li>
+<li>Run</li>
+</ol>
+<p>NDVI values</p></li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Value Range</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Water, clouds, or non-vegetated surfaces.</td>
+</tr>
+<tr class="even">
+<td>0 to 0.1</td>
+<td>Exposed rock, sand, or snow.</td>
+</tr>
+<tr class="odd">
+<td>0.2 to 0.5</td>
+<td>Sparse vegetation,</td>
+</tr>
+<tr class="even">
+<td>0.6 to 0.9</td>
+<td>Dense Vegetation</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
+\]</span></p>
+<p>Where <span class="math inline">\(L\)</span> is often 0.5, but adjusted for exposed soil</p>
+<ol type="1">
+<li><p>Open <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE">this link</a> (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.</p></li>
+<li><p>Unzip them and put them into a new directory, called <code>s2</code>, in your fire_example</p></li>
+<li><p>Do the same for <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM">this other link</a> but put them into <code>s2_nbr</code></p></li>
+<li><p>Download this <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2">DEM</a> and put them into the data directory in your fire_example, as seen to the right.</p></li>
+<li><p>Finally, download this <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EcppyDdlx-lDggbCMv4zEXMBH_ps-0EcglHWZgZXUz1dsg?e=FQ1REl">Land use</a> raster and save.</p></li>
+</ol>
+<pre><code>fire_example/
+├── fire_example.qgz
+├── data/
+│   ├── fire_perimeters.geojson
+│   ├── naip.tif
+│   ├── dem_1m_6339.tif
+│   └── 2016...classification.tiff
+│
+│
+├── s2/
+│   ├── s2_2016_NBR.tif
+│   └── ...
+│   └── s2_2025_NBR.tif
+│
+├── s2_nbr/
+│   ├── s2_2016.tif
+│   └── ...
+│   └── s2_2025.tif
+│
+└── docs/</code></pre>
+<ol start="5" type="1">
+<li><p>Using extract selection or extract by attribute, make separate <code>Coffee</code> and <code>River</code> layers from your <code>fires in AOI</code> layer.</p></li>
+<li><p>Spatial Overlays:</p>
+<ol type="a">
+<li>Find the difference between the <code>River</code> and <code>Coffee</code> layers, call it <code>river only</code></li>
+<li>Find the difference between the <code>Coffee</code> and <code>River</code> layers, call it <code>coffee only</code></li>
+<li>Find the intersection between the <code>Coffee</code> and <code>River</code> layers, call it <code>both</code></li>
+<li><strong>Use the AOI and the three layers you just found to make a polygon called <code>unburned</code>, i.e neither.</strong></li>
+</ol></li>
+<li><p>In GeoProcessing Toolbox find “Raster Calculator”.</p>
+<ol type="a">
+<li>right click it and select “Execute as Batch Process”</li>
+</ol></li>
+<li><p>Make random points inside of <code>coffee only</code> <code>river only</code> and <code>both</code> using the “Random Points Inside Polygons” tool with:</p>
+<ol type="a">
+<li>Sampling Strategy = point density</li>
+<li>Point Count or Point Density = 0.000001 (this is per m<span class="math inline">\(^{2}\)</span>)</li>
+</ol></li>
+<li><p>Install Point Sampling Tool pluggin.</p></li>
+</ol>
 
 
-</section>
 </section>
 </section>
 
