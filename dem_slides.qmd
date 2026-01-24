@@ -1,0 +1,41 @@
+# DEMs
+
+## What is a DEM?
+
++ A __Digital Elevation Model__
++ Representation of the topographic surface of the Earth
++ Different types of DEMs:
+    + A DTM (Digital Terrain Model) is a DEM of the ground surface
+    + A DSM (Digital Surface Model) is a DEM that includes vegetation and structures
+
+## How are DEMs made?
+
++ Topographic/contour data
++ Satellite imagery/Radar
+    + Examples:
+        + ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer)
+        + IceSAT (Ice, Cloud and land Elevation Satellite)
+        + SRTM (Shuttle Radar Topography Mission)
++ LiDAR imagery
+
+## Sidebar: What is LiDAR?
+
++ Light Detection and Ranging
++ Remote sensing using lasers!
++ Light pulses are fired rapidly from airborne source and then reflected off of the earth's surface
+    + The time it takes for the light to return to the source is used to measure the distance to the surface
+        + Distance is converted to elevation
++ In addition to DEMs, LiDAR data can be used to generate canopy cover and canopy height indices (among other things!)
+
+## What can DEMs be used for?
+
++ Terrain analysis
+    + Slope, aspect, hillshade, contours
++ Hydrologic modeling
+    + Flow direction, flow accumulation, watershed delineation, stream network extraction
++ Environmental risk assessments and hazard modeling
+    + Modeling land movement (landslides, erosion)
++ Infrastructure and land use planning
+
+
+
