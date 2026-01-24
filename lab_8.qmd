@@ -1,0 +1,254 @@
+---
+title: "Working With DEMs"
+format:
+  html:
+    theme: quartz
+    css: styles.css
+---
+
+Now that we've learned a bit about what DEMs are and what they can be used for, let's get some practice working with them in QGIS.
+
+__Quick file organization housekeeping:__
+
+Make a new folder inside your `nr218` directory called `lab_8`. Inside that folder, make a `data` folder and a `docs` folder. All downloaded files will go in the `data` folder, and all generated outputs (more on this later) will go in `docs`.
+
+## Warm Up: Finding Data Online
+
+So far in this class you've been given files to work with. Today, we're going to practice acquiring some data on our own.
+
+Generating DEMs, particularly at a high resolution, can be costly and time-consuming. Luckily, there are some great online resources for accessing existing imagery. One such resource is the [USGS LiDAR Explorer](https://www.usgs.gov/tools/lidarexplorer). Let's check it out!
+
+Follow the link above, and then click "Launch Application" to get to the interactive map. Your screen should look something like this:
+
+![Startup map of LiDAR Explorer](img/lidar_explorer_1.png){#fig-lidar1 fig-alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application" fig-cap="Startup map of LiDAR Explorer"}
+
+You can navigate around the map by clicking and dragging with your mouse. Let's move our view until California is in the center (click and drag to the right), and then zoom in using the "+" button (top left of the map viewer), until the resolution is 20 km. Orient your map view so that it's centered on San Luis Obispo, like in the photo below:
+
+![Adjusted map of LiDAR Explorer](img/lidar_explorer_2.png){#fig-lidar2 fig-alt="Image showing LiDAR Explorer map once we've zoomed in and centered it on San Luis Obispo" fig-cap="Adjusted map of LiDAR Explorer"}
+
+Next, let's define our __area of interest (AOI).__ This will return all of the available LiDAR and DEM downloads within a specified geographic area. After clicking on the area of interest icon (see photo above), draw a box around SLO, then check what pops up on the right side of the screen.
+
+![Defined area of interest](img/lidar_explorer_3.png){#fig-lidar3 fig-alt="Image showing what an area of interest box looks like on the map" fig-cap="Defined area of interest"}
+
+On the right panel, you should see dropdowns for DEM, LiDAR, and DSM/ORI products within the AOI. After we define the AOI, these dropdowns populate with all downloadable files in the area. In this case, we're interested in what DEMs are available, so let's expand that dropdown. As you can see, there are a lot of files! We don't want to download that many GB of data to our computers, so let's choose just one tiles to download. First, click on the folder icon next to `DEM 1 Meter`. You should now see a list of individual files, like this:
+
+![Individual DEM tiles](img/lidar_explorer_4.png){#fig-lidar4 fig-alt="Image showing the individual 1 meter DEM tiles within AIO" fig-cap="Individual DEM tiles"}
+
+Choose one of the files on the list and click the download icon next to it. Once downloaded, rename the file to `DEM_1_meter.tif` and move it to `nr218/lab_8/data`.
+
+Next, close the 1 meter file list (click again on the folder icon) and open the `30m` folder. Choose one of those files to download, rename it to `DEM_30_meter.tif`, and save it to `data`.
+
+__Take a screenshot of both DEM files in your lab 8 data folder and add it to your submission doc.__
+
+::: {#tip-tiles .callout-tip}
+## Building a Virtual Raster
+
+If you wanted to use 1 meter DEMs for a project, but needed to cover a larger area, you could save on file size by downloading all of the individual tiles you needed and 'stitching' them together into a `virtual raster (VRT)` in QGIS. A VRT acts as a _catalog_ for all selected raster files, rather than creating a new image. This can be useful for doing quick actions like reprojecting or clipping a large area of raster imagery, but you will get better overall performance using a merged TIF file.
+
+:::
+
+## Task 1: Comparing and Visualizing DEMs
+
+1. Open a new project in QGIS and save it to your `nr218/lab_8` folder (NOT within one of the sub-folders).
+2. Set the global CRS of the project to EPSG:26910 (UTM Zone 10N). You can do this by going to Project > Properties > CRS.
+3. Add in a satellite basemap of your choice.
+4. Add in your 1 meter DEM file. You have options on how to do this:
+  + Click and drag the file into QGIS from your file explorer
+  + Go to Layer > Add Layer > Add Raster Layer (You can also do this by hitting Shift + Ctrl/Cmd + R)
+5. Add in your 30 meter DEM in the same way.
+
+### Comparing DEM Resolutions
+
+Take a look at the two DEM files. If they're not both already in EPSG:26910, reproject using Raster > Projections > Warp (Reproject).
+
+10 and 30 meter DEMs are typically much easier to track down than 1 meter. However, what we gain in accessibility and area coverage, we give up in detail and accuracy. To illustrate this, let's compare the elevation values between the two DEMs.
+
+__Sampling Raster Values__
+
+We can do this using a tool called `Sample Raster Values`. First, we'll need to add some points to our map.
+
+1. Go to Layer > Create Layer > New Temporary Scratch Layer
+2. Name the layer something useful, change the geometry type to to point, and make sure the CRS is 26910. Hit `Ok`.
+3. Editing should be toggled on by default, but if it's not, click on the pencil icon. Then select `add point feature` and add ~4 points to the map (click on the map to add a point). Make sure they are on areas of overlap between both DEMs, and try to cover different levels of elevation (lighter/darker gray).
+
+![Add Feature Icon](img/add_feature_icon.png){#fig-feature_icon}
+
+4. Once you're satisfied with your points, hit the save icon (next to the pencil) and toggle editing off.
+
+Now let's check out the `sample raster values` tool using our 1 meter DEM.
+
+1. In the processing tools window, search for `sample raster values`.
+2. Select our newly created point layer as the input, and our DEM_1_meter as the raster layer.
+3. If you'd like, change the `output column prefix` to something more informative. Then hit `Run`.
+
+Examine the output of the tool. What did it do? Before we move on, rename the output layer (called `Sampled` by default) to something more useful.
+
+Now run the same steps as above, but use the output layer as your input and the 30 meter DEM as your raster. You should now have a new point layer that includes the elevation attributes from both DEMs. Open the attribute table and look at the values - why do you think the values are different? Are there certain areas where they're closer than other areas? Why might that be?
+
+__Take a screenshot of your final attribute table and add it to your submission doc.__
+
+Now let's talk about visualizing elevation. By default, the numerical values of each pixel in a DEM are symbolized on a scale of black and white, also known as `Singleband gray`. In this state it's pretty difficult to gain any information from the image, so let's change it to something more useful.
+
+### Hillshade
+
+1. Open up the Symbology window for the DEM layer (can elaborate here if needed).
+2. Where it says `Render Type`, click the dropdown and select `Hillshade`.
+
+::: {#tip-hillshade .callout-tip}
+## Azimuth and Z Factor
+
+We can adjust the output of our hillshade by changing the values of the `azimuth` and `Z factor`. Take a moment to play around with the values for these parameters. What do you think each one does?
+
+:::
+
+After you hit  `Apply`, your DEM should look something like this:
+
+![Hillshade](img/hillshade_example.png){#fig-hillshade fig-alt="Image showing a hillshade render of a DEM" fig-cap="Hillshade"}
+
+Try the same process with your 30 meter DEM. How do the outputs differ?
+
+__Take a screenshot of your hillshade render and add it to your submission doc.__
+
+### Contour Lines
+
+1. Go back to the Symbology window and change the Render Type to `Contour`. Adjust the `Contour Interval` and `Index Contour Interval` until the amount of bands generated feels good to you (i.e. not _too_ cluttered, but enough to actually show the topography). I would also recommend making the Index lines slightly thicker, for visual differentiation.
+
+Now your DEM should look something like this:
+
+![Contour Lines](img/contour_example.png){#fig-contour fig-alt="Image showing the contour lines of a DEM" fig-cap="Contour Lines"}
+
+We have another opportunity to compare our DEMs here. Change the symbology of your 30 meter DEM to contour lines, and look at the two layers together. Again, how do the two layers differ? What might be the cause of that?
+
+__Take a screenshot of your contour render and add it to your submission doc.__
+
+## Task 2: Saving and Exporting DEM Visualizations
+
+While these changes to symbology can be useful for quick visualizations of the landscape, if we were to send our DEM file to someone else, the adjustments wouldn't be reflected on their end. Luckily, QGIS also has processing tools that we can use to turn our hillshade and contour lines into separate layers that _can_ be shared.
+
+### Hillshade
+
+1. From the Raster menu, go to Analysis > Hillshade (or search Hillshade in the processing tools window).
+2. Adjust the Z factor if you'd like. Let's keep the azimuth at its default for now.
+3. Click on the 3 dots to the right of the `[Save to temporary file]` box and select `Save to file`. Navigate to your `data` folder and name the file something you can identify it by (i.e. include hillshade in the name). Before you hit `Save`, make sure the file format is `.tif`.
+4. Leave all other parameters at their default and hit `Run`.
+
+### Contour Lines
+
+1. Now go to Raster > Extraction > Contour (or search Contour in the processing tools window).
+2. Adjust the contour interval to the same value you used before (for this tool we don't specify an index interval).
+3. Save the layer as a new file the same way you did above. Make sure that the file type is `.geojson`.
+4. Leave all other parameters at their default and hit `Run`.
+
+### Combining DEM Visualizations
+
+You should have two new layers on your map. We can now combine all of our DEM layers together to create an aesthetically pleasing map.
+
+1. Open up the Symbology window for our original DEM and change the Render Type to `Singleband pseudocolor`. Choose any of the color ramps from the dropdown.
+2. Make sure your hillshade layer is the second layer in the stack. In the Symbology window, change the `blending mode` to `multiply`. Locate the Transparency tab (one below Symbology), and adjust the layer opacity to your liking.
+3. Make sure your contour layer is the topmost layer. Go to the Symbology window and adjust the color and thickness of your lines to your liking.
+
+![Layered DEM](img/dem_all.png){#fig-dem_all fig-alt="Image showing a DEM with hillshade and contour lines layered on top" fig-cap="Base DEM with Hillshade and Contour Lines"}
+
+__Another Option: Red Relief__
+
+Alternatively, we can combine our DEM and hillshade layers to create the red relief visualization that we talked about in lecture.
+
+1. Change the render type of the original DEM back to `singleband gray`.
+2. Change the render type of the hillshade layer to `singleband pseudocolor`.
+3. Under the color ramp dropdown, choose `Create new color ramp`. Set the first color to black, and choose a shade of red for the second.
+4. Go back to the transparency tab and adjust the opacity to your liking.
+
+![Red Relief Hillshade](img/dem_red.png){#fig-dem_red fig-alt="Image showing a DEM with hillshade render changed to a red gradient" fig-cap="Base DEM with Red Relief Hillshade. Contour lines removed."}
+
+Nice! Something like this can be a great base for displaying other data layers (foreshadowing).
+
+## Task 3: Extracting Information from DEMs
+
+There are many uses for DEMs beyond elevation, and many tools that we can use to extract additional information from them!
+
+FOr the rest of this exercise, you'll need to download [this](link) .zip file. Unzip the file and move the newly generated folder to `data`.
+
+Add all of the files in the unzipped folder to your project in QGIS. We can remove the DEM layers we used above (if you want to save them as a reference, just uncheck them instead of fully deleting them).
+
+::: {#tip-spr_prep .callout-tip}
+## Layer Preparation
+
+Take a quick look through the layers from the folder. What types of data are we dealing with? Are they all in the same CRS? If not, we should take a moment to reproject.
+
+:::
+
+### Slope and Aspect
+
+`Slope` tells us how steep the terrain is (degrees/percent change from horizontal). `Aspect` tells us which compass direction each slope of the terrain faces.
+
+We can generate layers for slope and aspect similarly to how we created our hillshade and contour layers. For slope, go to Raster > Analysis > Slope. Make sure your input layer is `spr_DEM`, and keep all other parameters at their default. Save the output to a file, like we did above, and hit `Run`. Do the same for aspect (Raster > Analysis > Aspect).
+
+Examine the outputs of each analysis tool. What might you use a map of slope for? What about aspect?
+
+__Write down your thoughts and add screenshots of your slope and aspect layers to your submission doc.__
+
+::: {#tip-terrain_analysis .callout-tip}
+## Terrain Analysis
+
+Together with hillshade and contours, slope and aspect are often categorized as `terrain analysis`. We can generate other layers of information in a similar way, such as `topographic position index (TPI)`, which classifies each pixel in relation to the altitude of its neighboring cells. Other terrain indices you might encounter include the `topographic wetness index (TWI)` and `topographic ruggedness index (TRI)`.
+
+:::
+
+## Task 4: Putting It All Together
+
+Oh no! Hydrologists at Swanton Pacific Ranch have lost track of all of their rain gauges! Luckily, we have the point layer open in QGIS right now. Since we have it open, they've asked for our help identifying one specific rain gauge. The rain gauge they're looking for is:
+
+- On a slope that's facing Northwest
+- Above 200 meters of elevation
+- On a relatively flat area (less than 5 degrees of steepness)
+
+Using the layers that you've created, and the tools we've practiced with in this lab (OR tools that we've used in past labs... hint hint...), identify which rain gauge the team is looking for.
+
+__Once you have your answer, note which rain gauge the hydrologists are looking for, what the associated values are for slope, aspect, and elevation, and explain how you reached your conclusion on your submission doc.__
+
+### Bonus: Exporting a Map
+
+Great! Now that we've found the rain gauge, the hydrologists need a way to navigate to it. Let's make them a couple maps to use as a reference. First, we'll make a `GeoPDF`, or a georeferenced PDF.
+
+__Exporting a GeoPDF__
+
+Re-run the steps above to generate hillshade and contour layers for the SPR DEM. You can either do this using the Symbology tab, or generate two new layers. Once you have a map image that you're satisfied with, go to `Project > Import/Export > Export Map to PDF`.
+
+In the popup window, you can leave everything at its default, but make sure to check the box next to `Create Geospatial PDF`. Hit Save, and then navigate to your `lab_8/docs` folder and choose an appropriate name for the file.
+
+Let's take a look at what we just exported! Locate the file on your computer and open it in Adobe or a similar PDF viewer. Look for a `Layers` icon, and see what you can do - you should be able to toggle the map layers on and off. Pretty cool!
+
+::: {#tip-avenza .callout-tip}
+## Using a GeoPDF in the Field
+
+If you have the app `Avenza` on your phone, or something similar, you can import GeoPDFs from QGIS and use them as your base map! In this case, someone could in theory travel to Swanton and use the PDF we just exported to locate the missing rain gauge.
+
+:::
+
+__Exporting a Print Layout__
+
+It's good practice for us to also export the map as a flattened PDF.
+
+1. Create a new map layout by clicking the `New Print Layout` icon or hitting `Ctrl/Cmd + P`. Name it something useful.
+
+::: {#tip-grids .callout-tip}
+## Using Guidelines for Easier Map Making
+
+When setting up a map layout, we can make our lives easier by putting down guide lines for map items to automatically snap to. Let's try it now - select the `Guides` tab on the right panel and add some horizontal and vertical lines. You can click on the side rulers, or manually type in the values that you'd like your lines to appear at.
+
+:::
+
+2. Now add a new map to the layout (Add Item > Add Map or click the Add Map Icon on the left side panel). Adjust the map to your liking by selecting `Move Item Contents` or hitting the `C` key. You can also manually set the scale of the map in the Item Properties window. Do that now, and change it to a round number large enough to view the entire extent of the layers.
+3. Next we'll add a legend. Once you've created one, go to the Item Properties tab on the right and do some clean-up. Remember we can adjust which layers are included in our legend by un-checking `Auto-update`, and then removing unwanted entries. We can also rename the entries we _are_ keeping by double clicking on their names.
+4. Next let's add a scale bar. Play around with the number and width of each segments - you want to end up with a value that will be informative to your viewers. Place a second scale bar next to the first, and change the `Style` to `Numeric`. What does this number mean? Think back to step 1 - why is it helpful to set the scale to be a round number?
+5. Lastly, add a map title.
+6. Click the `Export as PDF` icon, or go to Layout > Export as PDF.
+7. Save your pdf in your `lab_8/docs` folder, and name it something useful.
+8. In this case, you can leave all of the parameters as-is and just hit save.
+
+__Upload your final map in addition to your submission doc.__
+
+
+
+
+
