@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Working With DEMs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="lab_8_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lab_8_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="lab_8_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="lab_8_files/libs/quarto-html/popper.min.js"></script>
+<script src="lab_8_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="lab_8_files/libs/quarto-html/anchor.min.js"></script>
+<link href="lab_8_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lab_8_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="lab_8_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="lab_8_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="lab_8_files/libs/bootstrap/bootstrap-0e684f654e4fbc525fca11b6951e60b2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Working With DEMs</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Now that we’ve learned a bit about what DEMs are and what they can be used for, let’s get some practice working with them in QGIS.</p>
+<p><strong>Quick file organization housekeeping:</strong></p>
+<p>Make a new folder inside your <code>nr218</code> directory called <code>lab_8</code>. Inside that folder, make a <code>data</code> folder and a <code>docs</code> folder. All downloaded files will go in the <code>data</code> folder, and all generated outputs (more on this later) will go in <code>docs</code>.</p>
+<section id="warm-up-finding-data-online" class="level2">
+<h2 class="anchored" data-anchor-id="warm-up-finding-data-online">Warm Up: Finding Data Online</h2>
+<p>So far in this class you’ve been given files to work with. Today, we’re going to practice acquiring some data on our own.</p>
+<p>Generating DEMs, particularly at a high resolution, can be costly and time-consuming. Luckily, there are some great online resources for accessing existing imagery. One such resource is the <a href="https://www.usgs.gov/tools/lidarexplorer">USGS LiDAR Explorer</a>. Let’s check it out!</p>
+<p>Follow the link above, and then click “Launch Application” to get to the interactive map. Your screen should look something like this:</p>
+<div id="fig-lidar1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Startup map of LiDAR Explorer" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lidar1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/lidar_explorer_1.png" class="img-fluid figure-img" data-fig-cap="Startup map of LiDAR Explorer" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lidar1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Startup map of LiDAR Explorer
+</figcaption>
+</figure>
+</div>
+<p>You can navigate around the map by clicking and dragging with your mouse. Let’s move our view until California is in the center (click and drag to the right), and then zoom in using the “+” button (top left of the map viewer), until the resolution is 20 km. Orient your map view so that it’s centered on San Luis Obispo, like in the photo below:</p>
+<div id="fig-lidar2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Adjusted map of LiDAR Explorer" alt="Image showing LiDAR Explorer map once we've zoomed in and centered it on San Luis Obispo">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lidar2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/lidar_explorer_2.png" class="img-fluid figure-img" data-fig-cap="Adjusted map of LiDAR Explorer" alt="Image showing LiDAR Explorer map once we've zoomed in and centered it on San Luis Obispo">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lidar2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Adjusted map of LiDAR Explorer
+</figcaption>
+</figure>
+</div>
+<p>Next, let’s define our <strong>area of interest (AOI).</strong> This will return all of the available LiDAR and DEM downloads within a specified geographic area. After clicking on the area of interest icon (see photo above), draw a box around SLO, then check what pops up on the right side of the screen.</p>
+<div id="fig-lidar3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Defined area of interest" alt="Image showing what an area of interest box looks like on the map">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lidar3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/lidar_explorer_3.png" class="img-fluid figure-img" data-fig-cap="Defined area of interest" alt="Image showing what an area of interest box looks like on the map">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lidar3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Defined area of interest
+</figcaption>
+</figure>
+</div>
+<p>On the right panel, you should see dropdowns for DEM, LiDAR, and DSM/ORI products within the AOI. After we define the AOI, these dropdowns populate with all downloadable files in the area. In this case, we’re interested in what DEMs are available, so let’s expand that dropdown. As you can see, there are a lot of files! We don’t want to download that many GB of data to our computers, so let’s choose just one tiles to download. First, click on the folder icon next to <code>DEM 1 Meter</code>. You should now see a list of individual files, like this:</p>
+<div id="fig-lidar4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Individual DEM tiles" alt="Image showing the individual 1 meter DEM tiles within AIO">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lidar4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/lidar_explorer_4.png" class="img-fluid figure-img" data-fig-cap="Individual DEM tiles" alt="Image showing the individual 1 meter DEM tiles within AIO">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lidar4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Individual DEM tiles
+</figcaption>
+</figure>
+</div>
+<p>Choose one of the files on the list and click the download icon next to it. Once downloaded, rename the file to <code>DEM_1_meter.tif</code> and move it to <code>nr218/lab_8/data</code>.</p>
+<p>Next, close the 1 meter file list (click again on the folder icon) and open the <code>30m</code> folder. Choose one of those files to download, rename it to <code>DEM_30_meter.tif</code>, and save it to <code>data</code>.</p>
+<p><strong>Take a screenshot of both DEM files in your lab 8 data folder and add it to your submission doc.</strong></p>
+<div id="tip-tiles" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;1: Building a Virtual Raster
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you wanted to use 1 meter DEMs for a project, but needed to cover a larger area, you could save on file size by downloading all of the individual tiles you needed and ‘stitching’ them together into a <code>virtual raster (VRT)</code> in QGIS. A VRT acts as a <em>catalog</em> for all selected raster files, rather than creating a new image. This can be useful for doing quick actions like reprojecting or clipping a large area of raster imagery, but you will get better overall performance using a merged TIF file.</p>
+</div>
+</div>
+</section>
+<section id="task-1-comparing-and-visualizing-dems" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-comparing-and-visualizing-dems">Task 1: Comparing and Visualizing DEMs</h2>
+<ol type="1">
+<li>Open a new project in QGIS and save it to your <code>nr218/lab_8</code> folder (NOT within one of the sub-folders).</li>
+<li>Set the global CRS of the project to EPSG:26910 (UTM Zone 10N). You can do this by going to Project &gt; Properties &gt; CRS.</li>
+<li>Add in a satellite basemap of your choice.</li>
+<li>Add in your 1 meter DEM file. You have options on how to do this:</li>
+</ol>
+<ul>
+<li>Click and drag the file into QGIS from your file explorer</li>
+<li>Go to Layer &gt; Add Layer &gt; Add Raster Layer (You can also do this by hitting Shift + Ctrl/Cmd + R)</li>
+</ul>
+<ol start="5" type="1">
+<li>Add in your 30 meter DEM in the same way.</li>
+</ol>
+<section id="comparing-dem-resolutions" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-dem-resolutions">Comparing DEM Resolutions</h3>
+<p>Take a look at the two DEM files. If they’re not both already in EPSG:26910, reproject using Raster &gt; Projections &gt; Warp (Reproject).</p>
+<p>10 and 30 meter DEMs are typically much easier to track down than 1 meter. However, what we gain in accessibility and area coverage, we give up in detail and accuracy. To illustrate this, let’s compare the elevation values between the two DEMs.</p>
+<p><strong>Sampling Raster Values</strong></p>
+<p>We can do this using a tool called <code>Sample Raster Values</code>. First, we’ll need to add some points to our map.</p>
+<ol type="1">
+<li>Go to Layer &gt; Create Layer &gt; New Temporary Scratch Layer</li>
+<li>Name the layer something useful, change the geometry type to to point, and make sure the CRS is 26910. Hit <code>Ok</code>.</li>
+<li>Editing should be toggled on by default, but if it’s not, click on the pencil icon. Then select <code>add point feature</code> and add ~4 points to the map (click on the map to add a point). Make sure they are on areas of overlap between both DEMs, and try to cover different levels of elevation (lighter/darker gray). <img src="img/add_feature_icon.png" id="fig-feature_icon" class="img-fluid" alt="Add Feature Icon"></li>
+<li>Once you’re satisfied with your points, hit the save icon (next to the pencil) and toggle editing off.</li>
+</ol>
+<p>Now let’s check out the <code>sample raster values</code> tool using our 1 meter DEM.</p>
+<ol type="1">
+<li>In the processing tools window, search for <code>sample raster values</code>.</li>
+<li>Select our newly created point layer as the input, and our DEM_1_meter as the raster layer.</li>
+<li>If you’d like, change the <code>output column prefix</code> to something more informative. Then hit <code>Run</code>.</li>
+</ol>
+<p>Examine the output of the tool. What did it do? Before we move on, rename the output layer (called <code>Sampled</code> by default) to something more useful.</p>
+<p>Now run the same steps as above, but use the output layer as your input and the 30 meter DEM as your raster. You should now have a new point layer that includes the elevation attributes from both DEMs. Open the attribute table and look at the values - why do you think the values are different? Are there certain areas where they’re closer than other areas? Why might that be?</p>
+<p><strong>Take a screenshot of your final attribute table and add it to your submission doc.</strong></p>
+<p>Now let’s talk about visualizing elevation. By default, the numerical values of each pixel in a DEM are symbolized on a scale of black and white, also known as <code>Singleband gray</code>. In this state it’s pretty difficult to gain any information from the image, so let’s change it to something more useful.</p>
+</section>
+<section id="hillshade" class="level3">
+<h3 class="anchored" data-anchor-id="hillshade">Hillshade</h3>
+<ol type="1">
+<li>Open up the Symbology window for the DEM layer (can elaborate here if needed).</li>
+<li>Where it says <code>Render Type</code>, click the dropdown and select <code>Hillshade</code>.</li>
+</ol>
+<div id="tip-hillshade" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;2: Azimuth and Z Factor
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can adjust the output of our hillshade by changing the values of the <code>azimuth</code> and <code>Z factor</code>. Take a moment to play around with the values for these parameters. What do you think each one does?</p>
+</div>
+</div>
+<p>After you hit <code>Apply</code>, your DEM should look something like this:</p>
+<div id="fig-hillshade" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Hillshade" alt="Image showing a hillshade render of a DEM">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hillshade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/hillshade_example.png" class="img-fluid figure-img" data-fig-cap="Hillshade" alt="Image showing a hillshade render of a DEM">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hillshade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Hillshade
+</figcaption>
+</figure>
+</div>
+<p>Try the same process with your 30 meter DEM. How do the outputs differ?</p>
+<p><strong>Take a screenshot of your hillshade render and add it to your submission doc.</strong></p>
+</section>
+<section id="contour-lines" class="level3">
+<h3 class="anchored" data-anchor-id="contour-lines">Contour Lines</h3>
+<ol type="1">
+<li>Go back to the Symbology window and change the Render Type to <code>Contour</code>. Adjust the <code>Contour Interval</code> and <code>Index Contour Interval</code> until the amount of bands generated feels good to you (i.e.&nbsp;not <em>too</em> cluttered, but enough to actually show the topography). I would also recommend making the Index lines slightly thicker, for visual differentiation.</li>
+</ol>
+<p>Now your DEM should look something like this:</p>
+<div id="fig-contour" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Contour Lines" alt="Image showing the contour lines of a DEM">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/contour_example.png" class="img-fluid figure-img" data-fig-cap="Contour Lines" alt="Image showing the contour lines of a DEM">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Contour Lines
+</figcaption>
+</figure>
+</div>
+<p>We have another opportunity to compare our DEMs here. Change the symbology of your 30 meter DEM to contour lines, and look at the two layers together. Again, how do the two layers differ? What might be the cause of that?</p>
+<p><strong>Take a screenshot of your contour render and add it to your submission doc.</strong></p>
+</section>
+</section>
+<section id="task-2-saving-and-exporting-dem-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-saving-and-exporting-dem-visualizations">Task 2: Saving and Exporting DEM Visualizations</h2>
+<p>While these changes to symbology can be useful for quick visualizations of the landscape, if we were to send our DEM file to someone else, the adjustments wouldn’t be reflected on their end. Luckily, QGIS also has processing tools that we can use to turn our hillshade and contour lines into separate layers that <em>can</em> be shared.</p>
+<section id="hillshade-1" class="level3">
+<h3 class="anchored" data-anchor-id="hillshade-1">Hillshade</h3>
+<ol type="1">
+<li>From the Raster menu, go to Analysis &gt; Hillshade (or search Hillshade in the processing tools window).</li>
+<li>Adjust the Z factor if you’d like. Let’s keep the azimuth at its default for now.</li>
+<li>Click on the 3 dots to the right of the <code>[Save to temporary file]</code> box and select <code>Save to file</code>. Navigate to your <code>data</code> folder and name the file something you can identify it by (i.e.&nbsp;include hillshade in the name). Before you hit <code>Save</code>, make sure the file format is <code>.tif</code>.</li>
+<li>Leave all other parameters at their default and hit <code>Run</code>.</li>
+</ol>
+</section>
+<section id="contour-lines-1" class="level3">
+<h3 class="anchored" data-anchor-id="contour-lines-1">Contour Lines</h3>
+<ol type="1">
+<li>Now go to Raster &gt; Extraction &gt; Contour (or search Contour in the processing tools window).</li>
+<li>Adjust the contour interval to the same value you used before (for this tool we don’t specify an index interval).</li>
+<li>Save the layer as a new file the same way you did above. Make sure that the file type is <code>.geojson</code>.</li>
+<li>Leave all other parameters at their default and hit <code>Run</code>.</li>
+</ol>
+</section>
+<section id="combining-dem-visualizations" class="level3">
+<h3 class="anchored" data-anchor-id="combining-dem-visualizations">Combining DEM Visualizations</h3>
+<p>You should have two new layers on your map. We can now combine all of our DEM layers together to create an aesthetically pleasing map.</p>
+<ol type="1">
+<li>Open up the Symbology window for our original DEM and change the Render Type to <code>Singleband pseudocolor</code>. Choose any of the color ramps from the dropdown.</li>
+<li>Make sure your hillshade layer is the second layer in the stack. In the Symbology window, change the <code>blending mode</code> to <code>multiply</code>. Locate the Transparency tab (one below Symbology), and adjust the layer opacity to your liking.</li>
+<li>Make sure your contour layer is the topmost layer. Go to the Symbology window and adjust the color and thickness of your lines to your liking.</li>
+</ol>
+<div id="fig-dem_all" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Base DEM with Hillshade and Contour Lines" alt="Image showing a DEM with hillshade and contour lines layered on top">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dem_all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/dem_all.png" class="img-fluid figure-img" data-fig-cap="Base DEM with Hillshade and Contour Lines" alt="Image showing a DEM with hillshade and contour lines layered on top">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dem_all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Layered DEM
+</figcaption>
+</figure>
+</div>
+<p><strong>Another Option: Red Relief</strong></p>
+<p>Alternatively, we can combine our DEM and hillshade layers to create the red relief visualization that we talked about in lecture.</p>
+<ol type="1">
+<li>Change the render type of the original DEM back to <code>singleband gray</code>.</li>
+<li>Change the render type of the hillshade layer to <code>singleband pseudocolor</code>.</li>
+<li>Under the color ramp dropdown, choose <code>Create new color ramp</code>. Set the first color to black, and choose a shade of red for the second.</li>
+<li>Go back to the transparency tab and adjust the opacity to your liking.</li>
+</ol>
+<div id="fig-dem_red" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Base DEM with Red Relief Hillshade. Contour lines removed." alt="Image showing a DEM with hillshade render changed to a red gradient">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dem_red-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/dem_red.png" class="img-fluid figure-img" data-fig-cap="Base DEM with Red Relief Hillshade. Contour lines removed." alt="Image showing a DEM with hillshade render changed to a red gradient">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dem_red-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Red Relief Hillshade
+</figcaption>
+</figure>
+</div>
+<p>Nice! Something like this can be a great base for displaying other data layers (foreshadowing).</p>
+</section>
+</section>
+<section id="task-3-extracting-information-from-dems" class="level2">
+<h2 class="anchored" data-anchor-id="task-3-extracting-information-from-dems">Task 3: Extracting Information from DEMs</h2>
+<p>There are many uses for DEMs beyond elevation, and many tools that we can use to extract additional information from them!</p>
+<p>FOr the rest of this exercise, you’ll need to download <a href="link">this</a> .zip file. Unzip the file and move the newly generated folder to <code>data</code>.</p>
+<p>Add all of the files in the unzipped folder to your project in QGIS. We can remove the DEM layers we used above (if you want to save them as a reference, just uncheck them instead of fully deleting them).</p>
+<div id="tip-spr_prep" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;3: Layer Preparation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Take a quick look through the layers from the folder. What types of data are we dealing with? Are they all in the same CRS? If not, we should take a moment to reproject.</p>
+</div>
+</div>
+<section id="slope-and-aspect" class="level3">
+<h3 class="anchored" data-anchor-id="slope-and-aspect">Slope and Aspect</h3>
+<p><code>Slope</code> tells us how steep the terrain is (degrees/percent change from horizontal). <code>Aspect</code> tells us which compass direction each slope of the terrain faces.</p>
+<p>We can generate layers for slope and aspect similarly to how we created our hillshade and contour layers. For slope, go to Raster &gt; Analysis &gt; Slope. Make sure your input layer is <code>spr_DEM</code>, and keep all other parameters at their default. Save the output to a file, like we did above, and hit <code>Run</code>. Do the same for aspect (Raster &gt; Analysis &gt; Aspect).</p>
+<p>Examine the outputs of each analysis tool. What might you use a map of slope for? What about aspect?</p>
+<p><strong>Write down your thoughts and add screenshots of your slope and aspect layers to your submission doc.</strong></p>
+<div id="tip-terrain_analysis" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;4: Terrain Analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Together with hillshade and contours, slope and aspect are often categorized as <code>terrain analysis</code>. We can generate other layers of information in a similar way, such as <code>topographic position index (TPI)</code>, which classifies each pixel in relation to the altitude of its neighboring cells. Other terrain indices you might encounter include the <code>topographic wetness index (TWI)</code> and <code>topographic ruggedness index (TRI)</code>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="task-4-putting-it-all-together" class="level2">
+<h2 class="anchored" data-anchor-id="task-4-putting-it-all-together">Task 4: Putting It All Together</h2>
+<p>Oh no! Hydrologists at Swanton Pacific Ranch have lost track of all of their rain gauges! Luckily, we have the point layer open in QGIS right now. Since we have it open, they’ve asked for our help identifying one specific rain gauge. The rain gauge they’re looking for is:</p>
+<ul>
+<li>On a slope that’s facing Northwest</li>
+<li>Above 200 meters of elevation</li>
+<li>On a relatively flat area (less than 5 degrees of steepness)</li>
+</ul>
+<p>Using the layers that you’ve created, and the tools we’ve practiced with in this lab (OR tools that we’ve used in past labs… hint hint…), identify which rain gauge the team is looking for.</p>
+<p><strong>Once you have your answer, note which rain gauge the hydrologists are looking for, what the associated values are for slope, aspect, and elevation, and explain how you reached your conclusion on your submission doc.</strong></p>
+<section id="bonus-making-a-geopdf" class="level3">
+<h3 class="anchored" data-anchor-id="bonus-making-a-geopdf">Bonus: Making a GeoPDF</h3>
+<p>Great! Now that we’ve found the rain gauge, the hydrologists need a way to navigate to it. Let’s make them a <code>GeoPDF</code>, or a georeferenced PDF.</p>
+<p>[add tutorial here?]</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
