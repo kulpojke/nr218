@@ -4,21 +4,38 @@
 
 + A __Digital Elevation Model__
 + Representation of the topographic surface of the Earth
-+ Different types of DEMs:
-    + A DTM (Digital Terrain Model) is a DEM of the ground surface
-    + A DSM (Digital Surface Model) is a DEM that includes vegetation and structures
++ DTM (Digital Terrain Model) is usually synonymous with DEM (though sometimes DEM is used to encompass DTM and DSM)
++ A DSM (Digital Surface Model) includes vegetation and structures
 
-## How are DEMs made?
+##
 
+::: {.attribution style="font-size:0.4em"}
+Image Source: ![NEON](https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/main/graphics/lidar-derived-products/lidarTree-height.png){fig-alt="Image showing the difference between a DTM, DSM and CHM" fig-cap="A DSM shows the land surface with vegetation, buildings and other features. A DHM (often referred to as DEM) shows the land surface without vegetation or buildings. A Canopy Height Model (CHM) shows vegetation height above ground."}
+:::
+
+## How are DEMs made? {style="font-size:0.7em"}
+
++ Aerial LiDAR imagery
 + Topographic/contour data
 + Satellite imagery/Radar
     + Examples:
-        + ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer)
-        + IceSAT (Ice, Cloud and land Elevation Satellite)
-        + SRTM (Shuttle Radar Topography Mission)
-+ LiDAR imagery
+        + [ASTER](https://asterweb.jpl.nasa.gov/gdem.asp) (Advanced Spaceborne Thermal Emission and Reflection Radiometer)
+            + Photogrammetry from images 
+            + 30 m resolution
+        + [IceSAT](https://icesat.gsfc.nasa.gov/icesat/dem.php) (Ice, Cloud and land Elevation Satellite)
+            + Lidar 
+            + $\le$ 500 m resolution
+        + [SRTM](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1) (Shuttle Radar Topography Mission)
+            + SAR
+            + DSM
+            + 1 arcsecond resolution
 
-## Sidebar: What is LiDAR?
+
+## Pseudoquiz!
+
+What does 1 arcsecond resolution mean?
+
+## Sidebar: What is LiDAR? {.smaller}
 
 + Light Detection and Ranging
 + Remote sensing using lasers!
@@ -27,7 +44,7 @@
         + Distance is converted to elevation
 + In addition to DEMs, LiDAR data can be used to generate canopy cover and canopy height indices (among other things!)
 
-## What can DEMs be used for?
+## What can DEMs be used for? {.smaller}
 
 + Terrain analysis
     + Slope, aspect, hillshade, contours
@@ -36,6 +53,5 @@
 + Environmental risk assessments and hazard modeling
     + Modeling land movement (landslides, erosion)
 + Infrastructure and land use planning
-
 
 
