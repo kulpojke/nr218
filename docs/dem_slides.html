@@ -140,40 +140,69 @@
 <li>A DSM (Digital Surface Model) includes vegetation and structures</li>
 </ul>
 </section>
-<section id="section" class="slide level2 center">
+<section id="section" class="slide level2 smaller center">
 <h2></h2>
 <div class="attribution" style="font-size:0.4em">
-<p>Image Source: <img data-src="https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/main/graphics/lidar-derived-products/lidarTree-height.png" data-fig-cap="A DSM shows the land surface with vegetation, buildings and other features. A DHM (often referred to as DEM) shows the land surface without vegetation or buildings. A Canopy Height Model (CHM) shows vegetation height above ground." alt="Image showing the difference between a DTM, DSM and CHM"></p>
+<p><img data-src="https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/main/graphics/lidar-derived-products/lidarTree-height.png" style="max-height: 55vh; object-fit: contain;;width:80.0%" data-fig-cap="A DSM shows the land surface with vegetation, buildings and other features. A DHM (often referred to as DEM) shows the land surface without vegetation or buildings. A Canopy Height Model (CHM) shows vegetation height above ground." alt="Image showing the difference between a DTM, DSM and CHM"> Image Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/chm-dsm-dtm">NEON</a></p>
 </div>
 </section>
 <section id="how-are-dems-made" class="slide level2 center" style="font-size:0.7em">
 <h2>How are DEMs made?</h2>
 <ul>
-<li>Aerial LiDAR imagery</li>
-<li>Topographic/contour data</li>
-<li>Satellite imagery/Radar
-<ul>
-<li>Examples:
-<ul>
-<li><a href="https://asterweb.jpl.nasa.gov/gdem.asp">ASTER</a> (Advanced Spaceborne Thermal Emission and Reflection Radiometer)
+<li>Survey or historic data (not so much anymore)</li>
+</ul>
+</section>
+<section id="how-are-dems-made-1" class="slide level2 center" style="font-size:0.7em">
+<h2>How are DEMs made?</h2>
+<p><strong>Aerial LiDAR imagery</strong></p>
+</section>
+<section id="how-are-dems-made-2" class="slide level2 center" style="font-size:0.7em">
+<h2>How are DEMs made?</h2>
+<p><strong>Satellite imagery</strong></p>
+<div class="columns">
+<div class="column">
+<div class="r-stack" style="position: relative; width:50%;">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;">
+<p><a href="https://asterweb.jpl.nasa.gov/gdem.asp">ASTER</a><br>
+<span style="font-size:0.6em">(Advanced Spaceborne Thermal Emission and Reflection Radiometer)</span></p>
 <ul>
 <li>Photogrammetry from images</li>
 <li>30 m resolution</li>
-</ul></li>
-<li><a href="https://icesat.gsfc.nasa.gov/icesat/dem.php">IceSAT</a> (Ice, Cloud and land Elevation Satellite)
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;">
+<p><a href="https://icesat.gsfc.nasa.gov/icesat/dem.php">IceSAT</a><br>
+<span style="font-size:0.6em">(Ice, Cloud and land Elevation Satellite)</span></p>
 <ul>
 <li>Lidar</li>
 <li><span class="math inline">\(\le\)</span> 500 m resolution</li>
-</ul></li>
-<li><a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1">SRTM</a> (Shuttle Radar Topography Mission)
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="left:0; right:0; width:100%; max-width:100%; box-sizing:border-box;">
+<p><a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1">SRTM</a><br>
+<span style="font-size:0.6em">(Shuttle Radar Topography Mission)</span></p>
 <ul>
 <li>SAR</li>
 <li>DSM</li>
 <li>1 arcsecond resolution</li>
-</ul></li>
-</ul></li>
-</ul></li>
 </ul>
+</div>
+</div>
+</div><div class="column">
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<p><img data-src="img/ASTER_stereo.jpg"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<div class="attribution" style="font-size:0.4em">
+<p><img data-src="img/icesat.png"> Image Source: <a href="https://doi.org/10.3390/geosciences12010040">Simurda, C.; Magruder, L.A.; Markel, J.; Garvin, J.B.; Slayback, D.A. ICESat-2 Applications for Investigating Emerging Volcanoes. Geosciences 2022, 12, 40. https://doi.org/10.3390/geosciences12010040</a></p>
+</div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<p><img data-src=".png"></p>
+</div>
+</div>
+</div></div>
 </section>
 <section id="pseudoquiz" class="slide level2 center">
 <h2>Pseudoquiz!</h2>

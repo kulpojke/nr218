@@ -886,14 +886,14 @@
     "href": "index.html#section-27",
     "title": "NR 218",
     "section": "",
-    "text": "Image Source:"
+    "text": "Image Source: NEON"
   },
   {
     "objectID": "index.html#how-are-dems-made",
     "href": "index.html#how-are-dems-made",
     "title": "NR 218",
     "section": "How are DEMs made?",
-    "text": "How are DEMs made?\n\nAerial LiDAR imagery\nTopographic/contour data\nSatellite imagery/Radar\n\nExamples:\n\nASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer)\n\nPhotogrammetry from images\n30 m resolution\n\nIceSAT (Ice, Cloud and land Elevation Satellite)\n\nLidar\n\\(\\le\\) 500 m resolution\n\nSRTM (Shuttle Radar Topography Mission)\n\nSAR\nDSM\n1 arcsecond resolution"
+    "text": "How are DEMs made?\n\nSurvey or historic data (not so much anymore)"
   },
   {
     "objectID": "index.html#pseudoquiz",
@@ -1418,14 +1418,14 @@
     "href": "dem_slides.html#section",
     "title": "",
     "section": "",
-    "text": "Image Source:"
+    "text": "Image Source: NEON"
   },
   {
     "objectID": "dem_slides.html#how-are-dems-made",
     "href": "dem_slides.html#how-are-dems-made",
     "title": "",
     "section": "How are DEMs made?",
-    "text": "How are DEMs made?\n\nAerial LiDAR imagery\nTopographic/contour data\nSatellite imagery/Radar\n\nExamples:\n\nASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer)\n\nPhotogrammetry from images\n30 m resolution\n\nIceSAT (Ice, Cloud and land Elevation Satellite)\n\nLidar\n\\(\\le\\) 500 m resolution\n\nSRTM (Shuttle Radar Topography Mission)\n\nSAR\nDSM\n1 arcsecond resolution"
+    "text": "How are DEMs made?\n\nSurvey or historic data (not so much anymore)"
   },
   {
     "objectID": "dem_slides.html#pseudoquiz",
@@ -3169,5 +3169,33 @@
     "title": "",
     "section": "Project 4 Overview (Due 11/20)",
     "text": "Project 4 Overview (Due 11/20)\n\nGoal: select the optimal Swanton Ranch site for one option:\n\nStudent housing, Hemp farm, or Helicopter landing.\n\nProduce a report explaining site selection criteria and analysis.\nWork in groups of 2–3; coordinate today and check in if you need a team."
+  },
+  {
+    "objectID": "dem_slides.html#how-are-dems-made-1",
+    "href": "dem_slides.html#how-are-dems-made-1",
+    "title": "",
+    "section": "How are DEMs made?",
+    "text": "How are DEMs made?\nAerial LiDAR imagery"
+  },
+  {
+    "objectID": "index.html#how-are-dems-made-1",
+    "href": "index.html#how-are-dems-made-1",
+    "title": "NR 218",
+    "section": "How are DEMs made?",
+    "text": "How are DEMs made?\nAerial LiDAR imagery"
+  },
+  {
+    "objectID": "dem_slides.html#how-are-dems-made-2",
+    "href": "dem_slides.html#how-are-dems-made-2",
+    "title": "",
+    "section": "How are DEMs made?",
+    "text": "How are DEMs made?\nSatellite imagery\n\n\n\n\nASTER\n(Advanced Spaceborne Thermal Emission and Reflection Radiometer)\n\nPhotogrammetry from images\n30 m resolution\n\n\n\nIceSAT\n(Ice, Cloud and land Elevation Satellite)\n\nLidar\n\\(\\le\\) 500 m resolution\n\n\n\nSRTM\n(Shuttle Radar Topography Mission)\n\nSAR\nDSM\n1 arcsecond resolution\n\n\n\n\n\n\n\n\n\n\n Image Source: Simurda, C.; Magruder, L.A.; Markel, J.; Garvin, J.B.; Slayback, D.A. ICESat-2 Applications for Investigating Emerging Volcanoes. Geosciences 2022, 12, 40. https://doi.org/10.3390/geosciences12010040"
+  },
+  {
+    "objectID": "index.html#how-are-dems-made-2",
+    "href": "index.html#how-are-dems-made-2",
+    "title": "NR 218",
+    "section": "How are DEMs made?",
+    "text": "How are DEMs made?\nSatellite imagery\n\n\n\n\nASTER\n(Advanced Spaceborne Thermal Emission and Reflection Radiometer)\n\nPhotogrammetry from images\n30 m resolution\n\n\n\nIceSAT\n(Ice, Cloud and land Elevation Satellite)\n\nLidar\n\\(\\le\\) 500 m resolution\n\n\n\nSRTM\n(Shuttle Radar Topography Mission)\n\nSAR\nDSM\n1 arcsecond resolution\n\n\n\n\n\n\n\n\n\n\n Image Source: Simurda, C.; Magruder, L.A.; Markel, J.; Garvin, J.B.; Slayback, D.A. ICESat-2 Applications for Investigating Emerging Volcanoes. Geosciences 2022, 12, 40. https://doi.org/10.3390/geosciences12010040"
   }
 ]

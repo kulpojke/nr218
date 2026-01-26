@@ -7,28 +7,93 @@
 + DTM (Digital Terrain Model) is usually synonymous with DEM (though sometimes DEM is used to encompass DTM and DSM)
 + A DSM (Digital Surface Model) includes vegetation and structures
 
-##
+## {.smaller}
 
 ::: {.attribution style="font-size:0.4em"}
-Image Source: ![NEON](https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/main/graphics/lidar-derived-products/lidarTree-height.png){fig-alt="Image showing the difference between a DTM, DSM and CHM" fig-cap="A DSM shows the land surface with vegetation, buildings and other features. A DHM (often referred to as DEM) shows the land surface without vegetation or buildings. A Canopy Height Model (CHM) shows vegetation height above ground."}
+![](https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/main/graphics/lidar-derived-products/lidarTree-height.png){fig-alt="Image showing the difference between a DTM, DSM and CHM" fig-cap="A DSM shows the land surface with vegetation, buildings and other features. A DHM (often referred to as DEM) shows the land surface without vegetation or buildings. A Canopy Height Model (CHM) shows vegetation height above ground." width="80%" style="max-height: 55vh; object-fit: contain;"}
+Image Source: [NEON](https://www.neonscience.org/resources/learning-hub/tutorials/chm-dsm-dtm) 
 :::
 
 ## How are DEMs made? {style="font-size:0.7em"}
 
-+ Aerial LiDAR imagery
-+ Topographic/contour data
-+ Satellite imagery/Radar
-    + Examples:
-        + [ASTER](https://asterweb.jpl.nasa.gov/gdem.asp) (Advanced Spaceborne Thermal Emission and Reflection Radiometer)
-            + Photogrammetry from images 
-            + 30 m resolution
-        + [IceSAT](https://icesat.gsfc.nasa.gov/icesat/dem.php) (Ice, Cloud and land Elevation Satellite)
-            + Lidar 
-            + $\le$ 500 m resolution
-        + [SRTM](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1) (Shuttle Radar Topography Mission)
-            + SAR
-            + DSM
-            + 1 arcsecond resolution
++ Survey or historic data (not so much anymore)
+
+## How are DEMs made? {style="font-size:0.7em"}
+
+__Aerial LiDAR imagery__
+
+## How are DEMs made? {style="font-size:0.7em"}
+
+__Satellite imagery__
+
+::: {.columns}
+
+::: {.column}
+
+::: {.r-stack style="position: relative; width:50%;"}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;"}
+
+[ASTER](https://asterweb.jpl.nasa.gov/gdem.asp)  
+[(Advanced Spaceborne Thermal Emission and Reflection Radiometer)]{style="font-size:0.6em"}
+
++ Photogrammetry from images 
++ 30 m resolution
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;"}
+
+[IceSAT](https://icesat.gsfc.nasa.gov/icesat/dem.php)  
+[(Ice, Cloud and land Elevation Satellite)]{style="font-size:0.6em"}
+
++ Lidar 
++ $\le$ 500 m resolution
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="left:0; right:0; width:100%; max-width:100%; box-sizing:border-box;"}
+
+[SRTM](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1)  
+[(Shuttle Radar Topography Mission)]{style="font-size:0.6em"}
+
++ SAR
++ DSM
++ 1 arcsecond resolution
+
+:::
+
+:::
+
+:::
+
+::: {.column}
+
+::: {.r-stack}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+![](img/ASTER_stereo.jpg)
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+
+::: {.attribution style="font-size:0.4em"}
+![](img/icesat.png)
+Image Source: [Simurda, C.; Magruder, L.A.; Markel, J.; Garvin, J.B.; Slayback, D.A. ICESat-2 Applications for Investigating Emerging Volcanoes. Geosciences 2022, 12, 40. https://doi.org/10.3390/geosciences12010040 ](https://doi.org/10.3390/geosciences12010040)
+:::
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+![]()
+:::
+
+:::
+
+:::
+
+:::
 
 
 ## Pseudoquiz!
@@ -53,5 +118,3 @@ What does 1 arcsecond resolution mean?
 + Environmental risk assessments and hazard modeling
     + Modeling land movement (landslides, erosion)
 + Infrastructure and land use planning
-
-
