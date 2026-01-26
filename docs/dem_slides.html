@@ -143,7 +143,8 @@
 <section id="section" class="slide level2 smaller center">
 <h2></h2>
 <div class="attribution" style="font-size:0.4em">
-<p><img data-src="https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/main/graphics/lidar-derived-products/lidarTree-height.png" style="max-height: 55vh; object-fit: contain;;width:80.0%" data-fig-cap="A DSM shows the land surface with vegetation, buildings and other features. A DHM (often referred to as DEM) shows the land surface without vegetation or buildings. A Canopy Height Model (CHM) shows vegetation height above ground." alt="Image showing the difference between a DTM, DSM and CHM"> Image Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/chm-dsm-dtm">NEON</a></p>
+<p><img data-src="https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/main/graphics/lidar-derived-products/lidarTree-height.png" style="max-height: 55vh; object-fit: contain;;width:80.0%" data-fig-cap="A DSM shows the land surface with vegetation, buildings and other features. A DHM (often referred to as DEM) shows the land surface without vegetation or buildings. A Canopy Height Model (CHM) shows vegetation height above ground." alt="Image showing the difference between a DTM, DSM and CHM"></p>
+<p>Image Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/chm-dsm-dtm">NEON</a></p>
 </div>
 </section>
 <section id="how-are-dems-made" class="slide level2 center" style="font-size:0.7em">
@@ -162,28 +163,29 @@
 <div class="columns">
 <div class="column">
 <div class="r-stack" style="position: relative; width:50%;">
-<div class="fragment absolute fade-out" data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="left:0; right:0; width:150%; max-width:150%;">
 <p><a href="https://asterweb.jpl.nasa.gov/gdem.asp">ASTER</a><br>
-<span style="font-size:0.6em">(Advanced Spaceborne Thermal Emission and Reflection Radiometer)</span></p>
+<span style="font-size:0.45em">(Advanced Spaceborne Thermal Emission and Reflection Radiometer)</span></p>
 <ul>
 <li>Photogrammetry from images</li>
 <li>30 m resolution</li>
 </ul>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="left:0; right:0; width:120%; max-width:120%;">
 <p><a href="https://icesat.gsfc.nasa.gov/icesat/dem.php">IceSAT</a><br>
 <span style="font-size:0.6em">(Ice, Cloud and land Elevation Satellite)</span></p>
 <ul>
 <li>Lidar</li>
-<li><span class="math inline">\(\le\)</span> 500 m resolution</li>
+<li><span class="math inline">\(\ge\)</span> 500 m resolution</li>
 </ul>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="left:0; right:0; width:100%; max-width:100%; box-sizing:border-box;">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="left:0; right:0; width:110%; max-width:110%; box-sizing:border-box;">
 <p><a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1">SRTM</a><br>
 <span style="font-size:0.6em">(Shuttle Radar Topography Mission)</span></p>
 <ul>
 <li>SAR</li>
 <li>DSM</li>
+<li>only from year 2000</li>
 <li>1 arcsecond resolution</li>
 </ul>
 </div>
@@ -199,7 +201,10 @@
 </div>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
-<p><img data-src=".png"></p>
+<div class="attribution" style="font-size:0.4em">
+<p><img data-src="img/shuttlewabes1.gif" data-fig-cap="Radar signals being sent and received in the SRTM mission" alt="Image showing radar signals being sent and received in the SRTM mission."><br>
+Image Source: <a href="https://iss.jaxa.jp/shuttle/flight/sts99/mis_principle_e.html">JAXA</a></p>
+</div>
 </div>
 </div>
 </div></div>
@@ -208,17 +213,13 @@
 <h2>Pseudoquiz!</h2>
 <p>What does 1 arcsecond resolution mean?</p>
 </section>
-<section id="sidebar-what-is-lidar" class="slide level2 smaller center">
-<h2>Sidebar: What is LiDAR?</h2>
+<section id="what-is-lidar-anyway" class="slide level2 smaller center">
+<h2>What is LiDAR anyway?</h2>
 <ul>
 <li>Light Detection and Ranging</li>
-<li>Remote sensing using lasers!</li>
-<li>Light pulses are fired rapidly from airborne source and then reflected off of the earth’s surface
+<li>Laser pulses are fired rapidly from airborne source and then reflected off of the earth’s surface
 <ul>
-<li>The time it takes for the light to return to the source is used to measure the distance to the surface
-<ul>
-<li>Distance is converted to elevation</li>
-</ul></li>
+<li>The time it takes for the light to return to the source is used to measure the distance to the surface</li>
 </ul></li>
 <li>In addition to DEMs, LiDAR data can be used to generate canopy cover and canopy height indices (among other things!)</li>
 </ul>

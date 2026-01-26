@@ -11,6 +11,7 @@
 
 ::: {.attribution style="font-size:0.4em"}
 ![](https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/main/graphics/lidar-derived-products/lidarTree-height.png){fig-alt="Image showing the difference between a DTM, DSM and CHM" fig-cap="A DSM shows the land surface with vegetation, buildings and other features. A DHM (often referred to as DEM) shows the land surface without vegetation or buildings. A Canopy Height Model (CHM) shows vegetation height above ground." width="80%" style="max-height: 55vh; object-fit: contain;"}
+
 Image Source: [NEON](https://www.neonscience.org/resources/learning-hub/tutorials/chm-dsm-dtm) 
 :::
 
@@ -32,33 +33,34 @@ __Satellite imagery__
 
 ::: {.r-stack style="position: relative; width:50%;"}
 
-::: {.fragment .absolute .fade-out data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;"}
+::: {.fragment .absolute .fade-out data-fragment-index="1" style="left:0; right:0; width:150%; max-width:150%;"}
 
 [ASTER](https://asterweb.jpl.nasa.gov/gdem.asp)  
-[(Advanced Spaceborne Thermal Emission and Reflection Radiometer)]{style="font-size:0.6em"}
+[(Advanced Spaceborne Thermal Emission and Reflection Radiometer)]{style="font-size:0.45em"}
 
 + Photogrammetry from images 
 + 30 m resolution
 
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="left:0; right:0; width:120%; max-width:120%;"}
 
 [IceSAT](https://icesat.gsfc.nasa.gov/icesat/dem.php)  
 [(Ice, Cloud and land Elevation Satellite)]{style="font-size:0.6em"}
 
 + Lidar 
-+ $\le$ 500 m resolution
++ $\ge$ 500 m resolution
 
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="left:0; right:0; width:100%; max-width:100%; box-sizing:border-box;"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="left:0; right:0; width:110%; max-width:110%; box-sizing:border-box;"}
 
 [SRTM](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1)  
 [(Shuttle Radar Topography Mission)]{style="font-size:0.6em"}
 
 + SAR
 + DSM
++ only from year 2000
 + 1 arcsecond resolution
 
 :::
@@ -86,7 +88,11 @@ Image Source: [Simurda, C.; Magruder, L.A.; Markel, J.; Garvin, J.B.; Slayback, 
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
-![]()
+
+::: {.attribution style="font-size:0.4em"}
+![](img/shuttlewabes1.gif){fig-alt="Image showing radar signals being sent and received in the SRTM mission." fig-cap="Radar signals being sent and received in the SRTM mission"}  
+Image Source: [JAXA](https://iss.jaxa.jp/shuttle/flight/sts99/mis_principle_e.html)
+:::
 :::
 
 :::
@@ -100,13 +106,11 @@ Image Source: [Simurda, C.; Magruder, L.A.; Markel, J.; Garvin, J.B.; Slayback, 
 
 What does 1 arcsecond resolution mean?
 
-## Sidebar: What is LiDAR? {.smaller}
+## What is LiDAR anyway? {.smaller}
 
 + Light Detection and Ranging
-+ Remote sensing using lasers!
-+ Light pulses are fired rapidly from airborne source and then reflected off of the earth's surface
++ Laser pulses are fired rapidly from airborne source and then reflected off of the earth's surface
     + The time it takes for the light to return to the source is used to measure the distance to the surface
-        + Distance is converted to elevation
 + In addition to DEMs, LiDAR data can be used to generate canopy cover and canopy height indices (among other things!)
 
 ## What can DEMs be used for? {.smaller}

@@ -10,27 +10,33 @@ Now that we've learned a bit about what DEMs are and what they can be used for, 
 
 __Quick file organization housekeeping:__
 
-Make a new folder inside your `nr218` directory called `lab_8`. Inside that folder, make a `data` folder and a `docs` folder. All downloaded files will go in the `data` folder, and all generated outputs (more on this later) will go in `docs`.
+Make a new folder inside your `nr218` directory called `lab_8`. Inside that folder, make a `data` folder and a `docs` folder. All downloaded files will go in the `data` folder, and all generated outputs (more on this later) will go in `docs`. You should have a directory structure as shown below. 
+
+```
+nr218/
+├── data
+├── docs
+└── lab_8
+
+```
 
 ## Warm Up: Finding Data Online
 
 So far in this class you've been given files to work with. Today, we're going to practice acquiring some data on our own.
 
-Generating DEMs, particularly at a high resolution, can be costly and time-consuming. Luckily, there are some great online resources for accessing existing imagery. One such resource is the [USGS LiDAR Explorer](https://www.usgs.gov/tools/lidarexplorer). Let's check it out!
+Generating DEMs, particularly at a high resolution, can be costly and time-consuming. Luckily, there are some great online resources for accessing existing imagery. One such resource is the [USGS LiDAR Explorer](https://www.usgs.gov/tools/lidarexplorer).
 
-Follow the link above, and then click "Launch Application" to get to the interactive map. Your screen should look something like this:
+Follow the link above, and then click "Launch Application" to get to the interactive map (@fig-lidar1).
 
 ![Startup map of LiDAR Explorer](img/lidar_explorer_1.png){#fig-lidar1 fig-alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application" fig-cap="Startup map of LiDAR Explorer"}
 
-You can navigate around the map by clicking and dragging with your mouse. Let's move our view until California is in the center (click and drag to the right), and then zoom in using the "+" button (top left of the map viewer), until the resolution is 20 km. Orient your map view so that it's centered on San Luis Obispo, like in the photo below:
+You can navigate around the map by clicking and dragging with your mouse. Zooming is accomplished using your scroll wheel (or the "+" button at the top left of the map viewer, if you like your zooming to be painful). Orient your map view so that it's centered on San Luis Obispo.  There are three check boxes in the left panel. Try checking and unchecking them to see what happens. 
 
-![Adjusted map of LiDAR Explorer](img/lidar_explorer_2.png){#fig-lidar2 fig-alt="Image showing LiDAR Explorer map once we've zoomed in and centered it on San Luis Obispo" fig-cap="Adjusted map of LiDAR Explorer"}
-
-Next, let's define our __area of interest (AOI).__ This will return all of the available LiDAR and DEM downloads within a specified geographic area. After clicking on the area of interest icon (see photo above), draw a box around SLO, then check what pops up on the right side of the screen.
+Next, let's define our __area of interest__ (AOI). This will return all of the available LiDAR and DEM downloads within a specified geographic area. Click the _Define area of interest_ box and draw a box around SLO (by holding control and dragging), then check what pops up on the right side of the screen.
 
 ![Defined area of interest](img/lidar_explorer_3.png){#fig-lidar3 fig-alt="Image showing what an area of interest box looks like on the map" fig-cap="Defined area of interest"}
 
-On the right panel, you should see dropdowns for DEM, LiDAR, and DSM/ORI products within the AOI. After we define the AOI, these dropdowns populate with all downloadable files in the area. In this case, we're interested in what DEMs are available, so let's expand that dropdown. As you can see, there are a lot of files! We don't want to download that many GB of data to our computers, so let's choose just one tiles to download. First, click on the folder icon next to `DEM 1 Meter`. You should now see a list of individual files, like this:
+On the right panel, you should see dropdowns for DEM, LiDAR, and DSM/ORI products within the AOI. After we define the AOI, these dropdowns populate with all downloadable files in the area. In this case, we're interested in what DEMs are available, so let's expand that dropdown. As you can see, there are a lot of files! Too many! We don't want to download that much data for this exercise, so let's choose just one tile to download. First, click on the folder icon next to `DEM 1 Meter`. You should now see a list of individual files, like this:
 
 ![Individual DEM tiles](img/lidar_explorer_4.png){#fig-lidar4 fig-alt="Image showing the individual 1 meter DEM tiles within AIO" fig-cap="Individual DEM tiles"}
 
@@ -38,7 +44,15 @@ Choose one of the files on the list and click the download icon next to it. Once
 
 Next, close the 1 meter file list (click again on the folder icon) and open the `30m` folder. Choose one of those files to download, rename it to `DEM_30_meter.tif`, and save it to `data`.
 
-__Take a screenshot of both DEM files in your lab 8 data folder and add it to your submission doc.__
+::: {#tip-bathym .callout-tip}
+## What is topobathy Lidar
+
+Topobathymetric lidar measures land, water, and submerged land simultaneously. Topobathymetric lidar sensors use two independent laser sources. A near infrared laser is used to map the land and surface of the water, while a  visible green laser is used to penetrate the water surface and measure the bottom (in water depths of up to about five meters, depending on water clarity).
+
+
+:::
+
+
 
 ::: {#tip-tiles .callout-tip}
 ## Building a Virtual Raster
@@ -166,9 +180,9 @@ Nice! Something like this can be a great base for displaying other data layers (
 
 There are many uses for DEMs beyond elevation, and many tools that we can use to extract additional information from them!
 
-FOr the rest of this exercise, you'll need to download [this](link) .zip file. Unzip the file and move the newly generated folder to `data`.
+For the rest of this exercise, you'll need to download [this zip file](https://github.com/kulpojke/nr218/blob/main/assets/spr_lab_8.zip "Follow the link and click download raw file button on upper left")(Open the link in a new tab and click "download raw file" button on upper right). Unzip the file and move the newly generated folder to `data`.
 
-Add all of the files in the unzipped folder to your project in QGIS. We can remove the DEM layers we used above (if you want to save them as a reference, just uncheck them instead of fully deleting them).
+Add all of the files in the unzipped folder to your project in QGIS. We can remove the DEM layers we used above .
 
 ::: {#tip-spr_prep .callout-tip}
 ## Layer Preparation
