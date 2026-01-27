@@ -176,13 +176,14 @@ Alternatively, we can combine our DEM and hillshade layers to create the red rel
 
 Nice! Something like this can be a great base for displaying other data layers (foreshadowing).
 
+
 ## Task 3: Extracting Information from DEMs
 
 There are many uses for DEMs beyond elevation, and many tools that we can use to extract additional information from them!
 
 For the rest of this exercise, you'll need to download [this zip file](https://github.com/kulpojke/nr218/blob/main/assets/spr_lab_8.zip "Follow the link and click download raw file button on upper left")(Open the link in a new tab and click "download raw file" button on upper right). Unzip the file and move the newly generated folder to `data`.
 
-Add all of the files in the unzipped folder to your project in QGIS. We can remove the DEM layers we used above .
+Add all of the files in the unzipped folder to your project in QGIS. You can remove the DEM layers used above .
 
 ::: {#tip-spr_prep .callout-tip}
 ## Layer Preparation
@@ -193,7 +194,7 @@ Take a quick look through the layers from the folder. What types of data are we 
 
 ### Slope and Aspect
 
-`Slope` tells us how steep the terrain is (degrees/percent change from horizontal). `Aspect` tells us which compass direction each slope of the terrain faces.
+`Slope` tells us how steep the terrain is (in degrees or percent change from horizontal). `Aspect` tells us which compass direction each slope of the terrain faces.
 
 We can generate layers for slope and aspect similarly to how we created our hillshade and contour layers. For slope, go to Raster > Analysis > Slope. Make sure your input layer is `spr_DEM`, and keep all other parameters at their default. Save the output to a file, like we did above, and hit `Run`. Do the same for aspect (Raster > Analysis > Aspect).
 
@@ -259,6 +260,8 @@ When setting up a map layout, we can make our lives easier by putting down guide
 6. Click the `Export as PDF` icon, or go to Layout > Export as PDF.
 7. Save your pdf in your `lab_8/docs` folder, and name it something useful.
 8. In this case, you can leave all of the parameters as-is and just hit save.
+
+__Use `tree` to show the directory structure for the project so far.  Include it in your submission doc.__
 
 __Upload your final map in addition to your submission doc.__
 

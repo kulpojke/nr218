@@ -54,6 +54,8 @@ Use arrows or menu in bottom left corner to navigate amongst slides.
 
 [Lab 1](computers_lab.qmd)
 
+[Lab 8](lab_8.qmd)
+
 [Project 1](project_1.html)
 
 :::

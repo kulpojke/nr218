@@ -342,7 +342,7 @@ Figure&nbsp;8: Red Relief Hillshade
 <h2 class="anchored" data-anchor-id="task-3-extracting-information-from-dems">Task 3: Extracting Information from DEMs</h2>
 <p>There are many uses for DEMs beyond elevation, and many tools that we can use to extract additional information from them!</p>
 <p>For the rest of this exercise, you’ll need to download <a href="https://github.com/kulpojke/nr218/blob/main/assets/spr_lab_8.zip" title="Follow the link and click download raw file button on upper left">this zip file</a>(Open the link in a new tab and click “download raw file” button on upper right). Unzip the file and move the newly generated folder to <code>data</code>.</p>
-<p>Add all of the files in the unzipped folder to your project in QGIS. We can remove the DEM layers we used above .</p>
+<p>Add all of the files in the unzipped folder to your project in QGIS. You can remove the DEM layers used above .</p>
 <div id="tip-spr_prep" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -358,7 +358,7 @@ Tip&nbsp;4: Layer Preparation
 </div>
 <section id="slope-and-aspect" class="level3">
 <h3 class="anchored" data-anchor-id="slope-and-aspect">Slope and Aspect</h3>
-<p><code>Slope</code> tells us how steep the terrain is (degrees/percent change from horizontal). <code>Aspect</code> tells us which compass direction each slope of the terrain faces.</p>
+<p><code>Slope</code> tells us how steep the terrain is (in degrees or percent change from horizontal). <code>Aspect</code> tells us which compass direction each slope of the terrain faces.</p>
 <p>We can generate layers for slope and aspect similarly to how we created our hillshade and contour layers. For slope, go to Raster &gt; Analysis &gt; Slope. Make sure your input layer is <code>spr_DEM</code>, and keep all other parameters at their default. Save the output to a file, like we did above, and hit <code>Run</code>. Do the same for aspect (Raster &gt; Analysis &gt; Aspect).</p>
 <p>Examine the outputs of each analysis tool. What might you use a map of slope for? What about aspect?</p>
 <p><strong>Write down your thoughts and add screenshots of your slope and aspect layers to your submission doc.</strong></p>
@@ -434,6 +434,7 @@ Tip&nbsp;7: Using Guidelines for Easier Map Making
 <li>Save your pdf in your <code>lab_8/docs</code> folder, and name it something useful.</li>
 <li>In this case, you can leave all of the parameters as-is and just hit save.</li>
 </ol>
+<p><strong>Use <code>tree</code> to show the directory structure for the project so far. Include it in your submission doc.</strong></p>
 <p><strong>Upload your final map in addition to your submission doc.</strong></p>
 
 
