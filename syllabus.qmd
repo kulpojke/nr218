@@ -115,7 +115,7 @@ There are many other helpful sources of information on GIS Software, here area c
 | January 26   | 4    | Data Creation, Editing, Topology Basics                              | Lab 7  | ch. 7 and 8  |                                               |
 | January 28   | 4    | Rasters and Elevation Data                                           | Lab 8  |              |                                               |
 | February 2   | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | Lab 9  | ch. 9 and 10 | [Project 2](project_2.html)                   |
-| February 4   | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              | Lab 8                                         |
+| February 4   | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              | [Lab 8](lab_8.html)                           |
 | February 9   | 6    | Segmentation                                                         | Lab 11 |              |                                               |
 | February 11  | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | Lab 12 |              | Lab 10                                        |
 | February 16  | 7    | Holiday - NO CLASS                                                   |        |              |                                               |  
