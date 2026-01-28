@@ -104,7 +104,7 @@ Now let's talk about visualizing elevation. By default, the numerical values of 
 
 ### Hillshade
 
-1. Open up the Symbology window for the DEM layer (can elaborate here if needed).
+1. Open up the Symbology window for the 1m DEM layer (can elaborate here if needed).
 2. Where it says `Render Type`, click the dropdown and select `Hillshade`.
 
 ::: {#tip-hillshade .callout-tip}
