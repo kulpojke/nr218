@@ -6,7 +6,9 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
   <title>dem_slides</title>
@@ -241,9 +243,328 @@ Image Source: <a href="https://iss.jaxa.jp/shuttle/flight/sts99/mis_principle_e.
 </ul></li>
 <li>Infrastructure and land use planning</li>
 </ul>
+</section>
+<section id="visualizing-elevation" class="slide level2 center" style="font-size:0.6em">
+<h2>Visualizing Elevation</h2>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1" style="font-size:0.7em;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/dem_plain.png" style="width:60.0%"></p>
+<figcaption>DEM</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="1" style="font-size:0.7em;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/slope.png" style="width:60.0%"></p>
+<figcaption>Slope</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2" style="font-size:0.7em;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/hillshade.png" style="width:60.0%"></p>
+<figcaption>Hillshade</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3" style="font-size:0.7em;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/red_relief.png" style="width:60.0%"></p>
+<figcaption>Red Relief</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="red-relief" class="slide level2 center" style="font-size:0.6em">
+<h2>Red Relief</h2>
+<div style="font-size:0.7em;">
+<ol type="1">
+<li><strong>Create Hillshade</strong>
+<ul>
+<li>Raster → Analysis → Hillshade</li>
+<li>Azimuth: 315°, Altitude: 45°</li>
+</ul></li>
+<li><strong>Apply Red Relief Style to DEM</strong>
+<ul>
+<li>Right-click DEM → Properties → Symbology</li>
+<li>Render type: Singleband pseudocolor</li>
+<li>Color ramp: Create custom red gradient</li>
+<li>Min value: Black → Max value: Red</li>
+<li><img data-src="img/black_red_ramp.png"></li>
+</ul></li>
+<li><strong>Blend Layers</strong>
+<ul>
+<li>Place hillshade <strong>above</strong> DEM</li>
+<li>Set hillshade Blending mode: Multiply</li>
+<li>Adjust hillshade opacity somewhere ~50-70%</li>
+<li>Opacity is found under the Transparency tab just below Symbology</li>
+</ul></li>
+</ol>
+</div>
+</section>
+<section id="red-relief-1" class="slide level2 center" style="font-size:0.6em; text-align: center;">
+<h2>Red Relief</h2>
+<div style="text-align: center;">
+<p><img data-src="img/aoi_red_relief.png" style="width:60.0%"></p>
+</div>
+</section>
+<section id="landforms" class="slide level2 center" style="font-size:0.6em">
+<h2>Landforms</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/geomorph.gif" style="width:60.0%"></p>
+<figcaption>Landforms found using Geomorphons</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="img/geomorph_legend.png" style="width:60.0%"></p>
+</div></div>
+</section>
+<section id="raster-resampling" class="slide level2 center" style="font-size:0.6em">
+<h2>Raster Resampling</h2>
+<div style="font-size:0.7em">
+<p>Resampling is adjusting the pixel size or resolution of raster data in order to:</p>
+<ul>
+<li><strong>Match resolutions</strong> - So multiple rasters will align<sup>1</sup> for analyisis (e.g., NDVI and elevation)</li>
+<li><strong>Downsample</strong> - Reduce resolution for faster processing</li>
+</ul>
+<div style="margin-left: 2em;">
+<p><img data-src="img/down_sample.png"></p>
+</div>
+<ul>
+<li><strong>Upsample</strong> - Increase resolution for finer analyses (though it won’t create new information)</li>
+</ul>
+<div style="margin-left: 2em;">
+<p><img data-src="img/up_sample.png"></p>
+</div>
+<div style="font-size:0.5em">
+
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Resampling does not , by definition, align pixels between rasters, but alignment is included in many resampling algorithms.</p></li></ol></aside></section>
+<section id="raster-resampling---methods" class="slide level2 center" style="font-size:0.6em">
+<h2>Raster Resampling - Methods</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<p><strong>Nearest Neighbor Resampling</strong></p>
+<ul>
+<li>The new raster pixels get the value from nearest pixel of the original raster to the center of the new pixel.</li>
+<li>Note that some of the values are lost this way (particularly in downsampling), since they were not passed on to the new raster</li>
+</ul>
+<p><img data-src="img/resamp_nn.png" style="max-height: 70vh; object-fit: contain;;width:70.0%"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<p><strong>bilinear resampling</strong></p>
+<ul>
+<li>Each new raster cell gets a weighted average of four nearest cells from the input, rather than just one</li>
+<li>Less loss of information</li>
+</ul>
+<p><img data-src="img/resamp_bilin.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<p><strong>Average resampling</strong></p>
+<ul>
+<li>Each new cell gets the (non-weighted) average of all overlapping input cells</li>
+</ul>
+<p><img data-src="img/resamp_avg.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+</div>
+</section>
+<section id="raster-resampling-1" class="slide level2 center" style="font-size:0.6em">
+<h2>Raster Resampling</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<p>There are two<span class="math inline">\(^*\)</span> tools for resampling in QGIS</p>
+<div class="columns">
+<div class="column" style="width:%;">
+<p><img data-src="img/resamp_menu2.png"></p>
+</div><div class="column" style="width:%;">
+<p><img data-src="img/resamp_menu.png"></p>
+</div></div>
+<p><span style="font-size:0.5em">* Actually there are others, notably if Grass is installed its tools are also available.</span></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>QGIS Align Rasters</th>
+<th>GDAL Warp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Align to grid</td>
+<td>✅ Yes (to reference)</td>
+<td>✅ Yes (to round coords)</td>
+</tr>
+<tr class="even">
+<td>Resample</td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+</tr>
+<tr class="odd">
+<td>Match resolution</td>
+<td>✅ Yes</td>
+<td>⚠️ Only if specified</td>
+</tr>
+<tr class="even">
+<td>Match extent</td>
+<td>✅ Yes</td>
+<td>⚠️ Only if specified</td>
+</tr>
+<tr class="odd">
+<td>Grid type</td>
+<td>Reference raster</td>
+<td>Integer/round coordinates</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<ul>
+<li>QGIS Align Rasters</li>
+<li>GDAL Warp is more flexible
+<ul>
+<li>It can reproject</li>
+<li>It can clip to an extent</li>
+</ul></li>
+<li>It is a useful command line tool</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="raster-reprojection-warping" class="slide level2 center">
+<h2>Raster Reprojection (Warping)</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="r-stack">
+<div class="fragment fade-in-then-out" data-fragment-index="1" style="font-size:0.7em">
+<p>Just like vector data, we need to reproject rasters if we’re to do accurate analysis.</p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2" style="font-size:0.7em">
+<p>The goal is to realign the pixels, without changing their values.</p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3" style="font-size:0.7em">
+<p>The goal is to realign the pixels, without changing their values.</p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="4" style="font-size:0.7em">
+<p>What happens in the reprojection can be thought of as a two-step process</p>
+<ol type="1">
+<li>The pixel outlines are reprojected as if they were polygons</li>
+<li>This results in an irregular grid</li>
+<li>The grid is then resampled to form a regular grid</li>
+</ol>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="r-stack">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<p><img data-src="img/grid_warp.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<p><img data-src="img/rast_sin_to_ITM.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
+<p><img data-src="img/sin_to_ITM.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="">
+<p><img data-src="img/pix_reproj.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="raster-reprojection-using-gdal-warp" class="slide level2 center">
+<h2>Raster Reprojection using GDAL Warp</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="font-size:0.7em">
+<ol start="0" type="1">
+<li><p>Download <code>dw_2025.tif</code>, <code>dw_20218.tif</code>, and <code>dw_style.qml</code> from <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/IgBVkac3a5CsRaUAvV-819C-AQGVatwXdM5B6Zz0oonWnbM?e=JbScCs" title="Link to files">this link</a></p></li>
+<li><p>In QGIS open dw_2025.</p>
+<ol type="a">
+<li>Look at the CRS</li>
+<li>Look at the resolution.</li>
+</ol></li>
+<li><p>In the symbology tab, at the bottom left there is a style dropdown.</p>
+<ol type="a">
+<li>select “Load Style…” use the browser to open the <code>dw_style.qml</code> file from the <code>dynamic_world</code> folder</li>
+<li>Apply</li>
+</ol></li>
+</ol>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="font-size:0.7em">
+<p>Reproject dw_2025 using GDAL Warp (<code>Processing Toolbox: GDAL → Raster projection → Warp</code>)</p>
+<ul>
+<li>Leave Source CRS blank (In “Input layer” you can see that the CRS is recognized)</li>
+<li>Set Target CRS to EPSG:6339</li>
+<li>Use average resampling</li>
+<li>Set ” Output file resolution in target georeferenced units” to 10
+<ul>
+<li>What are the target georeferenced units?</li>
+</ul></li>
+<li>Leave the rest as defaults, including “[save to temporary Layer]”</li>
+</ul>
+<p><strong>Compare the results to the original. Do you see any problems?</strong></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2" style="font-size:0.7em">
+<p>Why is this margin of different land cover appearing?</p>
+<div class="columns">
+<div class="column" style="width:%;">
+<p><img data-src="img/original.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div><div class="column" style="width:%;">
+<p><img data-src="img/reproj_avg_bad.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div></div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="font-size:0.7em">
+<p>Try again, what resampling method should you use?</p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="font-size:0.7em">
+<div class="columns">
+<div class="column" style="width:%;">
+<p><img data-src="img/original.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div><div class="column" style="width:%;">
+<p><img data-src="img/reproj_nn.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div></div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="5" style="font-size:0.7em">
+<ul>
+<li>Save the reprojected layer <code>dw_2025_6339.tif</code>.</li>
+<li>Reproject dw_2018 in the same way (save as <code>dw_2018_6339.tif</code>)</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="6" style="font-size:0.7em">
+<ul>
+<li>Use <code>Raster Tools → Align Rasters</code> to align <code>dw_2018_6339.tif</code> and <code>dem_1m_6339.tif</code> to dw_2025_6339 (use appropriate resample methods).</li>
+</ul>
+<video id="video_shortcode_videojs_video1" width="80%" class="video-js vjs-default-skin " controls="" preload="auto" data-setup="{}" title=""><source src="img/align.webm"></video>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="7" style="font-size:0.7em">
+<ul>
+<li><p>Now use the the Raster Calculator to find areas that were covered in trees in 2018, but not in 2025.</p></li>
+<li><p>Can you figure out how to find areas that were covered in trees in 2018, but not in 2025 on a slope &gt; 10% ?</p></li>
+</ul>
+</div>
+</div>
 
 
 </section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -644,6 +965,7 @@ Image Source: <a href="https://iss.jaxa.jp/shuttle/flight/sts99/mis_principle_e.
       }
     });
     </script>
+    <script>videojs(video_shortcode_videojs_video1);</script>
     
 
 </body></html>

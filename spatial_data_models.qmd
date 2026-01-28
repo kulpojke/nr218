@@ -366,7 +366,7 @@ Which of these do you think would be discrete?  Which are Continuos?
 ::: {.column width = "40%"}
 ::: {style="font-size:0.7em"}
 + Images, stacks of images (satellite / drone image)
-  + *Raster (latin) means “screen”!*
+  + _Rastrum_, Latin meaning “scraper” --> _Raster_, German meaning "screen"
 + Grids of numbers
 + Things with pixels! 
 + If it's pixelated: 
@@ -435,6 +435,20 @@ The **spatial resolution** of a raster dataset represents a measure of the preci
 
 :::
 :::
+
+## 
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Stop here, below is incomplete
 

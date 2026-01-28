@@ -122,3 +122,326 @@ What does 1 arcsecond resolution mean?
 + Environmental risk assessments and hazard modeling
     + Modeling land movement (landslides, erosion)
 + Infrastructure and land use planning
+
+
+## Visualizing Elevation {style="font-size:0.6em"}
+
+::: {.r-stack}
+
+::: {.fragment .fade-out data-fragment-index="1" style="font-size:0.7em;"}
+::: {style="text-align: center;"}
+![DEM](img/dem_plain.png){width=60%}
+:::
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="1" style="font-size:0.7em;"}
+::: {style="text-align: center;"}
+
+![Slope](img/slope.png){width=60%}
+:::
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="2" style="font-size:0.7em;"}
+::: {style="text-align: center;"}
+
+![Hillshade](img/hillshade.png){width=60%}
+:::
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="3" style="font-size:0.7em;"}
+::: {style="text-align: center;"}
+
+![Red Relief](img/red_relief.png){width=60%}
+:::
+:::
+
+:::
+
+
+## Red Relief {style="font-size:0.6em"}
+
+::: {style="font-size:0.7em;"}
+1. **Create Hillshade**
+   - Raster → Analysis → Hillshade
+   - Azimuth: 315°, Altitude: 45°
+   
+2. **Apply Red Relief Style to DEM**
+   - Right-click DEM → Properties → Symbology
+   - Render type: Singleband pseudocolor
+   - Color ramp: Create custom red gradient
+   - Min value: Black → Max value: Red
+   - ![](img/black_red_ramp.png)
+
+4. **Blend Layers**
+   - Place hillshade **above** DEM
+   - Set hillshade Blending mode: Multiply
+   - Adjust hillshade opacity somewhere ~50-70%
+   - Opacity is found under the Transparency tab just below Symbology
+
+:::
+
+## Red Relief {style="font-size:0.6em; text-align: center;"}
+
+::: {style="text-align: center;"}
+![](img/aoi_red_relief.png){width=60%}
+:::
+
+## Landforms {style="font-size:0.6em"}
+
+:::{.columns}
+
+::: {.column width="70%"}
+![Landforms found using Geomorphons](img/geomorph.gif){width=60%}
+
+:::
+
+
+::: {.column width="30%"}
+![](img/geomorph_legend.png){width=60%}
+:::
+
+:::
+
+## Raster Resampling {style="font-size:0.6em"}
+
+::: {style="font-size:0.7em"}
+Resampling is adjusting the pixel size or resolution of raster data in order to:
+
++ __Match resolutions__ - So multiple rasters will align[^match] for analyisis (e.g., NDVI and elevation) 
++ __Downsample__ - Reduce resolution for faster processing
+
+::: {style="margin-left: 2em;"}
+![](img/down_sample.png)
+:::
+
++ __Upsample__ - Increase resolution for finer analyses (though it won’t create new information)
+
+::: {style="margin-left: 2em;"}
+![](img/up_sample.png)
+:::
+
+::: {style="font-size:0.5em"}
+[^match]: Resampling  does not , by definition, align pixels between rasters, but alignment is included in many resampling algorithms.
+:::
+
+:::
+
+
+## Raster Resampling - Methods {style="font-size:0.6em"}
+
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+__Nearest Neighbor Resampling__
+
+- The new raster pixels get the value from nearest pixel of the original raster to the center of the new pixel.
+- Note that some of the values are lost this way (particularly in downsampling), since they were not passed on to the new raster
+
+![](img/resamp_nn.png){width="70%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+__bilinear resampling__
+
+- Each new raster cell gets a weighted average of four nearest cells from the input, rather than just one
+- Less loss of information
+
+![](img/resamp_bilin.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+__Average resampling__
+
+- Each new cell gets the (non-weighted) average of all overlapping input cells
+
+![](img/resamp_avg.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+:::
+
+
+## Raster Resampling {style="font-size:0.6em"}
+
+::: { .r-stack}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+There are two$^*$ tools for resampling in QGIS
+
+::: {.columns}
+::: {.column width="%"}
+![](img/resamp_menu2.png)
+:::
+
+::: {.column width="%"}
+![](img/resamp_menu.png)
+:::
+
+:::
+[* Actually there are others, notably if Grass is installed its tools are also available.]{style="font-size:0.5em"}
+:::
+
+
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+| Feature | QGIS Align Rasters | GDAL Warp |
+|---------|-------------------|-----------------|
+| Align to grid | ✅ Yes (to reference) | ✅ Yes (to round coords) |
+| Resample | ✅ Yes | ✅ Yes |
+| Match resolution | ✅ Yes | ⚠️ Only if specified |
+| Match extent | ✅ Yes | ⚠️ Only if specified |
+| Grid type | Reference raster | Integer/round coordinates |
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
++ QGIS Align Rasters
++ GDAL Warp is more flexible
+    + It can reproject
+    + It can clip to an extent
++ It is a useful command line tool
+:::
+
+:::
+
+
+
+## Raster Reprojection (Warping)
+
+::: {.columns}
+::: {.column width="40%"}
+::: { .r-stack}
+
+::: {.fragment .fade-in-then-out data-fragment-index="1" style="font-size:0.7em"}
+Just like vector data, we need to reproject rasters if we’re to do accurate analysis. 
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="2" style="font-size:0.7em"}
+The goal is to realign the pixels, without changing their values.
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="3" style="font-size:0.7em"}
+The goal is to realign the pixels, without changing their values.
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index="4" style="font-size:0.7em"}
+What happens in the reprojection can be thought of as a two-step process
+
+1. The pixel outlines are reprojected as if they were polygons
+2. This results in an irregular grid
+3. The grid is then resampled to form a regular grid
+
+:::
+
+
+:::
+
+:::
+
+
+::: {.column width="60%"}
+::: { .r-stack}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+![](img/grid_warp.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+![](img/rast_sin_to_ITM.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+![](img/sin_to_ITM.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+![](img/pix_reproj.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+
+:::
+
+:::
+:::
+
+## Raster Reprojection using GDAL Warp
+
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1" style="font-size:0.7em"}
+
+0. Download `dw_2025.tif`, `dw_20218.tif`, and `dw_style.qml` from [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/IgBVkac3a5CsRaUAvV-819C-AQGVatwXdM5B6Zz0oonWnbM?e=JbScCs "Link to files")
+
+1. In QGIS open dw_2025. 
+    a. Look at the CRS
+    b. Look at the resolution.
+
+2. In the symbology tab, at the bottom left there is a style dropdown.
+    a. select "Load Style..." use the browser to open the `dw_style.qml` file from the `dynamic_world` folder
+    b. Apply
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.7em"}
+Reproject dw_2025 using GDAL Warp (`Processing Toolbox: GDAL → Raster projection → Warp`)
+
++ Leave Source CRS blank (In "Input layer" you can see that the CRS is recognized)
++ Set Target CRS to EPSG:6339
++ Use average resampling
++ Set " Output file resolution in target georeferenced units" to 10
+    + What are the target georeferenced units?
++ Leave the rest as defaults, including  "[save to temporary Layer]"
+
+__Compare the results to the original. Do you see any problems?__
+
+:::
+
+::: {.fragment  .fade-in-then-out data-fragment-index="2" style="font-size:0.7em"}
+Why is this margin of different land cover appearing?
+
+::: {.columns}
+::: {.column width="%"}
+![](img/original.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.column width="%"}
+![](img/reproj_avg_bad.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+:::
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3" style="font-size:0.7em"}
+Try again, what resampling method should you use?
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4" style="font-size:0.7em"}
+::: {.columns}
+::: {.column width="%"}
+![](img/original.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
+::: {.column width="%"}
+![](img/reproj_nn.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+:::
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5" style="font-size:0.7em"}
++ Save the reprojected layer `dw_2025_6339.tif`.
++ Reproject dw_2018 in the same way (save as `dw_2018_6339.tif`)
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="6" style="font-size:0.7em"}
++ Use `Raster Tools → Align Rasters` to align `dw_2018_6339.tif` and `dem_1m_6339.tif` to dw_2025_6339 (use appropriate resample methods).
+
+{{< video img/align.webm width="80%" style="max-height: 70vh; object-fit: contain;" >}}
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="7" style="font-size:0.7em"}
++ Now use the the Raster Calculator to find areas that were covered in trees in 2018, but not in 2025.
+
++ Can you figure out how to find areas that were covered in trees in 2018, but not in 2025 on a slope > 10% ?
+
+:::
+
+:::
