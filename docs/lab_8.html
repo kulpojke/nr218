@@ -112,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
 <p>So far in this class you’ve been given files to work with. Today, we’re going to practice acquiring some data on our own.</p>
 <p>Generating DEMs, particularly at a high resolution, can be costly and time-consuming. Luckily, there are some great online resources for accessing existing imagery. One such resource is the <a href="https://www.usgs.gov/tools/lidarexplorer">USGS LiDAR Explorer</a>.</p>
 <p>Follow the link above, and then click “Launch Application” to get to the interactive map (<a href="#fig-lidar1" class="quarto-xref">Figure&nbsp;1</a>).</p>
-<div id="fig-lidar1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Startup map of LiDAR Explorer" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application">
+<div id="fig-lidar1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application" data-fig-cap="Startup map of LiDAR Explorer">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lidar1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/lidar_explorer_1.png" class="img-fluid figure-img" data-fig-cap="Startup map of LiDAR Explorer" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application">
@@ -124,7 +124,7 @@ Figure&nbsp;1: Startup map of LiDAR Explorer
 </div>
 <p>You can navigate around the map by clicking and dragging with your mouse. Zooming is accomplished using your scroll wheel (or the “+” button at the top left of the map viewer, if you like your zooming to be painful). Orient your map view so that it’s centered on San Luis Obispo. There are three check boxes in the left panel. Try checking and unchecking them to see what happens.</p>
 <p>Next, let’s define our <strong>area of interest</strong> (AOI). This will return all of the available LiDAR and DEM downloads within a specified geographic area. Click the <em>Define area of interest</em> box and draw a box around SLO (by holding control and dragging), then check what pops up on the right side of the screen.</p>
-<div id="fig-lidar3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Defined area of interest" alt="Image showing what an area of interest box looks like on the map">
+<div id="fig-lidar3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing what an area of interest box looks like on the map" data-fig-cap="Defined area of interest">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lidar3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/lidar_explorer_3.png" class="img-fluid figure-img" data-fig-cap="Defined area of interest" alt="Image showing what an area of interest box looks like on the map">
@@ -135,7 +135,7 @@ Figure&nbsp;2: Defined area of interest
 </figure>
 </div>
 <p>On the right panel, you should see dropdowns for DEM, LiDAR, and DSM/ORI products within the AOI. After we define the AOI, these dropdowns populate with all downloadable files in the area. In this case, we’re interested in what DEMs are available, so let’s expand that dropdown. As you can see, there are a lot of files! Too many! We don’t want to download that much data for this exercise, so let’s choose just one tile to download. First, click on the folder icon next to <code>DEM 1 Meter</code>. You should now see a list of individual files, like this:</p>
-<div id="fig-lidar4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Individual DEM tiles" alt="Image showing the individual 1 meter DEM tiles within AIO">
+<div id="fig-lidar4" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the individual 1 meter DEM tiles within AIO" data-fig-cap="Individual DEM tiles">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lidar4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/lidar_explorer_4.png" class="img-fluid figure-img" data-fig-cap="Individual DEM tiles" alt="Image showing the individual 1 meter DEM tiles within AIO">
@@ -244,7 +244,7 @@ Tip&nbsp;3: Azimuth and Z Factor
 </div>
 </div>
 <p>After you hit <code>Apply</code>, your DEM should look something like this:</p>
-<div id="fig-hillshade" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Hillshade" alt="Image showing a hillshade render of a DEM">
+<div id="fig-hillshade" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a hillshade render of a DEM" data-fig-cap="Hillshade">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hillshade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/hillshade_example.png" class="img-fluid figure-img" data-fig-cap="Hillshade" alt="Image showing a hillshade render of a DEM">
@@ -263,7 +263,7 @@ Figure&nbsp;5: Hillshade
 <li>Go back to the Symbology window and change the Render Type to <code>Contour</code>. Adjust the <code>Contour Interval</code> and <code>Index Contour Interval</code> until the amount of bands generated feels good to you (i.e.&nbsp;not <em>too</em> cluttered, but enough to actually show the topography). I would also recommend making the Index lines slightly thicker, for visual differentiation.</li>
 </ol>
 <p>Now your DEM should look something like this:</p>
-<div id="fig-contour" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Contour Lines" alt="Image showing the contour lines of a DEM">
+<div id="fig-contour" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the contour lines of a DEM" data-fig-cap="Contour Lines">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-contour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/contour_example.png" class="img-fluid figure-img" data-fig-cap="Contour Lines" alt="Image showing the contour lines of a DEM">
@@ -306,7 +306,7 @@ Figure&nbsp;6: Contour Lines
 <li>Make sure your hillshade layer is the second layer in the stack. In the Symbology window, change the <code>blending mode</code> to <code>multiply</code>. Locate the Transparency tab (one below Symbology), and adjust the layer opacity to your liking.</li>
 <li>Make sure your contour layer is the topmost layer. Go to the Symbology window and adjust the color and thickness of your lines to your liking.</li>
 </ol>
-<div id="fig-dem_all" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Base DEM with Hillshade and Contour Lines" alt="Image showing a DEM with hillshade and contour lines layered on top">
+<div id="fig-dem_all" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a DEM with hillshade and contour lines layered on top" data-fig-cap="Base DEM with Hillshade and Contour Lines">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dem_all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/dem_all.png" class="img-fluid figure-img" data-fig-cap="Base DEM with Hillshade and Contour Lines" alt="Image showing a DEM with hillshade and contour lines layered on top">
@@ -324,7 +324,7 @@ Figure&nbsp;7: Layered DEM
 <li>Under the color ramp dropdown, choose <code>Create new color ramp</code>. Set the first color to black, and choose a shade of red for the second.</li>
 <li>Go back to the transparency tab and adjust the opacity to your liking.</li>
 </ol>
-<div id="fig-dem_red" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Base DEM with Red Relief Hillshade. Contour lines removed." alt="Image showing a DEM with hillshade render changed to a red gradient">
+<div id="fig-dem_red" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a DEM with hillshade render changed to a red gradient" data-fig-cap="Base DEM with Red Relief Hillshade. Contour lines removed.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dem_red-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/dem_red.png" class="img-fluid figure-img" data-fig-cap="Base DEM with Red Relief Hillshade. Contour lines removed." alt="Image showing a DEM with hillshade render changed to a red gradient">
@@ -384,6 +384,9 @@ Tip&nbsp;5: Terrain Analysis
 <li>Above 200 meters of elevation</li>
 <li>On a relatively flat area (less than 5 degrees of steepness)</li>
 </ul>
+<blockquote class="blockquote">
+<p>Note! the pixel values for the Swanton Pacific Ranch DEM are in meters.</p>
+</blockquote>
 <p>Using the layers that you’ve created, and the tools we’ve practiced with in this lab (OR tools that we’ve used in past labs… hint hint…), identify which rain gauge the team is looking for.</p>
 <p><strong>Once you have your answer, note which rain gauge the hydrologists are looking for, what the associated values are for slope, aspect, and elevation, and explain how you reached your conclusion on your submission doc.</strong></p>
 <section id="bonus-exporting-a-map" class="level3">

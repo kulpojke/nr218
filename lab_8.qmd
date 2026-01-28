@@ -216,6 +216,8 @@ Oh no! Hydrologists at Swanton Pacific Ranch have lost track of all of their rai
 - Above 200 meters of elevation
 - On a relatively flat area (less than 5 degrees of steepness)
 
+> Note! the pixel values for the Swanton Pacific Ranch DEM are in meters.
+
 Using the layers that you've created, and the tools we've practiced with in this lab (OR tools that we've used in past labs... hint hint...), identify which rain gauge the team is looking for.
 
 __Once you have your answer, note which rain gauge the hydrologists are looking for, what the associated values are for slope, aspect, and elevation, and explain how you reached your conclusion on your submission doc.__
