@@ -118,7 +118,7 @@ window.Quarto = {
 <p>In this exercise blah blah blah….</p>
 <section id="data-and-directory-structure" class="level2">
 <h2 class="anchored" data-anchor-id="data-and-directory-structure">Data and directory structure</h2>
-<p>First we will need the data. Downaload the vector file of fire perimeters and 2022 NAIP (see <a href="#tip-naip" class="quarto-xref">Tip&nbsp;1</a> for information about NAIP ) image below.</p>
+<p>First we will need the data. Download the vector file of fire perimeters and 2022 NAIP (see <a href="#tip-naip" class="quarto-xref">Tip&nbsp;1</a> for information about NAIP ) image below.</p>
 <ul>
 <li><a href="https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDiOQnn5iZ2SoC9RFOZXMQ6AYohr1UK1PuzRVCWknsOpLQ?e=iYy6tc">fire perimeters</a></li>
 <li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC4SX4KSSrKQZEguH7aIaGnATBJndw0cRt9vi8a-KiAw0A?e=xlgu0Q">NAIP image</a></li>
@@ -158,33 +158,42 @@ Tip&nbsp;1: What is NAIP
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section"></h2>
 <ol type="1">
-<li><p>Open the fire perimeters dataset in QGIS</p></li>
-<li><p>Extract the perimeter of the Coffee Fire (<code>FIRE_NAME</code> is <code>COFFEE</code>)</p>
-<ol type="a">
+<li>Open the fire perimeters dataset in QGIS</li>
+<li>Extract the perimeter of the Coffee Fire (<code>FIRE_NAME</code> is <code>COFFEE</code>)
+<ul>
 <li>There are a few ways you can do this, your choice</li>
-<li>Name the resulting layer <code>Coffee</code></li>
-</ol></li>
-<li><p>Reduce <code>scratch_1</code> by selecting only fires that have happened since 2014 (Hint: extract by attribute)</p>
-<ol start="2" type="a">
+<li>Name the resulting layer <code>Coffee</code> (and save a file)</li>
+</ul></li>
+<li>Reduce the fire perimeter layer, <code>subset_of_cal_hist_fires</code>, by selecting only fires that have happened since 2014 (Hint: extract by attribute)
+<ul>
 <li>i.e.&nbsp;<code>YEAR_ &gt; 2013</code></li>
 <li>Name the resulting layer <code>scratch_1</code></li>
-</ol></li>
-<li><p>Now extract all of the polygons which <em>overlap</em> the <code>Coffee</code> (Hint: “select by location”)</p>
-<ol start="3" type="a">
+</ul></li>
+<li>Now extract all of the polygons which <em>overlap</em> the <code>Coffee</code> (Hint: “select by location”)
+<ul>
 <li>Name the result, <code>scratch_2</code></li>
-</ol></li>
-<li><p>Use the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire</p>
-<ol type="a">
+</ul></li>
+<li>Use the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire
+<ul>
 <li>Name the result <code>extent</code></li>
-</ol></li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/lab_10_vectors.png" class="wrap-right img-fluid figure-img"></p>
+<figcaption>Vectors created while creating <code>fires_in_AOI</code></figcaption>
+</figure>
+</div>
+<ol start="6" type="1">
 <li><p>Buffer “extent” by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference)</p>
-<ol type="a">
-<li>name the buffered layer, our area of interest, “AOI”</li>
-</ol></li>
+<ul>
+<li>name the buffered layer, our area of interest, “AOI”<br>
+</li>
+</ul></li>
 <li><p>Clip <code>scratch_2</code> by the AOI</p>
-<ol type="a">
+<ul>
 <li>Save the results as <code>fires_in_AOI</code></li>
-</ol></li>
+</ul></li>
 <li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly you can delete <code>scratch_1</code>, <code>scratch_2',</code>Coffee<code>, and</code>extent`</p></li>
 <li><p>Open <code>naip_2022</code></p>
 <ol type="a">

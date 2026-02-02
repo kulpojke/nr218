@@ -27,3 +27,17 @@ code,
 pre {
   border: none !important;
 }
+.wrap-right {
+  float: right;
+  width: 45%;
+  margin: 0 0 1rem 1rem;
+}
+
+.wrap-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrap-right figcaption {
+  font-size: 0.9em;
+}
