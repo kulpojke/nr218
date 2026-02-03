@@ -123,7 +123,7 @@ Combining bands on different ways is often useful.
 
 For example, False Color Image
 
-+ NIR, G, R           
++ Near-Infrared to Red, Red to Green, and Green to Blue (NIR, G, R)           
 :::
 
 
@@ -154,6 +154,7 @@ Image Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:Electromagneti
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="5"}
 ![](img/Electromagneticwave3D.gif){width="100%" style="max-width: 100%; height: auto; object-fit: contain;"}
+
 
 ::: {.attribution style="font-size:0.4em"}
 Image Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:Electromagneticwave3D.gif)

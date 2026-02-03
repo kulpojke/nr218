@@ -66,14 +66,7 @@ lab_10/
 7. Clip `scratch_2` by the AOI. Save the results as `fires_in_AOI`.
 8. When you are satisfied that `fires_in_AOI` turned out correctly you can delete `scratch_1`, `scratch_2', `Coffee`, and `extent`.
 
-
-
-
-
-9. Open `naip_2022`
-    a. Open the Layer Properties dialog 
-    b. Go to the Transparency tab on the left.
-    c. Change Transparency Band to None (what is band 4?)
+9. Open `naip_2022`. Open the Layer Properties dialog . Go to the Transparency tab on the left. Change Transparency Band to None (what is band 4?).
 10. Clip `naip_2022 to the AOI.  `Raster` -> `Extraction` -> `Clip Raster By Mask Layer`
 11. Name the result `naip_2022_clipped`
 12. Now lets view it as False color
