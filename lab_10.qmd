@@ -51,28 +51,20 @@ lab_10/
     
 ```
 
-##
+## Vector Preparation
 
-1. Open the fire perimeters dataset in QGIS
-2. Extract the perimeter of the Coffee Fire (`FIRE_NAME` is `COFFEE`) 
-    + There are a few ways you can do this, your choice
-    + Name the resulting layer `Coffee` (and save a file)
-3. Reduce the fire perimeter layer, `subset_of_cal_hist_fires`,  by selecting only fires that have happened since 2014 (Hint: extract by attribute)
-    + i.e. `YEAR_ > 2013`
-    + Name the resulting layer `scratch_1`
-4. Now extract all of the polygons which _overlap_ the `Coffee` (Hint: "select by location")
-    + Name the result, `scratch_2`
+1. Open the fire perimeters dataset in QGIS.
+2. Extract the perimeter of the Coffee Fire (`FIRE_NAME` is `COFFEE`).  There are a few ways you can do this, your choice.  Name the resulting layer `Coffee` (and save a file).
+3. Reduce the fire perimeter layer, `subset_of_cal_hist_fires`,  by selecting only fires that have happened since 2014 (Hint: extract by attribute). i.e. `YEAR_ > 2013`. Name the resulting layer `scratch_1`.
+4. Now extract all of the polygons which _overlap_ the `Coffee` (Hint: "select by location"). Name the result, `scratch_2`.
 
-5. Use the "Extract layer extent" tool to get a polygon of the extent of the Coffee fire
-    + Name the result `extent`
+5. Use the "Extract layer extent" tool to get a polygon of the extent of the Coffee fire. Name the result `extent`.
 
 ![Vectors created while creating `fires_in_AOI`](img/lab_10_vectors.png ){#fig-vectors .wrap-right}
 
-6. Buffer "extent" by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference)
-    + name the buffered layer, our area of interest, "AOI"  
-7. Clip `scratch_2` by the AOI
-    + Save the results as `fires_in_AOI`
-8. When you are satisfied that `fires_in_AOI` turned out correctly you can delete `scratch_1`, `scratch_2', `Coffee`, and `extent`
+6. Buffer "extent" by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference). name the buffered layer, our area of interest, `AOI`.  @fig-vectors shows the layers that should have been created at this point (AOI is still called `Buffered`).
+7. Clip `scratch_2` by the AOI. Save the results as `fires_in_AOI`.
+8. When you are satisfied that `fires_in_AOI` turned out correctly you can delete `scratch_1`, `scratch_2', `Coffee`, and `extent`.
 
 
 

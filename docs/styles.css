@@ -34,10 +34,16 @@ pre {
 }
 
 .wrap-right img {
-  max-width: 100%;
+  display: block;
+  width: 100%;
   height: auto;
 }
 
 .wrap-right figcaption {
+  clear: both;
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  text-align: center;
   font-size: 0.9em;
 }
