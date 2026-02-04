@@ -1015,6 +1015,13 @@
     "text": "NAIP Imagery\n\n\nNational Agriculture Imagery Program (NAIP)\n\nHigh-resolution aerial imagery of the continental United States\nCollected during agricultural growing seasons\nTypically 4-band: Red, Green, Blue, Near-Infrared (NIR)\n60 cm (or better) spatial resolution\nUpdated on a 2-3 year cycle for each state\n\nLearn more: USDA NAIP Program\n\n\n\n\nA NAIP image"
   },
   {
+    "objectID": "index.html#filter-map-reduce",
+    "href": "index.html#filter-map-reduce",
+    "title": "NR 218",
+    "section": "Filter, Map, Reduce",
+    "text": "Filter, Map, Reduce\n\nFilter - Find the subset of data needed.\nMap - Transform the raw data into useful data\nReduce - Extract needed information"
+  },
+  {
     "objectID": "index.html#spectral-indices-1",
     "href": "index.html#spectral-indices-1",
     "title": "NR 218",
@@ -2938,6 +2945,13 @@
     "title": "",
     "section": "NAIP Imagery",
     "text": "NAIP Imagery\n\n\nNational Agriculture Imagery Program (NAIP)\n\nHigh-resolution aerial imagery of the continental United States\nCollected during agricultural growing seasons\nTypically 4-band: Red, Green, Blue, Near-Infrared (NIR)\n60 cm (or better) spatial resolution\nUpdated on a 2-3 year cycle for each state\n\nLearn more: USDA NAIP Program\n\n\n\n\nA NAIP image"
+  },
+  {
+    "objectID": "remote_sensing.html#filter-map-reduce",
+    "href": "remote_sensing.html#filter-map-reduce",
+    "title": "",
+    "section": "Filter, Map, Reduce",
+    "text": "Filter, Map, Reduce\n\nFilter - Find the subset of data needed.\nMap - Transform the raw data into useful data\nReduce - Extract needed information"
   },
   {
     "objectID": "remote_sensing.html#spectral-indices",

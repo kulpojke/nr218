@@ -247,6 +247,12 @@ Image Source: [NASA Earthdata](https://www.earthdata.nasa.gov/learn/earth-observ
 :::
 :::
 
+## Filter, Map, Reduce
+
++ Filter - Find the subset of data needed.
++ Map - Transform the raw data into useful data
++ Reduce - Extract needed information
+
 ## Spectral indices {.smaller}
 
 Spectral index 
