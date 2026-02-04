@@ -149,3 +149,5 @@ Where $L$ is often 0.5, but adjusted for exposed soil.  The soil in the Klamath 
 > __Question 6:__ Briefly describe the differences in NDVI between the four treatments.  Include a table showing the NDVI statistics you calculated (You can export the file as a csv with only the columns you want, and open it in Excel).
 
 > __Question 7:__ Use `tree` and paste output to show the structure of your working directory.
+
+>__Question 8:__ Describe how the steps taken here fit into the _Filter, Map, Reduce_ workflow.
