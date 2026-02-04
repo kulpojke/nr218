@@ -280,12 +280,6 @@
 <p>Image Source: <a href="https://appliedsciences.nasa.gov/sites/default/files/2022-11/Fundamentals_of_RS_Edited_SC.pdf">NASA</a></p>
 </div>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="13" style="">
-<p><img data-src="img/spectral_signatures_landsat_450.jpg" style="max-width: 100%; height: auto; object-fit: contain;;width:100.0%"></p>
-<div class="attribution" style="font-size:0.4em">
-<p>Image Source: <a href="https://seos-project.eu/classification/classification-c01-p05.html">SEOS</a></p>
-</div>
-</div>
 </div>
 <!-- end r-stack -->
 </div><!-- end column -->
@@ -303,16 +297,20 @@
 </div>
 <div class="fragment absolute fade-in" data-fragment-index="2" style="">
 <ul>
-<li>The type of remote sensing we have been discussing so far is <em>radiometric</em>, or <em>optical</em> remote sensing.</li>
-<li>Optical remote sensing is passive</li>
+<li>The type of remote sensing we have been discussing so far is <em>optical</em> remote sensing.
+<ul>
+<li>Optical remote sensing is a is passive</li>
 <li>Light from the sun bounces off of the earth and into the sensor (Eyeball, Camera, Radiometer)</li>
+</ul></li>
+<li><em>Radiometric</em> sensing covers a wider spectral range, and may include active as well as passive techniques.</li>
 </ul>
 </div>
 </div>
 </section>
 <section id="naip-imagery" class="slide level2 center">
 <h2>NAIP Imagery</h2>
-<div style="font-size:0.9em">
+<div class="columns">
+<div class="column" style="font-size:0.5em">
 <p><strong>National Agriculture Imagery Program (NAIP)</strong></p>
 <ul>
 <li>High-resolution aerial imagery of the continental United States</li>
@@ -322,23 +320,101 @@
 <li>Updated on a 2-3 year cycle for each state</li>
 </ul>
 <p><strong>Learn more:</strong> <a href="https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/">USDA NAIP Program</a></p>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/rgb.png"></p>
+<figcaption>A NAIP image</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="spectral-indices" class="slide level2 smaller center">
+<h2>Spectral indices</h2>
+<p>Spectral index</p>
+<ul>
+<li>A mathematical equation that is applied on the various spectral bands of an image on a per pixel basis</li>
+<li>Maps multiple bands to a single band</li>
+<li>Simple band ratios that highlight a specific process or property on the land surface</li>
+<li>Reduce effects of atmosphere, instrument noise, sun angle: allows for consistent spatial and temporal comparisons <sup>1</sup></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>NASA ARSET slideshow <em>Spectral Indices for Land and Aquatic Applications</em></p></li></ol></aside></section>
+<section id="spectral-response-curves" class="slide level2 smaller center">
+<h2>Spectral Response Curves</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<p><img data-src="img/exploit_spectral_response.png"></p>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="https://seos-project.eu/classification/classification-c01-p05.html">SEOS</a></p>
+</div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="font-size:0.8em">
+<p><span class="math display">\[
+\text{NBR} = \frac{\text{NIR} - \text{SWIR-2}}{\text{NIR} + \text{SWIR-2}} = \frac{B_8 - B_{12}}{B_8 + B_{12}}
+\]</span></p>
+<p><img data-src="img/mendo_fires.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
+</div>
 </div>
 </section>
-<section id="more-downloading" class="slide level2 center">
-<h2>More Downloading</h2>
-<div class="smaller">
-<ol type="1">
-<li>Open <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE">this link</a> (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.</li>
-<li>Do the same for <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM">this other link</a><br>
-</li>
-<li>Download this <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2">DEM</a>(Right-click, save as)</li>
-</ol>
-</div>
+<section id="common-spectral-indices" class="slide level2 center" style="font-size:0.5em">
+<h2>Common Spectral Indices</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Index</th>
+<th>Formula</th>
+<th>Typical Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NDVI</td>
+<td><span class="math inline">\((\text{NIR} - \text{Red}) / (\text{NIR} + \text{Red})\)</span></td>
+<td>Vegetation greenness/vigor</td>
+</tr>
+<tr class="even">
+<td>EVI</td>
+<td><span class="math inline">\(2.5 \cdot (\text{NIR} - \text{Red}) / (\text{NIR} + 6\cdot\text{Red} - 7.5\cdot\text{Blue} + 1)\)</span></td>
+<td>Dense vegetation, reduces soil/atmosphere effects</td>
+</tr>
+<tr class="odd">
+<td>SAVI</td>
+<td><span class="math inline">\((1 + L)\cdot(\text{NIR} - \text{Red}) / (\text{NIR} + \text{Red} + L)\)</span></td>
+<td>Vegetation with soil brightness correction (<span class="math inline">\(L\)</span> often 0.5)</td>
+</tr>
+<tr class="even">
+<td>NDWI</td>
+<td><span class="math inline">\((\text{Green} - \text{NIR}) / (\text{Green} + \text{NIR})\)</span></td>
+<td>Surface water detection</td>
+</tr>
+<tr class="odd">
+<td>MNDWI</td>
+<td><span class="math inline">\((\text{Green} - \text{SWIR-1}) / (\text{Green} + \text{SWIR-1})\)</span></td>
+<td>Open water enhancement, reduced built-up/soil noise</td>
+</tr>
+<tr class="even">
+<td>NBR</td>
+<td><span class="math inline">\((\text{NIR} - \text{SWIR-2}) / (\text{NIR} + \text{SWIR-2})\)</span></td>
+<td>Burn severity, fire impacts</td>
+</tr>
+<tr class="odd">
+<td>NDMI</td>
+<td><span class="math inline">\((\text{NIR} - \text{SWIR-1}) / (\text{NIR} + \text{SWIR-1})\)</span></td>
+<td>Vegetation moisture</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="ndvi---what-is-it-doing" class="slide level2 center">
-<h2>NDVI - what is it doing?</h2>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
-<p><img data-src="img/ndvi_response.png"></p>
+<section id="ndvi" class="slide level2 center">
+<h2>NDVI</h2>
+<p><span class="math inline">\((\text{NIR} - \text{Red}) / (\text{NIR} + \text{Red})\)</span></p>
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<p><img data-src="img/spectral_signatures_landsat_450.jpg"></p>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
 <p><img data-src="img/trees_ndvis.png"></p>
@@ -355,110 +431,6 @@
 <p>Image Source: <a href="https://appliedsciences.nasa.gov/sites/default/files/2023-10/Spectral_Indices_Part1.pdf">NASA ARSET</a></p>
 </div>
 </div>
-</section>
-<section id="what-is-a-spectral-index" class="slide level2 center">
-<h2>What is a spectral index?</h2>
-<ul>
-<li>A mathematical equation that is applied on the various spectral bands of an image per pixel</li>
-<li>Simple band ratios that highlight a specific process or property on the land surface</li>
-<li>Reduce effects of atmosphere, instrument noise, sun angle: allows for consistent spatial and temporal comparisons <sup>1</sup></li>
-</ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>These definitions come from the NASA ARSET slideshow <em>Spectral Indices for Land and Aquatic Applications</em></p></li></ol></aside></section>
-<section id="spectral-response-curves" class="slide level2 center">
-<h2>Spectral Response Curves</h2>
-<div class="r-stack">
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
-<p><img data-src="img/exploit_spectral_response.png"></p>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
-<p><span class="math display">\[
-\text{NBR} = \frac{\text{NIR} - \text{SWIR-2}}{\text{NIR} + \text{SWIR-2}} = \frac{B_8 - B_{12}}{B_8 + B_{12}}
-\]</span></p>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
-<p><img data-src="img/mendo_fires.png"></p>
-</div>
-</div>
-</section>
-<section id="a-digression---visualizing-elevation" class="slide level2 center" style="font-size:0.6em">
-<h2>A Digression - Visualizing Elevation</h2>
-<div class="r-stack">
-<div class="fragment fade-out" data-fragment-index="1" style="font-size:0.7em;">
-<div style="text-align: center;">
-<p>DEMs are fundamental to many types of analysis, but not great to look at.</p>
-<p><img data-src="img/dem_plain.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
-</div>
-</div>
-<div class="fragment fade-in-then-out" data-fragment-index="1" style="font-size:0.7em;">
-<div style="text-align: center;">
-<p>Slope Maps are a little better.</p>
-<ul>
-<li>Raster → Analysis → Slope…</li>
-</ul>
-<p><img data-src="img/slope.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
-</div>
-</div>
-<div class="fragment fade-in-then-out" data-fragment-index="2" style="font-size:0.7em;">
-<div style="text-align: center;">
-<p>Hillshade maps are much better</p>
-<ul>
-<li>Raster → Analysis → Hillshade…</li>
-</ul>
-<p><img data-src="img/hillshade.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
-</div>
-</div>
-<div class="fragment fade-in-then-out" data-fragment-index="3" style="font-size:0.7em;">
-<div style="text-align: center;">
-<p>Better yet, Red Relief!</p>
-<ul>
-<li>See next slide</li>
-</ul>
-<p><img data-src="img/red_relief.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="a-digression-continued---red-relief" class="slide level2 center" style="font-size:0.6em">
-<h2>A Digression Continued - Red Relief</h2>
-<div style="font-size:0.7em;">
-<ol type="1">
-<li><strong>Create Hillshade</strong>
-<ul>
-<li>Raster → Analysis → Hillshade</li>
-<li>Azimuth: 315°, Altitude: 45°</li>
-</ul></li>
-<li><strong>Apply Red Relief Style to DEM</strong>
-<ul>
-<li>Right-click DEM → Properties → Symbology</li>
-<li>Render type: Singleband pseudocolor</li>
-<li>Color ramp: Create custom red gradient</li>
-<li>Min value: Black → Max value: Red</li>
-<li><img data-src="img/black_red_ramp.png"></li>
-</ul></li>
-<li><strong>Blend Layers</strong>
-<ul>
-<li>Place hillshade <strong>above</strong> DEM</li>
-<li>Set hillshade Blending mode: Multiply</li>
-<li>Adjust hillshade opacity somewhere ~50-70%</li>
-<li>Opacity is found under the Transparency tab just below Symbology</li>
-</ul></li>
-</ol>
-</div>
-</section>
-<section id="a-digression-continued" class="slide level2 center" style="font-size:0.6em; text-align: center;">
-<h2>A Digression Continued</h2>
-<div style="text-align: center;">
-<p><img data-src="img/aoi_red_relief.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
-</div>
-</section>
-<section id="a-digression-continued---landforms" class="slide level2 center" style="font-size:0.6em">
-<h2>A Digression Continued - Landforms</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<p><img data-src="img/geomorph.gif" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
-</div><div class="column" style="width:30%;">
-<p><img data-src="img/geomorph_legend.png" style="max-height: 70vh; object-fit: contain;;width:80.0%"></p>
-</div></div>
 </section>
 <section id="raster-resampling" class="slide level2 center" style="font-size:0.6em">
 <h2>Raster Resampling</h2>

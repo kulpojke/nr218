@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cd5f0800439642fbaa1cb7fef4d5c238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-53b9468ac95cb2fade5b249ba61a8ae1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -113,12 +113,12 @@ window.Quarto = {
 
 
 
-<section id="todo-make-a-title" class="level1">
-<h1>TODO: make a title</h1>
-<p>In this exercise blah blah blah….</p>
-<p>For this exercise you will create a document and include answers to questions and figures. You will then submit the document on Canvas.</p>
+<section id="a-quick-lesson-in-multi-band-rasters-using-naip" class="level1">
+<h1>A Quick Lesson in Multi-band Rasters Using NAIP</h1>
+<p>In this exercise you will explore some visualizations and calculate simple spectral indices using NAIP imagery, as well as getting practice performing spatial overlays and merging vectors.</p>
+<p>Create a document, answer the questions and include the requested figures. Submit the document as pdf on Canvas.</p>
 <blockquote class="blockquote">
-<p>Questions will be included in this format, with a sidebar throughout the exercise.</p>
+<p>Questions will be included in this format, with a sidebar and in grey, throughout the exercise.</p>
 </blockquote>
 <section id="data-and-directory-structure" class="level2">
 <h2 class="anchored" data-anchor-id="data-and-directory-structure">Data and directory structure</h2>
@@ -148,7 +148,7 @@ Tip&nbsp;1: What is NAIP
 </ul>
 </div>
 </div>
-<p>Create a working directory, called <code>lab_10</code>, for this lab in you nr218 Folder. Create a <code>data</code> folder and put the downloaded data inside. Also create a <code>docs</code> directory in the lab directory. You will store your outputs in <code>docs</code></p>
+<p>Create a working directory, called <code>lab_10</code>, for this lab in you nr218 Folder. Create a <code>data</code> folder and put the downloaded data inside. Also create a <code>docs</code> directory and an <code>img</code> directory in the lab directory. You will store your submission document in <code>docs</code>, and any images you create in <code>img</code>.</p>
 <p>Open QGIS, start a new project, and save it in the <code>lab_10</code> folder as <code>lab10_your_name.qgz</code> (use your actual name)</p>
 <p>You should then have something like this.</p>
 <pre><code>lab_10/
@@ -157,7 +157,9 @@ Tip&nbsp;1: What is NAIP
 │   ├── subset_of_cal_hist_fires.geojson
 │   └── naip_2022.tif
 └── docs/
+└── img/
     </code></pre>
+<p>Your submission document, as well as any images</p>
 </section>
 <section id="data-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
@@ -181,7 +183,7 @@ Figure&nbsp;1: Vectors created while creating <code>fires_in_AOI</code>
 <li><p>Use the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire. Name the result <code>extent</code>.</p></li>
 <li><p>Buffer “extent” by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference). name the buffered layer, our area of interest, <code>AOI</code>. <a href="#fig-vectors" class="quarto-xref">Figure&nbsp;1</a> shows the layers that should have been created at this point (AOI is still called <code>Buffered</code> in the image).</p></li>
 <li><p>Clip <code>scratch_2</code> by the AOI. Save the results as <code>fires_in_AOI</code>.</p></li>
-<li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly you can delete <code>scratch_1</code>, <code>scratch_2',</code>Coffee<code>, and</code>extent`.</p></li>
+<li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly you can delete <code>scratch_1</code>, <code>scratch_2</code>, and <code>extent</code>.</p></li>
 </ol>
 <div id="fig-transparency" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:40%;">
 <figure class="quarto-float quarto-float-fig figure">
@@ -262,53 +264,33 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 <p><strong>Question 4:</strong> a) Were you able to improve upon NDVI using SAVI? b) What value of <span class="math inline">\(L\)</span> did you end up using?<br>
 c) NDVI is defined on the interval [0-1], what about SAVI? d) Use similar symbology rules you used for NDVI. Make an image. Include the image as part of question 4.</p>
 </blockquote>
+</section>
+<section id="finding-zonal-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="finding-zonal-statistics">Finding Zonal Statistics</h2>
 <ol type="1">
-<li><p>Open <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE">this link</a> (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.</p></li>
-<li><p>Unzip them and put them into a new directory, called <code>s2</code>, in your fire_example</p></li>
-<li><p>Do the same for <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM">this other link</a> but put them into <code>s2_nbr</code></p></li>
-<li><p>Download this <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2">DEM</a> and put them into the data directory in your fire_example, as seen to the right.</p></li>
-<li><p>Finally, download this <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EcppyDdlx-lDggbCMv4zEXMBH_ps-0EcglHWZgZXUz1dsg?e=FQ1REl">Land use</a> raster and save.</p></li>
-</ol>
-<pre><code>fire_example/
-├── fire_example.qgz
-├── data/
-│   ├── fire_perimeters.geojson
-│   ├── naip.tif
-│   ├── dem_1m_6339.tif
-│   └── 2016...classification.tiff
-│
-│
-├── s2/
-│   ├── s2_2016_NBR.tif
-│   └── ...
-│   └── s2_2025_NBR.tif
-│
-├── s2_nbr/
-│   ├── s2_2016.tif
-│   └── ...
-│   └── s2_2025.tif
-│
-└── docs/</code></pre>
-<ol start="5" type="1">
-<li><p>Using extract selection or extract by attribute, make separate <code>Coffee</code> and <code>River</code> layers from your <code>fires in AOI</code> layer.</p></li>
+<li><p>Extract a separate <code>River</code> layer, for the River Complex, from your <code>fires in AOI</code> layer.</p></li>
 <li><p>Spatial Overlays:</p>
 <ol type="a">
-<li>Find the difference between the <code>River</code> and <code>Coffee</code> layers, call it <code>river only</code></li>
+<li>Find the difference between the <code>River</code> and <code>Coffee</code> layers, call it <code>river only</code>,</li>
 <li>Find the difference between the <code>Coffee</code> and <code>River</code> layers, call it <code>coffee only</code></li>
 <li>Find the intersection between the <code>Coffee</code> and <code>River</code> layers, call it <code>both</code></li>
-<li><strong>Use the AOI and the three layers you just found to make a polygon called <code>unburned</code>, i.e neither.</strong></li>
+<li>Use the AOI and the three layers you just found to make a polygon called <code>unburned</code>, i.e areas burned by neither fire.</li>
 </ol></li>
-<li><p>In GeoProcessing Toolbox find “Raster Calculator”.</p>
-<ol type="a">
-<li>right click it and select “Execute as Batch Process”</li>
-</ol></li>
-<li><p>Make random points inside of <code>coffee only</code> <code>river only</code> and <code>both</code> using the “Random Points Inside Polygons” tool with:</p>
-<ol type="a">
-<li>Sampling Strategy = point density</li>
-<li>Point Count or Point Density = 0.000001 (this is per m<span class="math inline">\(^{2}\)</span>)</li>
-</ol></li>
-<li><p>Install Point Sampling Tool pluggin.</p></li>
+<li><p>Change the value of the <code>FIRE_NAME</code> attribute for each of the layers you created in the last step to match the layer name.</p></li>
+<li><p>Use the <em>Merge vector layers</em> tool to merge the four layers you just created.</p></li>
 </ol>
+<blockquote class="blockquote">
+<p><strong>Question 5:</strong> One can think of the layer you just created as containing polygons representing four treatments in a natural experiment. Describe what each of the polygons you created represents.</p>
+</blockquote>
+<ol start="3" type="1">
+<li>Use the zonal statistics tool to find mean, median and standard deviation of NDVI in each.</li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Question 6:</strong> Briefly describe the differences in NDVI between the four treatments. Include a table showing the NDVI statistics you calculated (You can export the file as a csv with only the columns you want, and open it in Excel).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Question 7:</strong> Use <code>tree</code> and paste output to show the structure of your working directory.</p>
+</blockquote>
 
 
 </section>

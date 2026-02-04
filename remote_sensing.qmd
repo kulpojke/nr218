@@ -196,13 +196,6 @@ Image Source: [NASA](https://appliedsciences.nasa.gov/sites/default/files/2022-1
 :::
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="13"}
-![](img/spectral_signatures_landsat_450.jpg){width="100%" style="max-width: 100%; height: auto; object-fit: contain;"}
-
-::: {.attribution style="font-size:0.4em"}
-Image Source: [SEOS](https://seos-project.eu/classification/classification-c01-p05.html)
-:::
-:::
 
 :::
 <!-- end r-stack -->
@@ -226,17 +219,19 @@ Image Source: [NASA Earthdata](https://www.earthdata.nasa.gov/learn/earth-observ
 :::
 
 ::: {.fragment .absolute .fade-in data-fragment-index="2"}
-+ The type of remote sensing we have been discussing so far is _radiometric_, or _optical_ remote sensing. 
-+ Optical remote sensing is passive 
-+ Light from the sun bounces off of the earth and into the sensor (Eyeball, Camera, Radiometer)
-:::
++ The type of remote sensing we have been discussing so far is  _optical_ remote sensing. 
+    + Optical remote sensing is a is passive 
+    + Light from the sun bounces off of the earth and into the sensor (Eyeball, Camera, Radiometer)
++ _Radiometric_ sensing covers a wider spectral range, and may include active as well as passive techniques.
 
+:::
 
 :::
 
 ## NAIP Imagery
 
-::: {style="font-size:0.9em"}
+::: {.columns}
+::: {.column style="font-size:0.5em"}
 **National Agriculture Imagery Program (NAIP)**
 
 + High-resolution aerial imagery of the continental United States
@@ -247,21 +242,68 @@ Image Source: [NASA Earthdata](https://www.earthdata.nasa.gov/learn/earth-observ
 
 **Learn more:** [USDA NAIP Program](https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/)
 :::
+::: {.column}
+![A NAIP image](img/rgb.png)
+:::
+:::
+
+## Spectral indices {.smaller}
+
+Spectral index 
+
++ A mathematical equation that is applied on the various spectral bands of an
+image on a per pixel basis
++ Maps multiple bands to a single band
++ Simple band ratios that highlight a specific process or property on the land
+surface
++ Reduce effects of atmosphere, instrument noise, sun angle: allows for consistent
+spatial and temporal comparisons [^nasa]
+
+[^nasa]:  NASA ARSET slideshow _Spectral Indices for Land and Aquatic Applications_
 
 
-## More Downloading
-::: {.smaller}
-1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page.  This should start downloading a zip of the file. 
-2. Do the same for [this other link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM)  
-3. Download this [DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2)(Right-click, save as)
+## Spectral Response Curves {.smaller}
+
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+![](img/exploit_spectral_response.png)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [SEOS](https://seos-project.eu/classification/classification-c01-p05.html)
+:::
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.8em"}
+$$
+\text{NBR} = \frac{\text{NIR} - \text{SWIR-2}}{\text{NIR} + \text{SWIR-2}} = \frac{B_8 - B_{12}}{B_8 + B_{12}}
+$$
+
+![](img/mendo_fires.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
+:::
+
 :::
 
 
+## Common Spectral Indices {style="font-size:0.5em"}
+| Index | Formula | Typical Use |
+| --- | --- | --- |
+| NDVI | $(\text{NIR} - \text{Red}) / (\text{NIR} + \text{Red})$ | Vegetation greenness/vigor |
+| EVI | $2.5 \cdot (\text{NIR} - \text{Red}) / (\text{NIR} + 6\cdot\text{Red} - 7.5\cdot\text{Blue} + 1)$ | Dense vegetation, reduces soil/atmosphere effects |
+| SAVI | $(1 + L)\cdot(\text{NIR} - \text{Red}) / (\text{NIR} + \text{Red} + L)$ | Vegetation with soil brightness correction ($L$ often 0.5) |
+| NDWI | $(\text{Green} - \text{NIR}) / (\text{Green} + \text{NIR})$ | Surface water detection |
+| MNDWI | $(\text{Green} - \text{SWIR-1}) / (\text{Green} + \text{SWIR-1})$ | Open water enhancement, reduced built-up/soil noise |
+| NBR | $(\text{NIR} - \text{SWIR-2}) / (\text{NIR} + \text{SWIR-2})$ | Burn severity, fire impacts |
+| NDMI | $(\text{NIR} - \text{SWIR-1}) / (\text{NIR} + \text{SWIR-1})$ | Vegetation moisture |
 
-## NDVI - what is it doing?
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"  }
-![](img/ndvi_response.png)
+## NDVI
+
+$(\text{NIR} - \text{Red}) / (\text{NIR} + \text{Red})$
+
+::: {.fragment .absolute .fade-out data-fragment-index="1"  }
+![](img/spectral_signatures_landsat_450.jpg)
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
@@ -286,127 +328,9 @@ Image Source: [NASA ARSET](https://appliedsciences.nasa.gov/sites/default/files/
 :::
 
 
-## What is a spectral index?
-
-+ A mathematical equation that is applied on the various spectral bands of an
-image per pixel
-+ Simple band ratios that highlight a specific process or property on the land
-surface
-+ Reduce effects of atmosphere, instrument noise, sun angle: allows for consistent
-spatial and temporal comparisons [^nasa]
-
-[^nasa]: These definitions come from the NASA ARSET slideshow _Spectral Indices for Land and Aquatic Applications_
-
-
-## Spectral Response Curves
-
-::: { .r-stack}
-
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
-![](img/exploit_spectral_response.png)
-:::
-
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
-$$
-\text{NBR} = \frac{\text{NIR} - \text{SWIR-2}}{\text{NIR} + \text{SWIR-2}} = \frac{B_8 - B_{12}}{B_8 + B_{12}}
-$$
-:::
-
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
-![](img/mendo_fires.png)
-:::
-
-:::
 
 
 
-## A Digression - Visualizing Elevation {style="font-size:0.6em"}
-
-::: {.r-stack}
-
-::: {.fragment .fade-out data-fragment-index="1" style="font-size:0.7em;"}
-::: {style="text-align: center;"}
-DEMs are fundamental to many types of analysis, but not great to look at.
-
-![](img/dem_plain.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
-:::
-:::
-
-::: {.fragment .fade-in-then-out data-fragment-index="1" style="font-size:0.7em;"}
-::: {style="text-align: center;"}
-Slope Maps are a little better.
-
-+ Raster → Analysis → Slope...
-
-![](img/slope.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
-:::
-:::
-
-::: {.fragment .fade-in-then-out data-fragment-index="2" style="font-size:0.7em;"}
-::: {style="text-align: center;"}
-Hillshade maps are much better
-
-+ Raster → Analysis → Hillshade...
-
-![](img/hillshade.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
-:::
-:::
-
-::: {.fragment .fade-in-then-out data-fragment-index="3" style="font-size:0.7em;"}
-::: {style="text-align: center;"}
-Better yet, Red Relief!
-
-+ See next slide
-
-![](img/red_relief.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
-:::
-:::
-
-:::
-
-
-## A Digression Continued - Red Relief {style="font-size:0.6em"}
-
-::: {style="font-size:0.7em;"}
-1. **Create Hillshade**
-   - Raster → Analysis → Hillshade
-   - Azimuth: 315°, Altitude: 45°
-   
-2. **Apply Red Relief Style to DEM**
-   - Right-click DEM → Properties → Symbology
-   - Render type: Singleband pseudocolor
-   - Color ramp: Create custom red gradient
-   - Min value: Black → Max value: Red
-   - ![](img/black_red_ramp.png)
-
-4. **Blend Layers**
-   - Place hillshade **above** DEM
-   - Set hillshade Blending mode: Multiply
-   - Adjust hillshade opacity somewhere ~50-70%
-    - Opacity is found under the Transparency tab just below Symbology
-
-:::
-
-## A Digression Continued {style="font-size:0.6em; text-align: center;"}
-
-::: {style="text-align: center;"}
-![](img/aoi_red_relief.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
-:::
-
-## A Digression Continued - Landforms {style="font-size:0.6em"}
-
-:::{.columns}
-
-::: {.column width="70%"}
-![](img/geomorph.gif){width="80%" style="max-height: 70vh; object-fit: contain;"}
-:::
-
-
-::: {.column width="30%"}
-![](img/geomorph_legend.png){width="80%" style="max-height: 70vh; object-fit: contain;"}
-:::
-
-:::
 
 ## Raster Resampling {style="font-size:0.6em"}
 

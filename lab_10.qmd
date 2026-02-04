@@ -8,13 +8,13 @@ format:
     
 ---
 
-# TODO: make a title
+# A Quick Lesson in Multi-band Rasters Using NAIP
 
-In this exercise blah blah blah....
+In this exercise you will explore some visualizations and calculate simple spectral indices using NAIP imagery, as well as getting practice performing spatial overlays and merging vectors.
 
-For this exercise you will create a document and include answers to questions and figures. You will then submit the document on Canvas.
+Create a document, answer the questions and include the requested figures. Submit the document as pdf on Canvas.
 
-> Questions will be included in this format, with a sidebar throughout the exercise.
+> Questions will be included in this format, with a sidebar and in grey, throughout the exercise.
  
 ## Data and directory structure
 First we will need the data.  Download the vector file of fire perimeters and 2022 NAIP (see @tip-naip for information about NAIP ) image below. The NAIP image may take a while, but should be done by the time you need it.
@@ -39,7 +39,7 @@ The National Agriculture Imagery Program (NAIP) acquires aerial imagery during t
 :::
 
 
-Create a working directory, called `lab_10`, for this lab in you nr218 Folder. Create a `data` folder and put the downloaded data inside.  Also create a `docs` directory in the lab directory. You will store your outputs in `docs`
+Create a working directory, called `lab_10`, for this lab in you nr218 Folder. Create a `data` folder and put the downloaded data inside.  Also create a `docs` directory and an `img` directory in the lab directory. You will store your submission document in `docs`, and any images you create in `img`.
 
 Open QGIS, start a new project, and save it in the `lab_10` folder as `lab10_your_name.qgz` (use your actual name)
 
@@ -52,8 +52,11 @@ lab_10/
 │   ├── subset_of_cal_hist_fires.geojson
 │   └── naip_2022.tif
 └── docs/
+└── img/
     
 ```
+
+Your submission document, as well as any images
 
 ## Data Preparation
 
@@ -71,7 +74,7 @@ lab_10/
 
 6. Buffer "extent" by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference). name the buffered layer, our area of interest, `AOI`.  @fig-vectors shows the layers that should have been created at this point (AOI is still called `Buffered` in the image).
 7. Clip `scratch_2` by the AOI. Save the results as `fires_in_AOI`.
-8. When you are satisfied that `fires_in_AOI` turned out correctly you can delete `scratch_1`, `scratch_2', `Coffee`, and `extent`.  
+8. When you are satisfied that `fires_in_AOI` turned out correctly you can delete `scratch_1`, `scratch_2`, and `extent`.  
 
 ![Transparency tab in symbology.](img/transpareny_window.png){#fig-transparency .wrap-right style="--wrap-width:40%;"} 
 
@@ -125,52 +128,24 @@ Where $L$ is often 0.5, but adjusted for exposed soil.  The soil in the Klamath 
 > c) NDVI is defined on the interval [0-1], what about SAVI?
 > d) Use similar symbology rules you used for NDVI. Make an image. Include the image as part of question 4.
 
+## Finding Zonal Statistics
+1. Extract a separate `River` layer, for the River Complex,  from your `fires in AOI` layer.
 
-1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.
-
-2. Unzip them and put them into a new directory, called `s2`, in your fire_example
-
-3. Do the same for [this other link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/Eu-EXQBbsGxLgzR5oVFAMrwBhBlRqBtpv-tpS6A79lW5UQ?e=M0YpcM) but put them into `s2_nbr`
-
-4. Download this [DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EZLMJ_FttfRAu15KmRigEV8ByZOu-YidfyiqnJXpZeMy9A?e=o8VTm2) and put them into the data directory in your fire_example, as seen to the right.
-
-5. Finally, download this [Land use](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EcppyDdlx-lDggbCMv4zEXMBH_ps-0EcglHWZgZXUz1dsg?e=FQ1REl) raster and save.
-
-```
-fire_example/
-├── fire_example.qgz
-├── data/
-│   ├── fire_perimeters.geojson
-│   ├── naip.tif
-│   ├── dem_1m_6339.tif
-│   └── 2016...classification.tiff
-│
-│
-├── s2/
-│   ├── s2_2016_NBR.tif
-│   └── ...
-│   └── s2_2025_NBR.tif
-│
-├── s2_nbr/
-│   ├── s2_2016.tif
-│   └── ...
-│   └── s2_2025.tif
-│
-└── docs/
-```
-5. Using extract selection or extract by attribute, make separate `Coffee` and `River` layers from your `fires in AOI` layer.
-
-6. Spatial Overlays:
-    a. Find the difference between the `River` and `Coffee` layers, call it `river only`
+2. Spatial Overlays:
+    a. Find the difference between the `River` and `Coffee` layers, call it `river only`, 
     b. Find the difference between the `Coffee` and `River` layers, call it `coffee only`
     c. Find the intersection between the `Coffee` and `River` layers, call it `both`
-    d. __Use the AOI and the three layers you just found to make a polygon called `unburned`, i.e neither.__
+    d. Use the AOI and the three layers you just found to make a polygon called `unburned`, i.e areas burned by neither fire.
 
-7. In GeoProcessing Toolbox find "Raster Calculator".
-    a. right click it and select "Execute as Batch Process"
+3. Change the value of the `FIRE_NAME` attribute for each of the layers you created in the last step to match the layer name.
 
-8. Make random points inside of `coffee only` `river only` and `both` using the "Random Points Inside Polygons" tool with:
-    a. Sampling Strategy = point density
-    b. Point Count or Point Density = 0.000001 (this is per m$^{2}$)
+3. Use the _Merge vector layers_ tool to merge the four layers you just created.  
 
-9. Install Point Sampling Tool pluggin.
+> __Question 5:__ One can think of the layer you just created as containing polygons representing four treatments in a natural experiment.  Describe what each of the polygons you created represents.
+
+
+3. Use the zonal statistics tool to find mean, median and standard deviation of NDVI in each.
+
+> __Question 6:__ Briefly describe the differences in NDVI between the four treatments.  Include a table showing the NDVI statistics you calculated (You can export the file as a csv with only the columns you want, and open it in Excel).
+
+> __Question 7:__ Use `tree` and paste output to show the structure of your working directory.
