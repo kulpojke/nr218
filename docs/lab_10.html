@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-53b9468ac95cb2fade5b249ba61a8ae1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cd5f0800439642fbaa1cb7fef4d5c238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -116,9 +116,13 @@ window.Quarto = {
 <section id="todo-make-a-title" class="level1">
 <h1>TODO: make a title</h1>
 <p>In this exercise blah blah blah….</p>
+<p>For this exercise you will create a document and include answers to questions and figures. You will then submit the document on Canvas.</p>
+<blockquote class="blockquote">
+<p>Questions will be included in this format, with a sidebar throughout the exercise.</p>
+</blockquote>
 <section id="data-and-directory-structure" class="level2">
 <h2 class="anchored" data-anchor-id="data-and-directory-structure">Data and directory structure</h2>
-<p>First we will need the data. Download the vector file of fire perimeters and 2022 NAIP (see <a href="#tip-naip" class="quarto-xref">Tip&nbsp;1</a> for information about NAIP ) image below.</p>
+<p>First we will need the data. Download the vector file of fire perimeters and 2022 NAIP (see <a href="#tip-naip" class="quarto-xref">Tip&nbsp;1</a> for information about NAIP ) image below. The NAIP image may take a while, but should be done by the time you need it.</p>
 <ul>
 <li><a href="https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDiOQnn5iZ2SoC9RFOZXMQ6AYohr1UK1PuzRVCWknsOpLQ?e=iYy6tc">fire perimeters</a></li>
 <li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC4SX4KSSrKQZEguH7aIaGnATBJndw0cRt9vi8a-KiAw0A?e=xlgu0Q">NAIP image</a></li>
@@ -155,46 +159,70 @@ Tip&nbsp;1: What is NAIP
 └── docs/
     </code></pre>
 </section>
-<section id="vector-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="vector-preparation">Vector Preparation</h2>
+<section id="data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
 <ol type="1">
-<li><p>Open the fire perimeters dataset in QGIS.</p></li>
-<li><p>Extract the perimeter of the Coffee Fire (<code>FIRE_NAME</code> is <code>COFFEE</code>). There are a few ways you can do this, your choice. Name the resulting layer <code>Coffee</code> (and save a file).</p></li>
-<li><p>Reduce the fire perimeter layer, <code>subset_of_cal_hist_fires</code>, by selecting only fires that have happened since 2014 (Hint: extract by attribute). i.e.&nbsp;<code>YEAR_ &gt; 2013</code>. Name the resulting layer <code>scratch_1</code>.</p></li>
-<li><p>Now extract all of the polygons which <em>overlap</em> the <code>Coffee</code> (Hint: “select by location”). Name the result, <code>scratch_2</code>.</p></li>
-<li><p>Use the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire. Name the result <code>extent</code>.</p></li>
+<li>Open the fire perimeters dataset in QGIS.</li>
 </ol>
-<div id="fig-vectors" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-vectors" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:40%;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/lab_10_vectors.png" class="wrap-right img-fluid figure-img">
+<img src="img/lab_10_vectors.png" class="wrap-right img-fluid figure-img" style="--wrap-width:40%;">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Vectors created while creating <code>fires_in_AOI</code>
 </figcaption>
 </figure>
 </div>
-<ol start="6" type="1">
-<li><p>Buffer “extent” by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference). name the buffered layer, our area of interest, <code>AOI</code>. <a href="#fig-vectors" class="quarto-xref">Figure&nbsp;1</a> shows the layers that should have been created at this point (AOI is still called <code>Buffered</code>).</p></li>
+<ol start="2" type="1">
+<li><p>Extract the perimeter of the Coffee Fire (<code>FIRE_NAME</code> is <code>COFFEE</code>). There are a few ways you can do this, your choice. Name the resulting layer <code>Coffee</code> (and save a file).</p></li>
+<li><p>Reduce the fire perimeter layer, <code>subset_of_cal_hist_fires</code>, by selecting only fires that have happened since 2014 (Hint: extract by attribute). i.e.&nbsp;<code>YEAR_ &gt; 2013</code>. Name the resulting layer <code>scratch_1</code>.</p></li>
+<li><p>Now extract all of the polygons which <em>overlap</em> the <code>Coffee</code> (Hint: “select by location”). Name the result, <code>scratch_2</code>.</p></li>
+<li><p>Use the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire. Name the result <code>extent</code>.</p></li>
+<li><p>Buffer “extent” by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference). name the buffered layer, our area of interest, <code>AOI</code>. <a href="#fig-vectors" class="quarto-xref">Figure&nbsp;1</a> shows the layers that should have been created at this point (AOI is still called <code>Buffered</code> in the image).</p></li>
 <li><p>Clip <code>scratch_2</code> by the AOI. Save the results as <code>fires_in_AOI</code>.</p></li>
 <li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly you can delete <code>scratch_1</code>, <code>scratch_2',</code>Coffee<code>, and</code>extent`.</p></li>
-<li><p>Open <code>naip_2022</code>. Open the Layer Properties dialog . Go to the Transparency tab on the left. Change Transparency Band to None (what is band 4?).</p></li>
-<li><p>Clip <code>naip_2022 to the AOI.</code>Raster<code>-&gt;</code>Extraction<code>-&gt;</code>Clip Raster By Mask Layer`</p></li>
-<li><p>Name the result <code>naip_2022_clipped</code></p></li>
-<li><p>Now lets view it as False color</p>
+</ol>
+<div id="fig-transparency" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:40%;">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-transparency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/transpareny_window.png" class="wrap-right img-fluid figure-img" style="--wrap-width:40%;">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-transparency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Transparency tab in symbology.
+</figcaption>
+</figure>
+</div>
+<ol start="9" type="1">
+<li>Open <code>naip_2022</code>. If you have a basemap on, turn it off so that the NAIP imagery is over a white background. Notice that the image looks very pale. Open the Layer Properties dialog. Go to the Transparency tab on the left (see <a href="#fig-transparency" class="quarto-xref">Figure&nbsp;2</a>). Change the transparency band to None. See the change that occurs.</li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Question 1:</strong> On your submission document Explain what just happened when you made that change. What is band 4 in the image? Why was QGIS interpreting it as a transparency band?</p>
+</blockquote>
+<ol start="10" type="1">
+<li>Clip <code>naip_2022</code> to the AOI.</li>
+<li>Name the result <code>naip_2022_clipped</code></li>
+</ol>
+</section>
+<section id="explore-visualizations-and-spectral-indices" class="level2">
+<h2 class="anchored" data-anchor-id="explore-visualizations-and-spectral-indices">Explore Visualizations and Spectral Indices</h2>
+<ol type="1">
+<li>Now view the image as False color
 <ol type="a">
-<li>Recall from earlier, that is NIR, G, R</li>
+<li>Recall from earlier, that means Near-Infrared to Red, Red to Green, and Green to Blue (i.e.&nbsp;band order is NIR, G, R)</li>
 <li>Open symbology and change the band order</li>
+<li>Zoom in so that individual trees are visible.</li>
 </ol></li>
-<li><p>Calculate Normalized Difference Vegetation Index</p>
-<ol type="a">
-<li><span class="math display">\[NDVI = \frac{NIR - Red}{NIR + Red}\]</span></li>
-<li>Open Raster Calculator ( <em>Raster</em> -&gt; <em>Raster Calculator</em>) c . enter <code>( "naip_2022_clipped@4"  - "naip_2022_clipped@1" )  /  ( "naip_2022_clipped@4" + "naip_2022_clipped@1" )</code></li>
-<li>check the “create on the fly raster …” box at the top under “Result Layer”</li>
-<li>Run</li>
 </ol>
-<p>NDVI values</p></li>
+<blockquote class="blockquote">
+<p><strong>Question 2:</strong><br>
+a) Why do trees stand out from the ground using this false color image?<br>
+b) Use <em>Project –&gt; Import/export –&gt; Export Map to Image</em> , to make an image. Include the image as part of question 2</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Calculate Normalized Difference Vegetation Index (NDVI) using the Raster Calculator. Save the file as <code>NDVI.tif</code> <span class="math display">\[NDVI = \frac{NIR - Red}{NIR + Red}\]</span></li>
 </ol>
+<p><strong>NDVI Values</strong></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -221,10 +249,19 @@ Figure&nbsp;1: Vectors created while creating <code>fires_in_AOI</code>
 </tr>
 </tbody>
 </table>
+<blockquote class="blockquote">
+<p><strong>Question 3:</strong> a) How many bands does the the new NDVI raster have?<br>
+b) Adjust the symbology to some color scheme you think is appropriate for displaying NDVI. Make an image. Include the image as part of question 3.</p>
+</blockquote>
+<p>The Soil Adjusted Vegetation Index (SAVI) is useful when the soil is highly exposed in an image. Soil is often highly reflective across all bands, reducing the contrast between vegetaton and soil. It is the same as NDVI with an dadjustment factor, <span class="math inline">\(L\)</span>, to compensate fro soil.</p>
 <p><span class="math display">\[
 SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 \]</span></p>
-<p>Where <span class="math inline">\(L\)</span> is often 0.5, but adjusted for exposed soil</p>
+<p>Where <span class="math inline">\(L\)</span> is often 0.5, but adjusted for exposed soil. The soil in the Klamath mountains, where this data is from tends to be highly reflective, which means a fairly high value of L (close to 1) should be used. Experiment with values of <span class="math inline">\(L\)</span> to see if you can make a raster where contrast between tees and soil is higher than in you NDVI raster.</p>
+<blockquote class="blockquote">
+<p><strong>Question 4:</strong> a) Were you able to improve upon NDVI using SAVI? b) What value of <span class="math inline">\(L\)</span> did you end up using?<br>
+c) NDVI is defined on the interval [0-1], what about SAVI? d) Use similar symbology rules you used for NDVI. Make an image. Include the image as part of question 4.</p>
+</blockquote>
 <ol type="1">
 <li><p>Open <a href="https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE">this link</a> (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.</p></li>
 <li><p>Unzip them and put them into a new directory, called <code>s2</code>, in your fire_example</p></li>

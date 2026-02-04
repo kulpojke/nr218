@@ -27,9 +27,11 @@ code,
 pre {
   border: none !important;
 }
+/* Float figures right; allow optional custom width via CSS variable */
 .wrap-right {
   float: right;
-  width: 45%;
+  /* default width if no override is provided */
+  width: var(--wrap-width, 45%);
   margin: 0 0 1rem 1rem;
 }
 

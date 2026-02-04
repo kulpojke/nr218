@@ -11,9 +11,13 @@ format:
 # TODO: make a title
 
 In this exercise blah blah blah....
+
+For this exercise you will create a document and include answers to questions and figures. You will then submit the document on Canvas.
+
+> Questions will be included in this format, with a sidebar throughout the exercise.
  
 ## Data and directory structure
-First we will need the data.  Download the vector file of fire perimeters and 2022 NAIP (see @tip-naip for information about NAIP ) image below. 
+First we will need the data.  Download the vector file of fire perimeters and 2022 NAIP (see @tip-naip for information about NAIP ) image below. The NAIP image may take a while, but should be done by the time you need it.
 
 + [fire perimeters](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDiOQnn5iZ2SoC9RFOZXMQ6AYohr1UK1PuzRVCWknsOpLQ?e=iYy6tc)
 + [NAIP image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC4SX4KSSrKQZEguH7aIaGnATBJndw0cRt9vi8a-KiAw0A?e=xlgu0Q)
@@ -51,36 +55,49 @@ lab_10/
     
 ```
 
-## Vector Preparation
+## Data Preparation
 
 1. Open the fire perimeters dataset in QGIS.
+
+![Vectors created while creating `fires_in_AOI`](img/lab_10_vectors.png ){#fig-vectors  .wrap-right style="--wrap-width:40%;"}
+
+
 2. Extract the perimeter of the Coffee Fire (`FIRE_NAME` is `COFFEE`).  There are a few ways you can do this, your choice.  Name the resulting layer `Coffee` (and save a file).
 3. Reduce the fire perimeter layer, `subset_of_cal_hist_fires`,  by selecting only fires that have happened since 2014 (Hint: extract by attribute). i.e. `YEAR_ > 2013`. Name the resulting layer `scratch_1`.
 4. Now extract all of the polygons which _overlap_ the `Coffee` (Hint: "select by location"). Name the result, `scratch_2`.
 
 5. Use the "Extract layer extent" tool to get a polygon of the extent of the Coffee fire. Name the result `extent`.
 
-![Vectors created while creating `fires_in_AOI`](img/lab_10_vectors.png ){#fig-vectors .wrap-right}
 
-6. Buffer "extent" by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference). name the buffered layer, our area of interest, `AOI`.  @fig-vectors shows the layers that should have been created at this point (AOI is still called `Buffered`).
+6. Buffer "extent" by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference). name the buffered layer, our area of interest, `AOI`.  @fig-vectors shows the layers that should have been created at this point (AOI is still called `Buffered` in the image).
 7. Clip `scratch_2` by the AOI. Save the results as `fires_in_AOI`.
-8. When you are satisfied that `fires_in_AOI` turned out correctly you can delete `scratch_1`, `scratch_2', `Coffee`, and `extent`.
+8. When you are satisfied that `fires_in_AOI` turned out correctly you can delete `scratch_1`, `scratch_2', `Coffee`, and `extent`.  
 
-9. Open `naip_2022`. Open the Layer Properties dialog . Go to the Transparency tab on the left. Change Transparency Band to None (what is band 4?).
-10. Clip `naip_2022 to the AOI.  `Raster` -> `Extraction` -> `Clip Raster By Mask Layer`
+![Transparency tab in symbology.](img/transpareny_window.png){#fig-transparency .wrap-right style="--wrap-width:40%;"} 
+
+9. Open `naip_2022`. If you have a basemap on, turn it off so that the NAIP imagery is over a white background. Notice that the image looks very pale. Open the Layer Properties dialog. Go to the Transparency tab on the left (see @fig-transparency). Change the transparency band to None. See the change that occurs. 
+
+> __Question 1:__  On your submission document  Explain what just happened when you made that change.  What is band 4 in the image?  Why was QGIS interpreting it as a transparency band?
+
+
+10. Clip `naip_2022` to the AOI. 
 11. Name the result `naip_2022_clipped`
-12. Now lets view it as False color
-    a. Recall from earlier, that is NIR, G, R
+
+## Explore Visualizations and Spectral Indices
+1. Now view the image as False color
+    a. Recall from earlier, that means Near-Infrared to Red, Red to Green, and Green to Blue (i.e. band order is NIR, G, R) 
     b. Open symbology and change the band order
+    c. Zoom in so that individual trees are visible.
 
-13. Calculate Normalized Difference Vegetation Index
-    a. $$NDVI = \frac{NIR - Red}{NIR + Red}$$
-    b. Open Raster Calculator ( _Raster_ -> _Raster Calculator_)
-    c . enter ` ( "naip_2022_clipped@4"  - "naip_2022_clipped@1" )  /  ( "naip_2022_clipped@4" + "naip_2022_clipped@1" )` 
-    d. check the "create on the fly raster ..." box at the top under "Result Layer"
-    e. Run
+> __Question 2:__  
+> a) Why do trees stand out from the ground using this false color image?  
+> b) Use _Project --> Import/export --> Export Map to Image_ , to make an image. Include the image as part of question 2 
 
-    NDVI values
+2. Calculate Normalized Difference Vegetation Index (NDVI) using the Raster Calculator. Save the file as `NDVI.tif`
+$$NDVI = \frac{NIR - Red}{NIR + Red}$$
+
+   
+__NDVI Values__   
 
 | Value Range | Interpretation |
 |-------------|----------------|
@@ -89,11 +106,24 @@ lab_10/
 | 0.2 to 0.5 | Sparse vegetation, |
 | 0.6 to 0.9 | Dense Vegetation |
 
+
+> __Question 3:__ 
+> a) How many bands does the the new NDVI raster have?  
+> b) Adjust the symbology to some color scheme you think is appropriate for displaying NDVI. Make an image. Include the image as part of question 3.
+
+The Soil Adjusted Vegetation Index (SAVI) is useful when the soil is highly exposed in an image.  Soil is often highly reflective across all bands, reducing the contrast between vegetaton and soil. It is the same as NDVI with an dadjustment factor, $L$, to compensate fro soil. 
+
 $$
 SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L} 
 $$
 
-Where $L$ is often 0.5, but adjusted for exposed soil
+Where $L$ is often 0.5, but adjusted for exposed soil.  The soil in the Klamath mountains, where this data is from tends to be highly reflective, which means a fairly high value of L (close to 1) should be used.  Experiment with values of $L$ to see if you can make a raster where contrast between tees and soil is higher than in you NDVI raster.
+
+> __Question 4:__ 
+> a) Were you able to improve upon NDVI using SAVI? 
+> b) What value of $L$ did you end up using?  
+> c) NDVI is defined on the interval [0-1], what about SAVI?
+> d) Use similar symbology rules you used for NDVI. Make an image. Include the image as part of question 4.
 
 
 1. Open [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/EvajxRo6YZFDgoVwZbQ-SqsBwlztU-GDezW1ptGbEQR29g?e=TXsTmE) (perhaps in a new tab) check the check mark next to all of the files, and click the download button at the top of the page. This should start downloading a zip of the file.
