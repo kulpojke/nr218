@@ -1,9 +1,101 @@
-# Finding, Acquiring, Creating, and Editing GIS Data  
+#  Working with Sentinel 2 Data {style="font-size: 0.7em;"}
 
 [as well as]{style="display: block; text-align: center; font-size: 0.8em;"}  
 
-::: {.r-fit-text style="font-size: 2em;"}
-Introduction to Spectral Indices
+::: {style="font-size: 1.4em; text-align: center;"}
+More Spectral Indices
+:::
+
+## What is Sentinel 2
+::: {.columns}
+::: {.column style="font-size: 0.5em;"}
+Sentinel 2 is a mission run by the Copernicus Programme (the EU Space Program's Earth observation component)
+
++ Multispectral imagery
++ Multiple Satellites 180 $\deg$ out of phase with one another
++ 5 day revisit (at equator)
++ Wide swath width (290 km)
+
+
+:::
+::: {.column }
+![](img/Sentinel2_in_space.jpg)
+
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: Copernicus
+:::
+
+:::
+:::
+<!-- end columns -->
+
+## Sentinel 2 Bands
+
+
+::: {style="font-size:0.4em"}
+| Band | Name | Central wavelength (nm) | Resolution |
+|---|---|---:|---|
+| B1 | Coastal aerosol | 443 | 60 m |
+| B2 | Blue | 490 | 10 m |
+| B3 | Green | 560 | 10 m |
+| B4 | Red | 665 | 10 m |
+| B5 | Red Edge 1 | 705 | 20 m |
+| B6 | Red Edge 2 | 740 | 20 m |
+| B7 | Red Edge 3 | 783 | 20 m |
+| B8 | NIR | 842 | 10 m |
+| B8A | Narrow NIR | 865 | 20 m |
+| B9 | Water vapor | 945 | 60 m |
+| B10 | SWIR-Cirrus | 1375 | 60 m |
+| B11 | SWIR 1 | 1610 | 20 m |
+| B12 | SWIR 2 | 2190 | 20 m |
+:::
+
+## Oil Spill detection
+
+$OSI = \frac{1}{3} \times \frac{Green + Red}{Blue}$ 
+
+Another common combination
+
+$B3 + B8 + B11$ or $Green + NIR + SWIR1$
+
+![](img/oil_spill_index.png)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [Sentinel Hub](https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/oil-spill-index/
+)
+:::
+
+## Similarity to Landsat
+
+::: {style="font-size:0.4em"}
+| Satellite | Spatial resolution | Number of bands | Revisit time |
+|---|---|---:|---|
+| Sentinel-2 (A/B) | 10 m, 20 m, 60 m (band-dependent) | 13 | 5 days (with both satellites) |
+| Landsat (8/9 OLI/TIRS) | 30 m multispectral, 15 m panchromatic, 100 m thermal (resampled to 30 m) | 11 | 8 days (with Landsat 8 + 9; 16 days each alone) |
+:::
+
+![](img/sentinelVlandsat.png)
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [Copernicus](https://landsat.gsfc.nasa.gov/wp-content/uploads/2015/06/Landsat.v.Sentinel-2.png
+)
+:::
+ 
+## What are those Landsat thermal Bands Used For? {style="font-size:0.5em"}
+
+::: {style="font-size:0.6em"}
+| Use case | What thermal bands provide | Example outputs |
+|---|---|---|
+| Land surface temperature (LST) mapping | Surface radiant temperature | LST maps (deg C), heat patterns |
+| Urban heat island analysis | Spatial temperature contrasts across built vs vegetated areas | Hotspot maps, neighborhood heat exposure |
+| Wildfire and burn analysis | High-temperature anomalies and post-fire thermal response | Active fire/hotspot detection support, burn severity context |
+| Evapotranspiration (ET) estimation | Temperature input for surface energy balance (e.g., SEBAL/METRIC/SSEBop) | ET (mm/day), crop water use |
+| Agricultural water stress | Canopy/soil temperature elevation under water stress | Stress maps, irrigation prioritization |
+| Drought monitoring | Persistent surface warming and reduced evaporative cooling | Drought severity indicators |
+| Water temperature studies | Thermal state of lakes/reservoirs/coastal zones | Surface water temperature maps |
+| Geothermal/volcanic monitoring | Persistent anomalous heating | Thermal anomaly detection |
+| Energy balance / climate studies | Sensible vs latent heat partitioning signals | Flux estimates, land-atmosphere diagnostics |
 :::
 
 ## Finding GIS Data {.smaller}
@@ -54,7 +146,7 @@ Look at the [Garnet Fire ](https://www.fire.ca.gov/incidents/2025/8/24/garnet-fi
 ::: {.r-stack}
 
 ::: {.fragment  .absolute .fade-out data-fragment-index="1"}
-+ In Copernicus Browser (in visualize mode), paste the lat, lon into the search, hit enter
++ In Copernicus Browser (in visualize mode), paste the lat, lon  into the search, hit enter
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
@@ -92,7 +184,7 @@ Look at the [Garnet Fire ](https://www.fire.ca.gov/incidents/2025/8/24/garnet-fi
 $$
 \begin{align}
 NBR &= \frac{NIR - SWIR2}{NIR + SWIR2} \\
-    &= \frac{B8 - B12}{B8 + B12}  \mathrm{For Sentinel 2}
+    &= \frac{B8 - B12}{B8 + B12}  \; \mathrm{(For Sentinel 2)}
 \end{align}
 $$
 
@@ -368,7 +460,6 @@ We can do the same operation we just did through the plugin:
 :::
 
 ![](img/gee_plugin_example.png){width=80%}
-
 
 
 

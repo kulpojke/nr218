@@ -192,11 +192,240 @@
 
 
 <section>
-<section id="finding-acquiring-creating-and-editing-gis-data" class="title-slide slide level1 center">
-<h1>Finding, Acquiring, Creating, and Editing GIS Data</h1>
+<section id="working-with-sentinel-2-data" class="title-slide slide level1 center" style="font-size: 0.7em;">
+<h1>Working with Sentinel 2 Data</h1>
 <p><span style="display: block; text-align: center; font-size: 0.8em;">as well as</span></p>
-<div class="r-fit-text" style="font-size: 2em;">
-<p>Introduction to Spectral Indices</p>
+<div style="font-size: 1.4em; text-align: center;">
+<p>More Spectral Indices</p>
+</div>
+</section>
+<section id="what-is-sentinel-2" class="slide level2 center">
+<h2>What is Sentinel 2</h2>
+<div class="columns">
+<div class="column" style="font-size: 0.5em;">
+<p>Sentinel 2 is a mission run by the Copernicus Programme (the EU Space Program’s Earth observation component)</p>
+<ul>
+<li>Multispectral imagery</li>
+<li>Multiple Satellites 180 <span class="math inline">\(\deg\)</span> out of phase with one another</li>
+<li>5 day revisit (at equator)</li>
+<li>Wide swath width (290 km)</li>
+</ul>
+</div><div class="column">
+<p><img data-src="img/Sentinel2_in_space.jpg"></p>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: Copernicus</p>
+</div>
+</div></div>
+<!-- end columns -->
+</section>
+<section id="sentinel-2-bands" class="slide level2 center">
+<h2>Sentinel 2 Bands</h2>
+<div style="font-size:0.4em">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Band</th>
+<th>Name</th>
+<th style="text-align: right;">Central wavelength (nm)</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B1</td>
+<td>Coastal aerosol</td>
+<td style="text-align: right;">443</td>
+<td>60 m</td>
+</tr>
+<tr class="even">
+<td>B2</td>
+<td>Blue</td>
+<td style="text-align: right;">490</td>
+<td>10 m</td>
+</tr>
+<tr class="odd">
+<td>B3</td>
+<td>Green</td>
+<td style="text-align: right;">560</td>
+<td>10 m</td>
+</tr>
+<tr class="even">
+<td>B4</td>
+<td>Red</td>
+<td style="text-align: right;">665</td>
+<td>10 m</td>
+</tr>
+<tr class="odd">
+<td>B5</td>
+<td>Red Edge 1</td>
+<td style="text-align: right;">705</td>
+<td>20 m</td>
+</tr>
+<tr class="even">
+<td>B6</td>
+<td>Red Edge 2</td>
+<td style="text-align: right;">740</td>
+<td>20 m</td>
+</tr>
+<tr class="odd">
+<td>B7</td>
+<td>Red Edge 3</td>
+<td style="text-align: right;">783</td>
+<td>20 m</td>
+</tr>
+<tr class="even">
+<td>B8</td>
+<td>NIR</td>
+<td style="text-align: right;">842</td>
+<td>10 m</td>
+</tr>
+<tr class="odd">
+<td>B8A</td>
+<td>Narrow NIR</td>
+<td style="text-align: right;">865</td>
+<td>20 m</td>
+</tr>
+<tr class="even">
+<td>B9</td>
+<td>Water vapor</td>
+<td style="text-align: right;">945</td>
+<td>60 m</td>
+</tr>
+<tr class="odd">
+<td>B10</td>
+<td>SWIR-Cirrus</td>
+<td style="text-align: right;">1375</td>
+<td>60 m</td>
+</tr>
+<tr class="even">
+<td>B11</td>
+<td>SWIR 1</td>
+<td style="text-align: right;">1610</td>
+<td>20 m</td>
+</tr>
+<tr class="odd">
+<td>B12</td>
+<td>SWIR 2</td>
+<td style="text-align: right;">2190</td>
+<td>20 m</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="oil-spill-detection" class="slide level2 center">
+<h2>Oil Spill detection</h2>
+<p><span class="math inline">\(OSI = \frac{1}{3} \times \frac{Green + Red}{Blue}\)</span></p>
+<p>Another common combination</p>
+<p><span class="math inline">\(B3 + B8 + B11\)</span> or <span class="math inline">\(Green + NIR + SWIR1\)</span></p>
+
+<img data-src="img/oil_spill_index.png" class="r-stretch"><div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/oil-spill-index/">Sentinel Hub</a></p>
+</div>
+</section>
+<section id="similarity-to-landsat" class="slide level2 center">
+<h2>Similarity to Landsat</h2>
+<div style="font-size:0.4em">
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Satellite</th>
+<th>Spatial resolution</th>
+<th style="text-align: right;">Number of bands</th>
+<th>Revisit time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sentinel-2 (A/B)</td>
+<td>10 m, 20 m, 60 m (band-dependent)</td>
+<td style="text-align: right;">13</td>
+<td>5 days (with both satellites)</td>
+</tr>
+<tr class="even">
+<td>Landsat (8/9 OLI/TIRS)</td>
+<td>30 m multispectral, 15 m panchromatic, 100 m thermal (resampled to 30 m)</td>
+<td style="text-align: right;">11</td>
+<td>8 days (with Landsat 8 + 9; 16 days each alone)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<img data-src="img/sentinelVlandsat.png" class="r-stretch"><div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="https://landsat.gsfc.nasa.gov/wp-content/uploads/2015/06/Landsat.v.Sentinel-2.png">Copernicus</a></p>
+</div>
+</section>
+<section id="what-are-those-landsat-thermal-bands-used-for" class="slide level2 center" style="font-size:0.5em">
+<h2>What are those Landsat thermal Bands Used For?</h2>
+<div style="font-size:0.6em">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use case</th>
+<th>What thermal bands provide</th>
+<th>Example outputs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Land surface temperature (LST) mapping</td>
+<td>Surface radiant temperature</td>
+<td>LST maps (deg C), heat patterns</td>
+</tr>
+<tr class="even">
+<td>Urban heat island analysis</td>
+<td>Spatial temperature contrasts across built vs vegetated areas</td>
+<td>Hotspot maps, neighborhood heat exposure</td>
+</tr>
+<tr class="odd">
+<td>Wildfire and burn analysis</td>
+<td>High-temperature anomalies and post-fire thermal response</td>
+<td>Active fire/hotspot detection support, burn severity context</td>
+</tr>
+<tr class="even">
+<td>Evapotranspiration (ET) estimation</td>
+<td>Temperature input for surface energy balance (e.g., SEBAL/METRIC/SSEBop)</td>
+<td>ET (mm/day), crop water use</td>
+</tr>
+<tr class="odd">
+<td>Agricultural water stress</td>
+<td>Canopy/soil temperature elevation under water stress</td>
+<td>Stress maps, irrigation prioritization</td>
+</tr>
+<tr class="even">
+<td>Drought monitoring</td>
+<td>Persistent surface warming and reduced evaporative cooling</td>
+<td>Drought severity indicators</td>
+</tr>
+<tr class="odd">
+<td>Water temperature studies</td>
+<td>Thermal state of lakes/reservoirs/coastal zones</td>
+<td>Surface water temperature maps</td>
+</tr>
+<tr class="even">
+<td>Geothermal/volcanic monitoring</td>
+<td>Persistent anomalous heating</td>
+<td>Thermal anomaly detection</td>
+</tr>
+<tr class="odd">
+<td>Energy balance / climate studies</td>
+<td>Sensible vs latent heat partitioning signals</td>
+<td>Flux estimates, land-atmosphere diagnostics</td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
 <section id="finding-gis-data" class="slide level2 smaller center">
@@ -288,7 +517,7 @@
 <li>Normalized Burn Ratio (NBR) is the most obvious choice here. <span class="math display">\[
 \begin{align}
 NBR &amp;= \frac{NIR - SWIR2}{NIR + SWIR2} \\
-  &amp;= \frac{B8 - B12}{B8 + B12}  \mathrm{For Sentinel 2}
+  &amp;= \frac{B8 - B12}{B8 + B12}  \; \mathrm{(For Sentinel 2)}
 \end{align}
 \]</span></li>
 </ul>
