@@ -6,22 +6,55 @@
 + __Georeferencing__ is the process by which we ascribe real-world locations to non-GIS data. 
 + __Ground Control Points__ or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates.
 
+
 ## Example: Swanton Ranch Treasure Map {style="font-size:0.7em"}
 
-::: {.r-stack}
-::: {.fragment  .fade-out data-fragment-index="1"}
 [Download the Swanton Ranch [treasure_map.tif](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAFCm6au_XOS6iSzhaagpzRAZj2F4_xdMvI9amljbzp3Ww?e=4IIlp9). Put it someplace sensible.]{style="font-size:0.6em"}
 
 ![](img/treasure_map.png)
 
+
+## What Is A TIF
+
+::: {.incremental}
+- A `tif` is a container format
+- It stores image pixels plus tags (metadata)
+- Compression of the image inside the container can be: none, lossless (LZW, Deflate, etc...), or JPEG
+- __A GeoTIFF is a TIFF with georeferencing tags__
+- A regular TIFF lacks georeferencing tags 
 :::
-::: {.fragment  .fade-in-then-out data-fragment-index="1"}
 
 
-10 minutes to see if anyone can find the treasure!
+## Normal TIFs, No Georeferencing
+
+This is just a regular tif, but we want to use it in a GIS program
+
+![](img/treasure_map.png)
+
+## Georeferencing In A TIF {style="font-size:0.7em"}
+
+::: {.r-stack}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+
+- Pixel grid: rows/columns only (`x`,`y`)
+- No real-world location yet
+
+:::
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+
+- GeoTIFF adds tags that map pixel space to map space
+- Key tags: CRS + affine transform
+
+:::
+::: {.fragment .absolute .fade-in data-fragment-index="2"}
+
+`(col,row)` + GeoTIFF tags -> `(lon,lat)` or `(easting,northing)`
+
+So georeferencing is stored in metadata, not drawn into pixels.
 
 :::
 :::
+
 
 ## Tutorial: Geoferencing the Treasure Map {style="font-size:0.7em"}
 
@@ -111,20 +144,27 @@ Click `Run`
 :::
 ::::
 :::
+
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="6"}
 
 Inspect the result - turn on transparency
 
-How to be more accurate?
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="7"}
+:::
+:::
+
+## Assignment {style="font-size:0.7em"}
 
 + Try again
 + Experiment with different transformations / resampling techniques
 + Add more GCPs
 
-:::
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="7"}
+__Answer the following questions:__
 
-![](img/georeference_final.png)
+1. As you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference.
+Based on this how many GCPs do you think is enough.
+2. Were you able to notice any difference using different transformations and resampling techniques?  Which do you think worked best?
+3. Include an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs) 
 
-:::
-:::

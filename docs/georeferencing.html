@@ -141,13 +141,44 @@
 </section>
 <section id="example-swanton-ranch-treasure-map" class="slide level2 center" style="font-size:0.7em">
 <h2>Example: Swanton Ranch Treasure Map</h2>
-<div class="r-stack">
-<div class="fragment fade-out" data-fragment-index="1">
 <p><span style="font-size:0.6em">Download the Swanton Ranch <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAFCm6au_XOS6iSzhaagpzRAZj2F4_xdMvI9amljbzp3Ww?e=4IIlp9">treasure_map.tif</a>. Put it someplace sensible.</span></p>
-<p><img data-src="img/treasure_map.png"></p>
+
+<img data-src="img/treasure_map.png" class="r-stretch"></section>
+<section id="what-is-a-tif" class="slide level2 center">
+<h2>What Is A TIF</h2>
+<div>
+<ul>
+<li class="fragment">A <code>tif</code> is a container format</li>
+<li class="fragment">It stores image pixels plus tags (metadata)</li>
+<li class="fragment">Compression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG</li>
+<li class="fragment"><strong>A GeoTIFF is a TIFF with georeferencing tags</strong></li>
+<li class="fragment">A regular TIFF lacks georeferencing tags</li>
+</ul>
 </div>
-<div class="fragment fade-in-then-out" data-fragment-index="1">
-<p>10 minutes to see if anyone can find the treasure!</p>
+</section>
+<section id="normal-tifs-no-georeferencing" class="slide level2 center">
+<h2>Normal TIFs, No Georeferencing</h2>
+<p>This is just a regular tif, but we want to use it in a GIS program</p>
+
+<img data-src="img/treasure_map.png" class="r-stretch"></section>
+<section id="georeferencing-in-a-tif" class="slide level2 center" style="font-size:0.7em">
+<h2>Georeferencing In A TIF</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<ul>
+<li>Pixel grid: rows/columns only (<code>x</code>,<code>y</code>)</li>
+<li>No real-world location yet</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<ul>
+<li>GeoTIFF adds tags that map pixel space to map space</li>
+<li>Key tags: CRS + affine transform</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in" data-fragment-index="2" style="">
+<p><code>(col,row)</code> + GeoTIFF tags -&gt; <code>(lon,lat)</code> or <code>(easting,northing)</code></p>
+<p>So georeferencing is stored in metadata, not drawn into pixels.</p>
 </div>
 </div>
 </section>
@@ -219,17 +250,25 @@
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="6" style="">
 <p>Inspect the result - turn on transparency</p>
-<p>How to be more accurate?</p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="7" style="">
+
+</div>
+</div>
+</section>
+<section id="assignment" class="slide level2 center" style="font-size:0.7em">
+<h2>Assignment</h2>
 <ul>
 <li>Try again</li>
 <li>Experiment with different transformations / resampling techniques</li>
 <li>Add more GCPs</li>
 </ul>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="7" style="">
-<p><img data-src="img/georeference_final.png"></p>
-</div>
-</div>
+<p><strong>Answer the following questions:</strong></p>
+<ol type="1">
+<li>As you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.</li>
+<li>Were you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?</li>
+<li>Include an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)</li>
+</ol>
 
 
 </section></section>

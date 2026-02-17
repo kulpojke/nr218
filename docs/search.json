@@ -1306,14 +1306,42 @@
     "href": "index.html#example-swanton-ranch-treasure-map",
     "title": "NR 218",
     "section": "Example: Swanton Ranch Treasure Map",
-    "text": "Example: Swanton Ranch Treasure Map\n\n\nDownload the Swanton Ranch treasure_map.tif. Put it someplace sensible.\n\n\n\n10 minutes to see if anyone can find the treasure!"
+    "text": "Example: Swanton Ranch Treasure Map\nDownload the Swanton Ranch treasure_map.tif. Put it someplace sensible."
+  },
+  {
+    "objectID": "index.html#what-is-a-tif",
+    "href": "index.html#what-is-a-tif",
+    "title": "NR 218",
+    "section": "What Is A TIF",
+    "text": "What Is A TIF\n\n\nA tif is a container format\nIt stores image pixels plus tags (metadata)\nCompression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG\nA GeoTIFF is a TIFF with georeferencing tags\nA regular TIFF lacks georeferencing tags"
+  },
+  {
+    "objectID": "index.html#normal-tifs-no-georeferencing",
+    "href": "index.html#normal-tifs-no-georeferencing",
+    "title": "NR 218",
+    "section": "Normal TIFs, No Georeferencing",
+    "text": "Normal TIFs, No Georeferencing\nThis is just a regular tif, but we want to use it in a GIS program"
+  },
+  {
+    "objectID": "index.html#georeferencing-in-a-tif",
+    "href": "index.html#georeferencing-in-a-tif",
+    "title": "NR 218",
+    "section": "Georeferencing In A TIF",
+    "text": "Georeferencing In A TIF\n\n\n\nPixel grid: rows/columns only (x,y)\nNo real-world location yet\n\n\n\n\nGeoTIFF adds tags that map pixel space to map space\nKey tags: CRS + affine transform\n\n\n\n(col,row) + GeoTIFF tags -&gt; (lon,lat) or (easting,northing)\nSo georeferencing is stored in metadata, not drawn into pixels."
   },
   {
     "objectID": "index.html#tutorial-geoferencing-the-treasure-map",
     "href": "index.html#tutorial-geoferencing-the-treasure-map",
     "title": "NR 218",
     "section": "Tutorial: Geoferencing the Treasure Map",
-    "text": "Tutorial: Geoferencing the Treasure Map\n\n\n\nOpen QGIS\nOpen Georeferncer (Layer &gt; Georeferencer)\nOpen the raster (this button )\nSelect treasure_map.tif \n\n\n\n\n\n\n\n\n\nOpen Transformation Settings\nSelect Polynomial 1 for Transformation Type\nSet output file\nClick ok\n\n\n \n\n\n\nCan anyone find where (in Swanton) our treasure map might correspond to?\nWhat geographic features are helpful for identifying?\n\n\n\n\n\n\nOnce you find the place:\n\nAdd GCPs\nClick a point on the image\nThe Enter Map Coordinates box should pop up\nSelect the From Map Canvas button\nClick point\nClick ok\nRepeat 4x\n\n\n\n\n \n\n\n\n\n\n\nGeoreferencer dialogue should look like this:\n\n\n\n\nClick Run\n\n\n\n\n\nInspect the result - turn on transparency\nHow to be more accurate?\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs"
+    "text": "Tutorial: Geoferencing the Treasure Map\n\n\n\nOpen QGIS\nOpen Georeferncer (Layer &gt; Georeferencer)\nOpen the raster (this button )\nSelect treasure_map.tif \n\n\n\n\n\n\n\n\n\nOpen Transformation Settings\nSelect Polynomial 1 for Transformation Type\nSet output file\nClick ok\n\n\n \n\n\n\nCan anyone find where (in Swanton) our treasure map might correspond to?\nWhat geographic features are helpful for identifying?\n\n\n\n\n\n\nOnce you find the place:\n\nAdd GCPs\nClick a point on the image\nThe Enter Map Coordinates box should pop up\nSelect the From Map Canvas button\nClick point\nClick ok\nRepeat 4x\n\n\n\n\n \n\n\n\n\n\n\nGeoreferencer dialogue should look like this:\n\n\n\n\nClick Run\n\n\n\n\n\nInspect the result - turn on transparency"
+  },
+  {
+    "objectID": "index.html#assignment",
+    "href": "index.html#assignment",
+    "title": "NR 218",
+    "section": "Assignment",
+    "text": "Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
   },
   {
     "objectID": "focal_filters.html#what-are-focal-filters",
@@ -3126,14 +3154,42 @@
     "href": "georeferencing.html#example-swanton-ranch-treasure-map",
     "title": "",
     "section": "Example: Swanton Ranch Treasure Map",
-    "text": "Example: Swanton Ranch Treasure Map\n\n\nDownload the Swanton Ranch treasure_map.tif. Put it someplace sensible.\n\n\n\n10 minutes to see if anyone can find the treasure!"
+    "text": "Example: Swanton Ranch Treasure Map\nDownload the Swanton Ranch treasure_map.tif. Put it someplace sensible."
+  },
+  {
+    "objectID": "georeferencing.html#what-is-a-tif",
+    "href": "georeferencing.html#what-is-a-tif",
+    "title": "",
+    "section": "What Is A TIF",
+    "text": "What Is A TIF\n\n\nA tif is a container format\nIt stores image pixels plus tags (metadata)\nCompression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG\nA GeoTIFF is a TIFF with georeferencing tags\nA regular TIFF lacks georeferencing tags"
+  },
+  {
+    "objectID": "georeferencing.html#normal-tifs-no-georeferencing",
+    "href": "georeferencing.html#normal-tifs-no-georeferencing",
+    "title": "",
+    "section": "Normal TIFs, No Georeferencing",
+    "text": "Normal TIFs, No Georeferencing\nThis is just a regular tif, but we want to use it in a GIS program"
+  },
+  {
+    "objectID": "georeferencing.html#georeferencing-in-a-tif",
+    "href": "georeferencing.html#georeferencing-in-a-tif",
+    "title": "",
+    "section": "Georeferencing In A TIF",
+    "text": "Georeferencing In A TIF\n\n\n\nPixel grid: rows/columns only (x,y)\nNo real-world location yet\n\n\n\n\nGeoTIFF adds tags that map pixel space to map space\nKey tags: CRS + affine transform\n\n\n\n(col,row) + GeoTIFF tags -&gt; (lon,lat) or (easting,northing)\nSo georeferencing is stored in metadata, not drawn into pixels."
   },
   {
     "objectID": "georeferencing.html#tutorial-geoferencing-the-treasure-map",
     "href": "georeferencing.html#tutorial-geoferencing-the-treasure-map",
     "title": "",
     "section": "Tutorial: Geoferencing the Treasure Map",
-    "text": "Tutorial: Geoferencing the Treasure Map\n\n\n\nOpen QGIS\nOpen Georeferncer (Layer &gt; Georeferencer)\nOpen the raster (this button )\nSelect treasure_map.tif \n\n\n\n\n\n\n\n\n\nOpen Transformation Settings\nSelect Polynomial 1 for Transformation Type\nSet output file\nClick ok\n\n\n \n\n\n\nCan anyone find where (in Swanton) our treasure map might correspond to?\nWhat geographic features are helpful for identifying?\n\n\n\n\n\n\nOnce you find the place:\n\nAdd GCPs\nClick a point on the image\nThe Enter Map Coordinates box should pop up\nSelect the From Map Canvas button\nClick point\nClick ok\nRepeat 4x\n\n\n\n\n \n\n\n\n\n\n\nGeoreferencer dialogue should look like this:\n\n\n\n\nClick Run\n\n\n\n\n\nInspect the result - turn on transparency\nHow to be more accurate?\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs"
+    "text": "Tutorial: Geoferencing the Treasure Map\n\n\n\nOpen QGIS\nOpen Georeferncer (Layer &gt; Georeferencer)\nOpen the raster (this button )\nSelect treasure_map.tif \n\n\n\n\n\n\n\n\n\nOpen Transformation Settings\nSelect Polynomial 1 for Transformation Type\nSet output file\nClick ok\n\n\n \n\n\n\nCan anyone find where (in Swanton) our treasure map might correspond to?\nWhat geographic features are helpful for identifying?\n\n\n\n\n\n\nOnce you find the place:\n\nAdd GCPs\nClick a point on the image\nThe Enter Map Coordinates box should pop up\nSelect the From Map Canvas button\nClick point\nClick ok\nRepeat 4x\n\n\n\n\n \n\n\n\n\n\n\nGeoreferencer dialogue should look like this:\n\n\n\n\nClick Run\n\n\n\n\n\nInspect the result - turn on transparency"
+  },
+  {
+    "objectID": "georeferencing.html#assignment",
+    "href": "georeferencing.html#assignment",
+    "title": "",
+    "section": "Assignment",
+    "text": "Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
   },
   {
     "objectID": "intro_excel_arc.html#microsoft-excel-intro-to-arc-pro",
