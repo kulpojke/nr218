@@ -1299,7 +1299,7 @@
     "href": "index.html#what-is-georeferencing",
     "title": "NR 218",
     "section": "What is Georeferencing?",
-    "text": "What is Georeferencing?\n\nGeoreferencing is the process by which real-world locations ascribed to data.\nGround Control Points or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates."
+    "text": "What is Georeferencing?\n\nGeoreferencing is the process by which real-world locations ascribed to data.\nGround Control Points or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates.\nA Tranform then applies translation , rotation, etc… to warp the image to fit."
   },
   {
     "objectID": "index.html#example-swanton-ranch-treasure-map",
@@ -3147,7 +3147,7 @@
     "href": "georeferencing.html#what-is-georeferencing",
     "title": "",
     "section": "What is Georeferencing?",
-    "text": "What is Georeferencing?\n\nGeoreferencing is the process by which real-world locations ascribed to data.\nGround Control Points or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates."
+    "text": "What is Georeferencing?\n\nGeoreferencing is the process by which real-world locations ascribed to data.\nGround Control Points or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates.\nA Tranform then applies translation , rotation, etc… to warp the image to fit."
   },
   {
     "objectID": "georeferencing.html#example-swanton-ranch-treasure-map",

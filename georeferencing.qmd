@@ -4,6 +4,7 @@
 
 + __Georeferencing__ is the process by which real-world locations ascribed to data. 
 + __Ground Control Points__ or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates.
++ A __Tranform__ then applies translation , rotation, etc... to warp the image to fit.
 
 
 ## Example: Swanton Ranch Treasure Map {style="font-size:0.7em"}
