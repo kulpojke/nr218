@@ -2,8 +2,7 @@
 
 ## What is Georeferencing?
 
-+ Let’s say you took an aerial photo, or have an old map with no coordinate information and want to work with that in QGIS.
-+ __Georeferencing__ is the process by which we ascribe real-world locations to non-GIS data. 
++ __Georeferencing__ is the process by which real-world locations ascribed to data. 
 + __Ground Control Points__ or GCPs are how we tell the computer which points on the non-georeferenced image correspond to real-world coordinates.
 
 
@@ -155,7 +154,7 @@ Inspect the result - turn on transparency
 :::
 :::
 
-## Lab 15  {style="font-size:0.7em"}
+## Lab 15 {style="font-size:0.7em"}
 __Georeferencing Assignment__  
 
 + Try again
