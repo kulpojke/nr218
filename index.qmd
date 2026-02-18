@@ -64,9 +64,9 @@ __Lab Assignments__
 ::: {.column}  
 __Projects__    
 [Project 1](project_1.html){style="font-size:0.8em"}  
-[Project 2](project_2.html){style="font-size:0.8em"}
-[Project 3](project_3.html){style="font-size:0.8em"}
-[Project 4](project_4.html){style="font-size:0.8em"}
+[Project 2](project_2.html){style="font-size:0.8em"}  
+[Project 3](project_3.html){style="font-size:0.8em"}  
+[Project 4](project_4.html){style="font-size:0.8em"}  
 
 :::
 :::
