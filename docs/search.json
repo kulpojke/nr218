@@ -1341,7 +1341,7 @@
     "href": "index.html#lab-15",
     "title": "NR 218",
     "section": "Lab 15",
-    "text": "Lab 15\nGeoreferencing Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
+    "text": "Lab 15\nGeoreferencing Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nIn the Georeferencing tool, when you run the transform, there is a column called Residual. What is this, how might it be useful.\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
   },
   {
     "objectID": "focal_filters.html#what-are-focal-filters",
@@ -3189,7 +3189,7 @@
     "href": "georeferencing.html#lab-15",
     "title": "",
     "section": "Lab 15",
-    "text": "Lab 15\nGeoreferencing Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
+    "text": "Lab 15\nGeoreferencing Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nIn the Georeferencing tool, when you run the transform, there is a column called Residual. What is this, how might it be useful.\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
   },
   {
     "objectID": "intro_excel_arc.html#microsoft-excel-intro-to-arc-pro",

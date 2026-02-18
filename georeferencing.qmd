@@ -155,7 +155,7 @@ Inspect the result - turn on transparency
 :::
 :::
 
-## Lab 15 {style="font-size:0.7em"}
+## Lab 15 {style="font-size:0.6em"}
 __Georeferencing Assignment__  
 
 + Try again
@@ -167,5 +167,6 @@ __Answer the following questions:__
 1. As you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference.
 Based on this how many GCPs do you think is enough.
 2. Were you able to notice any difference using different transformations and resampling techniques?  Which do you think worked best?
-3. Include an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs) 
+3. In the Georeferencing tool, when you run the transform, there is a column called _Residual_. What is this, how might it be useful.
+4. Include an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs) 
 
