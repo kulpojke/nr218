@@ -46,19 +46,31 @@ navigation-mode: vertical
 # NR 218
 
 ::: {.smaller}
-Use arrows or menu in bottom left corner to navigate amongst slides.
+[Use arrows or menu in bottom left corner to navigate amongst slides.]{style="font-size:0.6em"}
 
-[Syllabus](syllabus.html)
+__Assorted Links__  
+[Syllabus](syllabus.html){style="font-size:0.8em"}  
+[Short Reading on Computers](computers.html){style="font-size:0.8em"}  
+  
+::: {.columns}  
+::: {.column}  
+__Lab Assignments__    
+[Lab 1](computers_lab.qmd){style="font-size:0.8em"}  
+[Lab 8](lab_8.qmd){style="font-size:0.8em"}  
+[Lab 10](lab_10.qmd){style="font-size:0.8em"}  
+[Lab 11](lab_11.qmd){style="font-size:0.8em"}  
+[Lab 15](georeferencing.qmd#/1/7){style="font-size:0.8em"}  
+:::  
+::: {.column}  
+__Projects__    
+[Project 1](project_1.html){style="font-size:0.8em"}  
 
-[Computers](computers.html)
 
-[Lab 1](computers_lab.qmd)
+:::
+:::
+<!-- end columns -->
 
-[Lab 8](lab_8.qmd)
 
-[Lab 10](lab_10.qmd)
-
-[Project 1](project_1.html)
 
 :::
 
@@ -97,7 +109,6 @@ Use arrows or menu in bottom left corner to navigate amongst slides.
 {{< include focal_filters.qmd >}}
 
 {{< include georeferencing.qmd >}}
-
 
 
 

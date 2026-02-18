@@ -155,7 +155,8 @@ Inspect the result - turn on transparency
 :::
 :::
 
-## Assignment {style="font-size:0.7em"}
+## Lab 15  {style="font-size:0.7em"}
+__Georeferencing Assignment__  
 
 + Try again
 + Experiment with different transformations / resampling techniques

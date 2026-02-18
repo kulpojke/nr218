@@ -1337,11 +1337,11 @@
     "text": "Tutorial: Geoferencing the Treasure Map\n\n\n\nOpen QGIS\nOpen Georeferncer (Layer &gt; Georeferencer)\nOpen the raster (this button )\nSelect treasure_map.tif \n\n\n\n\n\n\n\n\n\nOpen Transformation Settings\nSelect Polynomial 1 for Transformation Type\nSet output file\nClick ok\n\n\n \n\n\n\nCan anyone find where (in Swanton) our treasure map might correspond to?\nWhat geographic features are helpful for identifying?\n\n\n\n\n\n\nOnce you find the place:\n\nAdd GCPs\nClick a point on the image\nThe Enter Map Coordinates box should pop up\nSelect the From Map Canvas button\nClick point\nClick ok\nRepeat 4x\n\n\n\n\n \n\n\n\n\n\n\nGeoreferencer dialogue should look like this:\n\n\n\n\nClick Run\n\n\n\n\n\nInspect the result - turn on transparency"
   },
   {
-    "objectID": "index.html#assignment",
-    "href": "index.html#assignment",
+    "objectID": "index.html#lab-15",
+    "href": "index.html#lab-15",
     "title": "NR 218",
-    "section": "Assignment",
-    "text": "Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
+    "section": "Lab 15",
+    "text": "Lab 15\nGeoreferencing Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
   },
   {
     "objectID": "focal_filters.html#what-are-focal-filters",
@@ -3185,11 +3185,11 @@
     "text": "Tutorial: Geoferencing the Treasure Map\n\n\n\nOpen QGIS\nOpen Georeferncer (Layer &gt; Georeferencer)\nOpen the raster (this button )\nSelect treasure_map.tif \n\n\n\n\n\n\n\n\n\nOpen Transformation Settings\nSelect Polynomial 1 for Transformation Type\nSet output file\nClick ok\n\n\n \n\n\n\nCan anyone find where (in Swanton) our treasure map might correspond to?\nWhat geographic features are helpful for identifying?\n\n\n\n\n\n\nOnce you find the place:\n\nAdd GCPs\nClick a point on the image\nThe Enter Map Coordinates box should pop up\nSelect the From Map Canvas button\nClick point\nClick ok\nRepeat 4x\n\n\n\n\n \n\n\n\n\n\n\nGeoreferencer dialogue should look like this:\n\n\n\n\nClick Run\n\n\n\n\n\nInspect the result - turn on transparency"
   },
   {
-    "objectID": "georeferencing.html#assignment",
-    "href": "georeferencing.html#assignment",
+    "objectID": "georeferencing.html#lab-15",
+    "href": "georeferencing.html#lab-15",
     "title": "",
-    "section": "Assignment",
-    "text": "Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
+    "section": "Lab 15",
+    "text": "Lab 15\nGeoreferencing Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
   },
   {
     "objectID": "intro_excel_arc.html#microsoft-excel-intro-to-arc-pro",
