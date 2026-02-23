@@ -28,6 +28,8 @@ format:
 
 For the next questions, you will need to download the SPR [Elevation Data](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQB7BHJ9vN2fTpTTyvOoVDECAU_UOu2CokgVWf97_yLOwDw?e=4erD3j) use it with existing [SPR Vector Data](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/SPR_data.zip) in order to answer the following questions: 
 
+> NOTE: pixel values, i.e. elevation, in the SPR DEM are given in feet.
+
 1. Report the minimum, maximum, mean, and median elevation within the boundary of Swanton Ranch, as defined in sprBoundary.geojson? 
 
 2. What are the exact elevations of the highest and lowest Flumes in Swanton Ranch, as described in sprFlumes.geojson? 
