@@ -104,6 +104,8 @@ __Projects__
 
 {{< include remote_sensing.qmd >}}
 
+{{< include segmentation.qmd >}}
+
 {{< include statistics_101.qmd >}}
 
 {{< include rasterizing_by_attribute.qmd >}}

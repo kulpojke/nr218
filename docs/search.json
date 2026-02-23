@@ -1127,6 +1127,55 @@
     "text": "Raster Reprojection using GDAL Warp\n\n\n\nDownload dw_2025.tif and dw_20218.tif as well as dw_style.qmlhttps://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EXMEE6bR85VMkOPotG9dk6sBbr2JQx2QNFtsR9-0OAIQfg?e=aa09WA\nIn QGIS open dw_2025.\n\nLook at the CRS\nLook at the resolution.\n\nIn the symbology tab, at the bottom left there is a style dropdown.\n\nselect “Load Style…” use the browser to open the dw_style.qml file from the dynamic_world folder\nApply\n\n\n\n\nReproject dw_2025 using GDAL Warp (Processing Toolbox: GDAL → Raster projection → Warp)\n\nLeave Source CRS blank (In “Input layer” you can see that the CRS is recognized)\nSet Target CRS to EPSG:6339\nUse average resampling\nSet ” Output file resolution in target georeferenced units” to 10\n\nWhat are the target georeferenced units?\n\nLeave the rest as defaults, including “[save to temporary Layer]”\n\nCompare the results to the original. Do you see any problems?\n\n\nWhy is this margin of different land cover appearing?\n\n\n\n\n\n\n\n\nTry again, what resampling method should you use?\n\n\n\n\n\n\n\n\n\n\n\nSave the reprojected layer dw_2025_6339.tif.\nReproject dw_2018 in the same way (save as dw_2018_6339.tif)\n\n\n\n\nUse Raster Tools → Align Rasters to align dw_2018_6339.tif and dem_1m_6339.tif to dw_2025_6339 (use appropriate resample methods).\n\n\n\n\n\nNow use the the Raster Calculator to Find areas that were covered in trees in 2018, but not in 2025."
   },
   {
+    "objectID": "index.html#data-1",
+    "href": "index.html#data-1",
+    "title": "NR 218",
+    "section": "Data",
+    "text": "Data\nIn Lab 11 you have been working with the two Sentinel 2 datasets. You should already have them, but if not they can be downloaded with the links below.\n\nSentinel-2 median composite image, near Susques, Argentina, 2025-04-01 to 2025-10-26\nSentinel-2 max composite image, near Susques, Argentina, 2025-04-01 to 2025-10-26"
+  },
+  {
+    "objectID": "index.html#what-kind-of-information-is-needed-to-segment-this-image",
+    "href": "index.html#what-kind-of-information-is-needed-to-segment-this-image",
+    "title": "NR 218",
+    "section": "What kind of information is needed to segment this image?",
+    "text": "What kind of information is needed to segment this image?\n\n\n\n\nIn Lab 11 you you are asked to segment the image to find lithium brine evaporation ponds near Susques Argentina.\n\n\nIf you have looked at the images over a basemap, or searched for Susques on the internet, you may have learned that it is in the Atacama desert.\n\n\nThe Atacama, being a desert, is quite dry (actually, it is one of the driest places on Earth!).\n\n\nIf you happened to google lithium evaporation pond, you probably know that they are used to evaporate lithium brine in order to extract lithium salts.\n\n\nGiven this information, one would expect these lithium ponds to be wetter than their surroundings.\n\n\n\n\n\n\n\n\n\nSite situated within the Atacama Desert\n\n\n\n\n\n\n\nThe Atacama desert near the site\n\n\n\n\n\n\n\nLithium being collected after evaporation. Image credit: Dan Lundberg\n\n\n\n\n\n\n\nLithium Ponds are wetter than there surroundings. Image credit: Guerretto"
+  },
+  {
+    "objectID": "index.html#theres-an-index-for-that",
+    "href": "index.html#theres-an-index-for-that",
+    "title": "NR 218",
+    "section": "There’s An Index For That!",
+    "text": "There’s An Index For That!\n\n\nNormalized Difference Water Index\n\\(NDWI = \\frac{G -NIR}{G + NIR}\\)\n\nWater \\(\\gtrapprox\\) 0\n\n\n\nModified Normalized Difference Water Index\n\\(MNDWI = \\frac{G -SWIR}{G + SWIR}\\)\n\nOpen water \\(\\gtrapprox\\) 0.1\nWeat soil generally \\(\\gtrapprox\\) -0.1"
+  },
+  {
+    "objectID": "index.html#which-swir",
+    "href": "index.html#which-swir",
+    "title": "NR 218",
+    "section": "Which SWIR?",
+    "text": "Which SWIR?\nSWIR1 and SWIR2 are both absorbed heavily by water.\n\nBoth Bands are short wave infrared (\\(\\lambda \\approx 20 \\text{m}\\))\nSWIR1 (S2 band 10, 1610 nm), useful in for finding open water, determining vegetation moisture, distinguishing snow from clouds\nSWIR2 (S2 band 11, 2190 nm) - Useful for determining soil moisture."
+  },
+  {
+    "objectID": "index.html#todo-here-insert-a-slide-with-4-images-1img1-2img2-3img3-4img4-in-4x4-grid-with-caption-for-entire-grid-describing-images-1ndwi-using-swir1-2-ndwi-using-swir2-3-mndwi-using-swir1-4-mndwi-using-swir2",
+    "href": "index.html#todo-here-insert-a-slide-with-4-images-1img1-2img2-3img3-4img4-in-4x4-grid-with-caption-for-entire-grid-describing-images-1ndwi-using-swir1-2-ndwi-using-swir2-3-mndwi-using-swir1-4-mndwi-using-swir2",
+    "title": "NR 218",
+    "section": "TODO: Here insert a slide with 4 images (1:img/1, 2:img/2, 3:img/3, 4:img/4, ) in 4x4 grid with caption for entire grid describing images (1:NDWI using SWIR1, 2: NDWI using SWIR2 3: MNDWI using SWIR1, 4: MNDWI using SWIR2)",
+    "text": "TODO: Here insert a slide with 4 images (1:img/1, 2:img/2, 3:img/3, 4:img/4, ) in 4x4 grid with caption for entire grid describing images (1:NDWI using SWIR1, 2: NDWI using SWIR2 3: MNDWI using SWIR1, 4: MNDWI using SWIR2)"
+  },
+  {
+    "objectID": "index.html#segmentation-using-raster-calculator",
+    "href": "index.html#segmentation-using-raster-calculator",
+    "title": "NR 218",
+    "section": "Segmentation using Raster Calculator",
+    "text": "Segmentation using Raster Calculator\n\n\n\n\nIn simple cases one can use the raster calculator.\n\n\n\nCalculate you index.\n\n\n\n\nCalculate you index.\nUse Raster calculator to segment values above a threshold\n\n\n\n\n\n\n\n\n\nMNDWI\n\n\n\n\n\n\n\nBinary segmented raster shown over S2 imagery, with sloppily chosen threshold."
+  },
+  {
+    "objectID": "index.html#segmentation-using-segmentation-tools",
+    "href": "index.html#segmentation-using-segmentation-tools",
+    "title": "NR 218",
+    "section": "Segmentation using segmentation tools",
+    "text": "Segmentation using segmentation tools\n\n\nIn this class we will use Orfeo Toolbox, an open source remote sensing project, but there are many other options.\n\n\nGo to the Orfeo Toolbox download page and click the Download OTB 9.x.x button.\n\n\nExtract the file and move the resulting folder to your home directory.\n\n\nInstall the Orfeo Toolbox Provider pluggin.\n\n\nInstall the Orfeo Toolbox Provider pluggin.\n\n\nOpen processing toolbox and click the settings icon\n\n\n\nOpen processing toolbox and click the settings icon\n\n\n\n\nClick the Processing tab on the left\nClick the OTB dropdown\nCheck the activate box, if it exists\nSelect the OTB application folder by browsing to ~/OTB.x.x/lib/otb/applications and click select folder (x.x is just a place holder for whatever version you have)\nSet OTB folder to ~/OTB.x.x\n\nYu can watch this painfully slow video if you are having trouble."
+  },
+  {
     "objectID": "index.html#download-some-stuff",
     "href": "index.html#download-some-stuff",
     "title": "NR 218",
@@ -3126,21 +3175,49 @@
     "href": "segmentation.html#data",
     "title": "",
     "section": "Data",
-    "text": "Data\n\nFor the Example:\n\noctober_ndvi.tif\n\nAlso bag these files for the challenge:\n\nSentinel-2 median composite image, near Susques Argentina, 2025-04-01 to 2025-10-26\nSentinel-2 max composite image, near Susques Argentina, 2025-04-01 to 2025-10-26"
+    "text": "Data\nIn Lab 11 you have been working with the two Sentinel 2 datasets. You should already have them, but if not they can be downloaded with the links below.\n\nSentinel-2 median composite image, near Susques, Argentina, 2025-04-01 to 2025-10-26\nSentinel-2 max composite image, near Susques, Argentina, 2025-04-01 to 2025-10-26"
   },
   {
-    "objectID": "segmentation.html#a-simple-example-of-segmentation",
-    "href": "segmentation.html#a-simple-example-of-segmentation",
+    "objectID": "segmentation.html#what-kind-of-information-is-needed-to-segment-this-image",
+    "href": "segmentation.html#what-kind-of-information-is-needed-to-segment-this-image",
     "title": "",
-    "section": "A simple example of segmentation",
-    "text": "A simple example of segmentation\nStart a QGIS project ad set the project crs 20 EPSG:6339.\n\nOpen october_ndvi.tif.\nWhat should you do before starting? \nUse the raster calculator to create a binary raster where NDVI &gt; 0.2.\nUse Raster &gt; Conversion &gt; Polygonize to make polygons from the raster\nUse the field calculator to calculate are (expression: $area)\nWhat units is area in?\nRemove tiny polygons based on area.\nWhat did you do?"
+    "section": "What kind of information is needed to segment this image?",
+    "text": "What kind of information is needed to segment this image?\n\n\n\n\nIn Lab 11 you you are asked to segment the image to find lithium brine evaporation ponds near Susques Argentina.\n\n\nIf you have looked at the images over a basemap, or searched for Susques on the internet, you may have learned that it is in the Atacama desert.\n\n\nThe Atacama, being a desert, is quite dry (actually, it is one of the driest places on Earth!).\n\n\nIf you happened to google lithium evaporation pond, you probably know that they are used to evaporate lithium brine in order to extract lithium salts.\n\n\nGiven this information, one would expect these lithium ponds to be wetter than their surroundings.\n\n\n\n\n\n\n\n\n\nSite situated within the Atacama Desert\n\n\n\n\n\n\n\nThe Atacama desert near the site\n\n\n\n\n\n\n\nLithium being collected after evaporation. Image credit: Dan Lundberg\n\n\n\n\n\n\n\nLithium Ponds are wetter than there surroundings. Image credit: Guerretto"
   },
   {
-    "objectID": "segmentation.html#challenge",
-    "href": "segmentation.html#challenge",
+    "objectID": "segmentation.html#theres-an-index-for-that",
+    "href": "segmentation.html#theres-an-index-for-that",
     "title": "",
-    "section": "Challenge!",
-    "text": "Challenge!\nYou Know about spectral indices. You know about (very basic) segmentation. You know about zonal ststistics.\n\nSegment the Lithium Brine Evaporation Ponds using Sentinel-2 median composite image, Sentinel-2 maximum composite image (near Susques Argentina, 2025-04-01 to 2025-10-26).\nCalculate their total area.\nWhat is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?"
+    "section": "There’s An Index For That!",
+    "text": "There’s An Index For That!\n\n\nNormalized Difference Water Index\n\\(NDWI = \\frac{G -NIR}{G + NIR}\\)\n\nWater \\(\\gtrapprox\\) 0\n\n\n\nModified Normalized Difference Water Index\n\\(MNDWI = \\frac{G -SWIR}{G + SWIR}\\)\n\nOpen water \\(\\gtrapprox\\) 0.1\nWeat soil generally \\(\\gtrapprox\\) -0.1"
+  },
+  {
+    "objectID": "segmentation.html#which-swir",
+    "href": "segmentation.html#which-swir",
+    "title": "",
+    "section": "Which SWIR?",
+    "text": "Which SWIR?\nSWIR1 and SWIR2 are both absorbed heavily by water.\n\nBoth Bands are short wave infrared (\\(\\lambda \\approx 20 \\text{m}\\))\nSWIR1 (S2 band 10, 1610 nm), useful in for finding open water, determining vegetation moisture, distinguishing snow from clouds\nSWIR2 (S2 band 11, 2190 nm) - Useful for determining soil moisture."
+  },
+  {
+    "objectID": "segmentation.html#todo-here-insert-a-slide-with-4-images-1img1-2img2-3img3-4img4-in-4x4-grid-with-caption-for-entire-grid-describing-images-1ndwi-using-swir1-2-ndwi-using-swir2-3-mndwi-using-swir1-4-mndwi-using-swir2",
+    "href": "segmentation.html#todo-here-insert-a-slide-with-4-images-1img1-2img2-3img3-4img4-in-4x4-grid-with-caption-for-entire-grid-describing-images-1ndwi-using-swir1-2-ndwi-using-swir2-3-mndwi-using-swir1-4-mndwi-using-swir2",
+    "title": "",
+    "section": "TODO: Here insert a slide with 4 images (1:img/1, 2:img/2, 3:img/3, 4:img/4, ) in 4x4 grid with caption for entire grid describing images (1:NDWI using SWIR1, 2: NDWI using SWIR2 3: MNDWI using SWIR1, 4: MNDWI using SWIR2)",
+    "text": "TODO: Here insert a slide with 4 images (1:img/1, 2:img/2, 3:img/3, 4:img/4, ) in 4x4 grid with caption for entire grid describing images (1:NDWI using SWIR1, 2: NDWI using SWIR2 3: MNDWI using SWIR1, 4: MNDWI using SWIR2)"
+  },
+  {
+    "objectID": "segmentation.html#segmentation-using-raster-calculator",
+    "href": "segmentation.html#segmentation-using-raster-calculator",
+    "title": "",
+    "section": "Segmentation using Raster Calculator",
+    "text": "Segmentation using Raster Calculator\n\n\n\n\nIn simple cases one can use the raster calculator.\n\n\n\nCalculate you index.\n\n\n\n\nCalculate you index.\nUse Raster calculator to segment values above a threshold\n\n\n\n\n\n\n\n\n\nMNDWI\n\n\n\n\n\n\n\nBinary segmented raster shown over S2 imagery, with sloppily chosen threshold."
+  },
+  {
+    "objectID": "segmentation.html#segmentation-using-segmentation-tools",
+    "href": "segmentation.html#segmentation-using-segmentation-tools",
+    "title": "",
+    "section": "Segmentation using segmentation tools",
+    "text": "Segmentation using segmentation tools\n\n\nIn this class we will use Orfeo Toolbox, an open source remote sensing project, but there are many other options.\n\n\nGo to the Orfeo Toolbox download page and click the Download OTB 9.x.x button.\n\n\nExtract the file and move the resulting folder to your home directory.\n\n\nInstall the Orfeo Toolbox Provider pluggin.\n\n\nInstall the Orfeo Toolbox Provider pluggin.\n\n\nOpen processing toolbox and click the settings icon\n\n\n\nOpen processing toolbox and click the settings icon\n\n\n\n\nClick the Processing tab on the left\nClick the OTB dropdown\nCheck the activate box, if it exists\nSelect the OTB application folder by browsing to ~/OTB.x.x/lib/otb/applications and click select folder (x.x is just a place holder for whatever version you have)\nSet OTB folder to ~/OTB.x.x\n\nYu can watch this painfully slow video if you are having trouble."
   },
   {
     "objectID": "georeferencing.html#what-is-georeferencing",

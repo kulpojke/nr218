@@ -20,7 +20,7 @@ Create a document, answer the questions and include the requested figures. Submi
 First we will need the data.  Download the vector file of fire perimeters and 2022 NAIP (see @tip-naip for information about NAIP ) image below. The NAIP image may take a while, but should be done by the time you need it.
 
 + [fire perimeters](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDiOQnn5iZ2SoC9RFOZXMQ6AYohr1UK1PuzRVCWknsOpLQ?e=iYy6tc)
-+ [NAIP image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC4SX4KSSrKQZEguH7aIaGnATBJndw0cRt9vi8a-KiAw0A?e=xlgu0Q)
++ [NAIP image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQCbn6SrRXfWTpTedYV781GaAbW2xG9DhHjKKUhU6wykXD0?e=kNQDzz)
 
 [The fire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from [California Open Data Portal](https://data.ca.gov/group/fire)]{style="font-size:0.3.5em"}. 
 
