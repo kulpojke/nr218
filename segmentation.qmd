@@ -157,6 +157,8 @@ In this class we will use Orfeo Toolbox, an open source remote sensing project, 
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="max-width: 100%; font-size:0.8em;"}
 Go to the [Orfeo Toolbox download page](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.orfeo-toolbox.org/download/&ved=2ahUKEwiQgoGU-e-SAxXzIUQIHb-pDDQQjBB6BAgNEAE&usg=AOvVaw3E2pPFGIW0fTcyfBIu_kXZ) and click the _Download OTB 9.x.x_ button.
+
+Or if that link is broken [use this copy](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQBeiacNuqIoSYrAWf2JRaSSAXDJR7wWVCmpr7RUuyeqNPA?e=XAJsah).
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="max-width: 100%; font-size:0.8em;"}
