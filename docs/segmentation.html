@@ -229,9 +229,6 @@
 <li>SWIR2 (S2 band 11, 2190 nm) - Useful for determining soil moisture.</li>
 </ul>
 </section>
-<section id="todo-here-insert-a-slide-with-4-images-1img1-2img2-3img3-4img4-in-4x4-grid-with-caption-for-entire-grid-describing-images-1ndwi-using-swir1-2-ndwi-using-swir2-3-mndwi-using-swir1-4-mndwi-using-swir2" class="slide level2 center">
-<h2>TODO: Here insert a slide with 4 images (1:img/1, 2:img/2, 3:img/3, 4:img/4, ) in 4x4 grid with caption for entire grid describing images (1:NDWI using SWIR1, 2: NDWI using SWIR2 3: MNDWI using SWIR1, 4: MNDWI using SWIR2)</h2>
-</section>
 <section id="segmentation-using-raster-calculator" class="slide level2 center" style="font-size:0.7em">
 <h2>Segmentation using Raster Calculator</h2>
 <div class="columns">
@@ -332,21 +329,19 @@
 </div>
 </div>
 </section>
+<section id="installing-attribute-based-clustering-pluggin" class="slide level2 center" style="height:100%">
+<h2>Installing attribute based clustering pluggin</h2>
+<p>Go to pluggins, search for <em>Attribute based clustering</em>, install the pluggin</p>
+</section>
 <section id="segmentation-1" class="slide level2 center" style="height:100%; font-size:0.8em;">
 <h2>Segmentation</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="r-stack">
 <div class="fragment absolute fade-out" data-fragment-index="1" style="max-width: 55%; font-size:0.8em;">
-<p>Download <a href="https://drive.google.com/file/d/1V7Mp5UjIZhh5Fsv6r7kFyLYCPKEybwxG/view?usp=sharing" aria-label="Open Sentinel-2 dataset details for downloading imagery over a random AOI in Bangladesh" title="Sentinel-2 Level-2A harmonized dataset for AOI in Bangladesh, west of Chittagong">Sentinel-2 sample data for a random AOI in Bangladesh</a></p>
+<p>Download <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQBYkE8HUTDNTIAqkZXdQxUmAVMIYTKfjYV9NYY886ocgoA?e=3VWzpj" aria-label="Atlantic Forest brazilian biomes with sentinel 2 bands 4, 3, 2 and 8." title="Atlantic Forest brazilian biomes with sentinel 2 bands 4, 3, 2 and 8.">Sentinel 2 (bands 4, 3, 2 and 8) tile of Brazilian Atlantic Forest</a></p>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="max-width: 55%; font-size:0.4em;">
-<ul>
-<li>Next we will create sample training points.
-<ul>
-<li>Create a point layer</li>
-</ul></li>
-</ul>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -453,55 +448,42 @@
 </table>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="max-width: 55%; font-size:0.6em;">
-<p><img data-src="img/training_points_bangla.png" alt="False color image with training points"></p>
+<p><img data-src="img/segmentation_segmentation.png" style="width:65.0%"></p>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="max-width: 55%; font-size:0.6em;">
-<p><img data-src="img/segmentation_segmentation.png" style="width:65.0%"></p>
+<p><img data-src="img/atlantic_forest_seg.png" style="width:65.0%"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="max-width: 55%; font-size:0.6em;">
+<ul>
+<li>Using Raster Calculator, extract Band 4 from the image, (can be scratch layer, rename it NIR)</li>
+<li>Run Zonal Statistics using the segments and the NIR raster, calculate mean</li>
+<li>In the geoprocessing toolbox, find <em>K-means clustering (ABC)</em> under <em>Attribute based clustering</em></li>
+<li>Run with 2 clusters, and <em>class</em> as the value “Fields to use for clustering”</li>
+<li>Dissolve the output (<em>Clusterd Layer</em>) based on on <em>class</em></li>
+</ul>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
 <div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="max-width: 40%; font-size:0.6em;">
+<p><img data-src="img/atlantic_forest.png" alt="IMage of Atlantic forest tile"></p>
+</div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="max-width: 40%; font-size:0.7em;">
-<p>Take some time to examine it using different visualizations.</p>
-<ul>
-<li>Try RGB</li>
-<li>and False Color<br>
-(R-&gt;NIR, G-&gt;Red, B-&gt;Green)</li>
-</ul>
+<p>This image contains Sentinel2 bands 4, 3, 2 and 8.</p>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="max-width: 40%; font-size:0.7em;">
-<p>Create a new point layer to use for training.</p>
-<p><img data-src="img/new_point_layer_for_training.png" style="width:45.0%" alt="New Layer dialogue, be sure to click add to field list"></p>
-<p>Then add points and label the class ID appropriately</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Class</th>
-<th>Class ID</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Mangrove</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>Rice Patty</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>Dry fields</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td>Water</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li>Go to <em>Processing Toolbox &gt; OTB &gt; Segmentation &gt; Segmentation</em></li>
+<li>You can run the algorithm with default settings, except you need to specify an output file (use a .shp file as output, Orfeo complains about geojson for some reason.)</li>
+</ul>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="max-width: 40%; font-size:0.7em;">
-<p>Go to <em>Processing Toolbox &gt; OTB &gt; Segmentation &gt; Segmentation</em></p>
+<ul>
+<li>You should end up with something like this (after you adjust the symbology)</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="4" style="max-width: 40%; font-size:0.7em;">
+<p><img data-src="img/atlantic_forest_class.png"></p>
 </div>
 </div>
 </div></div>

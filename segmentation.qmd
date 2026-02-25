@@ -103,7 +103,6 @@ __SWIR1__  and __SWIR2__ are both absorbed heavily by water.
 + SWIR1 (S2 band 10, 1610 nm), useful in for finding open water, determining vegetation moisture,   distinguishing snow from clouds
 + SWIR2 (S2 band 11, 2190 nm) - Useful for determining soil moisture.
 
-## TODO: Here insert a slide with 4 images (1:img/1, 2:img/2, 3:img/3, 4:img/4, ) in 4x4 grid with caption for entire grid describing images (1:NDWI using SWIR1, 2: NDWI using SWIR2 3: MNDWI using SWIR1, 4: MNDWI using SWIR2) 
 
 ## Segmentation using Raster Calculator {style="font-size:0.7em"}
 
@@ -214,6 +213,11 @@ You can watch this [painfully slow video](https://youtu.be/tHTV40jScLI?si=a5zoar
 
 :::
 
+## Installing attribute based clustering pluggin {style="height:100%"}
+
+Go to pluggins, search for _Attribute based clustering_, install the pluggin
+
+
 ## Segmentation {style="height:100%; font-size:0.8em;"}
 
 
@@ -222,13 +226,10 @@ You can watch this [painfully slow video](https://youtu.be/tHTV40jScLI?si=a5zoar
 ::: { .r-stack}
 
 ::: {.fragment .absolute .fade-out data-fragment-index="1" style="max-width: 55%; font-size:0.8em;"}
-Download [Sentinel-2 sample data for a random AOI in Bangladesh](https://drive.google.com/file/d/1V7Mp5UjIZhh5Fsv6r7kFyLYCPKEybwxG/view?usp=sharing "Sentinel-2 Level-2A harmonized dataset for AOI in Bangladesh, west of Chittagong"){aria-label="Open Sentinel-2 dataset details for downloading imagery over a random AOI in Bangladesh"}
+Download [Sentinel 2 (bands 4, 3, 2 and 8) tile of Brazilian Atlantic Forest](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQBYkE8HUTDNTIAqkZXdQxUmAVMIYTKfjYV9NYY886ocgoA?e=3VWzpj "Atlantic Forest brazilian biomes with sentinel 2 bands 4, 3, 2 and 8."){aria-label="Atlantic Forest brazilian biomes with sentinel 2 bands 4, 3, 2 and 8."}
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="max-width: 55%; font-size:0.4em;"}
-
-+ Next we will create sample training points.
-    + Create a point layer  
 
 | Band | Common name | Central wavelength (nm) | Resolution (m) 
 |---|---|---:|---:|---|
@@ -249,14 +250,23 @@ Download [Sentinel-2 sample data for a random AOI in Bangladesh](https://drive.g
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="max-width: 55%; font-size:0.6em;"}
-
-![](img/training_points_bangla.png){fig-alt="False color image with training points"}
-
+![](img/segmentation_segmentation.png){width="65%"}
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="3" style="max-width: 55%; font-size:0.6em;"}
-![](img/segmentation_segmentation.png){width="65%"}
+![](img/atlantic_forest_seg.png){width="65%"}
 :::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4" style="max-width: 55%; font-size:0.6em;"}
++ Using Raster Calculator, extract Band 4 from the image, (can be scratch layer, rename it NIR)
++ Run Zonal Statistics using the segments and the NIR raster, calculate mean
++ In the geoprocessing toolbox, find _K-means clustering (ABC)_ under _Attribute based clustering_
++ Run with 2 clusters, and _class_ as the value "Fields to use for clustering"
++ Dissolve the output (_Clusterd Layer_) based on on _class_
+
+
+:::
+
 
 :::
 :::
@@ -265,32 +275,31 @@ Download [Sentinel-2 sample data for a random AOI in Bangladesh](https://drive.g
 ::: {.column width="40%"}
 ::: { .r-stack}
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="max-width: 40%; font-size:0.7em;"}
-Take some time to examine it using different visualizations.
+::: {.fragment .absolute .fade-out data-fragment-index="1" style="max-width: 40%; font-size:0.6em;"}
 
-+ Try RGB 
-+ and False Color  
-  (R->NIR, G->Red, B->Green)
+![](img/atlantic_forest.png){fig-alt="IMage of Atlantic forest tile"}
+
 :::
 
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="max-width: 40%; font-size:0.7em;"}
+This image contains Sentinel2 bands 4, 3, 2 and 8. 
+:::
+
+
+
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="max-width: 40%; font-size:0.7em;"}
++ Go to _Processing Toolbox > OTB > Segmentation > Segmentation_
++ You can run the algorithm with default settings, except you need to specify an output file (use a .shp file as output, Orfeo complains about geojson for some reason.)
 
-Create a new point layer to use for training.
-
-![](img/new_point_layer_for_training.png){width="45%" fig-alt="New Layer dialogue, be sure to click add to field list"}
-
-Then add points and label the class ID appropriately
-
-| Class      | Class ID |
-|------------|----------|
-|  Mangrove  | 1        |
-| Rice Patty | 2        |
-| Dry fields | 3        |
-| Water      | 4        |
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="3" style="max-width: 40%; font-size:0.7em;"}
-Go to _Processing Toolbox > OTB > Segmentation > Segmentation_
++ You should end up with something like this (after you adjust the symbology)
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4" style="max-width: 40%; font-size:0.7em;"}
+![](img/atlantic_forest_class.png)
 :::
 
 :::
