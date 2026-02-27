@@ -1,0 +1,155 @@
+# What to Do When You Get Stuck
+
+## What is a computer {style="font-size:0.8em"}
+
+- reddit
+- QGIS Tutorials and Tips
+- youtube
+- QGIS official documentation
+- the help button
+- GIS Stack Exchange
+- how to google your problem/error* without AI
+- ESRI online community
+- github error reports
+- MacPorts
+
+::: {.columns}
+::: {.column width="50%"}
+
+::: { .r-stack style="width:100%; position: relative;"}
+
+::: {.fragment .absolute data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%; box-sizing:border-box;"}
+A machine that manipulates data following a list of programmed instructions
+:::
+
+:::
+
+
+:::
+
+::: {.column width="50%"}
+
+::: { .r-stack style="width:100%; position: relative;"}
+
+::: {.fragment .absolute  data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%; box-sizing:border-box;"}
+![](img/Sphere_300_Computer.jpg){fig-alt="Image of an old but cool looking computer" fig-cap=""}
+
+::: {.attribution style="font-size:0.4em"} 
+
+Image Source: [Wikimedia commons](https://commons.wikimedia.org/wiki/File:Sphere_300_Computer.jpg) 
+:::
+
+:::
+
+:::
+
+:::
+:::
+
+## Data {style="font-size:0.7"}
+
+::: {.r-stack}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;box-sizing:border-box; font-size:0.7"}
+
++ "Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation."
++ "Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form."
+-OED  
+:::
+
+::: {.fragment .absolute .fade-in-fade-out data-fragment-index="1" style="left:0; right:0; width:100%; max-width:100%;box-sizing:border-box; font-size:0.7"}
+
+::: {.columns}
+
+::: {.column style="font-size:0.7em"}
+
++ Data is stored on a computer as zeros and ones .  
++ Data is stored at some physical location on the disk, and a pointer is saved which is later used to find the file.
++ The details of this are managed for you by applications or programming languages by representing this relationship as a path. 
+
+
+:::
+
+::: {.column}
+
+![A pointer (_a_) pointing to the memory address associated with a variable (b), i.e., _a_ contains the memory address 1008 of the variable _b_. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.](img/pointers.svg){fig-alt="Schematic showing pointer to a file or memory address" fig-cap="" style="font-size:0.7em; "}
+
+::: {.attribution style="font-size:0.4em"}
+
+Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=8861432)
+
+:::
+
+:::
+
+:::
+
+
+:::
+
+:::
+
+##
+
+![Family tree of modern general purpose operating systems.  With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX.](img/os_phylogeny.png){fig-alt="Schematic showing pointer to a file or memory address" fig-cap=""}
+
+## File Paths and Directories
+
+:::{r-stack}
+:::{.fragment .fade-out data-fragment-index="1" style="position: absolute;"}
+![](img/linux-filesystem-hierarchy.png)
+:::
+
+:::{.fragment .fade-in-then-out data-fragment-index="1" style="position: absolute;"}
+![](img/windows_dir_structure.jpg)
+:::
+
+:::{.fragment .fade-in data-fragment-index="2" style="position: absolute;"}
+![](img/bash_paths.png)
+![](img/gui_paths.png){width=600}
+:::
+
+:::{.fragment .fade-in data-fragment-index="3" style="position: absolute; top: 165px; left: 0; width: 325px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+:::
+
+## Terminals and Shells 
+
+If you have a deep emotional connection to MS Windows, prepare to be offended!
+
+## Terminals Across Operating Systems {style="font-size:0.7em"}
+
+- **Linux**: terminals are native; `/bin/bash`, `/bin/zsh`, or others under the same POSIX conventions.
+- **macOS**: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.
+- **Windows**: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages.
+
+## The Windows Terminal Dumpsterfire {style="font-size:0.7em"}
+
+- **Command Prompt (`cmd.exe`)**: legacy DOS-style environment with limited scripting features.
+- **PowerShell (5.x)** vs **PowerShell 7+**: different .NET runtimes, different module compatibility.
+- **Git Bash / MSYS2**: provides a GNU userland inside Windows; paths need translation.
+- **Environment-specific shells**: `Anaconda Prompt`, `OSGeo4W Shell`, etc., inject toolchains and custom env vars; each behaves slightly differently.
+
+## Why Does `cmd.exe` Feel Janky? {style="font-size:0.7em"}
+
+- Command language rooted in DOS; minimal quoting, no pipelines beyond simple `|`.
+- Lacks native concepts like environment exports.
+- Encoding quirks (Code Page 437 vs UTF-8) cause unexpected character issues.
+- File globbing and path separators differ (`\` vs `/`), breaking cross-platform scripts.
+
+## PowerShell vs Bash {style="font-size:0.7em"}
+
+- PowerShell is object-oriented: pipelines pass .NET objects, not plain strings.
+- Bash pipelines stream text; tools like `cat`, `grep`, `awk` compose seamlessly.
+- Example (Bash):
+
+```bash
+cat access.log | grep "GET /api" | wc -l
+```
+
+- PowerShell equivalent:
+
+```powershell
+Get-Content access.log | Select-String "GET /api" | Measure-Object | Select-Object -ExpandProperty Count
+```

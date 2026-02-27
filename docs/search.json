@@ -452,7 +452,7 @@
     "href": "index.html#map-scale",
     "title": "NR 218",
     "section": "Map Scale",
-    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
   },
   {
     "objectID": "index.html#map-scale-1",
@@ -599,7 +599,7 @@
     "href": "index.html#discussion",
     "title": "NR 218",
     "section": "Discussion",
-    "text": "Discussion\n\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
+    "text": "Discussion\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
   },
   {
     "objectID": "index.html#raster-data",
@@ -1376,7 +1376,7 @@
     "href": "index.html#what-is-a-tif",
     "title": "NR 218",
     "section": "What Is A TIF",
-    "text": "What Is A TIF\n\n\nA tif is a container format\nIt stores image pixels plus tags (metadata)\nCompression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG\nA GeoTIFF is a TIFF with georeferencing tags\nA regular TIFF lacks georeferencing tags"
+    "text": "What Is A TIF\n\nA tif is a container format\nIt stores image pixels plus tags (metadata)\nCompression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG\nA GeoTIFF is a TIFF with georeferencing tags\nA regular TIFF lacks georeferencing tags"
   },
   {
     "objectID": "index.html#normal-tifs-no-georeferencing",
@@ -3526,5 +3526,26 @@
     "title": "",
     "section": "TPI & Geomorphons",
     "text": "TPI & Geomorphons\n\nTopographic Position Index (TPI) compares a cell to the mean elevation of its neighbors.\nPositive TPI marks ridges; negative TPI highlights valleys—kernel size sets the landform scale.\nGeomorphons classify landforms using multi-directional TPI, revealing patterns such as spurs, hollows, and plains."
+  },
+  {
+    "objectID": "index.html#what-is-the-model-designer",
+    "href": "index.html#what-is-the-model-designer",
+    "title": "NR 218",
+    "section": "What is the Model Designer?",
+    "text": "What is the Model Designer?\n\n\nFrom the QGIS documentation:\n“The model designer allows you to create complex models using a simple and easy-to-use interface. When working with a GIS, most analysis operations are not isolated, rather part of a chain of operations. Using the model designer, that chain of operations can be wrapped into a single process, making it convenient to execute later with a different set of inputs. No matter how many steps and different algorithms it involves, a model is executed as a single algorithm, saving time and effort.”\n\n\nIn simpler terms:\nSometimes, we might be interested in quickly reproducing a workflow or analysis process with different inputs or parameters. While we could do this by re-running each tool manually, we can make our lives easier by creating “models” in QGIS that store our processing steps and automatically repeat them in the correct sequence.\n\n\nLet’s say, for example, we want to compare ideal camping locations between the North and South extents of Swanton Ranch.\n\n\nSpecifically, we want to calculate the total area of land that is:\n\nWithin a Forest land use type\nOn a slope lower than 20 degrees\nWithin 500 ft of a stream\n1000 ft away from a paved road\n\n\n\nWe could do this using all of the individual tools we’ve explored so far in class. But we can also map out the entire workflow in a model, which would allow us to re-run our analysis much more efficiently."
+  },
+  {
+    "objectID": "index.html#using-the-model-designer-step-by-step",
+    "href": "index.html#using-the-model-designer-step-by-step",
+    "title": "NR 218",
+    "section": "Using the Model Designer: Step by Step",
+    "text": "Using the Model Designer: Step by Step\n\n\n\nOpen a new project in QGIS, and save it the same way we’ve been saving projects throughout class (this is Lab 14).\nDownload these two subsets of SPR data: SPR 1 and SPR 2. Extract all and add them to your data folder.\nAdd all of the layers SPR 1 to your QGIS project.\n\n\n\n\nGo to Processing &gt; Model Designer\nSave your model by clicking the save model icon and name it spr_model. By default it will save to models folder that is specific to QGIS - don’t change this!\nThe first thing we need to specify are our inputs. For this example, we should have a separate input for each layer. First, make sure you are in the Inputs tab on the left side panel. To add a raster input, double click the Raster Layer option.\n\n\n\ntest\n\n\ntest\n\n\ntest"
+  },
+  {
+    "objectID": "index.html#section-29",
+    "href": "index.html#section-29",
+    "title": "NR 218",
+    "section": "",
+    "text": "Go to Processing &gt; Model Designer\nSave your model by clicking the ‘save model’ icon and name it ‘spr_model’. By default it will save to ‘models’ folder that is specific to QGIS - don’t change this!\nThe first thing we need to specify are our inputs. For this example, we should have a separate input for each layer. First, make sure you are in the ‘Inputs’ tab on the left side panel. To add a raster input, double click the ‘Raster Layer’ option."
   }
 ]
