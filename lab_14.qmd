@@ -95,7 +95,7 @@ We’ll put our equation in the box labeled ‘Calculation in gdalnumeric syntax
 ### Connecting processing steps together
 Now that we have all of our “pre-processing” done we can start refining our land use polygons.
 
-1. Remember, we want areas that are 1000 ft away from roads and within 500 ft of a stream. This means we’ll want to use the ‘Erase’ tool to remove our roads buffer, and then ‘Clip’ our remaining area to the streams buffer.
+1. Remember, we want areas that are 1000 ft away from roads and within 500 ft of a stream. This means we’ll want to use the ‘Difference’ tool to remove our roads buffer, and then ‘Clip’ our remaining area to the streams buffer.
 2. Finally, we can clip our output to the slope polygons. As an added step, let’s ‘Dissolve’ the final clipped output into one polygon and then ‘Add Geometry Attributes’ to get the total area of viable camping space in Swanton.
 3. Since this is our last processing step, we need to specify what our model output should be. In this case, we want a new layer called 'Camping Area'. We can do this by typing that in to the box next to the green arrow:
 
