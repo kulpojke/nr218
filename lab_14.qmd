@@ -54,10 +54,10 @@ We could do this using all of the individual tools we’ve explored so far in cl
 
 Now that we have our inputs, let’s design our workflow.
 
-1. The first thing we should do is ensure that all of our layers are in the same CRS. Switch from the ‘Inputs’ tab to the ‘Algorithms’ tab, and search for ‘Reproject Layer’ (this should look very similar to the processing toolbox that we’re used to searching in!). For each of our vector inputs, we want to reproject to EPSG:2227.
+1. The first thing we should do is ensure that all of our layers are in the same CRS. Switch from the ‘Inputs’ tab to the 'Toolbox' tab (depending on version may be ‘Algorithms’ tab), and search for ‘Reproject Layer’ (this should look very similar to the processing toolbox that we’re used to searching in!). For each of our vector inputs, we want to reproject to EPSG:2227.
 
 ::: {#tip-rename_layers .callout-tip}
-For each new ‘reproject’ step we add to the model, rename it to reflect the corresponding input layer so you don’t get confused later on.
+For each new ‘reproject’ step we add to the model you can coy and paste the first one you create, double click it, and change the parameters. rename it to reflect the corresponding input layer so you don’t get confused later on.
 :::
 
 2. We’ll do the same for our raster input, but make sure to use the ‘Warp’ tool instead. Once we’ve done that, our model should look something like this:
