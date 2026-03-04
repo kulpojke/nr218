@@ -31,7 +31,7 @@ We could do this using all of the individual tools we’ve explored so far in cl
 2. Download these two subsets of SPR data: [SPR 1](https://cpslo-my.sharepoint.com/:u:/g/personal/dicorlet_calpoly_edu/IQAEc43rGKxSSo1poKyRPNumAf_n3-ZHOUmWthTO_sR4RgM?e=cuEZjA) and [SPR 2](https://cpslo-my.sharepoint.com/:u:/g/personal/dicorlet_calpoly_edu/IQDMfd7ptqE5TY18-MuCU7R4AUEganWVZmZ85mjdAEHeoR0?e=moGJdn). Extract all and add them to your data folder.
 3. Add all of the layers SPR 1 to your QGIS project.
 4. Go to Processing > Model Designer
-5. Save your model and name it `spr_model`. By default it will save to `models` folder that is specific to QGIS - don’t change this!
+5. Save your model and name it `spr_model`. By default it will save to `models` folder that is specific to QGIS, but we should move it to our project folder.
 
 ## Adding Inputs
 
