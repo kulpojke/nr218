@@ -1,5 +1,5 @@
 ---
-title: "Syllabus - NR 218 - Introduction to GIS - Winter 2026"
+title: "Syllabus - NR 218 - Introduction to GIS - Spring 2026"
 page-layout: full
 format: 
   html:
@@ -7,13 +7,13 @@ format:
 ---
 
 
-[Jump to class calendar](#winter-term-calendar-2026)
+[Jump to class calendar](#spring-term-calendar-2026)
 
 ## Class Details
-Building 10 (Erhart Agriculture, a.k.a. part of _Aglish_), Room 204 
+Building TBD
 
-Monday: 9:10 - 1:00  
-Wednesday: (9:10 - 12:00) 
+Monday: 5:10 - 9:00  
+Wednesday: 6:10 - 9:00 
 
 ## Instructor Details
 Michael Huggins  
@@ -21,11 +21,9 @@ Michael Huggins
 Office Hours: Mondays 2:30 - 4:30  
 Building 72-107 (Plant Conservatory)  
 
-__TA:__ Dillen Corlett
+__TA:__ TBD
 
-&#9993; [dicorlet@calpoly.edu](mailto:dicorlet@calpoly.edu)
-
-Dillen will host remote office hours, by appointment, during the quarter for those who cannot make my office hours.  Follow this [link to her schedule](https://calendar.app.google/kKshuBDibeA6inss7) to view available times.
+&#9993; [tbd@calpoly.edu](mailto:TBD@calpoly.edu)
     
 ## Learning Goals
 + How to formulate and answer problems using spatial data  
@@ -38,7 +36,7 @@ Dillen will host remote office hours, by appointment, during the quarter for tho
 This course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. See the [calendar](#fall-term-calendar-2025) for due dates.  Late assignments will be deducted 5% per day late. 
 
 ## Labs
-Not every lab requires you turn in your results. The [calendar](#fall-term-calendar-2025) lists due dates for the labs that need to be turned in.
+Not every lab requires you turn in your results. The [calendar](#spring-term-calendar-2026) lists due dates for the labs that need to be turned in.
 
 ## Quizzes
 Quizzes can happen any time! How many will there be? 1? 10? Who knows? Quizzes cannot be made up unless you are sick, or have an excused absence (sports, clubs etc...).  If you are sick, you need to email me promptly (ideally before class) to let me know.
@@ -102,28 +100,29 @@ There are many other helpful sources of information on GIS Software, here area c
 
 
 
-# Winter Term Calendar 2026
+# Spring Term Calendar 2026
 
 | Date         | Week | Lecture                                                              | Lab    | Reading      | Due Dates                                     |
 |--------------|------|----------------------------------------------------------------------|--------|--------------|-----------------------------------------------|
-| January 5    | 1    | Introduction, Computers                                              | Lab 1  | ch. 1 and 2 as well as [this page about computers](computers.html) | |
-| January 7    | 1    | Basic GIS Concepts,  Scale, Coordinate systems, and Map Projections  | Lab 2  |              | [Lab 1](computers_lab.html)                   |
-| January 12   | 2    | Spatial Data Models and File Formats                                 | Lab 3  | ch. 3 and 4  |                                               |
-| January 14   | 2    |                                                                      | Lab 4  |              |                                               |
-| January 20 (Tuesday) | 3 | Review: Coordinate Systems, Map Projections, Datums; Reprojection; GeoProcessing and Vector Operations  | Lab 5 | ch. 5 and 6  | [Project 1](project_1.html)                   |
-| January 21   | 3    | GeoProcessing and Vector Operations                                  | Lab 6  |              |                                               |
-| January 26   | 4    | Data Creation, Editing, Topology Basics                              | Lab 7  | ch. 7 and 8  |                                               |
-| January 28   | 4    | Rasters and Elevation Data                                           | Lab 8  |              |                                               |
-| February 2   | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | Lab 9  | ch. 9 and 10 | [Project 2](project_2.html)                   |
-| February 4   | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              | [Lab 8](lab_8.html)                           |
-| February 9   | 6    | Segmentation                                                         | Lab 11 |              |                                               |
-| February 11  | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | Lab 12 |              | [Lab 10](lab_10.html)                                        |
-| February 16  | 7    | Holiday - NO CLASS                                                   |        |              |                                               |  
-| February 18  | 7    |                                                                      | Lab 13 |              | [Lab 11](lab_11.html)                         |
-| February 23  | 8    | Workflow Design and Geoprocessing Models                             | Lab 14 |              | [Project 3](project_3.md)                     |
-| February 25  | 8    | Georeferencing                                                       | Lab 15 |              |                                               |
-| March 2      | 9    | Advanced Topics (tbd)                                                | Lab 16 |              | Lab 14                                        |
-| March 4      | 9    |                                                                      | Lab 17 |              | Lab 15                                        |
-| March 9      | 10   | Modern Map Making                                                    | Lab 17 |              |                                               |  
-| March 11     | 10   |                                                                      | Lab 19 |              | [Project 4]((project_4.md))                                              |
+| March 30     | 1    | Introduction, Computers                                              | Lab 1  | ch. 1 and 2 as well as [this page about computers](computers.html) | |
+| April 1      | 1    | Basic GIS Concepts, Scale, Coordinate systems, and Map Projections   | Lab 2  |              | [Lab 1](computers_lab.html)                   |
+| April 6      | 2    | Spatial Data Models and File Formats                                 | Lab 3  | ch. 3 and 4  |                                               |
+| April 8      | 2    |                                                                      | Lab 4  |              |                                               |
+| April 13     | 3    | Review: Coordinate Systems, Map Projections, Datums; Reprojection; GeoProcessing and Vector Operations | Lab 5 | ch. 5 and 6  | [Project 1](project_1.html)                   |
+| April 15     | 3    | GeoProcessing and Vector Operations                                  | Lab 6  |              |                                               |
+| April 20     | 4    | Data Creation, Editing, Topology Basics                              | Lab 7  | ch. 7 and 8  | Census date                                   |
+| April 22     | 4    | Rasters and Elevation Data                                           | Lab 8  |              |                                               |
+| April 27     | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | Lab 9  | ch. 9 and 10 | [Project 2](project_2.html)                   |
+| April 29     | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              | [Lab 8](lab_8.html)                           |
+| May 4        | 6    | Segmentation                                                         | Lab 11 |              |                                               |
+| May 6        | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | Lab 12 |              | [Lab 10](lab_10.html)                         |
+| May 11       | 7    |                                                                      | Lab 13 |              | [Lab 11](lab_11.html)                         |
+| May 13       | 7    | Workflow Design and Geoprocessing Models                             | Lab 14 |              | [Project 3](project_3.md)                     |
+| May 18       | 8    | Georeferencing                                                       | Lab 15 |              |                                               |
+| May 20       | 8    | Advanced Topics (tbd)                                                | Lab 16 |              | Lab 14                                        |
+| May 25       | 9    | **NO CLASS** (Academic holiday - Memorial Day observed)              |        |              |                                               |
+| May 27       | 9    |                                                                      | Lab 17 |              | Lab 15                                        |
+| June 1       | 10   | Modern Map Making                                                    | Lab 17 |              |                                               |
+| June 3       | 10   |                                                                      | Lab 19 |              | [Project 4](project_4.md)                     |
+| June 8-12    | —    | Final examination period (no regular class meetings)                 |        |              |                                               |
        
