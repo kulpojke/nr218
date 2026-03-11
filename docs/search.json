@@ -452,7 +452,7 @@
     "href": "index.html#map-scale",
     "title": "NR 218",
     "section": "Map Scale",
-    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
   },
   {
     "objectID": "index.html#map-scale-1",
@@ -599,7 +599,7 @@
     "href": "index.html#discussion",
     "title": "NR 218",
     "section": "Discussion",
-    "text": "Discussion\n\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
+    "text": "Discussion\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
   },
   {
     "objectID": "index.html#raster-data",
@@ -1376,7 +1376,7 @@
     "href": "index.html#what-is-a-tif",
     "title": "NR 218",
     "section": "What Is A TIF",
-    "text": "What Is A TIF\n\n\nA tif is a container format\nIt stores image pixels plus tags (metadata)\nCompression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG\nA GeoTIFF is a TIFF with georeferencing tags\nA regular TIFF lacks georeferencing tags"
+    "text": "What Is A TIF\n\nA tif is a container format\nIt stores image pixels plus tags (metadata)\nCompression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG\nA GeoTIFF is a TIFF with georeferencing tags\nA regular TIFF lacks georeferencing tags"
   },
   {
     "objectID": "index.html#normal-tifs-no-georeferencing",
@@ -3561,5 +3561,40 @@
     "title": "",
     "section": "Project 4 Overview (Due 11/20)",
     "text": "Project 4 Overview (Due 11/20)\n\nGoal: select the optimal Swanton Ranch site for one option:\n\nStudent housing, Hemp farm, or Helicopter landing.\n\nProduce a report explaining site selection criteria and analysis.\nWork in groups of 2–3; coordinate today and check in if you need a team."
+  },
+  {
+    "objectID": "index.html#arcgis-vs-qgis",
+    "href": "index.html#arcgis-vs-qgis",
+    "title": "NR 218",
+    "section": "ArcGIS vs QGIS",
+    "text": "ArcGIS vs QGIS\n\n\nQGIS is…\n\n\nFree, open source software\nCompatible with different operating systems (well, mostly)\nCustomizable workflow design\n\n\n\n\nArcGIS is…\n\n\nExpensive, exclusive to Windows OS\nMore user-friendly, designed for all skill levels\nOriented towards organization-wide integration"
+  },
+  {
+    "objectID": "index.html#the-esri-suite",
+    "href": "index.html#the-esri-suite",
+    "title": "NR 218",
+    "section": "The ESRI Suite",
+    "text": "The ESRI Suite\n\n\nArcGIS Pro\n\nDesktop GIS platform\nBest for advanced spatial analysis\n\n\n\nArcGIS Online\n\nCloud-based GIS platform\nUseful for sharing maps, layers, and datasets\n\n\n\nArcGIS Enterprise\n\nDesigned for organizations\nPrivate servers for data/map sharing\nLocally hosted version of ArcGIS Online\n\n\n\nAdditional Apps and Tools\n\nStoryMaps: make map presentations and narratives\nExperience Builder: make GIS dashboards/web apps\nSurvey123: integrate surveys with spatial analysis\nField Maps: collect georeferenced data points"
+  },
+  {
+    "objectID": "index.html#mini-lab-exploring-arcgis-pro",
+    "href": "index.html#mini-lab-exploring-arcgis-pro",
+    "title": "NR 218",
+    "section": "Mini Lab: Exploring ArcGIS Pro",
+    "text": "Mini Lab: Exploring ArcGIS Pro\n\n\n\n\nOpening ArcGIS Pro\n\n\nUse Cal Poly SSO\nClick on Map\n\nMake sure you know where the project is saved!\n\n\n\n\n\n\n\n\n\n\nAdding data\n\n\nDownload SwantonGIS.gdb.zip (new file type!)\nUnzip the file, save the whole .gdb to a new lab folder\nAdd the data to your ArcGIS project\n\nMap &gt; Add Data &gt; Navigate to the GDB\n\n\n\n\n\n\n\n\n\n\nAdjusting symbology\n\n\nRight click on sprVegetation\nGo to Symbology\nPrimary Symbology &gt; Unique Values\n\nField: VEGTYPE1\n\n\n\n\n\n\n\n\n\n\nTry out a few symbologies for numerical data (use a different layer)\n\nSymbology &gt; Graduated Colors &gt; KFACTOR\nSymbology &gt; Graduated Symbols &gt; Depth\nSymbology &gt; Proportional Symbols &gt; Slopemax"
+  },
+  {
+    "objectID": "index.html#making-a-map-in-arcgis-pro",
+    "href": "index.html#making-a-map-in-arcgis-pro",
+    "title": "NR 218",
+    "section": "Making a Map in ArcGIS Pro",
+    "text": "Making a Map in ArcGIS Pro\n\n\n\n\n\n\nInsert &gt; New Layout &gt; 8.5x11 Letter\nInsert &gt; Map Frame\n\n\n\n\n\n\nRight click on Map Frame &gt; Activate\nRight click on the sprVegetation layer in the layout tab &gt; Zoom to Layer\n\n\n\n\n\n\n\nWhen you’re satisfied, Layout &gt; Close Activation\n\n\n\nOther things we can add:\n\nLegend, scale bar, north arrow\nLatitude / longitude coordinates with Grid\nAlso worth looking through the options under Dynamic text"
+  },
+  {
+    "objectID": "index.html#arcgis-online",
+    "href": "index.html#arcgis-online",
+    "title": "NR 218",
+    "section": "ArcGIS Online",
+    "text": "ArcGIS Online"
   }
 ]
