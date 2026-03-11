@@ -115,6 +115,8 @@ __Projects__
 
 {{< include georeferencing.qmd >}}
 
+{{< include intro_to_esri.qmd >}}
+
 
 
 
