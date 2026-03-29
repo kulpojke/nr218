@@ -5,7 +5,7 @@ format:
     theme: cyborg
 ---
 
-# NR 218 Project 2: Vector Data Analysis
+# Lab 7: Vector Data Analysis
 
 
 ## Learning Goals

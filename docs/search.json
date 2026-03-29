@@ -2655,63 +2655,63 @@
   {
     "objectID": "project_3.html",
     "href": "project_3.html",
-    "title": "NR 218 Project 3: Raster Data Analysis",
+    "title": "Lab 14: Raster Data Analysis",
     "section": "",
     "text": "Become familiar with raster data analysis and GIS concepts such as\n\nStatistics and measures of central tendency\nClipping rasters to vectors and Zonal statistics\nWorking with remote sensing datasets, deriving geophysical properties\nDealing with NoData values and masks\n\nChain together commands in order to achieve desired outcomes\nWork with messy data to produce viable analysis to real world problems\n\n\n\n\n\nWhat are the differences between vector and raster data?\nGive 3 examples of real-world data that are best described by (A) Vector datasets, and (B) Raster datasets. Explain your reasoning.\nWhat is the importance of pixel size and spatial resolution in raster data?\nWhat are some common types of raster data used in GIS? Hint: we have worked with many of them in the class so far.\n\n\n\n\nFor the next questions, you will need to download the SPR Elevation Data use it with existing SPR Vector Data in order to answer the following questions:\n\nNOTE: pixel values, i.e. elevation, in the SPR DEM are given in feet.\n\n\nReport the minimum, maximum, mean, and median elevation within the boundary of Swanton Ranch, as defined in sprBoundary.geojson?\nWhat are the exact elevations of the highest and lowest Flumes in Swanton Ranch, as described in sprFlumes.geojson?\nReport the mean slope (in degrees) for parcels (as defined in sprParcels.geojson) with the following APN #s: 057-131-60, 057-141-01, and 057-121-14.\n\n\n\n\n\nSample raster data over points and polygons:\n\nCarefully follow the instructions and complete Sampling Raster Data using Points or Polygons\n\nCalculate land use areas from raster data describing landcover:\n\nCarefully follow the instructions and complete Calculating Raster Area\n\nCreate a raster heatmap from point data:\n\nCarefully follow the instructions and complete Creating Heatmaps\n\nApply basic raster styling and analysis:\n\nCarefully follow the instructions and complete Basic Raster Styling and Analysis\n\n\n\n\n\n\nAnswers to Written Questions 1-4 above\nAnswers to Project Work Questions 1-3 above\nMaps (png, jpeg, tiff, pdf format) and / or screenshots showing the outputs and final products of tutorials 1-4. Be sure to include dates / times in screenshots."
   },
   {
     "objectID": "project_3.html#learning-goals",
     "href": "project_3.html#learning-goals",
-    "title": "NR 218 Project 3: Raster Data Analysis",
+    "title": "Lab 14: Raster Data Analysis",
     "section": "",
     "text": "Become familiar with raster data analysis and GIS concepts such as\n\nStatistics and measures of central tendency\nClipping rasters to vectors and Zonal statistics\nWorking with remote sensing datasets, deriving geophysical properties\nDealing with NoData values and masks\n\nChain together commands in order to achieve desired outcomes\nWork with messy data to produce viable analysis to real world problems"
   },
   {
     "objectID": "project_3.html#provide-written-responses-to-the-following-questions-2-pts",
     "href": "project_3.html#provide-written-responses-to-the-following-questions-2-pts",
-    "title": "NR 218 Project 3: Raster Data Analysis",
+    "title": "Lab 14: Raster Data Analysis",
     "section": "",
     "text": "What are the differences between vector and raster data?\nGive 3 examples of real-world data that are best described by (A) Vector datasets, and (B) Raster datasets. Explain your reasoning.\nWhat is the importance of pixel size and spatial resolution in raster data?\nWhat are some common types of raster data used in GIS? Hint: we have worked with many of them in the class so far."
   },
   {
     "objectID": "project_3.html#project-work-4-pts",
     "href": "project_3.html#project-work-4-pts",
-    "title": "NR 218 Project 3: Raster Data Analysis",
+    "title": "Lab 14: Raster Data Analysis",
     "section": "",
     "text": "For the next questions, you will need to download the SPR Elevation Data use it with existing SPR Vector Data in order to answer the following questions:\n\nNOTE: pixel values, i.e. elevation, in the SPR DEM are given in feet.\n\n\nReport the minimum, maximum, mean, and median elevation within the boundary of Swanton Ranch, as defined in sprBoundary.geojson?\nWhat are the exact elevations of the highest and lowest Flumes in Swanton Ranch, as described in sprFlumes.geojson?\nReport the mean slope (in degrees) for parcels (as defined in sprParcels.geojson) with the following APN #s: 057-131-60, 057-141-01, and 057-121-14."
   },
   {
     "objectID": "project_3.html#tutorials-4-pts",
     "href": "project_3.html#tutorials-4-pts",
-    "title": "NR 218 Project 3: Raster Data Analysis",
+    "title": "Lab 14: Raster Data Analysis",
     "section": "",
     "text": "Sample raster data over points and polygons:\n\nCarefully follow the instructions and complete Sampling Raster Data using Points or Polygons\n\nCalculate land use areas from raster data describing landcover:\n\nCarefully follow the instructions and complete Calculating Raster Area\n\nCreate a raster heatmap from point data:\n\nCarefully follow the instructions and complete Creating Heatmaps\n\nApply basic raster styling and analysis:\n\nCarefully follow the instructions and complete Basic Raster Styling and Analysis"
   },
   {
     "objectID": "project_3.html#submit-on-canvas",
     "href": "project_3.html#submit-on-canvas",
-    "title": "NR 218 Project 3: Raster Data Analysis",
+    "title": "Lab 14: Raster Data Analysis",
     "section": "",
     "text": "Answers to Written Questions 1-4 above\nAnswers to Project Work Questions 1-3 above\nMaps (png, jpeg, tiff, pdf format) and / or screenshots showing the outputs and final products of tutorials 1-4. Be sure to include dates / times in screenshots."
   },
   {
     "objectID": "project_1.html",
     "href": "project_1.html",
-    "title": "NR 218 Project 1: Mapping",
+    "title": "Lab 2: Mapping",
     "section": "",
     "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\nPractice organizing files\n\n\n\n\nThis assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.\nMake a Folder called NR218 in you OneDrive sync folder. Make a subdirectory, project_1 inside of NR218"
   },
   {
     "objectID": "project_1.html#learning-goals",
     "href": "project_1.html#learning-goals",
-    "title": "NR 218 Project 1: Mapping",
+    "title": "Lab 2: Mapping",
     "section": "",
     "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\nPractice organizing files"
   },
   {
     "objectID": "project_1.html#introduction",
     "href": "project_1.html#introduction",
-    "title": "NR 218 Project 1: Mapping",
+    "title": "Lab 2: Mapping",
     "section": "",
     "text": "This assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.\nMake a Folder called NR218 in you OneDrive sync folder. Make a subdirectory, project_1 inside of NR218"
   },
@@ -2762,7 +2762,7 @@
     "href": "syllabus_spring_2026_s03.html#quizzes",
     "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026",
     "section": "Quizzes",
-    "text": "Quizzes\nQuizzes can happen any time! How many will there be? 1? 10? Who knows? Quizzes cannot be made up unless you are sick, or have an excused absence (sports, clubs etc…). If you are sick, you need to email me promptly (ideally before class) to let me know. git ## Assignment Weight | Assignment | Percentage of Grade| Description | |—————-|——|—-| | Project 1 | 10 | Mapping | | Project 2 | 10 | Vector Data Analysis | | Project 3 | 10 | Raster Data Analysis | | Project 4 | 20 | Remote Sensing, Image Analysis, and Modeling | | Lab exercises | 30 | Not all labs have exercises due, see calendar | | Quizzes | 15 | Quizzes can happen any time! | | Final Exam | 5 | Will be based on participation and engagement |"
+    "text": "Quizzes\nQuizzes can happen any time! How many will there be? 1? 10? Who knows? Quizzes cannot be made up unless you are sick, or have an excused absence (sports, clubs etc…). If you are sick, you need to email me promptly (ideally before class) to let me know. git ## Assignment Weight | Assignment | Percentage of Grade| Description | |—————————|—–|—-| | Lab exercises | 30 | 9 have assignments that need to be turned in | | Quizzes | 15 | Quizzes can happen any time! | | Project | 20 | Remote Sensing, Image Analysis, and Modeling | | Final Exam | 5 | Will be based on participation and engagement |"
   },
   {
     "objectID": "syllabus_spring_2026_s03.html#grading",
@@ -2837,35 +2837,35 @@
   {
     "objectID": "project_2.html",
     "href": "project_2.html",
-    "title": "NR 218 Project 2: Vector Data Analysis",
+    "title": "Lab 7: Vector Data Analysis",
     "section": "",
     "text": "Become familiar with vector processing operations in QGIS, import and create GIS data\nPerform basic joins and spatial operations such as buffer, dissolve, intersect, union\nStyle maps in a custom fashion based on columnar values\nUnderstand different data types and corresponding data representations\n\nQuery and filter spatial datasets\n\n\n\n\nProvide written responses to the following Questions:\n\nMeasurement Scales: The following data are using which type of measurement scale?\n\nMy happiness score on a scale of 1 to 10 = 7\nMy weight = 192 lbs.\nThe city I live in = Helsinki Finland\nMy current body temperature = 99.8 \\(\\circ\\) F\nMy current body temperature = 37.7 ºF\nMy current body temperature = 310.8 K\nThe number of impossible burgers I can eat before passing out = 12\n\nDigitizing Methods: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.\nAccuracy and Precision Errors: What are the five types of accuracy/precision errors associated with geographic information? Provide an example of each type of error.\nBoundary Mapping Challenges: Per the description of the positional accuracy of wetland boundaries in the textbook, discuss a different map feature whose boundaries are inherently vague and difficult to map.\n\n\n\n\n\n\nComplete the following tutorials and submit screenshots/maps of the final products:\n\nConvert excel file of latitudes/longitudes to a point shapefile:\n\nCarefully follow the instructions and complete the Tutorial - Importing Spreadsheets or CSV Files: https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html\n\nDigitize map data:\n\nCarefully follow the instructions and complete the Tutorial - Digitizing Basics: https://www.qgistutorials.com/en/docs/3/digitizing_basics.html\n\nPerform a tabular join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Table Joins: https://www.qgistutorials.com/en/docs/3/performing_table_joins.html\n\nPerform a Spatial Join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Joins: https://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html\n\nPerform a Spatial Query:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Queries: https://www.qgistutorials.com/en/docs/3/performing_spatial_queries.html\n\n\n\n\n\n\nSubmit on Canvas:\n\nWritten Responses: Answers to written questions 1-4 above\nTutorial Documentation: Maps (png, jpeg, tiff, pdf format) and/or screenshots showing the outputs and final products of tutorials 1-5 in project work. Be sure to include dates/times in screenshots."
   },
   {
     "objectID": "project_2.html#learning-goals",
     "href": "project_2.html#learning-goals",
-    "title": "NR 218 Project 2: Vector Data Analysis",
+    "title": "Lab 7: Vector Data Analysis",
     "section": "",
     "text": "Become familiar with vector processing operations in QGIS, import and create GIS data\nPerform basic joins and spatial operations such as buffer, dissolve, intersect, union\nStyle maps in a custom fashion based on columnar values\nUnderstand different data types and corresponding data representations\n\nQuery and filter spatial datasets"
   },
   {
     "objectID": "project_2.html#written-responses",
     "href": "project_2.html#written-responses",
-    "title": "NR 218 Project 2: Vector Data Analysis",
+    "title": "Lab 7: Vector Data Analysis",
     "section": "",
     "text": "Provide written responses to the following Questions:\n\nMeasurement Scales: The following data are using which type of measurement scale?\n\nMy happiness score on a scale of 1 to 10 = 7\nMy weight = 192 lbs.\nThe city I live in = Helsinki Finland\nMy current body temperature = 99.8 \\(\\circ\\) F\nMy current body temperature = 37.7 ºF\nMy current body temperature = 310.8 K\nThe number of impossible burgers I can eat before passing out = 12\n\nDigitizing Methods: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.\nAccuracy and Precision Errors: What are the five types of accuracy/precision errors associated with geographic information? Provide an example of each type of error.\nBoundary Mapping Challenges: Per the description of the positional accuracy of wetland boundaries in the textbook, discuss a different map feature whose boundaries are inherently vague and difficult to map."
   },
   {
     "objectID": "project_2.html#project-work",
     "href": "project_2.html#project-work",
-    "title": "NR 218 Project 2: Vector Data Analysis",
+    "title": "Lab 7: Vector Data Analysis",
     "section": "",
     "text": "Complete the following tutorials and submit screenshots/maps of the final products:\n\nConvert excel file of latitudes/longitudes to a point shapefile:\n\nCarefully follow the instructions and complete the Tutorial - Importing Spreadsheets or CSV Files: https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html\n\nDigitize map data:\n\nCarefully follow the instructions and complete the Tutorial - Digitizing Basics: https://www.qgistutorials.com/en/docs/3/digitizing_basics.html\n\nPerform a tabular join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Table Joins: https://www.qgistutorials.com/en/docs/3/performing_table_joins.html\n\nPerform a Spatial Join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Joins: https://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html\n\nPerform a Spatial Query:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Queries: https://www.qgistutorials.com/en/docs/3/performing_spatial_queries.html"
   },
   {
     "objectID": "project_2.html#submission-requirements",
     "href": "project_2.html#submission-requirements",
-    "title": "NR 218 Project 2: Vector Data Analysis",
+    "title": "Lab 7: Vector Data Analysis",
     "section": "",
     "text": "Submit on Canvas:\n\nWritten Responses: Answers to written questions 1-4 above\nTutorial Documentation: Maps (png, jpeg, tiff, pdf format) and/or screenshots showing the outputs and final products of tutorials 1-5 in project work. Be sure to include dates/times in screenshots."
   },

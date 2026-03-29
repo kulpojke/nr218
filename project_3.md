@@ -5,7 +5,7 @@ format:
     theme: cyborg
 ---
 
-# NR 218 Project 3: Raster Data Analysis
+# Lab 14: Raster Data Analysis
 
 ## Learning Goals: 
 1. Become familiar with raster data analysis and GIS concepts such as 

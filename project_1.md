@@ -5,7 +5,7 @@ format:
     theme: cyborg
 ---
 
-# NR 218 Project 1: Mapping
+# Lab 2: Mapping
 
 ## Learning Goals
 
