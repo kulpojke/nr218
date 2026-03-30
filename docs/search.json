@@ -147,18 +147,11 @@
     "text": "Differences in tree command across platforms\n\n\nOn Unix like systems, like Mac OSX and Linux, by default tree shows files.\n.\n├── PoorlyNamedFiles\n│   ├── basin.geojson\n│   ├── do not put spaces in filenames.geojson\n│   ├── Junk\n│   │   └── toadstools\n│   └── xp23_99.csv\n├── README.md\n└── WellNamedFiles\n    ├── cal_median_household.csv\n    ├── Eaton_Perimeter_20250121.geojson\n    └── san_simeon_creek_basin_4326.geojson\n\n\n\nIn PowerShell, files are omitted by default\n.\n├── PoorlyNamedFiles\n│   └── Junk\n└── WellNamedFiles\nIn order to show files in PowerShell use the F flag, tree /F"
   },
   {
-    "objectID": "index.html#project-1",
-    "href": "index.html#project-1",
+    "objectID": "index.html#annoying-windows-file-explorer-defaults",
+    "href": "index.html#annoying-windows-file-explorer-defaults",
     "title": "NR 218",
-    "section": "Project 1",
-    "text": "Project 1\nSunday the 11th of Jan 2026 at 01:57:25 PM, I made some changes to Project 1. If you started working on it before then, be sure to look at the updates."
-  },
-  {
-    "objectID": "index.html#office-hours",
-    "href": "index.html#office-hours",
-    "title": "NR 218",
-    "section": "Office hours",
-    "text": "Office hours\nMichael Huggins\nOffice Hours: Mondays 2:30 - 4:30\nBuilding 72-107 (Plant Conservatory)\nTA: Dillen Corlett\n✉ (dicorlet@calpoly.edu)[mailto: dicorlet@calpoly.edu]\nDillen will host remote office hours, by appointment, during the quarter for those who cannot make my office hours. Follow this link to her schedule to view available times."
+    "section": "Annoying Windows File Explorer Defaults",
+    "text": "Annoying Windows File Explorer Defaults\nBy Default Windows Fiel Explorer hides file extensions. To fix this,\n\nOpen File Explorer\nClick View &gt; Show &gt; File name extenions"
   },
   {
     "objectID": "index.html#location",
