@@ -49,3 +49,12 @@ pre {
   text-align: center;
   font-size: 0.9em;
 }
+
+.nowrap,
+code.nowrap,
+.nowrap code {
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-wrap: normal !important;
+  word-break: normal !important;
+}

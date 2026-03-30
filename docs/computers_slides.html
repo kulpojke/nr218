@@ -270,48 +270,55 @@
 </div>
 </div>
 </section>
-<section id="terminals-and-shells" class="slide level2 center">
+<section id="terminals-and-shells" class="slide level2 center" style="font-size:0.7em">
 <h2>Terminals and Shells</h2>
-<p>If you have a deep emotional connection to MS Windows, prepare to be offended!</p>
-</section>
-<section id="terminals-across-operating-systems" class="slide level2 center" style="font-size:0.7em">
-<h2>Terminals Across Operating Systems</h2>
 <ul>
-<li><strong>Linux</strong>: terminals are native; <code>/bin/bash</code>, <code>/bin/zsh</code>, or others under the same POSIX conventions.</li>
+<li><strong>Linux</strong>: terminals use; <code>/bin/bash</code>, <code>/bin/zsh</code>, or others under POSIX conventions.</li>
 <li><strong>macOS</strong>: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.</li>
 <li><strong>Windows</strong>: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages.</li>
 </ul>
+<p><span style="font-size:0.5em">POSIX - Portable Operating System Interface is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems</span></p>
 </section>
 <section id="the-windows-terminal-dumpsterfire" class="slide level2 center" style="font-size:0.7em">
 <h2>The Windows Terminal Dumpsterfire</h2>
 <ul>
 <li><strong>Command Prompt (<code>cmd.exe</code>)</strong>: legacy DOS-style environment with limited scripting features.</li>
 <li><strong>PowerShell (5.x)</strong> vs <strong>PowerShell 7+</strong>: different .NET runtimes, different module compatibility.</li>
-<li><strong>Git Bash / MSYS2</strong>: provides a GNU userland inside Windows; paths need translation.</li>
-<li><strong>Environment-specific shells</strong>: <code>Anaconda Prompt</code>, <code>OSGeo4W Shell</code>, etc., inject toolchains and custom env vars; each behaves slightly differently.</li>
+<li><strong>Git Bash / MSYS2</strong>: provides GNU functionality inside Windows; paths need translation.</li>
+<li><strong>Environment-specific shells</strong>: <code>Anaconda Prompt</code>, <code>Anaconda Powershell</code>, <code>OSGeo4W Shell</code>, etc., inject toolchains and custom env vars; each behaves slightly differently.</li>
 </ul>
 </section>
-<section id="why-does-cmd.exe-feel-janky" class="slide level2 center" style="font-size:0.7em">
-<h2>Why Does <code>cmd.exe</code> Feel Janky?</h2>
+<section id="command-prompt-cmd.exe-is-haggard" class="slide level2 center" style="font-size:0.7em">
+<h2>Command Prompt (<code>cmd.exe</code>) is haggard</h2>
+<div style="font-size:0.9em">
 <ul>
 <li>Command language rooted in DOS; minimal quoting, no pipelines beyond simple <code>|</code>.</li>
 <li>Lacks native concepts like environment exports.</li>
 <li>Encoding quirks (Code Page 437 vs UTF-8) cause unexpected character issues.</li>
 <li>File globbing and path separators differ (<code>\</code> vs <code>/</code>), breaking cross-platform scripts.</li>
 </ul>
+</div>
 </section>
 <section id="powershell-vs-bash" class="slide level2 center" style="font-size:0.7em">
 <h2>PowerShell vs Bash</h2>
+<p><strong>In Many cases PowerShell behaves similarly to Bash</strong></p>
+<ul>
+<li>paths can be written using <code>/</code> as separator</li>
+<li>home directory can be reached using <code>~</code></li>
+</ul>
+<p><strong>but not always</strong></p>
 <ul>
 <li>PowerShell is object-oriented: pipelines pass .NET objects, not plain strings.</li>
-<li>Bash pipelines stream text; tools like <code>cat</code>, <code>grep</code>, <code>awk</code> compose seamlessly.</li>
+<li>Bash pipelines stream text; tools like <code>cat</code>, <code>grep</code>, <code>awk</code> compose seamlessly. &nbsp;
+<ul>
 <li>Example (Bash):</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="fu">cat</span> access.log <span class="kw">|</span> <span class="fu">grep</span> <span class="st">"GET /api"</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>PowerShell equivalent:</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a></a><span class="fu">Get-Content</span> access<span class="op">.</span><span class="fu">log</span> <span class="op">|</span> <span class="fu">Select-String</span> <span class="st">"GET /api"</span> <span class="op">|</span> <span class="fu">Measure-Object</span> <span class="op">|</span> <span class="fu">Select-Object</span> <span class="op">-</span>ExpandProperty Count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a></a><span class="fu">Get-Content</span> access<span class="op">.</span><span class="fu">log</span> <span class="op">|</span> <span class="fu">Select-String</span> <span class="st">"GET /api"</span> <span class="op">|</span> <span class="fu">Measure-Object</span> <span class="op">|</span> <span class="fu">Select-Object</span> <span class="op">-</span>ExpandProperty Count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
 
 
 </section></section>

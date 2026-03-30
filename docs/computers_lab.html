@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="task-1-exploring-a-directory-structure-and-unzipping-files" class="level2">
 <h2 class="anchored" data-anchor-id="task-1-exploring-a-directory-structure-and-unzipping-files">Task 1: Exploring a Directory Structure and unzipping files</h2>
 <ol type="1">
-<li>Download the toy data <a href="https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip">here</a> (rigth-click -&gt; Save Link As). By default the downloaded file will be in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. For now, we will do just that, so unzip <code>toy_data.zip</code> right into the download folder (see <a href="#tip-zip" class="quarto-xref">Tip&nbsp;1</a> for how to do this.).</li>
+<li>Download the toy data <a href="https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip">here</a> (rigth-click the link then use <em>Save Link As</em>). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. For now, we will do just that, so unzip <code>toy_data.zip</code> right into the download folder (see <a href="#tip-zip" class="quarto-xref">Tip&nbsp;1</a> for how to do this.).</li>
 </ol>
 <div id="tip-zip" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -132,7 +132,7 @@ Tip&nbsp;1: How do I unzip a zip archive? What is a zip archive?
 </div>
 </div>
 <ol start="2" type="1">
-<li>Create a working directory, <code>nr218</code> for the class in your home folder directory (see <a href="#tip-home" class="quarto-xref">Tip&nbsp;2</a>).</li>
+<li>Create a working directory, <code>nr218</code> for the class in your home folder (see <a href="#tip-home" class="quarto-xref">Tip&nbsp;2</a>).</li>
 </ol>
 <div id="tip-home" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -156,7 +156,7 @@ Tip&nbsp;2: Where is my home folder?
 </ol>
 <ul>
 <li>Press <code>Ctrl+S</code>. This opens a dialogue for saving the QGIS project. Navigate to the <code>nr218</code> directory you just created. Name the project after you CalPoly email address (e.g.&nbsp;<code>mthuggin</code>. Note that this would be a terrible thing to actually name a project). You have now saved a file containing the project.</li>
-<li>Press <code>Ctrl+Shift+V</code>, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to <code>~/Downloads/toy_data/WellNamedFiles</code> and select <code>Eaton_Perimeter_20250121.geojson</code>. You should now see a polygon in in the map (<a href="#fig-eaton" class="quarto-xref">Figure&nbsp;1</a>)</li>
+<li>Press <code>Ctrl+Shift+V</code>, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to <code>~/Downloads/toy_data/WellNamedFiles</code> and select <code>Eaton_Perimeter_20250121.geojson</code>. You should now see a polygon in the map (something like <a href="#fig-eaton" class="quarto-xref">Figure&nbsp;1</a>)</li>
 </ul>
 <div id="fig-eaton" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter" alt="Image showing the eaton fire perimeter polygon within QGIS">
 <figure class="quarto-float quarto-float-fig figure">
@@ -164,7 +164,7 @@ Tip&nbsp;2: Where is my home folder?
 <img src="img/eaton_perim.png" class="img-fluid figure-img" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter" alt="Image showing the eaton fire perimeter polygon within QGIS">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eaton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: You should se something like this after opening <code>Eaton_Perimeter_20250121.geojson.  It is a polygon showing the Eaton Fire perimeter</code>
+Figure&nbsp;1: You should se something like this after opening <code>Eaton_Perimeter_20250121.geojson</code>. It is a polygon showing the Eaton Fire perimeter
 </figcaption>
 </figure>
 </div>
@@ -188,20 +188,20 @@ Figure&nbsp;2: When the relative path to data changes (or the data is deleted) Q
 </div>
 <ol start="7" type="1">
 <li>Open a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, <code>cd ~/nr218</code>.</li>
-<li>Create a document in a text editor (e.g.&nbsp;notepad on Windows). Name it <code>gustav_adolf_lab1.txt</code> (use your own name) and save it in <code>~/nr218</code>.</li>
+<li>Create a document in a text editor (e.g.&nbsp;notepad on Windows). Name it <code>gustav_adolf_lab1.txt</code> (use your own name, not Gustov Adolf’s name) and save it in <code>~/nr218</code>.</li>
 <li>View the contents of the directory:</li>
 </ol>
 <ul>
-<li>In the terminal (while in <code>~/nr218</code>) type <code>tree</code> (on Windows <code>tree</code> omits files by default, so use <code>tree /F</code>)
+<li>In the terminal (while in <code>~/nr218</code>) type <code>tree</code>. (on Windows <code>tree</code> omits files by default, so use <code>tree /F</code> where the F flag tells it to include files.)
 <ul>
 <li>macOS/Linux, install if missing: <code>brew install tree</code> / <code>sudo apt install tree</code>.</li>
-<li>Windows PowerShell: <code>tree</code> should be present. If you love typing you can use <code>Get-ChildItem -Recurse</code>.</li>
+<li>Windows PowerShell: <code>tree</code> should be present. If you love typing you can use <code>Get-ChildItem -Recurse</code> instead.</li>
 </ul></li>
 <li>Copy the output and paste at the top of your text document.</li>
 <li>In your text document answer the following questions.
 <ul>
 <li><ol type="1">
-<li>Type pwd in the terminal, this shows the path to the present working directory, what is the output (paste it)?</li>
+<li>Type “pwd” in the terminal, this shows the full path to the present working directory, what is the output (paste it)?</li>
 </ol></li>
 <li><ol start="2" type="1">
 <li>Based on the contents of the directory, what do you think are some best practices for naming files?</li>

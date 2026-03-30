@@ -10,14 +10,14 @@ bibliography: references.bib
 # Computers
 
 ## What is a computer?
-As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as _one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc._  Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument[ @campbell-kelly2023computer].
+As recently as the World War II era, computer was an occupation, defined in the Oxford English Dictionary as _one who computes; a calculator, reckoner; specifically a person employed to make calculations in an observatory, in surveying, etc._  Modern electronic computers are named after this profession because they have their origins in large-scale mathematical calculations once performed by human computers, In the 1950s the computer was reconstructed to be an electronic data-processing machine rather than a mathematical instrument [@campbell-kelly2023computer].
   
-We will skip through decades of punch cards, tape ribbons, cold war military machinations, the developments of Silicon Valley, etc.. leading to the modern computer (see  @campbell-kelly2023computer if you want more detail).  There are , however, a couple of important developments that will be of importance going forward.
+We will skip through decades of punch cards, tape ribbons, cold war military machinations, the developments of Silicon Valley, etc... leading to the modern computer (see  @campbell-kelly2023computer if you want more detail).  There are , however, a couple of important developments that will be of importance going forward.
 
 + The first is the development of the __Unix operating system__ (and C programming language) at Bell Labs during 1969–1974. The use of C made Unix “portable,” so that it could be implemented on any computer system.  Up until this point, computers were centralized resources.  The clean, minimalist, functional design of Unix made it possible for users to create variants without affecting the inherent reliability of the system. This spawned versions such as the _Berkeley Software Distribution_ (BSD) in 1978, and later in the 1990s Linux [@campbell-kelly2023computer]. Mac OSX is also a Unix Variant [@apple2011osx-unix-users].
 + Another important development occurred in 1980 when IBM contracted Microsoft to create an operation system for their personal computer.  At the time Microsoft did not have an actual product, so they bought one and tweaked if to make MS-DOS.  
 
-Unix variants and Windows are by far the most common operating systems on  general-purpose computers (desktops, laptops, and servers). @fig-os-tree shows the lineage of common operating systems.  GIS applications are almost always run on one of these platforms.  By in large computers with OSs derived from UNIX and MS-DOS behave in the same ways, but there are some important differences (for a simple overview of differences see [this article](https://www.linuxjournal.com/content/linux-vs-windows)).  A few of these differences will come up from time to time during this course.  The computers in the lab are Windows machines (😐).  Many of you are probably using Macs with OSX (🗿).  Maybe some of you are Linux users (🔥, 💅).
+Unix variants and Windows are by far the most common operating systems found on  general-purpose computers (desktops, laptops, and servers). @fig-os-tree shows the lineage of common operating systems.  GIS applications are almost always run on one of these platforms.  By in large computers with OSs derived from UNIX and MS-DOS behave in the same ways, but there are some important differences (for a simple overview of differences see [this article](https://www.linuxjournal.com/content/linux-vs-windows)).  A few of these differences will come up from time to time during this course.  The computers in the lab are Windows machines (😐).  Many of you are probably using Macs with OSX.  Maybe some of you are Linux users (🔥, 💅).
 
 ![Family tree of modern general purpose operating systems.  With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX.](img/os_phylogeny.png){#fig-os-tree fig-alt="Schematic showing pointer to a file or memory address" fig-cap=""}
 
@@ -33,9 +33,9 @@ A couple of relevant definitions of data taken from the Oxford English Dictionar
 ::: {.columns}
 ::: {.column}
 
-Data is stored on a computer as zeros and ones (too simple, see @tip-example). When you store a file, the data is stored at some physical location on the disk, and a pointer is saved which is later used to find the file (see @fig-pointers). The details of this are managed for you by applications or programming languages by representing this relationship as human readable symbols.
+Data is stored on a computer as zeros and ones (too simple? see @tip-example). When you store a file, the data is stored at some physical location on the disk, and a pointer is saved which is later used to find the file (see @fig-pointers). The details of this are managed for you by applications, or programming languages, by representing this relationship as human readable symbols.
 
-In most modern computers, files are arranged in a hierarchical file system. The standard Linux filesystem is shown in @fig-linux-filesys. In a hierarchal filesystem, files are arranged within nested directories (sometimes called folders). For example,
+In most modern computers, files are arranged in a hierarchical file system. The standard Linux filesystem is shown in @fig-linux-filesys. In a hierarchal filesystem, files are arranged within nested directories, which are just structures (special files on Unix systems) for holding files or other directories. Sometimes directories are refered to as folders, in this class I will use both terms (though if we wanted to be pedantic, we would note that a folder is a metaphor that Graphical User Interfaces use to represent a directory graphically). For example, in @fig-linux-filesys you can see that inside of the root directory, `/`, there is a directory called `usr` and within `usr` there is a directory called `bin`.  Inside of `bin` there are other directories, as well as files, but they are not shown here because they vary from computer to computer.  
 
 :::
 ::: {.column}
@@ -56,7 +56,7 @@ Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=
 ::: {.columns}
 ::: {.column}
 
-A [___path___]{style="font-size:1.3em"} is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. @fig-linux-paths shows the path to `index.qmd` in a terminal. The bottom line of the terminal displays `/home/michael/CP/nr218/index.qmd`. This is the  _absolute path_ or _full path_ to `index.qmd`.  The delimiters are the character `/`. If you look back to @fig-os-tree, you see that the root directory is just `/`. The directory called "home" is directly below `/` in the hierarchy, thus the full path to home is `/home` (or `/home/`). Similarly the full path to the directory "michael" is `/home/michael` (or `/home/michael/`) etc... (but, `/home/michael/CP/nr218/index.qmd` would never be written `/home/michael/CP/nr218/index.qmd/` because `index.qmd` is not a directory, it does not contain other files). 
+A [___path___]{style="font-size:1.3em"} is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters. @fig-linux-paths shows the path to `index.qmd` (a file on my computer) in a terminal. The bottom line of the terminal displays `/home/michael/CP/nr218/index.qmd`. This is the  ___absolute path___ or _full path_ to `index.qmd`.  The delimiters are the character `/`. If you look back to @fig-os-tree, you see that the root directory is just `/`. The directory called "home" is directly below `/` in the hierarchy, thus the full path to home is `/home` (or `/home/`, where the trailing `/` signifies that "home" is a directory, which is a special type of file for holding other things). Similarly the full path to the directory "michael" is `/home/michael`{.nowrap} (or `/home/michael/`{.nowrap}) etc... (but, `/home/michael/CP/nr218/index.qmd`{.nowrap} would never be written `/home/michael/CP/nr218/index.qmd/`{.nowrap} because `index.qmd` is not a directory, it does not contain other files). 
 
 
 :::
@@ -70,7 +70,7 @@ A [___path___]{style="font-size:1.3em"} is a string that uniquely identifies an 
 :::
 :::
 
-Paths can also be written relative to the current directory, for example, when QGIS opens a saved project, the project file tells QGIS to load data from other files.  It does this by telling it where to find them relative to the project file.  For example if a project file `project.qgz` is stored in `/home/michael/CP/nr218/project` along with some data in a subdirectory, as shown below, the relative path to `some_data.tif` would be `data/some_data.tif`.  
+Paths can also be written as a ___relative path___, which is the relative location from the current directory. Relative paths are important to understand because they are how applications typically keep track of files, and they allow for projects to be moved from location to location on a computer, or from one computer to another.  For example, when QGIS opens a saved project, the project file tells QGIS to load data from other files.  It does this by telling it where to find them relative to the project file.  For example if a project file `project.qgz` is stored in `/home/michael/CP/nr218/project` along with some data in a subdirectory, `data`, as shown below,  
 
 ```
 project
@@ -79,7 +79,21 @@ project
 │   └── some_data.tif
 └── project.qgz
 ```
-The advantage of using relative paths emerges when files are organized all within a project directory.  If one were to move the entire project directory to another parent directory, the project file still points to the needed files.  If files are outside of the project directory, or full paths were used, this would not be the case.
+,then the relative path from `project.qgz` to `some_data.tif`  would be `data/some_data.tif`. 
+
+The advantage of using relative paths emerges when files are organized all within a project directory.  If one were to move the entire project directory to another parent directory, the project file still points to the needed files.  If files are outside of the project directory, or full paths were used, this would not be the case.  For example if the files were organized like, 
+
+
+```
+some_directory
+│
+├──project
+│  └── project.qgz
+└──data
+   └── some_data.tif
+```
+
+,then the relative path from `project.qgz` to `some_data.tif`  would be `../data/some_data.tif`, where `../` means one level up in the directory structure.  If one were to move the project directory somewhere else, the relative path would no longer be correct and QGIS would not be able to find `some_data.tif` upon opening `project.qgz`.
 
 
 __In order for an application to use a file, it must know the path to that file.__
@@ -91,13 +105,15 @@ __In order for an application to use a file, it must know the path to that file.
 If you are saying to yourself, "_How are 0s and 1s stored in a computer, that makes no sense, numbers are abstractions but computers are physical objects?_", that is reasonable.  The ones and zeros are actually stored as sites holding an electrical charge, or not, but that is a deeper explanation than we need for this course.
 :::
 
-## Volatile and Non-Volatile Memory
+## Saving your work
 
-Data can be stored on a disk (as we have previously alluded to).  This type of memory is called ___on-disk storage___.  We call on this type of storage _non-volatile_ because when the program using the data is terminated, or the computer is turned off the data persists to be used later.  This is in contrast to ___Random Access Memory___ (RAM), which is _volatile_ (if the program terminates, the data held there is lost).  In RAM the data sits in volatile memory cells addressed by numeric locations; the CPU accesses it directly with very low latency (quickly). All this is managed by the OS via pages and caches.  Only in advanced cases does the user take an interest of the details of this process.
+Data can be stored on a disk (as we have previously alluded to).  This type of memory is called ___on-disk storage___.  We call on this type of storage _non-volatile_ because when the program using the data is terminated, or the computer is turned off the data persists to be used later.  This is in contrast to ___Random Access Memory___ (RAM), which is _volatile_ (if the program terminates, the data held there is lost).  In RAM the data sits in volatile memory cells addressed by numeric locations; the CPU accesses it directly with very low latency (quickly). All this is managed by the operating system.  Only in advanced cases does the user take an interest of the details of this process.
 
 When an application is running, it typically stores the data it is actively using in RAM (or if it is large in temporary files on-disk)  This allows the application to run more quickly.  When the user wants to save changes that are held in these temporary forms of memory they must specify a file to save it to.  In most GUI based applications this is done via the _File_ menu, or using the keyboard shortcut, `Ctrl+S` (`Cmd+S` on macOS). 
 
-When you are working in QGIS or any other GIS (or most other types of) application, you need to save to avoid data loss.  It is a good idea to frequently save your work by pressing `Ctrl+S` (`Cmd+S` on macOS).
+When you are working in QGIS or any other GIS (or most other types of) application, __you need to save to avoid data loss__.  It is a good idea to frequently save your work by pressing `Ctrl+S` (`Cmd+S` on macOS).
+
+The first time you save your work, you will be prompted to choose a file name and location.  It is a good idea to put the file you save into a folder specific to the project you are working on, and to put other needed files in the same directory (there are some exceptions to this, but not in this class)
 
 
 ### References

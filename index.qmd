@@ -49,7 +49,7 @@ navigation-mode: vertical
 [Use arrows or menu in bottom left corner to navigate amongst slides.]{style="font-size:0.6em"}
 
 __Assorted Links__  
-[Syllabus](syllabus.html){style="font-size:0.8em"}  
+[Syllabus Spring 2026, S03](https://kulpojke.github.io/nr218/syllabus_spring_2026_s03.html){style="font-size:0.8em"}  
 [Short Reading on Computers](computers.html){style="font-size:0.8em"}  
   
 ::: {.columns}  
