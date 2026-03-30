@@ -10,7 +10,7 @@ format:
 [Jump to class calendar](#spring-term-calendar-2026)
 
 ## Class Details
-Building TBD
+Room 180-230 (Baker)
 
 Monday: 5:10 - 9:00  
 Wednesday: 6:10 - 9:00 
@@ -18,12 +18,11 @@ Wednesday: 6:10 - 9:00
 ## Instructor Details
 Michael Huggins  
 &#9993; [mthuggin@calpoly.edu](mailto:mthuggin@calpoly.edu)  
-Office Hours: Mondays 2:30 - 4:30  
+Office Hours: Mondays 2:00 - 4:00  
 Building 72-107 (Plant Conservatory)  
 
-__TA:__ TBD
+__TA:__ Jillian Ong
 
-&#9993; [tbd@calpoly.edu](mailto:TBD@calpoly.edu)
     
 ## Learning Goals
 + How to formulate and answer problems using spatial data  
@@ -39,15 +38,14 @@ This course centers on a series of 4 projects using different types of GIS data.
 Not every lab requires you turn in your results. The [calendar](#spring-term-calendar-2026) lists due dates for the labs that need to be turned in.
 
 ## Quizzes
-Quizzes can happen any time! How many will there be? 1? 10? Who knows? Quizzes cannot be made up unless you are sick, or have an excused absence (sports, clubs etc...).  If you are sick, you need to email me promptly (ideally before class) to let me know.
-git
+There will be five quizzes. For each quiz, if you get 75% of the poionts, you get full credit.  Beyond 75% correct will allow you to earn up to 25% of the quiz value ni extra credit.
 ## Assignment Weight
 | Assignment     | Percentage of Grade| Description  |
 |---------------------------|-----|----|
-| Lab exercises             | 30  |  9 have assignments that need to  be turned in  |
-| Quizzes                   | 15  |  Quizzes can happen any time! |
-| [Project](project_4.html) | 20  |  Remote Sensing, Image Analysis, and Modeling  |
-| Final Exam                |  5  |  Will be based on participation and engagement  |  
+| Lab exercises             | 50  |  9 have assignments that need to  be turned in  |
+| Quizzes                   | 10  |  Quizzes can happen any time! |
+| [Project](project_4.html) | 20  |  Will use skills learned throughout the quarter  |
+| Final Exam                | 20  |  Oral exam, in which you will explain what you did in project 4  |  
 
 ## Grading
 
@@ -120,7 +118,7 @@ There are many other helpful sources of information on GIS Software, here area c
 | May 25       | 9    | **NO CLASS** (Memorial Day)                                          |        |              |                                               |
 | May 27       | 9    | Modern Map Making                                                    | Lab 17 |              | [Lab 15](georeferencing.qmd)                  |
 | May 31 (Sunday) | 10 |                                                                     |        |              | [Project](project_4.md)                       |
-| June 1       | 10   |                                                                      | Lab 17 |              |                                               |
-| June 3       | 10   |                                                                      | Lab 19 |              | 
+| June 1       | 10   |      Oral Exams                                                            | Lab 17 |              |                                               |
+| June 3       | 10   |                Oral Exams                                                      | Lab 19 |              | 
 
        
