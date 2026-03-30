@@ -104,6 +104,13 @@ Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=
 
 :::
 
+## Annoying Windows File Explorer Defaults
+
+By Default Windows Fiel Explorer hides file extensions. To fix this,
+
+1. Open File Explorer
+2. Click _View_ > _Show_ > _File name extenions_
+
 ## Terminals and Shells {style="font-size:0.7em"}
 
 - **Linux**: terminals use; `/bin/bash`, `/bin/zsh`, or others under POSIX conventions.

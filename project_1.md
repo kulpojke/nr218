@@ -19,7 +19,15 @@ format:
 
 This assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.
 
-Make a Folder called `NR218` in you OneDrive sync folder. Make a subdirectory, `project_1` inside of `NR218`  
+Make a Folder called `NR218` in your home folder. Make a subdirectory, `project_1` inside of `NR218`
+
+```
+agustov
+└──nr218 
+   └── project_1
+```
+
+__All of your work for this lab will go into the `project_1` directory. You will zip it and submit the zipped file on Canvas__
 
 # Written Responses (3 pts)
 
@@ -50,7 +58,16 @@ __Provide written responses to the following Questions in a pdf__. Name the docu
 # Tutorial Assignments (3 pts)
 Make a subdirectory called `tutorials` within your `NR218/project_1` directory.
 
-Complete the following tutorials.  Make a subdirectory (with a reasonable name) for each(with the exception of terminal tutor, nothing to save there) within `NR218/project_1/tutorials`.  __Submit screenshots of the final product for each__:
+```
+agustov
+└──nr218
+   └── project_1
+       └── answers.pdf
+       └── tutorials
+```
+
+Complete the following tutorials.  Make a subdirectory (with a reasonable name) for each (with the exception of terminal tutor, nothing to save there) within `NR218/project_1/tutorials`.  
+__Put screenshots of the final product for each tutorial in its respective folder__:
 
 - [Working With Attributes](https://www.qgistutorials.com/en/docs/3/working_with_attributes.html)
 - [Basic Vector Styling](https://www.qgistutorials.com/en/docs/3/basic_vector_styling.htm)
@@ -61,7 +78,7 @@ Complete the following tutorials.  Make a subdirectory (with a reasonable name) 
 
 **Make your first (production quality) map!** 
 - Make a subdirectory called `map` within your `NR218/project_1` directory in which to store files for this part.
-- Comlete the [Making a Map tutorial](https://www.qgistutorials.com/en/docs/3/making_a_map.html)
+- Complete the [Making a Map tutorial](https://www.qgistutorials.com/en/docs/3/making_a_map.html)
 - __Submit a PDF image of the final map you created at the end of the tutorial__
 
 # Show your directory structure (1 pt)
