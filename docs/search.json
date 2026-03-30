@@ -2744,13 +2744,6 @@
     "text": "Learning Goals\n\nHow to formulate and answer problems using spatial data\n\nHow to create quality maps and graphics\nApply skills in remote sensing, GIS, and data science to solve a problem of your own design\nUnderstand basic principles of GIS"
   },
   {
-    "objectID": "syllabus_spring_2026_s03.html#project-assignments",
-    "href": "syllabus_spring_2026_s03.html#project-assignments",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Project Assignments",
-    "text": "Project Assignments\nThis course centers on a series of 4 projects using different types of GIS data. The projects build on one another and you will learn new skills for each project. Plenty of class time will be spent on project work. Each student should hand in their own projects. See the calendar for due dates. Late assignments will be deducted 5% per day late."
-  },
-  {
     "objectID": "syllabus_spring_2026_s03.html#labs",
     "href": "syllabus_spring_2026_s03.html#labs",
     "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
@@ -2762,7 +2755,14 @@
     "href": "syllabus_spring_2026_s03.html#quizzes",
     "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
     "section": "Quizzes",
-    "text": "Quizzes\nThere will be five quizzes. For each quiz, if you get 75% of the poionts, you get full credit. Beyond 75% correct will allow you to earn up to 25% of the quiz value ni extra credit. ## Assignment Weight | Assignment | Percentage of Grade| Description | |—————————|—–|—-| | Lab exercises | 50 | 9 have assignments that need to be turned in | | Quizzes | 10 | Quizzes can happen any time! | | Project | 20 | Will use skills learned throughout the quarter | | Final Exam | 20 | Oral exam, in which you will explain what you did in project 4 |"
+    "text": "Quizzes\nThere will be five quizzes. For each quiz, if you get 75% of the poionts, you get full credit. Beyond 75% correct will allow you to earn up to 25% of the quiz value ni extra credit."
+  },
+  {
+    "objectID": "syllabus_spring_2026_s03.html#assignment-weight",
+    "href": "syllabus_spring_2026_s03.html#assignment-weight",
+    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
+    "section": "Assignment Weight",
+    "text": "Assignment Weight\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nLab exercises\n50\n9 have assignments that need to be turned in\n\n\nQuizzes\n10\nQuizzes can happen any time!\n\n\nProject\n20\nWill use skills learned throughout the quarter\n\n\nFinal Exam\n20\nOral exam, in which you will explain what you did in project 4"
   },
   {
     "objectID": "syllabus_spring_2026_s03.html#grading",
