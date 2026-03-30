@@ -45,7 +45,7 @@ navigation-mode: vertical
 
 # NR 218
 
-::: {.smaller}
+::: {style="font-size:0.7em"}
 [Use arrows or menu in bottom left corner to navigate amongst slides.]{style="font-size:0.6em"}
 
 __Assorted Links__   
@@ -53,7 +53,7 @@ __Assorted Links__
 [Syllabus Spring 2026 Section 03](https://kulpojke.github.io/nr218/syllabus_spring_2026_s03.html){style="font-size:0.8em"}  
 [Short Reading on Computers](computers.html){style="font-size:0.8em"}  
   
-::: {style="font-size:0.8em"}
+
 __Lab Assignments__    
 [Lab 1](computers_lab.qmd){style="font-size:0.8em"}  
 [Lab 2](project_1.html){style="font-size:0.8em"}  
@@ -65,7 +65,7 @@ __Lab Assignments__
 [Lab 14](lab_14.qmd){style="font-size:0.8em"}  
 [Lab 15](georeferencing.qmd#/1/7){style="font-size:0.8em"}  
 [Project](project_4.md){style="font-size:0.8em"}
-:::
+
 
 
 
