@@ -53,7 +53,7 @@ __Assorted Links__
 [Syllabus Spring 2026 Section 03](https://kulpojke.github.io/nr218/syllabus_spring_2026_s03.html){style="font-size:0.8em"}  
 [Short Reading on Computers](computers.html){style="font-size:0.8em"}  
   
-  ::: {style="font-size:0.8em"}
+::: {style="font-size:0.8em"}
 __Lab Assignments__    
 [Lab 1](computers_lab.qmd){style="font-size:0.8em"}  
 [Lab 2](project_1.html){style="font-size:0.8em"}  
