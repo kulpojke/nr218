@@ -115,7 +115,7 @@ By Default Windows Fiel Explorer hides file extensions. To fix this,
 
 - **Linux**: terminals use; `/bin/bash`, `/bin/zsh`, or others under POSIX conventions.
 - **macOS**: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.
-- **Windows**: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages.
+- **Windows**: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with different shells.
 
 [POSIX - Portable Operating System Interface is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems
 ]{style="font-size:0.5em"}
@@ -123,7 +123,7 @@ By Default Windows Fiel Explorer hides file extensions. To fix this,
 ## The Windows Terminal Dumpsterfire {style="font-size:0.7em"}
 
 - **Command Prompt (`cmd.exe`)**: legacy DOS-style environment with limited scripting features.
-- **PowerShell (5.x)** vs **PowerShell 7+**: different .NET runtimes, different module compatibility.
+- **PowerShell**: _Kind_ of acts like bash or zsh.
 - **Git Bash / MSYS2**: provides GNU functionality inside Windows; paths need translation.
 - **Environment-specific shells**: `Anaconda Prompt`, `Anaconda Powershell`, `OSGeo4W Shell`, etc., inject toolchains and custom env vars; each behaves slightly differently.
 
@@ -155,3 +155,77 @@ cat access.log | grep "GET /api" | wc -l
 ```powershell
 Get-Content access.log | Select-String "GET /api" | Measure-Object | Select-Object -ExpandProperty Count
 ```
+
+
+
+## Differences in `tree` command across platforms {style="font-size:0.7em"}
+
+:::{r-stack}
+:::{.fragment .fade-out data-fragment-index="1" style="position: absolute;"}
+On Unix like systems, like Mac OSX and Linux, by default `tree` shows files.
+
+```
+.
+├── PoorlyNamedFiles
+│   ├── basin.geojson
+│   ├── do not put spaces in filenames.geojson
+│   ├── Junk
+│   │   └── toadstools
+│   └── xp23_99.csv
+├── README.md
+└── WellNamedFiles
+    ├── cal_median_household.csv
+    ├── Eaton_Perimeter_20250121.geojson
+    └── san_simeon_creek_basin_4326.geojson
+
+```
+:::
+
+:::{.fragment  .fade-in data-fragment-index="1" style="position: absolute;"}
+
+In PowerShell, files are omitted by default
+
+```
+.
+├── PoorlyNamedFiles
+│   └── Junk
+└── WellNamedFiles
+```
+
+In order to show files in PowerShell use the F flag, `tree /F`
+
+```
+├── PoorlyNamedFiles
+│   ├── basin.geojson
+│   ├── do not put spaces in filenames.geojson
+│   ├── Junk
+│   │   └── toadstools
+│   └── xp23_99.csv
+├── README.md
+└── WellNamedFiles
+    ├── cal_median_household.csv
+    ├── Eaton_Perimeter_20250121.geojson
+    └── san_simeon_creek_basin_4326.geojson
+```
+
+:::
+:::
+
+## Zipped Files 
+
+::: { .r-stack}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
+## How do I unzip a zip archive? What is a zip archive?
+__What is a zip file?__
+A zip file is a compressed archive.  Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure.  When you unzip, or extract the data you get back an uncompressed copy.  Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use.  __Do not work directly with files compressed in a zip!__ .While QGIS and other applications _can_ read files from inside of a zip, it is a bad idea to do so.  There are many processing tools that cannot work with the compressed file.  Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.
+:::
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+__To unzip:__  
+
+- Windows (GUI): In File Explorer, find the `.zip`, right-click → “Extract All…,” choose your desired destination folder, click Extract.
+- macOS (GUI): In Finder, double-click the `.zip` to expand it, then drag/move the extracted folder into your destination folder.
+- Linux (terminal): `cd ~/Downloads` (or wherever it landed), then run `unzip SPR_data.zip -d <destination directory>` (replace `<destination directory>` with your actual destination directory. Install unzip if missing: `sudo apt install unzip`).
+
+:::

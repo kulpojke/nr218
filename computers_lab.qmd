@@ -13,9 +13,15 @@ In this lab you will also be introduced to using the terminal. Having some famil
 
 That said, you will not have to be great at it for this class.  It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.
 
-For this lab you should <strong><u>turn in the document you create, in Task 1 (in steps 8, and 9) and Task 2,  on Canvas. </u></strong> You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter, so don't skip it!
+For this lab you should <strong><u>turn in the document you create, in Task 1  and Task 2 (in steps 8, and 9),  on Canvas. </u></strong> You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter, so don't skip it!
 
-## Task 1: Exploring a Directory Structure and unzipping files
+## Task 1: Terminal Tutorial
+
+Complete part 2, _Navigating Directories_, in [Terminal Tutor](https://www.terminaltutor.com/). Feel free to do the first part too if you want, it is worthwhile. Take a screenshot when you are done, include the screenshot in the document.
+
+This introduces you to POSIX shells. If you are using Mac or Linux, your terminal will behave like the one in the tutorial, if you are on a Windows computer you can use use PowerShell, which in many ways behaves like a POSIX shell.  
+
+## Task 2: Exploring a Directory Structure and unzipping files
 
 1. Download the toy data [here](https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip) (rigth-click the link then use _Save Link As_). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration.  For now, we will do just that, so unzip `toy_data.zip` right into the download folder (see @tip-zip for how to do this.).  
 
@@ -81,10 +87,6 @@ A relative path is the position of a file relative to the position of the file t
 
 In a (bash-like) terminal you can change directories using the `cd` command to navigate to a directory by giving ita path. You can use and absolute path, e.g. `cd  /home/michael/CP/nr218` or  equivalently `cd ~/CP/nr218`. Or you can use a relative path, `cd ../` to go to the parent directory, `cd ../../` to go up two levels in the directory hierarchy.  If you are in  `/home/michael`,  `cd CP/nr218` would do the same thing as `cd  /home/michael/CP/nr218`.
 :::
-
-## Task 2: Terminal Tutorial
-
-Complete part 2, _Navigating Directories_, in [Terminal Tutor](https://www.terminaltutor.com/). Feel free to do the first part too if you want, it is worthwhile. Take a screenshot when you are done, include the screenshot in the document.
 
 ## Task 3: Set Up OneDrive Sync (Cal Poly Account)
 

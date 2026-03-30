@@ -283,7 +283,7 @@
 <ul>
 <li><strong>Linux</strong>: terminals use; <code>/bin/bash</code>, <code>/bin/zsh</code>, or others under POSIX conventions.</li>
 <li><strong>macOS</strong>: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.</li>
-<li><strong>Windows</strong>: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with differing command languages.</li>
+<li><strong>Windows</strong>: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with different shells.</li>
 </ul>
 <p><span style="font-size:0.5em">POSIX - Portable Operating System Interface is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems</span></p>
 </section>
@@ -291,7 +291,7 @@
 <h2>The Windows Terminal Dumpsterfire</h2>
 <ul>
 <li><strong>Command Prompt (<code>cmd.exe</code>)</strong>: legacy DOS-style environment with limited scripting features.</li>
-<li><strong>PowerShell (5.x)</strong> vs <strong>PowerShell 7+</strong>: different .NET runtimes, different module compatibility.</li>
+<li><strong>PowerShell</strong>: <em>Kind</em> of acts like bash or zsh.</li>
 <li><strong>Git Bash / MSYS2</strong>: provides GNU functionality inside Windows; paths need translation.</li>
 <li><strong>Environment-specific shells</strong>: <code>Anaconda Prompt</code>, <code>Anaconda Powershell</code>, <code>OSGeo4W Shell</code>, etc., inject toolchains and custom env vars; each behaves slightly differently.</li>
 </ul>
@@ -327,9 +327,68 @@
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a></a><span class="fu">Get-Content</span> access<span class="op">.</span><span class="fu">log</span> <span class="op">|</span> <span class="fu">Select-String</span> <span class="st">"GET /api"</span> <span class="op">|</span> <span class="fu">Measure-Object</span> <span class="op">|</span> <span class="fu">Select-Object</span> <span class="op">-</span>ExpandProperty Count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
+</section>
+<section id="differences-in-tree-command-across-platforms" class="slide level2 center" style="font-size:0.7em">
+<h2>Differences in <code>tree</code> command across platforms</h2>
+<div class="{r-stack}">
+<div class="fragment fade-out" data-fragment-index="1" style="position: absolute;">
+<p>On Unix like systems, like Mac OSX and Linux, by default <code>tree</code> shows files.</p>
+<pre><code>.
+├── PoorlyNamedFiles
+│&nbsp;&nbsp; ├── basin.geojson
+│&nbsp;&nbsp; ├── do not put spaces in filenames.geojson
+│&nbsp;&nbsp; ├── Junk
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── toadstools
+│&nbsp;&nbsp; └── xp23_99.csv
+├── README.md
+└── WellNamedFiles
+    ├── cal_median_household.csv
+    ├── Eaton_Perimeter_20250121.geojson
+    └── san_simeon_creek_basin_4326.geojson
+</code></pre>
+</div>
+<div class="fragment fade-in" data-fragment-index="1" style="position: absolute;">
+<p>In PowerShell, files are omitted by default</p>
+<pre><code>.
+├── PoorlyNamedFiles
+│&nbsp;&nbsp; └── Junk
+└── WellNamedFiles</code></pre>
+<p>In order to show files in PowerShell use the F flag, <code>tree /F</code></p>
+<pre><code>├── PoorlyNamedFiles
+│&nbsp;&nbsp; ├── basin.geojson
+│&nbsp;&nbsp; ├── do not put spaces in filenames.geojson
+│&nbsp;&nbsp; ├── Junk
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── toadstools
+│&nbsp;&nbsp; └── xp23_99.csv
+├── README.md
+└── WellNamedFiles
+    ├── cal_median_household.csv
+    ├── Eaton_Perimeter_20250121.geojson
+    └── san_simeon_creek_basin_4326.geojson</code></pre>
+</div>
+</div>
+</section>
+<section id="zipped-files" class="slide level2 center">
+<h2>Zipped Files</h2>
+</section>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
+<section id="how-do-i-unzip-a-zip-archive-what-is-a-zip-archive" class="slide level2 center">
+<h2>How do I unzip a zip archive? What is a zip archive?</h2>
+<p><strong>What is a zip file?</strong> A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use. <strong>Do not work directly with files compressed in a zip!</strong> .While QGIS and other applications <em>can</em> read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.</p>
+</section>
+</div>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<p><strong>To unzip:</strong></p>
+<ul>
+<li>Windows (GUI): In File Explorer, find the <code>.zip</code>, right-click → “Extract All…,” choose your desired destination folder, click Extract.</li>
+<li>macOS (GUI): In Finder, double-click the <code>.zip</code> to expand it, then drag/move the extracted folder into your destination folder.</li>
+<li>Linux (terminal): <code>cd ~/Downloads</code> (or wherever it landed), then run <code>unzip SPR_data.zip -d &lt;destination directory&gt;</code> (replace <code>&lt;destination directory&gt;</code> with your actual destination directory. Install unzip if missing: <code>sudo apt install unzip</code>).</li>
+</ul>
+</div>
 
-
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

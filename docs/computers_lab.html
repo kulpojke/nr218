@@ -105,10 +105,15 @@ ul.task-list li input[type="checkbox"] {
 <p>In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others. We will practice organizing data on a computer and extracting zipped archives.</p>
 <p>In this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful. If you learn how to use the terminal well you will probably use it frequently.</p>
 <p>That said, you will not have to be great at it for this class. It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.</p>
-<p>For this lab you should <strong><u>turn in the document you create, in Task 1 (in steps 8, and 9) and Task 2, on Canvas. </u></strong> You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter, so don’t skip it!</p>
+<p>For this lab you should <strong><u>turn in the document you create, in Task 1 and Task 2 (in steps 8, and 9), on Canvas. </u></strong> You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter, so don’t skip it!</p>
 </section>
-<section id="task-1-exploring-a-directory-structure-and-unzipping-files" class="level2">
-<h2 class="anchored" data-anchor-id="task-1-exploring-a-directory-structure-and-unzipping-files">Task 1: Exploring a Directory Structure and unzipping files</h2>
+<section id="task-1-terminal-tutorial" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-terminal-tutorial">Task 1: Terminal Tutorial</h2>
+<p>Complete part 2, <em>Navigating Directories</em>, in <a href="https://www.terminaltutor.com/">Terminal Tutor</a>. Feel free to do the first part too if you want, it is worthwhile. Take a screenshot when you are done, include the screenshot in the document.</p>
+<p>This introduces you to POSIX shells. If you are using Mac or Linux, your terminal will behave like the one in the tutorial, if you are on a Windows computer you can use use PowerShell, which in many ways behaves like a POSIX shell.</p>
+</section>
+<section id="task-2-exploring-a-directory-structure-and-unzipping-files" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-exploring-a-directory-structure-and-unzipping-files">Task 2: Exploring a Directory Structure and unzipping files</h2>
 <ol type="1">
 <li>Download the toy data <a href="https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip">here</a> (rigth-click the link then use <em>Save Link As</em>). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. For now, we will do just that, so unzip <code>toy_data.zip</code> right into the download folder (see <a href="#tip-zip" class="quarto-xref">Tip&nbsp;1</a> for how to do this.).</li>
 </ol>
@@ -158,7 +163,7 @@ Tip&nbsp;2: Where is my home folder?
 <li>Press <code>Ctrl+S</code>. This opens a dialogue for saving the QGIS project. Navigate to the <code>nr218</code> directory you just created. Name the project after you CalPoly email address (e.g.&nbsp;<code>mthuggin</code>. Note that this would be a terrible thing to actually name a project). You have now saved a file containing the project.</li>
 <li>Press <code>Ctrl+Shift+V</code>, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to <code>~/Downloads/toy_data/WellNamedFiles</code> and select <code>Eaton_Perimeter_20250121.geojson</code>. You should now see a polygon in the map (something like <a href="#fig-eaton" class="quarto-xref">Figure&nbsp;1</a>)</li>
 </ul>
-<div id="fig-eaton" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the eaton fire perimeter polygon within QGIS" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter">
+<div id="fig-eaton" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter" alt="Image showing the eaton fire perimeter polygon within QGIS">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eaton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/eaton_perim.png" class="img-fluid figure-img" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter" alt="Image showing the eaton fire perimeter polygon within QGIS">
@@ -176,7 +181,7 @@ Figure&nbsp;1: You should se something like this after opening <code>Eaton_Perim
 <ul>
 <li>Now QGIS cannot find the Eaton Fire perimeter data because the <em>relative path</em> to the data has changed (see <a href="#tip-paths" class="quarto-xref">Tip&nbsp;3</a>). A dialogue such as the one shown in <a href="#fig-unavailable" class="quarto-xref">Figure&nbsp;2</a> will appear. Don’t worry about trying to fix the problem yet.</li>
 </ul>
-<div id="fig-unavailable" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the handle unavailable data dialogue window in QGIS" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it.">
+<div id="fig-unavailable" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it." alt="Image showing the handle unavailable data dialogue window in QGIS">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-unavailable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/unavailable.png" class="img-fluid figure-img" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it." alt="Image showing the handle unavailable data dialogue window in QGIS">
@@ -228,10 +233,6 @@ Tip&nbsp;3: What is a Path?
 <p>In a (bash-like) terminal you can change directories using the <code>cd</code> command to navigate to a directory by giving ita path. You can use and absolute path, e.g.&nbsp;<code>cd  /home/michael/CP/nr218</code> or equivalently <code>cd ~/CP/nr218</code>. Or you can use a relative path, <code>cd ../</code> to go to the parent directory, <code>cd ../../</code> to go up two levels in the directory hierarchy. If you are in <code>/home/michael</code>, <code>cd CP/nr218</code> would do the same thing as <code>cd  /home/michael/CP/nr218</code>.</p>
 </div>
 </div>
-</section>
-<section id="task-2-terminal-tutorial" class="level2">
-<h2 class="anchored" data-anchor-id="task-2-terminal-tutorial">Task 2: Terminal Tutorial</h2>
-<p>Complete part 2, <em>Navigating Directories</em>, in <a href="https://www.terminaltutor.com/">Terminal Tutor</a>. Feel free to do the first part too if you want, it is worthwhile. Take a screenshot when you are done, include the screenshot in the document.</p>
 </section>
 <section id="task-3-set-up-onedrive-sync-cal-poly-account" class="level2">
 <h2 class="anchored" data-anchor-id="task-3-set-up-onedrive-sync-cal-poly-account">Task 3: Set Up OneDrive Sync (Cal Poly Account)</h2>

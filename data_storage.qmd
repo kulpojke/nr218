@@ -44,10 +44,17 @@ _File extensions_ denote files readable by certain programs, for example:
 | filename.parquet | compressed table |
 
 
-## File types 
+## File types {style="font-size: 0.5em"}
 + Computer programs only read certain file formats.
 + Familiarity with different file types is helpful.
-+ Common GIS file types: .shp (along with its _sidecar files_ .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg,
++ QGIS has several of its own file types
+  - Project files: .qgz, .qgs
+  - Styling/symbology: .qml
+  - Layout templates: .qpt
+  - Layer definitions: .qlr
+  - Project companion database: .qgd
+
++ Common GIS data file types: .shp (along with its _sidecar files_ .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg,
 .json, .geojson, .txt, .hdf, .nc, .parquet and a few others
 
 

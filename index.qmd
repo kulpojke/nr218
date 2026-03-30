@@ -77,8 +77,6 @@ __Lab Assignments__
 
 {{< include what_is_gis.qmd >}}
 
-{{< include notes_lab_1.qmd >}}
-
 {{< include some_basic_gis_concepts.qmd >}}
 
 {{< include data_storage.qmd >}}
