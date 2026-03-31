@@ -105,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others. We will practice organizing data on a computer and extracting zipped archives.</p>
 <p>In this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful. If you learn how to use the terminal well you will probably use it frequently.</p>
 <p>That said, you will not have to be great at it for this class. It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.</p>
-<p>For this lab you should <strong><u>turn in the document you create, in Task 1 and Task 2 (in steps 8, and 9), on Canvas. </u></strong> You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter, so don’t skip it!</p>
+<p>For this lab you should create a text document (e.g.&nbsp;Word, LibreOffice, or Google docs, etc…) and add the Scrrenshot from Task 1 and answers from Task 2 (in steps 8, and 9), on Canvas. You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter, so don’t skip it!</p>
 </section>
 <section id="task-1-terminal-tutorial" class="level2">
 <h2 class="anchored" data-anchor-id="task-1-terminal-tutorial">Task 1: Terminal Tutorial</h2>
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="task-2-exploring-a-directory-structure-and-unzipping-files" class="level2">
 <h2 class="anchored" data-anchor-id="task-2-exploring-a-directory-structure-and-unzipping-files">Task 2: Exploring a Directory Structure and unzipping files</h2>
 <ol type="1">
-<li>Download the toy data <a href="https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip">here</a> (rigth-click the link then use <em>Save Link As</em>). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. For now, we will do just that, so unzip <code>toy_data.zip</code> right into the download folder (see <a href="#tip-zip" class="quarto-xref">Tip&nbsp;1</a> for how to do this.).</li>
+<li>Download the toy data <a href="https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip">here</a> (Open the linkin a new tab and click the <em>Download raw file</em> button on the right side). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. For now, we will do just that, so unzip <code>toy_data.zip</code> right into the download folder (see <a href="#tip-zip" class="quarto-xref">Tip&nbsp;1</a> for how to do this.).</li>
 </ol>
 <div id="tip-zip" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -163,7 +163,7 @@ Tip&nbsp;2: Where is my home folder?
 <li>Press <code>Ctrl+S</code>. This opens a dialogue for saving the QGIS project. Navigate to the <code>nr218</code> directory you just created. Name the project after you CalPoly email address (e.g.&nbsp;<code>mthuggin</code>. Note that this would be a terrible thing to actually name a project). You have now saved a file containing the project.</li>
 <li>Press <code>Ctrl+Shift+V</code>, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to <code>~/Downloads/toy_data/WellNamedFiles</code> and select <code>Eaton_Perimeter_20250121.geojson</code>. You should now see a polygon in the map (something like <a href="#fig-eaton" class="quarto-xref">Figure&nbsp;1</a>)</li>
 </ul>
-<div id="fig-eaton" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the eaton fire perimeter polygon within QGIS" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter">
+<div id="fig-eaton" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter" alt="Image showing the eaton fire perimeter polygon within QGIS">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eaton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/eaton_perim.png" class="img-fluid figure-img" data-fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter" alt="Image showing the eaton fire perimeter polygon within QGIS">
@@ -181,7 +181,7 @@ Figure&nbsp;1: You should se something like this after opening <code>Eaton_Perim
 <ul>
 <li>Now QGIS cannot find the Eaton Fire perimeter data because the <em>relative path</em> to the data has changed (see <a href="#tip-paths" class="quarto-xref">Tip&nbsp;3</a>). A dialogue such as the one shown in <a href="#fig-unavailable" class="quarto-xref">Figure&nbsp;2</a> will appear. Don’t worry about trying to fix the problem yet.</li>
 </ul>
-<div id="fig-unavailable" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the handle unavailable data dialogue window in QGIS" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it.">
+<div id="fig-unavailable" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it." alt="Image showing the handle unavailable data dialogue window in QGIS">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-unavailable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/unavailable.png" class="img-fluid figure-img" data-fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it." alt="Image showing the handle unavailable data dialogue window in QGIS">
@@ -193,11 +193,10 @@ Figure&nbsp;2: When the relative path to data changes (or the data is deleted) Q
 </div>
 <ol start="7" type="1">
 <li>Open a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, <code>cd ~/nr218</code>.</li>
-<li>Create a text document (Use word or Google Docs or whatever). Name it <code>gustav_adolf_lab1</code> (use your own name, not Gustov Adolf’s name).</li>
 <li>View the contents of the directory:</li>
 </ol>
 <ul>
-<li>In the terminal (while in <code>~/nr218</code>) type <code>tree</code>. (on Windows <code>tree</code> omits files by default, so use <code>tree /F</code> where the F flag tells it to include files.)
+<li>In the terminal (while in <code>~/nr218</code>) type <code>tree</code>. (on Windows, in PowerShell, <code>tree</code> omits files by default, so use <code>tree /F</code> where the F flag tells it to include files.)
 <ul>
 <li>macOS/Linux, install if missing: <code>brew install tree</code> / <code>sudo apt install tree</code>.</li>
 <li>Windows PowerShell: <code>tree</code> should be present. If you love typing you can use <code>Get-ChildItem -Recurse</code> instead.</li>

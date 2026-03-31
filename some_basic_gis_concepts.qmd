@@ -25,7 +25,7 @@ relative to some reference point
 + Egocentric location, _to my left_
 + Landmark direction, _towards the mountain_
 
-In geography and GIS, there are three more standard benchmarks that are used to define the directions:
+In geography and GIS, there are three standard benchmarks that are used to define the directions:
 
 + __True north__ is towards the point at which the axis of the
 earth’s rotation intersects the earth’s surface in the norther hemisphere
@@ -35,16 +35,26 @@ earth’s rotation intersects the earth’s surface in the norther hemisphere
 + __Grid north__ is the northward direction of the grid lines of latitude and longitude on a map
 
 ## {auto-animate=true auto-animate-easing="ease-in-out"}
-
+::: {.columns}
+::: {.column width="50%"}
 :::{.absolute style="top: 40px; left: 50px; font-size: 0.8em;" data-id="1"}
 ![](img/Utm-latlon_grid_en.svg.png){width=400px top=10 right=0}
 :::
-
-:::{.absolute style="top: 40px; right: 50px; font-size: 0.8em;" data-id="2"}
-![](img/North_Magnetic_Poles.png){width=400px top=10}
 :::
 
 
+::: {.column width="50%"}
+:::{.absolute style="top: 40px; right: 50px; font-size: 0.8em;" data-id="2"}
+![](img/North_Magnetic_Poles.png){width=400px top=10}
+
+::: {style="font-size:0.7em"}
++ btw, currently North is South!  
++ Magnetic and Geomagnetic poles?
+:::
+
+:::
+:::
+:::
 
 
 
@@ -166,7 +176,7 @@ distributed across space, such as a map of malaria infection rates
 :::
 :::
 
-::: {.fragment .fade-in style="position: absolute top=0; font-size:0.5em" data-fragment-index="5"}
+::: {.fragment .fade-in style="position: absolute ; font-size:0.5em" data-fragment-index="5"}
 __Dynamic / Interactive__  
 - maps that change depending on user input
 ```{python}
@@ -207,7 +217,7 @@ map
 ```
 
 :::
-
+:::
 
 ## What is data? (_What are data?_) 
 + "Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation."
@@ -228,4 +238,3 @@ Data with a geographic and/or  spatial component.
 :::{.fragment}
 Data about the data, e.g. units, date collected, instruments used...
 :::
-

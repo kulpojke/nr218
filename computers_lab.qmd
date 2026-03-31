@@ -13,7 +13,7 @@ In this lab you will also be introduced to using the terminal. Having some famil
 
 That said, you will not have to be great at it for this class.  It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.
 
-For this lab you should <strong><u>turn in the document you create, in Task 1  and Task 2 (in steps 8, and 9),  on Canvas. </u></strong> You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter, so don't skip it!
+For this lab you should create a text document (e.g. Word, LibreOffice, or Google docs, etc...) and add the Scrrenshot from Task 1 and answers from Task 2 (in steps 8, and 9),  on Canvas. You do not have to turn in anything for Task 2, but you will need to have your OneDrive configured properly for the rest of the quarter, so don't skip it!
 
 ## Task 1: Terminal Tutorial
 
@@ -23,7 +23,7 @@ This introduces you to POSIX shells. If you are using Mac or Linux, your termina
 
 ## Task 2: Exploring a Directory Structure and unzipping files
 
-1. Download the toy data [here](https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip) (rigth-click the link then use _Save Link As_). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration.  For now, we will do just that, so unzip `toy_data.zip` right into the download folder (see @tip-zip for how to do this.).  
+1. Download the toy data [here](https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip) (Open the linkin a new tab and click the _Download raw file_ button on the right side). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration.  For now, we will do just that, so unzip `toy_data.zip` right into the download folder (see @tip-zip for how to do this.).  
 
 ::: {#tip-zip .callout-tip}
 ## How do I unzip a zip archive? What is a zip archive?
@@ -61,9 +61,8 @@ A zip file is a compressed archive.  Zipping a folder full of sub-directories an
 ![When the relative path to data changes (or the data is deleted) QGIS cannot find it.` ](img/unavailable.png){#fig-unavailable fig-alt="Image showing the handle unavailable data dialogue window in QGIS" fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it."}
 
 7. Open a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, `cd ~/nr218`.
-8. Create a text document (Use word or Google Docs or whatever). Name it `gustav_adolf_lab1` (use your own name, not Gustov Adolf's name).
-9. View the contents of the directory:
-  - In the terminal (while in `~/nr218`) type `tree`. (on Windows `tree` omits files by default, so use `tree /F` where the F flag tells it to include files.)
+8. View the contents of the directory:
+  - In the terminal (while in `~/nr218`) type `tree`. (on Windows, in PowerShell, `tree` omits files by default, so use `tree /F` where the F flag tells it to include files.)
     - macOS/Linux, install if missing: `brew install tree` / `sudo apt install tree`.
     - Windows PowerShell: `tree` should be present.  If you love typing you can use `Get-ChildItem -Recurse` instead.
   - Copy the output  and paste at the top of your text document.

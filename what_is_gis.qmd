@@ -56,25 +56,27 @@ GIS is useful is many domains, for example:
 :::
 
 
+:::
+
 ## Why use GIS
 
 ::: {r-stack}
 
-::: {.fragment .fade-in-then-out style="position: absolute;"}
+::: {.fragment .fade-out style="position: absolute;" data-fragment-index="1"}
 Monitor and understand our planet
 
 ![](img/Global_NDVI.gif){top=220 left=110 width="475"}
 ![](img/aralsea.png){top=150 right=0 width="275"}
 :::
 
-::: {.fragment .fade-in-then-out style="position: absolute;"}
+::: {.fragment .fade-in-then-out style="position: absolute;" data-fragment-index="1"}
 Planning
 
 ![](img/urb_plan.png){width="575"}
 :::
 
 
-::: {.fragment .fade-in-then-out style="position: absolute;"}
+::: {.fragment .fade-in-then-out style="position: absolute;" data-fragment-index="2"}
 Disaster Response
 
 ![](img/modis-fire.jpeg){top=220 left=110 width="475"}
@@ -86,9 +88,9 @@ Disaster Response
 
 ## Software{style="font-size: 0.5em"}
 :::{.fragment}
-+ This class will be taught using QGIS (but you can use anything you want)
++ This class will be taught using QGIS.
 + Software changes - We will focus on building an understanding of the concepts that will allow you to successfully use any GIS software.
-+ I will occasionally show examples of analysis using other tools, particularly Python.
++ I might show examples of analysis using other tools, particularly Python.
 :::
 
 :::{.r-stack}
@@ -112,7 +114,7 @@ There are also command line tools
 </p>
 
 <p class="fragment fade-in-then-out">
-Additionally, GIS can be performed purely using scripting languages  
+Additionally, GIS can be performed using scripting languages  
   - Python  
   - R  
   - Javascript  
@@ -132,7 +134,7 @@ yourself if you are familiar with programming.
 + Commonly used in many organizations
 + Easier to learn ArcGIS after QGIS than the other way around
 
-## Beautiful Maps
+## Interesting Maps
 + [QGIS Map gallery](https://www.flickr.com/groups/qgis/pool/)
 + [Oceano Dunes (using plas.io)](https://p3d.in/Z86TN) 
 + [Stackexchange thread of beautiful maps](https://gis.stackexchange.com/questions/3083/seeking-examples-of-beautiful-maps)
