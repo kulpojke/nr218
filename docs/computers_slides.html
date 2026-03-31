@@ -368,27 +368,19 @@
 </div>
 </div>
 </section>
-<section id="zipped-files" class="slide level2 center">
+<section id="zipped-files" class="slide level2 center" style="font-size:0.5em">
 <h2>Zipped Files</h2>
-</section>
-<div class="r-stack">
-<div class="fragment absolute fade-out" data-fragment-index="1" style="">
-<section id="how-do-i-unzip-a-zip-archive-what-is-a-zip-archive" class="slide level2 center">
-<h2>How do I unzip a zip archive? What is a zip archive?</h2>
-<p><strong>What is a zip file?</strong> A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use. <strong>Do not work directly with files compressed in a zip!</strong> .While QGIS and other applications <em>can</em> read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.</p>
-</section>
-</div>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<p><strong>What is a zip file?</strong> A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use.</p>
+<p><strong>Do not work directly with files compressed in a zip!</strong> .While QGIS and other applications <em>can</em> read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.</p>
 <p><strong>To unzip:</strong></p>
 <ul>
 <li>Windows (GUI): In File Explorer, find the <code>.zip</code>, right-click → “Extract All…,” choose your desired destination folder, click Extract.</li>
 <li>macOS (GUI): In Finder, double-click the <code>.zip</code> to expand it, then drag/move the extracted folder into your destination folder.</li>
 <li>Linux (terminal): <code>cd ~/Downloads</code> (or wherever it landed), then run <code>unzip SPR_data.zip -d &lt;destination directory&gt;</code> (replace <code>&lt;destination directory&gt;</code> with your actual destination directory. Install unzip if missing: <code>sudo apt install unzip</code>).</li>
 </ul>
-</div>
 
-</section>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
