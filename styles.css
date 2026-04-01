@@ -58,3 +58,15 @@ code.nowrap,
   word-wrap: normal !important;
   word-break: normal !important;
 }
+
+.terminal-cheatsheet-table table {
+  border-collapse: collapse;
+}
+
+.terminal-cheatsheet-table th,
+.terminal-cheatsheet-table td {
+  border-left: 1px solid #666;
+  border-right: 1px solid #666;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}

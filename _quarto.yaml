@@ -4,6 +4,8 @@ project:
   render:
     - syllabus_spring_2026_s03.qmd
     - computers_lab.qmd
+    - tips_for_mac_users.qmd
+    - terminal_cheatsheet.qmd
     - project_1.md
     - project_2.md
     - project_3.md
