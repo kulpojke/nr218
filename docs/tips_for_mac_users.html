@@ -129,12 +129,19 @@
 <section>
 <section id="tips-for-mac-users" class="title-slide slide level1 center">
 <h1>Tips for Mac Users</h1>
-
+<ul>
+<li><a href="#/making-your-home-directory-visible-in-finder">Making your home directory visible in Finder</a></li>
+<li><a href="#/installing-qgis-on-mac">Installing QGIS on Mac</a></li>
+<li><a href="#/installing-homebrew">Installing Homebrew</a></li>
+<li><a href="#/installing-tree-command">Installing tree command</a></li>
+</ul>
 </section>
 <section id="making-your-home-directory-visible-in-finder" class="slide level2 center">
 <h2>Making your home directory visible in Finder</h2>
-<p>To show your home directory in macOS Finder, open Finder and press <code>Shift+Command+H</code></p>
-<p>To add it to the sidebar for easy access in macOS, open Finder then go to <code>Settings</code> (or <code>Preferences</code>) <code>&gt; Sidebar</code> and check the box next to your home icon.</p>
+<ul>
+<li><p>To show your home directory in macOS Finder, open Finder and press <code>Shift+Command+H</code></p></li>
+<li><p>To add it to the sidebar drag the folder icon (at the top of the window) into the sidebar.</p></li>
+</ul>
 </section>
 <section id="installing-qgis-on-mac" class="slide level2 center" style="font-size:0.6em">
 <h2>Installing QGIS on Mac</h2>
@@ -146,8 +153,25 @@
 <p>It is possible that one or both of these issues will be resolved soon, but we cannot depend on that. The best solution currently is to use the older version 3.34. Unfortunately there is no archived QGIS 3.34 macOS .dmg in the QGIS old releases archive. So, options are</p>
 <ul>
 <li>[Easy] Use the lab computer</li>
-<li>[I have not tested] Using homebrew try <code>brew install --cask qgis</code></li>
+<li>[I have not tested] Using homebrew try <code>brew install --cask qgis</code> (see <a href="#/installing-homebrew">Installing Homebrew</a>)</li>
 </ul>
+</section>
+<section id="installing-homebrew" class="slide level2 center" style="font-size:0.7em">
+<h2>Installing Homebrew</h2>
+<ol type="1">
+<li>go to the <a href="https://brew.sh/">Homebrew website</a></li>
+<li>Copy the command for installing Homebrew and paste into your terminal (and press enter), it should look something like</li>
+</ol>
+<pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+<p>(This just downloads the <code>install.sh</code> file and executes it, installing Homebrew)</p>
+<ol start="3" type="1">
+<li><p>Follow the prompts, enter your password (you will not be able to see it as you enter it).</p></li>
+<li><p>There may be a message about “Next steps”. You can ignore that.</p></li>
+</ol>
+</section>
+<section id="installing-tree-command" class="slide level2 center">
+<h2>Installing tree command</h2>
+<p>In terminal <code>brew install tree</code>. (If Homebrew is not yet installed see <a href="#/installing-homebrew">Installing Homebrew</a>.)</p>
 
 
 </section></section>

@@ -119,18 +119,81 @@
     "text": "Zipped Files\nWhat is a zip file? A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use.\nDo not work directly with files compressed in a zip! .While QGIS and other applications can read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.\nTo unzip:\n\nWindows (GUI): In File Explorer, find the .zip, right-click → “Extract All…,” choose your desired destination folder, click Extract.\nmacOS (GUI): In Finder, double-click the .zip to expand it, then drag/move the extracted folder into your destination folder.\nLinux (terminal): cd ~/Downloads (or wherever it landed), then run unzip SPR_data.zip -d &lt;destination directory&gt; (replace &lt;destination directory&gt; with your actual destination directory. Install unzip if missing: sudo apt install unzip)."
   },
   {
+    "objectID": "index.html#data-storage",
+    "href": "index.html#data-storage",
+    "title": "NR 218",
+    "section": "Data Storage",
+    "text": "Data Storage\n\nWe store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times there are just 1s and 0s (binary file)\nEven the human readable files are ultimately stored as 1s and 0s (more on that)"
+  },
+  {
+    "objectID": "index.html#data-storage-1",
+    "href": "index.html#data-storage-1",
+    "title": "NR 218",
+    "section": "Data Storage",
+    "text": "Data Storage\nFile extensions denote files readable by certain programs, for example:\n\n\n\nExtension\ndescription\n\n\n\n\nfilename.txt\ntext file\n\n\nfilename.doc\nMicrosoft Word file\n\n\nfilename.pdf\nportable document file\n\n\nfilename.html\nhypertext markup language\n\n\nfilename.xml\nextensible markup language\n\n\nfilename.tif\ntagged image format\n\n\nfilename.json\njavascript object notation\n\n\nfilename.geojson\ngeographic json\n\n\nfilename.laz\nLASer zip\n\n\nfilename.parquet\ncompressed table"
+  },
+  {
+    "objectID": "index.html#file-types",
+    "href": "index.html#file-types",
+    "title": "NR 218",
+    "section": "File types",
+    "text": "File types\n\nComputer programs only read certain file formats.\nFamiliarity with different file types is helpful.\nQGIS has several of its own file types\n\nProject files: .qgz, .qgs\nStyling/symbology: .qml\nLayout templates: .qpt\nLayer definitions: .qlr\nProject companion database: .qgd\n\nCommon GIS data file types: .shp (along with its sidecar files .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
+  },
+  {
+    "objectID": "index.html#file-paths-and-directories-1",
+    "href": "index.html#file-paths-and-directories-1",
+    "title": "NR 218",
+    "section": "File Paths and Directories",
+    "text": "File Paths and Directories"
+  },
+  {
+    "objectID": "index.html#file-organization-and-computer-hygiene",
+    "href": "index.html#file-organization-and-computer-hygiene",
+    "title": "NR 218",
+    "section": "File Organization and Computer Hygiene",
+    "text": "File Organization and Computer Hygiene\n\nBe kind to your future self - keep your files organized:\n\nUse directories (a.k.a folders)\nUse descriptive names:\n\ne.g. slo_county_26910.geojson not county.geojson\n\nDon’t put spaces in file or directory names (see this)"
+  },
+  {
+    "objectID": "index.html#how-to-organize-your-files",
+    "href": "index.html#how-to-organize-your-files",
+    "title": "NR 218",
+    "section": "How to Organize your files",
+    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── Project_1/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
+  },
+  {
+    "objectID": "index.html#cloud-storage",
+    "href": "index.html#cloud-storage",
+    "title": "NR 218",
+    "section": "Cloud Storage",
+    "text": "Cloud Storage\nMany options, but mounting Cal Poly One Drive as a disk is is probably the simplest.\nSee the Cal Poly tutorial here or try this, for Linux users or the computer savvy."
+  },
+  {
     "objectID": "index.html#making-your-home-directory-visible-in-finder",
     "href": "index.html#making-your-home-directory-visible-in-finder",
     "title": "NR 218",
     "section": "Making your home directory visible in Finder",
-    "text": "Making your home directory visible in Finder\nTo show your home directory in macOS Finder, open Finder and press Shift+Command+H\nTo add it to the sidebar for easy access in macOS, open Finder then go to Settings (or Preferences) &gt; Sidebar and check the box next to your home icon."
+    "text": "Making your home directory visible in Finder\n\nTo show your home directory in macOS Finder, open Finder and press Shift+Command+H\nTo add it to the sidebar drag the folder icon (at the top of the window) into the sidebar."
   },
   {
     "objectID": "index.html#installing-qgis-on-mac",
     "href": "index.html#installing-qgis-on-mac",
     "title": "NR 218",
     "section": "Installing QGIS on Mac",
-    "text": "Installing QGIS on Mac\nThere are some bugs in recent versions of QGIS on Mac.\n\nQGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the link to the issue on GitHub. If 4.0 works on your computer, then great, problem solved. If not read on.\nQGIS 3.4xx Is missing proj.db, and thus cannot do anything related to Raster reprojection, which renders it more or less useless. Here is the link to the issue on GitHub.\n\nIt is possible that one or both of these issues will be resolved soon, but we cannot depend on that. The best solution currently is to use the older version 3.34. Unfortunately there is no archived QGIS 3.34 macOS .dmg in the QGIS old releases archive. So, options are\n\n[Easy] Use the lab computer\n[I have not tested] Using homebrew try brew install --cask qgis"
+    "text": "Installing QGIS on Mac\nThere are some bugs in recent versions of QGIS on Mac.\n\nQGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the link to the issue on GitHub. If 4.0 works on your computer, then great, problem solved. If not read on.\nQGIS 3.4xx Is missing proj.db, and thus cannot do anything related to Raster reprojection, which renders it more or less useless. Here is the link to the issue on GitHub.\n\nIt is possible that one or both of these issues will be resolved soon, but we cannot depend on that. The best solution currently is to use the older version 3.34. Unfortunately there is no archived QGIS 3.34 macOS .dmg in the QGIS old releases archive. So, options are\n\n[Easy] Use the lab computer\n[I have not tested] Using homebrew try brew install --cask qgis (see Installing Homebrew)"
+  },
+  {
+    "objectID": "index.html#installing-homebrew",
+    "href": "index.html#installing-homebrew",
+    "title": "NR 218",
+    "section": "Installing Homebrew",
+    "text": "Installing Homebrew\n\ngo to the Homebrew website\nCopy the command for installing Homebrew and paste into your terminal (and press enter), it should look something like\n\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n(This just downloads the install.sh file and executes it, installing Homebrew)\n\nFollow the prompts, enter your password (you will not be able to see it as you enter it).\nThere may be a message about “Next steps”. You can ignore that."
+  },
+  {
+    "objectID": "index.html#installing-tree-command",
+    "href": "index.html#installing-tree-command",
+    "title": "NR 218",
+    "section": "Installing tree command",
+    "text": "Installing tree command\nIn terminal brew install tree. (If Homebrew is not yet installed see Installing Homebrew.)"
   },
   {
     "objectID": "index.html#table-of-some-basic-commands",
@@ -294,78 +357,120 @@
     "text": "What is Metadata\n\nData about the data, e.g. units, date collected, instruments used…"
   },
   {
-    "objectID": "index.html#data-storage",
-    "href": "index.html#data-storage",
+    "objectID": "index.html#map-conventions",
+    "href": "index.html#map-conventions",
     "title": "NR 218",
-    "section": "Data Storage",
-    "text": "Data Storage\n\nWe store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times there are just 1s and 0s (binary file)\nEven the human readable files are ultimately stored as 1s and 0s (more on that)"
+    "section": "Map Conventions",
+    "text": "Map Conventions\nMapping conventions facilitate effective conveyance of information. In most cases using them is a good idea (but not necessarily always)\n\n\n\n\n\nThe Blue Marble photograph in its original orientation.\n\n\n\n\n\n\nSouth’s up!"
   },
   {
-    "objectID": "index.html#data-storage-1",
-    "href": "index.html#data-storage-1",
+    "objectID": "index.html#map-scale",
+    "href": "index.html#map-scale",
     "title": "NR 218",
-    "section": "Data Storage",
-    "text": "Data Storage\nFile extensions denote files readable by certain programs, for example:\n\n\n\nExtension\ndescription\n\n\n\n\nfilename.txt\ntext file\n\n\nfilename.doc\nMicrosoft Word file\n\n\nfilename.pdf\nportable document file\n\n\nfilename.html\nhypertext markup language\n\n\nfilename.xml\nextensible markup language\n\n\nfilename.tif\ntagged image format\n\n\nfilename.json\njavascript object notation\n\n\nfilename.geojson\ngeographic json\n\n\nfilename.laz\nLASer zip\n\n\nfilename.parquet\ncompressed table"
+    "section": "Map Scale",
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
   },
   {
-    "objectID": "index.html#file-types",
-    "href": "index.html#file-types",
+    "objectID": "index.html#map-scale-1",
+    "href": "index.html#map-scale-1",
     "title": "NR 218",
-    "section": "File types",
-    "text": "File types\n\nComputer programs only read certain file formats.\nFamiliarity with different file types is helpful.\nQGIS has several of its own file types\n\nProject files: .qgz, .qgs\nStyling/symbology: .qml\nLayout templates: .qpt\nLayer definitions: .qlr\nProject companion database: .qgd\n\nCommon GIS data file types: .shp (along with its sidecar files .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
+    "section": "Map Scale",
+    "text": "Map Scale"
   },
   {
-    "objectID": "index.html#file-paths-and-directories-1",
-    "href": "index.html#file-paths-and-directories-1",
+    "objectID": "index.html#coordinate-systems",
+    "href": "index.html#coordinate-systems",
     "title": "NR 218",
-    "section": "File Paths and Directories",
-    "text": "File Paths and Directories"
+    "section": "Coordinate systems",
+    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nGeographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of Earth\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))\n\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD)."
   },
   {
-    "objectID": "index.html#file-organization-and-computer-hygiene",
-    "href": "index.html#file-organization-and-computer-hygiene",
+    "objectID": "index.html#dms-to-dd-conversion",
+    "href": "index.html#dms-to-dd-conversion",
     "title": "NR 218",
-    "section": "File Organization and Computer Hygiene",
-    "text": "File Organization and Computer Hygiene\n\nBe kind to your future self - keep your files organized:\n\nUse directories (a.k.a folders)\nUse descriptive names:\n\ne.g. slo_county_26910.geojson not county.geojson\n\nDon’t put spaces in file or directory names (see this)"
+    "section": "DMS to DD conversion",
+    "text": "DMS to DD conversion\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
   },
   {
-    "objectID": "index.html#how-to-organize-your-files",
-    "href": "index.html#how-to-organize-your-files",
+    "objectID": "index.html#spheroids-and-geoids",
+    "href": "index.html#spheroids-and-geoids",
     "title": "NR 218",
-    "section": "How to Organize your files",
-    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── Project_1/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
+    "section": "Spheroids and Geoids",
+    "text": "Spheroids and Geoids\n\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravitational field rather than its topography 1\n\n\n    \\(\\circ\\) Gravitational field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid is the specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
   },
   {
-    "objectID": "index.html#cloud-storage",
-    "href": "index.html#cloud-storage",
+    "objectID": "index.html#spheroids-and-geoids-1",
+    "href": "index.html#spheroids-and-geoids-1",
     "title": "NR 218",
-    "section": "Cloud Storage",
-    "text": "Cloud Storage\nMany options, but mounting Cal Poly One Drive as a disk is is probably the simplest.\nSee the Cal Poly tutorial here or try this, for Linux users or the computer savvy."
+    "section": "Spheroids and Geoids",
+    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\n\n\nso the surface is approximated using a spheroid (also called an ellipsoid of revolution)\n\n\nA GCS is based on a reference model of the Earth, usually a sphere or spheroid (ellipsoid)"
+  },
+  {
+    "objectID": "index.html#datums",
+    "href": "index.html#datums",
+    "title": "NR 218",
+    "section": "Datums",
+    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond\n\n\n\n\n\nCommon datums used in North America\n\n\n\n\n\n\n\n\n\nDatum\nType\nTypical use in North America\n\n\n\n\nNAD27\nLocal\nLegacy U.S., Mexico, and Central America maps\n\n\nNAD83\nRegional geocentric*\nStandard for most modern U.S. and Canadian mapping\n\n\nNAD83 (2011)\nRegional geocentric\nHigh-accuracy modern U.S. realization of NAD83\n\n\nWGS84\nGlobal geocentric\nGPS and global web mapping\n\n\n\n* NAD83 is Earth-centered in concept, but regionally realized and not identical to a fully global geocentric frame."
+  },
+  {
+    "objectID": "index.html#projections",
+    "href": "index.html#projections",
+    "title": "NR 218",
+    "section": "Projections",
+    "text": "Projections\n\n\nMathematical transform for transforming 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
+  },
+  {
+    "objectID": "index.html#projections-1",
+    "href": "index.html#projections-1",
+    "title": "NR 218",
+    "section": "Projections",
+    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a developable surface (flattenable surface).\n\n\nThere are three commonly used developable surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe developable surface can be oriented in many ways.\n\nEach developable surface can be in one of two cases tangent and secant\n\n\n\n\nThe aspect of the projection is the orientation of the developable surface relative to the axis of the earth\n\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection (with normal aspect) is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nLike the Waterman Butterfly\n\n\n\n\nExamine the size distortions on a Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
   },
   {
     "objectID": "index.html#section-4",
     "href": "index.html#section-4",
     "title": "NR 218",
     "section": "",
-    "text": "Download SPR_data.zip here (right-click and “save link as”)\nExtract the file (Linux, Windows, Mac), and place in appropriate file location (Remember, organize your files!)\nOpen QGIS"
+    "text": "Real-time Waterman Wind Map"
+  },
+  {
+    "objectID": "index.html#utm",
+    "href": "index.html#utm",
+    "title": "NR 218",
+    "section": "UTM",
+    "text": "UTM\n\nUniversal Transverse Mercator (UTM)\n\na projection and accompanying projected coordinate system\nDivided into 60 narrow zones\nDoes not cover polar regions*\nLarge north-south extent with low distortion\n\n*Polar Stereographic is for used for conformal polar\n\n\n\n\n\n\n\n\nImage Source: wikimedia\n\n\n\n\n\n\n\nOpen QGIS\nUse QuickMapServices to add a global Satellite coverage layer.\nIn the drop down menus, go to Project –&gt; Preferences then select the CRS tab on the left\nIn the filter box type “26910”\nUnder Predefined Coordinate Reference Systems select NAD83 / UTM zone 10N\nClick Apply and OK"
+  },
+  {
+    "objectID": "index.html#state-plan-system",
+    "href": "index.html#state-plan-system",
+    "title": "NR 218",
+    "section": "State Plan System",
+    "text": "State Plan System\nEach State Plane Coordinate System zone uses a map projection based on its geographic orientation.\ne.g.\n\n\n\n\nTransverse Mercator Projection\n\n\n\n\nLambert Conformal Conic Projection\n\n\n\n\nHotine Oblique Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReproject the global satellite image from the last slide to EPSG:2227 (California zone 3)\nScroll to zoom in on South Africa. What do you notice?"
   },
   {
     "objectID": "index.html#section-5",
     "href": "index.html#section-5",
     "title": "NR 218",
     "section": "",
-    "text": "Open the files from the directory you just extracted\n\nMethod 1\n\nUse the file location in the ‘Browser’ panel\n\nDrag and and drop files into the Layers Panel \n\n\nMethod 2\n\nPress ctrl-shift-v (cmd-shift-v on Mac)\nClick  to browse for file then click .\n\nYou can select multiple files at once when browsing\nClose window when finished."
+    "text": "Download SPR_data.zip here (right-click and “save link as”)\nExtract the file (Linux, Windows, Mac), and place in appropriate file location (Remember, organize your files!)\nOpen QGIS"
   },
   {
     "objectID": "index.html#section-6",
     "href": "index.html#section-6",
     "title": "NR 218",
     "section": "",
-    "text": "Now the layers should be visible in the panel, and on the map\n\n\n\n\n\n\n\n\nToggle on/off layers by clicking checkboxes\nChange layer order by dragging within panel\nWhat do the little icons between the check and the layer name mean?\nRight click a layer, select Open Attribute Table\nSelect rows of attribute table by clicking on the left edge (where they are numbered)\n\nNote that the corresponding features are highlighted on the map"
+    "text": "Open the files from the directory you just extracted\n\nMethod 1\n\nUse the file location in the ‘Browser’ panel\n\nDrag and and drop files into the Layers Panel \n\n\nMethod 2\n\nPress ctrl-shift-v (cmd-shift-v on Mac)\nClick  to browse for file then click .\n\nYou can select multiple files at once when browsing\nClose window when finished."
   },
   {
     "objectID": "index.html#section-7",
     "href": "index.html#section-7",
+    "title": "NR 218",
+    "section": "",
+    "text": "Now the layers should be visible in the panel, and on the map\n\n\n\n\n\n\n\n\nToggle on/off layers by clicking checkboxes\nChange layer order by dragging within panel\nWhat do the little icons between the check and the layer name mean?\nRight click a layer, select Open Attribute Table\nSelect rows of attribute table by clicking on the left edge (where they are numbered)\n\nNote that the corresponding features are highlighted on the map"
+  },
+  {
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
     "title": "NR 218",
     "section": "",
     "text": "Panning and zooming (The mouse wheel also zooms while in pan mode)\n\n\nSelect tools\n\n\nInfo"
@@ -427,8 +532,8 @@
     "text": "Export map\n\nOnce you have something satisfactory, create an export of your map to share.\n\nLayout &gt; Export as image\n\nChoose file type\n\nSet save location\n\n\n\n\nOpen the image file we just saved to verify results"
   },
   {
-    "objectID": "index.html#section-8",
-    "href": "index.html#section-8",
+    "objectID": "index.html#section-9",
+    "href": "index.html#section-9",
     "title": "NR 218",
     "section": "",
     "text": "What Are some problems here"
@@ -467,97 +572,6 @@
     "title": "NR 218",
     "section": "Reading a CSV with QGIS",
     "text": "Reading a CSV with QGIS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDelimited text dialogue box\n\n\nBrowse for csv\n\n\nNotice that it says CRS must be selected.\nWhat is a CRS?\n\n\n\n\nWe will discuss what a CRS is in great detail later.\nFor now just know it provides a reference frame for placing the coordinates on the map.\nCoordinate Reference System (CRS) is synonymous with Spatial Reference System (SRS)\nSRS = CRS\n\n\n\n\nClick the Geometry Definition dropdown to assign an SRS.\n\n\nUse EPSG:4326 - WGS 84\nClick Add"
-  },
-  {
-    "objectID": "index.html#map-conventions",
-    "href": "index.html#map-conventions",
-    "title": "NR 218",
-    "section": "Map Conventions",
-    "text": "Map Conventions\nMapping conventions facilitate effective conveyance of information. In most cases using them is a good idea (but not necessarily always)\n\n\n\n\n\nThe Blue Marble photograph in its original orientation.\n\n\n\n\n\n\nSouth’s up!"
-  },
-  {
-    "objectID": "index.html#map-scale",
-    "href": "index.html#map-scale",
-    "title": "NR 218",
-    "section": "Map Scale",
-    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
-  },
-  {
-    "objectID": "index.html#map-scale-1",
-    "href": "index.html#map-scale-1",
-    "title": "NR 218",
-    "section": "Map Scale",
-    "text": "Map Scale"
-  },
-  {
-    "objectID": "index.html#coordinate-systems",
-    "href": "index.html#coordinate-systems",
-    "title": "NR 218",
-    "section": "Coordinate systems",
-    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nGeographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of Earth\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))\n\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD)."
-  },
-  {
-    "objectID": "index.html#dms-to-dd-conversion",
-    "href": "index.html#dms-to-dd-conversion",
-    "title": "NR 218",
-    "section": "DMS to DD conversion",
-    "text": "DMS to DD conversion\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
-  },
-  {
-    "objectID": "index.html#spheroids-and-geoids",
-    "href": "index.html#spheroids-and-geoids",
-    "title": "NR 218",
-    "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\n\nGCS is based on a sphere, spheroid, or geoid\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravitational field rather than its topography 1\n\n\n    \\(\\circ\\) Gravitational field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid is the specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
-  },
-  {
-    "objectID": "index.html#spheroids-and-geoids-1",
-    "href": "index.html#spheroids-and-geoids-1",
-    "title": "NR 218",
-    "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\n\n\nso the surface is approximated using a spheroid (also called an ellipsoid of revolution)"
-  },
-  {
-    "objectID": "index.html#datums",
-    "href": "index.html#datums",
-    "title": "NR 218",
-    "section": "Datums",
-    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond"
-  },
-  {
-    "objectID": "index.html#projections",
-    "href": "index.html#projections",
-    "title": "NR 218",
-    "section": "Projections",
-    "text": "Projections\n\n\nMathematical formulas for transforming 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
-  },
-  {
-    "objectID": "index.html#projections-1",
-    "href": "index.html#projections-1",
-    "title": "NR 218",
-    "section": "Projections",
-    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a developable surface (flattenable surface).\n\n\nThere are three commonly used developable surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe developable surface can be oriented in many ways.\n\nEach developable surface can be in one of two cases tangent and secant\n\n\n\n\nThe aspect of the projection is the orientation of the developable surface relative to the axis of the earth\n\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection (with normal aspect) is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nLike the Waterman Butterfly\n\n\n\n\nExamine the size distortions on a Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
-  },
-  {
-    "objectID": "index.html#section-9",
-    "href": "index.html#section-9",
-    "title": "NR 218",
-    "section": "",
-    "text": "Real-time Waterman Wind Map"
-  },
-  {
-    "objectID": "index.html#utm",
-    "href": "index.html#utm",
-    "title": "NR 218",
-    "section": "UTM",
-    "text": "UTM\n\nUniversal Transverse Mercator (UTM)\n\na projection and accompanying projected coordinate system\nDivided into 60 narrow zones\nDoes not cover polar regions\nLarge north-south extent with low distortion\n\n\n\n\n\n\n\n\n\nImage Source: wikimedia\n\n\n\n\n\n\n\nOpen QGIS\nUse QuickMapServices to add a global Satellite coverage layer.\nIn the drop down menus, go to Project –&gt; Preferences then select the CRS tab on the left\nIn the filter box type “26910”\nUnder Predefined Coordinate Reference Systems select NAD83 / UTM zone 10N\nClick Apply and OK"
-  },
-  {
-    "objectID": "index.html#state-plan-system",
-    "href": "index.html#state-plan-system",
-    "title": "NR 218",
-    "section": "State Plan System",
-    "text": "State Plan System\nEach State Plane Coordinate System zone uses a map projection based on its geographic orientation.\ne.g.\n\n\n\n\nTransverse Mercator Projection\n\n\n\n\nLambert Conformal Conic Projection\n\n\n\n\nHotine Oblique Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReproject the global satellite image from the last slide to EPSG:2227 (California zone 3)\nScroll to zoom in on South Africa. What do you notice?"
   },
   {
     "objectID": "index.html#data-overview",
@@ -2223,28 +2237,28 @@
     "href": "projections_etc.html#spheroids-and-geoids",
     "title": "",
     "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\n\nGCS is based on a sphere, spheroid, or geoid\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravitational field rather than its topography 1\n\n\n    \\(\\circ\\) Gravitational field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid is the specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
+    "text": "Spheroids and Geoids\n\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravitational field rather than its topography 1\n\n\n    \\(\\circ\\) Gravitational field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid is the specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
   },
   {
     "objectID": "projections_etc.html#spheroids-and-geoids-1",
     "href": "projections_etc.html#spheroids-and-geoids-1",
     "title": "",
     "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\n\n\nso the surface is approximated using a spheroid (also called an ellipsoid of revolution)"
+    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\n\n\nso the surface is approximated using a spheroid (also called an ellipsoid of revolution)\n\n\nA GCS is based on a reference model of the Earth, usually a sphere or spheroid (ellipsoid)"
   },
   {
     "objectID": "projections_etc.html#datums",
     "href": "projections_etc.html#datums",
     "title": "",
     "section": "Datums",
-    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond"
+    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond\n\n\n\n\n\nCommon datums used in North America\n\n\n\n\n\n\n\n\n\nDatum\nType\nTypical use in North America\n\n\n\n\nNAD27\nLocal\nLegacy U.S., Mexico, and Central America maps\n\n\nNAD83\nRegional geocentric*\nStandard for most modern U.S. and Canadian mapping\n\n\nNAD83 (2011)\nRegional geocentric\nHigh-accuracy modern U.S. realization of NAD83\n\n\nWGS84\nGlobal geocentric\nGPS and global web mapping\n\n\n\n* NAD83 is Earth-centered in concept, but regionally realized and not identical to a fully global geocentric frame."
   },
   {
     "objectID": "projections_etc.html#projections",
     "href": "projections_etc.html#projections",
     "title": "",
     "section": "Projections",
-    "text": "Projections\n\n\nMathematical formulas for transforming 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
+    "text": "Projections\n\n\nMathematical transform for transforming 3D Earth to 2D map\ni.e. project the latitude and longitude to x any coordinates on a plane\nThere are infinite ways to do this, they all cause distortion"
   },
   {
     "objectID": "projections_etc.html#projections-1",
@@ -2265,7 +2279,7 @@
     "href": "projections_etc.html#utm",
     "title": "",
     "section": "UTM",
-    "text": "UTM\n\nUniversal Transverse Mercator (UTM)\n\na projection and accompanying projected coordinate system\nDivided into 60 narrow zones\nDoes not cover polar regions\nLarge north-south extent with low distortion\n\n\n\n\n\n\n\n\n\nImage Source: wikimedia\n\n\n\n\n\n\n\nOpen QGIS\nUse QuickMapServices to add a global Satellite coverage layer.\nIn the drop down menus, go to Project –&gt; Preferences then select the CRS tab on the left\nIn the filter box type “26910”\nUnder Predefined Coordinate Reference Systems select NAD83 / UTM zone 10N\nClick Apply and OK"
+    "text": "UTM\n\nUniversal Transverse Mercator (UTM)\n\na projection and accompanying projected coordinate system\nDivided into 60 narrow zones\nDoes not cover polar regions*\nLarge north-south extent with low distortion\n\n*Polar Stereographic is for used for conformal polar\n\n\n\n\n\n\n\n\nImage Source: wikimedia\n\n\n\n\n\n\n\nOpen QGIS\nUse QuickMapServices to add a global Satellite coverage layer.\nIn the drop down menus, go to Project –&gt; Preferences then select the CRS tab on the left\nIn the filter box type “26910”\nUnder Predefined Coordinate Reference Systems select NAD83 / UTM zone 10N\nClick Apply and OK"
   },
   {
     "objectID": "projections_etc.html#state-plan-system",
@@ -2755,14 +2769,28 @@
     "href": "tips_for_mac_users.html#making-your-home-directory-visible-in-finder",
     "title": "",
     "section": "Making your home directory visible in Finder",
-    "text": "Making your home directory visible in Finder\nTo show your home directory in macOS Finder, open Finder and press Shift+Command+H\nTo add it to the sidebar for easy access in macOS, open Finder then go to Settings (or Preferences) &gt; Sidebar and check the box next to your home icon."
+    "text": "Making your home directory visible in Finder\n\nTo show your home directory in macOS Finder, open Finder and press Shift+Command+H\nTo add it to the sidebar drag the folder icon (at the top of the window) into the sidebar."
   },
   {
     "objectID": "tips_for_mac_users.html#installing-qgis-on-mac",
     "href": "tips_for_mac_users.html#installing-qgis-on-mac",
     "title": "",
     "section": "Installing QGIS on Mac",
-    "text": "Installing QGIS on Mac\nThere are some bugs in recent versions of QGIS on Mac.\n\nQGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the link to the issue on GitHub. If 4.0 works on your computer, then great, problem solved. If not read on.\nQGIS 3.4xx Is missing proj.db, and thus cannot do anything related to Raster reprojection, which renders it more or less useless. Here is the link to the issue on GitHub.\n\nIt is possible that one or both of these issues will be resolved soon, but we cannot depend on that. The best solution currently is to use the older version 3.34. Unfortunately there is no archived QGIS 3.34 macOS .dmg in the QGIS old releases archive. So, options are\n\n[Easy] Use the lab computer\n[I have not tested] Using homebrew try brew install --cask qgis"
+    "text": "Installing QGIS on Mac\nThere are some bugs in recent versions of QGIS on Mac.\n\nQGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the link to the issue on GitHub. If 4.0 works on your computer, then great, problem solved. If not read on.\nQGIS 3.4xx Is missing proj.db, and thus cannot do anything related to Raster reprojection, which renders it more or less useless. Here is the link to the issue on GitHub.\n\nIt is possible that one or both of these issues will be resolved soon, but we cannot depend on that. The best solution currently is to use the older version 3.34. Unfortunately there is no archived QGIS 3.34 macOS .dmg in the QGIS old releases archive. So, options are\n\n[Easy] Use the lab computer\n[I have not tested] Using homebrew try brew install --cask qgis (see Installing Homebrew)"
+  },
+  {
+    "objectID": "tips_for_mac_users.html#installing-homebrew",
+    "href": "tips_for_mac_users.html#installing-homebrew",
+    "title": "",
+    "section": "Installing Homebrew",
+    "text": "Installing Homebrew\n\ngo to the Homebrew website\nCopy the command for installing Homebrew and paste into your terminal (and press enter), it should look something like\n\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n(This just downloads the install.sh file and executes it, installing Homebrew)\n\nFollow the prompts, enter your password (you will not be able to see it as you enter it).\nThere may be a message about “Next steps”. You can ignore that."
+  },
+  {
+    "objectID": "tips_for_mac_users.html#installing-tree-command",
+    "href": "tips_for_mac_users.html#installing-tree-command",
+    "title": "",
+    "section": "Installing tree command",
+    "text": "Installing tree command\nIn terminal brew install tree. (If Homebrew is not yet installed see Installing Homebrew.)"
   },
   {
     "objectID": "syllabus_spring_2026_s03.html",
@@ -2790,7 +2818,7 @@
     "href": "syllabus_spring_2026_s03.html#learning-goals",
     "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
     "section": "Learning Goals",
-    "text": "Learning Goals\n\nHow to formulate and answer problems using spatial data\n\nHow to create quality maps and graphics\nApply skills in remote sensing, GIS, and data science to solve a problem of your own design\nUnderstand basic principles of GIS"
+    "text": "Learning Goals\n\nHow to formulate and answer problems using spatial data\n\nHow to create quality maps and graphics\nApply skills in remote sensing, GIS, and data science to solve a problem\nUnderstand basic principles of GIS"
   },
   {
     "objectID": "syllabus_spring_2026_s03.html#labs",

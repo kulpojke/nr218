@@ -249,17 +249,14 @@ The denominator denotes ground or “real-world” distance.</li>
 <h2>Spheroids and Geoids</h2>
 <div class="column" style="width:40%;">
 <div class="r-stack" style="margin-bottom: 60px; width: 40%;">
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
-<p>GCS is based on a sphere, spheroid, or geoid</p>
-</div>
-<div class="fragment absolute fade-in" data-fragment-index="2" style="">
+<div class="fragment absolute fade-in" data-fragment-index="1" style="">
 <p>A <strong>geoid</strong> is an approximation of the true shape of the earth</p>
 </div>
 </div>
-<div class="fragment fade-in" data-fragment-index="3" style="font-size:0.6em">
+<div class="fragment fade-in" data-fragment-index="2" style="font-size:0.6em">
 <p>&nbsp;&nbsp;&nbsp; <span class="math inline">\(\circ\)</span> As defined by its gravitational field rather than its topography <sup>1</sup></p>
 </div>
-<div class="fragment fade-in" data-fragment-index="4" style="font-size:0.6em">
+<div class="fragment fade-in" data-fragment-index="3" style="font-size:0.6em">
 <p>&nbsp;&nbsp;&nbsp; <span class="math inline">\(\circ\)</span> Gravitational field found by finding equipotential surfaces</p>
 </div>
 <div class="fragment fade-in" data-fragment-index="4" style="font-size:0.6em">
@@ -287,6 +284,9 @@ The denominator denotes ground or “real-world” distance.</li>
 <div class="fragment fade-in" data-fragment-index="2">
 <p>so the surface is approximated using a <em>spheroid</em> (also called an ellipsoid of revolution)</p>
 </div>
+<div class="fragment fade-in" data-fragment-index="3">
+<p>A GCS is based on a reference model of the Earth, usually a sphere or spheroid (ellipsoid)</p>
+</div>
 </div><div class="column" style="width:60%;">
 <div class="r-stack">
 <div class="fragment fade-in-then-out" data-fragment-index="1">
@@ -303,7 +303,7 @@ The denominator denotes ground or “real-world” distance.</li>
 <section id="datums" class="slide level2 center">
 <h2>Datums</h2>
 <div class="{r-stack}">
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
 <ul>
 <li>A <em>datum</em> is a spheroid with an origen point and orientation aligning it for a particular use.</li>
 </ul>
@@ -312,7 +312,7 @@ The denominator denotes ground or “real-world” distance.</li>
 <p>Image Source: <a href="http://mgimond.github.io/">Manny Gimond</a></p>
 </div>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
 <ul>
 <li>A local datum matches a geoid to an ellipsoid to fit a local context, e.g.
 <ul>
@@ -325,7 +325,7 @@ The denominator denotes ground or “real-world” distance.</li>
 <p>Image Source: <a href="http://mgimond.github.io/">Manny Gimond</a></p>
 </div>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
 <ul>
 <li>A geocentric datum aligns the centroid of the geoid to the center of the ellipsoid</li>
 </ul>
@@ -334,13 +334,57 @@ The denominator denotes ground or “real-world” distance.</li>
 <p>Image Source: <a href="http://mgimond.github.io/">Manny Gimond</a></p>
 </div>
 </div>
+<div class="fragment absolute fade-in" data-fragment-index="3" style="">
+<div style="font-size:0.6em">
+<ul>
+<li>Common datums used in North America</li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Datum</th>
+<th>Type</th>
+<th>Typical use in North America</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NAD27</td>
+<td>Local</td>
+<td>Legacy U.S., Mexico, and Central America maps</td>
+</tr>
+<tr class="even">
+<td>NAD83</td>
+<td>Regional geocentric*</td>
+<td>Standard for most modern U.S. and Canadian mapping</td>
+</tr>
+<tr class="odd">
+<td>NAD83 (2011)</td>
+<td>Regional geocentric</td>
+<td>High-accuracy modern U.S. realization of NAD83</td>
+</tr>
+<tr class="even">
+<td>WGS84</td>
+<td>Global geocentric</td>
+<td>GPS and global web mapping</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size:0.5em">* NAD83 is Earth-centered in concept, but regionally realized and not identical to a fully global geocentric frame.</span></p>
+</div>
+</div>
 </div>
 </section>
 <section id="projections" class="slide level2 columns center">
 <h2>Projections</h2>
 <div class="column" style="width:50%;">
 <ul>
-<li>Mathematical formulas for transforming 3D Earth to 2D map</li>
+<li>Mathematical transform for transforming 3D Earth to 2D map</li>
 <li>i.e.&nbsp;project the latitude and longitude to x any coordinates on a plane</li>
 <li>There are infinite ways to do this, they all cause distortion</li>
 </ul>
@@ -471,9 +515,10 @@ Bottom: Equirectangular projection with Tissot’s indicatrix.</span></p>
 <ul>
 <li>a projection and accompanying projected coordinate system</li>
 <li>Divided into 60 narrow zones</li>
-<li>Does not cover polar regions</li>
+<li>Does not cover polar regions*</li>
 <li>Large north-south extent with low distortion</li>
 </ul>
+<p><span style="font-size:0.5em">*Polar Stereographic is for used for conformal polar</span></p>
 </div><div class="column" style="width:50%;">
 <div class="r-stack">
 <div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">

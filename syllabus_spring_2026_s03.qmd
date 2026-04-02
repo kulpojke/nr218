@@ -27,7 +27,7 @@ __TA:__ Jillian Ong
 ## Learning Goals
 + How to formulate and answer problems using spatial data  
 + How to create quality maps and graphics
-+ Apply skills in remote sensing, GIS, and data science to solve a problem of your own design
++ Apply skills in remote sensing, GIS, and data science to solve a problem
 + Understand basic principles of GIS
 
 

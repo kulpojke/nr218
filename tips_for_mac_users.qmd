@@ -1,10 +1,15 @@
 # Tips for Mac Users
 
+- [Making your home directory visible in Finder](#making-your-home-directory-visible-in-finder)
+- [Installing QGIS on Mac](#installing-qgis-on-mac)
+- [Installing Homebrew](#installing-homebrew)
+- [Installing tree command](#installing-tree-command)
+
 ## Making your home directory visible in Finder
 
-To show your home directory in macOS Finder, open Finder and press `Shift+Command+H`
++ To show your home directory in macOS Finder, open Finder and press `Shift+Command+H`
 
-To add it to the sidebar for easy access in macOS, open Finder then go to `Settings` (or `Preferences`) `> Sidebar` and check the box next to your home icon. 
++ To add it to the sidebar drag the folder icon (at the top of the window) into the sidebar. 
 
 ## Installing QGIS on Mac {style="font-size:0.6em"}
 
@@ -16,5 +21,21 @@ There are some bugs in recent versions of QGIS on Mac.
 It is possible that one or both of these issues will be resolved soon, but we cannot depend on that. The best solution currently is to use the older version 3.34.  Unfortunately there is no archived QGIS 3.34 macOS .dmg in the QGIS old releases archive. So, options are
 
 + [Easy] Use the lab computer
-+ [I have not tested] Using homebrew try `brew install --cask qgis`
++ [I have not tested] Using homebrew try `brew install --cask qgis` (see [Installing Homebrew](#installing-homebrew))
 
+## Installing Homebrew {style="font-size:0.7em"}
+
+1. go to the [Homebrew website](https://brew.sh/)
+2. Copy the command for installing Homebrew and paste into your terminal (and press enter), it should look something like
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+(This just downloads the `install.sh` file and executes it, installing Homebrew)
+
+3. Follow the prompts, enter your password (you will not be able to see it as you enter it).
+
+4. There may be a message about "Next steps".  You can ignore that.
+
+## Installing tree command
+
+In terminal `brew install tree`. (If Homebrew is not yet installed see [Installing Homebrew](#installing-homebrew).)

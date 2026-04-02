@@ -132,20 +132,17 @@ degrees (DD).
 ::: {.column width="40%"}
 
 ::: {.r-stack style="margin-bottom: 60px; width: 40%;"}
-::: {.fragment .absolute .fade-in-then-out data-fragment-index=1}
-GCS is based on a sphere, spheroid, or geoid
-:::
 
-::: {.fragment .absolute .fade-in data-fragment-index=2}
+::: {.fragment .absolute .fade-in data-fragment-index=1}
 A __geoid__ is an approximation of the true shape of the earth
 :::    
 :::
 
-::: {.fragment .fade-in data-fragment-index=3 style="font-size:0.6em"}    
+::: {.fragment .fade-in data-fragment-index=2 style="font-size:0.6em"}    
 &nbsp;&nbsp;&nbsp; $\circ$ As defined by its gravitational field rather than its topography [^2]
 :::
 
-::: {.fragment .fade-in data-fragment-index=4 style="font-size:0.6em"}    
+::: {.fragment .fade-in data-fragment-index=3 style="font-size:0.6em"}    
 &nbsp;&nbsp;&nbsp; $\circ$ Gravitational field found by finding equipotential surfaces
 :::
 
@@ -190,6 +187,10 @@ The geoid is pretty complex...
 so the surface is approximated using a  _spheroid_ (also called an ellipsoid of revolution) 
 :::
 
+::: {.fragment .fade-in data-fragment-index=3}
+A GCS is based on a reference model of the Earth, usually a sphere or spheroid (ellipsoid)
+:::
+
 :::
 
 ::: {.column width="60%"}
@@ -212,7 +213,7 @@ so the surface is approximated using a  _spheroid_ (also called an ellipsoid of 
 ## Datums
 ::: {r-stack}
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
 + A _datum_ is a spheroid with an origen point and orientation aligning it for a particular use.
 
 ![](img/datum.png)
@@ -222,7 +223,7 @@ Image Source: [Manny Gimond](http://mgimond.github.io/)
 :::
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
 + A local datum matches a geoid to an ellipsoid to fit a local context, e.g.
   + NAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.
   + ED50 (European Datum of 1950) is common in Western Europe.
@@ -234,7 +235,7 @@ Image Source: [Manny Gimond](http://mgimond.github.io/)
 :::
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
 + A geocentric datum aligns the centroid of the geoid to the center of the ellipsoid
 
 ![](img/Datum_geocentric.svg)
@@ -244,13 +245,29 @@ Image Source: [Manny Gimond](http://mgimond.github.io/)
 :::
 :::
 
+::: {.fragment .absolute .fade-in data-fragment-index="3"}
+
+::: {style="font-size:0.6em"}
++ Common datums used in North America
+
+| Datum | Type | Typical use in North America |
+|---|---|---|
+| NAD27 | Local | Legacy U.S., Mexico, and Central America maps |
+| NAD83 | Regional geocentric* | Standard for most modern U.S. and Canadian mapping |
+| NAD83 (2011) | Regional geocentric | High-accuracy modern U.S. realization of NAD83 |
+| WGS84 | Global geocentric | GPS and global web mapping |
+
+[* NAD83 is Earth-centered in concept, but regionally realized and not identical to a fully global geocentric frame.]{style="font-size:0.5em"}
+:::
+:::
+
 :::
 
 ## Projections {.columns}
 
 ::: {.column width="50%"}
 
-+ Mathematical formulas for transforming 3D Earth to 2D map
++ Mathematical transform for transforming 3D Earth to 2D map
 + i.e. project the latitude and longitude to x any coordinates on a plane
 + There are infinite ways to do this, they all cause distortion
 
@@ -415,10 +432,10 @@ Universal <span class="fragment highlight-current-red" data-fragment-index="3">T
 
 + a projection and accompanying projected coordinate system
 + Divided into 60 narrow zones
-+ Does not cover polar regions
++ Does not cover polar regions*
 + Large north-south extent with low distortion
 
-
+[*Polar Stereographic is for used for conformal polar]{style="font-size:0.5em"} 
 :::
 
 
@@ -509,5 +526,3 @@ e.g.
 :::
   
 :::
-
-
