@@ -104,12 +104,14 @@ Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=
 
 :::
 
-## Annoying Windows File Explorer Defaults
+## Annoying File Explorer Defaults {style="font-size:0.7em"}
 
-By Default Windows Fiel Explorer hides file extensions. To fix this,
+By Default Windows File Explorer hides file extensions. To fix this,
 
 1. Open File Explorer
 2. Click _View_ > _Show_ > _File name extenions_
+
+On Mac, Finder by default does not make it easy to find your home folder see [this slide](tips_for_mac_users.qmd#making-your-home-directory-visible-in-finder).
 
 ## Terminals and Shells {style="font-size:0.7em"}
 

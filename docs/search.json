@@ -70,11 +70,11 @@
     "text": "File Paths and Directories"
   },
   {
-    "objectID": "index.html#annoying-windows-file-explorer-defaults",
-    "href": "index.html#annoying-windows-file-explorer-defaults",
+    "objectID": "index.html#annoying-file-explorer-defaults",
+    "href": "index.html#annoying-file-explorer-defaults",
     "title": "NR 218",
-    "section": "Annoying Windows File Explorer Defaults",
-    "text": "Annoying Windows File Explorer Defaults\nBy Default Windows Fiel Explorer hides file extensions. To fix this,\n\nOpen File Explorer\nClick View &gt; Show &gt; File name extenions"
+    "section": "Annoying File Explorer Defaults",
+    "text": "Annoying File Explorer Defaults\nBy Default Windows File Explorer hides file extensions. To fix this,\n\nOpen File Explorer\nClick View &gt; Show &gt; File name extenions\n\nOn Mac, Finder by default does not make it easy to find your home folder see this slide."
   },
   {
     "objectID": "index.html#terminals-and-shells",
@@ -172,7 +172,7 @@
     "href": "index.html#making-your-home-directory-visible-in-finder",
     "title": "NR 218",
     "section": "Making your home directory visible in Finder",
-    "text": "Making your home directory visible in Finder\n\nTo show your home directory in macOS Finder, open Finder and press Shift+Command+H\nTo add it to the sidebar drag the folder icon (at the top of the window) into the sidebar."
+    "text": "Making your home directory visible in Finder\nTo jump to your home directory in macOS Finder, + open Finder and press Shift+Command+H. + To add it to the sidebar drag the folder icon (at the top of the window) into the sidebar.\nTo add the Path bar, which will let you see paths to files, + open Finder + in the dropdown menu, go to View &gt; Show Path Bar Now, there should be a bar (probably at the bottom of the window) showing the path to the directory you are in."
   },
   {
     "objectID": "index.html#installing-qgis-on-mac",
@@ -2769,7 +2769,7 @@
     "href": "tips_for_mac_users.html#making-your-home-directory-visible-in-finder",
     "title": "",
     "section": "Making your home directory visible in Finder",
-    "text": "Making your home directory visible in Finder\n\nTo show your home directory in macOS Finder, open Finder and press Shift+Command+H\nTo add it to the sidebar drag the folder icon (at the top of the window) into the sidebar."
+    "text": "Making your home directory visible in Finder\nTo jump to your home directory in macOS Finder, + open Finder and press Shift+Command+H. + To add it to the sidebar drag the folder icon (at the top of the window) into the sidebar.\nTo add the Path bar, which will let you see paths to files, + open Finder + in the dropdown menu, go to View &gt; Show Path Bar Now, there should be a bar (probably at the bottom of the window) showing the path to the directory you are in."
   },
   {
     "objectID": "tips_for_mac_users.html#installing-qgis-on-mac",
@@ -3248,11 +3248,11 @@
     "text": "File Paths and Directories"
   },
   {
-    "objectID": "computers_slides.html#annoying-windows-file-explorer-defaults",
-    "href": "computers_slides.html#annoying-windows-file-explorer-defaults",
+    "objectID": "computers_slides.html#annoying-file-explorer-defaults",
+    "href": "computers_slides.html#annoying-file-explorer-defaults",
     "title": "",
-    "section": "Annoying Windows File Explorer Defaults",
-    "text": "Annoying Windows File Explorer Defaults\nBy Default Windows Fiel Explorer hides file extensions. To fix this,\n\nOpen File Explorer\nClick View &gt; Show &gt; File name extenions"
+    "section": "Annoying File Explorer Defaults",
+    "text": "Annoying File Explorer Defaults\nBy Default Windows File Explorer hides file extensions. To fix this,\n\nOpen File Explorer\nClick View &gt; Show &gt; File name extenions\n\nOn Mac, Finder by default does not make it easy to find your home folder see this slide."
   },
   {
     "objectID": "computers_slides.html#terminals-and-shells",
