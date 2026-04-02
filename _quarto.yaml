@@ -3,6 +3,7 @@ project:
   output-dir: docs
   render:
     - syllabus_spring_2026_s03.qmd
+    - syllabus_spring_2026_s05.qmd
     - computers_lab.qmd
     - tips_for_mac_users.qmd
     - terminal_cheatsheet.qmd
