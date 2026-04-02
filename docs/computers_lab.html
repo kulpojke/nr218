@@ -111,6 +111,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="task-1-terminal-tutorial">Task 1: Terminal Tutorial</h2>
 <p>Complete part 2, <em>Navigating Directories</em>, in <a href="https://www.terminaltutor.com/">Terminal Tutor</a>. Feel free to do the first part too if you want, it is worthwhile. Take a screenshot when you are done, include the screenshot in the document.</p>
 <p>This introduces you to POSIX shells. If you are using Mac or Linux, your terminal will behave like the one in the tutorial, if you are on a Windows computer you can use use PowerShell, which in many ways behaves like a POSIX shell.</p>
+<p>For more useful commands see <a href="./terminal_cheatsheet.html#/table-of-some-basic-commands">the slides on using the terminal</a></p>
 </section>
 <section id="task-2-exploring-a-directory-structure-and-unzipping-files" class="level2">
 <h2 class="anchored" data-anchor-id="task-2-exploring-a-directory-structure-and-unzipping-files">Task 2: Exploring a Directory Structure and unzipping files</h2>
@@ -137,8 +138,14 @@ Tip&nbsp;1: How do I unzip a zip archive? What is a zip archive?
 </div>
 </div>
 <ol start="2" type="1">
-<li>Create a working directory, <code>nr218</code> for the class in your home folder (see <a href="#tip-home" class="quarto-xref">Tip&nbsp;2</a>).</li>
+<li>Create a directory, <code>nr218</code>, for your work in this class, in your home folder. Then create another directory inside called <code>lab_1</code>. You can do this either in your computers graphical file explorer (e.g.&nbsp;Finder, File Explorer, Files) or in the terminal (Encouraged!).</li>
 </ol>
+<ul>
+<li>If you are not sure where your home folder is see <a href="#tip-home" class="quarto-xref">Tip&nbsp;2</a>.</li>
+<li>If you want to use the terminal to create <code>nr218</code> in your home directory but don’t know how, see <a href="./terminal_cheatsheet.html#/table-of-some-basic-commands">this slide</a> and the slide after it for tips, also remember what you learned in the terminal tutorial in Task 1.<br>
+</li>
+<li>If you are using a Mac, and you cannot see your home folder in Finder, see <a href="./tips_for_mac_users.html#making-your-home-directory-visible-in-finder">this slide</a></li>
+</ul>
 <div id="tip-home" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -174,9 +181,10 @@ Figure&nbsp;1: You should se something like this after opening <code>Eaton_Perim
 </figure>
 </div>
 <ol start="4" type="1">
-<li>Close the project (<em>Project -&gt; Close</em> in drop down menus).</li>
-<li>Move the <code>toy_data</code> folder from your Downloads folder to <code>~/nr218</code></li>
-<li>Open the project you previously saved (<em>Project -&gt; Open Recent</em> in drop down menus)</li>
+<li>Now Close the project (<em>Project -&gt; Close</em> in drop down menus).</li>
+<li>Move the <code>toy_data</code> folder from your Downloads folder to <code>~/nr218/lab_1</code> (in file explorer, or terminal (again, see <a href="./terminal_cheatsheet.html#/table-of-some-basic-commands">this slide</a>)<br>
+</li>
+<li>Open the project you saved back in step 3 (<em>Project -&gt; Open Recent</em> in drop down menus).</li>
 </ol>
 <ul>
 <li>Now QGIS cannot find the Eaton Fire perimeter data because the <em>relative path</em> to the data has changed (see <a href="#tip-paths" class="quarto-xref">Tip&nbsp;3</a>). A dialogue such as the one shown in <a href="#fig-unavailable" class="quarto-xref">Figure&nbsp;2</a> will appear. Don’t worry about trying to fix the problem yet.</li>
@@ -196,16 +204,16 @@ Figure&nbsp;2: When the relative path to data changes (or the data is deleted) Q
 <li>View the contents of the directory:</li>
 </ol>
 <ul>
-<li>In the terminal (while in <code>~/nr218</code>) type <code>tree</code>. (on Windows, in PowerShell, <code>tree</code> omits files by default, so use <code>tree /F</code> where the F flag tells it to include files.)
+<li>In the terminal (while in <code>~/nr218</code>) type <code>tree</code>. (on Windows, in PowerShell, <code>tree</code> omits files by default, so use <code>tree /F</code> where the F flag tells it to include files.) If the command <code>tree</code> is not found, you will need to install it.
 <ul>
-<li>macOS/Linux, install if missing: <code>brew install tree</code> / <code>sudo apt install tree</code>.</li>
-<li>Windows PowerShell: <code>tree</code> should be present. If you love typing you can use <code>Get-ChildItem -Recurse</code> instead.</li>
+<li>Mac OSX - see <a href="./tips_for_mac_users.html#installing-tree-command">this slide</a></li>
+<li>Linux - use <code>sudo apt install tree</code> (or your appropriate package manager).</li>
+<li>Windows PowerShell: <code>tree</code> should be present. If it is not, or you just love typing you can use <code>Get-ChildItem -Recurse</code> instead.</li>
 </ul></li>
-<li>Copy the output and paste at the top of your text document.</li>
 <li>In your text document answer the following questions.
 <ul>
 <li><ol type="1">
-<li>Type “pwd” in the terminal, this shows the full path to the present working directory, what is the output (paste it)?</li>
+<li>Copy the output of <code>tree</code> and paste it here as the answer to 1..</li>
 </ol></li>
 <li><ol start="2" type="1">
 <li>Based on the contents of the directory, what do you think are some best practices for naming files?</li>
@@ -235,7 +243,9 @@ Tip&nbsp;3: What is a Path?
 </section>
 <section id="task-3-set-up-onedrive-sync-cal-poly-account" class="level2">
 <h2 class="anchored" data-anchor-id="task-3-set-up-onedrive-sync-cal-poly-account">Task 3: Set Up OneDrive Sync (Cal Poly Account)</h2>
-<p>For this class you will need to use the OneDrive client (or rclone) for your platform to sync your Cal Poly OneDrive. Short directions for setting up OneDrive are given here, if you are having trouble refer to the <a href="https://calpoly.atlassian.net/wiki/spaces/CPKB/pages/732921936/Access+OneDrive+and+SharePoint+from+my+Computer">guide</a>.</p>
+<p>For this class you may want to use the OneDrive client (or rclone) for your platform to sync your Cal Poly OneDrive and move data between computers.</p>
+<p>I do not recommend storing your nr218 directory in OneDrive. Editing GIS data directly from OneDrive can cause problems because QGIS data files often consist of several linked files, and cloud syncing may update or lock them at different times leading to broken layers, file corruption, or conflicts if QGIS is writing changes while OneDrive is still syncing.</p>
+<p>Short directions for setting up OneDrive are given here, if you are having trouble refer to the <a href="https://calpoly.atlassian.net/wiki/spaces/CPKB/pages/732921936/Access+OneDrive+and+SharePoint+from+my+Computer">guide</a>.</p>
 <section id="windows-onedrive-client" class="level3">
 <h3 class="anchored" data-anchor-id="windows-onedrive-client">Windows (OneDrive client)</h3>
 <ul>

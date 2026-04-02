@@ -21,6 +21,8 @@ Complete part 2, _Navigating Directories_, in [Terminal Tutor](https://www.termi
 
 This introduces you to POSIX shells. If you are using Mac or Linux, your terminal will behave like the one in the tutorial, if you are on a Windows computer you can use use PowerShell, which in many ways behaves like a POSIX shell.  
 
+For more useful commands see [the slides on using the terminal](terminal_cheatsheet.qmd#/table-of-some-basic-commands)
+
 ## Task 2: Exploring a Directory Structure and unzipping files
 
 1. Download the toy data [here](https://github.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip) (Open the linkin a new tab and click the _Download raw file_ button on the right side). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration.  For now, we will do just that, so unzip `toy_data.zip` right into the download folder (see @tip-zip for how to do this.).  
@@ -37,7 +39,11 @@ __What is a zip file?__
 A zip file is a compressed archive.  Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure.  When you unzip, or extract the data you get back an uncompressed copy.  Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use.  __Do not work directly with files compressed in a zip!__ .While QGIS and other applications _can_ read files from inside of a zip, it is a bad idea to do so.  There are many processing tools that cannot work with the compressed file.  Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.
 :::
 
-2. Create a working directory, `nr218` for the class in your home folder (see @tip-home).
+2. Create a directory, `nr218`, for your work in this class, in your home folder. Then create another directory inside called `lab_1`. You can do this either in your computers graphical file explorer (e.g. Finder, File Explorer, Files) or in the terminal (Encouraged!).
+
++ If you are not sure where your home folder is see @tip-home.
++ If you want to use the terminal to create `nr218` in your home directory but don't know how, see [this slide](terminal_cheatsheet.qmd#/table-of-some-basic-commands) and the slide after it for tips, also remember what you learned in the terminal tutorial in Task 1.  
++ If you are using a Mac, and you cannot see your home folder in Finder, see [this slide](tips_for_mac_users.qmd#making-your-home-directory-visible-in-finder)
 
 ::: {#tip-home .callout-tip}
 ## Where is my home folder?
@@ -53,21 +59,21 @@ A zip file is a compressed archive.  Zipping a folder full of sub-directories an
 
   ![You should se something like this after opening `Eaton_Perimeter_20250121.geojson`.  It is a polygon showing the Eaton Fire perimeter ](img/eaton_perim.png){#fig-eaton fig-alt="Image showing the eaton fire perimeter polygon within QGIS" fig-cap="You should se something like this after opening `Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter"}
   
-4. Close the project (_Project -> Close_ in drop down menus).
-5. Move the `toy_data` folder from your Downloads folder to `~/nr218`
-6. Open the project you previously saved (_Project -> Open Recent_ in drop down menus)
+4. Now Close the project (_Project -> Close_ in drop down menus).
+5. Move the `toy_data` folder from your Downloads folder to `~/nr218/lab_1` (in file explorer, or terminal (again, see [this slide](terminal_cheatsheet.qmd#/table-of-some-basic-commands))  
+6. Open the project you saved back in step 3 (_Project -> Open Recent_ in drop down menus).
   + Now QGIS cannot find the Eaton Fire perimeter data because the _relative path_ to the data has changed (see @tip-paths). A dialogue such as the one shown in @fig-unavailable will appear. Don't worry about trying to fix the problem yet.
 
 ![When the relative path to data changes (or the data is deleted) QGIS cannot find it.` ](img/unavailable.png){#fig-unavailable fig-alt="Image showing the handle unavailable data dialogue window in QGIS" fig-cap="When the relative path to data changes (or the data is deleted) QGIS cannot find it."}
 
 7. Open a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, `cd ~/nr218`.
 8. View the contents of the directory:
-  - In the terminal (while in `~/nr218`) type `tree`. (on Windows, in PowerShell, `tree` omits files by default, so use `tree /F` where the F flag tells it to include files.)
-    - macOS/Linux, install if missing: `brew install tree` / `sudo apt install tree`.
-    - Windows PowerShell: `tree` should be present.  If you love typing you can use `Get-ChildItem -Recurse` instead.
-  - Copy the output  and paste at the top of your text document.
+  - In the terminal (while in `~/nr218`) type `tree`. (on Windows, in PowerShell, `tree` omits files by default, so use `tree /F` where the F flag tells it to include files.)  If the command `tree` is not found, you will need to install it.
+    - Mac OSX - see [this slide](tips_for_mac_users.qmd#installing-tree-command)
+    - Linux - use `sudo apt install tree` (or your appropriate package manager). 
+    - Windows PowerShell: `tree` should be present.  If it is not, or you just love typing you can use `Get-ChildItem -Recurse` instead.
   - In your text document answer the following questions.
-    - 1) Type "pwd" in the terminal, this shows the full path to the present working directory, what is the output (paste it)?
+    - 1) Copy the output of `tree` and paste it here as the answer to 1..
     - 2) Based on the contents of the directory, what do you think are some best practices for naming files?
     - 3) Why do you think working on files that are in your download folder is a bad idea?
 
@@ -89,7 +95,11 @@ In a (bash-like) terminal you can change directories using the `cd` command to n
 
 ## Task 3: Set Up OneDrive Sync (Cal Poly Account)
 
-For this class you will need to use the OneDrive client (or rclone) for your platform to sync your Cal Poly OneDrive. Short directions for setting up OneDrive are given here, if you are having trouble refer to the [guide](https://calpoly.atlassian.net/wiki/spaces/CPKB/pages/732921936/Access+OneDrive+and+SharePoint+from+my+Computer).
+For this class you may want to use the OneDrive client (or rclone) for your platform to sync your Cal Poly OneDrive and move data between computers.
+
+I do not recommend storing your nr218 directory in OneDrive. Editing GIS data directly from OneDrive can cause problems because QGIS data files often consist of several linked files, and cloud syncing may update or lock them at different times leading to broken layers, file corruption, or conflicts if QGIS is writing changes while OneDrive is still syncing.
+
+Short directions for setting up OneDrive are given here, if you are having trouble refer to the [guide](https://calpoly.atlassian.net/wiki/spaces/CPKB/pages/732921936/Access+OneDrive+and+SharePoint+from+my+Computer).
 
 
 ### Windows (OneDrive client)

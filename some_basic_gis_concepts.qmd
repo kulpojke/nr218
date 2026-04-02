@@ -217,7 +217,7 @@ map
 ```
 
 :::
-:::
+
 
 ## What is data? (_What are data?_) 
 + "Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation."
