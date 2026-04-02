@@ -1,5 +1,5 @@
 ---
-title: "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03"
+title: "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05"
 page-layout: full
 format: 
   html:
@@ -12,8 +12,8 @@ format:
 ## Class Details
 Room 180-230 (Baker)
 
-Monday: 5:10 - 9:00  
-Wednesday: 6:10 - 9:00 
+Tuesday: 5:10 - 9:00  
+Thursday: 6:10 - 9:00 
 
 ## Instructor Details
 Michael Huggins  
