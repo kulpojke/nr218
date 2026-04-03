@@ -4,7 +4,7 @@
     "href": "index.html#class-details",
     "title": "NR 218",
     "section": "Class Details",
-    "text": "Class Details\nBuilding 180 (Baker)\nRoom 230\nMonday: 9:10 - 1:00\nWednesday: (9:10 - 12:00)"
+    "text": "Class Details\nBuilding 180 (Baker)\nRoom 230\nSection 03 Monday: 9:10 - 1:00\nWednesday: (9:10 - 12:00)\nSection 05 Tuesday: 9:10 - 1:00\nThursday: (9:10 - 12:00)"
   },
   {
     "objectID": "index.html#instructor-details",
@@ -74,7 +74,7 @@
     "href": "index.html#annoying-file-explorer-defaults",
     "title": "NR 218",
     "section": "Annoying File Explorer Defaults",
-    "text": "Annoying File Explorer Defaults\nBy Default Windows File Explorer hides file extensions. To fix this,\n\nOpen File Explorer\nClick View &gt; Show &gt; File name extenions\n\nOn Mac, Finder by default does not make it easy to find your home folder see this slide."
+    "text": "Annoying File Explorer Defaults\nBy Default Windows File Explorer hides file extensions. To fix this,\n\nOpen File Explorer\nClick View &gt; Show &gt; File name extenions\n\nOn Mac, Finder, by default, does not make it easy to find your home folder see this slide."
   },
   {
     "objectID": "index.html#terminals-and-shells",
@@ -172,7 +172,7 @@
     "href": "index.html#making-your-home-directory-visible-in-finder",
     "title": "NR 218",
     "section": "Making your home directory visible in Finder",
-    "text": "Making your home directory visible in Finder\nTo jump to your home directory in macOS Finder, + open Finder and press Shift+Command+H. + To add it to the sidebar drag the folder icon (at the top of the window) into the sidebar.\nTo add the Path bar, which will let you see paths to files, + open Finder + in the dropdown menu, go to View &gt; Show Path Bar Now, there should be a bar (probably at the bottom of the window) showing the path to the directory you are in."
+    "text": "Making your home directory visible in Finder\nTo jump to your home directory in macOS Finder,\n\nopen Finder and press Shift+Command+H.\nTo add it to the sidebar drag the folder icon (at the top of the window) into the sidebar.\n\nTo add the Path bar, which will let you see paths to files,\n\nopen Finder\nin the dropdown menu, go to View &gt; Show Path Bar Now, there should be a bar (probably at the bottom of the window) showing the path to the directory you are in."
   },
   {
     "objectID": "index.html#installing-qgis-on-mac",
@@ -2769,7 +2769,7 @@
     "href": "tips_for_mac_users.html#making-your-home-directory-visible-in-finder",
     "title": "",
     "section": "Making your home directory visible in Finder",
-    "text": "Making your home directory visible in Finder\nTo jump to your home directory in macOS Finder, + open Finder and press Shift+Command+H. + To add it to the sidebar drag the folder icon (at the top of the window) into the sidebar.\nTo add the Path bar, which will let you see paths to files, + open Finder + in the dropdown menu, go to View &gt; Show Path Bar Now, there should be a bar (probably at the bottom of the window) showing the path to the directory you are in."
+    "text": "Making your home directory visible in Finder\nTo jump to your home directory in macOS Finder,\n\nopen Finder and press Shift+Command+H.\nTo add it to the sidebar drag the folder icon (at the top of the window) into the sidebar.\n\nTo add the Path bar, which will let you see paths to files,\n\nopen Finder\nin the dropdown menu, go to View &gt; Show Path Bar Now, there should be a bar (probably at the bottom of the window) showing the path to the directory you are in."
   },
   {
     "objectID": "tips_for_mac_users.html#installing-qgis-on-mac",
@@ -3182,7 +3182,7 @@
     "href": "introduction.html#class-details",
     "title": "",
     "section": "Class Details",
-    "text": "Class Details\nBuilding 180 (Baker)\nRoom 230\nMonday: 9:10 - 1:00\nWednesday: (9:10 - 12:00)"
+    "text": "Class Details\nBuilding 180 (Baker)\nRoom 230\nSection 03 Monday: 9:10 - 1:00\nWednesday: (9:10 - 12:00)\nSection 05 Tuesday: 9:10 - 1:00\nThursday: (9:10 - 12:00)"
   },
   {
     "objectID": "introduction.html#instructor-details",
@@ -3252,7 +3252,7 @@
     "href": "computers_slides.html#annoying-file-explorer-defaults",
     "title": "",
     "section": "Annoying File Explorer Defaults",
-    "text": "Annoying File Explorer Defaults\nBy Default Windows File Explorer hides file extensions. To fix this,\n\nOpen File Explorer\nClick View &gt; Show &gt; File name extenions\n\nOn Mac, Finder by default does not make it easy to find your home folder see this slide."
+    "text": "Annoying File Explorer Defaults\nBy Default Windows File Explorer hides file extensions. To fix this,\n\nOpen File Explorer\nClick View &gt; Show &gt; File name extenions\n\nOn Mac, Finder, by default, does not make it easy to find your home folder see this slide."
   },
   {
     "objectID": "computers_slides.html#terminals-and-shells",

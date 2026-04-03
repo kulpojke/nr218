@@ -5,8 +5,14 @@
 Building 180 (Baker)  
 Room 230 
 
+__Section 03__
 Monday: 9:10 - 1:00  
 Wednesday: (9:10 - 12:00) 
+
+__Section 05__
+Tuesday: 9:10 - 1:00  
+Thursday: (9:10 - 12:00) 
+
 
 ## Instructor Details
 Michael Huggins  
