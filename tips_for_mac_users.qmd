@@ -5,7 +5,7 @@
 - [Installing Homebrew](#installing-homebrew)
 - [Installing tree command](#installing-tree-command)
 
-## Making your home directory visible in Finder
+## Making your home directory visible in Finder {style="font-size:0.7em"}
 
 To jump to your home directory in macOS Finder, 
 + open Finder and press `Shift+Command+H`.
