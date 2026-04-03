@@ -56,6 +56,13 @@
     "text": "Data\n\n\n\n“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”\n“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.” -OED\n\n\n\n\n\n\n\nData is stored on a computer as zeros and ones .\n\nData is stored at some physical location on the disk, and a pointer is saved which is later used to find the file.\nThe details of this are managed for you by applications or programming languages by representing this relationship as a path.\n\n\n\n\n\nA pointer (a) pointing to the memory address associated with a variable (b), i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.\n\n\n\nImage Source: Wikimedia /Sven"
   },
   {
+    "objectID": "index.html#data-storage",
+    "href": "index.html#data-storage",
+    "title": "NR 218",
+    "section": "Data Storage",
+    "text": "Data Storage\n\nWe store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times data is stored in a way only a program will understand (binary file)\nEven the human readable files are ultimately stored as 1s and 0s (more on that)"
+  },
+  {
     "objectID": "index.html#section-1",
     "href": "index.html#section-1",
     "title": "NR 218",
@@ -68,6 +75,20 @@
     "title": "NR 218",
     "section": "File Paths and Directories",
     "text": "File Paths and Directories"
+  },
+  {
+    "objectID": "index.html#file-extensions",
+    "href": "index.html#file-extensions",
+    "title": "NR 218",
+    "section": "File Extensions",
+    "text": "File Extensions\nFile extensions denote files readable by certain programs, for example:\n\n\n\nExtension\ndescription\n\n\n\n\nfilename.txt\ntext file\n\n\nfilename.doc\nMicrosoft Word file\n\n\nfilename.pdf\nportable document file\n\n\nfilename.html\nhypertext markup language\n\n\nfilename.xml\nextensible markup language\n\n\nfilename.tif\ntagged image format\n\n\nfilename.json\njavascript object notation\n\n\nfilename.geojson\ngeographic json\n\n\nfilename.laz\nLASer zip\n\n\nfilename.parquet\ncompressed table"
+  },
+  {
+    "objectID": "index.html#qgis-file-extensions",
+    "href": "index.html#qgis-file-extensions",
+    "title": "NR 218",
+    "section": "QGIS file extensions",
+    "text": "QGIS file extensions\n\nComputer programs only read certain file formats.\nFamiliarity with different file types is helpful.\nQGIS has several of its own file types\n\nProject files: .qgz, .qgs\nStyling/symbology: .qml\nLayout templates: .qpt\nLayer definitions: .qlr\nProject companion database: .qgd\n\nCommon GIS data file types: .shp (along with its sidecar files .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
   },
   {
     "objectID": "index.html#annoying-file-explorer-defaults",
@@ -119,15 +140,15 @@
     "text": "Zipped Files\nWhat is a zip file? A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use.\nDo not work directly with files compressed in a zip! .While QGIS and other applications can read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.\nTo unzip:\n\nWindows (GUI): In File Explorer, find the .zip, right-click → “Extract All…,” choose your desired destination folder, click Extract.\nmacOS (GUI): In Finder, double-click the .zip to expand it, then drag/move the extracted folder into your destination folder.\nLinux (terminal): cd ~/Downloads (or wherever it landed), then run unzip SPR_data.zip -d &lt;destination directory&gt; (replace &lt;destination directory&gt; with your actual destination directory. Install unzip if missing: sudo apt install unzip)."
   },
   {
-    "objectID": "index.html#data-storage",
-    "href": "index.html#data-storage",
+    "objectID": "index.html#data-storage-1",
+    "href": "index.html#data-storage-1",
     "title": "NR 218",
     "section": "Data Storage",
     "text": "Data Storage\n\nWe store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times there are just 1s and 0s (binary file)\nEven the human readable files are ultimately stored as 1s and 0s (more on that)"
   },
   {
-    "objectID": "index.html#data-storage-1",
-    "href": "index.html#data-storage-1",
+    "objectID": "index.html#data-storage-2",
+    "href": "index.html#data-storage-2",
     "title": "NR 218",
     "section": "Data Storage",
     "text": "Data Storage\nFile extensions denote files readable by certain programs, for example:\n\n\n\nExtension\ndescription\n\n\n\n\nfilename.txt\ntext file\n\n\nfilename.doc\nMicrosoft Word file\n\n\nfilename.pdf\nportable document file\n\n\nfilename.html\nhypertext markup language\n\n\nfilename.xml\nextensible markup language\n\n\nfilename.tif\ntagged image format\n\n\nfilename.json\njavascript object notation\n\n\nfilename.geojson\ngeographic json\n\n\nfilename.laz\nLASer zip\n\n\nfilename.parquet\ncompressed table"
@@ -3234,6 +3255,13 @@
     "text": "Data\n\n\n\n“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”\n“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.” -OED\n\n\n\n\n\n\n\nData is stored on a computer as zeros and ones .\n\nData is stored at some physical location on the disk, and a pointer is saved which is later used to find the file.\nThe details of this are managed for you by applications or programming languages by representing this relationship as a path.\n\n\n\n\n\nA pointer (a) pointing to the memory address associated with a variable (b), i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.\n\n\n\nImage Source: Wikimedia /Sven"
   },
   {
+    "objectID": "computers_slides.html#data-storage",
+    "href": "computers_slides.html#data-storage",
+    "title": "",
+    "section": "Data Storage",
+    "text": "Data Storage\n\nWe store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times data is stored in a way only a program will understand (binary file)\nEven the human readable files are ultimately stored as 1s and 0s (more on that)"
+  },
+  {
     "objectID": "computers_slides.html#section",
     "href": "computers_slides.html#section",
     "title": "",
@@ -3246,6 +3274,20 @@
     "title": "",
     "section": "File Paths and Directories",
     "text": "File Paths and Directories"
+  },
+  {
+    "objectID": "computers_slides.html#file-extensions",
+    "href": "computers_slides.html#file-extensions",
+    "title": "",
+    "section": "File Extensions",
+    "text": "File Extensions\nFile extensions denote files readable by certain programs, for example:\n\n\n\nExtension\ndescription\n\n\n\n\nfilename.txt\ntext file\n\n\nfilename.doc\nMicrosoft Word file\n\n\nfilename.pdf\nportable document file\n\n\nfilename.html\nhypertext markup language\n\n\nfilename.xml\nextensible markup language\n\n\nfilename.tif\ntagged image format\n\n\nfilename.json\njavascript object notation\n\n\nfilename.geojson\ngeographic json\n\n\nfilename.laz\nLASer zip\n\n\nfilename.parquet\ncompressed table"
+  },
+  {
+    "objectID": "computers_slides.html#qgis-file-extensions",
+    "href": "computers_slides.html#qgis-file-extensions",
+    "title": "",
+    "section": "QGIS file extensions",
+    "text": "QGIS file extensions\n\nComputer programs only read certain file formats.\nFamiliarity with different file types is helpful.\nQGIS has several of its own file types\n\nProject files: .qgz, .qgs\nStyling/symbology: .qml\nLayout templates: .qpt\nLayer definitions: .qlr\nProject companion database: .qgd\n\nCommon GIS data file types: .shp (along with its sidecar files .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
   },
   {
     "objectID": "computers_slides.html#annoying-file-explorer-defaults",

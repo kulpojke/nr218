@@ -249,6 +249,25 @@
 </div>
 </div>
 </section>
+<section id="data-storage" class="slide level2 center" style="font-size: 0.5em">
+<h2>Data Storage</h2>
+<ul>
+<li>We store data in computer-readable format in files
+<ul>
+<li>Sometimes files store data as text (often called human readable files)</li>
+<li>Other times data is stored in a way only a program will understand (binary file)</li>
+<li>Even the human readable files are ultimately stored as 1s and 0s (<a href="https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW">more on that</a>)</li>
+</ul></li>
+</ul>
+<div class="{r-stack}">
+<div class="fragment absolute fade-in-then-out" style="">
+<p><img data-src="img/utf8.png"></p>
+</div>
+<div class="fragment absolute fade-in-then-out" style="">
+<p><img data-src="img/binary-file-in-text-editor.png" style="height: 420px; width: auto;"></p>
+</div>
+</div>
+</section>
 <section id="section" class="slide level2 center">
 <h2></h2>
 
@@ -269,6 +288,76 @@
 
 </div>
 </div>
+</section>
+<section id="file-extensions" class="slide level2 center" style="font-size: 0.5em">
+<h2>File Extensions</h2>
+<p><em>File extensions</em> denote files readable by certain programs, for example:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Extension</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>filename.txt</td>
+<td>text file</td>
+</tr>
+<tr class="even">
+<td>filename.doc</td>
+<td>Microsoft Word file</td>
+</tr>
+<tr class="odd">
+<td>filename.pdf</td>
+<td>portable document file</td>
+</tr>
+<tr class="even">
+<td>filename.html</td>
+<td>hypertext markup language</td>
+</tr>
+<tr class="odd">
+<td>filename.xml</td>
+<td>extensible markup language</td>
+</tr>
+<tr class="even">
+<td>filename.tif</td>
+<td>tagged image format</td>
+</tr>
+<tr class="odd">
+<td>filename.json</td>
+<td>javascript object notation</td>
+</tr>
+<tr class="even">
+<td>filename.geojson</td>
+<td>geographic json</td>
+</tr>
+<tr class="odd">
+<td>filename.laz</td>
+<td>LASer zip</td>
+</tr>
+<tr class="even">
+<td>filename.parquet</td>
+<td>compressed table</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="qgis-file-extensions" class="slide level2 center" style="font-size: 0.5em">
+<h2>QGIS file extensions</h2>
+<ul>
+<li>Computer programs only read certain file formats.</li>
+<li>Familiarity with different file types is helpful.</li>
+<li>QGIS has several of its own file types
+<ul>
+<li>Project files: .qgz, .qgs</li>
+<li>Styling/symbology: .qml</li>
+<li>Layout templates: .qpt</li>
+<li>Layer definitions: .qlr</li>
+<li>Project companion database: .qgd</li>
+</ul></li>
+<li>Common GIS data file types: .shp (along with its <em>sidecar files</em> .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others</li>
+</ul>
 </section>
 <section id="annoying-file-explorer-defaults" class="slide level2 center" style="font-size:0.7em">
 <h2>Annoying File Explorer Defaults</h2>

@@ -79,6 +79,25 @@ Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=
 
 :::
 
+## Data Storage{style="font-size: 0.5em"}
++ We store data in computer-readable format in files
+  + Sometimes files store data as text (often called human readable files) 
+  + Other times data is stored in a way only a program will understand (binary file)
+  + Even the human readable files are ultimately stored as 1s and 0s ([more on that](https://www.totalphase.com/blog/2023/05/binary-ascii-relationship-differences-embedded-applications/?srsltid=AfmBOooKE_ehcrFst_V6Q5XtDbOnStzYrjjO0zrwIsDwYYa4M40rhBqW))
+
+
+::: {r-stack}
+::: {.fragment .absolute .fade-in-then-out}
+![](img/utf8.png)
+:::
+
+::: {.fragment .absolute .fade-in-then-out}
+![](img/binary-file-in-text-editor.png){style="height: 420px; width: auto;"}
+:::
+
+:::
+
+
 ##
 
 ![Family tree of modern general purpose operating systems.  With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX.](img/os_phylogeny.png){fig-alt="Schematic showing pointer to a file or memory address" fig-cap=""}
@@ -103,6 +122,37 @@ Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=
 :::
 
 :::
+
+## File Extensions {style="font-size: 0.5em"}
+
+_File extensions_ denote files readable by certain programs, for example:
+
+| Extension | description       |
+|------------------|------------|
+| filename.txt     | text file |
+| filename.doc     | Microsoft Word file |
+| filename.pdf     | portable document file |
+| filename.html    | hypertext markup language |
+| filename.xml     | extensible markup language |
+| filename.tif     | tagged image format |
+| filename.json    | javascript object notation |
+| filename.geojson | geographic json |
+| filename.laz     | LASer zip |
+| filename.parquet | compressed table |
+
+
+## QGIS file extensions {style="font-size: 0.5em"}
++ Computer programs only read certain file formats.
++ Familiarity with different file types is helpful.
++ QGIS has several of its own file types
+  - Project files: .qgz, .qgs
+  - Styling/symbology: .qml
+  - Layout templates: .qpt
+  - Layer definitions: .qlr
+  - Project companion database: .qgd
+
++ Common GIS data file types: .shp (along with its _sidecar files_ .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg,
+.json, .geojson, .txt, .hdf, .nc, .parquet and a few others
 
 ## Annoying File Explorer Defaults {style="font-size:0.7em"}
 
@@ -227,5 +277,3 @@ __To unzip:__
 - Windows (GUI): In File Explorer, find the `.zip`, right-click → “Extract All…,” choose your desired destination folder, click Extract.
 - macOS (GUI): In Finder, double-click the `.zip` to expand it, then drag/move the extracted folder into your destination folder.
 - Linux (terminal): `cd ~/Downloads` (or wherever it landed), then run `unzip SPR_data.zip -d <destination directory>` (replace `<destination directory>` with your actual destination directory. Install unzip if missing: `sudo apt install unzip`).
-
-
