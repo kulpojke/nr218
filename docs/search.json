@@ -599,28 +599,49 @@
     "href": "index.html#data-overview",
     "title": "NR 218",
     "section": "Data Overview",
-    "text": "Data Overview\n\n\nWhat are Data?\n\n\n“Facts, measurements, and characteristics of something of interest.”\n“Facts and statistics collected together for reference or analysis.”\n\n\nWhat is Information?\n\n\n“Facts provided or learned about something or someone.”\n“Knowledge and insights that are acquired through the analysis of data.”\n\n\n\n\nWhat are Spatial Data?\n\n\n“Data that describe the geographic and spatial aspects of phenomena.”\n“Facts and statistics collected together for reference or analysis.”\n\n\nWhat are Metadata?\n\n\nData about the data\nEx: units, what instruments were used, who/what/when/where/how the data was collected"
+    "text": "Data Overview\nWhat are Spatial Data?\n\n\n“Data that describe the geographic and spatial aspects of phenomena.”\n\n\nWhat are Metadata?\n\n\nData about the data\nEx: units, what instruments were used, who/what/when/where/how the data was collected"
   },
   {
     "objectID": "index.html#data-types",
     "href": "index.html#data-types",
     "title": "NR 218",
     "section": "Data Types",
-    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Point (float) - negatives, decimal values (32 bit precision)\n\n\n\n\n\n\nWhich of these dtypes do you think tends to be most memory intensive memory?"
+    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBoolean - True / False statements (think off/on switch)\nString - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumerical - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Point (float) - negatives, decimal values (32 bit precision)\n\n\n\n\n\n\nWhich of these dtypes do you think tends to be most memory intensive memory?"
+  },
+  {
+    "objectID": "index.html#boolean-data",
+    "href": "index.html#boolean-data",
+    "title": "NR 218",
+    "section": "Boolean data",
+    "text": "Boolean data\n\nBoolean data is either True or False (Can also be thought of as 1 or 0)\nTheoretically, it can be stored as 1 bit, but in practice it is generally stored as a byte (8 bits) because hardware usually addresses hardware by byte, so writing individual bits is complex"
+  },
+  {
+    "objectID": "index.html#string-data",
+    "href": "index.html#string-data",
+    "title": "NR 218",
+    "section": "String data",
+    "text": "String data\n\nString data contains characters.\nStrings can be stored with different encodings. The more characters exist in the encoding set, the more memory the characters require."
+  },
+  {
+    "objectID": "index.html#numerical-data",
+    "href": "index.html#numerical-data",
+    "title": "NR 218",
+    "section": "Numerical Data",
+    "text": "Numerical Data\n\n\nInteger\n\n\n\n\nInteger Type\n\n\nBytes\n\n\nRange of Values Stored\n\n\n\n\n\n\nint8\n\n\n1\n\n\n-128 to 127\n\n\n\n\nuint8\n\n\n1\n\n\n0 to 255\n\n\n\n\nint16\n\n\n2\n\n\n-32,768 to 32,767\n\n\n\n\nuint16\n\n\n2\n\n\n0 to 65,535\n\n\n\n\nint32\n\n\n4\n\n\n-2,147,483,648 to 2,147,483,647\n\n\n\n\nuint32\n\n\n4\n\n\n0 to 4,294,967,295\n\n\n\n\nint64\n\n\n8\n\n\n-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807\n\n\n\n\nuint64\n\n\n8\n\n\n0 to 18,446,744,073,709,551,615\n\n\n\n\n\n\nFloating Point\n\n\n\n\nData Type\n\n\nBytes\n\n\nApproximate Range of Values Stored\n\n\n\n\n\n\nfloat32\n\n\n4\n\n\nabout 1.2 x 10-38 to 3.4 x 1038 (about 7 decimal digits precision)\n\n\n\n\nfloat64\n\n\n8\n\n\nabout 2.2 x 10-308 to 1.8 x 10308 (about 15 to 16 decimal digits precision)"
   },
   {
     "objectID": "index.html#continuous-vs-discrete-data",
     "href": "index.html#continuous-vs-discrete-data",
     "title": "NR 218",
     "section": "Continuous vs Discrete Data",
-    "text": "Continuous vs Discrete Data\n\nContinuous data consists of numerical values\nDiscrete data consists of a limited number of possible values, groups, or categories\n\nIn some cases could be represented with integers\nCould be some continuous quantity chopped into bins, e.g. income as “high”. “middle”, “low”"
+    "text": "Continuous vs Discrete Data\n\n\n\nContinuous data consists of numerical values that can be measured with an arbitrary level of precision\nDiscrete data consists of a limited number of possible values\n\n\n\n\nContinuous data consists of numerical values that can be measured with an arbitrary level of precision\n\ne.g., Distance, temperature, elevation, reflectance\ni.e. a distance can be 1 km, 0.5 km, or 0.00000000000001 km\n\n\n\n\n\nDiscrete data consists of a limited number of possible values\n\nCount data\nNumber trees in a sample plot, number of houses on a block"
   },
   {
     "objectID": "index.html#levels-of-measurement",
     "href": "index.html#levels-of-measurement",
     "title": "NR 218",
     "section": "Levels of Measurement",
-    "text": "Levels of Measurement\n\n\n\nNominal - Names or identifiers of objects\nOrdinal - Ranked categories based on a measure\nRatio - have a 0 value that indicates absence of the quantity of interest\nInterval - have a regular scale, but not a meaningful 0 value\n\n\n\nNominal - Names or identifiers of objects\ne.g. Land Cover: “Oak Woodland”, “Grassland”, “Forest”, etc…\nOrdinal - Ranked categories based on a measure\ne.g. Fire Hazard: “Low”, “Medium”, “High”\n\n\nRatio - Multiplication makes sense, e.g. 200 K is twice as hot as 100 K \\[\n2 \\times 100 \\mathrm{K} = 200 \\mathrm{K}\n\\]\nInterval - Multiplication does not make sense, e.g. 200°C is not twice as hot as 100°C \\[\n2 \\times 100°\\mathrm{C} \\neq 200°\\mathrm{C}\n\\]\n\n\nImage Source: wikimedia\n\n\n\n\nWhich of these do you think would be discrete? Which are Continuos?"
+    "text": "Levels of Measurement\n\n\n\nNominal - Names or identifiers of objects\nOrdinal - Ranked categories based on a measure\nRatio - have a 0 value that indicates absence of the quantity of interest\nInterval - have a regular scale, but not a meaningful 0 value\n\n\n\nNominal and ordinal data are types of categorical data\n\nNominal - Names or identifiers of objects\n\ne.g. Land Cover: “Oak Woodland”, “Grassland”, “Forest”, etc…\n\nOrdinal - Ranked categories based on a measure\n\ne.g. Fire Hazard: “Low”, “Medium”, “High”\n\n\nRatio and interval data can be continuous or discrete\nRatio - Multiplication makes sense, e.g. 200 K is twice as hot as 100 K \\[\n2 \\times 100 \\mathrm{K} = 200 \\mathrm{K}\n\\]\nInterval - Multiplication does not make sense, e.g. 200°C is not twice as hot as 100°C \\[\n2 \\times 100°\\mathrm{C} \\neq 200°\\mathrm{C}\n\\] \n\nImage Source: wikimedia\n\n\n\n\nWhich of these do you think would be discrete? Which are Continuos?"
   },
   {
     "objectID": "index.html#geospatial-data-types-vector-vs.-raster",
@@ -676,7 +697,7 @@
     "href": "index.html#raster-data-1",
     "title": "NR 218",
     "section": "Raster Data",
-    "text": "Raster Data\n\n\n\n\n\n\nDerived from a grid-based system of contiguous cells containing specific attribute information.\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\nWidely used by technologies such as digital images and LCD monitors.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRastrum, Latin meaning “scraper” –&gt; Raster, German meaning “screen”\n\nGrids of numbers\nThings with pixels!\nIf it’s pixelated:\n\nIt’s a raster\n\nIf it’s a photo:\n\nIt’s a raster\n\nIf it’s a digital image\n\nIt’s a raster!\n\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\na.k.a. pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
+    "text": "Raster Data\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRastrum, Latin meaning “scraper” –&gt; Raster, German meaning “screen”\n\nGrids of numbers\nThings with pixels!\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRastrum, Latin meaning “scraper” –&gt; Raster, German meaning “screen”\n\nGrids of numbers\nThings with pixels!\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\na.k.a. pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
   },
   {
     "objectID": "index.html#spatial-resolution",
@@ -3469,28 +3490,49 @@
     "href": "spatial_data_models.html#data-overview",
     "title": "",
     "section": "Data Overview",
-    "text": "Data Overview\n\n\nWhat are Data?\n\n\n“Facts, measurements, and characteristics of something of interest.”\n“Facts and statistics collected together for reference or analysis.”\n\n\nWhat is Information?\n\n\n“Facts provided or learned about something or someone.”\n“Knowledge and insights that are acquired through the analysis of data.”\n\n\n\n\nWhat are Spatial Data?\n\n\n“Data that describe the geographic and spatial aspects of phenomena.”\n“Facts and statistics collected together for reference or analysis.”\n\n\nWhat are Metadata?\n\n\nData about the data\nEx: units, what instruments were used, who/what/when/where/how the data was collected"
+    "text": "Data Overview\nWhat are Spatial Data?\n\n\n“Data that describe the geographic and spatial aspects of phenomena.”\n\n\nWhat are Metadata?\n\n\nData about the data\nEx: units, what instruments were used, who/what/when/where/how the data was collected"
   },
   {
     "objectID": "spatial_data_models.html#data-types",
     "href": "spatial_data_models.html#data-types",
     "title": "",
     "section": "Data Types",
-    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBools - True / False statements (think off/on switch)\nStrings - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumbers - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Point (float) - negatives, decimal values (32 bit precision)\n\n\n\n\n\n\nWhich of these dtypes do you think tends to be most memory intensive memory?"
+    "text": "Data Types\n\nData can have different types\n\n\nEx: How might “population” data differ from “county” data?\n\n\nThe most common types of data available for use in a GIS are:\n\n\nBoolean - True / False statements (think off/on switch)\nString - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)\nNumerical - numerical values (e.g. latitude/longitude coordinates)\n\n\nIntegers (ints) - numerical values (8 bit or 16 bit precision)\nFloating Point (float) - negatives, decimal values (32 bit precision)\n\n\n\n\n\n\nWhich of these dtypes do you think tends to be most memory intensive memory?"
+  },
+  {
+    "objectID": "spatial_data_models.html#boolean-data",
+    "href": "spatial_data_models.html#boolean-data",
+    "title": "",
+    "section": "Boolean data",
+    "text": "Boolean data\n\nBoolean data is either True or False (Can also be thought of as 1 or 0)\nTheoretically, it can be stored as 1 bit, but in practice it is generally stored as a byte (8 bits) because hardware usually addresses hardware by byte, so writing individual bits is complex"
+  },
+  {
+    "objectID": "spatial_data_models.html#string-data",
+    "href": "spatial_data_models.html#string-data",
+    "title": "",
+    "section": "String data",
+    "text": "String data\n\nString data contains characters.\nStrings can be stored with different encodings. The more characters exist in the encoding set, the more memory the characters require."
+  },
+  {
+    "objectID": "spatial_data_models.html#numerical-data",
+    "href": "spatial_data_models.html#numerical-data",
+    "title": "",
+    "section": "Numerical Data",
+    "text": "Numerical Data\n\n\nInteger\n\n\n\n\nInteger Type\n\n\nBytes\n\n\nRange of Values Stored\n\n\n\n\n\n\nint8\n\n\n1\n\n\n-128 to 127\n\n\n\n\nuint8\n\n\n1\n\n\n0 to 255\n\n\n\n\nint16\n\n\n2\n\n\n-32,768 to 32,767\n\n\n\n\nuint16\n\n\n2\n\n\n0 to 65,535\n\n\n\n\nint32\n\n\n4\n\n\n-2,147,483,648 to 2,147,483,647\n\n\n\n\nuint32\n\n\n4\n\n\n0 to 4,294,967,295\n\n\n\n\nint64\n\n\n8\n\n\n-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807\n\n\n\n\nuint64\n\n\n8\n\n\n0 to 18,446,744,073,709,551,615\n\n\n\n\n\n\nFloating Point\n\n\n\n\nData Type\n\n\nBytes\n\n\nApproximate Range of Values Stored\n\n\n\n\n\n\nfloat32\n\n\n4\n\n\nabout 1.2 x 10-38 to 3.4 x 1038 (about 7 decimal digits precision)\n\n\n\n\nfloat64\n\n\n8\n\n\nabout 2.2 x 10-308 to 1.8 x 10308 (about 15 to 16 decimal digits precision)"
   },
   {
     "objectID": "spatial_data_models.html#continuous-vs-discrete-data",
     "href": "spatial_data_models.html#continuous-vs-discrete-data",
     "title": "",
     "section": "Continuous vs Discrete Data",
-    "text": "Continuous vs Discrete Data\n\nContinuous data consists of numerical values\nDiscrete data consists of a limited number of possible values, groups, or categories\n\nIn some cases could be represented with integers\nCould be some continuous quantity chopped into bins, e.g. income as “high”. “middle”, “low”"
+    "text": "Continuous vs Discrete Data\n\n\n\nContinuous data consists of numerical values that can be measured with an arbitrary level of precision\nDiscrete data consists of a limited number of possible values\n\n\n\n\nContinuous data consists of numerical values that can be measured with an arbitrary level of precision\n\ne.g., Distance, temperature, elevation, reflectance\ni.e. a distance can be 1 km, 0.5 km, or 0.00000000000001 km\n\n\n\n\n\nDiscrete data consists of a limited number of possible values\n\nCount data\nNumber trees in a sample plot, number of houses on a block"
   },
   {
     "objectID": "spatial_data_models.html#levels-of-measurement",
     "href": "spatial_data_models.html#levels-of-measurement",
     "title": "",
     "section": "Levels of Measurement",
-    "text": "Levels of Measurement\n\n\n\nNominal - Names or identifiers of objects\nOrdinal - Ranked categories based on a measure\nRatio - have a 0 value that indicates absence of the quantity of interest\nInterval - have a regular scale, but not a meaningful 0 value\n\n\n\nNominal - Names or identifiers of objects\ne.g. Land Cover: “Oak Woodland”, “Grassland”, “Forest”, etc…\nOrdinal - Ranked categories based on a measure\ne.g. Fire Hazard: “Low”, “Medium”, “High”\n\n\nRatio - Multiplication makes sense, e.g. 200 K is twice as hot as 100 K \\[\n2 \\times 100 \\mathrm{K} = 200 \\mathrm{K}\n\\]\nInterval - Multiplication does not make sense, e.g. 200°C is not twice as hot as 100°C \\[\n2 \\times 100°\\mathrm{C} \\neq 200°\\mathrm{C}\n\\]\n\n\nImage Source: wikimedia\n\n\n\n\nWhich of these do you think would be discrete? Which are Continuos?"
+    "text": "Levels of Measurement\n\n\n\nNominal - Names or identifiers of objects\nOrdinal - Ranked categories based on a measure\nRatio - have a 0 value that indicates absence of the quantity of interest\nInterval - have a regular scale, but not a meaningful 0 value\n\n\n\nNominal and ordinal data are types of categorical data\n\nNominal - Names or identifiers of objects\n\ne.g. Land Cover: “Oak Woodland”, “Grassland”, “Forest”, etc…\n\nOrdinal - Ranked categories based on a measure\n\ne.g. Fire Hazard: “Low”, “Medium”, “High”\n\n\nRatio and interval data can be continuous or discrete\nRatio - Multiplication makes sense, e.g. 200 K is twice as hot as 100 K \\[\n2 \\times 100 \\mathrm{K} = 200 \\mathrm{K}\n\\]\nInterval - Multiplication does not make sense, e.g. 200°C is not twice as hot as 100°C \\[\n2 \\times 100°\\mathrm{C} \\neq 200°\\mathrm{C}\n\\] \n\nImage Source: wikimedia\n\n\n\n\nWhich of these do you think would be discrete? Which are Continuos?"
   },
   {
     "objectID": "spatial_data_models.html#geospatial-data-types-vector-vs.-raster",
@@ -3546,7 +3588,7 @@
     "href": "spatial_data_models.html#raster-data-1",
     "title": "",
     "section": "Raster Data",
-    "text": "Raster Data\n\n\n\n\n\n\nDerived from a grid-based system of contiguous cells containing specific attribute information.\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\nWidely used by technologies such as digital images and LCD monitors.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRastrum, Latin meaning “scraper” –&gt; Raster, German meaning “screen”\n\nGrids of numbers\nThings with pixels!\nIf it’s pixelated:\n\nIt’s a raster\n\nIf it’s a photo:\n\nIt’s a raster\n\nIf it’s a digital image\n\nIt’s a raster!\n\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\na.k.a. pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
+    "text": "Raster Data\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRastrum, Latin meaning “scraper” –&gt; Raster, German meaning “screen”\n\nGrids of numbers\nThings with pixels!\n\n\n\n\n\n\n\n\n\n\n\nImages, stacks of images (satellite / drone image)\n\nRastrum, Latin meaning “scraper” –&gt; Raster, German meaning “screen”\n\nGrids of numbers\nThings with pixels!\n\n\n\n\n\n\n\n\n\n\n\nThe spatial resolution of a raster dataset represents a measure of the precision or detail of the displayed information.\n\na.k.a. pixel size\nEx: 1mm, 1cm, or 1m\n\nSo when you hear that a camera has N megapixels - this just means it has many millions of pixels"
   },
   {
     "objectID": "spatial_data_models.html#spatial-resolution",

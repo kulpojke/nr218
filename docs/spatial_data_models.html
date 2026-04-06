@@ -133,29 +133,10 @@
 </section>
 <section id="data-overview" class="slide level2 center">
 <h2>Data Overview</h2>
-<div class="r-stack">
-<div class="fragment fade-in-then-out">
-<p>What are Data?</p>
-<div style="font-size:0.7em">
-<ul>
-<li>“Facts, measurements, and characteristics of something of interest.”</li>
-<li>“Facts and statistics collected together for reference or analysis.”</li>
-</ul>
-</div>
-<p>What is Information?</p>
-<div style="font-size:0.7em">
-<ul>
-<li>“Facts provided or learned about something or someone.”</li>
-<li>“Knowledge and insights that are acquired through the analysis of data.”</li>
-</ul>
-</div>
-</div>
-<div class="fragment fade-in">
 <p>What are Spatial Data?</p>
 <div style="font-size:0.7em">
 <ul>
 <li>“Data that describe the geographic and spatial aspects of phenomena.”</li>
-<li>“Facts and statistics collected together for reference or analysis.”</li>
 </ul>
 </div>
 <p>What are Metadata?</p>
@@ -164,8 +145,6 @@
 <li>Data about the data</li>
 <li>Ex: units, what instruments were used, who/what/when/where/how the data was collected</li>
 </ul>
-</div>
-</div>
 </div>
 </section>
 <section id="data-types" class="slide level2 center">
@@ -180,9 +159,9 @@
 <li><p>The most common types of data available for use in a GIS are:</p>
 <div style="font-size:0.7em">
 <ul>
-<li><p><strong>Bools</strong> - True / False statements (think off/on switch)</p></li>
-<li><p><strong>Strings</strong> - Alphanumeric text denoted by quotes (e.g.&nbsp;“Lake Tahoe”)</p></li>
-<li><p><strong>Numbers</strong> - numerical values (e.g.&nbsp;latitude/longitude coordinates)</p>
+<li><p><strong>Boolean</strong> - True / False statements (think off/on switch)</p></li>
+<li><p><strong>String</strong> - Alphanumeric text denoted by quotes (e.g.&nbsp;“Lake Tahoe”)</p></li>
+<li><p><strong>Numerical</strong> - numerical values (e.g.&nbsp;latitude/longitude coordinates)</p>
 <div style="font-size:0.8em">
 <ul>
 <li><strong>Integers (ints)</strong> - numerical values (8 bit or 16 bit precision)</li>
@@ -206,16 +185,205 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="boolean-data" class="slide level2 center" style="font-size:0.7em">
+<h2>Boolean data</h2>
+<ul>
+<li>Boolean data is either True or False (Can also be thought of as 1 or 0)</li>
+<li>Theoretically, it can be stored as 1 bit, but in practice it is generally stored as a byte (8 bits) because hardware usually addresses hardware by byte, so writing individual bits is complex</li>
+</ul>
+<p><img data-src="img/bit_v_byte.png" style="width: 50%; height: auto;" alt="Diagram comparing a single bit with a byte, showing that one bit stores one binary value while one byte contains eight bits."></p>
+</section>
+<section id="string-data" class="slide level2 center" style="font-size:0.7em">
+<h2>String data</h2>
+<ul>
+<li>String data contains characters.</li>
+<li>Strings can be stored with different encodings. The more characters exist in the encoding set, the more memory the characters require.</li>
+</ul>
+<p><img data-src="img/utf8.png" style="width: 50%; height: auto;" alt="Image showing examples of string encoding."></p>
+</section>
+<section id="numerical-data" class="slide level2 center" style="font-size:0.6em">
+<h2>Numerical Data</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="font-size:0.7em">
+<p><span style="font-size:1.5em">Integer</span></p>
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+<th style="text-align: left; width: 22%;">
+Integer Type
+</th>
+<th style="text-align: right; width: 10%;">
+Bytes
+</th>
+<th style="text-align: left; width: 68%;">
+Range of Values Stored
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>int8</code>
+</td>
+<td style="text-align: right;">
+1
+</td>
+<td>
+-128 to 127
+</td>
+</tr>
+<tr>
+<td>
+<code>uint8</code>
+</td>
+<td style="text-align: right;">
+1
+</td>
+<td>
+0 to 255
+</td>
+</tr>
+<tr>
+<td>
+<code>int16</code>
+</td>
+<td style="text-align: right;">
+2
+</td>
+<td>
+-32,768 to 32,767
+</td>
+</tr>
+<tr>
+<td>
+<code>uint16</code>
+</td>
+<td style="text-align: right;">
+2
+</td>
+<td>
+0 to 65,535
+</td>
+</tr>
+<tr>
+<td>
+<code>int32</code>
+</td>
+<td style="text-align: right;">
+4
+</td>
+<td>
+-2,147,483,648 to 2,147,483,647
+</td>
+</tr>
+<tr>
+<td>
+<code>uint32</code>
+</td>
+<td style="text-align: right;">
+4
+</td>
+<td>
+0 to 4,294,967,295
+</td>
+</tr>
+<tr>
+<td>
+<code>int64</code>
+</td>
+<td style="text-align: right;">
+8
+</td>
+<td>
+-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+</td>
+</tr>
+<tr>
+<td>
+<code>uint64</code>
+</td>
+<td style="text-align: right;">
+8
+</td>
+<td>
+0 to 18,446,744,073,709,551,615
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
+<p><span style="font-size:1.5em">Floating Point</span></p>
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+<th style="text-align: left; width: 22%;">
+Data Type
+</th>
+<th style="text-align: right; width: 10%;">
+Bytes
+</th>
+<th style="text-align: left; width: 68%;">
+Approximate Range of Values Stored
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>float32</code>
+</td>
+<td style="text-align: right;">
+4
+</td>
+<td>
+about 1.2 x 10<sup>-38</sup> to 3.4 x 10<sup>38</sup> (about 7 decimal digits precision)
+</td>
+</tr>
+<tr>
+<td>
+<code>float64</code>
+</td>
+<td style="text-align: right;">
+8
+</td>
+<td>
+about 2.2 x 10<sup>-308</sup> to 1.8 x 10<sup>308</sup> (about 15 to 16 decimal digits precision)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 <section id="continuous-vs-discrete-data" class="slide level2 smaller center">
 <h2>Continuous vs Discrete Data</h2>
+<div class="r-stack">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="">
 <ul>
-<li><strong>Continuous</strong> data consists of numerical values</li>
-<li><strong>Discrete</strong> data consists of a limited number of possible values, groups, or categories
+<li><strong>Continuous</strong> data consists of numerical values that can be measured with an arbitrary level of precision</li>
+<li><strong>Discrete</strong> data consists of a limited number of possible values</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
 <ul>
-<li>In some cases could be represented with integers</li>
-<li>Could be some continuous quantity chopped into bins, e.g.&nbsp;income as “high”. “middle”, “low”</li>
+<li><strong>Continuous</strong> data consists of numerical values that can be measured with an arbitrary level of precision
+<ul>
+<li>e.g., Distance, temperature, elevation, reflectance</li>
+<li>i.e.&nbsp;a distance can be 1 km, 0.5 km, or 0.00000000000001 km</li>
 </ul></li>
 </ul>
+</div>
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
+<ul>
+<li><strong>Discrete</strong> data consists of a limited number of possible values
+<ul>
+<li>Count data</li>
+<li>Number trees in a sample plot, number of houses on a block</li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="levels-of-measurement" class="slide level2 center">
 <h2>Levels of Measurement</h2>
@@ -229,20 +397,25 @@
 </ul>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="font-size:0.7em">
-<p><strong>Nominal</strong> - Names or identifiers of objects</p>
+<p><span style="font-size:1.1em"><strong>Nominal and ordinal data are types of <em>categorical</em> data</strong></span></p>
+<ul>
+<li><strong>Nominal</strong> - Names or identifiers of objects</li>
+</ul>
 <p><span style="display:block; margin-left:1.5em;">e.g.&nbsp;Land Cover: “Oak Woodland”, “Grassland”, “Forest”, etc…</span></p>
-<p><strong>Ordinal</strong> - Ranked categories based on a measure</p>
+<ul>
+<li><strong>Ordinal</strong> - Ranked categories based on a measure</li>
+</ul>
 <p><span style="display:block; margin-left:1.5em;">e.g.&nbsp;Fire Hazard: “Low”, “Medium”, “High”</span></p>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="font-size:0.7em">
+<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="font-size:0.6em">
+<p><span style="font-size:1.1em"><strong>Ratio and interval data can be <em>continuous</em> or <em>discrete</em></strong></span></p>
 <p><strong>Ratio</strong> - Multiplication makes sense, e.g.&nbsp;200 K is twice as hot as 100 K <span class="math display">\[
 2 \times 100 \mathrm{K} = 200 \mathrm{K}
 \]</span></p>
 <p><strong>Interval</strong> - Multiplication <strong>does not</strong> make sense, e.g.&nbsp;200°C is <strong>not</strong> twice as hot as 100°C <span class="math display">\[
 2 \times 100°\mathrm{C} \neq 200°\mathrm{C}
-\]</span></p>
-<p><img data-src="img/Kelvin_og_Celsius_temperaturskalaer.png"></p>
-<div class="attribution" style="font-size:0.4em">
+\]</span> <img data-src="img/Kelvin_og_Celsius_temperaturskalaer.png" style="display: block; margin: 0 auto; width: 45%; height: auto;"></p>
+<div class="attribution" style="font-size:0.4em; width:45%; margin:0 auto; text-align:left;">
 <p>Image Source: <a href="https://upload.wikimedia.org/wikipedia/commons/c/3/Kelvin_og_Celsius_temperaturskalaer.png">wikimedia</a></p>
 </div>
 </div>
@@ -522,15 +695,16 @@
 <div class="column" style="width:40%;">
 <div style="font-size:0.7em">
 <ul>
-<li>Derived from a grid-based system of contiguous cells containing specific attribute information.</li>
-<li>The <strong>spatial resolution</strong> of a raster dataset represents a measure of the precision or detail of the displayed information.</li>
-<li>Widely used by technologies such as digital images and LCD monitors.</li>
+<li>Images, stacks of images (satellite / drone image)
+<ul>
+<li><em>Rastrum</em>, Latin meaning “scraper” –&gt; <em>Raster</em>, German meaning “screen”</li>
+</ul></li>
+<li>Grids of numbers</li>
+<li>Things with pixels!</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
-<div class="figure" style="text-align: right; margin: 0 auto;">
-<p><img data-src="img/raster_example1.png"></p>
-</div>
+<p><img data-src="img/raster_example2.png" width="600"></p>
 </div></div>
 </div>
 <div class="fragment fade-in-then-out">
@@ -544,22 +718,10 @@
 </ul></li>
 <li>Grids of numbers</li>
 <li>Things with pixels!</li>
-<li>If it’s pixelated:
-<ul>
-<li>It’s a raster</li>
-</ul></li>
-<li>If it’s a photo:
-<ul>
-<li>It’s a raster</li>
-</ul></li>
-<li>If it’s a digital image
-<ul>
-<li>It’s a raster!</li>
-</ul></li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
-<p><img data-src="img/raster_example2.png" width="600"></p>
+<p><img data-src="img/plain_dem.png" width="600"></p>
 </div></div>
 </div>
 <div class="fragment fade-in">

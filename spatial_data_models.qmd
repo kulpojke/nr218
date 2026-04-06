@@ -2,32 +2,10 @@
 
 ## Data Overview
 
-::: {.r-stack}
-::: {.fragment .fade-in-then-out}
-
-What are Data?
-
-::: {style="font-size:0.7em"}
-- “Facts, measurements, and characteristics of something of interest.”
-- “Facts and statistics collected together for reference or analysis.”
-:::
-
-What is Information?
-
-::: {style="font-size:0.7em"}
-- “Facts provided or learned about something or someone.”
-- “Knowledge and insights that are acquired through the analysis of data.”
-:::
-
-:::
-
-::: {.fragment .fade-in}
-
 What are Spatial Data?
 
 ::: {style="font-size:0.7em"}
 - “Data that describe the geographic and spatial aspects of phenomena.”
-- “Facts and statistics collected together for reference or analysis.”
 :::
 
 What are Metadata?
@@ -35,9 +13,6 @@ What are Metadata?
 ::: {style="font-size:0.7em"}
 - Data about the data 
 - Ex: units, what instruments were used, who/what/when/where/how the data was collected
-:::
-
-:::
 :::
 
 ## Data Types
@@ -51,9 +26,9 @@ What are Metadata?
 + The most common types of data available for use in a GIS are:
 
   ::: {style="font-size:0.7em"}
-  + **Bools** - True / False statements (think off/on switch)
-  + **Strings** - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)
-  + **Numbers** - numerical values (e.g. latitude/longitude coordinates)
+  + **Boolean** - True / False statements (think off/on switch)
+  + **String** - Alphanumeric text denoted by quotes (e.g. “Lake Tahoe”)
+  + **Numerical** - numerical values (e.g. latitude/longitude coordinates)
 
     ::: {style="font-size:0.8em"}
     + **Integers (ints)** - numerical values (8 bit or 16 bit precision)
@@ -67,13 +42,89 @@ Which of these dtypes do you think tends to be most memory intensive memory?
 :::
 
 
+## Boolean data {style="font-size:0.7em"}
+
++ Boolean data is either True or False (Can also be thought of as 1 or 0)
++ Theoretically, it can be stored as 1 bit, but in practice it is generally stored as a byte (8 bits) because hardware usually addresses hardware by byte, so writing individual bits is complex
+
+![](img/bit_v_byte.png){fig-alt="Diagram comparing a single bit with a byte, showing that one bit stores one binary value while one byte contains eight bits." style="width: 50%; height: auto;"}
+
+## String data {style="font-size:0.7em"}
+
++ String data contains characters.
++ Strings can be stored with different encodings.  The more characters exist in the encoding set, the more memory the characters require.
+
+![](img/utf8.png){fig-alt="Image showing examples of string encoding." style="width: 50%; height: auto;"}
+
+## Numerical Data {style="font-size:0.6em"}
+
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1" style="font-size:0.7em"}
+[Integer]{style="font-size:1.5em"}
+
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="text-align: left; width: 22%;">Integer Type</th>
+      <th style="text-align: right; width: 10%;">Bytes</th>
+      <th style="text-align: left; width: 68%;">Range of Values Stored</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>int8</code></td><td style="text-align: right;">1</td><td>-128 to 127</td></tr>
+    <tr><td><code>uint8</code></td><td style="text-align: right;">1</td><td>0 to 255</td></tr>
+    <tr><td><code>int16</code></td><td style="text-align: right;">2</td><td>-32,768 to 32,767</td></tr>
+    <tr><td><code>uint16</code></td><td style="text-align: right;">2</td><td>0 to 65,535</td></tr>
+    <tr><td><code>int32</code></td><td style="text-align: right;">4</td><td>-2,147,483,648 to 2,147,483,647</td></tr>
+    <tr><td><code>uint32</code></td><td style="text-align: right;">4</td><td>0 to 4,294,967,295</td></tr>
+    <tr><td><code>int64</code></td><td style="text-align: right;">8</td><td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td></tr>
+    <tr><td><code>uint64</code></td><td style="text-align: right;">8</td><td>0 to 18,446,744,073,709,551,615</td></tr>
+  </tbody>
+</table>
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+[Floating Point]{style="font-size:1.5em"}
+
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="text-align: left; width: 22%;">Data Type</th>
+      <th style="text-align: right; width: 10%;">Bytes</th>
+      <th style="text-align: left; width: 68%;">Approximate Range of Values Stored</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>float32</code></td><td style="text-align: right;">4</td><td>about 1.2 x 10<sup>-38</sup> to 3.4 x 10<sup>38</sup> (about 7 decimal digits precision)</td></tr>
+    <tr><td><code>float64</code></td><td style="text-align: right;">8</td><td>about 2.2 x 10<sup>-308</sup> to 1.8 x 10<sup>308</sup> (about 15 to 16 decimal digits precision)</td></tr>
+  </tbody>
+</table>
+:::
+
+:::
+
 ## Continuous vs Discrete Data {.smaller}
 
-+ **Continuous** data consists of numerical values
-+ **Discrete** data consists of a limited number of possible values, groups, or categories
-  + In some cases could be represented with integers
-  + Could be some continuous quantity chopped into bins, e.g. income as "high". "middle", "low"
+::: { .r-stack}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
++ **Continuous** data consists of numerical values that can be measured with an arbitrary level of precision
++ **Discrete** data consists of a limited number of possible values
+:::
 
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
++ **Continuous** data consists of numerical values that can be measured with an arbitrary level of precision
+  + e.g., Distance, temperature, elevation, reflectance
+  + i.e. a distance can be 1 km,  0.5 km, or 0.00000000000001 km
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
++ **Discrete** data consists of a limited number of possible values
+  + Count data
+  + Number trees in a sample plot, number of houses on a block
+:::
+
+:::
 ## Levels of Measurement
 
 ::: {.r-stack}
@@ -87,11 +138,13 @@ Which of these dtypes do you think tends to be most memory intensive memory?
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.7em"}
 
-**Nominal** - Names or identifiers of objects
+[__Nominal and ordinal data are types of _categorical_ data__]{style="font-size:1.1em"}
+
++ **Nominal** - Names or identifiers of objects
 
 <span style="display:block; margin-left:1.5em;">e.g. Land Cover: "Oak Woodland", "Grassland", "Forest", etc...</span>
 
-**Ordinal** - Ranked categories based on a measure
++ **Ordinal** - Ranked categories based on a measure
 
 <span style="display:block; margin-left:1.5em;">e.g. Fire Hazard: "Low", "Medium", "High"</span>
 
@@ -99,7 +152,9 @@ Which of these dtypes do you think tends to be most memory intensive memory?
 :::
 
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="font-size:0.7em"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="font-size:0.6em"}
+
+[__Ratio and interval data can be _continuous_ or _discrete___]{style="font-size:1.1em"}
 
 **Ratio** -
 Multiplication makes sense, e.g. 200 K is twice as hot as 100 K
@@ -112,10 +167,9 @@ Multiplication __does not__ make sense, e.g. 200°C is __not__ twice as hot as 1
 $$
 2 \times 100°\mathrm{C} \neq 200°\mathrm{C} 
 $$
+![](img/Kelvin_og_Celsius_temperaturskalaer.png){style="display: block; margin: 0 auto; width: 45%; height: auto;"}
 
-![](img/Kelvin_og_Celsius_temperaturskalaer.png)
-
-::: {.attribution style="font-size:0.4em"}
+::: {.attribution style="font-size:0.4em; width:45%; margin:0 auto; text-align:left;"}
 Image Source: [wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/3/Kelvin_og_Celsius_temperaturskalaer.png)
 :::
 
@@ -189,6 +243,8 @@ Which of these do you think would be discrete?  Which are Continuos?
 + Zero-dimensional objects containing a **single coordinate pair.**
   + Ex: Lat, Lon (sometimes elevation) coordinates denoting a city, building, address, etc
 + X,Y (,Z) coordinates on a Cartesian plane (or Euclidean space)
+
+
 :::
 
 :::
@@ -340,21 +396,24 @@ Which of these do you think would be discrete?  Which are Continuos?
 ## Raster Data
 
 ::: {.r-stack}
+
 ::: {.fragment .fade-in-then-out}
 ::: {.columns}
 
 ::: {.column width = "40%"}
 ::: {style="font-size:0.7em"}
-+ Derived from a grid-based system of contiguous cells containing specific attribute information.
-+ The **spatial resolution** of a raster dataset represents a measure of the precision or detail of the displayed information.
-+ Widely used by technologies such as digital images and LCD monitors.
++ Images, stacks of images (satellite / drone image)
+  + _Rastrum_, Latin meaning “scraper” --> _Raster_, German meaning "screen"
++ Grids of numbers
++ Things with pixels! 
+
 :::
 :::
 
 ::: {.column width = "50%"}
-::: {.figure style="text-align: right; margin: 0 auto;"}
-![](img/raster_example1.png)
-:::
+
+![](img/raster_example2.png){width=600px}
+
 :::
 
 :::
@@ -369,24 +428,19 @@ Which of these do you think would be discrete?  Which are Continuos?
   + _Rastrum_, Latin meaning “scraper” --> _Raster_, German meaning "screen"
 + Grids of numbers
 + Things with pixels! 
-+ If it's pixelated: 
-  + It’s a raster
-+ If it's a photo: 
-  + It’s a raster
-+ If it’s a digital image 
-  + It’s a raster!
 
 :::
 :::
 
 ::: {.column width = "50%"}
 
-![](img/raster_example2.png){width=600px}
+![](img/plain_dem.png){width=600px}
 
 :::
 
 :::
 :::
+
 
 ::: {.fragment .fade-in}
 ::: {.columns}
