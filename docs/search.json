@@ -200,7 +200,7 @@
     "href": "index.html#installing-qgis-on-mac",
     "title": "NR 218",
     "section": "Installing QGIS on Mac",
-    "text": "Installing QGIS on Mac\nThere are some bugs in recent versions of QGIS on Mac.\n\nQGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the link to the issue on GitHub. If 4.0 works on your computer, then great, problem solved. If not read on.\nQGIS 3.4xx Is missing proj.db, and thus cannot do anything related to Raster reprojection, which renders it more or less useless. Here is the link to the issue on GitHub.\n\nIt is possible that one or both of these issues will be resolved soon, but we cannot depend on that. The best solution currently is to use the older version 3.34. Unfortunately there is no archived QGIS 3.34 macOS .dmg in the QGIS old releases archive. So, options are\n\n[Easy] Use the lab computer\n[I have not tested] Using homebrew try brew install --cask qgis (see Installing Homebrew)"
+    "text": "Installing QGIS on Mac\nThere are some bugs in recent versions of QGIS on Mac.\n\nQGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the link to the issue on GitHub. If 4.0 works on your computer, then great, problem solved. If not read on.\nQGIS 3.44, had a major bug on Mac until recently, but that seems to have been fixed.\n\nI might recommend going the 3.44 route, but if it 4.0 works on your computer, that is fine too."
   },
   {
     "objectID": "index.html#installing-homebrew",
@@ -389,28 +389,28 @@
     "href": "index.html#map-scale",
     "title": "NR 218",
     "section": "Map Scale",
-    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include scale\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
   },
   {
     "objectID": "index.html#map-scale-1",
     "href": "index.html#map-scale-1",
     "title": "NR 218",
     "section": "Map Scale",
-    "text": "Map Scale"
+    "text": "Map Scale\n\n\n\n\n\n\n\n\nScale Bars\n\n\n\nOn contour maps, contour interval is also included"
   },
   {
     "objectID": "index.html#coordinate-systems",
     "href": "index.html#coordinate-systems",
     "title": "NR 218",
     "section": "Coordinate systems",
-    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nGeographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of Earth\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))\n\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD)."
+    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nA geographic coordinate system (GCS) is for defining locations on three dimensional models of Earth\n\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))\n\n\nA projected coordinate system is used on a flat map and uses units of length (e.g. meters)"
   },
   {
     "objectID": "index.html#dms-to-dd-conversion",
     "href": "index.html#dms-to-dd-conversion",
     "title": "NR 218",
     "section": "DMS to DD conversion",
-    "text": "DMS to DD conversion\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
+    "text": "DMS to DD conversion\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD).\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
   },
   {
     "objectID": "index.html#spheroids-and-geoids",
@@ -467,6 +467,13 @@
     "title": "NR 218",
     "section": "State Plan System",
     "text": "State Plan System\nEach State Plane Coordinate System zone uses a map projection based on its geographic orientation.\ne.g.\n\n\n\n\nTransverse Mercator Projection\n\n\n\n\nLambert Conformal Conic Projection\n\n\n\n\nHotine Oblique Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReproject the global satellite image from the last slide to EPSG:2227 (California zone 3)\nScroll to zoom in on South Africa. What do you notice?"
+  },
+  {
+    "objectID": "index.html#maps-displayed-in-gcs",
+    "href": "index.html#maps-displayed-in-gcs",
+    "title": "NR 218",
+    "section": "Maps displayed in GCS",
+    "text": "Maps displayed in GCS\n\nWhen a map is shown in a CGS, the GCS coordinate system is projected along with the features on to the map. There is an implicit map projection being used to position both the latitude-longitude grid and the geographic features on the flat map.\nWhen software simply plots lon on x and lat on y, it behaves like a plate carree/equirectangular display which maps longitude to and latitude to, creating a simple 2:1 ratio cylindrical grid where meridians and parallels are evenly spaced, straight lines."
   },
   {
     "objectID": "index.html#section-5",
@@ -2251,28 +2258,28 @@
     "href": "projections_etc.html#map-scale",
     "title": "",
     "section": "Map Scale",
-    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include a scale bar\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include scale\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
   },
   {
     "objectID": "projections_etc.html#map-scale-1",
     "href": "projections_etc.html#map-scale-1",
     "title": "",
     "section": "Map Scale",
-    "text": "Map Scale"
+    "text": "Map Scale\n\n\n\n\n\n\n\n\nScale Bars\n\n\n\nOn contour maps, contour interval is also included"
   },
   {
     "objectID": "projections_etc.html#coordinate-systems",
     "href": "projections_etc.html#coordinate-systems",
     "title": "",
     "section": "Coordinate systems",
-    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nGeographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of Earth\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))\n\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD)."
+    "text": "Coordinate systems\n\nFrameworks that are used to define unique positions\nA geographic coordinate system (GCS) is for defining locations on three dimensional models of Earth\n\nGCS is based on a sphere or spheroid (a.k.a. ellipsoid)\nGCS units are degrees\n\nLatitude \\(\\in 0^\\circ, 90^\\circ\\) (or \\(-90^\\circ, 90^\\circ\\))\nLongitude \\(\\in 0^\\circ, 180^\\circ\\) (or \\(-180^\\circ, 180^\\circ\\))\n\n\nA projected coordinate system is used on a flat map and uses units of length (e.g. meters)"
   },
   {
     "objectID": "projections_etc.html#dms-to-dd-conversion",
     "href": "projections_etc.html#dms-to-dd-conversion",
     "title": "",
     "section": "DMS to DD conversion",
-    "text": "DMS to DD conversion\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
+    "text": "DMS to DD conversion\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD).\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
   },
   {
     "objectID": "projections_etc.html#spheroids-and-geoids",
@@ -2329,6 +2336,13 @@
     "title": "",
     "section": "State Plan System",
     "text": "State Plan System\nEach State Plane Coordinate System zone uses a map projection based on its geographic orientation.\ne.g.\n\n\n\n\nTransverse Mercator Projection\n\n\n\n\nLambert Conformal Conic Projection\n\n\n\n\nHotine Oblique Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReproject the global satellite image from the last slide to EPSG:2227 (California zone 3)\nScroll to zoom in on South Africa. What do you notice?"
+  },
+  {
+    "objectID": "projections_etc.html#maps-displayed-in-gcs",
+    "href": "projections_etc.html#maps-displayed-in-gcs",
+    "title": "",
+    "section": "Maps displayed in GCS",
+    "text": "Maps displayed in GCS\n\nWhen a map is shown in a CGS, the GCS coordinate system is projected along with the features on to the map. There is an implicit map projection being used to position both the latitude-longitude grid and the geographic features on the flat map.\nWhen software simply plots lon on x and lat on y, it behaves like a plate carree/equirectangular display which maps longitude to and latitude to, creating a simple 2:1 ratio cylindrical grid where meridians and parallels are evenly spaced, straight lines."
   },
   {
     "objectID": "intro_to_esri.html#arcgis-vs-qgis",
@@ -2818,7 +2832,7 @@
     "href": "tips_for_mac_users.html#installing-qgis-on-mac",
     "title": "",
     "section": "Installing QGIS on Mac",
-    "text": "Installing QGIS on Mac\nThere are some bugs in recent versions of QGIS on Mac.\n\nQGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the link to the issue on GitHub. If 4.0 works on your computer, then great, problem solved. If not read on.\nQGIS 3.4xx Is missing proj.db, and thus cannot do anything related to Raster reprojection, which renders it more or less useless. Here is the link to the issue on GitHub.\n\nIt is possible that one or both of these issues will be resolved soon, but we cannot depend on that. The best solution currently is to use the older version 3.34. Unfortunately there is no archived QGIS 3.34 macOS .dmg in the QGIS old releases archive. So, options are\n\n[Easy] Use the lab computer\n[I have not tested] Using homebrew try brew install --cask qgis (see Installing Homebrew)"
+    "text": "Installing QGIS on Mac\nThere are some bugs in recent versions of QGIS on Mac.\n\nQGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the link to the issue on GitHub. If 4.0 works on your computer, then great, problem solved. If not read on.\nQGIS 3.44, had a major bug on Mac until recently, but that seems to have been fixed.\n\nI might recommend going the 3.44 route, but if it 4.0 works on your computer, that is fine too."
   },
   {
     "objectID": "tips_for_mac_users.html#installing-homebrew",

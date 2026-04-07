@@ -23,12 +23,9 @@ Now, there should be a bar (probably at the bottom of the window) showing the pa
 There are some bugs in recent versions of QGIS on Mac.
 
 + QGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the [link to the issue on GitHub](https://github.com/qgis/QGIS/issues/65037).  If 4.0 works on your computer, then great, problem solved. If not read on.
-+ QGIS 3.4xx Is missing proj.db, and thus cannot do anything related to Raster reprojection, which renders it more or less useless.  Here is the [link to the issue on GitHub](https://github.com/qgis/QGIS/issues/65102).
++ QGIS 3.44, had a major bug on Mac until recently, but that seems to have been fixed.
 
-It is possible that one or both of these issues will be resolved soon, but we cannot depend on that. The best solution currently is to use the older version 3.34.  Unfortunately there is no archived QGIS 3.34 macOS .dmg in the QGIS old releases archive. So, options are
-
-+ [Easy] Use the lab computer
-+ [I have not tested] Using homebrew try `brew install --cask qgis` (see [Installing Homebrew](#installing-homebrew))
+I might recommend going the 3.44 route, but if it 4.0 works on your computer, that is fine too.
 
 ## Installing Homebrew {style="font-size:0.7em"}
 

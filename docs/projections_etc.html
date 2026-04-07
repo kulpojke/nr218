@@ -157,7 +157,7 @@
 <div>
 <ul>
 <li class="fragment">You need to shrink things to make a map</li>
-<li class="fragment">On reference maps it is generally important to include a scale bar<br>
+<li class="fragment">On reference maps it is generally important to include scale<br>
 <img data-src="img/scale-bar.png" style="height: 175px;"></li>
 <li class="fragment">Representative fraction (RF) describes scale as a simple ratio
 <div style="position: absolute; top: 267px; left: 165px; width: 80px; height: 14px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
@@ -182,10 +182,12 @@ The denominator denotes ground or “real-world” distance.</li>
 <ul>
 <li class="fragment"><div class="fragment fade-out" style="position: absolute; top: 313px; left: 95px; width: 830px; height: 100px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
 
-</div></li>
+</div>
+Scale Bars</li>
 <li class="fragment"><div class="fragment fade-in-then-out" style="position: absolute; top: 413px; left: 300px; width: 400px; height: 38px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;">
 
-</div></li>
+</div>
+On contour maps, contour interval is also included</li>
 </ul>
 </div>
 </section>
@@ -193,18 +195,21 @@ The denominator denotes ground or “real-world” distance.</li>
 <h2>Coordinate systems</h2>
 <ul>
 <li>Frameworks that are used to define unique positions</li>
-<li>Geographic coordinate system (GCS) is most commonly used framework for defining locations on three dimensional models of Earth</li>
+<li>A <strong><em>geographic coordinate system</em></strong> (GCS) is for defining locations on three dimensional models of Earth
+<ul>
 <li>GCS is based on a sphere or spheroid (a.k.a. ellipsoid)</li>
 <li>GCS units are degrees
 <ul>
 <li>Latitude <span class="math inline">\(\in 0^\circ, 90^\circ\)</span> (or <span class="math inline">\(-90^\circ, 90^\circ\)</span>)</li>
 <li>Longitude <span class="math inline">\(\in 0^\circ, 180^\circ\)</span> (or <span class="math inline">\(-180^\circ, 180^\circ\)</span>)</li>
 </ul></li>
-<li>Degrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD).</li>
+</ul></li>
+<li>A projected coordinate system is used on a flat map and uses units of length (e.g.&nbsp;meters)</li>
 </ul>
 </section>
 <section id="dms-to-dd-conversion" class="slide level2 smaller columns center">
 <h2>DMS to DD conversion</h2>
+<p>Degrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD).</p>
 <div class="column" style="width:40%;">
 <div class="{r-stack}">
 <div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="text-align: center; font-size:1.2em">
@@ -588,7 +593,17 @@ e.g.</p>
 </ul>
 </div>
 </div>
-</div></section></section>
+</div></section>
+<section id="maps-displayed-in-gcs" class="slide level2 center" style="font-size:0.5em">
+<h2>Maps displayed in GCS</h2>
+<ul>
+<li>When a map is shown in a CGS, the GCS coordinate system is projected along with the features on to the map. There is an implicit map projection being used to position both the latitude-longitude grid and the geographic features on the flat map.</li>
+<li>When software simply plots lon on x and lat on y, it behaves like a plate carree/equirectangular display which maps longitude to and latitude to, creating a simple 2:1 ratio cylindrical grid where meridians and parallels are evenly spaced, straight lines.</li>
+</ul>
+
+
+
+<img data-src="img/Equirectangular_projection_SW.jpg" class="r-stretch"></section></section>
 
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
