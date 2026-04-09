@@ -1,4 +1,4 @@
-# Vector Operations
+# Vector Operations and Geoprocessing
 
 ## Vector Data (Review)
 
