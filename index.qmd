@@ -104,13 +104,13 @@ __Lab Assignments__
 
 {{< include spatial_data_models.qmd >}}
 
-{{< include finding_gis_data.qmd >}}
-
 {{< include vector_tutorial.qmd >}}
 
 {{< include dem_slides.qmd >}}
 
 {{< include remote_sensing.qmd >}}
+
+{{< include finding_gis_data.qmd >}}
 
 {{< include segmentation.qmd >}}
 

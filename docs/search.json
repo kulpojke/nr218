@@ -728,195 +728,6 @@
     "text": "Spectral Resolution\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: Neon\n\n\n\n\n\nImage Source: NASA\n\n\n\n\n\nImage Source: University of Texas at Austin, Center for Space Research via ESA"
   },
   {
-    "objectID": "index.html#what-is-sentinel-2",
-    "href": "index.html#what-is-sentinel-2",
-    "title": "NR 218",
-    "section": "What is Sentinel 2",
-    "text": "What is Sentinel 2\n\n\nSentinel 2 is a mission run by the Copernicus Programme (the EU Space Program’s Earth observation component)\n\nMultispectral imagery\nMultiple Satellites 180 \\(\\deg\\) out of phase with one another\n5 day revisit (at equator)\nWide swath width (290 km)\n\n\n\n\nImage Source: Copernicus"
-  },
-  {
-    "objectID": "index.html#sentinel-2-bands",
-    "href": "index.html#sentinel-2-bands",
-    "title": "NR 218",
-    "section": "Sentinel 2 Bands",
-    "text": "Sentinel 2 Bands\n\n\n\n\nBand\nName\nCentral wavelength (nm)\nResolution\n\n\n\n\nB1\nCoastal aerosol\n443\n60 m\n\n\nB2\nBlue\n490\n10 m\n\n\nB3\nGreen\n560\n10 m\n\n\nB4\nRed\n665\n10 m\n\n\nB5\nRed Edge 1\n705\n20 m\n\n\nB6\nRed Edge 2\n740\n20 m\n\n\nB7\nRed Edge 3\n783\n20 m\n\n\nB8\nNIR\n842\n10 m\n\n\nB8A\nNarrow NIR\n865\n20 m\n\n\nB9\nWater vapor\n945\n60 m\n\n\nB10\nSWIR-Cirrus\n1375\n60 m\n\n\nB11\nSWIR 1\n1610\n20 m\n\n\nB12\nSWIR 2\n2190\n20 m"
-  },
-  {
-    "objectID": "index.html#oil-spill-detection",
-    "href": "index.html#oil-spill-detection",
-    "title": "NR 218",
-    "section": "Oil Spill detection",
-    "text": "Oil Spill detection\n\\(OSI = \\frac{1}{3} \\times \\frac{Green + Red}{Blue}\\)\nAnother common combination\n\\(B3 + B8 + B11\\) or \\(Green + NIR + SWIR1\\)\n\n\nImage Source: Sentinel Hub"
-  },
-  {
-    "objectID": "index.html#similarity-to-landsat",
-    "href": "index.html#similarity-to-landsat",
-    "title": "NR 218",
-    "section": "Similarity to Landsat",
-    "text": "Similarity to Landsat\n\n\n\n\n\n\n\n\n\n\nSatellite\nSpatial resolution\nNumber of bands\nRevisit time\n\n\n\n\nSentinel-2 (A/B)\n10 m, 20 m, 60 m (band-dependent)\n13\n5 days (with both satellites)\n\n\nLandsat (8/9 OLI/TIRS)\n30 m multispectral, 15 m panchromatic, 100 m thermal (resampled to 30 m)\n11\n8 days (with Landsat 8 + 9; 16 days each alone)\n\n\n\n\n\n\nImage Source: Copernicus"
-  },
-  {
-    "objectID": "index.html#what-are-those-landsat-thermal-bands-used-for",
-    "href": "index.html#what-are-those-landsat-thermal-bands-used-for",
-    "title": "NR 218",
-    "section": "What are those Landsat thermal Bands Used For?",
-    "text": "What are those Landsat thermal Bands Used For?\n\n\n\n\n\n\n\n\n\nUse case\nWhat thermal bands provide\nExample outputs\n\n\n\n\nLand surface temperature (LST) mapping\nSurface radiant temperature\nLST maps (deg C), heat patterns\n\n\nUrban heat island analysis\nSpatial temperature contrasts across built vs vegetated areas\nHotspot maps, neighborhood heat exposure\n\n\nWildfire and burn analysis\nHigh-temperature anomalies and post-fire thermal response\nActive fire/hotspot detection support, burn severity context\n\n\nEvapotranspiration (ET) estimation\nTemperature input for surface energy balance (e.g., SEBAL/METRIC/SSEBop)\nET (mm/day), crop water use\n\n\nAgricultural water stress\nCanopy/soil temperature elevation under water stress\nStress maps, irrigation prioritization\n\n\nDrought monitoring\nPersistent surface warming and reduced evaporative cooling\nDrought severity indicators\n\n\nWater temperature studies\nThermal state of lakes/reservoirs/coastal zones\nSurface water temperature maps\n\n\nGeothermal/volcanic monitoring\nPersistent anomalous heating\nThermal anomaly detection\n\n\nEnergy balance / climate studies\nSensible vs latent heat partitioning signals\nFlux estimates, land-atmosphere diagnostics"
-  },
-  {
-    "objectID": "index.html#finding-gis-data",
-    "href": "index.html#finding-gis-data",
-    "title": "NR 218",
-    "section": "Finding GIS Data",
-    "text": "Finding GIS Data\n\nThere is an enormous volume of freely available GIS data online.\nSome places to look:\n\nNASA\nOpenStreetMap\nUSGS\n\nLiDAR Explorer\n\nESA\nLPDAAC\nElevation data\nSpecies observations\nESRI OpenData"
-  },
-  {
-    "objectID": "index.html#tutorial---copernicus-browser",
-    "href": "index.html#tutorial---copernicus-browser",
-    "title": "NR 218",
-    "section": "Tutorial - Copernicus Browser",
-    "text": "Tutorial - Copernicus Browser\n\nOpen Copernicus Browser (right click to open in new tab)\nFirst, make an account!\n\n\nregistration is free and helps track use of the tool (and manage processing quotas)"
-  },
-  {
-    "objectID": "index.html#section-11",
-    "href": "index.html#section-11",
-    "title": "NR 218",
-    "section": "",
-    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel\nFollow the steps to register, confirm your email, and then go back to the main page."
-  },
-  {
-    "objectID": "index.html#section-12",
-    "href": "index.html#section-12",
-    "title": "NR 218",
-    "section": "",
-    "text": "Now let’s get a feel for what the tool can do!"
-  },
-  {
-    "objectID": "index.html#section-13",
-    "href": "index.html#section-13",
-    "title": "NR 218",
-    "section": "",
-    "text": "Look at the Garnet Fire on CalFire inciweb.\n\n\n\nIn Copernicus Browser (in visualize mode), paste the lat, lon into the search, hit enter\n\n\n\n\nChange the date to 2025-09-07\n\n\n\n\nAdjust image so the fire is in view\n\n\n\n\n\n\n\nLets try a different visualization\nCopernicus offers a SWIR based composite visualization that is quite good for burn detection."
-  },
-  {
-    "objectID": "index.html#section-15",
-    "href": "index.html#section-15",
-    "title": "NR 218",
-    "section": "",
-    "text": "That is a nice way to visualize but for actual detection purposed using a spectral index is better\nNormalized Burn Ratio (NBR) is the most obvious choice here. \\[\n\\begin{align}\nNBR &= \\frac{NIR - SWIR2}{NIR + SWIR2} \\\\\n  &= \\frac{B8 - B12}{B8 + B12}  \\; \\mathrm{(For Sentinel 2)}\n\\end{align}\n\\]\n\nExercise - Create and download a NBR geotiff for before and after the fire."
-  },
-  {
-    "objectID": "index.html#spectral-indices",
-    "href": "index.html#spectral-indices",
-    "title": "NR 218",
-    "section": "Spectral Indices",
-    "text": "Spectral Indices\n\n\n\n\n\n\n\n\n\n\nIndex\nFormula\nSentinel-2\nPurpose\n\n\n\n\nNDVI\n(NIR - Red) / (NIR + Red)\n(B8 - B4) / (B8 + B4)\nVegetation health\n\n\nNDWI\n(Green - NIR) / (Green + NIR)\n(B3 - B8) / (B3 + B8)\nWater detection\n\n\nNDMI\n(NIR - SWIR1) / (NIR + SWIR1)\n(B8 - B11) / (B8 + B11)\nVegetation moisture\n\n\nNBR\n(NIR - SWIR2) / (NIR + SWIR2)\n(B8 - B12) / (B8 + B12)\nBurn severity\n\n\nNDSI\n(Green - SWIR1) / (Green + SWIR1)\n(B3 - B11) / (B3 + B11)\nSnow cover\n\n\nSAVI\n1.5 × (NIR - Red) / (NIR + Red + 0.5)\n1.5 × (B8 - B4) / (B8 + B4 + 0.5)\nSoil-adjusted veg.\n\n\n\nFor more indices / detail see Montero et al. (2023) Sci Data 10:197"
-  },
-  {
-    "objectID": "index.html#tutorial---google-earth-engine",
-    "href": "index.html#tutorial---google-earth-engine",
-    "title": "NR 218",
-    "section": "Tutorial - Google Earth Engine",
-    "text": "Tutorial - Google Earth Engine\nAnother incredibly powerful tool at our disposal is Google Earth Engine\n\nCloud-based, so it can handle high intensity data processing\nFree1 access to a large collection of datasets\n\n\n\n\nFree for academic (and non-profit) use, so let’s take advantage of it!"
-  },
-  {
-    "objectID": "index.html#step-one---registering-for-gee",
-    "href": "index.html#step-one---registering-for-gee",
-    "title": "NR 218",
-    "section": "Step One - Registering for GEE",
-    "text": "Step One - Registering for GEE\n\n\nTo connect your Google account, go to https://code.earthengine.google.com/\nOnce you’ve logged in, you should see something like this:\n\n\n\nWe want to register a new project"
-  },
-  {
-    "objectID": "index.html#section-16",
-    "href": "index.html#section-16",
-    "title": "NR 218",
-    "section": "",
-    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
-  },
-  {
-    "objectID": "index.html#section-17",
-    "href": "index.html#section-17",
-    "title": "NR 218",
-    "section": "",
-    "text": "This will take you to a form where you can confirm your eligibility. Here’s an example of how to fill it out:"
-  },
-  {
-    "objectID": "index.html#section-18",
-    "href": "index.html#section-18",
-    "title": "NR 218",
-    "section": "",
-    "text": "Now let’s go back to the Code Editor."
-  },
-  {
-    "objectID": "index.html#section-19",
-    "href": "index.html#section-19",
-    "title": "NR 218",
-    "section": "",
-    "text": "These are the main panels to be aware of:"
-  },
-  {
-    "objectID": "index.html#step-two---editing-and-running-a-script",
-    "href": "index.html#step-two---editing-and-running-a-script",
-    "title": "NR 218",
-    "section": "Step Two - Editing and Running a Script",
-    "text": "Step Two - Editing and Running a Script\n\n\nIn the scripts panel, select New &gt; File and name it something useful\nYou should see it show up under the Owner dropdown:\n\n\n\n\n\nClick on the file to open it, and then move to the Code Editor. It should be blank to start."
-  },
-  {
-    "objectID": "index.html#section-20",
-    "href": "index.html#section-20",
-    "title": "NR 218",
-    "section": "",
-    "text": "Let’s try running some code! In the editor window, type the following command:\n\n\n\nThen hit run. Look at the console - what do you see?"
-  },
-  {
-    "objectID": "index.html#section-21",
-    "href": "index.html#section-21",
-    "title": "NR 218",
-    "section": "",
-    "text": "Now let’s try something a little more complicated:\n// Note - lines that start like this (//) are comments, meaning they won't be run like regular code\n\n// These are the 5 largest cities in the world: \n// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo\n\n// Create a list named 'largeCities' with the names of all the above cities\n\nvar largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; \n\n// Print the list \n\nprint(largeCities)\nCopy the code above and paste it into your code editor, hit run, and explore the output in the console."
-  },
-  {
-    "objectID": "index.html#section-22",
-    "href": "index.html#section-22",
-    "title": "NR 218",
-    "section": "",
-    "text": "Next, we’re going to explore some spatial data.\n\nIn the search bar at the top of page, type in “California Polytechnic State University”\nClick on the search result, and the map view should update accordingly\n\n\n\n\nAdd a marker to the map by clicking this icon:\n\n\n\nPlace the point somewhere in the middle of campus:\n\n\n\n\n\n\nAt the top of the code editor, you should now see a new var called “geometry”, which gives us the coordinates of our point\n\n\n\n\n\nWe can now reference the point in new lines of code, like we did with “largeCities”"
-  },
-  {
-    "objectID": "index.html#section-23",
-    "href": "index.html#section-23",
-    "title": "NR 218",
-    "section": "",
-    "text": "To add in other data layers, let’s look in the Earth Engine Data Catalog\nUsing the search bar, find the Sentinel-2 Dataset and click on the Level-1C option\n\n\n\n\nScroll down to the “Explore with Earth Engine” section, and copy the JavaScript code\nGo back to the code editor, and paste the code onto a new line\n\n\n\nBefore we run it, let’s make a few changes to the code.\n\nFirst, let’s change these dates to be more recent:\n\n\n\nPick a month in 2025, and set the dates to be the first and end of the month\n\n\n\n\n\nNext, let’s change the center point of the map to the point we dropped earlier:\n\n\n\n\n\nReplace the entire line with the following code:\n\n\nMap.centerObject(geometry, 12);\n\n\nAlternatively, you can just replace the first two numbers with the coordinate values saved to “geometry”\n\n\n\n\nHit run, and watch what happens in the map viewer! It may take a second for the layer to load."
-  },
-  {
-    "objectID": "index.html#what-is-this-code-doing",
-    "href": "index.html#what-is-this-code-doing",
-    "title": "NR 218",
-    "section": "What is this code doing?",
-    "text": "What is this code doing?\n\nThe quality of satellite imagery can be significantly affected by the cloud cover on any given day\nTo compensate for this, it can be helpful to generate a composite image of only the days with clear visibility over a month"
-  },
-  {
-    "objectID": "index.html#section-24",
-    "href": "index.html#section-24",
-    "title": "NR 218",
-    "section": "",
-    "text": "From here, we could clip (or mask, in the case of raster images) the Sentinel image to a set boundary by uploading a shapefile or geojson\nWe can also export map layers, which will be saved to our Google Drive"
-  },
-  {
-    "objectID": "index.html#google-earth-engine-qgis-plugin",
-    "href": "index.html#google-earth-engine-qgis-plugin",
-    "title": "NR 218",
-    "section": "Google Earth Engine QGIS Plugin",
-    "text": "Google Earth Engine QGIS Plugin\nThere is also a GEE plugin for QGIS!"
-  },
-  {
-    "objectID": "index.html#section-25",
-    "href": "index.html#section-25",
-    "title": "NR 218",
-    "section": "",
-    "text": "We can do the same operation we just did through the plugin:"
-  },
-  {
     "objectID": "index.html#vector-data-review",
     "href": "index.html#vector-data-review",
     "title": "NR 218",
@@ -952,15 +763,15 @@
     "text": "Spatial overlays\n\n\n\nIntersect soils with bufffer, look at attributes\nIntersect buffer with soils, look at attributes\n\n\n\n\nUnion\n\n\n\nSymmetric Difference\n\nTry it with buffer and soils"
   },
   {
-    "objectID": "index.html#section-26",
-    "href": "index.html#section-26",
+    "objectID": "index.html#section-11",
+    "href": "index.html#section-11",
     "title": "NR 218",
     "section": "",
     "text": "Check topology Vector --&gt; Geometry --&gt; Check Validity"
   },
   {
-    "objectID": "index.html#section-27",
-    "href": "index.html#section-27",
+    "objectID": "index.html#section-12",
+    "href": "index.html#section-12",
     "title": "NR 218",
     "section": "",
     "text": "Link to tutorial about editing vectors."
@@ -1008,8 +819,8 @@
     "text": "What is a DEM?\n\nA Digital Elevation Model\nRepresentation of the topographic surface of the Earth\nDTM (Digital Terrain Model) is usually synonymous with DEM (though sometimes DEM is used to encompass DTM and DSM)\nA DSM (Digital Surface Model) includes vegetation and structures"
   },
   {
-    "objectID": "index.html#section-28",
-    "href": "index.html#section-28",
+    "objectID": "index.html#section-13",
+    "href": "index.html#section-13",
     "title": "NR 218",
     "section": "",
     "text": "Image Source: NEON"
@@ -1148,8 +959,8 @@
     "text": "Filter, Map, Reduce\n\nFilter - Find the subset of data needed.\nMap - Transform the raw data into useful data\nReduce - Extract needed information"
   },
   {
-    "objectID": "index.html#spectral-indices-1",
-    "href": "index.html#spectral-indices-1",
+    "objectID": "index.html#spectral-indices",
+    "href": "index.html#spectral-indices",
     "title": "NR 218",
     "section": "Spectral indices",
     "text": "Spectral indices\nSpectral index\n\nA mathematical equation that is applied on the various spectral bands of an image on a per pixel basis\nMaps multiple bands to a single band\nSimple band ratios that highlight a specific process or property on the land surface\nReduce effects of atmosphere, instrument noise, sun angle: allows for consistent spatial and temporal comparisons 1\n\nNASA ARSET slideshow Spectral Indices for Land and Aquatic Applications"
@@ -1216,6 +1027,195 @@
     "title": "NR 218",
     "section": "Raster Reprojection using GDAL Warp",
     "text": "Raster Reprojection using GDAL Warp\n\n\n\nDownload dw_2025.tif and dw_20218.tif as well as dw_style.qmlhttps://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/EXMEE6bR85VMkOPotG9dk6sBbr2JQx2QNFtsR9-0OAIQfg?e=aa09WA\nIn QGIS open dw_2025.\n\nLook at the CRS\nLook at the resolution.\n\nIn the symbology tab, at the bottom left there is a style dropdown.\n\nselect “Load Style…” use the browser to open the dw_style.qml file from the dynamic_world folder\nApply\n\n\n\n\nReproject dw_2025 using GDAL Warp (Processing Toolbox: GDAL → Raster projection → Warp)\n\nLeave Source CRS blank (In “Input layer” you can see that the CRS is recognized)\nSet Target CRS to EPSG:6339\nUse average resampling\nSet ” Output file resolution in target georeferenced units” to 10\n\nWhat are the target georeferenced units?\n\nLeave the rest as defaults, including “[save to temporary Layer]”\n\nCompare the results to the original. Do you see any problems?\n\n\nWhy is this margin of different land cover appearing?\n\n\n\n\n\n\n\n\nTry again, what resampling method should you use?\n\n\n\n\n\n\n\n\n\n\n\nSave the reprojected layer dw_2025_6339.tif.\nReproject dw_2018 in the same way (save as dw_2018_6339.tif)\n\n\n\n\nUse Raster Tools → Align Rasters to align dw_2018_6339.tif and dem_1m_6339.tif to dw_2025_6339 (use appropriate resample methods).\n\n\n\n\n\nNow use the the Raster Calculator to Find areas that were covered in trees in 2018, but not in 2025."
+  },
+  {
+    "objectID": "index.html#what-is-sentinel-2",
+    "href": "index.html#what-is-sentinel-2",
+    "title": "NR 218",
+    "section": "What is Sentinel 2",
+    "text": "What is Sentinel 2\n\n\nSentinel 2 is a mission run by the Copernicus Programme (the EU Space Program’s Earth observation component)\n\nMultispectral imagery\nMultiple Satellites 180 \\(\\deg\\) out of phase with one another\n5 day revisit (at equator)\nWide swath width (290 km)\n\n\n\n\nImage Source: Copernicus"
+  },
+  {
+    "objectID": "index.html#sentinel-2-bands",
+    "href": "index.html#sentinel-2-bands",
+    "title": "NR 218",
+    "section": "Sentinel 2 Bands",
+    "text": "Sentinel 2 Bands\n\n\n\n\nBand\nName\nCentral wavelength (nm)\nResolution\n\n\n\n\nB1\nCoastal aerosol\n443\n60 m\n\n\nB2\nBlue\n490\n10 m\n\n\nB3\nGreen\n560\n10 m\n\n\nB4\nRed\n665\n10 m\n\n\nB5\nRed Edge 1\n705\n20 m\n\n\nB6\nRed Edge 2\n740\n20 m\n\n\nB7\nRed Edge 3\n783\n20 m\n\n\nB8\nNIR\n842\n10 m\n\n\nB8A\nNarrow NIR\n865\n20 m\n\n\nB9\nWater vapor\n945\n60 m\n\n\nB10\nSWIR-Cirrus\n1375\n60 m\n\n\nB11\nSWIR 1\n1610\n20 m\n\n\nB12\nSWIR 2\n2190\n20 m"
+  },
+  {
+    "objectID": "index.html#oil-spill-detection",
+    "href": "index.html#oil-spill-detection",
+    "title": "NR 218",
+    "section": "Oil Spill detection",
+    "text": "Oil Spill detection\n\\(OSI = \\frac{1}{3} \\times \\frac{Green + Red}{Blue}\\)\nAnother common combination\n\\(B3 + B8 + B11\\) or \\(Green + NIR + SWIR1\\)\n\n\nImage Source: Sentinel Hub"
+  },
+  {
+    "objectID": "index.html#similarity-to-landsat",
+    "href": "index.html#similarity-to-landsat",
+    "title": "NR 218",
+    "section": "Similarity to Landsat",
+    "text": "Similarity to Landsat\n\n\n\n\n\n\n\n\n\n\nSatellite\nSpatial resolution\nNumber of bands\nRevisit time\n\n\n\n\nSentinel-2 (A/B)\n10 m, 20 m, 60 m (band-dependent)\n13\n5 days (with both satellites)\n\n\nLandsat (8/9 OLI/TIRS)\n30 m multispectral, 15 m panchromatic, 100 m thermal (resampled to 30 m)\n11\n8 days (with Landsat 8 + 9; 16 days each alone)\n\n\n\n\n\n\nImage Source: Copernicus"
+  },
+  {
+    "objectID": "index.html#what-are-those-landsat-thermal-bands-used-for",
+    "href": "index.html#what-are-those-landsat-thermal-bands-used-for",
+    "title": "NR 218",
+    "section": "What are those Landsat thermal Bands Used For?",
+    "text": "What are those Landsat thermal Bands Used For?\n\n\n\n\n\n\n\n\n\nUse case\nWhat thermal bands provide\nExample outputs\n\n\n\n\nLand surface temperature (LST) mapping\nSurface radiant temperature\nLST maps (deg C), heat patterns\n\n\nUrban heat island analysis\nSpatial temperature contrasts across built vs vegetated areas\nHotspot maps, neighborhood heat exposure\n\n\nWildfire and burn analysis\nHigh-temperature anomalies and post-fire thermal response\nActive fire/hotspot detection support, burn severity context\n\n\nEvapotranspiration (ET) estimation\nTemperature input for surface energy balance (e.g., SEBAL/METRIC/SSEBop)\nET (mm/day), crop water use\n\n\nAgricultural water stress\nCanopy/soil temperature elevation under water stress\nStress maps, irrigation prioritization\n\n\nDrought monitoring\nPersistent surface warming and reduced evaporative cooling\nDrought severity indicators\n\n\nWater temperature studies\nThermal state of lakes/reservoirs/coastal zones\nSurface water temperature maps\n\n\nGeothermal/volcanic monitoring\nPersistent anomalous heating\nThermal anomaly detection\n\n\nEnergy balance / climate studies\nSensible vs latent heat partitioning signals\nFlux estimates, land-atmosphere diagnostics"
+  },
+  {
+    "objectID": "index.html#finding-gis-data",
+    "href": "index.html#finding-gis-data",
+    "title": "NR 218",
+    "section": "Finding GIS Data",
+    "text": "Finding GIS Data\n\nThere is an enormous volume of freely available GIS data online.\nSome places to look:\n\nNASA\nOpenStreetMap\nUSGS\n\nLiDAR Explorer\n\nESA\nLPDAAC\nElevation data\nSpecies observations\nESRI OpenData"
+  },
+  {
+    "objectID": "index.html#tutorial---copernicus-browser",
+    "href": "index.html#tutorial---copernicus-browser",
+    "title": "NR 218",
+    "section": "Tutorial - Copernicus Browser",
+    "text": "Tutorial - Copernicus Browser\n\nOpen Copernicus Browser (right click to open in new tab)\nFirst, make an account!\n\n\nregistration is free and helps track use of the tool (and manage processing quotas)"
+  },
+  {
+    "objectID": "index.html#section-14",
+    "href": "index.html#section-14",
+    "title": "NR 218",
+    "section": "",
+    "text": "You should see something like this when it first opens:\n\n\n\nTo register, click the “Login” button at the top of the left panel\nFollow the steps to register, confirm your email, and then go back to the main page."
+  },
+  {
+    "objectID": "index.html#section-15",
+    "href": "index.html#section-15",
+    "title": "NR 218",
+    "section": "",
+    "text": "Now let’s get a feel for what the tool can do!"
+  },
+  {
+    "objectID": "index.html#section-16",
+    "href": "index.html#section-16",
+    "title": "NR 218",
+    "section": "",
+    "text": "Look at the Garnet Fire on CalFire inciweb.\n\n\n\nIn Copernicus Browser (in visualize mode), paste the lat, lon into the search, hit enter\n\n\n\n\nChange the date to 2025-09-07\n\n\n\n\nAdjust image so the fire is in view\n\n\n\n\n\n\n\nLets try a different visualization\nCopernicus offers a SWIR based composite visualization that is quite good for burn detection."
+  },
+  {
+    "objectID": "index.html#section-18",
+    "href": "index.html#section-18",
+    "title": "NR 218",
+    "section": "",
+    "text": "That is a nice way to visualize but for actual detection purposed using a spectral index is better\nNormalized Burn Ratio (NBR) is the most obvious choice here. \\[\n\\begin{align}\nNBR &= \\frac{NIR - SWIR2}{NIR + SWIR2} \\\\\n  &= \\frac{B8 - B12}{B8 + B12}  \\; \\mathrm{(For Sentinel 2)}\n\\end{align}\n\\]\n\nExercise - Create and download a NBR geotiff for before and after the fire."
+  },
+  {
+    "objectID": "index.html#spectral-indices-1",
+    "href": "index.html#spectral-indices-1",
+    "title": "NR 218",
+    "section": "Spectral Indices",
+    "text": "Spectral Indices\n\n\n\n\n\n\n\n\n\n\nIndex\nFormula\nSentinel-2\nPurpose\n\n\n\n\nNDVI\n(NIR - Red) / (NIR + Red)\n(B8 - B4) / (B8 + B4)\nVegetation health\n\n\nNDWI\n(Green - NIR) / (Green + NIR)\n(B3 - B8) / (B3 + B8)\nWater detection\n\n\nNDMI\n(NIR - SWIR1) / (NIR + SWIR1)\n(B8 - B11) / (B8 + B11)\nVegetation moisture\n\n\nNBR\n(NIR - SWIR2) / (NIR + SWIR2)\n(B8 - B12) / (B8 + B12)\nBurn severity\n\n\nNDSI\n(Green - SWIR1) / (Green + SWIR1)\n(B3 - B11) / (B3 + B11)\nSnow cover\n\n\nSAVI\n1.5 × (NIR - Red) / (NIR + Red + 0.5)\n1.5 × (B8 - B4) / (B8 + B4 + 0.5)\nSoil-adjusted veg.\n\n\n\nFor more indices / detail see Montero et al. (2023) Sci Data 10:197"
+  },
+  {
+    "objectID": "index.html#tutorial---google-earth-engine",
+    "href": "index.html#tutorial---google-earth-engine",
+    "title": "NR 218",
+    "section": "Tutorial - Google Earth Engine",
+    "text": "Tutorial - Google Earth Engine\nAnother incredibly powerful tool at our disposal is Google Earth Engine\n\nCloud-based, so it can handle high intensity data processing\nFree1 access to a large collection of datasets\n\n\n\n\nFree for academic (and non-profit) use, so let’s take advantage of it!"
+  },
+  {
+    "objectID": "index.html#step-one---registering-for-gee",
+    "href": "index.html#step-one---registering-for-gee",
+    "title": "NR 218",
+    "section": "Step One - Registering for GEE",
+    "text": "Step One - Registering for GEE\n\n\nTo connect your Google account, go to https://code.earthengine.google.com/\nOnce you’ve logged in, you should see something like this:\n\n\n\nWe want to register a new project"
+  },
+  {
+    "objectID": "index.html#section-19",
+    "href": "index.html#section-19",
+    "title": "NR 218",
+    "section": "",
+    "text": "Name your project something useful, then hit create\nNext, we want to register the project for non-commercial use"
+  },
+  {
+    "objectID": "index.html#section-20",
+    "href": "index.html#section-20",
+    "title": "NR 218",
+    "section": "",
+    "text": "This will take you to a form where you can confirm your eligibility. Here’s an example of how to fill it out:"
+  },
+  {
+    "objectID": "index.html#section-21",
+    "href": "index.html#section-21",
+    "title": "NR 218",
+    "section": "",
+    "text": "Now let’s go back to the Code Editor."
+  },
+  {
+    "objectID": "index.html#section-22",
+    "href": "index.html#section-22",
+    "title": "NR 218",
+    "section": "",
+    "text": "These are the main panels to be aware of:"
+  },
+  {
+    "objectID": "index.html#step-two---editing-and-running-a-script",
+    "href": "index.html#step-two---editing-and-running-a-script",
+    "title": "NR 218",
+    "section": "Step Two - Editing and Running a Script",
+    "text": "Step Two - Editing and Running a Script\n\n\nIn the scripts panel, select New &gt; File and name it something useful\nYou should see it show up under the Owner dropdown:\n\n\n\n\n\nClick on the file to open it, and then move to the Code Editor. It should be blank to start."
+  },
+  {
+    "objectID": "index.html#section-23",
+    "href": "index.html#section-23",
+    "title": "NR 218",
+    "section": "",
+    "text": "Let’s try running some code! In the editor window, type the following command:\n\n\n\nThen hit run. Look at the console - what do you see?"
+  },
+  {
+    "objectID": "index.html#section-24",
+    "href": "index.html#section-24",
+    "title": "NR 218",
+    "section": "",
+    "text": "Now let’s try something a little more complicated:\n// Note - lines that start like this (//) are comments, meaning they won't be run like regular code\n\n// These are the 5 largest cities in the world: \n// Tokyo, Delhi, Shanghai, Mexico City, Sao Paulo\n\n// Create a list named 'largeCities' with the names of all the above cities\n\nvar largeCities = ['Tokyo', 'Delhi', 'Shanghai', 'Mexico City', 'Sao Paulo']; \n\n// Print the list \n\nprint(largeCities)\nCopy the code above and paste it into your code editor, hit run, and explore the output in the console."
+  },
+  {
+    "objectID": "index.html#section-25",
+    "href": "index.html#section-25",
+    "title": "NR 218",
+    "section": "",
+    "text": "Next, we’re going to explore some spatial data.\n\nIn the search bar at the top of page, type in “California Polytechnic State University”\nClick on the search result, and the map view should update accordingly\n\n\n\n\nAdd a marker to the map by clicking this icon:\n\n\n\nPlace the point somewhere in the middle of campus:\n\n\n\n\n\n\nAt the top of the code editor, you should now see a new var called “geometry”, which gives us the coordinates of our point\n\n\n\n\n\nWe can now reference the point in new lines of code, like we did with “largeCities”"
+  },
+  {
+    "objectID": "index.html#section-26",
+    "href": "index.html#section-26",
+    "title": "NR 218",
+    "section": "",
+    "text": "To add in other data layers, let’s look in the Earth Engine Data Catalog\nUsing the search bar, find the Sentinel-2 Dataset and click on the Level-1C option\n\n\n\n\nScroll down to the “Explore with Earth Engine” section, and copy the JavaScript code\nGo back to the code editor, and paste the code onto a new line\n\n\n\nBefore we run it, let’s make a few changes to the code.\n\nFirst, let’s change these dates to be more recent:\n\n\n\nPick a month in 2025, and set the dates to be the first and end of the month\n\n\n\n\n\nNext, let’s change the center point of the map to the point we dropped earlier:\n\n\n\n\n\nReplace the entire line with the following code:\n\n\nMap.centerObject(geometry, 12);\n\n\nAlternatively, you can just replace the first two numbers with the coordinate values saved to “geometry”\n\n\n\n\nHit run, and watch what happens in the map viewer! It may take a second for the layer to load."
+  },
+  {
+    "objectID": "index.html#what-is-this-code-doing",
+    "href": "index.html#what-is-this-code-doing",
+    "title": "NR 218",
+    "section": "What is this code doing?",
+    "text": "What is this code doing?\n\nThe quality of satellite imagery can be significantly affected by the cloud cover on any given day\nTo compensate for this, it can be helpful to generate a composite image of only the days with clear visibility over a month"
+  },
+  {
+    "objectID": "index.html#section-27",
+    "href": "index.html#section-27",
+    "title": "NR 218",
+    "section": "",
+    "text": "From here, we could clip (or mask, in the case of raster images) the Sentinel image to a set boundary by uploading a shapefile or geojson\nWe can also export map layers, which will be saved to our Google Drive"
+  },
+  {
+    "objectID": "index.html#google-earth-engine-qgis-plugin",
+    "href": "index.html#google-earth-engine-qgis-plugin",
+    "title": "NR 218",
+    "section": "Google Earth Engine QGIS Plugin",
+    "text": "Google Earth Engine QGIS Plugin\nThere is also a GEE plugin for QGIS!"
+  },
+  {
+    "objectID": "index.html#section-28",
+    "href": "index.html#section-28",
+    "title": "NR 218",
+    "section": "",
+    "text": "We can do the same operation we just did through the plugin:"
   },
   {
     "objectID": "index.html#data-1",
