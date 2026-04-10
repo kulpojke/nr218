@@ -40,7 +40,7 @@ Provide written responses to the following Questions:
 
 ### Tutorial Assignments
 
-Complete the following tutorials and submit screenshots/maps of the final products:
+Complete the following tutorials.  Pay attention to how you organize you project.  You will  turn in a zipped copy of you entire tutorials directory. __Each tutorial should have a working project with all of its data intact__.  The grader will open your project to make sure it works.  
 
 1. **Convert excel file of latitudes/longitudes to a point shapefile**: 
    - Carefully follow the instructions and complete the Tutorial - Importing Spreadsheets or CSV Files: https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html 
@@ -61,6 +61,4 @@ Complete the following tutorials and submit screenshots/maps of the final produc
 
 Submit on Canvas:
 
-1. **Written Responses**: Answers to written questions 1-4 above
-
-2. **Tutorial Documentation**: Maps (png, jpeg, tiff, pdf format) and/or screenshots showing the outputs and final products of tutorials 1-5 in project work. Be sure to include dates/times in screenshots.
+A zipped file with your tutorials and written responses inside
