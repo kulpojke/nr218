@@ -137,17 +137,30 @@ Check topology
 
 ::: {r-stack}
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
-__Tabular joins__ join layers by matching a common column name (e.g., parcel_id or GEOID)
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
 
-![](img/joins_image0.png){style="max-width: 90%; max-height: 60vh; object-fit: contain;"}
+::: {style="font-size:0.5em"}
+__Tabular joins__ - join layers by matching a common column name (e.g., parcel_id or GEOID)  
+:::
+
+::: {style="line-height:0; margin:0;"}
+<img src="img/joins_image0.png" alt="Schematic illustration of tabular joins" style="display:block; margin:0 auto; max-width:100%; max-height:40vh; object-fit:contain;" />  
+
+:::
+
 :::
 
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+::: {style="font-size:0.5em"}
 Spatial joins transfer attributes based on how features relate in space (intersects, within, nearest)
+::
 
-![](img/spatial-join-basic-idea.png){style="max-width: 90%; max-height: 60vh; object-fit: contain;"}
+::: {style="line-height:0; margin:0;"}
+<img src="img/spatial-join-basic-idea.png" alt="Schematic illustration of spatial joins" style="display:block; margin:0 auto; max-width:100%; max-height:40vh; object-fit:contain;" />  
+
+:::
+
 :::
 
 :::
