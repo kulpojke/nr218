@@ -739,7 +739,7 @@
     "href": "index.html#buffer",
     "title": "NR 218",
     "section": "Buffer",
-    "text": "Buffer\n\n\n\n\n\n\n\n\n\nOpen QGIS and open the ‘sprStreams.geojson’ from the SPR data we used the other day. (If you do not have it any longer it can be downloaded here)\nIn the drop down menu go to, Vector –&gt; Geoprocessing tools –&gt; Buffer\n\n\n\n\nThe buffer tool situated within the vector dropdown menu.\n\n\n\n\nNotice the Units! Buffering in degrees makes no sense. Reproject it first! What is a good projection to use?\n{fig-alt=“QGIS warning about buffering in degrees”, width=“30vw;”}"
+    "text": "Buffer\n\n\n\n\n\n\n\n\n\nOpen QGIS and open the ‘sprStreams.geojson’ from the SPR data we used the other day. (If you do not have it any longer it can be downloaded here)\nIn the drop down menu go to, Vector –&gt; Geoprocessing tools –&gt; Buffer\n\n\n\n\nThe buffer tool situated within the vector dropdown menu.\n\n\n\n\n\nNotice the units! Buffering in degrees makes no sense. Reproject it first! What is a good projection to use?"
   },
   {
     "objectID": "index.html#dissolve",
@@ -2174,7 +2174,7 @@
     "href": "vector_tutorial.html#buffer",
     "title": "",
     "section": "Buffer",
-    "text": "Buffer\n\n\n\n\n\n\n\n\n\nOpen QGIS and open the ‘sprStreams.geojson’ from the SPR data we used the other day. (If you do not have it any longer it can be downloaded here)\nIn the drop down menu go to, Vector –&gt; Geoprocessing tools –&gt; Buffer\n\n\n\n\nThe buffer tool situated within the vector dropdown menu.\n\n\n\n\nNotice the Units! Buffering in degrees makes no sense. Reproject it first! What is a good projection to use?\n{fig-alt=“QGIS warning about buffering in degrees”, width=“30vw;”}"
+    "text": "Buffer\n\n\n\n\n\n\n\n\n\nOpen QGIS and open the ‘sprStreams.geojson’ from the SPR data we used the other day. (If you do not have it any longer it can be downloaded here)\nIn the drop down menu go to, Vector –&gt; Geoprocessing tools –&gt; Buffer\n\n\n\n\nThe buffer tool situated within the vector dropdown menu.\n\n\n\n\n\nNotice the units! Buffering in degrees makes no sense. Reproject it first! What is a good projection to use?"
   },
   {
     "objectID": "vector_tutorial.html#dissolve",

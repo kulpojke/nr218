@@ -67,9 +67,13 @@
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
-[Notice the Units!  Buffering in degrees makes no sense. Reproject it first! What is a good projection to use?]{style="font-size:0.6em"}
+::: {style="font-size:0.6em; line-height:1.1; margin-bottom:0.1em;"}   
+Notice the units! Buffering in degrees makes no sense. Reproject it first! What is a good projection to use?
+:::
 
-![QGIS warning about buffering in degrees](img/degree_buf.png){fig-alt="QGIS warning about buffering in degrees", width="30vw;"}
+::: {style="line-height:0; margin:0;"}
+<img src="img/degree_buf.png" alt="QGIS warning about buffering in degrees" style="display:block; margin:0 auto; max-width:100%; max-height:40vh; object-fit:contain;" />
+:::
 :::
 
 :::
