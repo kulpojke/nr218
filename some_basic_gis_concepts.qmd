@@ -192,12 +192,24 @@ import geopandas as gpd
 aoi_path = Path('assets/Eaton_Perimeter_20250121.geojson')
 aoi = gpd.read_file(aoi_path)
 
-# grab centroids
-c = aoi.to_crs(epsg=26910).dissolve().centroid.to_crs(epsg=4326).item()
+# Repair invalid geometries before dissolving; otherwise unary_union can
+# return an empty geometry on some GEOS/Shapely builds.
+aoi = aoi.copy()
+aoi["geometry"] = aoi.geometry.make_valid()
+
+# Get a stable map center from the dissolved perimeter.
+dissolved = aoi.to_crs(epsg=26910).dissolve()
+center_geom = dissolved.representative_point().to_crs(epsg=4326).item()
+
+if center_geom.is_empty:
+    xmin, ymin, xmax, ymax = aoi.total_bounds
+    latlon_center = [(ymin + ymax) / 2, (xmin + xmax) / 2]
+else:
+    latlon_center = [center_geom.y, center_geom.x]
 
 # map
 map = folium.Map(
-  location=[c.y, c.x],
+  location=latlon_center,
   tiles='OpenStreetMap',
   zoom_start=12
 )

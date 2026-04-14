@@ -154,7 +154,7 @@ __Tabular joins__ - join layers by matching a common column name (e.g., parcel_i
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
 ::: {style="font-size:0.5em"}
 Spatial joins transfer attributes based on how features relate in space (intersects, within, nearest)
-::
+:::
 
 ::: {style="line-height:0; margin:0;"}
 <img src="img/spatial-join-basic-idea.png" alt="Schematic illustration of spatial joins" style="display:block; margin:0 auto; max-width:100%; max-height:40vh; object-fit:contain;" />  
@@ -176,7 +176,7 @@ Spatial joins transfer attributes based on how features relate in space (interse
 3. Open the attribute tables for each look at the names for the columns containing county name
 
 4. In the Processing Toolbox search "join" and select "join attributes by field"
-    + Input layer 1 is counties, input layer 2 is  
+    + Input layer 1 is counties, input layer 2 is the income CSV  
     + use appropriate column names
 
 5. Look at the attribute table of the resulting layer
@@ -214,3 +214,4 @@ Download [Cities](https://gis.data.ca.gov/api/download/v1/items/8cd5d2038c5547ba
 + There will be problems. Hint: "validate geometries and "fix geometries" tools will be useful.
 
 __Challenge__ - Join counties to cities, and calculate total urban area for each county.
+
