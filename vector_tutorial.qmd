@@ -236,11 +236,37 @@ __Challenge__ - Join counties to cities, and calculate total urban area for each
 
 ![](img/topology-rules-dangle.png)
 :::
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
 
-Use the dropdown menus to add rules.  When you create a rule, you must use the plus button to add it before you close the window by hitting "OK"
+::: {style="font-size:0.7em"}
++ Use the dropdown menus to add rules. 
++ When you create a rule, you must use the plus button to add it before you close the window by hitting "OK"
++ Try the following:
+  + meaningless_points must be inside some_f___ed_up_farm_fields
+  + some_f___ed_up_farm_fields must not overlap
+  + some_f___ed_up_farm_fields must not have gaps
++ After hitting "OK" it will look like nothing has happened, because nothing has happened.
++ Now, click the Validate all button, ![](img/mActionValidateAll.png)
+:::  
+:::
 
-Try the following,
-meaningless_points musst be inside some_f___ed_up_farm_fields
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+![](img/topology_faux_pas.png)
+
+Behold! A list of topology errors in the table.  Each of which is highlighted in red on the layers involved.
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5"}
+If one were so inclined, one could fix these errors using the vertex tool in the Digitizing toolbar.
+:::
 
 :::
 
+## Digitizing to create secondary vector data
+
++ Tablet
+  + Tracing on a light table with specialized hardware, then 
++ Heads up 
+  - Clicking and drawing in GIS software
++ Automated
+  - Many different form, some simple some complex

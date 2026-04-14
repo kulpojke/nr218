@@ -816,7 +816,14 @@
     "href": "index.html#topology-checker",
     "title": "NR 218",
     "section": "Topology Checker",
-    "text": "Topology Checker\n\n\n\nRight-click this link and use save link as to download some totally messed up farm fields.\n\nAlso right-click this link and use save link as to download some meaningless points.\n\n\n\n\n\nClick Pluggins &gt;Manage and Install Pluggins, type “topology che”, and check the box next to Topology Checker.\nIn your toolbar the Topoly Checker button, , should appear. Click it.\nThen click the Configure button, .\n\n\n\n\nNow the topology Rule settings window should be open.\n\n\n\nUse the dropdown menus to add rules. When you create a rule, you must use the plus button to add it before you close the window by hitting “OK”\nTry the following, meaningless_points musst be inside some_f___ed_up_farm_fields"
+    "text": "Topology Checker\n\n\n\nRight-click this link and use save link as to download some totally messed up farm fields.\n\nAlso right-click this link and use save link as to download some meaningless points.\n\n\n\n\n\nClick Pluggins &gt;Manage and Install Pluggins, type “topology che”, and check the box next to Topology Checker.\nIn your toolbar the Topoly Checker button, , should appear. Click it.\nThen click the Configure button, .\n\n\n\n\nNow the topology Rule settings window should be open.\n\n\n\n\n\n\nUse the dropdown menus to add rules.\nWhen you create a rule, you must use the plus button to add it before you close the window by hitting “OK”\nTry the following:\n\nmeaningless_points must be inside some_f___ed_up_farm_fields\nsome_f___ed_up_farm_fields must not overlap\nsome_f___ed_up_farm_fields must not have gaps\n\nAfter hitting “OK” it will look like nothing has happened, because nothing has happened.\nNow, click the Validate all button, \n\n\n\n\n\nBehold! A list of topology errors in the table. Each of which is highlighted in red on the layers involved.\n\n\nIf one were so inclined, one could fix these errors using the vertex tool in the Digitizing toolbar."
+  },
+  {
+    "objectID": "index.html#digitizing-to-create-secondary-vector-data",
+    "href": "index.html#digitizing-to-create-secondary-vector-data",
+    "title": "NR 218",
+    "section": "Digitizing to create secondary vector data",
+    "text": "Digitizing to create secondary vector data\n\nTablet\n\nTracing on a light table with specialized hardware, then\n\nHeads up\n\nClicking and drawing in GIS software\n\nAutomated\n\nMany different form, some simple some complex"
   },
   {
     "objectID": "index.html#what-is-a-dem",
@@ -2258,7 +2265,14 @@
     "href": "vector_tutorial.html#topology-checker",
     "title": "",
     "section": "Topology Checker",
-    "text": "Topology Checker\n\n\n\nRight-click this link and use save link as to download some totally messed up farm fields.\n\nAlso right-click this link and use save link as to download some meaningless points.\n\n\n\n\n\nClick Pluggins &gt;Manage and Install Pluggins, type “topology che”, and check the box next to Topology Checker.\nIn your toolbar the Topoly Checker button, , should appear. Click it.\nThen click the Configure button, .\n\n\n\n\nNow the topology Rule settings window should be open.\n\n\n\nUse the dropdown menus to add rules. When you create a rule, you must use the plus button to add it before you close the window by hitting “OK”\nTry the following, meaningless_points musst be inside some_f___ed_up_farm_fields"
+    "text": "Topology Checker\n\n\n\nRight-click this link and use save link as to download some totally messed up farm fields.\n\nAlso right-click this link and use save link as to download some meaningless points.\n\n\n\n\n\nClick Pluggins &gt;Manage and Install Pluggins, type “topology che”, and check the box next to Topology Checker.\nIn your toolbar the Topoly Checker button, , should appear. Click it.\nThen click the Configure button, .\n\n\n\n\nNow the topology Rule settings window should be open.\n\n\n\n\n\n\nUse the dropdown menus to add rules.\nWhen you create a rule, you must use the plus button to add it before you close the window by hitting “OK”\nTry the following:\n\nmeaningless_points must be inside some_f___ed_up_farm_fields\nsome_f___ed_up_farm_fields must not overlap\nsome_f___ed_up_farm_fields must not have gaps\n\nAfter hitting “OK” it will look like nothing has happened, because nothing has happened.\nNow, click the Validate all button, \n\n\n\n\n\nBehold! A list of topology errors in the table. Each of which is highlighted in red on the layers involved.\n\n\nIf one were so inclined, one could fix these errors using the vertex tool in the Digitizing toolbar."
+  },
+  {
+    "objectID": "vector_tutorial.html#digitizing-to-create-secondary-vector-data",
+    "href": "vector_tutorial.html#digitizing-to-create-secondary-vector-data",
+    "title": "",
+    "section": "Digitizing to create secondary vector data",
+    "text": "Digitizing to create secondary vector data\n\nTablet\n\nTracing on a light table with specialized hardware, then\n\nHeads up\n\nClicking and drawing in GIS software\n\nAutomated\n\nMany different form, some simple some complex"
   },
   {
     "objectID": "projections_etc.html#map-conventions",
