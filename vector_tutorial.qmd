@@ -216,9 +216,27 @@ Download [Cities](https://gis.data.ca.gov/api/download/v1/items/8cd5d2038c5547ba
 __Challenge__ - Join counties to cities, and calculate total urban area for each county.
 
 ## Topology Checker
-TODO: This link is jacked
-Download [these totally messed up farm fields](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/some_f___ed_up__farm_fields.geojson).
 
-+ Click _Pluggins_ >_Manage and Install Pluggins_, type "topology", and check the box next to Toplogy Checker.
-+ In your toolbar the ![](img/mActionTopologyChecker.png) button should appear. Click it.
-+ Click the ![](img/mActionOptions.png).
+::: { .r-stack}
+
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
++ Right-click [this link](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/some_f___ed_up__farm_fields.geojson) and use _save link as_ to download some totally messed up farm fields.  
++ Also right-click [this link](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/meaningless_points.geojson) and use _save link as_ to download some meaningless points.  
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
++ Click _Pluggins_ >_Manage and Install Pluggins_, type "topology che", and check the box next to Topology Checker.
++ In your toolbar the Topoly Checker button, ![](img/mActionTopologyChecker.png), should appear. Click it.
++ Then click the Configure button, ![](img/mActionOptions.png).
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+
++ Now the topology Rule settings window should be open.
+
+![](img/topology-rules-dangle.png)
+:::
+
+
+:::
+

@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "meaningless_points",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::6339" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 560185.803344439482316, 4108873.547103469725698 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 560290.920152519829571, 4108794.874775409698486 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 560349.098008564324118, 4108985.936143555678427 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 560302.324334528530017, 4108885.447119479067624 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 560411.573092611972243, 4108457.707655152305961 ] } }
+]
+}
