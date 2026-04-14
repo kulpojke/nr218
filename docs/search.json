@@ -242,7 +242,7 @@
     "href": "index.html#application-domains",
     "title": "NR 218",
     "section": "Application Domains",
-    "text": "Application Domains\nGIS is useful is many domains, for example:\n\n\nweather forecasts\n\nnavigation\n\ndelivery logisitics\n\napps (e.g. Strava!)\n\ndisaster response\n\ninfrastructure monitoring\n\nclimate monitoring / modeling\n\nurban/regional planning\narchitecture\narchaeology\ngeography\nsocial sciences\n(geo)physics\nhydrology\nbiology\necology\netc…\n\n\n:::"
+    "text": "Application Domains\nGIS is useful is many domains, for example:\n\n\nweather forecasts\n\nnavigation\n\ndelivery logisitics\n\napps (e.g. Strava!)\n\ndisaster response\n\ninfrastructure monitoring\n\nclimate monitoring / modeling\n\nurban/regional planning\narchitecture\narchaeology\ngeography\nsocial sciences\n(geo)physics\nhydrology\nbiology\necology\netc…"
   },
   {
     "objectID": "index.html#why-use-gis",
@@ -816,7 +816,7 @@
     "href": "index.html#topology-checker",
     "title": "NR 218",
     "section": "Topology Checker",
-    "text": "Topology Checker\n\n\n\nRight-click this link and use save link as to download some totally messed up farm fields.\n\nAlso right-click this link and use save link as to download some meaningless points.\n\n\n\n\n\nClick Pluggins &gt;Manage and Install Pluggins, type “topology che”, and check the box next to Topology Checker.\nIn your toolbar the Topoly Checker button, , should appear. Click it.\nThen click the Configure button, .\n\n\n\n\nNow the topology Rule settings window should be open."
+    "text": "Topology Checker\n\n\n\nRight-click this link and use save link as to download some totally messed up farm fields.\n\nAlso right-click this link and use save link as to download some meaningless points.\n\n\n\n\n\nClick Pluggins &gt;Manage and Install Pluggins, type “topology che”, and check the box next to Topology Checker.\nIn your toolbar the Topoly Checker button, , should appear. Click it.\nThen click the Configure button, .\n\n\n\n\nNow the topology Rule settings window should be open.\n\n\n\nUse the dropdown menus to add rules. When you create a rule, you must use the plus button to add it before you close the window by hitting “OK”\nTry the following, meaningless_points musst be inside some_f___ed_up_farm_fields"
   },
   {
     "objectID": "index.html#what-is-a-dem",
@@ -2258,7 +2258,7 @@
     "href": "vector_tutorial.html#topology-checker",
     "title": "",
     "section": "Topology Checker",
-    "text": "Topology Checker\n\n\n\nRight-click this link and use save link as to download some totally messed up farm fields.\n\nAlso right-click this link and use save link as to download some meaningless points.\n\n\n\n\n\nClick Pluggins &gt;Manage and Install Pluggins, type “topology che”, and check the box next to Topology Checker.\nIn your toolbar the Topoly Checker button, , should appear. Click it.\nThen click the Configure button, .\n\n\n\n\nNow the topology Rule settings window should be open."
+    "text": "Topology Checker\n\n\n\nRight-click this link and use save link as to download some totally messed up farm fields.\n\nAlso right-click this link and use save link as to download some meaningless points.\n\n\n\n\n\nClick Pluggins &gt;Manage and Install Pluggins, type “topology che”, and check the box next to Topology Checker.\nIn your toolbar the Topoly Checker button, , should appear. Click it.\nThen click the Configure button, .\n\n\n\n\nNow the topology Rule settings window should be open.\n\n\n\nUse the dropdown menus to add rules. When you create a rule, you must use the plus button to add it before you close the window by hitting “OK”\nTry the following, meaningless_points musst be inside some_f___ed_up_farm_fields"
   },
   {
     "objectID": "projections_etc.html#map-conventions",
@@ -3399,7 +3399,7 @@
     "href": "what_is_gis.html#application-domains",
     "title": "",
     "section": "Application Domains",
-    "text": "Application Domains\nGIS is useful is many domains, for example:\n\n\nweather forecasts\n\nnavigation\n\ndelivery logisitics\n\napps (e.g. Strava!)\n\ndisaster response\n\ninfrastructure monitoring\n\nclimate monitoring / modeling\n\nurban/regional planning\narchitecture\narchaeology\ngeography\nsocial sciences\n(geo)physics\nhydrology\nbiology\necology\netc…\n\n\n:::"
+    "text": "Application Domains\nGIS is useful is many domains, for example:\n\n\nweather forecasts\n\nnavigation\n\ndelivery logisitics\n\napps (e.g. Strava!)\n\ndisaster response\n\ninfrastructure monitoring\n\nclimate monitoring / modeling\n\nurban/regional planning\narchitecture\narchaeology\ngeography\nsocial sciences\n(geo)physics\nhydrology\nbiology\necology\netc…"
   },
   {
     "objectID": "what_is_gis.html#why-use-gis",

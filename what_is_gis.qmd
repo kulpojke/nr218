@@ -56,11 +56,9 @@ GIS is useful is many domains, for example:
 :::
 
 
-:::
-
 ## Why use GIS
 
-::: {r-stack}
+::: {.r-stack}
 
 ::: {.fragment .fade-out style="position: absolute;" data-fragment-index="1"}
 Monitor and understand our planet
@@ -139,4 +137,3 @@ yourself if you are familiar with programming.
 + [Oceano Dunes (using plas.io)](https://p3d.in/Z86TN) 
 + [Stackexchange thread of beautiful maps](https://gis.stackexchange.com/questions/3083/seeking-examples-of-beautiful-maps)
 + [Cal poly Tree map](https://calpoly.maps.arcgis.com/apps/webappviewer/index.html?id=49c730285d064d17be4c8429426d7609)
-

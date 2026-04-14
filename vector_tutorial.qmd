@@ -220,7 +220,7 @@ __Challenge__ - Join counties to cities, and calculate total urban area for each
 ::: { .r-stack}
 
 ::: {.fragment .absolute .fade-out data-fragment-index="1"}
-+ Right-click [this link](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/some_f___ed_up__farm_fields.geojson) and use _save link as_ to download some totally messed up farm fields.  
++ Right-click [this link](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/some_f___ed_up_farm_fields.geojson) and use _save link as_ to download some totally messed up farm fields.  
 + Also right-click [this link](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/meaningless_points.geojson) and use _save link as_ to download some meaningless points.  
 :::
 
@@ -237,6 +237,10 @@ __Challenge__ - Join counties to cities, and calculate total urban area for each
 ![](img/topology-rules-dangle.png)
 :::
 
+Use the dropdown menus to add rules.  When you create a rule, you must use the plus button to add it before you close the window by hitting "OK"
+
+Try the following,
+meaningless_points musst be inside some_f___ed_up_farm_fields
 
 :::
 
