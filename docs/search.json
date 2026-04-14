@@ -812,6 +812,13 @@
     "text": "Spatial Joins\nDownload Cities\n\nUse the “join attributes by location” tool from the geoprocessing toolbox to join cities to counties\nThere will be problems. Hint: “validate geometries and”fix geometries” tools will be useful.\n\nChallenge - Join counties to cities, and calculate total urban area for each county."
   },
   {
+    "objectID": "index.html#topology-checker",
+    "href": "index.html#topology-checker",
+    "title": "NR 218",
+    "section": "Topology Checker",
+    "text": "Topology Checker\nTODO: This link is jacked Download these totally messed up farm fields.\n\nClick Pluggins &gt;Manage and Install Pluggins, type “topology”, and check the box next to Toplogy Checker.\nIn your toolbar the  button should appear. Click it.\nClick the ."
+  },
+  {
     "objectID": "index.html#what-is-a-dem",
     "href": "index.html#what-is-a-dem",
     "title": "NR 218",
@@ -3295,6 +3302,13 @@
     "title": "",
     "section": "Spatial Joins",
     "text": "Spatial Joins\nDownload Cities\n\nUse the “join attributes by location” tool from the geoprocessing toolbox to join cities to counties\nThere will be problems. Hint: “validate geometries and”fix geometries” tools will be useful.\n\nChallenge - Join counties to cities, and calculate total urban area for each county."
+  },
+  {
+    "objectID": "vector_tutorial.html#topology-checker",
+    "href": "vector_tutorial.html#topology-checker",
+    "title": "",
+    "section": "Topology Checker",
+    "text": "Topology Checker\nTODO: This link is jacked Download these totally messed up farm fields.\n\nClick Pluggins &gt;Manage and Install Pluggins, type “topology”, and check the box next to Toplogy Checker.\nIn your toolbar the  button should appear. Click it.\nClick the ."
   },
   {
     "objectID": "finding_gis_data.html#what-is-sentinel-2",

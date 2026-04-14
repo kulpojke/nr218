@@ -215,3 +215,10 @@ Download [Cities](https://gis.data.ca.gov/api/download/v1/items/8cd5d2038c5547ba
 
 __Challenge__ - Join counties to cities, and calculate total urban area for each county.
 
+## Topology Checker
+TODO: This link is jacked
+Download [these totally messed up farm fields](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/some_f___ed_up__farm_fields.geojson).
+
++ Click _Pluggins_ >_Manage and Install Pluggins_, type "topology", and check the box next to Toplogy Checker.
++ In your toolbar the ![](img/mActionTopologyChecker.png) button should appear. Click it.
++ Click the ![](img/mActionOptions.png).
