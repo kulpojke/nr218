@@ -207,7 +207,7 @@ You might use a merge to combine two adjacent land parcels into a single, larger
 
 ## Spatial Joins {.smaller}
 
-Download [Cities](https://gis.data.ca.gov/api/download/v1/items/8cd5d2038c5547ba911eea7bec48e28b/geojson?layers=2)
+Download California cities [here](https://gis.data.ca.gov/api/download/v1/items/8cd5d2038c5547ba911eea7bec48e28b/geojson?layers=2) or from [this link] (https://raw.githubusercontent.com/kulpojke/nr218/main/assets//California_Cities_and_Identifiers_Blue_Version_view_9179458143702591125.geojson)
 
 
 + Use the "join attributes by location" tool from the geoprocessing toolbox to join cities to counties 
