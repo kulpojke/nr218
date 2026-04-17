@@ -16,7 +16,8 @@ Make a new folder inside your `nr218` directory called `lab_8`. Inside that fold
 nr218/
 └── lab_8
     ├── data
-    ├── docs
+    └── lab_8
+
 ```
 
 ## Warm Up: Finding Data Online
