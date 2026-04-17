@@ -124,6 +124,25 @@ What does 1 arcsecond resolution mean?
 + Infrastructure and land use planning
 
 
+## USGS Elevation data
+
+- LiDAR-derived products
+    - Point clouds (`.laz`)
+    - Project-level source data for high-resolution elevation products
+- Raster elevation products
+    - `1 m DEM`
+        - Project-based bare-earth DEM, usually derived from lidar
+    - `1/3 arc-second DEM` (`~10 m`)
+        - Seamless 3DEP raster built from the best available elevation sources
+    - `1 arc-second DEM` (`~30 m`)
+- `OPR = Original Product Resolution`
+    - DEM distributed at the source project's original resolution and projection
+    - Often the closest raster product to the original lidar-derived surface
+
+
+
+
+
 ## Visualizing Elevation {style="font-size:0.6em"}
 
 ::: {.r-stack}
