@@ -41,32 +41,97 @@ After we define the AOI, on the right panel, under _Downloadable Products within
 
 In this case, we're interested in what DEMs are available, so let's expand that dropdown. Under _DEMs within AOI_ there should be:
 
-+ DEMs 1 Meter
-+ DEMs ~10m 1/3
++ DEM 1 Meter
++ DEM ~3m 1/9
++ DEM ~10m 1/3
++ DEM ~30m 1
 + DEM Source (OPR)
 
+![The extent of OPR DEM tiles is displayed when one hovers over the filenames in the right panel.](img/anacapa_tiles.png){#fig-anacapa_tiles fig-alt="Image showing The extent of the OPR tiles for Anacapa Island" .wrap-right style="--wrap-width:35%;"}
+
+
 _DEMs 1 Meter_ holds Project-based bare-earth DEM, usually derived from lidar and included as part of the [USGS 3DEP program](https://www.usgs.gov/3d-elevation-program) after the USGS does quality control.
+
 
 _DEMs ~10m 1/3_ are the seamless 3DEP elevation layer, blended across larger areas and distributed as a nationwide medium-resolution product. The resolution is 1/3 arc second (recall that sometimes lat/lon is written in degrees minutes seconds) which is _about_ 10 m ground distance, but the E/W ground distance varies with latitude at Anacapa the actual ground distance per pixel is  about 10.3 m N/S
 and about 8.5 m E/W.
 
 _DEM Source (OPR)_ are DEMs distributed at the source project's original resolution and projection
 
-![Download list icon](img/lidar_exp_download_list.png){#fig-download-list fig-alt="Image showing the download list icon to the right of OPR" fig-cap="Download list icon is to the right of OPR" .wrap-right style="--wrap-width:35%;"}
 
-For Anacapa there should be 18 tiles under _DEM Source (OPR)_. You _could_ click each one and download it, kind of a pain though.  If you were working on a larger area, clicking and downloading each file would not be practical.  Luckily, there is a download list which can be downloaded by pressing the _Download List_ button shown in @fig-download-list.
+For Anacapa there should be 18 tiles under _DEM Source (OPR)_. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seeen in @fig-anacpa-tiles. You _could_ click each one and download it, it would be kind of a pain though.  If you were working on a larger area, clicking and downloading each file would not be practical.  Luckily, there is a download list which can be downloaded by pressing the _Download List_ button shown in @fig-download-list.  For directions on downloading the data see @tip-wget.
+
+![The download list icon is to the right of "(OPR)"](img/lidar_exp_download_list.png){#fig-download-list fig-alt="Image showing the download list icon to the right of OPR" .wrap-right style="--wrap-width:35%;"}
 
 <details>
-<summary>Read this ii Lidar Explorer is Broken</summary>
+<summary>Read this if Lidar Explorer is Broken</summary>
 
 Bummer!  This happens sometimes these days. Lets hope it comes back! in the meantime, here is a [link to a copy of the download list](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/anacapa_downloadlist.txt).
 
 </details>
 
 
-![Individual DEM tiles](img/lidar_explorer_4.png){#fig-lidar4 fig-alt="Image showing the individual 1 meter DEM tiles within AIO" fig-cap="Individual DEM tiles"}
 
-Choose one of the files on the list and click the download icon next to it. Once downloaded, rename the file to `DEM_1_meter.tif` and move it to `nr218/lab_8/data`.
+
+::: {#tip-wget .callout-tip}
+## How to download files using the download list
+
+<details>
+<summary>Windows</summary>
+
+In `PowerShell`, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data`). Then run:
+
+This reads each URL from `downloadlist.txt` and downloads the files one by one into the current folder. It is a bit cumbersome on Windows because there is not a simple built-in command like `wget -i` for downloading a whole list of files at once.
+
+``` powershell
+foreach ($url in Get-Content .\downloadlist.txt) {
+  Invoke-WebRequest -Uri $url -OutFile (Split-Path $url -Leaf)
+}
+```
+
+This will download every file listed in `downloadlist.txt` into your current folder.
+</details>
+
+<details>
+<summary>Mac</summary>
+
+In `Terminal`, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data`). Then run:
+
+``` bash
+wget -i downloadlist.txt
+```
+
+This tells `wget` to download each URL listed in the text file.
+</details>
+
+<details>
+<summary>Linux</summary>
+
+In a terminal, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data`). Then run:
+
+``` bash
+wget -i downloadlist.txt
+```
+
+This tells `wget` to download each URL listed in the text file.
+</details>
+
+
+:::
+
+After downloading the OPR tiles from the downloadlist,  click the download buttons next to the two files from the 1 arc second (~30m) DEM.
+
+The OPR DEMs are in a compound CRS 
+  + NAD83(2011) / UTM zone 11N = EPSG:6340
+  + NAVD88 height = EPSG:5703
+
+The 1 arc second DEM is in EPSG:4269, A GCS projection.  
+
+::: {#tip-bathym .callout-tip}
+## A dep dive on Coordinate Reference Systems
+<--TODO: explain hor, vert and compound CRS, how the 1 arc DEM has no vert CRS, but it is defined somewhere
+:::
+
 
 Next, close the 1 meter file list (click again on the folder icon) and open the `30m` folder. Choose one of those files to download, rename it to `DEM_30_meter.tif`, and save it to `data`.
 
@@ -292,7 +357,5 @@ When setting up a map layout, we can make our lives easier by putting down guide
 __Use `tree` to show the directory structure for the project so far.  Include it in your submission doc.__
 
 __Upload your final map in addition to your submission doc.__
-
-
 
 

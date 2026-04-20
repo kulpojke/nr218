@@ -50,6 +50,11 @@ pre {
   font-size: 0.9em;
 }
 
+/* Keep tip callouts from flowing up alongside wrapped figures */
+.callout-tip {
+  clear: both;
+}
+
 .nowrap,
 code.nowrap,
 .nowrap code {

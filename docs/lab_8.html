@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -140,41 +175,97 @@ Figure&nbsp;2: Defined area of interest
 <p>After we define the AOI, on the right panel, under <em>Downloadable Products within AOI</em>, you should see dropdowns for DEM, LiDAR, and DSM/ORI products within the AOI. These dropdowns are populated with all of the downloadable files in the AOI.</p>
 <p>In this case, we’re interested in what DEMs are available, so let’s expand that dropdown. Under <em>DEMs within AOI</em> there should be:</p>
 <ul>
-<li>DEMs 1 Meter</li>
-<li>DEMs ~10m 1/3</li>
+<li>DEM 1 Meter</li>
+<li>DEM ~3m 1/9</li>
+<li>DEM ~10m 1/3</li>
+<li>DEM ~30m 1</li>
 <li>DEM Source (OPR)</li>
 </ul>
+<div id="fig-anacapa_tiles" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing The extent of the OPR tiles for Anacapa Island" style="--wrap-width:35%;">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-anacapa_tiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/anacapa_tiles.png" class="wrap-right img-fluid figure-img" style="--wrap-width:35%;" alt="Image showing The extent of the OPR tiles for Anacapa Island">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anacapa_tiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The extent of OPR DEM tiles is displayed when one hovers over the filenames in the right panel.
+</figcaption>
+</figure>
+</div>
 <p><em>DEMs 1 Meter</em> holds Project-based bare-earth DEM, usually derived from lidar and included as part of the <a href="https://www.usgs.gov/3d-elevation-program">USGS 3DEP program</a> after the USGS does quality control.</p>
 <p><em>DEMs ~10m 1/3</em> are the seamless 3DEP elevation layer, blended across larger areas and distributed as a nationwide medium-resolution product. The resolution is 1/3 arc second (recall that sometimes lat/lon is written in degrees minutes seconds) which is <em>about</em> 10 m ground distance, but the E/W ground distance varies with latitude at Anacapa the actual ground distance per pixel is about 10.3 m N/S and about 8.5 m E/W.</p>
 <p><em>DEM Source (OPR)</em> are DEMs distributed at the source project’s original resolution and projection</p>
-<div id="fig-download-list" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:35%;" alt="Image showing the download list icon to the right of OPR" data-fig-cap="Download list icon is to the right of OPR">
+<p>For Anacapa there should be 18 tiles under <em>DEM Source (OPR)</em>. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seeen in <strong>?@fig-anacpa-tiles</strong>. You <em>could</em> click each one and download it, it would be kind of a pain though. If you were working on a larger area, clicking and downloading each file would not be practical. Luckily, there is a download list which can be downloaded by pressing the <em>Download List</em> button shown in <a href="#fig-download-list" class="quarto-xref">Figure&nbsp;4</a>. For directions on downloading the data see <a href="#tip-wget" class="quarto-xref">Tip&nbsp;1</a>.</p>
+<div id="fig-download-list" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the download list icon to the right of OPR" style="--wrap-width:35%;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-download-list-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/lidar_exp_download_list.png" class="wrap-right img-fluid figure-img" style="--wrap-width:35%;" data-fig-cap="Download list icon is to the right of OPR" alt="Image showing the download list icon to the right of OPR">
+<img src="img/lidar_exp_download_list.png" class="wrap-right img-fluid figure-img" style="--wrap-width:35%;" alt="Image showing the download list icon to the right of OPR">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-download-list-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Download list icon
+Figure&nbsp;4: The download list icon is to the right of “(OPR)”
 </figcaption>
 </figure>
 </div>
-<p>For Anacapa there should be 18 tiles under <em>DEM Source (OPR)</em>. You <em>could</em> click each one and download it, kind of a pain though. If you were working on a larger area, clicking and downloading each file would not be practical. Luckily, there is a download list which can be downloaded by pressing the <em>Download List</em> button shown in <a href="#fig-download-list" class="quarto-xref">Figure&nbsp;3</a>.</p>
 <details>
 <summary>
-Read this ii Lidar Explorer is Broken
+Read this if Lidar Explorer is Broken
 </summary>
 <p>Bummer! This happens sometimes these days. Lets hope it comes back! in the meantime, here is a <a href="https://raw.githubusercontent.com/kulpojke/nr218/main/assets/anacapa_downloadlist.txt">link to a copy of the download list</a>.</p>
 </details>
-<div id="fig-lidar4" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the individual 1 meter DEM tiles within AIO" data-fig-cap="Individual DEM tiles">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-lidar4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/lidar_explorer_4.png" class="img-fluid figure-img" data-fig-cap="Individual DEM tiles" alt="Image showing the individual 1 meter DEM tiles within AIO">
+<div id="tip-wget" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lidar4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Individual DEM tiles
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;1: How to download files using the download list
 </div>
-<p>Choose one of the files on the list and click the download icon next to it. Once downloaded, rename the file to <code>DEM_1_meter.tif</code> and move it to <code>nr218/lab_8/data</code>.</p>
+</div>
+<div class="callout-body-container callout-body">
+<details>
+<summary>
+Windows
+</summary>
+<p>In <code>PowerShell</code>, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data</code>). Then run:</p>
+<p>This reads each URL from <code>downloadlist.txt</code> and downloads the files one by one into the current folder. It is a bit cumbersome on Windows because there is not a simple built-in command like <code>wget -i</code> for downloading a whole list of files at once.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">foreach</span> <span class="op">(</span><span class="va">$url</span> <span class="kw">in</span> <span class="fu">Get-Content</span> <span class="op">.</span>\downloadlist<span class="op">.</span><span class="fu">txt</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Invoke-WebRequest</span> <span class="op">-</span>Uri <span class="va">$url</span> <span class="op">-</span>OutFile <span class="op">(</span><span class="fu">Split-Path</span> <span class="va">$url</span> <span class="op">-</span>Leaf<span class="op">)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+This will download every file listed in <code>downloadlist.txt</code> into your current folder.
+</details>
+<details>
+<summary>
+Mac
+</summary>
+<p>In <code>Terminal</code>, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data</code>). Then run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-i</span> downloadlist.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+This tells <code>wget</code> to download each URL listed in the text file.
+</details>
+<details>
+<summary>
+Linux
+</summary>
+<p>In a terminal, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data</code>). Then run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-i</span> downloadlist.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+This tells <code>wget</code> to download each URL listed in the text file.
+</details>
+</div>
+</div>
+<p>After downloading the OPR tiles from the downloadlist, click the download buttons next to the two files from the 1 arc second (~30m) DEM.</p>
+<p>The OPR DEMs are in a compound CRS + NAD83(2011) / UTM zone 11N = EPSG:6340 + NAVD88 height = EPSG:5703</p>
+<p>The 1 arc second DEM is in EPSG:4269, A GCS projection.</p>
+<div id="tip-bathym" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;2: A dep dive on Coordinate Reference Systems
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>&lt;–TODO: explain hor, vert and compound CRS, how the 1 arc DEM has no vert CRS, but it is defined somewhere</p>
+</div>
+</div>
 <p>Next, close the 1 meter file list (click again on the folder icon) and open the <code>30m</code> folder. Choose one of those files to download, rename it to <code>DEM_30_meter.tif</code>, and save it to <code>data</code>.</p>
 <div id="tip-bathym" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -182,7 +273,7 @@ Figure&nbsp;4: Individual DEM tiles
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;1: What is topobathy Lidar
+Tip&nbsp;3: What is topobathy Lidar
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -195,7 +286,7 @@ Tip&nbsp;1: What is topobathy Lidar
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;2: Building a Virtual Raster
+Tip&nbsp;4: Building a Virtual Raster
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -265,7 +356,7 @@ Figure&nbsp;5: Add Feature Icon
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;3: Azimuth and Z Factor
+Tip&nbsp;5: Azimuth and Z Factor
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -377,7 +468,7 @@ Figure&nbsp;9: Red Relief Hillshade
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;4: Layer Preparation
+Tip&nbsp;6: Layer Preparation
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -396,7 +487,7 @@ Tip&nbsp;4: Layer Preparation
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;5: Terrain Analysis
+Tip&nbsp;7: Terrain Analysis
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -431,7 +522,7 @@ Tip&nbsp;5: Terrain Analysis
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;6: Using a GeoPDF in the Field
+Tip&nbsp;8: Using a GeoPDF in the Field
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -449,7 +540,7 @@ Tip&nbsp;6: Using a GeoPDF in the Field
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;7: Using Guidelines for Easier Map Making
+Tip&nbsp;9: Using Guidelines for Easier Map Making
 </div>
 </div>
 <div class="callout-body-container callout-body">
