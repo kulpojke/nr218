@@ -47,7 +47,7 @@ In this case, we're interested in what DEMs are available, so let's expand that 
 + DEM ~30m 1
 + DEM Source (OPR)
 
-![The extent of OPR DEM tiles is displayed when one hovers over the filenames in the right panel.](img/anacapa_tiles.png){#fig-anacapa_tiles fig-alt="Image showing The extent of the OPR tiles for Anacapa Island" .wrap-right style="--wrap-width:35%;"}
+![The extent of OPR DEM tiles is displayed when one hovers over the filenames in the right panel.](img/anacapa_tiles.png){#fig-anacapa-tiles fig-alt="Image showing The extent of the OPR tiles for Anacapa Island" .wrap-right style="--wrap-width:35%;"}
 
 
 _DEMs 1 Meter_ holds Project-based bare-earth DEM, usually derived from lidar and included as part of the [USGS 3DEP program](https://www.usgs.gov/3d-elevation-program) after the USGS does quality control.
@@ -59,9 +59,22 @@ and about 8.5 m E/W.
 _DEM Source (OPR)_ are DEMs distributed at the source project's original resolution and projection
 
 
-For Anacapa there should be 18 tiles under _DEM Source (OPR)_. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seeen in @fig-anacpa-tiles. You _could_ click each one and download it, it would be kind of a pain though.  If you were working on a larger area, clicking and downloading each file would not be practical.  Luckily, there is a download list which can be downloaded by pressing the _Download List_ button shown in @fig-download-list.  For directions on downloading the data see @tip-wget.
+For Anacapa there should be 18 tiles under _DEM Source (OPR)_. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seeen in @fig-anacapa-tiles. You _could_ click each one and download it, it would be kind of a pain though.  If you were working on a larger area, clicking and downloading each file would not be practical.  Luckily, there is a download list which can be downloaded by pressing the _Download List_ button shown in @fig-download-list.  
 
 ![The download list icon is to the right of "(OPR)"](img/lidar_exp_download_list.png){#fig-download-list fig-alt="Image showing the download list icon to the right of OPR" .wrap-right style="--wrap-width:35%;"}
+
+Before downloading the data, prepare your project directory.   We will be working with 2 DEM datasets for this project, the OPR DEM, and the 1 arc second DEM.  Make a subdirectory within data for each
+```
+nr218/
+└── lab_8
+    ├── data
+    │     ├──DEM_OPR   
+    │     └──DEM_1arc
+    └── lab_8
+
+```
+
+For directions on downloading the data see @tip-wget.
 
 <details>
 <summary>Read this if Lidar Explorer is Broken</summary>
@@ -70,32 +83,26 @@ Bummer!  This happens sometimes these days. Lets hope it comes back! in the mean
 
 </details>
 
-
-
-
 ::: {#tip-wget .callout-tip}
 ## How to download files using the download list
 
 <details>
 <summary>Windows</summary>
 
-In `PowerShell`, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data`). Then run:
+In `PowerShell`, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data/DEM_OPR`). Then run:
 
-This reads each URL from `downloadlist.txt` and downloads the files one by one into the current folder. It is a bit cumbersome on Windows because there is not a simple built-in command like `wget -i` for downloading a whole list of files at once.
-
+This reads each URL from `downloadlist.txt` and downloads the files one by one into the current folder. It is a bit cumbersome on Windows because there is not a simple built-in command like `wget -i` for downloading a whole list of files at once. The following will download every file listed in `downloadlist.txt` into your current folder.
 ``` powershell
 foreach ($url in Get-Content .\downloadlist.txt) {
   Invoke-WebRequest -Uri $url -OutFile (Split-Path $url -Leaf)
 }
 ```
-
-This will download every file listed in `downloadlist.txt` into your current folder.
 </details>
 
 <details>
 <summary>Mac</summary>
 
-In `Terminal`, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data`). Then run:
+In `Terminal`, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data/DEM_OPR`). Then run:
 
 ``` bash
 wget -i downloadlist.txt
@@ -107,7 +114,7 @@ This tells `wget` to download each URL listed in the text file.
 <details>
 <summary>Linux</summary>
 
-In a terminal, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data`). Then run:
+In a terminal, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data/DEM_OPR`). Then run:
 
 ``` bash
 wget -i downloadlist.txt
@@ -119,21 +126,40 @@ This tells `wget` to download each URL listed in the text file.
 
 :::
 
-After downloading the OPR tiles from the downloadlist,  click the download buttons next to the two files from the 1 arc second (~30m) DEM.
+After downloading the OPR tiles from the downloadlist,  click the download buttons next to the two files from the 1 arc second (~30m) DEM.  After they download, move them to `nr218/lab_8/data/DEM_1arc`
 
-The OPR DEMs are in a compound CRS 
+At this point you have the data you will need, and it is a good time to think about what projections they are in.
+
++ The OPR DEMs are in a compound CRS (see @tip-crs to learn what that means, and be inundated with more info on reference systems) 
   + NAD83(2011) / UTM zone 11N = EPSG:6340
   + NAVD88 height = EPSG:5703
++ The 1 arc second DEM is in EPSG:4269, a geographic CRS.  
 
-The 1 arc second DEM is in EPSG:4269, A GCS projection.  
+For this project we will use EPSG:6340. At this point you should:
 
-::: {#tip-bathym .callout-tip}
-## A dep dive on Coordinate Reference Systems
-<--TODO: explain hor, vert and compound CRS, how the 1 arc DEM has no vert CRS, but it is defined somewhere
+1. Open QGIS.
+2. Create a new project.
+3. Set the project CRS to EPSG:6340.
+4. Save the project (call it `anacapa.qgz` and save it in you lab_8 directory)
+
+::: {#tip-crs .callout-tip}
+## A deep dive on Coordinate Reference Systems
+<details>
+<summary> A deep dive on Coordinate Reference Systems</summary>
+
++ A __horizontal CRS__ tells QGIS how to locate positions on the earth in X and Y. For example, EPSG:4269 stores positions as latitude/longitude in NAD83, while EPSG:6340 stores them as UTM easting/northing in meters.
++ A __vertical CRS__ tells QGIS what the Z values mean. For DEMs this is the elevation reference surface. A vertical CRS might define height above an ellipsoid, or an orthometric height system such as NAVD88. 
+  + If this is not yet sufficiently complicated to satisfy you read [this explanation](https://www.ngs.noaa.gov/GEOID/GEOID18/computation.html
+) of how geoids are used to create a vertical datum.
++ A __compound CRS__ combines both pieces: one CRS for horizontal position and one CRS for vertical height. That is what the OPR DEMs are doing here: horizontal location in NAD83(2011) / UTM zone 11N plus vertical height in NAVD88.
++ Generally, when we reproject a layer that is in a compound CRS, we are just reprojecting the horizontal crs.
++ The 1 arc second DEM only advertises EPSG:4269, so its file is clearly defining the horizontal part but not explicitly encoding the vertical CRS in the raster's CRS tag.
+  + That does __not__ mean the heights are meaningless. For many DEM products, the vertical datum is documented in the metadata or product documentation rather than embedded in the CRS that software reads automatically. The height reference is often defined somewhere, but not always within the data's CRS description.
+</details>
 :::
 
 
-Next, close the 1 meter file list (click again on the folder icon) and open the `30m` folder. Choose one of those files to download, rename it to `DEM_30_meter.tif`, and save it to `data`.
+
 
 ::: {#tip-bathym .callout-tip}
 ## What is topobathy Lidar
@@ -359,3 +385,5 @@ __Use `tree` to show the directory structure for the project so far.  Include it
 __Upload your final map in addition to your submission doc.__
 
 
+1. We used EPSG:6340 for the project.  Why is this a good choice? Why not use EPSG:26911, or EPSG:4269?
+2. When 

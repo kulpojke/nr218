@@ -55,6 +55,76 @@ pre {
   clear: both;
 }
 
+details,
+details p,
+details li {
+  color: #102a56;
+}
+
+details summary {
+  color: #081c3a;
+  font-weight: 700;
+}
+
+details summary::marker {
+  color: #081c3a;
+}
+
+details pre,
+details .sourceCode,
+details code:not(pre code) {
+  background: #686dc3 !important;
+  color: #0b0b0b !important;
+}
+
+details pre,
+details .sourceCode {
+  border: 1px solid rgba(8, 28, 58, 0.28);
+  border-radius: 0.4rem;
+  padding: 0.75rem;
+}
+
+details pre code,
+details .sourceCode code {
+  color: #050505 !important;
+}
+
+details .sourceCode span {
+  color: #050505 !important;
+}
+
+details .sourceCode .kw,
+details .sourceCode .cf,
+details .sourceCode .fu {
+  color: #8b1e2d !important;
+}
+
+details .sourceCode .st,
+details .sourceCode .vs,
+details .sourceCode .ss {
+  color: #7fdf63 !important;
+}
+
+details .sourceCode .va,
+details .sourceCode .dv,
+details .sourceCode .fl,
+details .sourceCode .bn {
+  color: #050505 !important;
+}
+
+details .sourceCode .co {
+  color: #4fa946 !important;
+}
+
+details .sourceCode .op,
+details .sourceCode .pp,
+details .sourceCode .ot,
+details .sourceCode .ch,
+details .sourceCode .sc {
+  color: #050505 !important;
+  font-weight: 700;
+}
+
 .nowrap,
 code.nowrap,
 .nowrap code {

@@ -100,7 +100,7 @@ There are many other helpful sources of information on GIS Software, here area c
 | March 30     | 1    | Introduction, Computers                                              | Lab 1  | ch. 1 and 2 as well as [this page about computers](computers.html) | |
 | April 1      | 1    | Basic GIS Concepts, Scale, Coordinate systems, and Map Projections   | Lab 2  |              | [Lab 1](computers_lab.html)                   |
 | April 6      | 2    | Spatial Data Models and File Formats                                 | Lab 3  | ch. 3 and 4  |                                               |
-| April 8      | 2    | Quiz 1, Open Lab                                                    | Lab 4  |              |                                               |
+| April 8      | 2    | Quiz 1, Open Lab                                                     | Lab 4  |              |                                               |
 | April 13     | 3    | Review: Coordinate Systems, Map Projections, Datums; Reprojection; GeoProcessing and Vector Operations | Lab 5 | ch. 5 and 6  | [Lab 2](project_1.html) |
 | April 15     | 3    | GeoProcessing and Vector Operations                                  | Lab 6  |              |                                               |
 | April 20     | 4    | Data Creation, Editing, Topology Basics                              | Lab 7  | ch. 7 and 8  |                                               |

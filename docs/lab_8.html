@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,9 +21,8 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -64,17 +63,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b1a77111a45019b1272753eb63a27d02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cd5f0800439642fbaa1cb7fef4d5c238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -107,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="quarto-light">
+<body>
 
 <div id="quarto-search-results"></div>
 <!-- content -->
@@ -150,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>So far in this class you’ve been given files to work with. Today, we’re going to practice acquiring some data on our own.</p>
 <p>Generating DEMs, particularly at a high resolution, can be costly and time-consuming. Luckily, there are some great online resources for accessing existing imagery. One such resource is the <a href="https://www.usgs.gov/tools/lidarexplorer">USGS LiDAR Explorer</a>.</p>
 <p>Follow the link above, and then click “Launch Application” to get to the interactive map (<a href="#fig-lidar1" class="quarto-xref">Figure&nbsp;1</a>).</p>
-<div id="fig-lidar1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application" data-fig-cap="Startup map of LiDAR Explorer">
+<div id="fig-lidar1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Startup map of LiDAR Explorer" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lidar1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/lidar_explorer_1.png" class="img-fluid figure-img" data-fig-cap="Startup map of LiDAR Explorer" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application">
@@ -162,7 +159,7 @@ Figure&nbsp;1: Startup map of LiDAR Explorer
 </div>
 <p>You can navigate around the map by clicking and dragging with your mouse. Zooming is accomplished using your scroll wheel (or the “+” button at the top left of the map viewer, if you like your zooming to be painful). Orient your map view so that it’s centered on San Luis Obispo. There are three check boxes in the left panel. Try checking and unchecking them to see what happens.</p>
 <p>Next, let’s define our <strong>area of interest</strong> (AOI). This will return all of the available LiDAR and DEM downloads within a specified geographic area. For this exercise we will look at <a href="https://www.nps.gov/chis/planyourvisit/anacapa.htm" data-alt-text="Link to National Parks page on Anacapa Island">Anacapa Island</a>. Click the <em>Define area of interest</em> box and draw a box around Anacapa (by holding control and dragging , see <a href="#fig-lidar3" class="quarto-xref">Figure&nbsp;2</a>), then check what pops up on the right side of the screen .</p>
-<div id="fig-lidar3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing what an area of interest box looks like on the map" data-fig-cap="Defined area of interest">
+<div id="fig-lidar3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Defined area of interest" alt="Image showing what an area of interest box looks like on the map">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lidar3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/anacpa_AOI_lidar_explorer.png" class="img-fluid figure-img" data-fig-cap="Defined area of interest" alt="Image showing what an area of interest box looks like on the map">
@@ -181,12 +178,12 @@ Figure&nbsp;2: Defined area of interest
 <li>DEM ~30m 1</li>
 <li>DEM Source (OPR)</li>
 </ul>
-<div id="fig-anacapa_tiles" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing The extent of the OPR tiles for Anacapa Island" style="--wrap-width:35%;">
+<div id="fig-anacapa-tiles" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:35%;" alt="Image showing The extent of the OPR tiles for Anacapa Island">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-anacapa_tiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-anacapa-tiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/anacapa_tiles.png" class="wrap-right img-fluid figure-img" style="--wrap-width:35%;" alt="Image showing The extent of the OPR tiles for Anacapa Island">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anacapa_tiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anacapa-tiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: The extent of OPR DEM tiles is displayed when one hovers over the filenames in the right panel.
 </figcaption>
 </figure>
@@ -194,8 +191,8 @@ Figure&nbsp;3: The extent of OPR DEM tiles is displayed when one hovers over the
 <p><em>DEMs 1 Meter</em> holds Project-based bare-earth DEM, usually derived from lidar and included as part of the <a href="https://www.usgs.gov/3d-elevation-program">USGS 3DEP program</a> after the USGS does quality control.</p>
 <p><em>DEMs ~10m 1/3</em> are the seamless 3DEP elevation layer, blended across larger areas and distributed as a nationwide medium-resolution product. The resolution is 1/3 arc second (recall that sometimes lat/lon is written in degrees minutes seconds) which is <em>about</em> 10 m ground distance, but the E/W ground distance varies with latitude at Anacapa the actual ground distance per pixel is about 10.3 m N/S and about 8.5 m E/W.</p>
 <p><em>DEM Source (OPR)</em> are DEMs distributed at the source project’s original resolution and projection</p>
-<p>For Anacapa there should be 18 tiles under <em>DEM Source (OPR)</em>. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seeen in <strong>?@fig-anacpa-tiles</strong>. You <em>could</em> click each one and download it, it would be kind of a pain though. If you were working on a larger area, clicking and downloading each file would not be practical. Luckily, there is a download list which can be downloaded by pressing the <em>Download List</em> button shown in <a href="#fig-download-list" class="quarto-xref">Figure&nbsp;4</a>. For directions on downloading the data see <a href="#tip-wget" class="quarto-xref">Tip&nbsp;1</a>.</p>
-<div id="fig-download-list" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the download list icon to the right of OPR" style="--wrap-width:35%;">
+<p>For Anacapa there should be 18 tiles under <em>DEM Source (OPR)</em>. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seeen in <a href="#fig-anacapa-tiles" class="quarto-xref">Figure&nbsp;3</a>. You <em>could</em> click each one and download it, it would be kind of a pain though. If you were working on a larger area, clicking and downloading each file would not be practical. Luckily, there is a download list which can be downloaded by pressing the <em>Download List</em> button shown in <a href="#fig-download-list" class="quarto-xref">Figure&nbsp;4</a>.</p>
+<div id="fig-download-list" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:35%;" alt="Image showing the download list icon to the right of OPR">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-download-list-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/lidar_exp_download_list.png" class="wrap-right img-fluid figure-img" style="--wrap-width:35%;" alt="Image showing the download list icon to the right of OPR">
@@ -205,6 +202,15 @@ Figure&nbsp;4: The download list icon is to the right of “(OPR)”
 </figcaption>
 </figure>
 </div>
+<p>Before downloading the data, prepare your project directory. We will be working with 2 DEM datasets for this project, the OPR DEM, and the 1 arc second DEM. Make a subdirectory within data for each</p>
+<pre><code>nr218/
+└── lab_8
+    ├── data
+    │     ├──DEM_OPR   
+    │     └──DEM_1arc
+    └── lab_8
+</code></pre>
+<p>For directions on downloading the data see <a href="#tip-wget" class="quarto-xref">Tip&nbsp;1</a>.</p>
 <details>
 <summary>
 Read this if Lidar Explorer is Broken
@@ -225,48 +231,77 @@ Tip&nbsp;1: How to download files using the download list
 <summary>
 Windows
 </summary>
-<p>In <code>PowerShell</code>, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data</code>). Then run:</p>
-<p>This reads each URL from <code>downloadlist.txt</code> and downloads the files one by one into the current folder. It is a bit cumbersome on Windows because there is not a simple built-in command like <code>wget -i</code> for downloading a whole list of files at once.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">foreach</span> <span class="op">(</span><span class="va">$url</span> <span class="kw">in</span> <span class="fu">Get-Content</span> <span class="op">.</span>\downloadlist<span class="op">.</span><span class="fu">txt</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Invoke-WebRequest</span> <span class="op">-</span>Uri <span class="va">$url</span> <span class="op">-</span>OutFile <span class="op">(</span><span class="fu">Split-Path</span> <span class="va">$url</span> <span class="op">-</span>Leaf<span class="op">)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-This will download every file listed in <code>downloadlist.txt</code> into your current folder.
+<p>In <code>PowerShell</code>, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data/DEM_OPR</code>). Then run:</p>
+<p>This reads each URL from <code>downloadlist.txt</code> and downloads the files one by one into the current folder. It is a bit cumbersome on Windows because there is not a simple built-in command like <code>wget -i</code> for downloading a whole list of files at once. The following will download every file listed in <code>downloadlist.txt</code> into your current folder.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">foreach</span> <span class="op">(</span><span class="va">$url</span> <span class="kw">in</span> <span class="fu">Get-Content</span> <span class="op">.</span>\downloadlist<span class="op">.</span><span class="fu">txt</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Invoke-WebRequest</span> <span class="op">-</span>Uri <span class="va">$url</span> <span class="op">-</span>OutFile <span class="op">(</span><span class="fu">Split-Path</span> <span class="va">$url</span> <span class="op">-</span>Leaf<span class="op">)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <details>
 <summary>
 Mac
 </summary>
-<p>In <code>Terminal</code>, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data</code>). Then run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-i</span> downloadlist.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In <code>Terminal</code>, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data/DEM_OPR</code>). Then run:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-i</span> downloadlist.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 This tells <code>wget</code> to download each URL listed in the text file.
 </details>
 <details>
 <summary>
 Linux
 </summary>
-<p>In a terminal, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data</code>). Then run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-i</span> downloadlist.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In a terminal, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data/DEM_OPR</code>). Then run:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-i</span> downloadlist.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 This tells <code>wget</code> to download each URL listed in the text file.
 </details>
 </div>
 </div>
-<p>After downloading the OPR tiles from the downloadlist, click the download buttons next to the two files from the 1 arc second (~30m) DEM.</p>
-<p>The OPR DEMs are in a compound CRS + NAD83(2011) / UTM zone 11N = EPSG:6340 + NAVD88 height = EPSG:5703</p>
-<p>The 1 arc second DEM is in EPSG:4269, A GCS projection.</p>
-<div id="tip-bathym" class="callout callout-style-default callout-tip callout-titled">
+<p>After downloading the OPR tiles from the downloadlist, click the download buttons next to the two files from the 1 arc second (~30m) DEM. After they download, move them to <code>nr218/lab_8/data/DEM_1arc</code></p>
+<p>At this point you have the data you will need, and it is a good time to think about what projections they are in.</p>
+<ul>
+<li>The OPR DEMs are in a compound CRS (see <a href="#tip-crs" class="quarto-xref">Tip&nbsp;2</a> to learn what that means, and be inundated with more info on reference systems)
+<ul>
+<li>NAD83(2011) / UTM zone 11N = EPSG:6340</li>
+<li>NAVD88 height = EPSG:5703</li>
+</ul></li>
+<li>The 1 arc second DEM is in EPSG:4269, a geographic CRS.</li>
+</ul>
+<p>For this project we will use EPSG:6340. At this point you should:</p>
+<ol type="1">
+<li>Open QGIS.</li>
+<li>Create a new project.</li>
+<li>Set the project CRS to EPSG:6340.</li>
+<li>Save the project (call it <code>anacapa.qgz</code> and save it in you lab_8 directory)</li>
+</ol>
+<div id="tip-crs" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;2: A dep dive on Coordinate Reference Systems
+Tip&nbsp;2: A deep dive on Coordinate Reference Systems
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>&lt;–TODO: explain hor, vert and compound CRS, how the 1 arc DEM has no vert CRS, but it is defined somewhere</p>
+<details>
+<summary>
+A deep dive on Coordinate Reference Systems
+</summary>
+<ul>
+<li>A <strong>horizontal CRS</strong> tells QGIS how to locate positions on the earth in X and Y. For example, EPSG:4269 stores positions as latitude/longitude in NAD83, while EPSG:6340 stores them as UTM easting/northing in meters.</li>
+<li>A <strong>vertical CRS</strong> tells QGIS what the Z values mean. For DEMs this is the elevation reference surface. A vertical CRS might define height above an ellipsoid, or an orthometric height system such as NAVD88.
+<ul>
+<li>If this is not yet sufficiently complicated to satisfy you read <a href="https://www.ngs.noaa.gov/GEOID/GEOID18/computation.html">this explanation</a> of how geoids are used to create a vertical datum.</li>
+</ul></li>
+<li>A <strong>compound CRS</strong> combines both pieces: one CRS for horizontal position and one CRS for vertical height. That is what the OPR DEMs are doing here: horizontal location in NAD83(2011) / UTM zone 11N plus vertical height in NAVD88.</li>
+<li>Generally, when we reproject a layer that is in a compound CRS, we are just reprojecting the horizontal crs.</li>
+<li>The 1 arc second DEM only advertises EPSG:4269, so its file is clearly defining the horizontal part but not explicitly encoding the vertical CRS in the raster’s CRS tag.
+<ul>
+<li>That does <strong>not</strong> mean the heights are meaningless. For many DEM products, the vertical datum is documented in the metadata or product documentation rather than embedded in the CRS that software reads automatically. The height reference is often defined somewhere, but not always within the data’s CRS description.</li>
+</ul></li>
+</ul>
+</details>
 </div>
 </div>
-<p>Next, close the 1 meter file list (click again on the folder icon) and open the <code>30m</code> folder. Choose one of those files to download, rename it to <code>DEM_30_meter.tif</code>, and save it to <code>data</code>.</p>
 <div id="tip-bathym" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -364,7 +399,7 @@ Tip&nbsp;5: Azimuth and Z Factor
 </div>
 </div>
 <p>After you hit <code>Apply</code>, your DEM should look something like this:</p>
-<div id="fig-hillshade" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a hillshade render of a DEM" data-fig-cap="Hillshade">
+<div id="fig-hillshade" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Hillshade" alt="Image showing a hillshade render of a DEM">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hillshade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/hillshade_example.png" class="img-fluid figure-img" data-fig-cap="Hillshade" alt="Image showing a hillshade render of a DEM">
@@ -383,7 +418,7 @@ Figure&nbsp;6: Hillshade
 <li>Go back to the Symbology window and change the Render Type to <code>Contour</code>. Adjust the <code>Contour Interval</code> and <code>Index Contour Interval</code> until the amount of bands generated feels good to you (i.e.&nbsp;not <em>too</em> cluttered, but enough to actually show the topography). I would also recommend making the Index lines slightly thicker, for visual differentiation.</li>
 </ol>
 <p>Now your DEM should look something like this:</p>
-<div id="fig-contour" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the contour lines of a DEM" data-fig-cap="Contour Lines">
+<div id="fig-contour" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Contour Lines" alt="Image showing the contour lines of a DEM">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-contour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/contour_example.png" class="img-fluid figure-img" data-fig-cap="Contour Lines" alt="Image showing the contour lines of a DEM">
@@ -426,7 +461,7 @@ Figure&nbsp;7: Contour Lines
 <li>Make sure your hillshade layer is the second layer in the stack. In the Symbology window, change the <code>blending mode</code> to <code>multiply</code>. Locate the Transparency tab (one below Symbology), and adjust the layer opacity to your liking.</li>
 <li>Make sure your contour layer is the topmost layer. Go to the Symbology window and adjust the color and thickness of your lines to your liking.</li>
 </ol>
-<div id="fig-dem_all" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a DEM with hillshade and contour lines layered on top" data-fig-cap="Base DEM with Hillshade and Contour Lines">
+<div id="fig-dem_all" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Base DEM with Hillshade and Contour Lines" alt="Image showing a DEM with hillshade and contour lines layered on top">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dem_all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/dem_all.png" class="img-fluid figure-img" data-fig-cap="Base DEM with Hillshade and Contour Lines" alt="Image showing a DEM with hillshade and contour lines layered on top">
@@ -444,7 +479,7 @@ Figure&nbsp;8: Layered DEM
 <li>Under the color ramp dropdown, choose <code>Create new color ramp</code>. Set the first color to black, and choose a shade of red for the second.</li>
 <li>Go back to the transparency tab and adjust the opacity to your liking.</li>
 </ol>
-<div id="fig-dem_red" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a DEM with hillshade render changed to a red gradient" data-fig-cap="Base DEM with Red Relief Hillshade. Contour lines removed.">
+<div id="fig-dem_red" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Base DEM with Red Relief Hillshade. Contour lines removed." alt="Image showing a DEM with hillshade render changed to a red gradient">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dem_red-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/dem_red.png" class="img-fluid figure-img" data-fig-cap="Base DEM with Red Relief Hillshade. Contour lines removed." alt="Image showing a DEM with hillshade render changed to a red gradient">
@@ -558,6 +593,10 @@ Tip&nbsp;9: Using Guidelines for Easier Map Making
 </ol>
 <p><strong>Use <code>tree</code> to show the directory structure for the project so far. Include it in your submission doc.</strong></p>
 <p><strong>Upload your final map in addition to your submission doc.</strong></p>
+<ol type="1">
+<li>We used EPSG:6340 for the project. Why is this a good choice? Why not use EPSG:26911, or EPSG:4269?</li>
+<li>When</li>
+</ol>
 
 
 </section>
@@ -565,243 +604,236 @@ Tip&nbsp;9: Using Guidelines for Easier Map Making
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
     }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
     }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -809,161 +841,185 @@ Tip&nbsp;9: Using Guidelines for Easier Map Making
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 </div> <!-- /content -->
 
 
