@@ -473,3 +473,11 @@ Try again, what resampling method should you use?
 ::: {.attribution style="font-size:0.4em"}
 Image Source: [ESRI](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/spatial-analyst/how-aspect-works.htm)
 :::
+
+## Finding DEMs {style="font-size:0.7em"}
+
+There are several places to find USGS elevations data,
+
++ My favorite is the [USGS Lidar Explorer](https://www.usgs.gov/tools/lidarexplorer)
++ If you like comlexity [the national Map Viewer](https://apps.nationalmap.gov/viewer/)  is another option. 
++ Or [USGS Earth explorer](https://earthexplorer.usgs.gov/) where you can get all kinds of USGS data, but it is more time consuming to use.

@@ -959,6 +959,13 @@
     "text": "Aspect\nThe direction slope is pointing in the X, y plane.\n\n\nImage Source: ESRI"
   },
   {
+    "objectID": "index.html#finding-dems",
+    "href": "index.html#finding-dems",
+    "title": "NR 218",
+    "section": "Finding DEMs",
+    "text": "Finding DEMs\nThere are several places to find USGS elevations data,\n\nMy favorite is the USGS Lidar Explorer\nIf you like comlexity the national Map Viewer is another option.\nOr USGS Earth explorer where you can get all kinds of USGS data, but it is more time consuming to use."
+  },
+  {
     "objectID": "index.html#remote-sensing-1",
     "href": "index.html#remote-sensing-1",
     "title": "NR 218",
@@ -3820,6 +3827,13 @@
     "title": "",
     "section": "Aspect",
     "text": "Aspect\nThe direction slope is pointing in the X, y plane.\n\n\nImage Source: ESRI"
+  },
+  {
+    "objectID": "dem_slides.html#finding-dems",
+    "href": "dem_slides.html#finding-dems",
+    "title": "",
+    "section": "Finding DEMs",
+    "text": "Finding DEMs\nThere are several places to find USGS elevations data,\n\nMy favorite is the USGS Lidar Explorer\nIf you like comlexity the national Map Viewer is another option.\nOr USGS Earth explorer where you can get all kinds of USGS data, but it is more time consuming to use."
   },
   {
     "objectID": "w3_house_keeping.html#events",
