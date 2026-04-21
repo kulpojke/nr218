@@ -134,9 +134,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="lab-8-dems-part-1" class="level1">
-<h1>Lab 8: DEMs (part 1)</h1>
-<p>Now that we’ve learned a bit about what DEMs are and what they can be used for, let’s get some practice working with them in QGIS.</p>
+<section id="lab-8-dems" class="level1">
+<h1>Lab 8: DEMs</h1>
+<p>Now that you’ve learned a bit about what DEMs are and what they can be used for, get some practice working with them in QGIS.</p>
 <p><strong>Quick file organization housekeeping:</strong></p>
 <p>Make a new folder inside your <code>nr218</code> directory called <code>lab_8</code>. Inside that folder, make a <code>data</code> folder and a <code>docs</code> folder. All downloaded files will go in the <code>data</code> folder, and all generated outputs (more on this later) will go in <code>docs</code>. You should have a directory structure as shown below.</p>
 <pre><code>nr218/
@@ -146,10 +146,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </code></pre>
 <section id="par-1-finding-data-online" class="level2">
 <h2 class="anchored" data-anchor-id="par-1-finding-data-online">Par 1: Finding Data Online</h2>
-<p>So far in this class you’ve been given files to work with. Today, we’re going to practice acquiring some data on our own.</p>
+<p>So far in this class you’ve been given files to work with. Today, you are going to practice acquiring some data on your own.</p>
 <p>Generating DEMs, particularly at a high resolution, can be costly and time-consuming. Luckily, there are some great online resources for accessing existing imagery. One such resource is the <a href="https://www.usgs.gov/tools/lidarexplorer">USGS LiDAR Explorer</a>.</p>
 <p>Follow the link above, and then click “Launch Application” to get to the interactive map (<a href="#fig-lidar1" class="quarto-xref">Figure&nbsp;1</a>).</p>
-<div id="fig-lidar1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Startup map of LiDAR Explorer" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application">
+<div id="fig-lidar1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application" data-fig-cap="Startup map of LiDAR Explorer">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lidar1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/lidar_explorer_1.png" class="img-fluid figure-img" data-fig-cap="Startup map of LiDAR Explorer" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application">
@@ -160,8 +160,8 @@ Figure&nbsp;1: Startup map of LiDAR Explorer
 </figure>
 </div>
 <p>You can navigate around the map by clicking and dragging with your mouse. Zooming is accomplished using your scroll wheel (or the “+” button at the top left of the map viewer, if you like your zooming to be painful). Orient your map view so that it’s centered on San Luis Obispo. There are three check boxes in the left panel. Try checking and unchecking them to see what happens.</p>
-<p>Next, let’s define our <strong>area of interest</strong> (AOI). This will return all of the available LiDAR and DEM downloads within a specified geographic area. For this exercise we will look at <a href="https://www.nps.gov/chis/planyourvisit/anacapa.htm" data-alt-text="Link to National Parks page on Anacapa Island">Anacapa Island</a>. Click the <em>Define area of interest</em> box and draw a box around Anacapa (by holding control and dragging , see <a href="#fig-lidar3" class="quarto-xref">Figure&nbsp;2</a>), then check what pops up on the right side of the screen .</p>
-<div id="fig-lidar3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Defined area of interest" alt="Image showing what an area of interest box looks like on the map">
+<p>Next, define your <strong>area of interest</strong> (AOI). This will return all of the available LiDAR and DEM downloads within a specified geographic area. For this exercise you will look at <a href="https://www.nps.gov/chis/planyourvisit/anacapa.htm" data-alt-text="Link to National Parks page on Anacapa Island">Anacapa Island</a>. Click the <em>Define area of interest</em> box and draw a box around Anacapa (by holding control and dragging , see <a href="#fig-lidar3" class="quarto-xref">Figure&nbsp;2</a>), then check what pops up on the right side of the screen .</p>
+<div id="fig-lidar3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing what an area of interest box looks like on the map" data-fig-cap="Defined area of interest">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lidar3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/anacpa_AOI_lidar_explorer.png" class="img-fluid figure-img" data-fig-cap="Defined area of interest" alt="Image showing what an area of interest box looks like on the map">
@@ -171,8 +171,8 @@ Figure&nbsp;2: Defined area of interest
 </figcaption>
 </figure>
 </div>
-<p>After we define the AOI, on the right panel, under <em>Downloadable Products within AOI</em>, you should see dropdowns for DEM, LiDAR, and DSM/ORI products within the AOI. These dropdowns are populated with all of the downloadable files in the AOI.</p>
-<p>In this case, we’re interested in what DEMs are available, so let’s expand that dropdown. Under <em>DEMs within AOI</em> there should be:</p>
+<p>After you define the AOI, on the right panel, under <em>Downloadable Products within AOI</em>, you should see dropdowns for DEM, LiDAR, and DSM/ORI products within the AOI. These dropdowns are populated with all of the downloadable files in the AOI.</p>
+<p>In this case, you are interested in what DEMs are available, so expand that dropdown. Under <em>DEMs within AOI</em> there should be:</p>
 <ul>
 <li>DEM 1 Meter</li>
 <li>DEM ~3m 1/9</li>
@@ -193,7 +193,7 @@ Figure&nbsp;3: The extent of OPR DEM tiles is displayed when one hovers over the
 <p><em>DEMs 1 Meter</em> holds Project-based bare-earth DEM, usually derived from lidar and included as part of the <a href="https://www.usgs.gov/3d-elevation-program">USGS 3DEP program</a> after the USGS does quality control.</p>
 <p><em>DEMs ~10m 1/3</em> are the seamless 3DEP elevation layer, blended across larger areas and distributed as a nationwide medium-resolution product. The resolution is 1/3 arc second (recall that sometimes lat/lon is written in degrees minutes seconds) which is <em>about</em> 10 m ground distance, but the E/W ground distance varies with latitude at Anacapa the actual ground distance per pixel is about 10.3 m N/S and about 8.5 m E/W.</p>
 <p><em>DEM Source (OPR)</em> are DEMs distributed at the source project’s original resolution and projection</p>
-<p>For Anacapa there should be 18 tiles under <em>DEM Source (OPR)</em>. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seeen in <a href="#fig-anacapa-tiles" class="quarto-xref">Figure&nbsp;3</a>. You <em>could</em> click each one and download it, it would be kind of a pain though. If you were working on a larger area, clicking and downloading each file would not be practical. Luckily, there is a download list which can be downloaded by pressing the <em>Download List</em> button shown in <a href="#fig-download-list" class="quarto-xref">Figure&nbsp;4</a>.</p>
+<p>For Anacapa there should be 18 tiles under <em>DEM Source (OPR)</em>. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seen in <a href="#fig-anacapa-tiles" class="quarto-xref">Figure&nbsp;3</a>. You <em>could</em> click each one and download it, it would be kind of a pain though. If you were working on a larger area, clicking and downloading each file would not be practical. Luckily, there is a download list which can be downloaded by pressing the <em>Download List</em> button shown in <a href="#fig-download-list" class="quarto-xref">Figure&nbsp;4</a>.</p>
 <div id="fig-download-list" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the download list icon to the right of OPR" style="--wrap-width:35%;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-download-list-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -204,7 +204,7 @@ Figure&nbsp;4: The download list icon is to the right of “(OPR)”
 </figcaption>
 </figure>
 </div>
-<p>Before downloading the data, prepare your project directory. We will be working with 2 DEM datasets for this project, the OPR DEM, and the 1 arc second DEM. Make a subdirectory within data for each</p>
+<p>Before downloading the data, prepare your project directory. You will be working with 2 DEM datasets for this project, the OPR DEM, and the 1 arc second DEM. Make a subdirectory within data for each</p>
 <pre><code>nr218/
 └── lab_8
     ├── data
@@ -217,7 +217,7 @@ Figure&nbsp;4: The download list icon is to the right of “(OPR)”
 <summary>
 Read this if Lidar Explorer is Broken
 </summary>
-<p>Bummer! This happens sometimes these days. Lets hope it comes back! in the meantime, here is a <a href="https://raw.githubusercontent.com/kulpojke/nr218/main/assets/anacapa_downloadlist.txt">link to a copy of the download list</a>.</p>
+<p>Bummer! This happens sometimes these days. Hopefully it comes back soon. In the meantime, here is a <a href="https://raw.githubusercontent.com/kulpojke/nr218/main/assets/anacapa_downloadlist.txt">link to a copy of the download list</a>.</p>
 </details>
 <div id="tip-wget" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -241,18 +241,10 @@ Windows
 </details>
 <details>
 <summary>
-Mac
+Mac or Linux
 </summary>
 <p>In <code>Terminal</code>, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data/DEM_OPR</code>). Then run:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-i</span> downloadlist.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-This tells <code>wget</code> to download each URL listed in the text file.
-</details>
-<details>
-<summary>
-Linux
-</summary>
-<p>In a terminal, first <code>cd</code> into the folder where you want the downloads to go (for example, <code>nr218/lab_8/data/DEM_OPR</code>). Then run:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-i</span> downloadlist.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 This tells <code>wget</code> to download each URL listed in the text file.
 </details>
 </div>
@@ -261,7 +253,7 @@ This tells <code>wget</code> to download each URL listed in the text file.
 </section>
 <section id="mosaicing-tiles-and-reprojection" class="level2">
 <h2 class="anchored" data-anchor-id="mosaicing-tiles-and-reprojection">Mosaicing Tiles and Reprojection</h2>
-<p>At this point you have the data you will need, however, each data set is in tiles, and they are in different projections. Before proceeding it is a good time to think about what projections the data is in and what projection you should use for the project. If you look at he CRS, under information, in the layer properties window, you will see that,</p>
+<p>At this point you have the data you will need, however, each data set is in tiles, and they are in different projections. Before proceeding it is a good time to think about what projections the data is in and what projection you should use for the project. If you look at the CRS, under information, in the layer properties window, you will see that,</p>
 <ul>
 <li>The OPR DEMs are in a compound CRS (see <a href="#tip-crs" class="quarto-xref">Tip&nbsp;2</a> to learn what that means, and be inundated with more info on reference systems)
 <ul>
@@ -270,13 +262,13 @@ This tells <code>wget</code> to download each URL listed in the text file.
 </ul></li>
 <li>The 1 arc second DEM is in EPSG:4269, a geographic CRS.</li>
 </ul>
-<p>For this project we will use EPSG:6340.</p>
+<p>For this project you will use EPSG:6340.</p>
 <p>At this point you should:</p>
 <ol type="1">
 <li>Open QGIS.</li>
 <li>Create a new project.</li>
 <li>Set the project CRS to EPSG:6340.</li>
-<li>Save the project (call it <code>anacapa.qgz</code> and save it in you lab_8 directory)</li>
+<li>Save the project (call it <code>anacapa.qgz</code> and save it in your lab_8 directory)</li>
 </ol>
 <div id="tip-crs" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -299,7 +291,7 @@ A deep dive on Coordinate Reference Systems
 <li>If this is not yet sufficiently complicated to satisfy you read <a href="https://www.ngs.noaa.gov/GEOID/GEOID18/computation.html">this explanation</a> of how geoids are used to create a vertical datum.</li>
 </ul></li>
 <li>A <strong>compound CRS</strong> combines both pieces: one CRS for horizontal position and one CRS for vertical height. That is what the OPR DEMs are doing here: horizontal location in NAD83(2011) / UTM zone 11N plus vertical height in NAVD88.</li>
-<li>Generally, when we reproject a layer that is in a compound CRS, we are just reprojecting the horizontal crs.</li>
+<li>Generally, when you reproject a layer that is in a compound CRS, you are just reprojecting the horizontal CRS.</li>
 <li>The 1 arc second DEM only advertises EPSG:4269, so its file is clearly defining the horizontal part but not explicitly encoding the vertical CRS in the raster’s CRS tag.
 <ul>
 <li>That does <strong>not</strong> mean the heights are meaningless. For many DEM products, the vertical datum is documented in the metadata or product documentation rather than embedded in the CRS that software reads automatically. The height reference is often defined somewhere, but not always within the data’s CRS description.</li>
@@ -310,19 +302,19 @@ A deep dive on Coordinate Reference Systems
 </div>
 <section id="mosaicing-the-opr-data" class="level3">
 <h3 class="anchored" data-anchor-id="mosaicing-the-opr-data">Mosaicing the OPR Data</h3>
-<div id="fig-seems" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a section of the OPR DEM over Anacapa Island showing seems at the borders of the tiles" style="--wrap-width:45%;">
+<div id="fig-seems" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a section of the OPR DEM over Anacapa Island showing seams at the borders of the tiles" style="--wrap-width:45%;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-seems-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/anacapa_tile_seems.png" class="wrap-right img-fluid figure-img" style="--wrap-width:45%;" alt="Image showing a section of the OPR DEM over Anacapa Island showing seems at the borders of the tiles">
+<img src="img/anacapa_tile_seems.png" class="wrap-right img-fluid figure-img" style="--wrap-width:45%;" alt="Image showing a section of the OPR DEM over Anacapa Island showing seams at the borders of the tiles">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seems-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: A section of the OPR DEM over Anacapa Island showing seems at the borders of the tiles.
+Figure&nbsp;5: A section of the OPR DEM over Anacapa Island showing seams at the borders of the tiles.
 </figcaption>
 </figure>
 </div>
-<p>Open the DEM tiles you saved to <code>nr218/lab_8/data/DEM_OPR</code> (you can highlight them all, and open them all at once, by clicking the top file, then holding control and clicking the bottom file in the browser). If you zoom in a little, you will be able to see seems at the borders of the tiles, similar to those shown in <a href="#fig-seems" class="quarto-xref">Figure&nbsp;5</a>. This does not occur because of sudden changes in elevation at the edges of the tiles, but rather is an artifact of the way a DEM is rendered in QGIS. When QGIS opens a single band raster, by default it rescales the colors displayed, to the range in elevation of the tile. This is done to maximize the contrast of the layer, but makes tiled data look bad.</p>
-<p>To fix the seems, and to simplify further analysis, there are a couple of approaches available. The first, mosaicing, is to join all of the tiles into a single tif file. The other is to build a virtual raster (.vrt) which is a a small sidecar file which indexes the existing tiles. We will use the virtual raster for the OPR dataset.</p>
-<p>To create a virtual raster, use the <em>Build Virtual Raster</em> tool from the processing toolbox (under <em>GDAL</em> &gt; <em>Raster miscellaneous</em>). Click the browse button at the right side of <em>Input layers</em>. If the OPD DEM tiles are the only layers you have opened you can click the add all button on the right (or click each one manually). Press the back button to go back to the precious page of the tool, then save the vrt file in the <code>DEM_OPR</code> directory alongside the DEMS. Once a vrt has been saved, the relative path between it and the tiles it has indexed must not change.</p>
+<p>Open the DEM tiles you saved to <code>nr218/lab_8/data/DEM_OPR</code> (you can highlight them all, and open them all at once, by clicking the top file, then holding control and clicking the bottom file in the browser). If you zoom in a little, you will be able to see seams at the borders of the tiles, similar to those shown in <a href="#fig-seems" class="quarto-xref">Figure&nbsp;5</a>. This does not occur because of sudden changes in elevation at the edges of the tiles, but rather is an artifact of the way a DEM is rendered in QGIS. When QGIS opens a single band raster, by default it rescales the colors displayed, to the range in elevation of the tile. This is done to maximize the contrast of the layer, but makes tiled data look bad.</p>
+<p>To fix the seams, and to simplify further analysis, there are a couple of approaches available. The first, mosaicing, is to join all of the tiles into a single tif file. The other is to build a virtual raster (.vrt) which is a small sidecar file which indexes the existing tiles. You will use the virtual raster for the OPR dataset.</p>
+<p>To create a virtual raster, use the <em>Build Virtual Raster</em> tool from the processing toolbox (under <em>GDAL</em> &gt; <em>Raster miscellaneous</em>). Click the browse button at the right side of <em>Input layers</em>. If the OPR DEM tiles are the only layers you have opened you can click the add all button on the right (or click each one manually). Press the back button to go back to the previous page of the tool, then save the vrt file in the <code>DEM_OPR</code> directory alongside the DEMs. Once a vrt has been saved, the relative path between it and the tiles it has indexed must not change.</p>
 <p>Since the OPR data is already in the project projection you need not worry about reprojecting it.</p>
 </section>
 <section id="mosaicing-and-reprojecting-the-arc-second-dems" class="level3">
@@ -342,17 +334,17 @@ Figure&nbsp;5: A section of the OPR DEM over Anacapa Island showing seems at the
 <p>Next you will create a few different derivative products from your DEMs. Some are useful as visualizations. Others are useful in analysis.</p>
 <section id="slope" class="level3">
 <h3 class="anchored" data-anchor-id="slope">Slope</h3>
-<p>Slopemaps are useful in various types of elevation. They are OK ans visualizations, but not great. Slope can be expressed as percent or degrees.</p>
-<p>Use <strong>Raster</strong> &gt; <strong>Analyis</strong> &gt; <strong>Slope</strong>.</p>
+<p>Slope maps are useful in various types of elevation. They are OK as visualizations, but not great. Slope can be expressed as percent or degrees.</p>
+<p>Use <strong>Raster</strong> &gt; <strong>Analysis</strong> &gt; <strong>Slope</strong>.</p>
 <p>Save your slopemap as a tif, into a new directory <code>nr218/lab_8/derivatives/slope.tif</code></p>
 </section>
 <section id="hillshade" class="level3">
 <h3 class="anchored" data-anchor-id="hillshade">Hillshade</h3>
 <ol type="1">
-<li>Open up the Symbology window for the 1m DEM layer (can elaborate here if needed).</li>
+<li>Open up the Symbology window for the OPR DEM layer (can elaborate here if needed).</li>
 <li>Where it says <code>Render Type</code>, click the dropdown and select <code>Hillshade</code>.</li>
 </ol>
-<p>This provides a quick, and not-great, hillshade rendering of the layer. For a better hillshade, and/or to save the hillshade as a file, use <strong>Raster</strong> &gt; <strong>Analyis</strong> &gt; <strong>Hillshade</strong>. Save the output to your <code>derivatives</code> directory as <code>hillshade_1m.tif</code></p>
+<p>This provides a quick, and not-great, hillshade rendering of the layer. For a better hillshade, and/or to save the hillshade as a file, use <strong>Raster</strong> &gt; <strong>Analysis</strong> &gt; <strong>Hillshade</strong>. Save the output to your <code>derivatives</code> directory as <code>hillshade_opr.tif</code></p>
 <div id="tip-hillshade" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -363,10 +355,10 @@ Tip&nbsp;3: Azimuth and Z Factor
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can adjust the output of our hillshade by changing the values of the <code>azimuth</code> and <code>Z factor</code>. Take a moment to play around with the values for these parameters. What do you think each one does?</p>
+<p>You can adjust the output of your hillshade by changing the values of the <code>azimuth</code> and <code>Z factor</code>. Take a moment to play around with the values for these parameters. What do you think each one does?</p>
 </div>
 </div>
-<div id="fig-hillshade" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Hillshade" alt="Image showing a hillshade render of a DEM" style="--wrap-width:45%;">
+<div id="fig-hillshade" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a hillshade render of a DEM" style="--wrap-width:45%;" data-fig-cap="Hillshade">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hillshade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/anacapa_hillshade.png" class="wrap-right img-fluid figure-img" style="--wrap-width:45%;" data-fig-cap="Hillshade" alt="Image showing a hillshade render of a DEM">
@@ -381,15 +373,15 @@ Figure&nbsp;6: Hillshade
 <section id="contour-lines" class="level3">
 <h3 class="anchored" data-anchor-id="contour-lines">Contour Lines</h3>
 <p>In Toolbox: <em>GDAL</em> &gt; <em>Raster extraction</em> &gt;<em>Contour polygons</em></p>
-<p>This creates a vector layer of contour lines. Save it you derivatives directory as contours.geojson</p>
-<p>While these changes to symbology can be useful for quick visualizations of the landscape, if we were to send our DEM file to someone else, the adjustments wouldn’t be reflected on their end. Luckily, QGIS also has processing tools that we can use to turn our hillshade and contour lines into separate layers that <em>can</em> be shared.</p>
+<p>This creates a vector layer of contour lines. Save it to your derivatives directory as contours.geojson</p>
+<p>While these changes to symbology can be useful for quick visualizations of the landscape, if you were to send your DEM file to someone else, the adjustments wouldn’t be reflected on their end. Luckily, QGIS also has processing tools that you can use to turn your hillshade and contour lines into separate layers that <em>can</em> be shared.</p>
 </section>
 <section id="hillshade-1" class="level3">
 <h3 class="anchored" data-anchor-id="hillshade-1">Hillshade</h3>
 <p>Hillshade is a useful visualization, but the pixel values are not meaningful from an analysis standpoint.</p>
 <ol type="1">
 <li>From the Raster menu, go to Analysis &gt; Hillshade (or search Hillshade in the processing tools window).</li>
-<li>Adjust the Z factor if you’d like. Let’s keep the azimuth at its default for now.</li>
+<li>Adjust the Z factor if you’d like. Keep the azimuth at its default for now.</li>
 <li>Click on the 3 dots to the right of the <code>[Save to temporary file]</code> box and select <code>Save to file</code>. Navigate to your <code>data</code> folder and name the file something you can identify it by (i.e.&nbsp;include hillshade in the name). Before you hit <code>Save</code>, make sure the file format is <code>.tif</code>.</li>
 <li>Leave all other parameters at their default and hit <code>Run</code>.</li>
 </ol>
@@ -398,7 +390,7 @@ Figure&nbsp;6: Hillshade
 <h3 class="anchored" data-anchor-id="contour-lines-1">Contour Lines</h3>
 <ol type="1">
 <li>Now go to Raster &gt; Extraction &gt; Contour (or search Contour in the processing tools window).</li>
-<li>Adjust the contour interval to the same value you used before (for this tool we don’t specify an index interval).</li>
+<li>Adjust the contour interval to the same value you used before (this tool does not specify an index interval).</li>
 <li>Save the layer as a new file the same way you did above. Make sure that the file type is <code>.geojson</code>.</li>
 <li>Leave all other parameters at their default and hit <code>Run</code>.</li>
 </ol>
@@ -406,18 +398,18 @@ Figure&nbsp;6: Hillshade
 <section id="combining-dem-visualizations" class="level3">
 <h3 class="anchored" data-anchor-id="combining-dem-visualizations">Combining DEM Visualizations</h3>
 <ol type="1">
-<li>Open up the Symbology window for our original DEM and change the Render Type to <code>Singleband pseudocolor</code>. Choose any graduated color ramp from the dropdown.</li>
-<li>Make sure your hillshade layer is the Above the DEM in the layer panel. In the Symbology window, change the <code>blending mode</code> to <code>multiply</code>. Locate the Transparency tab (one below Symbology), and adjust the layer opacity to your liking.</li>
+<li>Open up the Symbology window for your original DEM and change the Render Type to <code>Singleband pseudocolor</code>. Choose any graduated color ramp from the dropdown.</li>
+<li>Make sure your hillshade layer is above the DEM in the layer panel. In the Symbology window, change the <code>blending mode</code> to <code>multiply</code>. Locate the Transparency tab (one below Symbology), and adjust the layer opacity to your liking.</li>
 <li>Make sure your contour layer is the topmost layer. Go to the Symbology window and adjust the color and thickness of your lines to your liking.</li>
 </ol>
 </section>
 </section>
 <section id="extracting-information-from-dems" class="level2">
 <h2 class="anchored" data-anchor-id="extracting-information-from-dems">Extracting Information from DEMs</h2>
-<p>So far we have focused on visualizing elevation data, now we will shift towards analyzing it.</p>
+<p>So far you have focused on visualizing elevation data; now you will shift toward analyzing it.</p>
 <section id="slope-and-aspect" class="level3">
 <h3 class="anchored" data-anchor-id="slope-and-aspect">Slope and Aspect</h3>
-<p>You already created a slope layer. <em>Slope</em> tells us how steep the terrain is (in degrees or percent change from horizontal). <em>Aspect</em> tells us which direction each slope of the terrain faces.</p>
+<p>You already created a slope layer. <em>Slope</em> tells you how steep the terrain is (in degrees or percent change from horizontal). <em>Aspect</em> tells you which direction each slope of the terrain faces.</p>
 <p><em>Raster</em> &gt; <em>Analysis</em> &gt; <em>Aspect</em></p>
 </section>
 </section>
@@ -437,113 +429,34 @@ Figure&nbsp;6: Hillshade
 <li>In the toolbox, search for geomorphons, and select <em>r.geomorphon</em> from under GRASS.</li>
 <li>Use an outer search radius or 10, and an inner search radius of 2</li>
 <li>Save the output to your <code>derivatives</code> directory as <code>geomorph_10_2.tif</code></li>
-<li>Download <a href="https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDoJabrK0KzR78HlUsvZPE9Ab8KeYHCf2NUaLu33s11lzs?e=pREY3j">this style definition file</a> and save it somewhere sensible.</li>
+<li>Right-click <a href="https://raw.githubusercontent.com/kulpojke/nr218/main/assets/geomorph_style.qml">this style definition file</a> and use <em>save link as</em> to download it.</li>
 <li>In the symbology tab of the layer properties window for the geomorphons layer, there is a dropdown menu at the very bottom that looks like this <img src="img/style_dropdown.png" class="img-fluid" alt="Style Button">. Click it and add the file you downloaded in the last step.</li>
 </ul>
 </section>
 <section id="sampling-raster-values" class="level2">
 <h2 class="anchored" data-anchor-id="sampling-raster-values">Sampling Raster Values</h2>
-<p>Sometimes one wants to know the value of a raster at one or more specific locations. For instance you might wan to know the slope, aspect and elevation of locations where some kind of samples were collected on Anacapa.</p>
-<p>We can do this using a tool called <code>Sample Raster Values</code>. First, we’ll some points, so download <a href="https://raw.githubusercontent.com/kulpojke/nr218/main/assets/anacapa_sample_points.geojson">this point dataset</a>.</p>
-<ol type="1">
-<li>Go to Layer &gt; Create Layer &gt; New Temporary Scratch Layer</li>
-<li>Name the layer something useful, change the geometry type to to point, and make sure the CRS is 26910. Hit <code>Ok</code>.</li>
-<li>Editing should be toggled on by default, but if it’s not, click on the pencil icon. Then select <code>add point feature</code> and add ~4 points to the map (click on the map to add a point). Make sure they are on areas of overlap between both DEMs, and try to cover different levels of elevation (lighter/darker gray).</li>
-</ol>
-<div id="fig-feature_icon" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-feature_icon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/add_feature_icon.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-feature_icon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Add Feature Icon
-</figcaption>
-</figure>
-</div>
-<ol start="4" type="1">
-<li>Once you’re satisfied with your points, hit the save icon (next to the pencil) and toggle editing off.</li>
-</ol>
-<p>Now let’s check out the <code>sample raster values</code> tool using our OPR DEM.</p>
+<p>Sometimes one wants to know the value of a raster at one or more specific locations. For instance you might want to know the slope, aspect, and elevation of locations where some kind of samples were collected on Anacapa.</p>
+<p>You can do this using a tool called <em>Sample Raster Values</em>. First, you will need some points, so download <a href="https://raw.githubusercontent.com/kulpojke/nr218/main/assets/anacapa_sample_points.geojson">this point dataset</a> by right-clicking and using save link as.</p>
+<p>Now use the <em>sample raster values</em> tool on your OPR DEM.</p>
 <ol type="1">
 <li>In the processing tools window, search for <code>sample raster values</code>.</li>
-<li>Select our newly created point layer as the input, and our DEM_1_meter as the raster layer.</li>
-<li>If you’d like, change the <code>output column prefix</code> to something more informative. Then hit <code>Run</code>.</li>
+<li>Select the point layer you just downloaded as the input, and your OPR DEM as the raster layer.</li>
+<li>Change the <code>output column prefix</code> to “elevation_”.</li>
 </ol>
-<p>Examine the output of the tool. What did it do? Before we move on, rename the output layer (called <code>Sampled</code> by default) to something more useful.</p>
-<p>Now run the same steps as above, but use the output layer as your input and the 30 meter DEM as your raster. You should now have a new point layer that includes the elevation attributes from both DEMs. Open the attribute table and look at the values - why do you think the values are different? Are there certain areas where they’re closer than other areas? Why might that be?</p>
-<p><strong>Take a screenshot of your final attribute table and add it to your submission doc.</strong></p>
-<p>Now let’s talk about visualizing elevation. By default, the numerical values of each pixel in a DEM are symbolized on a scale of black and white, also known as <code>Singleband gray</code>. In this state it’s pretty difficult to gain any information from the image, so let’s change it to something more useful.</p>
-</section>
-<section id="task-4-putting-it-all-together" class="level2">
-<h2 class="anchored" data-anchor-id="task-4-putting-it-all-together">Task 4: Putting It All Together</h2>
-<p>Oh no! Hydrologists at Swanton Pacific Ranch have lost track of all of their rain gauges! Luckily, we have the point layer open in QGIS right now. Since we have it open, they’ve asked for our help identifying one specific rain gauge. The rain gauge they’re looking for is:</p>
-<ul>
-<li>On a slope that’s facing Northwest</li>
-<li>Above 200 meters of elevation</li>
-<li>On a relatively flat area (less than 5 degrees of steepness)</li>
-</ul>
-<blockquote class="blockquote">
-<p>Note! the pixel values for the Swanton Pacific Ranch DEM are in meters.</p>
-</blockquote>
-<p>Using the layers that you’ve created, and the tools we’ve practiced with in this lab (OR tools that we’ve used in past labs… hint hint…), identify which rain gauge the team is looking for.</p>
-<p><strong>Once you have your answer, note which rain gauge the hydrologists are looking for, what the associated values are for slope, aspect, and elevation, and explain how you reached your conclusion on your submission doc.</strong></p>
-<section id="bonus-exporting-a-map" class="level3">
-<h3 class="anchored" data-anchor-id="bonus-exporting-a-map">Bonus: Exporting a Map</h3>
-<p>Great! Now that we’ve found the rain gauge, the hydrologists need a way to navigate to it. Let’s make them a couple maps to use as a reference. First, we’ll make a <code>GeoPDF</code>, or a georeferenced PDF.</p>
-<p><strong>Exporting a GeoPDF</strong></p>
-<p>Re-run the steps above to generate hillshade and contour layers for the SPR DEM. You can either do this using the Symbology tab, or generate two new layers. Once you have a map image that you’re satisfied with, go to <code>Project &gt; Import/Export &gt; Export Map to PDF</code>.</p>
-<p>In the popup window, you can leave everything at its default, but make sure to check the box next to <code>Create Geospatial PDF</code>. Hit Save, and then navigate to your <code>lab_8/docs</code> folder and choose an appropriate name for the file.</p>
-<p>Let’s take a look at what we just exported! Locate the file on your computer and open it in Adobe or a similar PDF viewer. Look for a <code>Layers</code> icon, and see what you can do - you should be able to toggle the map layers on and off. Pretty cool!</p>
-<div id="tip-avenza" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip&nbsp;4: Using a GeoPDF in the Field
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you have the app <code>Avenza</code> on your phone, or something similar, you can import GeoPDFs from QGIS and use them as your base map! In this case, someone could in theory travel to Swanton and use the PDF we just exported to locate the missing rain gauge.</p>
-</div>
-</div>
-<p><strong>Exporting a Print Layout</strong></p>
-<p>It’s good practice for us to also export the map as a flattened PDF.</p>
-<ol type="1">
-<li>Create a new map layout by clicking the <code>New Print Layout</code> icon or hitting <code>Ctrl/Cmd + P</code>. Name it something useful.</li>
-</ol>
-<div id="tip-grids" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip&nbsp;5: Using Guidelines for Easier Map Making
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When setting up a map layout, we can make our lives easier by putting down guide lines for map items to automatically snap to. Let’s try it now - select the <code>Guides</code> tab on the right panel and add some horizontal and vertical lines. You can click on the side rulers, or manually type in the values that you’d like your lines to appear at.</p>
-</div>
-</div>
-<ol start="2" type="1">
-<li>Now add a new map to the layout (Add Item &gt; Add Map or click the Add Map Icon on the left side panel). Adjust the map to your liking by selecting <code>Move Item Contents</code> or hitting the <code>C</code> key. You can also manually set the scale of the map in the Item Properties window. Do that now, and change it to a round number large enough to view the entire extent of the layers.</li>
-<li>Next we’ll add a legend. Once you’ve created one, go to the Item Properties tab on the right and do some clean-up. Remember we can adjust which layers are included in our legend by un-checking <code>Auto-update</code>, and then removing unwanted entries. We can also rename the entries we <em>are</em> keeping by double clicking on their names.</li>
-<li>Next let’s add a scale bar. Play around with the number and width of each segments - you want to end up with a value that will be informative to your viewers. Place a second scale bar next to the first, and change the <code>Style</code> to <code>Numeric</code>. What does this number mean? Think back to step 1 - why is it helpful to set the scale to be a round number?</li>
-<li>Lastly, add a map title.</li>
-<li>Click the <code>Export as PDF</code> icon, or go to Layout &gt; Export as PDF.</li>
-<li>Save your pdf in your <code>lab_8/docs</code> folder, and name it something useful.</li>
-<li>In this case, you can leave all of the parameters as-is and just hit save.</li>
-</ol>
-<p><strong>Use <code>tree</code> to show the directory structure for the project so far. Include it in your submission doc.</strong></p>
-<p><strong>Upload your final map in addition to your submission doc.</strong> ```</p>
-</section>
+<p>Examine the output of the tool by opening the attribute table. What did it do? Rename the output layer (called <code>Sampled</code> by default) to something more useful.</p>
+<p>Now run the same steps as above, but this time use the output layer as your input and the slope as your raster (Change the <code>output column prefix</code> to “slope_” this time). You should now have a new point layer that includes the elevation and the slope. Open the attribute table and look at the values.</p>
+<p>Repeat this process for aspect.</p>
+<p>Save your final layer, with elevation, slope, and aspect attributes to your <code>derivatives</code> directory as <code>samples.geojson</code></p>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <p>Save a file <code>questions.txt</code> (use notepad or similar) in your <code>lab_8</code> directory with answers to the following.</p>
 <ol type="1">
-<li>We used EPSG:6340 for the project. Why is this a good choice? Why not use EPSG:26911, or EPSG:4269?</li>
-<li>When what units are the pixel values of the 1m DEM in? How do you know?</li>
+<li>You used EPSG:6340 for the project. Why is this a good choice? Why not use EPSG:26911, or EPSG:4269?</li>
+<li>In what units are the pixel values (i.e.&nbsp;elevation) of the OPR DEM? How do you know? (F.Y.I., This is not a terribly simple answer.)</li>
+<li>What is the resolution of the OPR DEM?</li>
+<li>Why is the y resolution listed as negative?</li>
+<li>What is the advantage of building a VRT instead of creating a full mosaic, and when would a mosaic be the better choice?</li>
 </ol>
 
 
