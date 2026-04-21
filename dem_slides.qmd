@@ -464,3 +464,12 @@ Try again, what resampling method should you use?
 :::
 
 :::
+
+## Aspect {.smaller}
+[The direction slope is pointing in the X, y plane.]{style="font-size:0.7em"}
+
+![](img/aspect.png){style="display:block; margin:0 auto; width:70%; max-height:90vh; object-fit:contain;"}
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [ESRI](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/spatial-analyst/how-aspect-works.htm)
+:::

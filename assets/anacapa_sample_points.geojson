@@ -1,0 +1,24 @@
+{
+"type": "FeatureCollection",
+"name": "anacapa_sample_points",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::6340" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 282124.432719774194993, 3766419.073322933167219 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 281552.418475677899551, 3766245.973323413636535 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 280055.075182298198342, 3765764.753707744181156 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 278714.90442468150286, 3765176.165199333336204 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 277808.090041390620172, 3765412.894203817006201 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 277015.112556430161931, 3765658.67841612175107 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 276515.782525117392652, 3765731.120078695937991 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 276094.068560848012567, 3765917.398639600258321 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 275615.436147413449362, 3766077.805178156588227 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 275400.698361926653888, 3766370.15903068613261 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 274976.397195422498044, 3766121.787616147194058 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 276176.859032361069694, 3766189.05487425159663 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 275768.081079265568405, 3765816.497752442955971 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 276575.28817651735153, 3765930.334650773089379 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 276456.276873717433773, 3766158.008447434287518 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 276326.916761978354771, 3765961.381077590864152 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 275064.362071405048482, 3766313.240581520833075 ] } }
+]
+}
