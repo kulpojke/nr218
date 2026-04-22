@@ -193,14 +193,6 @@ Use __Raster__ > __Analysis__ > __Slope__.
 
 Save your slopemap as a tif, into a new directory `nr218/lab_8/derivatives/slope.tif`
 
-### Hillshade
-
-1. Open up the Symbology window for the OPR DEM layer (can elaborate here if needed).
-2. Where it says `Render Type`, click the dropdown and select `Hillshade`.
-
-This provides a quick, and not-great, hillshade rendering of the layer.  For a better hillshade, and/or to save the hillshade as a file, use __Raster__ > __Analysis__ > __Hillshade__.  Save the output to your `derivatives` directory as `hillshade_opr.tif`
-
-
 ::: {#tip-hillshade .callout-tip}
 ## Azimuth and Z Factor
 
@@ -208,23 +200,8 @@ You can adjust the output of your hillshade by changing the values of the `azimu
 
 :::
 
-
-
 ![Hillshade](img/anacapa_hillshade.png){#fig-hillshade fig-alt="Image showing a hillshade render of a DEM" fig-cap="Hillshade" .wrap-right style="--wrap-width:45%;"}
 
-Try the same process with your 30 meter DEM. How do the outputs differ?
-
-
-
-### Contour Lines
-
-In Toolbox:
-_GDAL_ > _Raster extraction_ >_Contour polygons_
-
-This creates a vector layer of contour lines. Save it to your derivatives directory as contours.geojson
-
-
-While these changes to symbology can be useful for quick visualizations of the landscape, if you were to send your DEM file to someone else, the adjustments wouldn't be reflected on their end. Luckily, QGIS also has processing tools that you can use to turn your hillshade and contour lines into separate layers that _can_ be shared.
 
 ### Hillshade
 
