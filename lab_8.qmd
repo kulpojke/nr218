@@ -124,7 +124,7 @@ After downloading the OPR tiles from the downloadlist,  you will need to downloa
 
 ## Mosaicing Tiles and Reprojection
 
-At this point you have the data you will need, however, each data set is in tiles, and they are in different projections. Before proceeding it is a good time to think about what projections the data is in and what projection you should use for the project.  If you look at the CRS, under information, in the layer properties window, you will see that,
+At this point you have the data you will need, however, each data set is in tiles, and they are in different projections. Before proceeding it is a good time to think about what projections the data is in and what projection you should use for the project.  If you were to look at the CRS (which you need not do currently), under information, in the layer properties window, you would see that,
 
 + The OPR DEMs are in a compound CRS (see @tip-crs to learn what that means, and be inundated with more info on reference systems) 
   + NAD83(2011) / UTM zone 11N = EPSG:6340
