@@ -215,7 +215,7 @@ Hillshade is a useful visualization, but the pixel values are not meaningful fro
 ### Contour Lines
 
 1. Now go to Raster > Extraction > Contour (or search Contour in the processing tools window).
-2. Adjust the contour interval to the same value you used before (this tool does not specify an index interval).
+2. Adjust the contour interval to 10 meters (this tool does not specify an index interval).
 3. Save the layer as a new file the same way you did above. Make sure that the file type is `.geojson`.
 4. Leave all other parameters at their default and hit `Run`.
 
