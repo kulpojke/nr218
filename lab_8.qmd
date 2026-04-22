@@ -87,6 +87,7 @@ Bummer!  This happens sometimes these days. Hopefully it comes back soon. In the
 
 ::: {#tip-wget .callout-tip}
 ## How to download files using the download list
+The following commands fetch the DEMs from th URLs in `downloadlist.txt`.  Note that they are assuming that `downloadlist.txt` is in the directory where you are running the command.  If it is not, you can adjust the path to `downloadlist.txt`(e.g. to `~/Downloads/downloadlist.txt` if it sits in your Downloads folder)  
 
 <details>
 <summary>Windows</summary>
