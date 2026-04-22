@@ -14,13 +14,13 @@ Now that you've learned a bit about what DEMs are and what they can be used for,
 
 __Quick file organization housekeeping:__
 
-Make a new folder inside your `nr218` directory called `lab_8`. Inside that folder, make a `data` folder and a `docs` folder. All downloaded files will go in the `data` folder, and all generated outputs (more on this later) will go in `docs`. You should have a directory structure as shown below. 
+Make a new folder inside your `nr218` directory called `lab_8`. Inside that folder, make a `data` folder. All downloaded files will go in the `data` folder, and all generated outputs (more on this later) will go in `docs`. You should have a directory structure as shown below. 
 
 ```
 nr218/
 └── lab_8
-    ├── data
-    └── lab_8
+    └── data
+    
 
 ```
 
@@ -71,9 +71,9 @@ Before downloading the data, prepare your project directory.   You will be worki
 nr218/
 └── lab_8
     ├── data
-    │     ├──DEM_OPR   
-    │     └──DEM_1arc
-    └── lab_8
+          ├──DEM_OPR   
+          └──DEM_1arc
+    
 
 ```
 

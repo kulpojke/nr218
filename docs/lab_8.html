@@ -141,11 +141,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Lab 8: DEMs</h1>
 <p>Now that you’ve learned a bit about what DEMs are and what they can be used for, get some practice working with them in QGIS.</p>
 <p><strong>Quick file organization housekeeping:</strong></p>
-<p>Make a new folder inside your <code>nr218</code> directory called <code>lab_8</code>. Inside that folder, make a <code>data</code> folder and a <code>docs</code> folder. All downloaded files will go in the <code>data</code> folder, and all generated outputs (more on this later) will go in <code>docs</code>. You should have a directory structure as shown below.</p>
+<p>Make a new folder inside your <code>nr218</code> directory called <code>lab_8</code>. Inside that folder, make a <code>data</code> folder. All downloaded files will go in the <code>data</code> folder, and all generated outputs (more on this later) will go in <code>docs</code>. You should have a directory structure as shown below.</p>
 <pre><code>nr218/
 └── lab_8
-    ├── data
-    └── lab_8
+    └── data
+    
 </code></pre>
 <section id="par-1-finding-data-online" class="level2">
 <h2 class="anchored" data-anchor-id="par-1-finding-data-online">Par 1: Finding Data Online</h2>
@@ -183,7 +183,7 @@ Figure&nbsp;2: Defined area of interest
 <li>DEM ~30m 1</li>
 <li>DEM Source (OPR)</li>
 </ul>
-<div id="fig-anacapa-tiles" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:35%;" alt="Image showing The extent of the OPR tiles for Anacapa Island">
+<div id="fig-anacapa-tiles" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing The extent of the OPR tiles for Anacapa Island" style="--wrap-width:35%;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-anacapa-tiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/anacapa_tiles.png" class="wrap-right img-fluid figure-img" style="--wrap-width:35%;" alt="Image showing The extent of the OPR tiles for Anacapa Island">
@@ -197,7 +197,7 @@ Figure&nbsp;3: The extent of OPR DEM tiles is displayed when one hovers over the
 <p><em>DEMs ~10m 1/3</em> are the seamless 3DEP elevation layer, blended across larger areas and distributed as a nationwide medium-resolution product. The resolution is 1/3 arc second (recall that sometimes lat/lon is written in degrees minutes seconds) which is <em>about</em> 10 m ground distance, but the E/W ground distance varies with latitude at Anacapa the actual ground distance per pixel is about 10.3 m N/S and about 8.5 m E/W.</p>
 <p><em>DEM Source (OPR)</em> are DEMs distributed at the source project’s original resolution and projection</p>
 <p>For Anacapa there should be 18 tiles under <em>DEM Source (OPR)</em>. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seen in <a href="#fig-anacapa-tiles" class="quarto-xref">Figure&nbsp;3</a>. You <em>could</em> click each one and download it, it would be kind of a pain though. If you were working on a larger area, clicking and downloading each file would not be practical. Luckily, there is a download list which can be downloaded by pressing the <em>Download List</em> button shown in <a href="#fig-download-list" class="quarto-xref">Figure&nbsp;4</a>.</p>
-<div id="fig-download-list" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:35%;" alt="Image showing the download list icon to the right of OPR">
+<div id="fig-download-list" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing the download list icon to the right of OPR" style="--wrap-width:35%;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-download-list-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/lidar_exp_download_list.png" class="wrap-right img-fluid figure-img" style="--wrap-width:35%;" alt="Image showing the download list icon to the right of OPR">
@@ -211,9 +211,9 @@ Figure&nbsp;4: The download list icon is to the right of “(OPR)”
 <pre><code>nr218/
 └── lab_8
     ├── data
-    │     ├──DEM_OPR   
-    │     └──DEM_1arc
-    └── lab_8
+          ├──DEM_OPR   
+          └──DEM_1arc
+    
 </code></pre>
 <p>For directions on downloading the data see <a href="#tip-wget" class="quarto-xref">Tip&nbsp;1</a>.</p>
 <details>
@@ -305,7 +305,7 @@ A deep dive on Coordinate Reference Systems
 </div>
 <section id="mosaicing-the-opr-data" class="level3">
 <h3 class="anchored" data-anchor-id="mosaicing-the-opr-data">Mosaicing the OPR Data</h3>
-<div id="fig-seems" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:45%;" alt="Image showing a section of the OPR DEM over Anacapa Island showing seams at the borders of the tiles">
+<div id="fig-seems" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a section of the OPR DEM over Anacapa Island showing seams at the borders of the tiles" style="--wrap-width:45%;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-seems-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/anacapa_tile_seems.png" class="wrap-right img-fluid figure-img" style="--wrap-width:45%;" alt="Image showing a section of the OPR DEM over Anacapa Island showing seams at the borders of the tiles">
@@ -361,7 +361,7 @@ Tip&nbsp;3: Azimuth and Z Factor
 <p>You can adjust the output of your hillshade by changing the values of the <code>azimuth</code> and <code>Z factor</code>. Take a moment to play around with the values for these parameters. What do you think each one does?</p>
 </div>
 </div>
-<div id="fig-hillshade" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a hillshade render of a DEM" style="--wrap-width:45%;" data-fig-cap="Hillshade">
+<div id="fig-hillshade" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a hillshade render of a DEM" data-fig-cap="Hillshade" style="--wrap-width:45%;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hillshade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/anacapa_hillshade.png" class="wrap-right img-fluid figure-img" style="--wrap-width:45%;" data-fig-cap="Hillshade" alt="Image showing a hillshade render of a DEM">
