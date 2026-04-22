@@ -120,7 +120,7 @@ This tells `wget` to download each URL listed in the text file.
 
 :::
 
-After downloading the OPR tiles from the downloadlist,   Download ~30m DEMS.  Under the _DEM ~30m 1_ heading click the _Current_ button.  There should be 2 tiles listed. Click the download button next to each of the two files.  After they download, move them to `nr218/lab_8/data/DEM_1arc`
+After downloading the OPR tiles from the downloadlist,  you will need to download the ~30m DEMS.  Under the _DEM ~30m 1_ heading click the _Current_ button.  Once the button is clicked, there should be 2 tiles listed. Now click the download button next to each of the two files.  After they download, move them to `nr218/lab_8/data/DEM_1arc`
 
 ## Mosaicing Tiles and Reprojection
 
