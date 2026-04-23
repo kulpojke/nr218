@@ -14,7 +14,7 @@ Now that you've learned a bit about what DEMs are and what they can be used for,
 
 __Quick file organization housekeeping:__
 
-Make a new folder inside your `nr218` directory called `lab_8`. Inside that folder, make a `data` folder. All downloaded files will go in the `data` folder, and all generated outputs (more on this later) will go in `docs`. You should have a directory structure as shown below. 
+Make a new folder inside your `nr218` directory called `lab_8`. Inside that folder, make a `data` folder. All downloaded files will go in the `data` folder You should have a directory structure as shown below. 
 
 ```
 nr218/
@@ -184,7 +184,7 @@ There are only 2 tiles for the Arc second resolution DEM.  You will join them by
 
 ## DEM derivative products
 
-Next you will create a few different derivative products from your DEMs.  Some are useful as visualizations. Others are useful in analysis.
+Next you will create a few different derivative products from your OPR DEMs (you will not be using the arc second DEMs anymore for the lab).  Some are useful as visualizations. Others are useful in analysis.
 
 ### Slope 
 
