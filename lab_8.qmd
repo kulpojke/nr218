@@ -59,13 +59,9 @@ _DEMs 1 Meter_ holds Project-based bare-earth DEM, usually derived from lidar an
 _DEMs ~10m 1/3_ are the seamless 3DEP elevation layer, blended across larger areas and distributed as a nationwide medium-resolution product. The resolution is 1/3 arc second (recall that sometimes lat/lon is written in degrees minutes seconds) which is _about_ 10 m ground distance, but the E/W ground distance varies with latitude at Anacapa the actual ground distance per pixel is  about 10.3 m N/S
 and about 8.5 m E/W.
 
-_DEM Source (OPR)_ are DEMs distributed at the source project's original resolution and projection
+_DEM Source (OPR)_ are DEMs distributed at the source project's original resolution and projection.  For Anacapa there should be 18 tiles under _DEM Source (OPR)_. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seen in @fig-anacapa-tiles. 
 
-
-For Anacapa there should be 18 tiles under _DEM Source (OPR)_. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seen in @fig-anacapa-tiles. You _could_ click each one and download it, it would be kind of a pain though.  If you were working on a larger area, clicking and downloading each file would not be practical.  Luckily, there is a download list which can be downloaded by pressing the _Download List_ button shown in @fig-download-list. The downloadlist __is not the DEM data__ but just a list of URLs where the data is stored (in an Amazon Cloud Bucket).  In order to get the data, you must download the actual DEM tif files . __For directions on downloading the data see__ @tip-wget.
-
-![The download list icon is to the right of "(OPR)"](img/lidar_exp_download_list.png){#fig-download-list fig-alt="Image showing the download list icon to the right of OPR" .wrap-right style="--wrap-width:35%;"}
-
+Before downloading the data, prepare your project directory.   You will be working with 2 DEM datasets for this project, the OPR DEM, and the 1 arc second DEM.  Make a subdirectory within data for each, as shown below.
 
 ```
 nr218/
@@ -76,7 +72,14 @@ nr218/
     
 
 ```
-Before downloading the data, prepare your project directory.   You will be working with 2 DEM datasets for this project, the OPR DEM, and the 1 arc second DEM.  Make a subdirectory within data for each, as shown above.
+
+To download the OPR DEM you _could_ click the download button beside each tile and download it, it would be kind of a pain though.  If you were working on a larger area, clicking and downloading each file would not be practical.  It is useful to know how to
+download the tiles in bulk using a download list.  The download list can be downloaded by pressing the _Download List_ button,  shown in @fig-download-list. The download list __is not the DEM data__ but just a list of URLs where the data is stored (in an Amazon Cloud Bucket).  In order to get the data, you must download the actual DEM tif files.  Downloading from a list is a common way of getting large tiled datasets. __For directions on downloading the data see__ @tip-wget. 
+
+![The download list icon is to the right of "(OPR)"](img/lidar_exp_download_list.png){#fig-download-list fig-alt="Image showing the download list icon to the right of OPR" .wrap-right style="--wrap-width:35%;"}
+
+After downloading the OPR tiles from the downloadlist,  you will need to download the ~30m DEMS.  Under the _DEM ~30m 1_ heading click the _Current_ button.  Once the button is clicked, there should be 2 tiles listed. Now click the download button next to each of the two files.  After they download, move them to `nr218/lab_8/data/DEM_1arc`
+
 
 <details>
 <summary>Read this if Lidar Explorer is Broken</summary>
@@ -119,8 +122,6 @@ This tells `wget` to download each URL listed in the text file.
 
 
 :::
-
-After downloading the OPR tiles from the downloadlist,  you will need to download the ~30m DEMS.  Under the _DEM ~30m 1_ heading click the _Current_ button.  Once the button is clicked, there should be 2 tiles listed. Now click the download button next to each of the two files.  After they download, move them to `nr218/lab_8/data/DEM_1arc`
 
 ## Mosaicing Tiles and Reprojection
 
@@ -258,7 +259,7 @@ Together with hillshade and contours, slope and aspect are often categorized as 
 
 Sometimes one wants to know the value of a raster at one or more specific locations.  For instance you might want to know the slope, aspect, and elevation of locations where some kind of samples were collected on Anacapa. 
 
-You can do this using a tool called _Sample Raster Values_. First, you will need some points, so download [this point dataset](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/anacapa_sample_points.geojson) by right-clicking and using save link as.
+You can do this using a tool called _Sample Raster Values_.  Sample raster values samples the raster at a given point, and attaches that value as an attribute to the point. First, you will need some points, so download [this point dataset](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/anacapa_sample_points.geojson) by right-clicking and using save link as.
 
 Now use the _sample raster values_ tool on your OPR DEM.
 
