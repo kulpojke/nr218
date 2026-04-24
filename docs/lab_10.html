@@ -245,7 +245,7 @@ Figure&nbsp;2: Transparency tab in symbology.
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
+<td>-1 to 0</td>
 <td>Water, clouds, or non-vegetated surfaces.</td>
 </tr>
 <tr class="even">
@@ -278,7 +278,7 @@ SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 <p>Where <span class="math inline">\(L\)</span> is often 0.5, but can be adjusted for more reflective exposed soil. The soil in the Klamath Mountains, where this data is from, tends to be highly reflective, which means a fairly high value of <span class="math inline">\(L\)</span> (close to 1) should be used. Experiment with values of <span class="math inline">\(L\)</span> to see if you can make a raster where contrast between trees and soil is higher than in your NDVI raster.</p>
 <blockquote class="blockquote">
 <p>Question 7. a) Were you able to improve upon NDVI using SAVI? b) What value of <span class="math inline">\(L\)</span> did you end up using?<br>
-c) NDVI is defined on the interval [0-1], what about SAVI?</p>
+c) NDVI is defined on the interval [-1, -1], what about SAVI?</p>
 </blockquote>
 </section>
 <section id="finding-zonal-statistics" class="level2">
