@@ -117,17 +117,13 @@ window.Quarto = {
 
 <section id="a-quick-lesson-in-multi-band-rasters-using-naip" class="level1">
 <h1>A Quick Lesson in Multi-band Rasters Using NAIP</h1>
-<p>In this exercise you will explore some visualizations and calculate simple spectral indices using NAIP imagery, as well as getting practice performing spatial overlays and merging vectors.</p>
-<p>Create a document, answer the questions and include the requested figures. Submit the document as pdf on Canvas.</p>
-<blockquote class="blockquote">
-<p>Questions will be included in this format, with a sidebar and in grey, throughout the exercise.</p>
-</blockquote>
+<p>In this exercise you will explore some visualizations and calculate simple spectral indices using NAIP imagery (see <a href="#tip-naip" class="quarto-xref">Tip&nbsp;1</a>). You will also get some more practice performing spatial overlays and merging vectors.</p>
 <section id="data-and-directory-structure" class="level2">
 <h2 class="anchored" data-anchor-id="data-and-directory-structure">Data and directory structure</h2>
-<p>First we will need the data. Download the vector file of fire perimeters and 2022 NAIP (see <a href="#tip-naip" class="quarto-xref">Tip&nbsp;1</a> for information about NAIP ) image below. The NAIP image may take a while, but should be done by the time you need it.</p>
+<p>First we will need the data. Download the vector file of fire perimeters and the 2022 NAIP image below.</p>
 <ul>
-<li><a href="https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDiOQnn5iZ2SoC9RFOZXMQ6AYohr1UK1PuzRVCWknsOpLQ?e=iYy6tc">fire perimeters</a></li>
-<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQCbn6SrRXfWTpTedYV781GaAbW2xG9DhHjKKUhU6wykXD0?e=kNQDzz">NAIP image</a></li>
+<li><a href="https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDiOQnn5iZ2SoC9RFOZXMQ6AYohr1UK1PuzRVCWknsOpLQ?e=XmKEES">fire perimeters</a></li>
+<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQCbn6SrRXfWTpTedYV781GaAf0KYHKhx3KR9q1ULPDs69g?e=G4GTkg">NAIP image</a> (This NAIP file has been clipped and slightly downsampled from 0.6 m resolution to 1 m resolution.)</li>
 </ul>
 <p><span style="font-size:0.3.5em">The fire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from <a href="https://data.ca.gov/group/fire">California Open Data Portal</a></span>.</p>
 <div id="tip-naip" class="callout callout-style-default callout-tip callout-titled">
@@ -150,24 +146,34 @@ Tip&nbsp;1: What is NAIP
 </ul>
 </div>
 </div>
-<p>Create a working directory, called <code>lab_10</code>, for this lab in you nr218 Folder. Create a <code>data</code> folder and put the downloaded data inside. Also create a <code>docs</code> directory and an <code>img</code> directory in the lab directory. You will store your submission document in <code>docs</code>, and any images you create in <code>img</code>.</p>
-<p>Open QGIS, start a new project, and save it in the <code>lab_10</code> folder as <code>lab10_your_name.qgz</code> (use your actual name)</p>
-<p>You should then have something like this.</p>
+<p>Create a working directory, called <code>lab_10</code>, for this lab in your <code>nr218</code> folder. Create a <code>data</code> folder and put the downloaded data inside. Then:</p>
+<ul>
+<li>Open QGIS and start a new project</li>
+<li>Change the project CRS to EPSG:6339</li>
+<li>Save it in the <code>lab_10</code> folder as <code>coffee_fire.qgz</code></li>
+</ul>
+<p>Also create a text document (using Notepad, TextEdit, gedit, or similar), name it <code>answers.txt</code>, and save it in <code>lab_10</code>. Throughout this lab there will be questions included in the format of the text below. Answer the questions in <code>answers.txt</code>.</p>
+<blockquote class="blockquote">
+<p>Questions will be included in this format, with a sidebar and in grey, throughout the exercise.</p>
+</blockquote>
+<p>You should now have a directory structure like this.</p>
 <pre><code>lab_10/
-├── lab10_your_name.qgz
+├── coffee_fire.qgz
 ├── data/
 │   ├── subset_of_cal_hist_fires.geojson
 │   └── naip_2022.tif
-└── docs/
-└── img/
-    </code></pre>
-<p>Your submission document, as well as any images</p>
+└── answers.txt</code></pre>
 </section>
 <section id="data-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
+<p>During this workflow, there is no need to save any file with <em>scratch</em> in the name. You will want to save other files in your data directory.</p>
 <ol type="1">
-<li>Open the fire perimeters dataset in QGIS.</li>
+<li><p>Open <code>subset_of_cal_hist_fires.geojson</code> in QGIS.</p></li>
+<li><p>Add a basemap.</p></li>
 </ol>
+<blockquote class="blockquote">
+<p>Question 1. Where are these fire perimeters?</p>
+</blockquote>
 <div id="fig-vectors" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:40%;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -178,14 +184,22 @@ Figure&nbsp;1: Vectors created while creating <code>fires_in_AOI</code>
 </figcaption>
 </figure>
 </div>
-<ol start="2" type="1">
-<li><p>Extract the perimeter of the Coffee Fire (<code>FIRE_NAME</code> is <code>COFFEE</code>). There are a few ways you can do this, your choice. Name the resulting layer <code>Coffee</code> (and save a file).</p></li>
-<li><p>Reduce the fire perimeter layer, <code>subset_of_cal_hist_fires</code>, by selecting only fires that have happened since 2014 (Hint: extract by attribute). i.e.&nbsp;<code>YEAR_ &gt; 2013</code>. Name the resulting layer <code>scratch_1</code>.</p></li>
-<li><p>Now extract all of the polygons which <em>overlap</em> the <code>Coffee</code> (Hint: “select by location”). Name the result, <code>scratch_2</code>.</p></li>
-<li><p>Use the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire. Name the result <code>extent</code>.</p></li>
-<li><p>Buffer “extent” by 1000 m, use mitered joint style. (try it with default joint style too, what is the difference). name the buffered layer, our area of interest, <code>AOI</code>. <a href="#fig-vectors" class="quarto-xref">Figure&nbsp;1</a> shows the layers that should have been created at this point (AOI is still called <code>Buffered</code> in the image).</p></li>
-<li><p>Clip <code>scratch_2</code> by the AOI. Save the results as <code>fires_in_AOI</code>.</p></li>
-<li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly you can delete <code>scratch_1</code>, <code>scratch_2</code>, and <code>extent</code>.</p></li>
+<blockquote class="blockquote">
+<p>Question 2. What CRS is <code>subset_of_cal_hist_fires.geojson</code> in? Is there something you should do regarding the CRS?</p>
+</blockquote>
+<ol start="3" type="1">
+<li><p>Extract the perimeter of the Coffee Fire (<code>FIRE_NAME</code> is <code>COFFEE</code>). There are a few ways you can do this, your choice. Name the resulting layer <code>Coffee fire</code>. (I would recommend naming the file you save <code>coffee_fire.geojson</code>.)</p></li>
+<li><p>Reduce the number of polygons in the fire perimeter layer, <code>subset_of_cal_hist_fires</code>, by selecting only fires that have happened since 2014 (Hint: extract by attribute), i.e.&nbsp;<code>YEAR_ &gt; 2013</code>. Name the resulting layer <code>scratch_1</code>.</p></li>
+<li><p>Use the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire. Name the result <code>scratch_extent</code>.</p></li>
+<li><p>Buffer <code>scratch_extent</code> by 1000 m, using mitered joint style. Name the buffered layer, our area of interest, <code>AOI</code>. <a href="#fig-vectors" class="quarto-xref">Figure&nbsp;1</a> shows the layers that should have been created at this point (AOI is still called <code>Buffered</code> in the image).</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>Question 3. Try buffering <code>scratch_extent</code> with the default joint style instead of mitered. What is the difference?</p>
+</blockquote>
+<ol start="7" type="1">
+<li><p>Now extract all of the polygons in <code>scratch_1</code> which <em>overlap</em> <code>AOI</code> (Hint: “select by location”). Name the result <code>scratch_2</code>.</p></li>
+<li><p>Clip <code>scratch_2</code> by <code>AOI</code>. Save the results as <code>fires_in_AOI</code>.</p></li>
+<li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly, you can delete <code>scratch_1</code>, <code>scratch_2</code>, and <code>scratch_extent</code>. (Now you should not have any temporary layers in your layer panel.)</p></li>
 </ol>
 <div id="fig-transparency" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:40%;">
 <figure class="quarto-float quarto-float-fig figure">
@@ -197,16 +211,12 @@ Figure&nbsp;2: Transparency tab in symbology.
 </figcaption>
 </figure>
 </div>
-<ol start="9" type="1">
+<ol start="10" type="1">
 <li>Open <code>naip_2022</code>. If you have a basemap on, turn it off so that the NAIP imagery is over a white background. Notice that the image looks very pale. Open the Layer Properties dialog. Go to the Transparency tab on the left (see <a href="#fig-transparency" class="quarto-xref">Figure&nbsp;2</a>). Change the transparency band to None. See the change that occurs.</li>
 </ol>
 <blockquote class="blockquote">
-<p><strong>Question 1:</strong> On your submission document Explain what just happened when you made that change. What is band 4 in the image? Why was QGIS interpreting it as a transparency band?</p>
+<p>Question 4. What just happened when you made that change. What is band 4 in the image? QGIS was interpreting it as a transparency band, why?</p>
 </blockquote>
-<ol start="10" type="1">
-<li>Clip <code>naip_2022</code> to the AOI.</li>
-<li>Name the result <code>naip_2022_clipped</code></li>
-</ol>
 </section>
 <section id="explore-visualizations-and-spectral-indices" class="level2">
 <h2 class="anchored" data-anchor-id="explore-visualizations-and-spectral-indices">Explore Visualizations and Spectral Indices</h2>
@@ -219,13 +229,12 @@ Figure&nbsp;2: Transparency tab in symbology.
 </ol></li>
 </ol>
 <blockquote class="blockquote">
-<p><strong>Question 2:</strong><br>
-a) Why do trees stand out from the ground using this false color image?<br>
-b) Use <em>Project –&gt; Import/export –&gt; Export Map to Image</em> , to make an image. Include the image as part of question 2</p>
+<p>Question 5. Why do trees stand out from the ground using this false color image?</p>
 </blockquote>
 <ol start="2" type="1">
-<li>Calculate Normalized Difference Vegetation Index (NDVI) using the Raster Calculator. Save the file as <code>NDVI.tif</code> <span class="math display">\[NDVI = \frac{NIR - Red}{NIR + Red}\]</span></li>
+<li>Calculate Normalized Difference Vegetation Index (NDVI) using the Raster Calculator. Save the file as <code>NDVI.tif</code></li>
 </ol>
+<p><span class="math display">\[NDVI = \frac{NIR - Red}{NIR + Red}\]</span></p>
 <p><strong>NDVI Values</strong></p>
 <table class="caption-top table">
 <thead>
@@ -254,47 +263,52 @@ b) Use <em>Project –&gt; Import/export –&gt; Export Map to Image</em> , to m
 </tbody>
 </table>
 <blockquote class="blockquote">
-<p><strong>Question 3:</strong> a) How many bands does the the new NDVI raster have?<br>
-b) Adjust the symbology to some color scheme you think is appropriate for displaying NDVI. Make an image. Include the image as part of question 3.</p>
+<p>Question 6. a) How many bands does the NDVI raster have?</p>
 </blockquote>
-<p>The Soil Adjusted Vegetation Index (SAVI) is useful when the soil is highly exposed in an image. Soil is often highly reflective across all bands, reducing the contrast between vegetaton and soil. It is the same as NDVI with an dadjustment factor, <span class="math inline">\(L\)</span>, to compensate fro soil.</p>
+<ol start="3" type="1">
+<li>Adjust the symbology to some color scheme you think is appropriate for displaying NDVI.</li>
+</ol>
+<p>The Soil Adjusted Vegetation Index (SAVI) is useful when the soil is highly exposed in an image. Soil is often highly reflective across all bands, reducing the contrast between vegetation and soil. It is the same as NDVI with an adjustment factor, <span class="math inline">\(L\)</span>, to compensate for soil.</p>
 <p><span class="math display">\[
 SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
 \]</span></p>
-<p>Where <span class="math inline">\(L\)</span> is often 0.5, but adjusted for exposed soil. The soil in the Klamath mountains, where this data is from tends to be highly reflective, which means a fairly high value of L (close to 1) should be used. Experiment with values of <span class="math inline">\(L\)</span> to see if you can make a raster where contrast between tees and soil is higher than in you NDVI raster.</p>
+<ol start="4" type="1">
+<li>Calculate SAVI. Use similar symbology rules you used for NDVI.</li>
+</ol>
+<p>Where <span class="math inline">\(L\)</span> is often 0.5, but can be adjusted for more reflective exposed soil. The soil in the Klamath Mountains, where this data is from, tends to be highly reflective, which means a fairly high value of <span class="math inline">\(L\)</span> (close to 1) should be used. Experiment with values of <span class="math inline">\(L\)</span> to see if you can make a raster where contrast between trees and soil is higher than in your NDVI raster.</p>
 <blockquote class="blockquote">
-<p><strong>Question 4:</strong> a) Were you able to improve upon NDVI using SAVI? b) What value of <span class="math inline">\(L\)</span> did you end up using?<br>
-c) NDVI is defined on the interval [0-1], what about SAVI? d) Use similar symbology rules you used for NDVI. Make an image. Include the image as part of question 4.</p>
+<p>Question 7. a) Were you able to improve upon NDVI using SAVI? b) What value of <span class="math inline">\(L\)</span> did you end up using?<br>
+c) NDVI is defined on the interval [0-1], what about SAVI?</p>
 </blockquote>
 </section>
 <section id="finding-zonal-statistics" class="level2">
 <h2 class="anchored" data-anchor-id="finding-zonal-statistics">Finding Zonal Statistics</h2>
 <ol type="1">
-<li><p>Extract a separate <code>River</code> layer, for the River Complex, from your <code>fires in AOI</code> layer.</p></li>
+<li><p>Extract a separate <code>River fire</code> layer, for the River Complex, from your <code>fires in AOI</code> layer.</p></li>
 <li><p>Spatial Overlays:</p>
 <ol type="a">
-<li>Find the difference between the <code>River</code> and <code>Coffee</code> layers, call it <code>river only</code>,</li>
-<li>Find the difference between the <code>Coffee</code> and <code>River</code> layers, call it <code>coffee only</code></li>
-<li>Find the intersection between the <code>Coffee</code> and <code>River</code> layers, call it <code>both</code></li>
+<li>Find the difference between the <code>River fire</code> and <code>Coffee fire</code> layers, call it <code>river only</code>,</li>
+<li>Find the difference between the <code>Coffee fire</code> and <code>River fire</code> layers, call it <code>coffee only</code></li>
+<li>Find the intersection between the <code>Coffee fire</code> and <code>River fire</code> layers, call it <code>both</code></li>
 <li>Use the AOI and the three layers you just found to make a polygon called <code>unburned</code>, i.e areas burned by neither fire.</li>
 </ol></li>
 <li><p>Change the value of the <code>FIRE_NAME</code> attribute for each of the layers you created in the last step to match the layer name.</p></li>
 <li><p>Use the <em>Merge vector layers</em> tool to merge the four layers you just created.</p></li>
 </ol>
 <blockquote class="blockquote">
-<p><strong>Question 5:</strong> One can think of the layer you just created as containing polygons representing four treatments in a natural experiment. Describe what each of the polygons you created represents.</p>
+<p>Question 8. One can think of the layer you just created as containing polygons representing four treatments in a natural experiment. Describe what each of the polygons you created represents.</p>
 </blockquote>
-<ol start="3" type="1">
-<li>Use the zonal statistics tool to find mean, median and standard deviation of NDVI in each.</li>
+<ol start="5" type="1">
+<li>Use the zonal statistics tool to find mean, median, and standard deviation of NDVI in each.</li>
 </ol>
 <blockquote class="blockquote">
-<p><strong>Question 6:</strong> Briefly describe the differences in NDVI between the four treatments. Include a table showing the NDVI statistics you calculated (You can export the file as a csv with only the columns you want, and open it in Excel).</p>
+<p>Question 9. Briefly describe the differences in NDVI between the four treatments. Include a table showing the NDVI statistics you calculated (You can export the file as a csv with only the columns you want, and open it in Excel, then paste into your text file).</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><strong>Question 7:</strong> Use <code>tree</code> and paste output to show the structure of your working directory.</p>
+<p>Question 10. Use <code>tree</code> and paste output to show the structure of your working directory.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><strong>Question 8:</strong> Describe how the steps taken here fit into the <em>Filter, Map, Reduce</em> workflow.</p>
+<p>Question 11. Describe how the steps taken here fit into the <em>Filter, Map, Reduce</em> workflow.</p>
 </blockquote>
 
 
