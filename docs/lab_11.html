@@ -103,41 +103,201 @@ ul.task-list li input[type="checkbox"] {
 <h1>Segmentation (A trivially simple example)</h1>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<ul>
-<li><p>For the Example:</p>
-<ul>
-<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQANkl10H8PKRZMAutAFvJ9dAdD9MB2PXMoxdfCf8tiJBtQ?e=0gXW2S">october_ndvi.tif</a></li>
-</ul></li>
-<li><p>Also bag these files for the challenge:</p>
-<ul>
-<li><p><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAJAFt9XMSYRKXWQJmE5hHHAUl5KfJND29B6mnwxG9aO1k?e=0Kfo2d">Sentinel-2 median composite image, near Susques Argentina, 2025-04-01 to 2025-10-26</a></p></li>
-<li><p><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQBB5gbdk0DfRosehfzXZXnIAbq2w9jLq_ez7EUw_YIxeWY?e=a7NpJK">Sentinel-2 max composite image, near Susques Argentina, 2025-04-01 to 2025-10-26</a></p></li>
-</ul></li>
-</ul>
-</section>
-<section id="a-simple-example-of-segmentation" class="level2">
-<h2 class="anchored" data-anchor-id="a-simple-example-of-segmentation">A simple example of segmentation</h2>
-<p>Start a QGIS project ad set the project crs 20 EPSG:6339.</p>
-<ol type="1">
-<li>Open <code>october_ndvi.tif</code>.</li>
-<li><strong>What should you do before starting? </strong></li>
-<li>Use the raster calculator to create a binary raster where NDVI &gt; 0.2.</li>
-<li>Use <code>Raster</code> &gt; <code>Conversion</code> &gt; <code>Polygonize</code> to make polygons from the raster</li>
-<li>Use the field calculator to calculate area (expression: <code>$area</code>)</li>
-<li><strong>What units is area in?</strong></li>
-<li>Remove tiny polygons based on area.</li>
-<li>What did you do?</li>
-</ol>
+<p>Download links to data: + <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAJAFt9XMSYRKXWQJmE5hHHASDPZsB4sp5kifOf5Grwe4U?e=2zdWEQ">median composite image</a> + <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQBB5gbdk0DfRosehfzXZXnIAbRuH1BWLvfU0tInuLNHVOM?e=sRiogC">max composite image</a></p>
+<p>For this project, you have two Sentinel-2 images (from Google Earth Engine’s <a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED">Harmonized Sentinel-2 MSI Level-2A Surface Reflectance collection</a>) to work with. The first is a <em>median composite image</em> and, the second, a <em>max composite image</em>. Both images are of the same scene, near Susques, Argentina. They are taken over the period from 2025-04-01 to 2025-10-26.</p>
+<p>The bands available in the two composite images are listed in <a href="#tbl-bands" class="quarto-xref">Table&nbsp;1</a>.</p>
 </section>
 <section id="challenge" class="level2">
 <h2 class="anchored" data-anchor-id="challenge">Challenge!</h2>
-<p>You know about spectral indices (There’s an index for that!). You know about (very basic) segmentation. You know about zonal statistics.</p>
+<p>Segment the <a href="https://eros.usgs.gov/earthshots/ponds">lithium brine evaporation ponds</a> shown in the images. They are near <a href="https://en.wikipedia.org/wiki/Susques">Susques, Argentina</a>, In the <a href="https://en.wikipedia.org/wiki/Atacama_Desert">Atacama Desert</a>. (Images are composites from 2025-04-01 to 2025-10-26).</p>
+<p>To do this you will need to:</p>
 <ol type="1">
-<li>Segment the lithium brine evaporation ponds using <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EQkAW31cxJhEpdZAmYTmEccBIM9mwHiynmSJ85_kavB7hQ?e=Fapfce">Sentinel-2 median composite image</a> and/or <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/EUHmBt2TQN9Gix6F_NdlecgBtG4fUFYu99TS0ie4s0dU4w?e=BL3Zcx">Sentinel-2 maximum composite image</a> (near Susques Argentina, 2025-04-01 to 2025-10-26).</li>
+<li>Select an appropriate spectral index (or indices) and calculate it using Raster Calculator</li>
+<li>Create a binary mask<br>
+</li>
 <li>Calculate their total area.</li>
 <li>What is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?</li>
 <li>What is a median composite image? A maximum composite image?</li>
 </ol>
+<div style="font-size:0.9em">
+<div id="tbl-bands" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Sentinel-2 bands available in the composite images
+</figcaption>
+<div aria-describedby="tbl-bands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">GeoTIFF band</th>
+<th>Band name</th>
+<th>Description</th>
+<th style="text-align: right;">Native pixel size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td><code>B1</code></td>
+<td>Aerosols</td>
+<td style="text-align: right;">60 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td><code>B2</code></td>
+<td>Blue</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td><code>B3</code></td>
+<td>Green</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td><code>B4</code></td>
+<td>Red</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td><code>B5</code></td>
+<td>Red edge 1</td>
+<td style="text-align: right;">20 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td><code>B6</code></td>
+<td>Red edge 2</td>
+<td style="text-align: right;">20 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td><code>B7</code></td>
+<td>Red edge 3</td>
+<td style="text-align: right;">20 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td><code>B8</code></td>
+<td>Near infrared (NIR)</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td><code>B8A</code></td>
+<td>Red edge 4</td>
+<td style="text-align: right;">20 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td><code>B9</code></td>
+<td>Water vapor</td>
+<td style="text-align: right;">60 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td><code>B11</code></td>
+<td>Shortwave infrared 1 (SWIR1)</td>
+<td style="text-align: right;">20 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td><code>B12</code></td>
+<td>Shortwave infrared 2 (SWIR2)</td>
+<td style="text-align: right;">20 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td><code>AOT</code></td>
+<td>Aerosol optical thickness</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td><code>WVP</code></td>
+<td>Water vapor pressure</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td><code>SCL</code></td>
+<td>Scene classification map</td>
+<td style="text-align: right;">20 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td><code>TCI_R</code></td>
+<td>True color image, red channel</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td><code>TCI_G</code></td>
+<td>True color image, green channel</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td><code>TCI_B</code></td>
+<td>True color image, blue channel</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td><code>MSK_CLDPRB</code></td>
+<td>Cloud probability map</td>
+<td style="text-align: right;">20 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td><code>MSK_SNWPRB</code></td>
+<td>Snow probability map</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21</td>
+<td><code>QA10</code></td>
+<td>Always empty</td>
+<td style="text-align: right;">10 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22</td>
+<td><code>QA20</code></td>
+<td>Always empty</td>
+<td style="text-align: right;">20 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23</td>
+<td><code>QA60</code></td>
+<td>Cloud mask</td>
+<td style="text-align: right;">60 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">24</td>
+<td><code>MSK_CLASSI_OPAQUE</code></td>
+<td>Opaque cloud classification</td>
+<td style="text-align: right;">60 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">25</td>
+<td><code>MSK_CLASSI_CIRRUS</code></td>
+<td>Cirrus cloud classification</td>
+<td style="text-align: right;">60 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">26</td>
+<td><code>MSK_CLASSI_SNOW_ICE</code></td>
+<td>Snow/ice classification</td>
+<td style="text-align: right;">60 m</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
 
 
 </section>
