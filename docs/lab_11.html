@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Segmentaion</title>
+<title>lab_11</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,47 +78,49 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Segmentaion</h1>
-</div>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta column-page">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="segmentation-a-trivially-simple-example" class="level1">
-<h1>Segmentation (A trivially simple example)</h1>
+<section id="segmentation-with-a-basic-workflow" class="level1">
+<h1>Segmentation (with a basic workflow)</h1>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Download links to data: + <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAJAFt9XMSYRKXWQJmE5hHHASDPZsB4sp5kifOf5Grwe4U?e=2zdWEQ">median composite image</a> + <a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQBB5gbdk0DfRosehfzXZXnIAbRuH1BWLvfU0tInuLNHVOM?e=sRiogC">max composite image</a></p>
-<p>For this project, you have two Sentinel-2 images (from Google Earth Engine’s <a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED">Harmonized Sentinel-2 MSI Level-2A Surface Reflectance collection</a>) to work with. The first is a <em>median composite image</em> and, the second, a <em>max composite image</em>. Both images are of the same scene, near Susques, Argentina. They are taken over the period from 2025-04-01 to 2025-10-26.</p>
+<p>Download links to data:</p>
+<ul>
+<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC6Qrj_lbP2QqXekQ4w4yQeAXpYURPD6mSP2u-bkB4-Urc?e=9wV35w">median composite image</a></li>
+<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAjxciGVyL-R6vO3V0U1HODAQbjdadeuhyOR07YxrA8vZA?e=GqfPgK">max composite image</a></li>
+</ul>
+<p>Make a directory for this lab, and the next, called <code>susques</code>. Put the data into a data folder. Open QGIS, start a project. Save it as <code>susques.qgz</code>. (You will answer questions later in <code>lab_11_answers.txt</code>)</p>
+<pre><code>susques/
+├── susques.qgz
+├── data/
+│   ├── s2_susques_max_2025_clipped.tif
+│   └── s2_susques_median_2025_clipped.tif
+└── lab_11_answers.txt</code></pre>
+<p>For this project, you have two Sentinel-2 images (from Google Earth Engine’s <a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED">Harmonized Sentinel-2 MSI Level-2A Surface Reflectance collection</a>) to work with. The first is a <em>median composite image</em> and, the second, a <em>max composite image</em>. Both images are of the same scene, near <a href="https://en.wikipedia.org/wiki/Susques">Susques, Argentina</a>, In the <a href="https://en.wikipedia.org/wiki/Atacama_Desert">Atacama Desert</a>. They are taken over the period from 2025-04-01 to 2025-10-26.</p>
 <p>The bands available in the two composite images are listed in <a href="#tbl-bands" class="quarto-xref">Table&nbsp;1</a>.</p>
 </section>
-<section id="challenge" class="level2">
-<h2 class="anchored" data-anchor-id="challenge">Challenge!</h2>
-<p>Segment the <a href="https://eros.usgs.gov/earthshots/ponds">lithium brine evaporation ponds</a> shown in the images. They are near <a href="https://en.wikipedia.org/wiki/Susques">Susques, Argentina</a>, In the <a href="https://en.wikipedia.org/wiki/Atacama_Desert">Atacama Desert</a>. (Images are composites from 2025-04-01 to 2025-10-26).</p>
+<section id="segmentation-using-a-binary-mask" class="level2">
+<h2 class="anchored" data-anchor-id="segmentation-using-a-binary-mask">Segmentation using a binary mask</h2>
+<p>In this exercise you will segment the image to find the <a href="https://eros.usgs.gov/earthshots/ponds">lithium brine evaporation ponds</a>, using only the raster calculator, and the Polygonize tool (Raster to Vector, from GDAL)</p>
 <p>To do this you will need to:</p>
 <ol type="1">
 <li>Select an appropriate spectral index (or indices) and calculate it using Raster Calculator</li>
-<li>Create a binary mask<br>
-</li>
-<li>Calculate their total area.</li>
-<li>What is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?</li>
-<li>What is a median composite image? A maximum composite image?</li>
+<li>Create a binary mask (pond / not pond) by using a threshold value of your spectral index.</li>
+<li>Calculate the total area of the ponds.</li>
+<li>Answer these questions in <code>lab_11_answers.txt</code></li>
 </ol>
+<blockquote class="blockquote">
+<p>q1. What spectral index (or indices) did you use?<br>
+q2. What bands are involved in the index and why are those bands useful for this task?<br>
+q3. What was the threshold value used to create you mask?<br>
+q4. What is the total area of the brine evaporation ponds?<br>
+q5. What CRS did you use when measuring the area of the brine evaporation ponds?<br>
+q6. What is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?<br>
+q7. What is a median composite image? A maximum composite image?</p>
+</blockquote>
 <div style="font-size:0.9em">
 <div id="tbl-bands" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">

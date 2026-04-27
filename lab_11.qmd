@@ -1,35 +1,53 @@
 ---
-title: "Segmentaion"
 page-layout: full
 format: 
   html:
     theme: quartz
 ---
 
-# Segmentation (A trivially simple example)
+# Segmentation (with a basic workflow)
 
 ## Data 
 
 Download links to data:
-+ [median composite image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAJAFt9XMSYRKXWQJmE5hHHASDPZsB4sp5kifOf5Grwe4U?e=2zdWEQ)
-+ [max composite image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQBB5gbdk0DfRosehfzXZXnIAbRuH1BWLvfU0tInuLNHVOM?e=sRiogC)
 
-For this project, you have two Sentinel-2 images (from Google Earth Engine's [Harmonized Sentinel-2 MSI Level-2A Surface Reflectance collection](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED)) to work with.  The first is a _median composite image_ and, the second, a _max composite image_. Both images are of the same scene, near Susques, Argentina.  They are taken over the period from 2025-04-01 to 2025-10-26.
++ [median composite image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC6Qrj_lbP2QqXekQ4w4yQeAXpYURPD6mSP2u-bkB4-Urc?e=9wV35w)
++ [max composite image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAjxciGVyL-R6vO3V0U1HODAQbjdadeuhyOR07YxrA8vZA?e=GqfPgK)
+
+
+Make a directory for this lab, and the next, called `susques`. Put the data into a data folder.  Open QGIS, start a project. Save it as `susques.qgz`.  (You will answer questions later in `lab_11_answers.txt`)
+```
+susques/
+├── susques.qgz
+├── data/
+│   ├── s2_susques_max_2025_clipped.tif
+│   └── s2_susques_median_2025_clipped.tif
+└── lab_11_answers.txt
+```
+
+For this project, you have two Sentinel-2 images (from Google Earth Engine's [Harmonized Sentinel-2 MSI Level-2A Surface Reflectance collection](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED)) to work with.  The first is a _median composite image_ and, the second, a _max composite image_. Both images are of the same scene, near [Susques, Argentina](https://en.wikipedia.org/wiki/Susques), In the [Atacama Desert](https://en.wikipedia.org/wiki/Atacama_Desert).  They are taken over the period from 2025-04-01 to 2025-10-26.
 
 The bands available in the two composite images are listed in @tbl-bands. 
 
-## Challenge! 
+## Segmentation using a binary mask 
 
 
-Segment the [lithium brine evaporation ponds](https://eros.usgs.gov/earthshots/ponds) shown in the images.  They are near [Susques, Argentina](https://en.wikipedia.org/wiki/Susques), In the [Atacama Desert](https://en.wikipedia.org/wiki/Atacama_Desert). (Images are composites from 2025-04-01 to 2025-10-26).
+In this exercise you will segment the image to find the [lithium brine evaporation ponds](https://eros.usgs.gov/earthshots/ponds), using only the raster calculator, and the Polygonize tool (Raster to Vector, from GDAL)
 
 To do this you will need to:
 
 1. Select an appropriate spectral index (or indices) and calculate it using Raster Calculator
-2. Create a binary mask  
-2. Calculate their total area.
-3. What is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?
-4. What is a median composite image? A maximum composite image?
+2. Create a binary mask (pond / not pond) by using a threshold value of your spectral index. 
+3. Calculate the total area of the ponds.
+4. Answer these questions in `lab_11_answers.txt`
+
+> q1. What spectral index (or indices) did you use?   
+> q2. What bands are involved in the index and why are those bands useful for this task?  
+> q3. What was the threshold value used to create you mask?  
+> q4. What is the total area of the brine evaporation ponds?  
+> q5. What CRS did you use when measuring the area of the brine evaporation ponds?  
+> q6. What is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?  
+> q7. What is a median composite image? A maximum composite image?  
 
 
 ::: {style="font-size:0.9em"}

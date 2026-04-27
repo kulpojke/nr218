@@ -135,8 +135,8 @@
 <h2>Data</h2>
 <p>In Lab 11 you have been working with the two Sentinel 2 datasets. You should already have them, but if not they can be downloaded with the links below.</p>
 <ul>
-<li><p><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAJAFt9XMSYRKXWQJmE5hHHAUl5KfJND29B6mnwxG9aO1k?e=0Kfo2d">Sentinel-2 median composite image, near Susques, Argentina, 2025-04-01 to 2025-10-26</a></p></li>
-<li><p><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQBB5gbdk0DfRosehfzXZXnIAbq2w9jLq_ez7EUw_YIxeWY?e=a7NpJK">Sentinel-2 max composite image, near Susques, Argentina, 2025-04-01 to 2025-10-26</a></p></li>
+<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC6Qrj_lbP2QqXekQ4w4yQeAXpYURPD6mSP2u-bkB4-Urc?e=9wV35w">median composite image</a></li>
+<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAjxciGVyL-R6vO3V0U1HODAQbjdadeuhyOR07YxrA8vZA?e=GqfPgK">max composite image</a></li>
 </ul>
 </section>
 <section id="what-kind-of-information-is-needed-to-segment-this-image" class="slide level2 center" style="font-size:0.7em">
@@ -245,7 +245,8 @@
 <div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="max-width: 50%; font-size:0.8em;">
 <ul>
 <li>Calculate you index.</li>
-<li>Use Raster calculator to segment values above a threshold</li>
+<li>Use Raster Calculator to create a binary mask of values above a threshold, e.g.&nbsp;<code>INDEX &gt; 0</code></li>
+<li>Polyginize the results</li>
 </ul>
 </div>
 </div>
