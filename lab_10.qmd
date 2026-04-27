@@ -98,6 +98,7 @@ During this workflow, there is no need to save any file with _scratch_ in the na
     a. Recall from earlier, that means Near-Infrared to Red, Red to Green, and Green to Blue (i.e. band order is NIR, G, R) 
     b. Open symbology and change the band order
     c. Zoom in so that individual trees are visible.
+    d. Save your QGIS project so the false-color visualization is preserved.
 
 > Question 5.  Why do trees stand out from the ground using this false color image?  
 
@@ -147,15 +148,40 @@ Where $L$ is often 0.5, but can be adjusted for more reflective exposed soil. Th
 
 3. Change the value of the `FIRE_NAME` attribute for each of the layers you created in the last step to match the layer name.
 
-4. Use the _Merge vector layers_ tool to merge the four layers you just created.
+4. Use the _Merge vector layers_ tool to merge the four layers you just created (`river only`, `coffee only`, `both`, `unburned`). Save the merged layer as `treatments.geojson`. Change the symbology of the treatments layer to categorized. Remove `river only`, `coffee only`, `both`, and `unburned` layers.
 
 > Question 8. One can think of the layer you just created as containing polygons representing four treatments in a natural experiment.  Describe what each of the polygons you created represents.
 
 
-5. Use the zonal statistics tool to find mean, median, and standard deviation of NDVI in each.
+5. Use the zonal statistics tool to find mean, median, and standard deviation of NDVI in each treatment.
 
-> Question 9.  Briefly describe the differences in NDVI between the four treatments.  Include a table showing the NDVI statistics you calculated (You can export the file as a csv with only the columns you want, and open it in Excel, then paste into your text file).
+> Question 9. Paste the mean median and standard distributions from the zonal statistics. 
 
-> Question 10. Use `tree` and paste output to show the structure of your working directory.
+> Question 10.  Briefly describe the differences in NDVI between the four treatments.  Include a table showing the NDVI statistics you calculated (You can export the file as a csv with only the columns you want, and open it in Excel, then paste into your text file).
+
+> Question 11. Use `tree` and paste output to show the structure of your working directory.
 
 > Question 11. Describe how the steps taken here fit into the _Filter, Map, Reduce_ workflow.
+
+## Submission
+
+As usual, zip you lab_10 directory and submit to Canvas.  
+
++-----------------------------------+--------------------------------------------------------------+-------------+
+| Part                              | Items                                                        | % of points |
++===================================+==============================================================+=============+
+| Project Works                     | - Opens                                                      | 20%         |
+|                                   | - Layers open without having to search for files             |             |
++-----------------------------------+--------------------------------------------------------------+-------------+
+| Data preparation and vector       | - Correct CRS                                                | 25%         |
+| workflow                          | - AOI layer                                                  |             |
+|                                   | - `fires_in_AOI`                                             |             |
++-----------------------------------+--------------------------------------------------------------+-------------+
+| NAIP visualization and            | - False-color display                                        | 20%         |
+| spectral-index workflow           | - Correctly calculated and styled NDVI and SAVI rasters      |             |
++-----------------------------------+--------------------------------------------------------------+-------------+
+| Spatial overlays and zonal        | - Merged treatment layer                                     | 20%         |
+| statistics                        | - Proper symbology `                                         |             |
++-----------------------------------+--------------------------------------------------------------+-------------+
+| `answers.txt`                     | - Complete, accurate responses to Questions 1-11             | 15%         |
++-----------------------------------+--------------------------------------------------------------+-------------+
