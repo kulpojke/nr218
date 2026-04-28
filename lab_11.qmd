@@ -50,6 +50,24 @@ To do this you will need to:
 > q7. What is a median composite image? A maximum composite image?  
 
 
+## Submission
+
+Submit zipped project folder.  Scoring will be conducted as shown in @tbl-rubric
+
+
+## Tables
+
+::: {style="font-size:0.9em"}
+| Item | Percentage of score |
+|--|--|
+| Projects opens and all files are present| 40% |
+| Ponds succesfully Segmented | 30% |
+| Answers to questions | 30% |
+
+: Rubric for scoring {#tbl-rubric}
+
+:::
+
 ::: {style="font-size:0.9em"}
 | GeoTIFF band | Band name | Description | Native pixel size |
 |---:|---|---|---:|
