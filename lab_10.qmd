@@ -81,7 +81,7 @@ During this workflow, there is no need to save any file with _scratch_ in the na
 
 > Question 3. Try buffering `scratch_extent` with the default joint style instead of mitered. What is the difference?
 
-7. Now extract all of the polygons in `scratch_1` which _overlap_ `AOI` (Hint: "select by location"). Name the result `scratch_2`.
+7. Now extract all of the polygons in `scratch_1` which _intersect_ `AOI` (Hint: "select by location"). Name the result `scratch_2`.
 
 8. Clip `scratch_2` by `AOI`. Save the results as `fires_in_AOI`.
 

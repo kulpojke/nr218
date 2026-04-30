@@ -197,7 +197,7 @@ Figure&nbsp;1: Vectors created while creating <code>fires_in_AOI</code>
 <p>Question 3. Try buffering <code>scratch_extent</code> with the default joint style instead of mitered. What is the difference?</p>
 </blockquote>
 <ol start="7" type="1">
-<li><p>Now extract all of the polygons in <code>scratch_1</code> which <em>overlap</em> <code>AOI</code> (Hint: “select by location”). Name the result <code>scratch_2</code>.</p></li>
+<li><p>Now extract all of the polygons in <code>scratch_1</code> which <em>intersect</em> <code>AOI</code> (Hint: “select by location”). Name the result <code>scratch_2</code>.</p></li>
 <li><p>Clip <code>scratch_2</code> by <code>AOI</code>. Save the results as <code>fires_in_AOI</code>.</p></li>
 <li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly, you can delete <code>scratch_1</code>, <code>scratch_2</code>, and <code>scratch_extent</code>. (Now you should not have any temporary layers in your layer panel.)</p></li>
 </ol>
