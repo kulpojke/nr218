@@ -35,7 +35,7 @@ __TA:__ Lucas Larson
 Not every lab requires you turn in your results. The [calendar](#spring-term-calendar-2026) lists due dates for the labs that need to be turned in.
 
 ## Quizzes
-There will be five quizzes. For each quiz, if you get 75% of the poionts, you get full credit.  Beyond 75% correct will allow you to earn up to 25% of the quiz value ni extra credit.
+There will be five quizzes. For each quiz, if you get 75% of the points, you get full credit.  Beyond 75% correct will allow you to earn up to 25% of the quiz value in extra credit.
 
 ## Assignment Weight
 | Assignment     | Percentage of Grade| Description  |
