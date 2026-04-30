@@ -124,7 +124,7 @@ What does 1 arcsecond resolution mean?
 + Infrastructure and land use planning
 
 
-## USGS Elevation data {.smaller}
+## USGS Elevation data {style="font-size:0.7em"}
 
 - LiDAR-derived products
     - Point clouds (`.laz`)
