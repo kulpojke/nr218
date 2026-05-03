@@ -526,7 +526,7 @@ NBR &amp;= \frac{NIR - SWIR2}{NIR + SWIR2} \\
 </section>
 <section id="spectral-indices" class="slide level2 center">
 <h2>Spectral Indices</h2>
-<div style="font-size: 0.65em;">
+<div style="font-size: 0.6em;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 18%">
@@ -556,24 +556,30 @@ NBR &amp;= \frac{NIR - SWIR2}{NIR + SWIR2} \\
 <td>Water detection</td>
 </tr>
 <tr class="odd">
+<td>MNDWI</td>
+<td>(Green - SWIR1) / (Green + SWIR1)</td>
+<td>(B3 - B11) / (B3 + B11)</td>
+<td>Open water detection</td>
+</tr>
+<tr class="even">
 <td>NDMI</td>
 <td>(NIR - SWIR1) / (NIR + SWIR1)</td>
 <td>(B8 - B11) / (B8 + B11)</td>
 <td>Vegetation moisture</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>NBR</td>
 <td>(NIR - SWIR2) / (NIR + SWIR2)</td>
 <td>(B8 - B12) / (B8 + B12)</td>
 <td>Burn severity</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>NDSI</td>
 <td>(Green - SWIR1) / (Green + SWIR1)</td>
 <td>(B3 - B11) / (B3 + B11)</td>
 <td>Snow cover</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>SAVI</td>
 <td>1.5 × (NIR - Red) / (NIR + Red + 0.5)</td>
 <td>1.5 × (B8 - B4) / (B8 + B4 + 0.5)</td>
@@ -582,6 +588,39 @@ NBR &amp;= \frac{NIR - SWIR2}{NIR + SWIR2} \\
 </tbody>
 </table>
 <p>For more indices / detail see <a href="https://doi.org/10.1038/s41597-023-02096-0">Montero et al.&nbsp;(2023) Sci Data 10:197</a></p>
+</div>
+</section>
+<section id="there-is-an-index-for-that" class="slide level2 center">
+<h2>There is an index for that!</h2>
+<div style="font-size:0.5em">
+<ul>
+<li class="fragment">Ok, so <em>there is an index for that</em>, how do you find it?</li>
+<li class="fragment">Do some dang research!
+<ul>
+<li class="fragment">Papers describing spectral indices</li>
+<li class="fragment">There are good resources on the internet as well such as:
+<ul>
+<li class="fragment">Awesome Spectral Indices <a href="https://github.com/awesome-spectral-indices/awesome-spectral-indices/blob/main/output/spectral-indices-table.csv">table of indices</a></li>
+<li class="fragment">Awesome Spectral Indices <a href="https://awesome-ee-spectral-indices.readthedocs.io/en/latest/index.html#expressions">webpage</a>, which explains some coefficients found in the indices</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="what-if-there-is-no-index-for-that" class="slide level2 center">
+<h2>What if there is no index for that?</h2>
+<p>Dang! none of these indices are doing what I want!</p>
+<div style="font-size:0.5em">
+<ul>
+<li class="fragment">You can also make a custom index
+<ul>
+<li class="fragment">Usually best to start with an existing index</li>
+<li class="fragment">Tweak some bands based on there properties
+<ul>
+<li class="fragment">Here is <a href="https://gisgeography.com/spectral-signature/">a resource</a> for that, Peer reviewed papers are more definitive though</li>
+</ul></li>
+</ul></li>
+</ul>
 </div>
 </section>
 <section id="tutorial---google-earth-engine" class="slide level2 center">

@@ -192,17 +192,40 @@ __Exercise__ - Create and download a NBR geotiff for before and after the fire.
 
 
 ## Spectral Indices
-::: {style="font-size: 0.65em;"}
+::: {style="font-size: 0.6em;"}
 | Index | Formula | Sentinel-2 | Purpose |
 |-------|---------|------------|---------|
 | NDVI | (NIR - Red) / (NIR + Red) | (B8 - B4) / (B8 + B4) | Vegetation health |
 | NDWI | (Green - NIR) / (Green + NIR) | (B3 - B8) / (B3 + B8) | Water detection |
+| MNDWI | (Green - SWIR1) / (Green + SWIR1) | (B3 - B11) / (B3 + B11) | Open water detection |
 | NDMI | (NIR - SWIR1) / (NIR + SWIR1) | (B8 - B11) / (B8 + B11) | Vegetation moisture |
 | NBR | (NIR - SWIR2) / (NIR + SWIR2) | (B8 - B12) / (B8 + B12) | Burn severity |
 | NDSI | (Green - SWIR1) / (Green + SWIR1) | (B3 - B11) / (B3 + B11) | Snow cover |
 | SAVI | 1.5 × (NIR - Red) / (NIR + Red + 0.5) | 1.5 × (B8 - B4) / (B8 + B4 + 0.5) | Soil-adjusted veg. |
 
 For more indices / detail see [Montero et al. (2023) Sci Data 10:197](https://doi.org/10.1038/s41597-023-02096-0)
+:::
+
+## There is an index for that! 
+
+::: {.incremental style="font-size:0.5em"}
++ Ok, so _there is an index for that_, how do you find it?
++ Do some dang research!
+  + Papers describing spectral indices
+  + There are good resources on the internet as well such as:
+    + Awesome Spectral Indices [table of indices](https://github.com/awesome-spectral-indices/awesome-spectral-indices/blob/main/output/spectral-indices-table.csv)
+    + Awesome Spectral Indices [webpage](https://awesome-ee-spectral-indices.readthedocs.io/en/latest/index.html#expressions), which explains some coefficients found in the indices
+:::
+
+## What if there is no index for that?
+Dang! none of these indices are doing what I want!
+
+::: {.incremental style="font-size:0.5em"}
++ You can also make a custom index
+  + Usually best to start with an existing index
+  + Tweak some bands based on there properties
+    + Here is [a resource](https://gisgeography.com/spectral-signature/) for that, Peer reviewed papers are more definitive though
+
 :::
 
 ## Tutorial - Google Earth Engine
@@ -460,7 +483,6 @@ We can do the same operation we just did through the plugin:
 :::
 
 ![](img/gee_plugin_example.png){width=80%}
-
 
 
 
