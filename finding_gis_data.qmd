@@ -231,7 +231,7 @@ Dang! none of these indices are doing what I want!
 
 ## An example
 
-[Lets work through this example](https://github.com/kulpojke/nr218/main/docs/NDHI.html)
+[Lets work through this example](https://kulpojke.github.io/nr218/NDHI.html)
 
 
 ## Tutorial - Google Earth Engine
