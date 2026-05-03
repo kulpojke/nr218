@@ -228,6 +228,12 @@ Dang! none of these indices are doing what I want!
 
 :::
 
+
+## An example
+
+[Lets work through this example](https://github.com/kulpojke/nr218/blob/main/docs/NDHI.html)
+
+
 ## Tutorial - Google Earth Engine
 
 Another incredibly powerful tool at our disposal is Google Earth Engine
@@ -483,7 +489,6 @@ We can do the same operation we just did through the plugin:
 :::
 
 ![](img/gee_plugin_example.png){width=80%}
-
 
 
 

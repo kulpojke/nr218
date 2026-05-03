@@ -1134,6 +1134,13 @@
     "text": "What if there is no index for that?\nDang! none of these indices are doing what I want!\n\n\nYou can also make a custom index\n\nUsually best to start with an existing index\nTweak some bands based on there properties\n\nHere is a resource for that, Peer reviewed papers are more definitive though"
   },
   {
+    "objectID": "index.html#an-example",
+    "href": "index.html#an-example",
+    "title": "NR 218",
+    "section": "An example",
+    "text": "An example\nLets work through this example"
+  },
+  {
     "objectID": "index.html#tutorial---google-earth-engine",
     "href": "index.html#tutorial---google-earth-engine",
     "title": "NR 218",
@@ -2902,14 +2909,14 @@
     "href": "NDHI.html",
     "title": "There is a big hotdog on CSL",
     "section": "",
-    "text": "Inexplicably, a giant hotdog has appeared on Cerro San Luis. It is starting to rot. It stinks. The SLO parks department, the Madonna Inn, and Cal EPA all find this to be undesirable (vultures on the other hand are enthusiastically in favor of this development).\nA plan is being developed to remove the hotdog, but the budget is tight, so the city has decided that the pickles mustard and bun will not be removed.\nAs a first step in planning you have been tasked with determining the spatial extent of the hotdog. As it turns out, there is not an index for that! But worry not, I have developed a custom index, the Normalized Difference Hotdog Index, for this task.\n\\[\nNDHI = \\frac{R-G}{R+G}\n\\]\n\n\n\nDownload the project here\nCalculate NDHI\nMake a binary mask with NDHI &gt; 0.5\nPolygonize the mask\nExtract the hotdog is true polygons from the polygon layer\nRemove small polygons"
+    "text": "Inexplicably, a giant hotdog has appeared on Cerro San Luis. It is starting to rot. It stinks. The SLO parks department, the Madonna Inn, and Cal EPA all find this to be undesirable (vultures on the other hand are enthusiastically in favor of this development).\nA plan is being developed to remove the hotdog, but the budget is tight, so the city has decided that the pickles mustard and bun will not be removed.\nAs a first step in planning you have been tasked with determining the spatial extent of the hotdog. As it turns out, there is not an index for that! But worry not, I have developed a custom index, the Normalized Difference Hotdog Index, for this task.\n\\[\nNDHI = \\frac{R-G}{R+G}\n\\]\n\n\n\nDownload the project here\nCalculate NDHI\nMake a binary mask with NDHI &gt; 0.5\n\n\n\nhodog not hotdog gif\n\n\nPolygonize the mask\nExtract the hotdog is true polygons from the polygon layer\nRemove small polygons"
   },
   {
     "objectID": "NDHI.html#steps",
     "href": "NDHI.html#steps",
     "title": "There is a big hotdog on CSL",
     "section": "",
-    "text": "Download the project here\nCalculate NDHI\nMake a binary mask with NDHI &gt; 0.5\nPolygonize the mask\nExtract the hotdog is true polygons from the polygon layer\nRemove small polygons"
+    "text": "Download the project here\nCalculate NDHI\nMake a binary mask with NDHI &gt; 0.5\n\n\n\nhodog not hotdog gif\n\n\nPolygonize the mask\nExtract the hotdog is true polygons from the polygon layer\nRemove small polygons"
   },
   {
     "objectID": "computers.html",
@@ -3498,6 +3505,13 @@
     "title": "",
     "section": "What if there is no index for that?",
     "text": "What if there is no index for that?\nDang! none of these indices are doing what I want!\n\n\nYou can also make a custom index\n\nUsually best to start with an existing index\nTweak some bands based on there properties\n\nHere is a resource for that, Peer reviewed papers are more definitive though"
+  },
+  {
+    "objectID": "finding_gis_data.html#an-example",
+    "href": "finding_gis_data.html#an-example",
+    "title": "",
+    "section": "An example",
+    "text": "An example\nLets work through this example"
   },
   {
     "objectID": "finding_gis_data.html#tutorial---google-earth-engine",
