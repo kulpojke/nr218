@@ -1,0 +1,30 @@
+---
+page-layout: full
+format: 
+  html:
+    theme: slate
+---
+
+
+# There is a big hotdog on CSL
+Inexplicably, a giant hotdog has appeared on Cerro San Luis. It is starting to rot. It stinks. The SLO parks department, the Madonna Inn, and Cal EPA all find this to be undesirable (vultures on the other hand are enthusiastically in favor of this development). 
+
+A plan is being developed to remove the hotdog, but the budget is tight, so the city has decided that the pickles mustard and bun will not be removed.
+
+As a first step in planning you have been tasked with determining the spatial extent of the hotdog.  As it turns out, there is _not_ an index for that! But worry not, I have developed a custom index,  the Normalized Difference Hotdog Index, for this task.
+
+$$
+NDHI = \frac{R-G}{R+G}
+$$
+
+
+## Steps
++ Download the project [here](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/NDHI.zip)
++ Calculate NDHI 
++ Make a binary mask with `NDHI > 0.5`
+
++ ![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVyZjB3aWNic3k3cXhnbDFlYWp3OTRpMHE3ZHNnaHFmZnJtb2Z1eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0Iy9iqThC2ueLTkA/giphy.gif)
+
++ Polygonize the mask
++ Extract the _hotdog is true_ polygons from the polygon layer
++ Remove small polygons

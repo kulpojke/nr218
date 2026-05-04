@@ -173,7 +173,7 @@ In this class we will use Orfeo Toolbox, an open source remote sensing project, 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="max-width: 100%; font-size:0.8em;"}
 Go to the [Orfeo Toolbox download page](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.orfeo-toolbox.org/download/&ved=2ahUKEwiQgoGU-e-SAxXzIUQIHb-pDDQQjBB6BAgNEAE&usg=AOvVaw3E2pPFGIW0fTcyfBIu_kXZ) and click the _Download OTB 9.x.x.x_ button.
 
-Or if that link is broken [use this copy](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQBeiacNuqIoSYrAWf2JRaSSAXDJR7wWVCmpr7RUuyeqNPA?e=XAJsah).
+If that link happens to be broken [use this copy](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQBeiacNuqIoSYrAWf2JRaSSAXDJR7wWVCmpr7RUuyeqNPA?e=XAJsah).
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="2" style="max-width: 100%; font-size:0.8em;"}
@@ -262,7 +262,7 @@ Download [Sentinel 2 (bands 4, 3, 2 and 8) tile of Brazilian Atlantic Forest](ht
 + Using Raster Calculator, extract Band 4 from the image, (can be scratch layer, rename it NIR)
 + Run Zonal Statistics using the segments and the NIR raster, calculate mean
 + In the geoprocessing toolbox, find _K-means clustering (ABC)_ under _Attribute based clustering_
-+ Run with 2 clusters, and _class_ as the value "Fields to use for clustering"
++ Run with 3 clusters, and _class_ as the value "Fields to use for clustering"
 + Dissolve the output (_Clusterd Layer_) based on on _class_
 
 
