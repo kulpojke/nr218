@@ -61,3 +61,53 @@ That way each step writes a new polygon layer with the previous statistics alrea
 ### K means clustering
 
 ### K means pixel based classification
+
+### Supervised Classification
+
+Supervised classification means that we give the computer examples of each class, then ask it to classify every pixel in the image based on those examples. In this workflow, each pixel is classified using its band values from the reduced raster stack (`B3`, `B8`, `B11`, `B12`). This is different from segmentation: segmentation groups neighboring pixels into objects, while pixel-based classification assigns a class label to each individual pixel.
+
+First, make a training polygon layer. Digitize small polygons over clear examples of each class you want to map, such as brine pond, dry salt, bare ground, shadow, or vegetation. Add an integer field named something like `class_id`, and use one number for each class:
+
++ `1 = brine pond`
++ `2 = dry salt`
++ `3 = bare ground`
++ `4 = shadow`
+
+Try to collect training polygons from different parts of the image, not just one easy area. The classifier learns from the pixel values inside these polygons, so bad or unrepresentative training data will usually produce a bad classification.
+
+In QGIS, use the OTB tools in this order:
+
++ `Processing Toolbox -> OTB -> Learning -> ComputeImagesStatistics`
+    + Input image: the reduced 4-band raster.
+    + Output: an XML statistics file, for example `susques_stats.xml`.
++ `Processing Toolbox -> OTB -> Learning -> TrainImagesClassifier`
+    + Input image list: the reduced 4-band raster.
+    + Input vector data list: the training polygon layer.
+    + Class label field: `class_id`.
+    + Input XML image statistics file: `susques_stats.xml`.
+    + Classifier: `Random forests`.
+    + Output model: for example `susques_rf_model.txt`.
+    + Output confusion matrix: for example `susques_confusion.csv`.
++ `Processing Toolbox -> OTB -> Learning -> ImageClassifier`
+    + Input image: the same reduced 4-band raster.
+    + Model file: `susques_rf_model.txt`.
+    + Statistics file: `susques_stats.xml`.
+    + Output image: for example `susques_classified.tif`.
+
+The output from `ImageClassifier` is a single-band raster where each pixel value is the predicted class number. For example, pixels with value `1` are class `1`, pixels with value `2` are class `2`, and so on.
+
+### ClassificationMapRegularization
+
+Pixel-based classifications often look speckled because each pixel is classified separately. OTB's `ClassificationMapRegularization` tool cleans this up using majority voting: it looks at the class labels around each pixel and replaces the center pixel with the most common nearby class.
+
+Use:
+
++ `Processing Toolbox -> OTB -> Learning -> ClassificationMapRegularization`
+    + Input classification image: the output from `ImageClassifier`, such as `susques_classified.tif`.
+    + Output regularized image: for example `susques_classified_regularized.tif`.
+    + Structuring element radius: start with `1`.
+    + Label for the NoData class: usually `0`, unless you used a different NoData label.
+    + Set tie pixels to undecided: usually leave this off at first, so tied pixels keep their original class.
+    + Process isolated pixels only: turn this on if you only want to remove tiny isolated pixels instead of smoothing the whole classification.
+
+A radius of `1` is a conservative cleanup. It removes many single-pixel errors without changing large class boundaries too aggressively. A radius of `2` or `3` creates a smoother map, but it can also erase narrow features or small ponds, so compare the result against the original imagery before deciding which version is better.
