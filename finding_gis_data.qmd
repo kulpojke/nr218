@@ -231,7 +231,7 @@ Dang! none of these indices are doing what I want!
 
 ## An example
 
-[Let's work through this example](https://kulpojke.github.io/nr218/NDHI.html)
+[Let's work through this example](NDHI.qmd)
 
 
 ## Tutorial - Google Earth Engine
@@ -489,7 +489,6 @@ We can do the same operation we just did through the plugin:
 :::
 
 ![](img/gee_plugin_example.png){width=80%}
-
 
 
 
