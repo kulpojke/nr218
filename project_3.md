@@ -5,51 +5,33 @@ format:
     theme: cyborg
 ---
 
-# Lab 14: Raster Data Analysis
+# Lab 12: More Vector and Raster Stuff
 
-## Learning Goals: 
-1. Become familiar with raster data analysis and GIS concepts such as 
-    a. Statistics and measures of central tendency 
-    b. Clipping rasters to vectors and Zonal statistics
-    b. Working with remote sensing datasets, deriving geophysical properties
-    b. Dealing with NoData values and masks 
 
-2. Chain together commands in order to achieve desired outcomes
-3. Work with messy data to produce viable analysis to real world problems
-
-## Provide written responses to the following Questions [2 pts]
+## Provide written responses to the following Questions
 
 1. What are the differences between vector and raster data? 
-2. Give 3 examples of real-world data that are best described by (A) Vector datasets, and (B) Raster datasets. Explain your reasoning.
-3. What is the importance of pixel size and spatial resolution in raster data? 
-4. What are some common types of raster data used in GIS? Hint: we have worked with many of them in the class so far. 
+2. Give 3 examples (and explain your reasoning) of real-world data that are best described by:
+    a. Vector datasets, and 
+    b. Raster datasets. 
+3. What are the trade offs of high spatial resolution in raster data? 
+4. In a raster with resolution given in degrees, the ground distance represented by each cell varies from row to row.  Why?
+5. Why can area and distance calculations unreliable if the layer is in the wrong projection?
+6. In theory, a raster could be represented as a polygon layer in which each pixel is stored as a square polygon with attributes for its value(s). Why is this impractical compared with using a raster format?
 
-## Project Work [4 pts]
+## Project Work 
 
-For the next questions, you will need to download the SPR [Elevation Data](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQB7BHJ9vN2fTpTTyvOoVDECAU_UOu2CokgVWf97_yLOwDw?e=4erD3j) use it with existing [SPR Vector Data](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/SPR_data.zip) in order to answer the following questions: 
+For the next questions, you will need to download the SPR [Elevation Data](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQB7BHJ9vN2fTpTTyvOoVDECAR1lB4HA5PFi8ECh-1ympRo?e=kj6ASv) use it with existing [SPR Vector Data](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/SPR_data.zip) in order to answer the following questions: 
 
 > NOTE: pixel values, i.e. elevation, in the SPR DEM are given in feet.
 
-1. Report the minimum, maximum, mean, and median elevation within the boundary of Swanton Ranch, as defined in sprBoundary.geojson? 
+7. Report the minimum, maximum, mean, and median elevation within the boundary of Swanton Ranch, as defined in sprBoundary.geojson? 
 
-2. What are the exact elevations of the highest and lowest Flumes in Swanton Ranch, as described in sprFlumes.geojson? 
+8. What are the exact elevations of the highest and lowest flumes (sprFlumes.geojson) in Swanton Ranch? 
 
-3. Report the mean slope (in degrees) for parcels (as defined in sprParcels.geojson) with the following APN #s: `057-131-60`, `057-141-01`, and `057-121-14`.
-
-##  Tutorials [4 pts]:
-
-1. Sample raster data over points and polygons:
-    + Carefully follow the instructions and complete [Sampling Raster Data using Points or Polygons](https://www.qgistutorials.com/en/docs/3/sampling_raster_data.html )
-2. Calculate land use areas from raster data describing landcover:
-    + Carefully follow the instructions and complete  [Calculating Raster Area](https://www.qgistutorials.com/en/docs/3/calculating_raster_area.html )
-3. Create a raster heatmap from point data:
-    + Carefully follow the instructions and complete [Creating Heatmaps](https://www.qgistutorials.com/en/docs/3/creating_heatmaps.html) 
-4. Apply basic raster styling and analysis:
-    + Carefully follow the instructions and complete [Basic Raster Styling and Analysis](https://www.qgistutorials.com/en/docs/3/raster_styling_and_analysis.html) 
+9. Report the mean slope (in degrees) for parcels (sprParcels.geojson) with the following APN #s: `057-131-60`, `057-141-01`, and `057-121-14`.
 
 
 ## Submit on Canvas:
-1. Answers to Written Questions 1-4 above
-2. Answers to Project Work Questions 1-3 above
-3. Maps (png, jpeg, tiff, pdf format) and / or screenshots showing the outputs and final products of tutorials 1-4. __Be sure to include dates / times in screenshots.__ 
+1. Answers to Written Questions 1-9 above, in a pdf.
 
