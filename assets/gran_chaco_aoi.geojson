@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "name": "gran_chaco_aoi",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gran Chaco AOI",
+        "description": "Dry forest and agricultural clearing in western Paraguay"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-60.25, -22.55],
+            [-59.75, -22.55],
+            [-59.75, -22.20],
+            [-60.25, -22.20],
+            [-60.25, -22.55]
+          ]
+        ]
+      }
+    }
+  ]
+}

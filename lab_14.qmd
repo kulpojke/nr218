@@ -117,7 +117,7 @@ What we care about is just ‘input layer A’, which needs to be set to the out
 
 ![](img/raster_calculator2.png)
 
-We’ll put our equation in the box labeled ‘Calculation in gdalnumeric syntax …’.
+We’ll put our equation in the box labeled ‘Calculation in gdalnumeric syntax …’.  Remember we want a slope lower than 20 degrees.
 
 6. In order to clip our other criteria layers by our slope values, we need to convert our binary raster to a vector layer and select only the polygons that meet our slope criteria. Add two more algorithms to the model to achieve this (hint: think about our segmentation labs).
 
