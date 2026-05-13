@@ -28,33 +28,62 @@ We could do this using all of the individual tools we’ve explored so far in cl
 
 ## Project setup
 
-1. Open a new project in QGIS, and save it the same way we’ve been saving projects throughout class (this is lab x).
+1. Open a new project in QGIS, and save it as lab_14, in you lab 14 directory.
 2. Download these two subsets of SPR data: [SPR 1](https://cpslo-my.sharepoint.com/:u:/g/personal/dicorlet_calpoly_edu/IQAEc43rGKxSSo1poKyRPNumAf_n3-ZHOUmWthTO_sR4RgM?e=cuEZjA) and [SPR 2](https://cpslo-my.sharepoint.com/:u:/g/personal/dicorlet_calpoly_edu/IQDMfd7ptqE5TY18-MuCU7R4AUEganWVZmZ85mjdAEHeoR0?e=moGJdn). Extract all and add them to your data folder.
 3. Add all of the layers SPR 1 to your QGIS project.
 4. Go to Processing > Model Designer
 5. Save your model and name it `spr_model`. By default it will save to `models` folder that is specific to QGIS. Change it to your project folder.
+6. Create a folder in you project called `tmp` for storing intermediate files.
+
+```
+lab_14/
+├── lab_14.qgz
+├── data/
+│   ├── spr1/
+│   │    ├── sprElevation_1.tif
+│   │    ├── sprLanduse_1.geojson
+│   │    ├── sprRoads_1.geojson
+│   │    └── sprStreams_1.geojson
+│   └── spr2/
+│        ├── sprElevation_2.tif
+│        ├── sprLanduse_2.geojson
+│        ├── sprRoads_2.geojson
+│        └── sprStreams_2.geojson
+└── tmp/
+```
 
 ## Adding Inputs
 
 1. The first thing we need to specify are our inputs. For this example, we should have a separate input for each layer. First, make sure you are in the `Inputs` tab on the left side panel. To add a raster input, double click the `Raster Layer` option.
 
-![](img/add_raster_layer.png)
+![](img/add_raster_layer.png){width="40%" fig-alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input." fig-cap="Add raster layer dialog in the QGIS graphical modeler."}
 
 2. You should get a pop-up that looks like this:
 
-![](img/layer_description.png)
+![](img/layer_description.png){width="40%" fig-alt="QGIS graphical modeler Raster Layer Parameter Definition dialog for configuring a raster layer input." fig-cap="Raster layer parameter definition dialog in the QGIS graphical modeler."}
 
 3. In the description box, write `DEM`. Make sure the box next to `Mandatory` is checked, and then hit `Ok`. You should see a `DEM` input populate in the modeler canvas.
 4. We can do the same for our vector inputs, but we’ll select the `Vector Layer` option instead. Make 3 new inputs: Streams, Roads, and Land Use. Make sure to specify the correct geometry type and check the `Mandatory` box for each input. Our final product should look something like this:
 
 ![](img/model_inputs.png)
 
+5. Add an input of type File/Folder.  This will be used to store intermediate files.
+  a. Description: work_dir
+  b. type: Folder
+  c. for Default Value, use the browse button and find the tmp folder in you project directory
+
+![](img/model_builder_work_dir.png)
+
+
 ## Adding Algorithms
 ### Pre-processing
 
 Now that we have our inputs, let’s design our workflow.
 
-1. The first thing we should do is ensure that all of our layers are in the same CRS. Switch from the ‘Inputs’ tab to the 'Toolbox' tab (depending on version may be ‘Algorithms’ tab), and search for ‘Reproject Layer’ (this should look very similar to the processing toolbox that we’re used to searching in!). For each of our vector inputs, we want to reproject to EPSG:2227.
+1. The first thing we should do is ensure that all of our layers are in the same CRS.  The DEM is in EPSG:2227 (California state plane, zone 3), which will do.
+  a. Set the project CRS to EPSG:2227.
+  b. Switch from the ‘Inputs’ tab to the 'Toolbox' tab (depending on version may be ‘Algorithms’ tab), and search for ‘Reproject Layer’ (this should look very similar to the processing toolbox that we’re used to searching in!). 
+  c. For each of our vector inputs, we want to reproject to EPSG:2227.
 
 ::: {#tip-rename_layers .callout-tip}
 For each new ‘reproject’ step we add to the model you can coy and paste the first one you create, double click it, and change the parameters. rename it to reflect the corresponding input layer so you don’t get confused later on.
@@ -118,8 +147,6 @@ Close the model designer window (make sure you saved!) and take a look at the ou
 Great! Now let's compare this half of Swanton to the other half. Add all of the layers from SPR2 to your map, and re-run the model (from your processing toolbox or re-open the model designer) using those layers instead. Which half has more area?
 
 For your final submission, include a screenshot of your model and the total area of viable camping land for each half of Swanton (make sure to specify the correct unit based on our CRS!).
-
-
 
 
 
