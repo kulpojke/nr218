@@ -129,33 +129,46 @@ window.Quarto = {
 <li>The approximate elevation of the lake surface in summer, 2018</li>
 <li>The approximate surface area of the lake in February, 2024</li>
 <li>The approximate elevation of the lake surface in February, 2024</li>
+<li>The approximate change in volume of water stored in the reservoir between 2018 and 2024. (See this <a href="https://youtu.be/ZUR1qk5Vhlg?si=99NvkaGSXbNA-N2_">painfully slow video</a> or <a href="https://esurveying.net/earthwork-quantity/volume-calculation-contour-method">this webpage</a> for tips.)</li>
 <li>The change in NDVI between 2018 and 2024 in the four plots (<code>vectors/plots.geojson</code>)</li>
-<li>(5% BONUS) The approximate change in volume of water stored in the reservoir between 2018 and 2024. (See this <a href="https://youtu.be/ZUR1qk5Vhlg?si=99NvkaGSXbNA-N2_">painfully slow video</a> for tips.)</li>
 </ul>
 </section>
 <section id="deliverables" class="level2">
 <h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
-<section id="description-of-methods" class="level3">
-<h3 class="anchored" data-anchor-id="description-of-methods">Description of methods</h3>
-<p>Write a short document describing the methods you used to solve the problem. It should contain:</p>
+<p><strong>1) Description of methods</strong><br>
+Write a short document describing the methods you used to solve the problem. Here is an example <a href="project_outline_example.html">faux-document</a> It should contain:</p>
 <ul>
 <li>Methods: Write a clear explanation of what you did, and why. Document the steps you took, use figures where needed.<br>
 </li>
 <li>A table of important layers created in your workflow. (These layers should be cross referenced in your methods.)</li>
 <li>Solution: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.</li>
 </ul>
-<p>A zip file of your project directory.</p>
-</section>
+<p><strong>2) GIS Poject Files</strong><br>
+A zip file of your project directory.</p>
+<p><strong>3) A pdf map of the project area</strong><br>
+Should include scale, legend, and North arrow.</p>
 </section>
 <section id="how-the-project-will-be-graded" class="level2">
 <h2 class="anchored" data-anchor-id="how-the-project-will-be-graded">How the Project will be graded</h2>
 <p>Recall from the syllabus that the Project is worth 20% of the grade. The final exam, which is about the project, is worth another 20%.</p>
-<p>The project itself will be graded 50% on your explanation of the methods you used, 25% on having reasonable estimates, and 25% on the project opening and containing all of the layers you describe in you methods.</p>
-<blockquote class="blockquote">
-<p>Hints:<br>
-You will need to mosaic the raster tiles. You used build vrt in the section above to stack bands. Now use it to mosaic tiles. Think about the differences between mosaicing and stacking.<br>
-For a sanity check on your solution, the total volume of the reservoir is currently estimated as 232,000,000 <span class="math inline">\(m^{3}\)</span></p>
-</blockquote>
+<p>The <strong>project grade</strong> will be based on:</p>
+<ul>
+<li>Explanation of the methods, methods are applicable to the problem (25%)</li>
+<li>Reasonable estimates of the values (25%)</li>
+<li>The project opens and contains all of the layers you describe in you methods (25%)</li>
+<li>Your map has all of the required elements, and looks ok (25%)</li>
+</ul>
+<p>The <strong>final exam grade</strong> will be based on:</p>
+<ul>
+<li>You can explain your methods, and answer questions about them.</li>
+</ul>
+</section>
+<section id="hints" class="level2">
+<h2 class="anchored" data-anchor-id="hints">Hints</h2>
+<ul>
+<li>You will need to mosaic the raster tiles or build a vrt</li>
+<li>For a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 <span class="math inline">\(m^{3}\)</span></li>
+</ul>
 
 
 </section>
