@@ -1,4 +1,15 @@
-# Final Project: Gran Chaco Land-Use Change Detection
+---
+title: ""
+format:
+  html:
+    theme: cyborg
+    css: terminal_theme.css
+    include-after-body: terminal_theme_include.html
+resources:
+  - terminal_theme.js
+---
+
+# Gran Chaco Land-Use Change Detection
 
 ## Goal
 
@@ -7,16 +18,16 @@ Detect land-use change and deforestation in the Gran Chaco using dry-season sate
 ## Study Area
 
 - Use the [Gran Chaco AOI GeoJSON](assets/gran_chaco_aoi.geojson) as the area of interest.
-- The AOI covers dry forest and agricultural clearing in western Paraguay.
-- Dry-season imagery is preferred because cloud cover is lower and seasonal differences are easier to control.
+- The AOI covers dry forest and agricultural clearing near the Cerro Chovoreca frontier in northern Alto Paraguay.
+- Dry-season imagery composites are used to avoid cloud cover and reduce seasonal differences.
 
 ## Data 
 
-You are being provided with data for an area in Paraguay's [Gran Chaco region](https://en.wikipedia.org/wiki/Gran_Chaco). The AOI includes dry forest and agricultural clearing.  The dataset includes annual dry-season median composites made from June-August imagery.
+You are being provided with data for an area in Paraguay's [Gran Chaco region](https://en.wikipedia.org/wiki/Gran_Chaco). The AOI includes dry forest and more recent agricultural clearing near the Cerro Chovoreca frontier. The dataset includes annual dry-season median composites made from June-August imagery.
 
-Sentinel-2 and Landsat 5, 7, 8 and/or 9 images were searched from June through August for the years 2000-2025. Imaged were filtered to exclude those with too many clouds or shadows, and in order to maintain fairly similar sun angle.
+Using Google Earth Engine, Sentinel-2 and Landsat 5, 7, 8 and/or 9 images were searched from June through August for the years 2000-2025. Imaged were filtered to exclude those with too many clouds or shadows, and in order to maintain fairly similar sun angle. If you would like to see how this was done see [this notebook](assets/sentinel_gran_chaco.html).
 
-The bands of the exported imagery are given in <!-- TODO: cross ref the band table, caption the band table -->
+The bands of the exported imagery are given in @tbl-exported-bands.
 
 | Exported TIF band | Common name | Sentinel-2 band | Landsat 5/7 band | Landsat 8/9 band |
 | --- | --- | --- | --- | --- |
@@ -27,6 +38,7 @@ The bands of the exported imagery are given in <!-- TODO: cross ref the band tab
 | 5 | Shortwave infrared 1 | B11 | SR_B5 | SR_B6 |
 | 6 | Shortwave infrared 2 | B12 | SR_B7 | SR_B7 |
 
+: Exported image band order and source sensor bands. {#tbl-exported-bands}
 
 
 ## Change Detection Workflow
