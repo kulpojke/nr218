@@ -14,7 +14,7 @@ It includes:
 
    + a DEM from summer of 2018 (as tiles)
    + Sentinel-2 image from July, 2018
-   + Sentinel-2 image from February, 2014
+   + Sentinel-2 image from February, 2024
 
 ## Task
 
@@ -30,11 +30,11 @@ Find the following:
 
 ## Deliverables
 __1) Description of methods__  
-Write a short document describing the methods you used to solve the problem. Here is an example [faux-document](project_outline_example.html)  It should contain:
+Write a short document describing the methods you used to solve the problem. Here is an example [faux-document](project_outline_example.pdf)  It should contain:
 
 + Methods: Write a clear explanation of what you did, and why.  Document the steps you took, use figures where needed.  
 + A table of important layers created in your workflow. (These layers should be cross referenced in your methods.)
-+ Solution:  Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.
++ Results:  Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.
 
 __2) GIS Poject Files__  
 A zip file of your project directory.
@@ -60,3 +60,6 @@ The __final exam grade__ will be based on:
 ## Hints
 + You will need to mosaic the raster tiles or build a vrt
 + For a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 $m^{3}$
+__New hints as of 2026-05-18__ 
++ There are several ways to figure out the elevation of the surface after finding it.  None of them (that I can think of) involve zonal statistics. 
++ The lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM.

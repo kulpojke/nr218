@@ -119,7 +119,7 @@ window.Quarto = {
 <ul>
 <li>a DEM from summer of 2018 (as tiles)</li>
 <li>Sentinel-2 image from July, 2018</li>
-<li>Sentinel-2 image from February, 2014</li>
+<li>Sentinel-2 image from February, 2024</li>
 </ul>
 <section id="task" class="level2">
 <h2 class="anchored" data-anchor-id="task">Task</h2>
@@ -136,7 +136,7 @@ window.Quarto = {
 <section id="deliverables" class="level2">
 <h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
 <p><strong>1) Description of methods</strong><br>
-Write a short document describing the methods you used to solve the problem. Here is an example <a href="project_outline_example.html">faux-document</a> It should contain:</p>
+Write a short document describing the methods you used to solve the problem. Here is an example <a href="project_outline_example.pdf">faux-document</a> It should contain:</p>
 <ul>
 <li>Methods: Write a clear explanation of what you did, and why. Document the steps you took, use figures where needed.<br>
 </li>
@@ -167,7 +167,9 @@ Should include scale, legend, and North arrow.</p>
 <h2 class="anchored" data-anchor-id="hints">Hints</h2>
 <ul>
 <li>You will need to mosaic the raster tiles or build a vrt</li>
-<li>For a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 <span class="math inline">\(m^{3}\)</span></li>
+<li>For a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 <span class="math inline">\(m^{3}\)</span> <strong>New hints as of 2026-05-18</strong></li>
+<li>There are several ways to figure out the elevation of the surface after finding it. None of them (that I can think of) involve zonal statistics.</li>
+<li>The lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM.</li>
 </ul>
 
 
