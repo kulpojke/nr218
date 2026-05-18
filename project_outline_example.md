@@ -19,8 +19,8 @@ Then another thing...
 
 | Layer | File | Description |
 |--|--|--|
-| Poodle Pile | data/poodle_pile.tif | Raster layer created by piling poodles into pool |
-| Another Layer | another_layer.gpkg | Vector layer of something else |
+| Poodle Pile | `data/poodle_pile.tif` | Raster layer created by piling poodles into pool |
+| Another Layer | `data/another_layer.gpkg` | Vector layer of something else |
 | etc... | etc... | etc... |
 
 
