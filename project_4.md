@@ -14,7 +14,7 @@ It includes:
 
    + a DEM from summer of 2018 (as tiles)
    + Sentinel-2 image from July, 2018
-   + Sentinel-2 image from February, 2014
+   + Sentinel-2 image from February, 2024
 
 ## Task
 
@@ -60,3 +60,6 @@ The __final exam grade__ will be based on:
 ## Hints
 + You will need to mosaic the raster tiles or build a vrt
 + For a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 $m^{3}$
+__New hints as of 2026-05-18__ 
++ There are several ways to figure out the elevation of the surface after finding it.  None of them (that I can think of) involve zonal statistics. 
++ The lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM.
