@@ -11,7 +11,9 @@ __Final Project__
 ## Methods
 In order to do the thing, I did several things.  I did this, that, the other.
 
-The first step was to fill the reservoir with poodles and the weigh the poodles.  Etc,... More detail... blah blah.  This produce a raster layer called `Poodle Pile`, which was saved as `poodle_pile.tif`.
+Before starting my analysis I made sure that the project and all the layers were in the same CRS.  I set the project CRS and reprojected layers the layers to Web Mercator (EPSG:3857), because I wanted everything to be wildly distorted and my estimates to be terrible.  
+
+The next step was to fill the reservoir with poodles and the weigh the poodles.  Etc,... More detail... blah blah.  This produce a raster layer called `Poodle Pile`, which was saved as `poodle_pile.tif`.
 
 Next, I did something else...
 
