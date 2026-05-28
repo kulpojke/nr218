@@ -10,7 +10,7 @@ QGIS is...
 
 ::: {style="font-size:0.7em"}
 - Free, open source software
-- Compatible with different operating systems (well, mostly)
+- Compatible with different operating systems
 - Customizable workflow design
 :::
 
@@ -118,7 +118,7 @@ Opening ArcGIS Pro
 Adding data
 
 ::: {style="font-size:0.7em"}
-+ Download [SwantonGIS.gdb.zip](https://cpslo-my.sharepoint.com/personal/mthuggin_calpoly_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fmthuggin%5Fcalpoly%5Fedu%2FDocuments%2Fnr218%5Ffiles%2FSwantonGIS%2Egdb%2Ezip&parent=%2Fpersonal%2Fmthuggin%5Fcalpoly%5Fedu%2FDocuments%2Fnr218%5Ffiles&ga=1) (new file type!)
++ Download [SwantonGIS.gdb.zip](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDn37u3z080RKV9Tl4COvXyAWnrqGRQPR1zvGF2ppXbpBU?e=j1SApG) (new file type!)
 + Unzip the file, save the __whole .gdb__ to a new lab folder
 + Add the data to your ArcGIS project
   + Map > Add Data > Navigate to the GDB
@@ -231,7 +231,7 @@ Other things we can add:
 :::
 
 
-## ArcGIS Online
+
 
 
 

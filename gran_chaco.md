@@ -25,7 +25,7 @@ Detect land-use change and deforestation in the Gran Chaco using dry-season sate
 
 You are being provided with data for an area in Paraguay's [Gran Chaco region](https://en.wikipedia.org/wiki/Gran_Chaco). The AOI includes dry forest and more recent agricultural clearing near the Cerro Chovoreca frontier. The dataset includes annual dry-season median composites made from June-August imagery.
 
-Using Google Earth Engine, Sentinel-2 and Landsat 5, 7, 8 and/or 9 images were searched from June through August for the years 2000-2025. Imaged were filtered to exclude those with too many clouds or shadows, and in order to maintain fairly similar sun angle. If you would like to see how this was done see [this notebook](assets/sentinel_gran_chaco.html).
+Sentinel-2 and Landsat 5, 7, 8 and/or 9 images were searched from June through August for the years 2000-2025 using Google Earth Engine. Images were filtered by date, area of interest, and sun angle; Sentinel-2 images were also filtered by scene-level cloudiness. Cloud and cloud-shadow masking and surface reflectance scaling functions were then mapped over the image collections. Finally, the images for each year were reduced to annual dry-season median composite images. If you would like to see how this was done, see [this notebook](assets/sentinel_gran_chaco.html).
 
 The bands of the exported imagery are given in @tbl-exported-bands.
 
@@ -53,9 +53,56 @@ The bands of the exported imagery are given in @tbl-exported-bands.
    - Use NIR, red, green to highlight vegetation.
    - Use SWIR1, NIR, red to highlight bare soil, clearing, and dry vegetation.
 
-3. Calculate vegetation or disturbance indices.
-   - NDVI:
-     - `(NIR - Red) / (NIR + Red)`
+### Calculate vegetation or disturbance indices.
+
+You will need to use QGIS Model Designer to calculate NDVI for each composite raster, and save the resulting file.  To do this first create an `ndvi` directory next to the QGIS project file. 
+
+```
+gran_chaco_project/
+├── gran_chaco.qgz
+├── rasters/
+│   └── S2_2025_dry_season.tif
+└── ndvi/
+```
+
+Next open Model Designer (_Processing --> Model Designer..._).  In the panel at the lower left set eh Model Name to "calc NDVI" and the model group to "calc index".  Now that the model is named you can start creating the workflow.
+
+At the top of the left panel there should be an area that looks like what is shown in @fig-add-raster-layer.  While in the _Inputs_ tab find Raster layer and double click.  In the resulting dialogue popup add `input_image` as the description, check the _mandatory_ box, then close the dialogue.
+
+![Add raster layer dialog in the QGIS graphical modeler.](img/add_raster_layer.png){#fig-add-raster-layer .wrap-right style="--wrap-width:40%;" fig-alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input."} 
+
+After you have done this, press the "save model in project" button (![Save Model in Project button](img/model_designer_save_model_in_project.png "Save Model in Project button"){width="35px" style="vertical-align:middle;"}) to save the model. (If one were interested in using this model in another project one could save a model as a file using the _Save model as_ button.)  
+
+Next we should insure that the raster is in the right CRS.  To do this, click the _Toolbox_ tab in the left panel (to access the Processing toolbox), and search for "Warp".  Click _Warp_ from _GDAL_ -> _Raster Projections_.  Change the description to "Warp to project crs". Use `input_image` as the input layer, and check the _Use project CRS_ box.  Change _Resampling method to use_ to bilinear, then close the dialogue.  Press the "save model in project" button.
+
+In the next step you will actually calculate NDVI. Recall that the formulat for NDVI is
+
+$$ 
+\frac{NIR - Red}{NIR + Red}
+$$
+
+and from @tbl-exported-bands  you can see that NIR is band 4 and red is Band 3 in the input image.
+
+From the toolbox add _GDAL -> Raster miscellaneous -> Raster calculator_. Add the description "calc NDVI". Under _Input layer A_ click the _Model input_ button (![Model input button](img/model_designer_model_input_button.png "Model input button"){width="35px" style="vertical-align:middle;"}) and change it to _Algorithm Output_. 
+
+In the dropdown menu next to the _Algorithm output_ button, ![Algorithm output button](img/model_designer_algorithm_output_button.png "Algorithm output button"){width="35px" style="vertical-align:middle;"}, select __"Reprojected" from algorithm "Warp to project CRS"_  Under _Number of raster band for A_ put 4. Repeat the process for _Input layer B_, but use band 3.
+
+
+
+In the _Calculation in gdalnumeric syntax using..._enter $(A - B) / (A + B)$
+
+
+We want to be able to run this tool as a batch process and save the results to file. To do this we will enter an expression under _Calculated_ .  The button under calculated must be changed to _Pre-calculated Value_, then we can enter the QGIS specific expression for creating an output filename based on the input file 
+
+
+`@project_folder || '/ndvi/' || base_file_name(decode_uri(@input_image, 'path')) || '_NDVI.tif'`
+
+
+
+
+
+
+
    - NBR:
      - `(NIR - SWIR2) / (NIR + SWIR2)`
    - NDMI:
