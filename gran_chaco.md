@@ -85,19 +85,26 @@ and from @tbl-exported-bands  you can see that NIR is band 4 and red is Band 3 i
 
 From the toolbox add _GDAL -> Raster miscellaneous -> Raster calculator_. Add the description "calc NDVI". Under _Input layer A_ click the _Model input_ button (![Model input button](img/model_designer_model_input_button.png "Model input button"){width="35px" style="vertical-align:middle;"}) and change it to _Algorithm Output_. 
 
-In the dropdown menu next to the _Algorithm output_ button, ![Algorithm output button](img/model_designer_algorithm_output_button.png "Algorithm output button"){width="35px" style="vertical-align:middle;"}, select __"Reprojected" from algorithm "Warp to project CRS"_  Under _Number of raster band for A_ put 4. Repeat the process for _Input layer B_, but use band 3.
+In the dropdown menu next to the _Algorithm output_ button, ![Algorithm output button](img/model_designer_algorithm_output_button.png "Algorithm output button"){width="35px" style="vertical-align:middle;"}, select __"Reprojected" from algorithm "Warp to project CRS"_  Under _Number of raster band for A_ put 4. Repeat the process for _Input layer B_, but use band 3.  In the _Calculation in gdalnumeric syntax using..._ enter `(A - B) / (A + B)`.
 
+We want to be able to run this tool as a batch process and save the results to file. To do this we will enter an expression under _Calculated_ .  The button under calculated must be changed to _Pre-calculated Value_, then we can enter the following QGIS specific expression for creating an output filename based on the input file.
 
+```
+@project_folder || '/ndvi/' || base_file_name(decode_uri(@input_image, 'path')) || '_NDVI.tif'
+```
+For more on this the the Expression breakdown  tip box.
 
-In the _Calculation in gdalnumeric syntax using..._enter $(A - B) / (A + B)$
+::: {.callout-tip}
+## Expression breakdown
 
-
-We want to be able to run this tool as a batch process and save the results to file. To do this we will enter an expression under _Calculated_ .  The button under calculated must be changed to _Pre-calculated Value_, then we can enter the QGIS specific expression for creating an output filename based on the input file 
-
-
-`@project_folder || '/ndvi/' || base_file_name(decode_uri(@input_image, 'path')) || '_NDVI.tif'`
-
-
+- `@project_folder` is a QGIS variable for the folder containing the current `.qgz` project
+- `||` is a string concatenation, meaning “join these text pieces”
+- `'/ndvi/'` is literal text
+- `@input_image` is the model input variable; this must match the input name in Model Designer
+- `decode_uri(@input_image, 'path')` extracts the filesystem path from the input raster/layer URI
+- `base_file_name(...)` gets the file stem without folder or extension
+- `'_NDVI.tif'` is the suffix to add
+:::
 
 
 
