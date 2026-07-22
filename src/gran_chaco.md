@@ -3,10 +3,10 @@ title: ""
 format:
   html:
     theme: cyborg
-    css: terminal_theme.css
-    include-after-body: terminal_theme_include.html
+    css: style/terminal_theme.css
+    include-after-body: style/terminal_theme_include.html
 resources:
-  - terminal_theme.js
+  - style/terminal_theme.js
 ---
 
 # Gran Chaco Land-Use Change Detection

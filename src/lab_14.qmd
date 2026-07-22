@@ -4,7 +4,7 @@ author: "Dillen Corlett"
 format:
   html:
     theme: quartz
-    css: styles.css
+    css: style/styles.css
 ---
 
 ## What is the Model Designer?
@@ -147,7 +147,6 @@ Close the model designer window (make sure you saved!) and take a look at the ou
 Great! Now let's compare this half of Swanton to the other half. Add all of the layers from SPR2 to your map, and re-run the model (from your processing toolbox or re-open the model designer) using those layers instead. Which half has more area?
 
 For your final submission, include a screenshot of your model and the total area of viable camping land for each half of Swanton (make sure to specify the correct unit based on our CRS!).
-
 
 
 

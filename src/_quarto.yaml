@@ -1,9 +1,9 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: ../docs
   render:
-    - syllabus_spring_2026_s03.qmd
-    - syllabus_spring_2026_s05.qmd
+    - syllabi/syllabus_spring_2026_s03.qmd
+    - syllabi/syllabus_spring_2026_s05.qmd
     - computers_lab.qmd
     - tips_for_mac_users.qmd
     - terminal_cheatsheet.qmd
@@ -16,9 +16,7 @@ project:
     - lab_10.qmd
     - lab_11.qmd
     - lab_14.qmd
-    - lab_15.qmd
     - gran_chaco.md
-    - assets/sentinel_gran_chaco.ipynb
     - NDHI.qmd
     - introduction.qmd
     - computers.qmd
@@ -47,7 +45,14 @@ project:
     - intro_excel_arc_tmp.qmd
     - index.qmd
   resources:
-    - .nojekyll
+    - ../.nojekyll
+    - ../assets
+    - ../img
+    - style
+
+resource-path:
+  - .
+  - ..
 
 format:
   revealjs:

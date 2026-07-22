@@ -3,7 +3,7 @@ title: "Using computers well enough for GIS"
 format:
   html:
     theme: quartz
-    css: styles.css
+    css: style/styles.css
 ---
 
 ## Introduction

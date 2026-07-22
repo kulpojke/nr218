@@ -3,7 +3,7 @@ title: ""
 format:
   html:
     theme: quartz
-    css: styles.css
+    css: style/styles.css
 bibliography: references.bib
 ---
 
