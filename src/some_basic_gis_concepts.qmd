@@ -104,11 +104,11 @@ Models representing different aspects of the physical world
 #| echo: false
 import geopandas as gpd
 from pathlib import Path
-file = Path('assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson')
+file = Path('../assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson')
 df = gpd.read_file(file)
 df.head()
 ```
-Attributes of [`assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson`](assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson)
+Attributes of [`../assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson`](../assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson)
 
 ##
 ![Right-click layer --> Open Attribute Table](img/qgis-attrubute-table.png)
@@ -189,7 +189,7 @@ from pathlib import Path
 import folium
 import geopandas as gpd
 
-aoi_path = Path('assets/Eaton_Perimeter_20250121.geojson')
+aoi_path = Path('../assets/Eaton_Perimeter_20250121.geojson')
 aoi = gpd.read_file(aoi_path)
 
 # Repair invalid geometries before dissolving; otherwise unary_union can
