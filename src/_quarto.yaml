@@ -2,8 +2,8 @@ project:
   type: website
   output-dir: ../docs
   render:
-    - syllabi/syllabus_spring_2026_s03.qmd
-    - syllabi/syllabus_spring_2026_s05.qmd
+    - syllabi/syllabus_fall_2026.qmd
+    - syllabi/section_07_fall_2026.qmd
     - computers_lab.qmd
     - tips_for_mac_users.qmd
     - terminal_cheatsheet.qmd

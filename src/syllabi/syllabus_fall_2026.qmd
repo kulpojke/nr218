@@ -1,0 +1,25 @@
+---
+title: "Syllabus - NR 2218 - Introduction to GIS - Fall 2026"
+format:
+  html:
+    theme: cyborg
+    css: ../style/terminal_theme.css
+    include-after-body: ../style/terminal_theme_include_subdir.html
+---
+
+
+[Jump to class calendar](section_07_fall_2026.html)
+
+## Class Details
+Room __TBD__
+
+Monday: 5:10 - 9:00  
+Wednesday: 6:10 - 9:00 
+
+## Instructor Details
+Michael Huggins  
+&#9993; [mthuggin@calpoly.edu](mailto:mthuggin@calpoly.edu)  
+Office Hours: __TBD__  
+Building 72-107 (Plant Conservatory)  
+
+__TA:__ ?

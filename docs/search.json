@@ -333,7 +333,7 @@
     "href": "index.html#attributes",
     "title": "NR 218",
     "section": "Attributes",
-    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of ../assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
+    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
   },
   {
     "objectID": "index.html#section-3",
@@ -2552,7 +2552,7 @@
     "href": "some_basic_gis_concepts.html#attributes",
     "title": "Some basic GIS Concepts",
     "section": "Attributes",
-    "text": "Attributes\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
+    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
   },
   {
     "objectID": "some_basic_gis_concepts.html#section-1",
@@ -2566,7 +2566,7 @@
     "href": "some_basic_gis_concepts.html#map-types",
     "title": "Some basic GIS Concepts",
     "section": "Map Types",
-    "text": "Map Types\nThere are a few types of maps:\n\n\n\nMental Maps\n\nPsychological tools that we all use every day.\nStored in our brain\nTo get from one place to another, or to understand and situate events that we hear about\nReflect the amount and extent of geographic knowledge and spatial awareness that we possess\n\nUsing a blank sheet of paper, take five minutes to draw a map from memory of San Luis Obispo\n\n\nReference - shows location information, often represent geographic reality accurately, topographic maps for example\n\n\nReference - shows location information, often represent geographic reality accurately…\nBut not always. A subway map is also a reference map. It represents topological relationships accurately in a schematic way for ease of navigation\n\n\nThematic - shows how one or more factors are distributed across space, such as a map of malaria infection rates\n\n\n\n\n\n\n\n\nUSGS Topographic Map of Boulder, CO\n\n\n\n\n\n\n\n\n\n\n\n\nEuropean GDP\n\n\n\n\n\nDynamic / Interactive\n- maps that change depending on user input\n\n\nShow code\nfrom pathlib import Path\n\nimport folium\nimport geopandas as gpd\n\naoi_path = Path('assets/Eaton_Perimeter_20250121.geojson')\naoi = gpd.read_file(aoi_path)\n\n# Repair invalid geometries before dissolving; otherwise unary_union can\n# return an empty geometry on some GEOS/Shapely builds.\naoi = aoi.copy()\naoi[\"geometry\"] = aoi.geometry.make_valid()\n\n# Get a stable map center from the dissolved perimeter.\ndissolved = aoi.to_crs(epsg=26910).dissolve()\ncenter_geom = dissolved.representative_point().to_crs(epsg=4326).item()\n\nif center_geom.is_empty:\n    xmin, ymin, xmax, ymax = aoi.total_bounds\n    latlon_center = [(ymin + ymax) / 2, (xmin + xmax) / 2]\nelse:\n    latlon_center = [center_geom.y, center_geom.x]\n\n# map\nmap = folium.Map(\n  location=latlon_center,\n  tiles='OpenStreetMap',\n  zoom_start=12\n)\n\n# perimeter\ngeo_j = folium.GeoJson(data=aoi.__geo_interface__,\n  style_function=lambda feature: {\n    'color': 'red',\n    'weight': 2,\n    'fill': False,\n    },\n    name='Fire Perimeter'\n  ).add_to(map)\n# layer control\n\nmap"
+    "text": "Map Types\nThere are a few types of maps:\n\n\n\nMental Maps\n\nPsychological tools that we all use every day.\nStored in our brain\nTo get from one place to another, or to understand and situate events that we hear about\nReflect the amount and extent of geographic knowledge and spatial awareness that we possess\n\nUsing a blank sheet of paper, take five minutes to draw a map from memory of San Luis Obispo\n\n\nReference - shows location information, often represent geographic reality accurately, topographic maps for example\n\n\nReference - shows location information, often represent geographic reality accurately…\nBut not always. A subway map is also a reference map. It represents topological relationships accurately in a schematic way for ease of navigation\n\n\nThematic - shows how one or more factors are distributed across space, such as a map of malaria infection rates\n\n\n\n\n\n\n\n\nUSGS Topographic Map of Boulder, CO\n\n\n\n\n\n\n\n\n\n\n\n\nEuropean GDP\n\n\n\n\n\nDynamic / Interactive\n- maps that change depending on user input\n\n\nShow code\nfrom pathlib import Path\n\nimport folium\nimport geopandas as gpd\n\naoi_path = Path('../assets/Eaton_Perimeter_20250121.geojson')\naoi = gpd.read_file(aoi_path)\n\n# Repair invalid geometries before dissolving; otherwise unary_union can\n# return an empty geometry on some GEOS/Shapely builds.\naoi = aoi.copy()\naoi[\"geometry\"] = aoi.geometry.make_valid()\n\n# Get a stable map center from the dissolved perimeter.\ndissolved = aoi.to_crs(epsg=26910).dissolve()\ncenter_geom = dissolved.representative_point().to_crs(epsg=4326).item()\n\nif center_geom.is_empty:\n    xmin, ymin, xmax, ymax = aoi.total_bounds\n    latlon_center = [(ymin + ymax) / 2, (xmin + xmax) / 2]\nelse:\n    latlon_center = [center_geom.y, center_geom.x]\n\n# map\nmap = folium.Map(\n  location=latlon_center,\n  tiles='OpenStreetMap',\n  zoom_start=12\n)\n\n# perimeter\ngeo_j = folium.GeoJson(data=aoi.__geo_interface__,\n  style_function=lambda feature: {\n    'color': 'red',\n    'weight': 2,\n    'fill': False,\n    },\n    name='Fire Perimeter'\n  ).add_to(map)\n# layer control\n\nmap\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
   },
   {
     "objectID": "some_basic_gis_concepts.html#what-is-data-what-are-data",
@@ -2828,186 +2828,39 @@
     "text": "Installing tree command\nIn terminal brew install tree. (If Homebrew is not yet installed see Installing Homebrew.)"
   },
   {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html",
-    "href": "syllabi/syllabus_spring_2026_s05.html",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
+    "objectID": "syllabi/section_07_fall_2026.html",
+    "href": "syllabi/section_07_fall_2026.html",
+    "title": "Section 07 Schedule",
+    "section": "",
+    "text": "Room TBD\nTwo hours of lecture per week \nTuesday: 4:00 - 5:50\nThree hours of lab per week \nThursday: 4:00 - 6:50"
+  },
+  {
+    "objectID": "syllabi/section_07_fall_2026.html#class-details",
+    "href": "syllabi/section_07_fall_2026.html#class-details",
+    "title": "Section 07 Schedule",
+    "section": "",
+    "text": "Room TBD\nTwo hours of lecture per week \nTuesday: 4:00 - 5:50\nThree hours of lab per week \nThursday: 4:00 - 6:50"
+  },
+  {
+    "objectID": "syllabi/syllabus_fall_2026.html",
+    "href": "syllabi/syllabus_fall_2026.html",
+    "title": "Syllabus - NR 2218 - Introduction to GIS - Fall 2026",
     "section": "",
     "text": "Jump to class calendar"
   },
   {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#class-details",
-    "href": "syllabi/syllabus_spring_2026_s05.html#class-details",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
+    "objectID": "syllabi/syllabus_fall_2026.html#class-details",
+    "href": "syllabi/syllabus_fall_2026.html#class-details",
+    "title": "Syllabus - NR 2218 - Introduction to GIS - Fall 2026",
     "section": "Class Details",
-    "text": "Class Details\nRoom 180-230 (Baker)\nTuesday: 5:10 - 9:00\nThursday: 6:10 - 9:00"
+    "text": "Class Details\nRoom TBD\nMonday: 5:10 - 9:00\nWednesday: 6:10 - 9:00"
   },
   {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#instructor-details",
-    "href": "syllabi/syllabus_spring_2026_s05.html#instructor-details",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
+    "objectID": "syllabi/syllabus_fall_2026.html#instructor-details",
+    "href": "syllabi/syllabus_fall_2026.html#instructor-details",
+    "title": "Syllabus - NR 2218 - Introduction to GIS - Fall 2026",
     "section": "Instructor Details",
-    "text": "Instructor Details\nMichael Huggins\n✉ mthuggin@calpoly.edu\nOffice Hours: Mondays 2:00 - 4:00\nBuilding 72-107 (Plant Conservatory)\nTA: Jillian Ong"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#learning-goals",
-    "href": "syllabi/syllabus_spring_2026_s05.html#learning-goals",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
-    "section": "Learning Goals",
-    "text": "Learning Goals\n\nHow to formulate and answer problems using spatial data\n\nHow to create quality maps and graphics\nApply skills in remote sensing, GIS, and data science to solve a problem\nUnderstand basic principles of GIS"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#labs",
-    "href": "syllabi/syllabus_spring_2026_s05.html#labs",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
-    "section": "Labs",
-    "text": "Labs\nNot every lab requires you turn in your results. The calendar lists due dates for the labs that need to be turned in."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#quizzes",
-    "href": "syllabi/syllabus_spring_2026_s05.html#quizzes",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
-    "section": "Quizzes",
-    "text": "Quizzes\nThere will be five quizzes. For each quiz, if you get 75% of the points, you get full credit. Beyond 75% correct will allow you to earn up to 25% of the quiz value in extra credit."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#assignment-weight",
-    "href": "syllabi/syllabus_spring_2026_s05.html#assignment-weight",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
-    "section": "Assignment Weight",
-    "text": "Assignment Weight\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nLab exercises\n50\n9 have assignments that need to be turned in\n\n\nQuizzes\n10\nQuizzes can happen any time!\n\n\nProject\n20\nWill use skills learned throughout the quarter\n\n\nFinal Exam\n20\nOral exam, in which you will explain what you did in project 4"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#grading",
-    "href": "syllabi/syllabus_spring_2026_s05.html#grading",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
-    "section": "Grading",
-    "text": "Grading\nA: ≥ 90%\nB: ≥ 80%\nC: ≥ 70%\nD: ≥ 60%\nF: &lt; 60%\nNote: Grading is not curved."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#assignment-submission-policy",
-    "href": "syllabi/syllabus_spring_2026_s05.html#assignment-submission-policy",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
-    "section": "Assignment Submission Policy",
-    "text": "Assignment Submission Policy\nAssignments will be submitted on Canvas. Late assignments will be penalized by 5% for every day they are late."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#academic-integrity",
-    "href": "syllabi/syllabus_spring_2026_s05.html#academic-integrity",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nAll students should be familiar with and adhere to the university’s academic integrity policy, which can be found here: https://osrr.calpoly.edu/academic-integrity"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#use-of-ai",
-    "href": "syllabi/syllabus_spring_2026_s05.html#use-of-ai",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
-    "section": "Use of AI",
-    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid (See this study for example) and waste your time!\n\nDepending on AI prevents development of critical thinking, writing, and problem-solving skills\nAI will often lead you down a terrible, deep rabbit hole of confusion\nGetting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework\nThe struggle of working through difficult concepts is often where the most valuable learning occurs\nAI uses heaps of electricity\n\nThat is not to say LLMs are never useful or appropriate to use, but you need to know their limitations. I suggest reading this critical AI literacy guide from Rutgers University."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#textbook",
-    "href": "syllabi/syllabus_spring_2026_s05.html#textbook",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
-    "section": "Textbook",
-    "text": "Textbook\nYou will read excerpts from Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found here."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s05.html#tutorials",
-    "href": "syllabi/syllabus_spring_2026_s05.html#tutorials",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 05",
-    "section": "Tutorials",
-    "text": "Tutorials\nWe will refer to a number of tutorial videos which describe QGIS processing. These will come primarily from two sources:\nUjaval Gandhi’s QGIS Tutorials and Tips\nQGIS Training Manual\nThere are many other helpful sources of information on GIS Software, here area couple:\nSpatial Thoughts introduction-to-qgis.html\nA Gentle Introduction to GIS gentle_gis_introduction/index.html"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html",
-    "href": "syllabi/syllabus_spring_2026_s03.html",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "",
-    "text": "Jump to class calendar"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#class-details",
-    "href": "syllabi/syllabus_spring_2026_s03.html#class-details",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Class Details",
-    "text": "Class Details\nRoom 180-230 (Baker)\nMonday: 5:10 - 9:00\nWednesday: 6:10 - 9:00"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#instructor-details",
-    "href": "syllabi/syllabus_spring_2026_s03.html#instructor-details",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Instructor Details",
-    "text": "Instructor Details\nMichael Huggins\n✉ mthuggin@calpoly.edu\nOffice Hours: Mondays 2:00 - 4:00\nBuilding 72-107 (Plant Conservatory)\nTA: Lucas Larson"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#learning-goals",
-    "href": "syllabi/syllabus_spring_2026_s03.html#learning-goals",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Learning Goals",
-    "text": "Learning Goals\n\nHow to formulate and answer problems using spatial data\n\nHow to create quality maps and graphics\nApply skills in remote sensing, GIS, and data science to solve a problem\nUnderstand basic principles of GIS"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#labs",
-    "href": "syllabi/syllabus_spring_2026_s03.html#labs",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Labs",
-    "text": "Labs\nNot every lab requires you turn in your results. The calendar lists due dates for the labs that need to be turned in."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#quizzes",
-    "href": "syllabi/syllabus_spring_2026_s03.html#quizzes",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Quizzes",
-    "text": "Quizzes\nThere will be five quizzes. For each quiz, if you get 75% of the points, you get full credit. Beyond 75% correct will allow you to earn up to 25% of the quiz value in extra credit."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#assignment-weight",
-    "href": "syllabi/syllabus_spring_2026_s03.html#assignment-weight",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Assignment Weight",
-    "text": "Assignment Weight\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nLab exercises\n50\n9 have assignments that need to be turned in\n\n\nQuizzes\n10\nQuizzes can happen any time!\n\n\nProject\n20\nWill use skills learned throughout the quarter\n\n\nFinal Exam\n20\nOral exam, in which you will explain what you did in project 4"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#grading",
-    "href": "syllabi/syllabus_spring_2026_s03.html#grading",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Grading",
-    "text": "Grading\nA: ≥ 90%\nB: ≥ 80%\nC: ≥ 70%\nD: ≥ 60%\nF: &lt; 60%\nNote: Grading is not curved."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#assignment-submission-policy",
-    "href": "syllabi/syllabus_spring_2026_s03.html#assignment-submission-policy",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Assignment Submission Policy",
-    "text": "Assignment Submission Policy\nAssignments will be submitted on Canvas. Late assignments will be penalized by 5% for every day they are late."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#academic-integrity",
-    "href": "syllabi/syllabus_spring_2026_s03.html#academic-integrity",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nAll students should be familiar with and adhere to the university’s academic integrity policy, which can be found here: https://osrr.calpoly.edu/academic-integrity"
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#use-of-ai",
-    "href": "syllabi/syllabus_spring_2026_s03.html#use-of-ai",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Use of AI",
-    "text": "Use of AI\nAI generated text may not be used for any writing.\nStudents can seek AI assistance for project work, but it is important to consider that AI will make you stupid (See this study for example) and waste your time!\n\nDepending on AI prevents development of critical thinking, writing, and problem-solving skills\nAI will often lead you down a terrible, deep rabbit hole of confusion\nGetting quick answers without working through problems will leave gaps in foundational knowledge needed for advanced coursework\nThe struggle of working through difficult concepts is often where the most valuable learning occurs\nAI uses heaps of electricity\n\nThat is not to say LLMs are never useful or appropriate to use, but you need to know their limitations. I suggest reading this critical AI literacy guide from Rutgers University."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#textbook",
-    "href": "syllabi/syllabus_spring_2026_s03.html#textbook",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Textbook",
-    "text": "Textbook\nYou will read excerpts from Essentials of Geographic Information Systems during this course. A free and online version of the textbook can be found here."
-  },
-  {
-    "objectID": "syllabi/syllabus_spring_2026_s03.html#tutorials",
-    "href": "syllabi/syllabus_spring_2026_s03.html#tutorials",
-    "title": "Syllabus - NR 218 - Introduction to GIS - Spring 2026, Section 03",
-    "section": "Tutorials",
-    "text": "Tutorials\nWe will refer to a number of tutorial videos which describe QGIS processing. These will come primarily from two sources:\nUjaval Gandhi’s QGIS Tutorials and Tips\nQGIS Training Manual\nThere are many other helpful sources of information on GIS Software, here area couple:\nSpatial Thoughts introduction-to-qgis.html\nA Gentle Introduction to GIS gentle_gis_introduction/index.html"
+    "text": "Instructor Details\nMichael Huggins\n✉ mthuggin@calpoly.edu\nOffice Hours: TBD\nBuilding 72-107 (Plant Conservatory)\nTA: ?"
   },
   {
     "objectID": "computers_lab.html",

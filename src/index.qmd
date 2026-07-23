@@ -52,8 +52,8 @@ navigation-mode: vertical
 ::: {.column width="5-%"}
 __Assorted Links__   
 
-[Syllabus Spring 2026 Section 03](syllabi/syllabus_spring_2026_s03.html){style="font-size:0.8em"}  
-[Syllabus Spring 2026 Section 05](syllabi/syllabus_spring_2026_s05.html){style="font-size:0.8em"}  
+[Syllabus](syllabi/syllabus_fall_2026.html){style="font-size:0.8em"}
+
 [Short Reading on Computers](computers.html){style="font-size:0.8em"}  
 :::
 

@@ -108,7 +108,7 @@ file = Path('../assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson')
 df = gpd.read_file(file)
 df.head()
 ```
-Attributes of [`../assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson`](../assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson)
+Attributes of [`assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson`](assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson)
 
 ##
 ![Right-click layer --> Open Attribute Table](img/qgis-attrubute-table.png)
