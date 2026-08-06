@@ -8,6 +8,8 @@
 
 
 ## Video
++ As we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.
++ Take less careful notes in the rest.  It is an interesting geospatial analysis.
 
 <iframe width="960" height="540" src="https://www.youtube.com/embed/tz23G_UXCGA?origin=https%3A%2F%2Fkulpojke.github.io&playsinline=1" title="Something is jamming GPS over Europe. Here's what we found" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width: 90vw; max-height: 70vh; aspect-ratio: 16 / 9;"></iframe>
 
@@ -15,6 +17,28 @@
 
 
 ## Important Points
+::: { .r-stack}
+::: {.fragment .absolute .fade--out data-fragment-index="1"}
 
++ Global Navigation Satellite Systems (GNSS) is the general category comprising the following systems:
+    + GPS: United States, first satellite launched in 1978
+    + GLONASS: Russia/Soviet Union, first satellite launched in 1982
+    + BeiDou: China, first satellite launched in 2000
+    + Galileo: European Union, first test satellite launched in 2005
 
+:::
 
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+
++ Signals from Satellites
+    + Signals contain the position of the satellite, and the exact time sent
+    + $\ell = c t$
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+![](../img/GPS-3D-trilateration.png)
+:::
+
+:::
+ 
