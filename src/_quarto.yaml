@@ -43,7 +43,9 @@ project:
     - focal_filters.qmd
     - intro_excel_arc.qmd
     - intro_excel_arc_tmp.qmd
+    - gps.qmd
     - index.qmd
+    
   resources:
     - ../.nojekyll
     - ../assets

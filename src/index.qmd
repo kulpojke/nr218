@@ -51,9 +51,7 @@ navigation-mode: vertical
 ::: {.columns}
 ::: {.column width="5-%"}
 __Assorted Links__   
-
 [Syllabus](syllabi/syllabus_fall_2026.html){style="font-size:0.8em"}
-
 [Short Reading on Computers](computers.html){style="font-size:0.8em"}  
 :::
 
@@ -121,6 +119,8 @@ __Lab Assignments__
 {{< include focal_filters.qmd >}}
 
 {{< include georeferencing.qmd >}}
+
+{{< include gps.qmd >}}
 
 {{< include intro_to_esri.qmd >}}
 
