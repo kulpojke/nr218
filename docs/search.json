@@ -1544,7 +1544,21 @@
     "href": "index.html#how-does-gps-work",
     "title": "NR 218",
     "section": "How does GPS Work",
-    "text": "How does GPS Work\nVideo\n\n\nImportant Points"
+    "text": "How does GPS Work"
+  },
+  {
+    "objectID": "index.html#video",
+    "href": "index.html#video",
+    "title": "NR 218",
+    "section": "Video",
+    "text": "Video\n\n\nOpen the video on YouTube"
+  },
+  {
+    "objectID": "index.html#important-points",
+    "href": "index.html#important-points",
+    "title": "NR 218",
+    "section": "Important Points",
+    "text": "Important Points"
   },
   {
     "objectID": "index.html#arcgis-vs-qgis",
@@ -3882,6 +3896,20 @@
     "href": "gps.html#how-does-gps-work",
     "title": "",
     "section": "How does GPS Work",
-    "text": "How does GPS Work\nVideo\n\n\nImportant Points"
+    "text": "How does GPS Work"
+  },
+  {
+    "objectID": "gps.html#video",
+    "href": "gps.html#video",
+    "title": "",
+    "section": "Video",
+    "text": "Video\n\n\nOpen the video on YouTube"
+  },
+  {
+    "objectID": "gps.html#important-points",
+    "href": "gps.html#important-points",
+    "title": "",
+    "section": "Important Points",
+    "text": "Important Points"
   }
 ]

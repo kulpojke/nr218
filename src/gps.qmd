@@ -6,9 +6,15 @@
 
 ## How does GPS Work
 
-### Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tz23G_UXCGA?si=j0u6y1kT8aH70XKl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+## Video
+
+<iframe width="960" height="540" src="https://www.youtube.com/embed/tz23G_UXCGA?origin=https%3A%2F%2Fkulpojke.github.io&playsinline=1" title="Something is jamming GPS over Europe. Here's what we found" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width: 90vw; max-height: 70vh; aspect-ratio: 16 / 9;"></iframe>
+
+[Open the video on YouTube](https://www.youtube.com/watch?v=tz23G_UXCGA)
 
 
-### Important Points
+## Important Points
+
+
+
