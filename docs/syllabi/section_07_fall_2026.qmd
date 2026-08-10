@@ -1,0 +1,18 @@
+---
+title: "Section 07 Schedule"
+format:
+  html:
+    theme: cyborg
+    css: ../style/terminal_theme.css
+    include-after-body: ../style/terminal_theme_include_subdir.html
+---
+
+
+## Class Details
+Room __TBD__
+
+__Two hours of lecture per week __  
+Tuesday: 4:00 - 5:50  
+
+__Three hours of lab per week __  
+Thursday: 4:00 - 6:50 
