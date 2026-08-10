@@ -23,7 +23,7 @@ For more useful commands see [the slides on using the terminal](terminal_cheatsh
 
 ## Task 2: Exploring a Directory Structure and unzipping files
 
-1. Download some made up files [here](https://https://githubusercontent.com/kulpojke/nr218/blob/7a807fa1e06e8f338fc3b97b3277dcde6d02dbc7/assets/toy_data.zip) (Open the linkin a new tab and click the _Download raw file_ button on the right side). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration.  For now, we will do just that, so unzip `toy_data.zip` right into the download folder (see @tip-zip for how to do this.).  
+1. Download some made up files <a href="assets/toy_data.zip" download>here</a> (Open the linkin a new tab and click the _Download raw file_ button on the right side). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration.  For now, we will do just that, so unzip `toy_data.zip` right into the download folder (see @tip-zip for how to do this.).  
 
 ::: {#tip-zip .callout-tip}
 ## How do I unzip a zip archive? What is a zip archive?
