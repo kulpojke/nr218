@@ -22,7 +22,7 @@ Thursday: 4:00 - 6:50
 | Date         | Week | Topic                                                           | 
 |--------------|-----:|-----------------------------------------------------------------|
 | August 25    | 1          | Lecture: Introduction, What is GIS, Computers    | 
-| August 27    | 1          | [Lab1, Computers](../section_07_fall_2026.qmd)   |
+| August 27    | 1          | [Lab 1, Computers](../computers_lab.html)   |
 | September 1  | 2          | Lecture: Basic GIS Concepts \| Scale, Coordinate systems, and Map Projections   |
 | September 3  | 2          | Lab: TBD   |
 | September 8  | 3          | Lecture: Spatial Data Models and File Formats    |
