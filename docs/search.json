@@ -1551,14 +1551,21 @@
     "href": "index.html#video",
     "title": "NR 218",
     "section": "Video",
-    "text": "Video\n\n\nOpen the video on YouTube"
+    "text": "Video\n\nAs we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.\nTake less careful notes in the rest. It is an interesting geospatial analysis.\n\n\n\nOpen the video on YouTube"
   },
   {
     "objectID": "index.html#important-points",
     "href": "index.html#important-points",
     "title": "NR 218",
     "section": "Important Points",
-    "text": "Important Points"
+    "text": "Important Points\n\n\n\nGlobal Navigation Satellite Systems (GNSS) is the general category comprising the following systems:\n\nGPS: United States, first satellite launched in 1978\nGLONASS: Russia/Soviet Union, first satellite launched in 1982\nBeiDou: China, first satellite launched in 2000\nGalileo: European Union, first test satellite launched in 2005\n\n\n\n\n\nSignals from Satellites\n\nSignals contain the position of the satellite, and the exact time sent\n\\(\\ell = c t\\)\n\n\n\n\nIf you know your distance from 3 points in 3D space, theoretically you know where you are,\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3\n\\end{aligned}\n\\]\nbut there are sources of error …\n\n\nYour the ground unit’s time is wrong, so you need at tleast 4 satellites to solve for distance error caused by clock error, b.\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1 + b\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2 + b\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3 + b\\\\\n\\sqrt{(x - x_4)^{2} + (y - y_4)^{2} + (z - z_4)^{2}} = c t_4 + b\n\\end{aligned}\n\\]\n\n\n\nHow does the satellite know where it is?\n\nGround stations!\n\nHow do the ground stations know where they are, what with the continents moving around and all?\n\nQulsars!\nRadio telescopes male a precise map of continental movement from qulsars\nGround stations are tied into that map\n\n\n\n\n\nOther complexities:\n\nRelativistic effects\nRotation of earth\nAtmospheric effects\n\nSo GNSS units use many satellites to improve location\n\nphones, ~ 3m\nPrecision units , cms\n\n\n\n\n\nGPS signals are weak\n\ntransmitted at about 50 W\narrives at about \\(10^{-16}\\) W\n\n\n\n\nHere’s a slide-friendly table. These are carrier center frequencies in MHz.\n\n\n\n\n\n\n\n\n\nSystem\nOperator\nMain GNSS signals\nFrequencies\n\n\n\n\nGPS\nU.S.\nL1, L2, L5\n1575.42, 1227.60, 1176.45\n\n\nGalileo\nEuropean Union\nE1, E5a, E5b, E5, E6\n1575.42, 1176.45, 1207.14, 1191.795, 1278.75\n\n\nBeiDou\nChina\nB1I, B1C, B2a, B2b/B2I, B3I\n1561.098, 1575.42, 1176.45, 1207.14, 1268.52\n\n\nGLONASS\nRussia\nL1, L2\nL1: 1598.0625-1605.375; L2: 1242.9375-1248.625\n\n\nQZSS\nJapan\nL1, L2, L5, L6\n1575.42, 1227.60, 1176.45, 1278.75\n\n\nNavIC\nIndia\nL1, L5, S-band\n1575.42, 1176.45, 2492.028\n\n\n\nNote: GLONASS is different because its older signals use slightly different frequencies for different satellites, so it is listed as ranges.\nSources: GPS.gov, ESA/Galileo Navipedia, BeiDou CSNO/TARC, GLONASS ICD listing, QZSS Cabinet Office, ISRO NavIC FAQ."
+  },
+  {
+    "objectID": "index.html#exercise",
+    "href": "index.html#exercise",
+    "title": "NR 218",
+    "section": "Exercise",
+    "text": "Exercise\n\n\nDrain scavenger hunt\n\nWork in pairs and find storm drains around campus\nFor each drain, take one clear photo\nUse your phone to record the latitude and longitude in decimal degrees\nFor each drain, enter the following into the Google Form:\n\nlatitude\nlongitude\napproximate size in cm\nshape: round, rectangular, or other\nphoto\n\n\n\n\n\nAfter the class has submitted data:\n\nopen the linked Google Sheet\ndownload the sheet as a CSV\nopen QGIS\nadd the CSV as a delimited text layer\nset X field = longitude and Y field = latitude\nset the CRS to WGS84, EPSG:4326\ninspect the points and fix any obvious coordinate errors\n\n\n\n\n\nAdd photo locations from EXIF data:\n\ndownload the original uploaded photos from Google Drive\nin QGIS, open the Processing Toolbox\nsearch for and run Import geotagged photos\nuse the downloaded photo folder as the input folder\ncreate a point layer from the photo EXIF coordinates\ncompare the EXIF photo points to the manually entered CSV points\nnote which photos are missing location data or plot in the wrong place"
   },
   {
     "objectID": "index.html#arcgis-vs-qgis",
@@ -3903,13 +3910,20 @@
     "href": "gps.html#video",
     "title": "",
     "section": "Video",
-    "text": "Video\n\n\nOpen the video on YouTube"
+    "text": "Video\n\nAs we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.\nTake less careful notes in the rest. It is an interesting geospatial analysis.\n\n\n\nOpen the video on YouTube"
   },
   {
     "objectID": "gps.html#important-points",
     "href": "gps.html#important-points",
     "title": "",
     "section": "Important Points",
-    "text": "Important Points"
+    "text": "Important Points\n\n\n\nGlobal Navigation Satellite Systems (GNSS) is the general category comprising the following systems:\n\nGPS: United States, first satellite launched in 1978\nGLONASS: Russia/Soviet Union, first satellite launched in 1982\nBeiDou: China, first satellite launched in 2000\nGalileo: European Union, first test satellite launched in 2005\n\n\n\n\n\nSignals from Satellites\n\nSignals contain the position of the satellite, and the exact time sent\n\\(\\ell = c t\\)\n\n\n\n\nIf you know your distance from 3 points in 3D space, theoretically you know where you are,\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3\n\\end{aligned}\n\\]\nbut there are sources of error …\n\n\nYour the ground unit’s time is wrong, so you need at tleast 4 satellites to solve for distance error caused by clock error, b.\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1 + b\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2 + b\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3 + b\\\\\n\\sqrt{(x - x_4)^{2} + (y - y_4)^{2} + (z - z_4)^{2}} = c t_4 + b\n\\end{aligned}\n\\]\n\n\n\nHow does the satellite know where it is?\n\nGround stations!\n\nHow do the ground stations know where they are, what with the continents moving around and all?\n\nQulsars!\nRadio telescopes male a precise map of continental movement from qulsars\nGround stations are tied into that map\n\n\n\n\n\nOther complexities:\n\nRelativistic effects\nRotation of earth\nAtmospheric effects\n\nSo GNSS units use many satellites to improve location\n\nphones, ~ 3m\nPrecision units , cms\n\n\n\n\n\nGPS signals are weak\n\ntransmitted at about 50 W\narrives at about \\(10^{-16}\\) W\n\n\n\n\nHere’s a slide-friendly table. These are carrier center frequencies in MHz.\n\n\n\n\n\n\n\n\n\nSystem\nOperator\nMain GNSS signals\nFrequencies\n\n\n\n\nGPS\nU.S.\nL1, L2, L5\n1575.42, 1227.60, 1176.45\n\n\nGalileo\nEuropean Union\nE1, E5a, E5b, E5, E6\n1575.42, 1176.45, 1207.14, 1191.795, 1278.75\n\n\nBeiDou\nChina\nB1I, B1C, B2a, B2b/B2I, B3I\n1561.098, 1575.42, 1176.45, 1207.14, 1268.52\n\n\nGLONASS\nRussia\nL1, L2\nL1: 1598.0625-1605.375; L2: 1242.9375-1248.625\n\n\nQZSS\nJapan\nL1, L2, L5, L6\n1575.42, 1227.60, 1176.45, 1278.75\n\n\nNavIC\nIndia\nL1, L5, S-band\n1575.42, 1176.45, 2492.028\n\n\n\nNote: GLONASS is different because its older signals use slightly different frequencies for different satellites, so it is listed as ranges.\nSources: GPS.gov, ESA/Galileo Navipedia, BeiDou CSNO/TARC, GLONASS ICD listing, QZSS Cabinet Office, ISRO NavIC FAQ."
+  },
+  {
+    "objectID": "gps.html#exercise",
+    "href": "gps.html#exercise",
+    "title": "",
+    "section": "Exercise",
+    "text": "Exercise\n\n\nDrain scavenger hunt\n\nWork in pairs and find storm drains around campus\nFor each drain, take one clear photo\nUse your phone to record the latitude and longitude in decimal degrees\nFor each drain, enter the following into the Google Form:\n\nlatitude\nlongitude\napproximate size in cm\nshape: round, rectangular, or other\nphoto\n\n\n\n\n\nAfter the class has submitted data:\n\nopen the linked Google Sheet\ndownload the sheet as a CSV\nopen QGIS\nadd the CSV as a delimited text layer\nset X field = longitude and Y field = latitude\nset the CRS to WGS84, EPSG:4326\ninspect the points and fix any obvious coordinate errors\n\n\n\n\n\nAdd photo locations from EXIF data:\n\ndownload the original uploaded photos from Google Drive\nin QGIS, open the Processing Toolbox\nsearch for and run Import geotagged photos\nuse the downloaded photo folder as the input folder\ncreate a point layer from the photo EXIF coordinates\ncompare the EXIF photo points to the manually entered CSV points\nnote which photos are missing location data or plot in the wrong place"
   }
 ]

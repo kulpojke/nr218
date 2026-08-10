@@ -18,7 +18,7 @@
 
 ## Important Points
 ::: { .r-stack}
-::: {.fragment .absolute .fade--out data-fragment-index="1"}
+::: {.fragment .absolute .fade-out data-fragment-index="1"}
 
 + Global Navigation Satellite Systems (GNSS) is the general category comprising the following systems:
     + GPS: United States, first satellite launched in 1978
@@ -28,7 +28,7 @@
 
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
 
 + Signals from Satellites
     + Signals contain the position of the satellite, and the exact time sent
@@ -36,9 +36,143 @@
 
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+::: {.fragment .absolute .fade-in-then-out style="font-size:0.7em" data-fragment-index="2"}
+
+
+If you know your distance from 3 points in 3D space, theoretically you know where you are, 
+
+$$
+\begin{aligned}
+\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1\\
+\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2\\
+\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3
+\end{aligned}
+$$
+
+but __there are sources of error__ ...
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out style="font-size:0.7em" data-fragment-index="3"}
+Your the ground unit's time is wrong, so you need at tleast 4 satellites to solve for distance error caused by clock error, _b_.
+
+$$
+\begin{aligned}
+\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1 + b\\
+\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2 + b\\
+\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3 + b\\
+\sqrt{(x - x_4)^{2} + (y - y_4)^{2} + (z - z_4)^{2}} = c t_4 + b
+\end{aligned}
+$$
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out style="font-size:0.7em" data-fragment-index="4"}
+
++ How does the satellite know where it is?
+    + Ground stations!
++ How do the ground stations know where they are, what with the continents moving around and all?
+    + Qulsars!
+    + Radio telescopes male a precise map of continental movement from qulsars
+    + Ground stations are tied into that map
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out style="font-size:0.7em" data-fragment-index="5"}
+
++ Other complexities:
+    + Relativistic effects
+    + Rotation of earth
+    + Atmospheric effects
+
++ So GNSS units use many satellites to improve location
+    + phones, ~ 3m
+    + Precision units , cms
+
+::: 
+
+::: {.fragment .absolute .fade-in-then-out style="font-size:0.7em" data-fragment-index="6"}
+
++ GPS signals are weak
+    + transmitted at about 50 W
+    + arrives at about $10^{-16}$ W
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out style="font-size:0.7em" data-fragment-index="7"}
+
+Here’s a slide-friendly table. These are **carrier center frequencies** in **MHz**.
+
+| System | Operator | Main GNSS signals | Frequencies |
+|---|---:|---|---:|
+| **GPS** | U.S. | L1, L2, L5 | 1575.42, 1227.60, 1176.45 |
+| **Galileo** | European Union | E1, E5a, E5b, E5, E6 | 1575.42, 1176.45, 1207.14, 1191.795, 1278.75 |
+| **BeiDou** | China | B1I, B1C, B2a, B2b/B2I, B3I | 1561.098, 1575.42, 1176.45, 1207.14, 1268.52 |
+| **GLONASS** | Russia | L1, L2 | L1: 1598.0625-1605.375; L2: 1242.9375-1248.625 |
+| **QZSS** | Japan | L1, L2, L5, L6 | 1575.42, 1227.60, 1176.45, 1278.75 |
+| **NavIC** | India | L1, L5, S-band | 1575.42, 1176.45, 2492.028 |
+
+Note: **GLONASS is different** because its older signals use slightly different frequencies for different satellites, so it is listed as ranges.
+
+Sources: [GPS.gov](https://archive.gps.gov/systems/gps/modernization/civilsignals/), [ESA/Galileo Navipedia](https://gssc.esa.int/navipedia/index.php/GALILEO_Signal_Plan), [BeiDou CSNO/TARC](https://www.csno-tarc.cn/status/introductionEn?lang=en), [GLONASS ICD listing](https://jsapt.net/ja/post/08120001), [QZSS Cabinet Office](https://qzss.go.jp/en/overview/services/sv03_signals.html), [ISRO NavIC FAQ](https://www.isro.gov.in/ISRO_EN/FAQ_Applications.html).
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="8"}
 ![](../img/GPS-3D-trilateration.png)
 :::
 
 :::
  
+## Exercise
+
+::: { .r-stack}
+
+::: {.fragment .absolute style="font-size:0.6em" .fade-out data-fragment-index="1"}
+
+__Drain scavenger hunt__
+
++ Work in pairs and find storm drains around campus
++ For each drain, take one clear photo
++ Use your phone to record the latitude and longitude in decimal degrees
+
++ For each drain, enter the following into the Google Form:
+    + latitude
+    + longitude
+    + approximate size in cm
+    + shape: round, rectangular, or other
+    + photo
+    
+:::
+
+::: {.fragment .absolute style="font-size:0.7em" .fade-in-then-out data-fragment-index="1"}
+
++ After the class has submitted data:
+    + open the linked Google Sheet
+    + download the sheet as a CSV
+    + open QGIS
+    + add the CSV as a delimited text layer
+    + set X field = longitude and Y field = latitude
+    + set the CRS to WGS84, EPSG:4326
+    + inspect the points and fix any obvious coordinate errors
+
+
+:::
+
+::: {.fragment .absolute .fade-in-then-out style="font-size:0.7em" data-fragment-index="2"}
+
++ Add photo locations from EXIF data:
+    + download the original uploaded photos from Google Drive
+    + in QGIS, open the Processing Toolbox
+    + search for and run `Import geotagged photos`
+    + use the downloaded photo folder as the input folder
+    + create a point layer from the photo EXIF coordinates
+    + compare the EXIF photo points to the manually entered CSV points
+    + note which photos are missing location data or plot in the wrong place
+
+:::
+
+:::
+
+
+

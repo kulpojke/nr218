@@ -1,0 +1,59 @@
+---
+title: "Section 07 Schedule"
+format:
+  html:
+    theme: cyborg
+    css: ../style/terminal_theme.css
+    include-after-body: ../style/terminal_theme_include_subdir.html
+---
+
+
+## Class Details
+Room __TBD__
+
+__Two hours of lecture per week __  
+Tuesday: 4:00 - 5:50  
+
+__Three hours of lab per week __  
+Thursday: 4:00 - 6:50 
+
+# Section 07 - Fall Term Calendar 2026
+
+| Date         | Week | Topic                                                           |
+|--------------|-----:|-----------------------------------------------------------------|
+| August 25    | 1          | Introduction, What is GIS, Computers    | 
+| August 27    | 1          | Computers   |
+| September 1  | 2          | Basic GIS Concepts \| Scale, Coordinate systems, and Map Projections   |
+| September 3  | 2          | TBD   |
+| September 8  | 3          | Spatial Data Models and File Formats    |
+| September 10 | 3          | TBD   |
+| September 15 | 4          | Data Creation, Editing, Topology Basics    |
+| September 17 | 4          | TBD   |
+| September 22 | 5          | Tables: Joins and Queries, GeoProcessing and Vector Operations   | 
+| September 24 | 5          | TBD   | 
+| September 29 | 6          | GCS Review, GPS Data, plotting x/y coordinates, exporting vector data   | 
+| October 1    | 6          | TBD   | 
+| October 6    | 7          | Rasters and Digital Elevation Models   | 
+| October 8    | 7          | TBD   | 
+| October 13   | 8          | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters   | 
+| October 15   | 8          | TBD   | 
+| October 20   | 9          | Remote Sensing and Spectral Indices   | 
+| October 22   | 9          | TBD   | 
+| October 27   | 10         | Interpolation, Zonal Statistics, and Summarizing Surfaces   | 
+| October 29   | 10         | TBD   | 
+| November 3   | 11         | Workflow Design and Geoprocessing Models   | 
+| November 5   | 11         | TBD   | 
+| November 10  | 12         | Other GIS platforms   | 
+| November 12  | 12         | TBD   | 
+| November 17  | 13         | Advanced topics   | 
+| November 19  | 13         | TBD   | 
+| November 24  | Fall Break |       | 
+| November 26  | Fall Break |       | 
+| December 1   | 14         | Modern Map Making   | 
+| December 3   | 14         | TBD   | 
+| December 8   | 15         | TBD   | 
+| December 10  | 15         | TBD   | 
+| December 15  | Finals     | TBD   |
+| December 17  | Finals     | TBD   |
+
+       
