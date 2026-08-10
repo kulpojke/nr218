@@ -2457,39 +2457,130 @@
     "text": "Save a file questions.txt (use notepad or similar) in your lab_8 directory with answers to the following.\n\nYou used EPSG:6340 for the project. Why is this a good choice? Why not use EPSG:26911, or EPSG:4269?\nIn what units are the pixel values (i.e. elevation) of the OPR DEM? How do you know? (F.Y.I., This is not a terribly simple answer.)\nWhat is the resolution of the OPR DEM?\nWhy is the y resolution listed as negative?\nWhat is the advantage of building a VRT instead of creating a full mosaic, and when would a mosaic be the better choice?"
   },
   {
-    "objectID": "project_4.html",
-    "href": "project_4.html",
-    "title": "Project",
+    "objectID": "project_3.html",
+    "href": "project_3.html",
+    "title": "Lab 12: More Vector and Raster Stuff",
     "section": "",
-    "text": "Download data for Cachuma Reservoir\nIt includes:\n\na DEM from summer of 2018 (as tiles)\nSentinel-2 image from July, 2018\nSentinel-2 image from February, 2024\n\n\n\nFind the following:\n\nThe approximate surface area of the lake in summer, 2018\nThe approximate elevation of the lake surface in summer, 2018\nThe approximate surface area of the lake in February, 2024\nThe approximate elevation of the lake surface in February, 2024\nThe approximate change in volume of water stored in the reservoir between 2018 and 2024. (See this painfully slow video or this webpage for tips.)\nThe change in NDVI between 2018 and 2024 in the four plots (vectors/plots.geojson)\n\n\n\n\n1) Description of methods\nWrite a short document describing the methods you used to solve the problem. Here is an example faux-document It should contain:\n\nMethods: Write a clear explanation of what you did, and why. Document the steps you took, use figures where needed.\n\nA table of important layers created in your workflow. (These layers should be cross referenced in your methods.)\nResults: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.\n\n2) GIS Poject Files\nA zip file of your project directory.\n3) A pdf map of the project area\nShould include scale, legend, and North arrow.\n\n\n\nRecall from the syllabus that the Project is worth 20% of the grade. The final exam, which is about the project, is worth another 20%.\nThe project grade will be based on:\n\nExplanation of the methods, methods are applicable to the problem (25%)\nReasonable estimates of the values (25%)\nThe project opens and contains all of the layers you describe in you methods (25%)\nYour map has all of the required elements, and looks ok (25%)\n\nThe final exam grade will be based on:\n\nYou can explain your methods, and answer questions about them.\n\n\n\n\n\nYou will need to mosaic the raster tiles or build a vrt\nFor a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 \\(m^{3}\\) New hints as of 2026-05-18\nThere are several ways to figure out the elevation of the surface after finding it. None of them (that I can think of) involve zonal statistics.\nThe lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM."
+    "text": "What are the differences between vector and raster data?\nGive 3 examples (and explain your reasoning) of real-world data that are best described by:\n\nVector datasets, and\nRaster datasets.\n\nWhat are the trade offs of high spatial resolution in raster data?\nIn a raster with resolution given in degrees, the ground distance represented by each cell varies from row to row. Why?\nWhy can area and distance calculations unreliable if the layer is in the wrong projection?\nIn theory, a raster could be represented as a polygon layer in which each pixel is stored as a square polygon with attributes for its value(s). Why is this impractical compared with using a raster format?\n\n\n\n\nFor the next questions, you will need to download the SPR Elevation Data use it with existing SPR Vector Data in order to answer the following questions:\n\nNOTE: pixel values, i.e. elevation, in the SPR DEM are given in feet.\n\n\nReport the minimum, maximum, mean, and median elevation within the boundary of Swanton Ranch, as defined in sprBoundary.geojson?\nWhat are the exact elevations of the highest and lowest flumes (sprFlumes.geojson) in Swanton Ranch?\nReport the mean slope (in degrees) for parcels (sprParcels.geojson) with the following APN #s: 057-131-60, 057-141-01, and 057-121-14.\n\n\n\n\n\nAnswers to Written Questions 1-9 above, in a pdf."
   },
   {
-    "objectID": "project_4.html#task",
-    "href": "project_4.html#task",
-    "title": "Project",
+    "objectID": "project_3.html#provide-written-responses-to-the-following-questions",
+    "href": "project_3.html#provide-written-responses-to-the-following-questions",
+    "title": "Lab 12: More Vector and Raster Stuff",
     "section": "",
-    "text": "Find the following:\n\nThe approximate surface area of the lake in summer, 2018\nThe approximate elevation of the lake surface in summer, 2018\nThe approximate surface area of the lake in February, 2024\nThe approximate elevation of the lake surface in February, 2024\nThe approximate change in volume of water stored in the reservoir between 2018 and 2024. (See this painfully slow video or this webpage for tips.)\nThe change in NDVI between 2018 and 2024 in the four plots (vectors/plots.geojson)"
+    "text": "What are the differences between vector and raster data?\nGive 3 examples (and explain your reasoning) of real-world data that are best described by:\n\nVector datasets, and\nRaster datasets.\n\nWhat are the trade offs of high spatial resolution in raster data?\nIn a raster with resolution given in degrees, the ground distance represented by each cell varies from row to row. Why?\nWhy can area and distance calculations unreliable if the layer is in the wrong projection?\nIn theory, a raster could be represented as a polygon layer in which each pixel is stored as a square polygon with attributes for its value(s). Why is this impractical compared with using a raster format?"
   },
   {
-    "objectID": "project_4.html#deliverables",
-    "href": "project_4.html#deliverables",
-    "title": "Project",
+    "objectID": "project_3.html#project-work",
+    "href": "project_3.html#project-work",
+    "title": "Lab 12: More Vector and Raster Stuff",
     "section": "",
-    "text": "1) Description of methods\nWrite a short document describing the methods you used to solve the problem. Here is an example faux-document It should contain:\n\nMethods: Write a clear explanation of what you did, and why. Document the steps you took, use figures where needed.\n\nA table of important layers created in your workflow. (These layers should be cross referenced in your methods.)\nResults: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.\n\n2) GIS Poject Files\nA zip file of your project directory.\n3) A pdf map of the project area\nShould include scale, legend, and North arrow."
+    "text": "For the next questions, you will need to download the SPR Elevation Data use it with existing SPR Vector Data in order to answer the following questions:\n\nNOTE: pixel values, i.e. elevation, in the SPR DEM are given in feet.\n\n\nReport the minimum, maximum, mean, and median elevation within the boundary of Swanton Ranch, as defined in sprBoundary.geojson?\nWhat are the exact elevations of the highest and lowest flumes (sprFlumes.geojson) in Swanton Ranch?\nReport the mean slope (in degrees) for parcels (sprParcels.geojson) with the following APN #s: 057-131-60, 057-141-01, and 057-121-14."
   },
   {
-    "objectID": "project_4.html#how-the-project-will-be-graded",
-    "href": "project_4.html#how-the-project-will-be-graded",
-    "title": "Project",
+    "objectID": "project_3.html#submit-on-canvas",
+    "href": "project_3.html#submit-on-canvas",
+    "title": "Lab 12: More Vector and Raster Stuff",
     "section": "",
-    "text": "Recall from the syllabus that the Project is worth 20% of the grade. The final exam, which is about the project, is worth another 20%.\nThe project grade will be based on:\n\nExplanation of the methods, methods are applicable to the problem (25%)\nReasonable estimates of the values (25%)\nThe project opens and contains all of the layers you describe in you methods (25%)\nYour map has all of the required elements, and looks ok (25%)\n\nThe final exam grade will be based on:\n\nYou can explain your methods, and answer questions about them."
+    "text": "Answers to Written Questions 1-9 above, in a pdf."
   },
   {
-    "objectID": "project_4.html#hints",
-    "href": "project_4.html#hints",
-    "title": "Project",
+    "objectID": "project_1.html",
+    "href": "project_1.html",
+    "title": "Lab 2: Mapping",
     "section": "",
-    "text": "You will need to mosaic the raster tiles or build a vrt\nFor a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 \\(m^{3}\\) New hints as of 2026-05-18\nThere are several ways to figure out the elevation of the surface after finding it. None of them (that I can think of) involve zonal statistics.\nThe lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM."
+    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\nPractice organizing files\n\n\n\n\nThis assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.\nMake a Folder called NR218 in your home folder. Make a subdirectory, lab_2 inside of NR218\nagustov\n└──nr218 \n   └── lab_2\nAll of your work for this lab will go into the lab_2 directory. You will zip it and submit the zipped file on Canvas"
+  },
+  {
+    "objectID": "project_1.html#learning-goals",
+    "href": "project_1.html#learning-goals",
+    "title": "Lab 2: Mapping",
+    "section": "",
+    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\nPractice organizing files"
+  },
+  {
+    "objectID": "project_1.html#introduction",
+    "href": "project_1.html#introduction",
+    "title": "Lab 2: Mapping",
+    "section": "",
+    "text": "This assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.\nMake a Folder called NR218 in your home folder. Make a subdirectory, lab_2 inside of NR218\nagustov\n└──nr218 \n   └── lab_2\nAll of your work for this lab will go into the lab_2 directory. You will zip it and submit the zipped file on Canvas"
+  },
+  {
+    "objectID": "tips_for_mac_users.html#making-your-home-directory-visible-in-finder",
+    "href": "tips_for_mac_users.html#making-your-home-directory-visible-in-finder",
+    "title": "",
+    "section": "Making your home directory visible in Finder",
+    "text": "Making your home directory visible in Finder\nTo jump to your home directory in macOS Finder,\n\nopen Finder and press Shift+Command+H.\nTo add it to the sidebar drag the folder icon (at the top of the window) into the sidebar.\n\nTo add the Path bar, which will let you see paths to files,\n\nopen Finder\nin the dropdown menu, go to View &gt; Show Path Bar Now, there should be a bar (probably at the bottom of the window) showing the path to the directory you are in."
+  },
+  {
+    "objectID": "tips_for_mac_users.html#installing-qgis-on-mac",
+    "href": "tips_for_mac_users.html#installing-qgis-on-mac",
+    "title": "",
+    "section": "Installing QGIS on Mac",
+    "text": "Installing QGIS on Mac\n\nGo to the QGIS download page.\nUnder macOS, download the Long Term Release. For class, use the LTR unless I say otherwise.\nOpen the .dmg file and drag QGIS into the Applications folder.\nOpen QGIS from Applications.\n\nCommon Mac issues:\n\nIf macOS blocks QGIS the first time, open System Settings &gt; Privacy & Security and choose Open Anyway for QGIS. This is Gatekeeper, not a broken install.\nQGIS 4 is newer, but some plugins may still lag behind it. The LTR is the safer choice for class.\nDo not install QGIS with Homebrew or MacPorts for this class. Use the official .dmg; package-manager installs can create dependency conflicts.\nVery old Macs may not be supported by the current installer."
+  },
+  {
+    "objectID": "tips_for_mac_users.html#installing-homebrew",
+    "href": "tips_for_mac_users.html#installing-homebrew",
+    "title": "",
+    "section": "Installing Homebrew",
+    "text": "Installing Homebrew\n\ngo to the Homebrew website\nCopy the command for installing Homebrew and paste into your terminal (and press enter), it should look something like\n\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n(This just downloads the install.sh file and executes it, installing Homebrew)\n\nFollow the prompts, enter your password (you will not be able to see it as you enter it).\nThere may be a message about “Next steps”. You can ignore that."
+  },
+  {
+    "objectID": "tips_for_mac_users.html#installing-tree-command",
+    "href": "tips_for_mac_users.html#installing-tree-command",
+    "title": "",
+    "section": "Installing tree command",
+    "text": "Installing tree command\nIn terminal brew install tree. (If Homebrew is not yet installed see Installing Homebrew.)"
+  },
+  {
+    "objectID": "syllabi/syllabus_fall_2026.html",
+    "href": "syllabi/syllabus_fall_2026.html",
+    "title": "Syllabus - NR 2218 - Introduction to GIS - Fall 2026",
+    "section": "",
+    "text": "Jump to class calendar"
+  },
+  {
+    "objectID": "syllabi/syllabus_fall_2026.html#class-details",
+    "href": "syllabi/syllabus_fall_2026.html#class-details",
+    "title": "Syllabus - NR 2218 - Introduction to GIS - Fall 2026",
+    "section": "Class Details",
+    "text": "Class Details\nRoom TBD\nMonday: 5:10 - 9:00\nWednesday: 6:10 - 9:00"
+  },
+  {
+    "objectID": "syllabi/syllabus_fall_2026.html#instructor-details",
+    "href": "syllabi/syllabus_fall_2026.html#instructor-details",
+    "title": "Syllabus - NR 2218 - Introduction to GIS - Fall 2026",
+    "section": "Instructor Details",
+    "text": "Instructor Details\nMichael Huggins\n✉ mthuggin@calpoly.edu\nOffice Hours: TBD\nBuilding 72-107 (Plant Conservatory)\nTA: ?"
+  },
+  {
+    "objectID": "syllabi/section_07_fall_2026.html",
+    "href": "syllabi/section_07_fall_2026.html",
+    "title": "Section 07 Schedule",
+    "section": "",
+    "text": "Room TBD\nTwo hours of lecture per week \nTuesday: 4:00 - 5:50\nThree hours of lab per week \nThursday: 4:00 - 6:50"
+  },
+  {
+    "objectID": "syllabi/section_07_fall_2026.html#class-details",
+    "href": "syllabi/section_07_fall_2026.html#class-details",
+    "title": "Section 07 Schedule",
+    "section": "",
+    "text": "Room TBD\nTwo hours of lecture per week \nTuesday: 4:00 - 5:50\nThree hours of lab per week \nThursday: 4:00 - 6:50"
+  },
+  {
+    "objectID": "terminal_cheatsheet.html#table-of-some-basic-commands",
+    "href": "terminal_cheatsheet.html#table-of-some-basic-commands",
+    "title": "",
+    "section": "Table of some basic commands",
+    "text": "Table of some basic commands\n\n\n\n\nCommand\nzsh\nbash\nPowerShell\n\n\n\n\nChange Directory\ncd\ncd\ncd\n\n\nList Files\nls\nls\nls\n\n\nMake Directory\nmkdir\nmkdir\nmkdir\n\n\nCopy\ncp\ncp\ncp\n\n\nMove / Rename\nmv\nmv\nmv\n\n\nShow First Lines of File\nhead\nhead\nGet-Content -Head 10\n\n\n\npush the down arrow to see examples."
+  },
+  {
+    "objectID": "terminal_cheatsheet.html#some-examples",
+    "href": "terminal_cheatsheet.html#some-examples",
+    "title": "",
+    "section": "Some examples",
+    "text": "Some examples\n\n\n\n\n\n\n\n\n\nTask\nzsh / bash\nPowerShell\n\n\n\n\nGo to your home directory\ncd ~\ncd ~\n\n\nGo to the course directory\ncd ~/nr218\ncd ~\\nr218\n\n\nList files in the current directory\nls\nls\n\n\nList files in nr218\nls ~/nr218\nls ~\\nr218\n\n\nMake a new directory\nmkdir ~/nr218/lab_1\nmkdir ~\\nr218\\lab_1\n\n\nMake several directories\nmkdir ~/nr218/lab_2 ~/nr218/lab_3\nmkdir ~\\nr218\\lab_2, ~\\nr218\\lab_3\n\n\nMake nested directories\nmkdir -p ~/nr218/project_1/data\nmkdir ~\\nr218\\project_1\\data\n\n\nCopy a file into a directory\ncp ~/nr218/notes.txt ~/nr218/lab_1/\ncp ~\\nr218\\notes.txt ~\\nr218\\lab_1\\\n\n\nMove or rename a directory\nmv ~/nr218/lab_1 ~/nr218/lab_01\nmv ~\\nr218\\lab_1 ~\\nr218\\lab_01\n\n\nShow the first 10 lines of a file\nhead ~/nr218/README.md\nGet-Content ~\\nr218\\README.md -Head 10"
   },
   {
     "objectID": "project_2.html",
@@ -2527,130 +2618,74 @@
     "text": "Submit on Canvas:\nA zipped file with your tutorials and written responses inside"
   },
   {
-    "objectID": "terminal_cheatsheet.html#table-of-some-basic-commands",
-    "href": "terminal_cheatsheet.html#table-of-some-basic-commands",
-    "title": "",
-    "section": "Table of some basic commands",
-    "text": "Table of some basic commands\n\n\n\n\nCommand\nzsh\nbash\nPowerShell\n\n\n\n\nChange Directory\ncd\ncd\ncd\n\n\nList Files\nls\nls\nls\n\n\nMake Directory\nmkdir\nmkdir\nmkdir\n\n\nCopy\ncp\ncp\ncp\n\n\nMove / Rename\nmv\nmv\nmv\n\n\nShow First Lines of File\nhead\nhead\nGet-Content -Head 10\n\n\n\npush the down arrow to see examples."
-  },
-  {
-    "objectID": "terminal_cheatsheet.html#some-examples",
-    "href": "terminal_cheatsheet.html#some-examples",
-    "title": "",
-    "section": "Some examples",
-    "text": "Some examples\n\n\n\n\n\n\n\n\n\nTask\nzsh / bash\nPowerShell\n\n\n\n\nGo to your home directory\ncd ~\ncd ~\n\n\nGo to the course directory\ncd ~/nr218\ncd ~\\nr218\n\n\nList files in the current directory\nls\nls\n\n\nList files in nr218\nls ~/nr218\nls ~\\nr218\n\n\nMake a new directory\nmkdir ~/nr218/lab_1\nmkdir ~\\nr218\\lab_1\n\n\nMake several directories\nmkdir ~/nr218/lab_2 ~/nr218/lab_3\nmkdir ~\\nr218\\lab_2, ~\\nr218\\lab_3\n\n\nMake nested directories\nmkdir -p ~/nr218/project_1/data\nmkdir ~\\nr218\\project_1\\data\n\n\nCopy a file into a directory\ncp ~/nr218/notes.txt ~/nr218/lab_1/\ncp ~\\nr218\\notes.txt ~\\nr218\\lab_1\\\n\n\nMove or rename a directory\nmv ~/nr218/lab_1 ~/nr218/lab_01\nmv ~\\nr218\\lab_1 ~\\nr218\\lab_01\n\n\nShow the first 10 lines of a file\nhead ~/nr218/README.md\nGet-Content ~\\nr218\\README.md -Head 10"
-  },
-  {
-    "objectID": "syllabi/section_07_fall_2026.html",
-    "href": "syllabi/section_07_fall_2026.html",
-    "title": "Section 07 Schedule",
+    "objectID": "project_4.html",
+    "href": "project_4.html",
+    "title": "Project",
     "section": "",
-    "text": "Room TBD\nTwo hours of lecture per week \nTuesday: 4:00 - 5:50\nThree hours of lab per week \nThursday: 4:00 - 6:50"
+    "text": "Download data for Cachuma Reservoir\nIt includes:\n\na DEM from summer of 2018 (as tiles)\nSentinel-2 image from July, 2018\nSentinel-2 image from February, 2024\n\n\n\nFind the following:\n\nThe approximate surface area of the lake in summer, 2018\nThe approximate elevation of the lake surface in summer, 2018\nThe approximate surface area of the lake in February, 2024\nThe approximate elevation of the lake surface in February, 2024\nThe approximate change in volume of water stored in the reservoir between 2018 and 2024. (See this painfully slow video or this webpage for tips.)\nThe change in NDVI between 2018 and 2024 in the four plots (vectors/plots.geojson)\n\n\n\n\n1) Description of methods\nWrite a short document describing the methods you used to solve the problem. Here is an example faux-document It should contain:\n\nMethods: Write a clear explanation of what you did, and why. Document the steps you took, use figures where needed.\n\nA table of important layers created in your workflow. (These layers should be cross referenced in your methods.)\nResults: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.\n\n2) GIS Poject Files\nA zip file of your project directory.\n3) A pdf map of the project area\nShould include scale, legend, and North arrow.\n\n\n\nRecall from the syllabus that the Project is worth 20% of the grade. The final exam, which is about the project, is worth another 20%.\nThe project grade will be based on:\n\nExplanation of the methods, methods are applicable to the problem (25%)\nReasonable estimates of the values (25%)\nThe project opens and contains all of the layers you describe in you methods (25%)\nYour map has all of the required elements, and looks ok (25%)\n\nThe final exam grade will be based on:\n\nYou can explain your methods, and answer questions about them.\n\n\n\n\n\nYou will need to mosaic the raster tiles or build a vrt\nFor a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 \\(m^{3}\\) New hints as of 2026-05-18\nThere are several ways to figure out the elevation of the surface after finding it. None of them (that I can think of) involve zonal statistics.\nThe lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM."
   },
   {
-    "objectID": "syllabi/section_07_fall_2026.html#class-details",
-    "href": "syllabi/section_07_fall_2026.html#class-details",
-    "title": "Section 07 Schedule",
+    "objectID": "project_4.html#task",
+    "href": "project_4.html#task",
+    "title": "Project",
     "section": "",
-    "text": "Room TBD\nTwo hours of lecture per week \nTuesday: 4:00 - 5:50\nThree hours of lab per week \nThursday: 4:00 - 6:50"
+    "text": "Find the following:\n\nThe approximate surface area of the lake in summer, 2018\nThe approximate elevation of the lake surface in summer, 2018\nThe approximate surface area of the lake in February, 2024\nThe approximate elevation of the lake surface in February, 2024\nThe approximate change in volume of water stored in the reservoir between 2018 and 2024. (See this painfully slow video or this webpage for tips.)\nThe change in NDVI between 2018 and 2024 in the four plots (vectors/plots.geojson)"
   },
   {
-    "objectID": "syllabi/syllabus_fall_2026.html",
-    "href": "syllabi/syllabus_fall_2026.html",
-    "title": "Syllabus - NR 2218 - Introduction to GIS - Fall 2026",
+    "objectID": "project_4.html#deliverables",
+    "href": "project_4.html#deliverables",
+    "title": "Project",
     "section": "",
-    "text": "Jump to class calendar"
+    "text": "1) Description of methods\nWrite a short document describing the methods you used to solve the problem. Here is an example faux-document It should contain:\n\nMethods: Write a clear explanation of what you did, and why. Document the steps you took, use figures where needed.\n\nA table of important layers created in your workflow. (These layers should be cross referenced in your methods.)\nResults: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.\n\n2) GIS Poject Files\nA zip file of your project directory.\n3) A pdf map of the project area\nShould include scale, legend, and North arrow."
   },
   {
-    "objectID": "syllabi/syllabus_fall_2026.html#class-details",
-    "href": "syllabi/syllabus_fall_2026.html#class-details",
-    "title": "Syllabus - NR 2218 - Introduction to GIS - Fall 2026",
-    "section": "Class Details",
-    "text": "Class Details\nRoom TBD\nMonday: 5:10 - 9:00\nWednesday: 6:10 - 9:00"
-  },
-  {
-    "objectID": "syllabi/syllabus_fall_2026.html#instructor-details",
-    "href": "syllabi/syllabus_fall_2026.html#instructor-details",
-    "title": "Syllabus - NR 2218 - Introduction to GIS - Fall 2026",
-    "section": "Instructor Details",
-    "text": "Instructor Details\nMichael Huggins\n✉ mthuggin@calpoly.edu\nOffice Hours: TBD\nBuilding 72-107 (Plant Conservatory)\nTA: ?"
-  },
-  {
-    "objectID": "tips_for_mac_users.html#making-your-home-directory-visible-in-finder",
-    "href": "tips_for_mac_users.html#making-your-home-directory-visible-in-finder",
-    "title": "",
-    "section": "Making your home directory visible in Finder",
-    "text": "Making your home directory visible in Finder\nTo jump to your home directory in macOS Finder,\n\nopen Finder and press Shift+Command+H.\nTo add it to the sidebar drag the folder icon (at the top of the window) into the sidebar.\n\nTo add the Path bar, which will let you see paths to files,\n\nopen Finder\nin the dropdown menu, go to View &gt; Show Path Bar Now, there should be a bar (probably at the bottom of the window) showing the path to the directory you are in."
-  },
-  {
-    "objectID": "tips_for_mac_users.html#installing-qgis-on-mac",
-    "href": "tips_for_mac_users.html#installing-qgis-on-mac",
-    "title": "",
-    "section": "Installing QGIS on Mac",
-    "text": "Installing QGIS on Mac\n\nGo to the QGIS download page.\nUnder macOS, download the Long Term Release. For class, use the LTR unless I say otherwise.\nOpen the .dmg file and drag QGIS into the Applications folder.\nOpen QGIS from Applications.\n\nCommon Mac issues:\n\nIf macOS blocks QGIS the first time, open System Settings &gt; Privacy & Security and choose Open Anyway for QGIS. This is Gatekeeper, not a broken install.\nQGIS 4 is newer, but some plugins may still lag behind it. The LTR is the safer choice for class.\nDo not install QGIS with Homebrew or MacPorts for this class. Use the official .dmg; package-manager installs can create dependency conflicts.\nVery old Macs may not be supported by the current installer."
-  },
-  {
-    "objectID": "tips_for_mac_users.html#installing-homebrew",
-    "href": "tips_for_mac_users.html#installing-homebrew",
-    "title": "",
-    "section": "Installing Homebrew",
-    "text": "Installing Homebrew\n\ngo to the Homebrew website\nCopy the command for installing Homebrew and paste into your terminal (and press enter), it should look something like\n\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n(This just downloads the install.sh file and executes it, installing Homebrew)\n\nFollow the prompts, enter your password (you will not be able to see it as you enter it).\nThere may be a message about “Next steps”. You can ignore that."
-  },
-  {
-    "objectID": "tips_for_mac_users.html#installing-tree-command",
-    "href": "tips_for_mac_users.html#installing-tree-command",
-    "title": "",
-    "section": "Installing tree command",
-    "text": "Installing tree command\nIn terminal brew install tree. (If Homebrew is not yet installed see Installing Homebrew.)"
-  },
-  {
-    "objectID": "project_1.html",
-    "href": "project_1.html",
-    "title": "Lab 2: Mapping",
+    "objectID": "project_4.html#how-the-project-will-be-graded",
+    "href": "project_4.html#how-the-project-will-be-graded",
+    "title": "Project",
     "section": "",
-    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\nPractice organizing files\n\n\n\n\nThis assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.\nMake a Folder called NR218 in your home folder. Make a subdirectory, lab_2 inside of NR218\nagustov\n└──nr218 \n   └── lab_2\nAll of your work for this lab will go into the lab_2 directory. You will zip it and submit the zipped file on Canvas"
+    "text": "Recall from the syllabus that the Project is worth 20% of the grade. The final exam, which is about the project, is worth another 20%.\nThe project grade will be based on:\n\nExplanation of the methods, methods are applicable to the problem (25%)\nReasonable estimates of the values (25%)\nThe project opens and contains all of the layers you describe in you methods (25%)\nYour map has all of the required elements, and looks ok (25%)\n\nThe final exam grade will be based on:\n\nYou can explain your methods, and answer questions about them."
   },
   {
-    "objectID": "project_1.html#learning-goals",
-    "href": "project_1.html#learning-goals",
-    "title": "Lab 2: Mapping",
+    "objectID": "project_4.html#hints",
+    "href": "project_4.html#hints",
+    "title": "Project",
     "section": "",
-    "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\nPractice organizing files"
+    "text": "You will need to mosaic the raster tiles or build a vrt\nFor a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 \\(m^{3}\\) New hints as of 2026-05-18\nThere are several ways to figure out the elevation of the surface after finding it. None of them (that I can think of) involve zonal statistics.\nThe lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM."
   },
   {
-    "objectID": "project_1.html#introduction",
-    "href": "project_1.html#introduction",
-    "title": "Lab 2: Mapping",
+    "objectID": "lab_01_computers.html",
+    "href": "lab_01_computers.html",
+    "title": "Using computers well enough for GIS",
     "section": "",
-    "text": "This assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.\nMake a Folder called NR218 in your home folder. Make a subdirectory, lab_2 inside of NR218\nagustov\n└──nr218 \n   └── lab_2\nAll of your work for this lab will go into the lab_2 directory. You will zip it and submit the zipped file on Canvas"
+    "text": "In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others. We will practice organizing data on a computer and extracting zipped archives.\nIn this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and, if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful. If you learn how to use the terminal well you will probably use it frequently. That said, you will not have to be great at it for this class. It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.\nFor this lab you should create a text document (e.g. Word, LibreOffice, or Google docs, etc…) to which you will add the screenshot from Task 1 and answers from Task 2 (in steps 8, and 9). You will then upload the document to Canvas. You do not have to turn in anything for Task 3, having your OneDrive configured properly for the rest of the quarter will be helpful, so don’t skip it!"
   },
   {
-    "objectID": "project_3.html",
-    "href": "project_3.html",
-    "title": "Lab 12: More Vector and Raster Stuff",
+    "objectID": "lab_01_computers.html#introduction",
+    "href": "lab_01_computers.html#introduction",
+    "title": "Using computers well enough for GIS",
     "section": "",
-    "text": "What are the differences between vector and raster data?\nGive 3 examples (and explain your reasoning) of real-world data that are best described by:\n\nVector datasets, and\nRaster datasets.\n\nWhat are the trade offs of high spatial resolution in raster data?\nIn a raster with resolution given in degrees, the ground distance represented by each cell varies from row to row. Why?\nWhy can area and distance calculations unreliable if the layer is in the wrong projection?\nIn theory, a raster could be represented as a polygon layer in which each pixel is stored as a square polygon with attributes for its value(s). Why is this impractical compared with using a raster format?\n\n\n\n\nFor the next questions, you will need to download the SPR Elevation Data use it with existing SPR Vector Data in order to answer the following questions:\n\nNOTE: pixel values, i.e. elevation, in the SPR DEM are given in feet.\n\n\nReport the minimum, maximum, mean, and median elevation within the boundary of Swanton Ranch, as defined in sprBoundary.geojson?\nWhat are the exact elevations of the highest and lowest flumes (sprFlumes.geojson) in Swanton Ranch?\nReport the mean slope (in degrees) for parcels (sprParcels.geojson) with the following APN #s: 057-131-60, 057-141-01, and 057-121-14.\n\n\n\n\n\nAnswers to Written Questions 1-9 above, in a pdf."
+    "text": "In this lab you will learn some important skills for working with computers that will be helpful in this class and for many others. We will practice organizing data on a computer and extracting zipped archives.\nIn this lab you will also be introduced to using the terminal. Having some familiarity with using terminals to interact with computers is useful because it forces you to understand some basic aspects of computer organization, and, if you continue after this class to pursue a career in GIS or any other computer intensive field, it is incredibly useful. If you learn how to use the terminal well you will probably use it frequently. That said, you will not have to be great at it for this class. It will only be used for a couple of basic things, most importantly showing me how you are organizing your data.\nFor this lab you should create a text document (e.g. Word, LibreOffice, or Google docs, etc…) to which you will add the screenshot from Task 1 and answers from Task 2 (in steps 8, and 9). You will then upload the document to Canvas. You do not have to turn in anything for Task 3, having your OneDrive configured properly for the rest of the quarter will be helpful, so don’t skip it!"
   },
   {
-    "objectID": "project_3.html#provide-written-responses-to-the-following-questions",
-    "href": "project_3.html#provide-written-responses-to-the-following-questions",
-    "title": "Lab 12: More Vector and Raster Stuff",
-    "section": "",
-    "text": "What are the differences between vector and raster data?\nGive 3 examples (and explain your reasoning) of real-world data that are best described by:\n\nVector datasets, and\nRaster datasets.\n\nWhat are the trade offs of high spatial resolution in raster data?\nIn a raster with resolution given in degrees, the ground distance represented by each cell varies from row to row. Why?\nWhy can area and distance calculations unreliable if the layer is in the wrong projection?\nIn theory, a raster could be represented as a polygon layer in which each pixel is stored as a square polygon with attributes for its value(s). Why is this impractical compared with using a raster format?"
+    "objectID": "lab_01_computers.html#task-1-terminal-tutorial",
+    "href": "lab_01_computers.html#task-1-terminal-tutorial",
+    "title": "Using computers well enough for GIS",
+    "section": "Task 1: Terminal Tutorial",
+    "text": "Task 1: Terminal Tutorial\nComplete part 2, Navigating Directories, in Terminal Tutor. Feel free to do the first part too if you want, it is worthwhile. Take a screenshot when you are done, include the screenshot in the document.\nThis introduces you to POSIX shells. If you are using Mac or Linux, your terminal will behave like the one in the tutorial, if you are on a Windows computer you can use use PowerShell, which in many ways behaves like a POSIX shell.\nFor more useful commands see the slides on using the terminal"
   },
   {
-    "objectID": "project_3.html#project-work",
-    "href": "project_3.html#project-work",
-    "title": "Lab 12: More Vector and Raster Stuff",
-    "section": "",
-    "text": "For the next questions, you will need to download the SPR Elevation Data use it with existing SPR Vector Data in order to answer the following questions:\n\nNOTE: pixel values, i.e. elevation, in the SPR DEM are given in feet.\n\n\nReport the minimum, maximum, mean, and median elevation within the boundary of Swanton Ranch, as defined in sprBoundary.geojson?\nWhat are the exact elevations of the highest and lowest flumes (sprFlumes.geojson) in Swanton Ranch?\nReport the mean slope (in degrees) for parcels (sprParcels.geojson) with the following APN #s: 057-131-60, 057-141-01, and 057-121-14."
+    "objectID": "lab_01_computers.html#task-2-exploring-a-directory-structure-and-unzipping-files",
+    "href": "lab_01_computers.html#task-2-exploring-a-directory-structure-and-unzipping-files",
+    "title": "Using computers well enough for GIS",
+    "section": "Task 2: Exploring a Directory Structure and unzipping files",
+    "text": "Task 2: Exploring a Directory Structure and unzipping files\n\nDownload some made up files here (Open the linkin a new tab and click the Download raw file button on the right side). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. For now, we will do just that, so unzip toy_data.zip right into the download folder (see Tip 1 for how to do this.).\n\n\n\n\n\n\n\nTip 1: How do I unzip a zip archive? What is a zip archive?\n\n\n\nTo unzip:\n\nWindows (GUI): In File Explorer, find the .zip, right-click → “Extract All…,” choose your desired destination folder, click Extract.\nmacOS (GUI): In Finder, double-click the .zip to expand it, then drag/move the extracted folder into your destination folder.\nLinux (terminal): cd ~/Downloads (or wherever it landed), then run unzip SPR_data.zip -d &lt;destination directory&gt; (replace &lt;destination directory&gt; with your actual destination directory. Install unzip if missing: sudo apt install unzip).\n\nWhat is a zip file? A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use. Do not work directly with files compressed in a zip! .While QGIS and other applications can read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.\n\n\n\nCreate a directory, nr218, for your work in this class, in your home folder. Then create another directory inside called lab_1. You can do this either in your computers graphical file explorer (e.g. Finder, File Explorer, Files) or in the terminal (Encouraged!).\n\n\nIf you are not sure where your home folder is see Tip 2.\nIf you want to use the terminal to create nr218 in your home directory but don’t know how, see this slide and the slide after it for tips, also remember what you learned in the terminal tutorial in Task 1.\n\nIf you are using a Mac, and you cannot see your home folder in Finder, see this slide\n\n\n\n\n\n\n\nTip 2: Where is my home folder?\n\n\n\n\nWindows: C:\\Users\\&lt;username&gt; (shows as “This PC &gt; Windows (C:) &gt; Users &gt; ` in File Explorer).\nmacOS: /Users/&lt;username&gt;; Finder shows it with a house icon under Go → Home.\nLinux: /home/&lt;username&gt; (or occasionally /Users/&lt;username&gt;); in a terminal it can also be called ~, and file managers usually label it “Home.”\n\n\n\n\nOpen QGIS and start a blank project.\n\n\nPress Ctrl+S. This opens a dialogue for saving the QGIS project. Navigate to the nr218 directory you just created. Name the project after you CalPoly email address (e.g. mthuggin. Note that this would be a terrible thing to actually name a project). You have now saved a file containing the project.\nPress Ctrl+Shift+V, this is the keyboard shortcut to open a vector file (Do not worry if you do not yet know what I mean by vector file). Navigate to ~/Downloads/toy_data/WellNamedFiles and select Eaton_Perimeter_20250121.geojson. You should now see a polygon in the map (something like Figure 1)\n\n\n\n\n\n\n\nFigure 1: You should se something like this after opening Eaton_Perimeter_20250121.geojson. It is a polygon showing the Eaton Fire perimeter\n\n\n\n\nNow Close the project (Project -&gt; Close in drop down menus).\nMove the toy_data folder from your Downloads folder to ~/nr218/lab_1 (in file explorer, or terminal (again, see this slide)\n\nOpen the project you saved back in step 3 (Project -&gt; Open Recent in drop down menus).\n\n\nNow QGIS cannot find the Eaton Fire perimeter data because the relative path to the data has changed (see Tip 3). A dialogue such as the one shown in Figure 2 will appear. Don’t worry about trying to fix the problem yet.\n\n\n\n\n\n\n\nFigure 2: When the relative path to data changes (or the data is deleted) QGIS cannot find it.`\n\n\n\n\nOpen a shell (macOS/Linux: Terminal; Windows: PowerShell) and navigate into the directory with the files, cd ~/nr218.\nView the contents of the directory:\n\n\nIn the terminal (while in ~/nr218) type tree. (on Windows, in PowerShell, tree omits files by default, so use tree /F where the F flag tells it to include files.) If the command tree is not found, you will need to install it.\n\nMac OSX - see this slide\nLinux - use sudo apt install tree (or your appropriate package manager).\nWindows PowerShell: tree should be present. If it is not, or you just love typing you can use Get-ChildItem -Recurse instead.\n\nIn your text document answer the following questions.\n\n\nCopy the output of tree and paste it here as the answer to 1..\n\n\nBased on the contents of the directory, what do you think are some best practices for naming files?\n\n\nWhy do you think working on files that are in your download folder is a bad idea?\n\n\n\nYou will use tree and pwd throughout the quarter to show me how you are organizing your data. In order to do this you will also need to know how to navigate into your working directory (see Tip 3).\n\n\n\n\n\n\nTip 3: What is a Path?\n\n\n\nA path is a string that uniquely identifies an item in a file system. Generally, a path is composed of directory names, and optionally a filename, all separated by delimiters.\nQGIS, and other applications keep track of where data using relative paths, as opposed to absolute paths. An absolute (or full path) is the path to the file relative to the root directory, for example, on my laptop the directory for this class has an absolute path /home/michael/CP/nr218, where the root directory is just /. The directory called home is directly below / in the hierarchy, thus the full path to home is /home (or /home/, a directory can be written with a trailing slash). Similarly the full path to the directory michael is /home/michael (or /home/michael/, or using its alias ~, see Tip 2).\nA relative path is the position of a file relative to the position of the file that is looking for it. For the QGIS project file in your nr218 directory, the relative path to the Eaton_Perimeter_20250121.geojson was ../Downloads/toy_data/WellNamedFiles/Eaton_Perimeter_20250121.geojson (../ means parent directory or up one level). When you moved it, the relative path changed to WellNamedFiles/Eaton_Perimeter_20250121.geojson (or ./WellNamedFiles/Eaton_Perimeter_20250121.geojson, where . means the present directory). When you re-opened the project after moving the data, QGIS read the project file which told it, “Load the Eaton perimeter file found at ../Downloads/toy_data/WellNamedFiles/Eaton_Perimeter_20250121.geojson.” QGIS looked at that relative location, and the file was missing, so it complained to you with the dialogue box. In order for an application to use a file, it must know the path to that file.\nIn a (bash-like) terminal you can change directories using the cd command to navigate to a directory by giving ita path. You can use and absolute path, e.g. cd  /home/michael/CP/nr218 or equivalently cd ~/CP/nr218. Or you can use a relative path, cd ../ to go to the parent directory, cd ../../ to go up two levels in the directory hierarchy. If you are in /home/michael, cd CP/nr218 would do the same thing as cd  /home/michael/CP/nr218."
   },
   {
-    "objectID": "project_3.html#submit-on-canvas",
-    "href": "project_3.html#submit-on-canvas",
-    "title": "Lab 12: More Vector and Raster Stuff",
-    "section": "",
-    "text": "Answers to Written Questions 1-9 above, in a pdf."
+    "objectID": "lab_01_computers.html#task-3-set-up-onedrive-sync-cal-poly-account",
+    "href": "lab_01_computers.html#task-3-set-up-onedrive-sync-cal-poly-account",
+    "title": "Using computers well enough for GIS",
+    "section": "Task 3: Set Up OneDrive Sync (Cal Poly Account)",
+    "text": "Task 3: Set Up OneDrive Sync (Cal Poly Account)\nFor this class you may want to use the OneDrive client (or rclone) for your platform to sync your Cal Poly OneDrive and move data between computers.\nI do not recommend storing your nr218 directory in OneDrive. Editing GIS data directly from OneDrive can cause problems because QGIS data files often consist of several linked files, and cloud syncing may update or lock them at different times leading to broken layers, file corruption, or conflicts if QGIS is writing changes while OneDrive is still syncing.\nShort directions for setting up OneDrive are given here, if you are having trouble refer to the guide.\n\nWindows (OneDrive client)\n\nOpen OneDrive from the Start menu and sign in with your Cal Poly email; complete campus SSO/MFA.\nChoose a local folder location (default is fine) and finish setup.\nConfirm the OneDrive folder appears in File Explorer and shows sync status icons.\nRight-click a class folder → “Always keep on this device” to make sure it is offline-ready.\n\n\n\nmacOS (OneDrive client)\n\nInstall OneDrive from the Mac App Store (or Microsoft download if allowed).\nLaunch, sign in with your Cal Poly email, and complete campus SSO/MFA.\nPick the local sync folder location and finish setup.\nIn Finder, confirm the OneDrive folder exists and shows status icons; choose “Always Keep on This Device” for the class folder.\n\n\n\nLinux (rclone)\n\nInstall rclone (e.g., sudo apt install rclone).\nRun rclone config → n for new remote → name it (e.g., calpoly-onedrive) → storage type onedrive.\nUse the browser flow to sign in with your Cal Poly email and complete SSO/MFA when prompted.\nCreate a local sync folder (e.g., mkdir ~/CalPolyOneDrive).\nOne-time sync: rclone sync calpoly-onedrive: ~/CalPolyOneDrive.\nOptional mount for live access (requires FUSE): rclone mount calpoly-onedrive: ~/CalPolyOneDrive --vfs-cache-mode writes & (keep terminal open).\nNote any errors and how you resolved them (e.g., MFA prompts, permission issues).\nAlternately figure install this OneDrive Client, and tell me if it works out for you (I have not tried it).\n\nYou may have to ask the IT department to approve rclone to attach to your OneDrive (and wait for them to do so), if this is the case it will prompt you to do so. If you are having problems consult the rclone documentation."
   },
   {
     "objectID": "lab_10.html",
