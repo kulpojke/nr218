@@ -151,12 +151,19 @@
 </section>
 <section id="installing-qgis-on-mac" class="slide level2 center" style="font-size:0.6em">
 <h2>Installing QGIS on Mac</h2>
-<p>There are some bugs in recent versions of QGIS on Mac.</p>
+<ol type="1">
+<li>Go to the <a href="https://www.qgis.org/download/">QGIS download page</a>.</li>
+<li>Under macOS, download the <strong>Long Term Release</strong>. For class, use the LTR unless I say otherwise.</li>
+<li>Open the <code>.dmg</code> file and drag <strong>QGIS</strong> into the <code>Applications</code> folder.</li>
+<li>Open QGIS from <code>Applications</code>.</li>
+</ol>
+<p>Common Mac issues:</p>
 <ul>
-<li>QGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the <a href="https://github.com/qgis/QGIS/issues/65037">link to the issue on GitHub</a>. If 4.0 works on your computer, then great, problem solved. If not read on.</li>
-<li>QGIS 3.44, had a major bug on Mac until recently, but that seems to have been fixed.</li>
+<li>If macOS blocks QGIS the first time, open <strong>System Settings</strong> &gt; <strong>Privacy &amp; Security</strong> and choose <strong>Open Anyway</strong> for QGIS. This is Gatekeeper, not a broken install.</li>
+<li>QGIS 4 is newer, but some plugins may still lag behind it. The LTR is the safer choice for class.</li>
+<li>Do not install QGIS with Homebrew or MacPorts for this class. Use the official <code>.dmg</code>; package-manager installs can create dependency conflicts.</li>
+<li>Very old Macs may not be supported by the current installer.</li>
 </ul>
-<p>I might recommend going the 3.44 route, but if it 4.0 works on your computer, that is fine too.</p>
 </section>
 <section id="installing-homebrew" class="slide level2 center" style="font-size:0.7em">
 <h2>Installing Homebrew</h2>

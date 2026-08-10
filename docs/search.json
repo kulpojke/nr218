@@ -200,7 +200,7 @@
     "href": "index.html#installing-qgis-on-mac",
     "title": "NR 218",
     "section": "Installing QGIS on Mac",
-    "text": "Installing QGIS on Mac\nThere are some bugs in recent versions of QGIS on Mac.\n\nQGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the link to the issue on GitHub. If 4.0 works on your computer, then great, problem solved. If not read on.\nQGIS 3.44, had a major bug on Mac until recently, but that seems to have been fixed.\n\nI might recommend going the 3.44 route, but if it 4.0 works on your computer, that is fine too."
+    "text": "Installing QGIS on Mac\n\nGo to the QGIS download page.\nUnder macOS, download the Long Term Release. For class, use the LTR unless I say otherwise.\nOpen the .dmg file and drag QGIS into the Applications folder.\nOpen QGIS from Applications.\n\nCommon Mac issues:\n\nIf macOS blocks QGIS the first time, open System Settings &gt; Privacy & Security and choose Open Anyway for QGIS. This is Gatekeeper, not a broken install.\nQGIS 4 is newer, but some plugins may still lag behind it. The LTR is the safer choice for class.\nDo not install QGIS with Homebrew or MacPorts for this class. Use the official .dmg; package-manager installs can create dependency conflicts.\nVery old Macs may not be supported by the current installer."
   },
   {
     "objectID": "index.html#installing-homebrew",
@@ -221,7 +221,7 @@
     "href": "index.html#table-of-some-basic-commands",
     "title": "NR 218",
     "section": "Table of some basic commands",
-    "text": "Table of some basic commands\n\n\n\n\nCommand\nzsh\nbash\nPowerShell\n\n\n\n\nChange Directory\ncd\ncd\ncd\n\n\nList Files\nls\nls\nls\n\n\nMake Directory\nmkdir\nmkdir\nmkdir\n\n\nCopy\ncp\ncp\ncp\n\n\nMove / Rename\nmv\nmv\nmv\n\n\nShow First Lines of File\nhead\nhead\nGet-Content -Head 10"
+    "text": "Table of some basic commands\n\n\n\n\nCommand\nzsh\nbash\nPowerShell\n\n\n\n\nChange Directory\ncd\ncd\ncd\n\n\nList Files\nls\nls\nls\n\n\nMake Directory\nmkdir\nmkdir\nmkdir\n\n\nCopy\ncp\ncp\ncp\n\n\nMove / Rename\nmv\nmv\nmv\n\n\nShow First Lines of File\nhead\nhead\nGet-Content -Head 10\n\n\n\npush the down arrow to see examples."
   },
   {
     "objectID": "index.html#some-examples",
@@ -2531,7 +2531,7 @@
     "href": "terminal_cheatsheet.html#table-of-some-basic-commands",
     "title": "",
     "section": "Table of some basic commands",
-    "text": "Table of some basic commands\n\n\n\n\nCommand\nzsh\nbash\nPowerShell\n\n\n\n\nChange Directory\ncd\ncd\ncd\n\n\nList Files\nls\nls\nls\n\n\nMake Directory\nmkdir\nmkdir\nmkdir\n\n\nCopy\ncp\ncp\ncp\n\n\nMove / Rename\nmv\nmv\nmv\n\n\nShow First Lines of File\nhead\nhead\nGet-Content -Head 10"
+    "text": "Table of some basic commands\n\n\n\n\nCommand\nzsh\nbash\nPowerShell\n\n\n\n\nChange Directory\ncd\ncd\ncd\n\n\nList Files\nls\nls\nls\n\n\nMake Directory\nmkdir\nmkdir\nmkdir\n\n\nCopy\ncp\ncp\ncp\n\n\nMove / Rename\nmv\nmv\nmv\n\n\nShow First Lines of File\nhead\nhead\nGet-Content -Head 10\n\n\n\npush the down arrow to see examples."
   },
   {
     "objectID": "terminal_cheatsheet.html#some-examples",
@@ -2587,7 +2587,7 @@
     "href": "tips_for_mac_users.html#installing-qgis-on-mac",
     "title": "",
     "section": "Installing QGIS on Mac",
-    "text": "Installing QGIS on Mac\nThere are some bugs in recent versions of QGIS on Mac.\n\nQGIS 4.0 hangs up and crashes while opening on some Macs (I think Macs with intel processors work ok, but the newer Apple Silicon based Macs do not). Here is the link to the issue on GitHub. If 4.0 works on your computer, then great, problem solved. If not read on.\nQGIS 3.44, had a major bug on Mac until recently, but that seems to have been fixed.\n\nI might recommend going the 3.44 route, but if it 4.0 works on your computer, that is fine too."
+    "text": "Installing QGIS on Mac\n\nGo to the QGIS download page.\nUnder macOS, download the Long Term Release. For class, use the LTR unless I say otherwise.\nOpen the .dmg file and drag QGIS into the Applications folder.\nOpen QGIS from Applications.\n\nCommon Mac issues:\n\nIf macOS blocks QGIS the first time, open System Settings &gt; Privacy & Security and choose Open Anyway for QGIS. This is Gatekeeper, not a broken install.\nQGIS 4 is newer, but some plugins may still lag behind it. The LTR is the safer choice for class.\nDo not install QGIS with Homebrew or MacPorts for this class. Use the official .dmg; package-manager installs can create dependency conflicts.\nVery old Macs may not be supported by the current installer."
   },
   {
     "objectID": "tips_for_mac_users.html#installing-homebrew",

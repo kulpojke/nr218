@@ -11,6 +11,8 @@
 | Copy | `cp` | `cp` | `cp`  |
 | Move / Rename | `mv` | `mv` | `mv`  |
 | Show First Lines of File | `head` | `head` | `Get-Content -Head 10` |
+
+push the down arrow to see examples.
 :::
 
 ## Some examples {style="font-size:0.6em"}
