@@ -21,7 +21,7 @@ Thursday: 4:00 - 6:50
 
 | Date         | Week | Topic                                                           | 
 |--------------|-----:|-----------------------------------------------------------------|
-| August 25    | 1          | Lecture: Introduction, What is GIS, Computers Reading: [On Computers](../computers.html)
+| August 25    | 1          | Lecture: Introduction, What is GIS, Computers Reading: [On Computers](../computers.html) |
 | August 27    | 1          | [Lab 1, Computers](../computers_lab.html)   |
 | September 1  | 2          | Lecture: Basic GIS Concepts \| Scale, Coordinate systems, and Map Projections   |
 | September 3  | 2          | Lab: TBD   |
