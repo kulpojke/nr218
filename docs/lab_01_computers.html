@@ -114,54 +114,36 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="task-2-exploring-a-directory-structure-and-unzipping-files" class="level2">
 <h2 class="anchored" data-anchor-id="task-2-exploring-a-directory-structure-and-unzipping-files">Task 2: Exploring a Directory Structure and unzipping files</h2>
+<p>A zip file is a type of compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or <em>extract</em>, the data you get back an uncompressed copy, which is just like the data that was zipped in the first place. Zipped files are smaller (fewer bits), so they are good for transferring data, or long term storage when the data is not in use. <strong>Do not work directly with files compressed in a zip!</strong> .While QGIS and other applications <em>can</em> read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.</p>
+<p>You will now download some (not real) data, as a zip, and explore how it is arranged.</p>
 <ol type="1">
-<li>Download some made up files <a href="assets/toy_data.zip" download="">here</a> (Open the linkin a new tab and click the <em>Download raw file</em> button on the right side). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. For now, we will do just that, so unzip <code>toy_data.zip</code> right into the download folder (see <a href="#tip-zip" class="quarto-xref">Tip&nbsp;1</a> for how to do this.).</li>
-</ol>
-<div id="tip-zip" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip&nbsp;1: How do I unzip a zip archive? What is a zip archive?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>To unzip:</strong></p>
+<li><p>Download some made up files <a href="assets/toy_data.zip" download="">here</a>. Most likely this will save the file in your Downloads folder.<br>
+Open a terminal and check. Remember commands you learned in Task 1. Hint: <code>Downloads/</code> is in your home directory</p>
+<details>
+<summary>
+<p>Can’t remember how, or having trouble? Click here.</p>
+</summary>
 <ul>
-<li>Windows (GUI): In File Explorer, find the <code>.zip</code>, right-click → “Extract All…,” choose your desired destination folder, click Extract.</li>
-<li>macOS (GUI): In Finder, double-click the <code>.zip</code> to expand it, then drag/move the extracted folder into your destination folder.</li>
-<li>Linux (terminal): <code>cd ~/Downloads</code> (or wherever it landed), then run <code>unzip SPR_data.zip -d &lt;destination directory&gt;</code> (replace <code>&lt;destination directory&gt;</code> with your actual destination directory. Install unzip if missing: <code>sudo apt install unzip</code>).</li>
+<li>
+<p>To list the files in your Downloads directory use, <code>ls ~/Downloads</code></p>
+</li>
+<li>
+<p>Your Downloads directory in your home directory. The tilda, ~, is a shorthand notation for your home directory.</p>
+</li>
+<li>
+<p>If there is a bunch of stuff in your Downloads folder you may want to include a portion of the filename to be more specific, <code>ls ~/Downloads/toy*</code>, where * is a wildcard, so <em>toy*</em> means anything beginning with <em>toy</em>.</p>
+</li>
 </ul>
-<p><strong>What is a zip file?</strong> A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use. <strong>Do not work directly with files compressed in a zip!</strong> .While QGIS and other applications <em>can</em> read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.</p>
-</div>
-</div>
-<ol start="2" type="1">
-<li>Create a directory, <code>nr218</code>, for your work in this class, in your home folder. Then create another directory inside called <code>lab_1</code>. You can do this either in your computers graphical file explorer (e.g.&nbsp;Finder, File Explorer, Files) or in the terminal (Encouraged!).</li>
+</details>
+<p>While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration. But for now, we will do just that, so unzip <code>toy_data.zip</code> right into the download folder (see <a href="#tip-zip" class="quarto-xref">Tip&nbsp;1</a> for how to do this.).</p></li>
+<li><p>Create a directory, <code>nr218</code>, for your work in this class, in your home folder. Then create another directory inside called <code>lab_1</code>. You can do this either in your computers graphical file explorer (e.g.&nbsp;Finder, File Explorer, Files) or in the terminal (Encouraged!).</p></li>
 </ol>
 <ul>
-<li>If you are not sure where your home folder is see <a href="#tip-home" class="quarto-xref">Tip&nbsp;2</a>.</li>
+<li><strong>Important:</strong> If you are not sure where your home folder is see <a href="#tip-home" class="quarto-xref">Tip&nbsp;2</a>. Make sure you actually put it into your home directory.</li>
 <li>If you want to use the terminal to create <code>nr218</code> in your home directory but don’t know how, see <a href="./terminal_cheatsheet.html#/table-of-some-basic-commands">this slide</a> and the slide after it for tips, also remember what you learned in the terminal tutorial in Task 1.<br>
 </li>
 <li>If you are using a Mac, and you cannot see your home folder in Finder, see <a href="./tips_for_mac_users.html#making-your-home-directory-visible-in-finder">this slide</a></li>
 </ul>
-<div id="tip-home" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip&nbsp;2: Where is my home folder?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Windows: <code>C:\Users\&lt;username&gt;</code> (shows as “This PC &gt; Windows (C:) &gt; Users &gt; <username>` in File Explorer).</username></li>
-<li>macOS: <code>/Users/&lt;username&gt;</code>; Finder shows it with a house icon under Go → Home.</li>
-<li>Linux: <code>/home/&lt;username&gt;</code> (or occasionally <code>/Users/&lt;username&gt;</code>); in a terminal it can also be called <code>~</code>, and file managers usually label it “Home.”</li>
-</ul>
-</div>
-</div>
 <ol start="3" type="1">
 <li>Open QGIS and start a blank project.</li>
 </ol>
@@ -223,6 +205,41 @@ Figure&nbsp;2: When the relative path to data changes (or the data is deleted) Q
 </ul></li>
 </ul>
 <p>You will use <code>tree</code> and <code>pwd</code> throughout the quarter to show me how you are organizing your data. In order to do this you will also need to know how to navigate into your working directory (see <a href="#tip-paths" class="quarto-xref">Tip&nbsp;3</a>).</p>
+<div id="tip-zip" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;1: How do I unzip a zip archive?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>To unzip:</strong></p>
+<ul>
+<li>Windows (GUI): In File Explorer, find the <code>.zip</code>, right-click → “Extract All…,” choose your desired destination folder, click Extract.</li>
+<li>macOS (GUI): In Finder, double-click the <code>.zip</code> to expand it, then drag/move the extracted folder into your destination folder.</li>
+<li>Linux (terminal): <code>cd ~/Downloads</code> (or wherever it landed), then run <code>unzip SPR_data.zip -d &lt;destination directory&gt;</code> (replace <code>&lt;destination directory&gt;</code> with your actual destination directory. Install unzip if missing: <code>sudo apt install unzip</code>).</li>
+</ul>
+</div>
+</div>
+<div id="tip-home" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;2: Where is my home folder?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Windows: <code>C:\Users\&lt;username&gt;</code> (shows as “This PC &gt; Windows (C:) &gt; Users &gt; <username>` in File Explorer).</username></li>
+<li>macOS: <code>/Users/&lt;username&gt;</code>; Finder shows it with a house icon under Go → Home.</li>
+<li>Linux: <code>/home/&lt;username&gt;</code> (or occasionally <code>/Users/&lt;username&gt;</code>); in a terminal it can also be called <code>~</code>, and file managers usually label it “Home.”</li>
+</ul>
+</div>
+</div>
 <div id="tip-paths" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

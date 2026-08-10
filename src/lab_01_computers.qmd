@@ -23,33 +23,30 @@ For more useful commands see [the slides on using the terminal](terminal_cheatsh
 
 ## Task 2: Exploring a Directory Structure and unzipping files
 
-1. Download some made up files <a href="assets/toy_data.zip" download>here</a> (Open the linkin a new tab and click the _Download raw file_ button on the right side). For now, save it in your Downloads folder. While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration.  For now, we will do just that, so unzip `toy_data.zip` right into the download folder (see @tip-zip for how to do this.).  
+A zip file is a type of compressed archive.  Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure.  When you unzip, or _extract_,  the data you get back an uncompressed copy, which is just like the data that was zipped in the first place.  Zipped files are smaller (fewer bits), so they are good for transferring data, or long term storage when the data is not in use.  __Do not work directly with files compressed in a zip!__ .While QGIS and other applications _can_ read files from inside of a zip, it is a bad idea to do so.  There are many processing tools that cannot work with the compressed file.  Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.
 
-::: {#tip-zip .callout-tip}
-## How do I unzip a zip archive? What is a zip archive?
-__To unzip:__  
+You will now download some (not real) data, as a zip, and explore how it is arranged.
 
-- Windows (GUI): In File Explorer, find the `.zip`, right-click → “Extract All…,” choose your desired destination folder, click Extract.
-- macOS (GUI): In Finder, double-click the `.zip` to expand it, then drag/move the extracted folder into your destination folder.
-- Linux (terminal): `cd ~/Downloads` (or wherever it landed), then run `unzip SPR_data.zip -d <destination directory>` (replace `<destination directory>` with your actual destination directory. Install unzip if missing: `sudo apt install unzip`).
+1. Download some made up files <a href="assets/toy_data.zip" download>here</a>. Most likely this will save the file in your Downloads folder.  
+Open a terminal and check. Remember commands you learned in Task 1.  Hint: `Downloads/` is in your home directory 
+<details>
+<summary>Can't remember how, or having trouble? Click here.</summary>
+<ul>
+<li>To list the files in your Downloads directory use,   `ls ~/Downloads`  </li>
+<li> Your Downloads directory in your home directory. The tilda, ~, is a shorthand notation for your home directory.</li>
+<li>If there is a bunch of stuff in your Downloads folder you may want to include a portion of the filename to be more specific, `ls ~/Downloads/toy*`, where * is a wildcard, so _toy\*_  means anything beginning with _toy_.</li>
+</ul>
+</details>
+While it is possible to work with data that is in your Download directory, it is a bad habit, and will likely lead to mayhem and frustration.  But for now, we will do just that, so unzip `toy_data.zip` right into the download folder (see @tip-zip for how to do this.).  
 
-__What is a zip file?__
-A zip file is a compressed archive.  Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure.  When you unzip, or extract the data you get back an uncompressed copy.  Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use.  __Do not work directly with files compressed in a zip!__ .While QGIS and other applications _can_ read files from inside of a zip, it is a bad idea to do so.  There are many processing tools that cannot work with the compressed file.  Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.
-:::
 
-2. Create a directory, `nr218`, for your work in this class, in your home folder. Then create another directory inside called `lab_1`. You can do this either in your computers graphical file explorer (e.g. Finder, File Explorer, Files) or in the terminal (Encouraged!).
+2. Create a directory, `nr218`, for your work in this class, in your home folder. Then create another directory inside called `lab_1`. You can do this either in your computers graphical file explorer (e.g. Finder, File Explorer, Files) or in the terminal (Encouraged!). 
 
-+ If you are not sure where your home folder is see @tip-home.
++ __Important:__ If you are not sure where your home folder is see @tip-home. Make sure you actually put it into your home directory. 
 + If you want to use the terminal to create `nr218` in your home directory but don't know how, see [this slide](terminal_cheatsheet.qmd#/table-of-some-basic-commands) and the slide after it for tips, also remember what you learned in the terminal tutorial in Task 1.  
 + If you are using a Mac, and you cannot see your home folder in Finder, see [this slide](tips_for_mac_users.qmd#making-your-home-directory-visible-in-finder)
 
-::: {#tip-home .callout-tip}
-## Where is my home folder?
 
-- Windows: `C:\Users\<username>` (shows as “This PC > Windows (C:) > Users > <username>` in File Explorer).
-- macOS: `/Users/<username>`; Finder shows it with a house icon under Go → Home.
-- Linux: `/home/<username>` (or occasionally `/Users/<username>`); in a terminal it can also be called `~`, and file managers usually label it “Home.”
-:::
 
 3. Open QGIS and start a blank project.
   + Press `Ctrl+S`. This opens a dialogue for saving the QGIS project.  Navigate to the `nr218` directory you just created.  Name the project after you CalPoly email address (e.g. `mthuggin`. Note that this would be a terrible thing to actually name a project).  You have now saved a file containing the project.
@@ -77,7 +74,23 @@ A zip file is a compressed archive.  Zipping a folder full of sub-directories an
 
 You will use `tree` and `pwd` throughout the quarter to show me how you are organizing your data.  In order to do this you will also need to know how to navigate into your working directory (see @tip-paths).  
 
+::: {#tip-zip .callout-tip}
+## How do I unzip a zip archive?
+__To unzip:__  
 
+- Windows (GUI): In File Explorer, find the `.zip`, right-click → “Extract All…,” choose your desired destination folder, click Extract.
+- macOS (GUI): In Finder, double-click the `.zip` to expand it, then drag/move the extracted folder into your destination folder.
+- Linux (terminal): `cd ~/Downloads` (or wherever it landed), then run `unzip SPR_data.zip -d <destination directory>` (replace `<destination directory>` with your actual destination directory. Install unzip if missing: `sudo apt install unzip`).
+
+:::
+
+::: {#tip-home .callout-tip}
+## Where is my home folder?
+
+- Windows: `C:\Users\<username>` (shows as “This PC > Windows (C:) > Users > <username>` in File Explorer).
+- macOS: `/Users/<username>`; Finder shows it with a house icon under Go → Home.
+- Linux: `/home/<username>` (or occasionally `/Users/<username>`); in a terminal it can also be called `~`, and file managers usually label it “Home.”
+:::
 
 ::: {#tip-paths .callout-tip}
 ## What is a Path?

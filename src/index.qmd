@@ -58,7 +58,7 @@ __Assorted Links__
 
 ::: {.column width="50%"}
 __Lab Assignments__    
-[Lab 1](computers_lab.qmd){style="font-size:0.8em"}  
+[Lab 1](lab_01_computers.qmd){style="font-size:0.8em"}  
 [Lab 2](project_1.html){style="font-size:0.8em"}  
 [Lab 7](project_2.html){style="font-size:0.8em"}  
 [Lab 8](lab_8.qmd){style="font-size:0.8em"}  
