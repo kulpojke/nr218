@@ -24,7 +24,7 @@ Thursday: 4:00 - 6:50
 | August 25    | 1          | Lecture: Introduction, What is GIS, Computers Reading: [On Computers](../computers.html) |
 | August 27    | 1          | [Lab 1, Computers](../lab_01_computers.html)   |
 | September 1  | 2          | Lecture: Basic GIS Concepts \| Scale, Coordinate systems, and Map Projections   |
-| September 3  | 2          | Lab: TBD   |
+| September 3  | 2          | Lab 2, Basics, and first map   |
 | September 8  | 3          | Lecture: Spatial Data Models and File Formats    |
 | September 10 | 3          | Lab: TBD   |
 | September 15 | 4          | Lecture: Data Creation, Editing, Topology Basics    |

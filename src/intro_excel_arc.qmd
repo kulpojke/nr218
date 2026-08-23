@@ -85,7 +85,7 @@ Be kind to your future self - keep your files organized:
 ├── Class1/
 │   └── ...
 ├── NR218/
-│   ├── Project_1/
+│   ├── lab_02_first_map/
 │   │   └── ...
 │   └── Project_2/
 │       ├── Vector/
@@ -329,4 +329,3 @@ Take a moment to reset—hydrate, stretch, and prepare for ArcGIS Pro.
 - Work in groups of 2–3; coordinate today and check in if you need a team.
 
 ![](assets/intro_excel_arc-040.jpg){style="max-height: 420px; margin: 1.5rem auto; display: block;"}
-

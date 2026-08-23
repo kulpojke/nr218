@@ -113,13 +113,47 @@ Image Source: [Wikimedia /Sven](https://commons.wikimedia.org/w/index.php?curid=
 ![](img/windows_dir_structure.jpg)
 :::
 
-:::{.fragment .fade-in data-fragment-index="2" style="position: absolute;"}
+:::{.fragment .fade-in-then-out data-fragment-index="2" style="position: absolute;"}
 ![](img/bash_paths.png)
 ![](img/gui_paths.png){width=600}
 :::
 
-:::{.fragment .fade-in data-fragment-index="3" style="position: absolute; top: 165px; left: 0; width: 325px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::{.fragment .fade-in-then-out data-fragment-index="3" style="position: absolute;"}
+![](img/bash_paths.png)
+![](img/gui_paths.png){width=600}
 :::
+
+
+:::{.fragment .fade-in-then-out data-fragment-index="3" style="position: absolute; top: 165px; left: 0; width: 325px; height: 20px; border: 2px solid red; background: rgba(255,0,0,0.2); pointer-events: none;"}
+:::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="4"}
+What is _your_ home directory?
+
+    + `/home/username` (Linux)
+    + `/Users/username` (Mac)
+    + `C:\Users\username` (on your own Windows computer)
+    + `C:\Users\DOMAIN\username` (On Windows with Network manged accounts)
+
+Note that `DOMAIN` is just a place holder I have used here, it is different on different computers. In this lab it is...
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="5"}
+Why is it good to keep your work in your home directory?
+
+- You usually have permission to create, edit, and delete files there.
+- Your files stay organized and separate from system files.
+- You can use `~` as a short, portable path to your home directory.
+
+:::
+
+::: {.fragment .absolute .fade-in data-fragment-index="6"}
+
+Now, lets take a second to create a new directory called `nr218` in your home directory
+
+:::
+
 
 :::
 
@@ -277,3 +311,9 @@ __To unzip:__
 - Windows (GUI): In File Explorer, find the `.zip`, right-click → “Extract All…,” choose your desired destination folder, click Extract.
 - macOS (GUI): In Finder, double-click the `.zip` to expand it, then drag/move the extracted folder into your destination folder.
 - Linux (terminal): `cd ~/Downloads` (or wherever it landed), then run `unzip SPR_data.zip -d <destination directory>` (replace `<destination directory>` with your actual destination directory. Install unzip if missing: `sudo apt install unzip`).
+
+## Cloud Storage {style="font-size:0.7em"}
+
++ At Cal Poly you have OneDrive.
++ It is OK for sharing files
++ It is __not__ a good idea to store files there while you are actively working with them.

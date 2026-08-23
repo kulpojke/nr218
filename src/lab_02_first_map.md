@@ -35,7 +35,7 @@ __Provide written responses to the following Questions in a pdf__. Name the docu
 
 1. **Map Scale Analysis**: Determine and discuss the most appropriate (approximate) representative fractions for the following verbal map scale descriptions: (a) individual person, (b) neighborhood, (c) urban, (d) regional, (e) national, and (f) global.
 
-2. **Map Projections Research**: Go to the National Atlas website and read about map projections ([archived link](http://web.archive.org/web/20110717124751/http://www.nationalatlas.gov/articles/mapping/a_projections.html)). Define the following terms:
+2. **Map Projections Research**: Go to the National Atlas website and read  about map projections ([archived link](http://web.archive.org/web/20110717124751/http://www.nationalatlas.gov/articles/mapping/a_projections.html)). Define the following terms:
    a. datum
    b. developable surface
    c. secant

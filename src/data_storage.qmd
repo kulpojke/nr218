@@ -100,7 +100,7 @@ Be kind to your future self - keep your files organized:
 ├── Class1/
 │   └── ...
 ├── NR218/
-│   ├── Project_1/
+│   ├── lab_02_first_map/
 │   │   └── ...
 │   └── Project_2/
 │       ├── Vector/

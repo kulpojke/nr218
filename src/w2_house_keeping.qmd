@@ -2,7 +2,7 @@
 
 
 + Assignment 0 (1 pt extra credit) is available on Canvas until midnight at October 1st. 
-+ [Project 1](project_1.html) is due October 6th.
++ [Lab 2](lab_02_first_map.html) is due October 6th.
     + You will have time in class this  week to work on it
 
 In all of your projects please cite sources for data and literature you used for research

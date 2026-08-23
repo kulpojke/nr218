@@ -59,7 +59,7 @@ __Assorted Links__
 ::: {.column width="50%"}
 __Lab Assignments__    
 [Lab 1](lab_01_computers.qmd){style="font-size:0.8em"}  
-[Lab 2](project_1.html){style="font-size:0.8em"}  
+[Lab 2](lab_02_first_map.html){style="font-size:0.8em"}  
 [Lab 7](project_2.html){style="font-size:0.8em"}  
 [Lab 8](lab_8.qmd){style="font-size:0.8em"}  
 [Lab 10](lab_10.qmd){style="font-size:0.8em"}  
@@ -82,7 +82,7 @@ __Lab Assignments__
 
 {{< include introduction.qmd >}}
 
-{{< include computers_slides.qmd >}}
+{{< include slides_computers.qmd >}}
 
 {{< include data_storage.qmd >}}
 
@@ -123,6 +123,4 @@ __Lab Assignments__
 {{< include gps.qmd >}}
 
 {{< include intro_to_esri.qmd >}}
-
-
 

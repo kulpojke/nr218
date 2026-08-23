@@ -26,7 +26,7 @@ push the down arrow to see examples.
 | List files in `nr218` | `ls ~/nr218` | `ls ~\nr218` |
 | Make a new directory | `mkdir ~/nr218/lab_1` | `mkdir ~\nr218\lab_1` |
 | Make several directories | `mkdir ~/nr218/lab_2 ~/nr218/lab_3` | `mkdir ~\nr218\lab_2, ~\nr218\lab_3` |
-| Make nested directories | `mkdir -p ~/nr218/project_1/data` | `mkdir ~\nr218\project_1\data` |
+| Make nested directories | `mkdir -p ~/nr218/lab_02_first_map/data` | `mkdir ~\nr218\lab_02_first_map\data` |
 | Copy a file into a directory | `cp ~/nr218/notes.txt ~/nr218/lab_1/` | `cp ~\nr218\notes.txt ~\nr218\lab_1\` |
 | Move or rename a directory | `mv ~/nr218/lab_1 ~/nr218/lab_01` | `mv ~\nr218\lab_1 ~\nr218\lab_01` |
 | Show the first 10 lines of a file | `head ~/nr218/README.md` | `Get-Content ~\nr218\README.md -Head 10` |

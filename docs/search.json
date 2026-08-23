@@ -74,7 +74,7 @@
     "href": "index.html#file-paths-and-directories",
     "title": "NR 218",
     "section": "File Paths and Directories",
-    "text": "File Paths and Directories"
+    "text": "File Paths and Directories\n\n\n\n\n\n\n\n\n \n\n\n \n\n\n\n\n\nWhat is your home directory?\n+ `/home/username` (Linux)\n+ `/Users/username` (Mac)\n+ `C:\\Users\\username` (on your own Windows computer)\n+ `C:\\Users\\DOMAIN\\username` (On Windows with Network manged accounts)\nNote that DOMAIN is just a place holder I have used here, it is different on different computers. In this lab it is…\n\n\nWhy is it good to keep your work in your home directory?\n\nYou usually have permission to create, edit, and delete files there.\nYour files stay organized and separate from system files.\nYou can use ~ as a short, portable path to your home directory.\n\n\n\nNow, lets take a second to create a new directory called nr218 in your home directory"
   },
   {
     "objectID": "index.html#file-extensions",
@@ -140,6 +140,13 @@
     "text": "Zipped Files\nWhat is a zip file? A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use.\nDo not work directly with files compressed in a zip! .While QGIS and other applications can read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.\nTo unzip:\n\nWindows (GUI): In File Explorer, find the .zip, right-click → “Extract All…,” choose your desired destination folder, click Extract.\nmacOS (GUI): In Finder, double-click the .zip to expand it, then drag/move the extracted folder into your destination folder.\nLinux (terminal): cd ~/Downloads (or wherever it landed), then run unzip SPR_data.zip -d &lt;destination directory&gt; (replace &lt;destination directory&gt; with your actual destination directory. Install unzip if missing: sudo apt install unzip)."
   },
   {
+    "objectID": "index.html#cloud-storage",
+    "href": "index.html#cloud-storage",
+    "title": "NR 218",
+    "section": "Cloud Storage",
+    "text": "Cloud Storage\n\nAt Cal Poly you have OneDrive.\nIt is OK for sharing files\nIt is not a good idea to store files there while you are actively working with them."
+  },
+  {
     "objectID": "index.html#data-storage-1",
     "href": "index.html#data-storage-1",
     "title": "NR 218",
@@ -179,11 +186,11 @@
     "href": "index.html#how-to-organize-your-files",
     "title": "NR 218",
     "section": "How to Organize your files",
-    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── Project_1/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
+    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── lab_02_first_map/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
   },
   {
-    "objectID": "index.html#cloud-storage",
-    "href": "index.html#cloud-storage",
+    "objectID": "index.html#cloud-storage-1",
+    "href": "index.html#cloud-storage-1",
     "title": "NR 218",
     "section": "Cloud Storage",
     "text": "Cloud Storage\nMany options, but mounting Cal Poly One Drive as a disk is is probably the simplest.\nSee the Cal Poly tutorial here or try this, for Linux users or the computer savvy."
@@ -228,7 +235,7 @@
     "href": "index.html#some-examples",
     "title": "NR 218",
     "section": "Some examples",
-    "text": "Some examples\n\n\n\n\n\n\n\n\n\nTask\nzsh / bash\nPowerShell\n\n\n\n\nGo to your home directory\ncd ~\ncd ~\n\n\nGo to the course directory\ncd ~/nr218\ncd ~\\nr218\n\n\nList files in the current directory\nls\nls\n\n\nList files in nr218\nls ~/nr218\nls ~\\nr218\n\n\nMake a new directory\nmkdir ~/nr218/lab_1\nmkdir ~\\nr218\\lab_1\n\n\nMake several directories\nmkdir ~/nr218/lab_2 ~/nr218/lab_3\nmkdir ~\\nr218\\lab_2, ~\\nr218\\lab_3\n\n\nMake nested directories\nmkdir -p ~/nr218/project_1/data\nmkdir ~\\nr218\\project_1\\data\n\n\nCopy a file into a directory\ncp ~/nr218/notes.txt ~/nr218/lab_1/\ncp ~\\nr218\\notes.txt ~\\nr218\\lab_1\\\n\n\nMove or rename a directory\nmv ~/nr218/lab_1 ~/nr218/lab_01\nmv ~\\nr218\\lab_1 ~\\nr218\\lab_01\n\n\nShow the first 10 lines of a file\nhead ~/nr218/README.md\nGet-Content ~\\nr218\\README.md -Head 10"
+    "text": "Some examples\n\n\n\n\n\n\n\n\n\nTask\nzsh / bash\nPowerShell\n\n\n\n\nGo to your home directory\ncd ~\ncd ~\n\n\nGo to the course directory\ncd ~/nr218\ncd ~\\nr218\n\n\nList files in the current directory\nls\nls\n\n\nList files in nr218\nls ~/nr218\nls ~\\nr218\n\n\nMake a new directory\nmkdir ~/nr218/lab_1\nmkdir ~\\nr218\\lab_1\n\n\nMake several directories\nmkdir ~/nr218/lab_2 ~/nr218/lab_3\nmkdir ~\\nr218\\lab_2, ~\\nr218\\lab_3\n\n\nMake nested directories\nmkdir -p ~/nr218/lab_02_first_map/data\nmkdir ~\\nr218\\lab_02_first_map\\data\n\n\nCopy a file into a directory\ncp ~/nr218/notes.txt ~/nr218/lab_1/\ncp ~\\nr218\\notes.txt ~\\nr218\\lab_1\\\n\n\nMove or rename a directory\nmv ~/nr218/lab_1 ~/nr218/lab_01\nmv ~\\nr218\\lab_1 ~\\nr218\\lab_01\n\n\nShow the first 10 lines of a file\nhead ~/nr218/README.md\nGet-Content ~\\nr218\\README.md -Head 10"
   },
   {
     "objectID": "index.html#what-is-gis",
@@ -333,7 +340,7 @@
     "href": "index.html#attributes",
     "title": "NR 218",
     "section": "Attributes",
-    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
+    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNaN\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNaN\nNaN\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNaN\nNaN\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNaN\nNaN\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNaN\nNaN\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
   },
   {
     "objectID": "index.html#section-3",
@@ -389,14 +396,14 @@
     "href": "index.html#map-scale",
     "title": "NR 218",
     "section": "Map Scale",
-    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include scale\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include scale\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
   },
   {
     "objectID": "index.html#map-scale-1",
     "href": "index.html#map-scale-1",
     "title": "NR 218",
     "section": "Map Scale",
-    "text": "Map Scale\n\n\n\n\n\n\n\n\nScale Bars\n\n\n\nOn contour maps, contour interval is also included"
+    "text": "Map Scale\n\n\n\n\n\n\n\nScale Bars\n\n\n\nOn contour maps, contour interval is also included"
   },
   {
     "objectID": "index.html#coordinate-systems",
@@ -690,7 +697,7 @@
     "href": "index.html#discussion",
     "title": "NR 218",
     "section": "Discussion",
-    "text": "Discussion\n\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
+    "text": "Discussion\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
   },
   {
     "objectID": "index.html#raster-data",
@@ -1495,7 +1502,7 @@
     "href": "index.html#what-is-a-tif",
     "title": "NR 218",
     "section": "What Is A TIF",
-    "text": "What Is A TIF\n\n\nA tif is a container format\nIt stores image pixels plus tags (metadata)\nCompression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG\nA GeoTIFF is a TIFF with georeferencing tags\nA regular TIFF lacks georeferencing tags"
+    "text": "What Is A TIF\n\nA tif is a container format\nIt stores image pixels plus tags (metadata)\nCompression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG\nA GeoTIFF is a TIFF with georeferencing tags\nA regular TIFF lacks georeferencing tags"
   },
   {
     "objectID": "index.html#normal-tifs-no-georeferencing",
@@ -2006,7 +2013,7 @@
     "href": "spatial_data_models.html#discussion",
     "title": "",
     "section": "Discussion",
-    "text": "Discussion\n\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
+    "text": "Discussion\n\n\nWhat vector type (point, line, or polygon) best represents the following features:\n\n\nstate boundaries,\ntelephone poles,\nbuildings,\ncities,\nstream networks,\nmountain peaks,\nsoil types,\nflight tracks?\n\n\nWhich of these features can be represented by multiple vector types?\nWhat conditions might lead you choose one vector type over another?"
   },
   {
     "objectID": "spatial_data_models.html#raster-data",
@@ -2118,7 +2125,7 @@
     "href": "data_storage.html#how-to-organize-your-files",
     "title": "",
     "section": "How to Organize your files",
-    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── Project_1/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
+    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── lab_02_first_map/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
   },
   {
     "objectID": "data_storage.html#cloud-storage",
@@ -2170,102 +2177,109 @@
     "text": "Interesting Maps\n\nQGIS Map gallery\nOceano Dunes (using plas.io)\nStackexchange thread of beautiful maps\nCal poly Tree map"
   },
   {
-    "objectID": "computers_slides.html#what-is-a-computer",
-    "href": "computers_slides.html#what-is-a-computer",
+    "objectID": "slides_computers.html#what-is-a-computer",
+    "href": "slides_computers.html#what-is-a-computer",
     "title": "",
     "section": "What is a computer",
     "text": "What is a computer\n\n\n\n\nA machine that manipulates data following a list of programmed instructions\n\n\n\n\n\n\n\nImage Source: Wikimedia commons"
   },
   {
-    "objectID": "computers_slides.html#data",
-    "href": "computers_slides.html#data",
+    "objectID": "slides_computers.html#data",
+    "href": "slides_computers.html#data",
     "title": "",
     "section": "Data",
     "text": "Data\n\n\n\n“Related items of (chiefly numerical) information considered collectively, typically obtained by scientific work and used for reference, analysis, or calculation.”\n“Quantities, characters, or symbols on which operations are performed by a computer, considered collectively. Also (in non-technical contexts): information in digital form.” -OED\n\n\n\n\n\n\n\nData is stored on a computer as zeros and ones .\n\nData is stored at some physical location on the disk, and a pointer is saved which is later used to find the file.\nThe details of this are managed for you by applications or programming languages by representing this relationship as a path.\n\n\n\n\n\nA pointer (a) pointing to the memory address associated with a variable (b), i.e., a contains the memory address 1008 of the variable b. In this diagram, the computing architecture uses the same address space and data primitive for both pointers and non-pointers; this need not be the case.\n\n\n\nImage Source: Wikimedia /Sven"
   },
   {
-    "objectID": "computers_slides.html#data-storage",
-    "href": "computers_slides.html#data-storage",
+    "objectID": "slides_computers.html#data-storage",
+    "href": "slides_computers.html#data-storage",
     "title": "",
     "section": "Data Storage",
     "text": "Data Storage\n\nWe store data in computer-readable format in files\n\nSometimes files store data as text (often called human readable files)\nOther times data is stored in a way only a program will understand (binary file)\nEven the human readable files are ultimately stored as 1s and 0s (more on that)"
   },
   {
-    "objectID": "computers_slides.html#section",
-    "href": "computers_slides.html#section",
+    "objectID": "slides_computers.html#section",
+    "href": "slides_computers.html#section",
     "title": "",
     "section": "",
     "text": "Family tree of modern general purpose operating systems. With the exception of Windows (which derives from MS-DOS) all widely used modern general purpose OSs are based on UNIX."
   },
   {
-    "objectID": "computers_slides.html#file-paths-and-directories",
-    "href": "computers_slides.html#file-paths-and-directories",
+    "objectID": "slides_computers.html#file-paths-and-directories",
+    "href": "slides_computers.html#file-paths-and-directories",
     "title": "",
     "section": "File Paths and Directories",
-    "text": "File Paths and Directories"
+    "text": "File Paths and Directories\n\n\n\n\n\n\n\n\n \n\n\n \n\n\n\n\n\nWhat is your home directory?\n+ `/home/username` (Linux)\n+ `/Users/username` (Mac)\n+ `C:\\Users\\username` (on your own Windows computer)\n+ `C:\\Users\\DOMAIN\\username` (On Windows with Network manged accounts)\nNote that DOMAIN is just a place holder I have used here, it is different on different computers. In this lab it is…\n\n\nWhy is it good to keep your work in your home directory?\n\nYou usually have permission to create, edit, and delete files there.\nYour files stay organized and separate from system files.\nYou can use ~ as a short, portable path to your home directory.\n\n\n\nNow, lets take a second to create a new directory called nr218 in your home directory"
   },
   {
-    "objectID": "computers_slides.html#file-extensions",
-    "href": "computers_slides.html#file-extensions",
+    "objectID": "slides_computers.html#file-extensions",
+    "href": "slides_computers.html#file-extensions",
     "title": "",
     "section": "File Extensions",
     "text": "File Extensions\nFile extensions denote files readable by certain programs, for example:\n\n\n\nExtension\ndescription\n\n\n\n\nfilename.txt\ntext file\n\n\nfilename.doc\nMicrosoft Word file\n\n\nfilename.pdf\nportable document file\n\n\nfilename.html\nhypertext markup language\n\n\nfilename.xml\nextensible markup language\n\n\nfilename.tif\ntagged image format\n\n\nfilename.json\njavascript object notation\n\n\nfilename.geojson\ngeographic json\n\n\nfilename.laz\nLASer zip\n\n\nfilename.parquet\ncompressed table"
   },
   {
-    "objectID": "computers_slides.html#qgis-file-extensions",
-    "href": "computers_slides.html#qgis-file-extensions",
+    "objectID": "slides_computers.html#qgis-file-extensions",
+    "href": "slides_computers.html#qgis-file-extensions",
     "title": "",
     "section": "QGIS file extensions",
     "text": "QGIS file extensions\n\nComputer programs only read certain file formats.\nFamiliarity with different file types is helpful.\nQGIS has several of its own file types\n\nProject files: .qgz, .qgs\nStyling/symbology: .qml\nLayout templates: .qpt\nLayer definitions: .qlr\nProject companion database: .qgd\n\nCommon GIS data file types: .shp (along with its sidecar files .prj, .shx, .dbf, etc), .kml, .tiff, .gpkg, .json, .geojson, .txt, .hdf, .nc, .parquet and a few others"
   },
   {
-    "objectID": "computers_slides.html#annoying-file-explorer-defaults",
-    "href": "computers_slides.html#annoying-file-explorer-defaults",
+    "objectID": "slides_computers.html#annoying-file-explorer-defaults",
+    "href": "slides_computers.html#annoying-file-explorer-defaults",
     "title": "",
     "section": "Annoying File Explorer Defaults",
     "text": "Annoying File Explorer Defaults\nBy Default Windows File Explorer hides file extensions. To fix this,\n\nOpen File Explorer\nClick View &gt; Show &gt; File name extenions\n\nOn Mac, Finder, by default, does not make it easy to find your home folder see this slide."
   },
   {
-    "objectID": "computers_slides.html#terminals-and-shells",
-    "href": "computers_slides.html#terminals-and-shells",
+    "objectID": "slides_computers.html#terminals-and-shells",
+    "href": "slides_computers.html#terminals-and-shells",
     "title": "",
     "section": "Terminals and Shells",
     "text": "Terminals and Shells\n\nLinux: terminals use; /bin/bash, /bin/zsh, or others under POSIX conventions.\nmacOS: ships with Terminal.app and zsh by default; still Unix-like, so scripts often mirror Linux.\nWindows: historically lacked a POSIX shell; now offers multiple terminal hosts (Command Prompt, PowerShell, Windows Terminal) with different shells.\n\nPOSIX - Portable Operating System Interface is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems"
   },
   {
-    "objectID": "computers_slides.html#the-windows-terminal-dumpsterfire",
-    "href": "computers_slides.html#the-windows-terminal-dumpsterfire",
+    "objectID": "slides_computers.html#the-windows-terminal-dumpsterfire",
+    "href": "slides_computers.html#the-windows-terminal-dumpsterfire",
     "title": "",
     "section": "The Windows Terminal Dumpsterfire",
     "text": "The Windows Terminal Dumpsterfire\n\nCommand Prompt (cmd.exe): legacy DOS-style environment with limited scripting features.\nPowerShell: Kind of acts like bash or zsh.\nGit Bash / MSYS2: provides GNU functionality inside Windows; paths need translation.\nEnvironment-specific shells: Anaconda Prompt, Anaconda Powershell, OSGeo4W Shell, etc., inject toolchains and custom env vars; each behaves slightly differently."
   },
   {
-    "objectID": "computers_slides.html#command-prompt-cmd.exe-is-haggard",
-    "href": "computers_slides.html#command-prompt-cmd.exe-is-haggard",
+    "objectID": "slides_computers.html#command-prompt-cmd.exe-is-haggard",
+    "href": "slides_computers.html#command-prompt-cmd.exe-is-haggard",
     "title": "",
     "section": "Command Prompt (cmd.exe) is haggard",
     "text": "Command Prompt (cmd.exe) is haggard\n\n\nCommand language rooted in DOS; minimal quoting, no pipelines beyond simple |.\nLacks native concepts like environment exports.\nEncoding quirks (Code Page 437 vs UTF-8) cause unexpected character issues.\nFile globbing and path separators differ (\\ vs /), breaking cross-platform scripts."
   },
   {
-    "objectID": "computers_slides.html#powershell-vs-bash",
-    "href": "computers_slides.html#powershell-vs-bash",
+    "objectID": "slides_computers.html#powershell-vs-bash",
+    "href": "slides_computers.html#powershell-vs-bash",
     "title": "",
     "section": "PowerShell vs Bash",
     "text": "PowerShell vs Bash\nIn Many cases PowerShell behaves similarly to Bash\n\npaths can be written using / as separator\nhome directory can be reached using ~\n\nbut not always\n\nPowerShell is object-oriented: pipelines pass .NET objects, not plain strings.\nBash pipelines stream text; tools like cat, grep, awk compose seamlessly.  \n\nExample (Bash):\n\ncat access.log | grep \"GET /api\" | wc -l\n\nPowerShell equivalent:\n\nGet-Content access.log | Select-String \"GET /api\" | Measure-Object | Select-Object -ExpandProperty Count"
   },
   {
-    "objectID": "computers_slides.html#differences-in-tree-command-across-platforms",
-    "href": "computers_slides.html#differences-in-tree-command-across-platforms",
+    "objectID": "slides_computers.html#differences-in-tree-command-across-platforms",
+    "href": "slides_computers.html#differences-in-tree-command-across-platforms",
     "title": "",
     "section": "Differences in tree command across platforms",
     "text": "Differences in tree command across platforms\n\n\nOn Unix like systems, like Mac OSX and Linux, by default tree shows files.\n.\n├── PoorlyNamedFiles\n│   ├── basin.geojson\n│   ├── do not put spaces in filenames.geojson\n│   ├── Junk\n│   │   └── toadstools\n│   └── xp23_99.csv\n├── README.md\n└── WellNamedFiles\n    ├── cal_median_household.csv\n    ├── Eaton_Perimeter_20250121.geojson\n    └── san_simeon_creek_basin_4326.geojson\n\n\n\nIn PowerShell, files are omitted by default\n.\n├── PoorlyNamedFiles\n│   └── Junk\n└── WellNamedFiles\nIn order to show files in PowerShell use the F flag, tree /F\n├── PoorlyNamedFiles\n│   ├── basin.geojson\n│   ├── do not put spaces in filenames.geojson\n│   ├── Junk\n│   │   └── toadstools\n│   └── xp23_99.csv\n├── README.md\n└── WellNamedFiles\n    ├── cal_median_household.csv\n    ├── Eaton_Perimeter_20250121.geojson\n    └── san_simeon_creek_basin_4326.geojson"
   },
   {
-    "objectID": "computers_slides.html#zipped-files",
-    "href": "computers_slides.html#zipped-files",
+    "objectID": "slides_computers.html#zipped-files",
+    "href": "slides_computers.html#zipped-files",
     "title": "",
     "section": "Zipped Files",
     "text": "Zipped Files\nWhat is a zip file? A zip file is a compressed archive. Zipping a folder full of sub-directories and files compresses the data (makes it take up less memory) while preserving the directory structure. When you unzip, or extract the data you get back an uncompressed copy. Zipped files are smaller, so they are good for transferring data, or long term storage when the data is not in use.\nDo not work directly with files compressed in a zip! .While QGIS and other applications can read files from inside of a zip, it is a bad idea to do so. There are many processing tools that cannot work with the compressed file. Often you will get part of the way through a workflow and try some step of your analysis, only to get an error about unsupported file types.\nTo unzip:\n\nWindows (GUI): In File Explorer, find the .zip, right-click → “Extract All…,” choose your desired destination folder, click Extract.\nmacOS (GUI): In Finder, double-click the .zip to expand it, then drag/move the extracted folder into your destination folder.\nLinux (terminal): cd ~/Downloads (or wherever it landed), then run unzip SPR_data.zip -d &lt;destination directory&gt; (replace &lt;destination directory&gt; with your actual destination directory. Install unzip if missing: sudo apt install unzip)."
+  },
+  {
+    "objectID": "slides_computers.html#cloud-storage",
+    "href": "slides_computers.html#cloud-storage",
+    "title": "",
+    "section": "Cloud Storage",
+    "text": "Cloud Storage\n\nAt Cal Poly you have OneDrive.\nIt is OK for sharing files\nIt is not a good idea to store files there while you are actively working with them."
   },
   {
     "objectID": "introduction.html#class-details",
@@ -2314,7 +2328,7 @@
     "href": "gran_chaco.html",
     "title": "Gran Chaco Land-Use Change Detection",
     "section": "",
-    "text": "Detect land-use change and deforestation in the Gran Chaco using dry-season satellite image composites.\n\n\n\n\nUse the Gran Chaco AOI GeoJSON as the area of interest.\nThe AOI covers dry forest and agricultural clearing near the Cerro Chovoreca frontier in northern Alto Paraguay.\nDry-season imagery composites are used to avoid cloud cover and reduce seasonal differences.\n\n\n\n\nYou are being provided with data for an area in Paraguay’s Gran Chaco region. The AOI includes dry forest and more recent agricultural clearing near the Cerro Chovoreca frontier. The dataset includes annual dry-season median composites made from June-August imagery.\nSentinel-2 and Landsat 5, 7, 8 and/or 9 images were searched from June through August for the years 2000-2025 using Google Earth Engine. Images were filtered by date, area of interest, and sun angle; Sentinel-2 images were also filtered by scene-level cloudiness. Cloud and cloud-shadow masking and surface reflectance scaling functions were then mapped over the image collections. Finally, the images for each year were reduced to annual dry-season median composite images. If you would like to see how this was done, see this notebook.\nThe bands of the exported imagery are given in Table 1.\n\n\n\nTable 1: Exported image band order and source sensor bands.\n\n\n\n\n\n\n\n\n\n\n\n\nExported TIF band\nCommon name\nSentinel-2 band\nLandsat 5/7 band\nLandsat 8/9 band\n\n\n\n\n1\nBlue\nB2\nSR_B1\nSR_B2\n\n\n2\nGreen\nB3\nSR_B2\nSR_B3\n\n\n3\nRed\nB4\nSR_B3\nSR_B4\n\n\n4\nNear infrared\nB8\nSR_B4\nSR_B5\n\n\n5\nShortwave infrared 1\nB11\nSR_B5\nSR_B6\n\n\n6\nShortwave infrared 2\nB12\nSR_B7\nSR_B7\n\n\n\n\n\n\n\n\n\n\nChoose comparison years.\n\nSelect one older image and one newer image.\nGood starting pairs:\n\n2018 vs 2025 for Sentinel-2\n2000 vs 2025 for Landsat-based long-term change\n\n\nInspect false-color composites.\n\nUse NIR, red, green to highlight vegetation.\nUse SWIR1, NIR, red to highlight bare soil, clearing, and dry vegetation.\n\n\n\n\nYou will need to use QGIS Model Designer to calculate NDVI for each composite raster, and save the resulting file. To do this first create an ndvi directory next to the QGIS project file.\ngran_chaco_project/\n├── gran_chaco.qgz\n├── rasters/\n│   └── S2_2025_dry_season.tif\n└── ndvi/\nNext open Model Designer (Processing –&gt; Model Designer…). In the panel at the lower left set eh Model Name to “calc NDVI” and the model group to “calc index”. Now that the model is named you can start creating the workflow.\nAt the top of the left panel there should be an area that looks like what is shown in Figure 1. While in the Inputs tab find Raster layer and double click. In the resulting dialogue popup add input_image as the description, check the mandatory box, then close the dialogue.\n\n\n\n\n\n\nFigure 1: Add raster layer dialog in the QGIS graphical modeler.\n\n\n\nAfter you have done this, press the “save model in project” button () to save the model. (If one were interested in using this model in another project one could save a model as a file using the Save model as button.)\nNext we should insure that the raster is in the right CRS. To do this, click the Toolbox tab in the left panel (to access the Processing toolbox), and search for “Warp”. Click Warp from GDAL -&gt; Raster Projections. Change the description to “Warp to project crs”. Use input_image as the input layer, and check the Use project CRS box. Change Resampling method to use to bilinear, then close the dialogue. Press the “save model in project” button.\nIn the next step you will actually calculate NDVI. Recall that the formulat for NDVI is\n\\[\n\\frac{NIR - Red}{NIR + Red}\n\\]\nand from Table 1 you can see that NIR is band 4 and red is Band 3 in the input image.\nFrom the toolbox add GDAL -&gt; Raster miscellaneous -&gt; Raster calculator. Add the description “calc NDVI”. Under Input layer A click the Model input button () and change it to Algorithm Output.\nIn the dropdown menu next to the Algorithm output button, , select __“Reprojected” from algorithm “Warp to project CRS”_ Under Number of raster band for A put 4. Repeat the process for Input layer B, but use band 3. In the Calculation in gdalnumeric syntax using… enter (A - B) / (A + B).\nWe want to be able to run this tool as a batch process and save the results to file. To do this we will enter an expression under Calculated . The button under calculated must be changed to Pre-calculated Value, then we can enter the following QGIS specific expression for creating an output filename based on the input file.\n@project_folder || '/ndvi/' || base_file_name(decode_uri(@input_image, 'path')) || '_NDVI.tif'\nFor more on this the the Expression breakdown tip box.\n\n\n\n\n\n\nExpression breakdown\n\n\n\n\n@project_folder is a QGIS variable for the folder containing the current .qgz project\n|| is a string concatenation, meaning “join these text pieces”\n'/ndvi/' is literal text\n@input_image is the model input variable; this must match the input name in Model Designer\ndecode_uri(@input_image, 'path') extracts the filesystem path from the input raster/layer URI\nbase_file_name(...) gets the file stem without folder or extension\n'_NDVI.tif' is the suffix to add\n\n\n\n\nNBR:\n\n(NIR - SWIR2) / (NIR + SWIR2)\n\nNDMI:\n\n(NIR - SWIR1) / (NIR + SWIR1)\n\n\n\nSubtract index rasters.\n\nCalculate:\n\nnewer_index - older_index\n\nLarge negative values may indicate vegetation loss or clearing.\nLarge positive values may indicate vegetation recovery or crop growth.\n\nClassify change.\n\nPick a threshold for likely clearing.\nExample:\n\nstrong vegetation loss\nlittle or no change\nvegetation gain\n\nAdjust thresholds after visually checking known cleared areas.\n\nClean the change map.\n\nRemove small isolated patches.\nOptional: polygonize the change raster.\nOptional: calculate area of changed land.\n\nValidate visually.\n\nCompare the change map against the original before/after imagery.\nCheck several cleared fields and intact forest patches.\nNote confusion between cropland cycles, bare soil, burned areas, and true forest clearing.\n\n\n\n\n\n\n\nBefore and after dry-season composites.\nFalse-color maps showing land-cover patterns.\nIndex difference raster.\nClassified change raster or vector layer.\nSummary table of changed area.\nShort interpretation of where and how land use changed.\n\n\n\n\n\nUse the same months for each year to reduce seasonal bias.\nMedian composites help, but they do not remove all phenology or crop-cycle differences.\nSentinel-2 gives better spatial detail from 2018 onward.\nLandsat gives a longer historical record at coarser resolution."
+    "text": "Detect land-use change and deforestation in the Gran Chaco using dry-season satellite image composites.\n\n\n\n\nUse the Gran Chaco AOI GeoJSON as the area of interest.\nThe AOI covers dry forest and agricultural clearing near the Cerro Chovoreca frontier in northern Alto Paraguay.\nDry-season imagery composites are used to avoid cloud cover and reduce seasonal differences.\n\n\n\n\nYou are being provided with data for an area in Paraguay’s Gran Chaco region. The AOI includes dry forest and more recent agricultural clearing near the Cerro Chovoreca frontier. The dataset includes annual dry-season median composites made from June-August imagery.\nSentinel-2 and Landsat 5, 7, 8 and/or 9 images were searched from June through August for the years 2000-2025 using Google Earth Engine. Images were filtered by date, area of interest, and sun angle; Sentinel-2 images were also filtered by scene-level cloudiness. Cloud and cloud-shadow masking and surface reflectance scaling functions were then mapped over the image collections. Finally, the images for each year were reduced to annual dry-season median composite images. If you would like to see how this was done, see this notebook.\nThe bands of the exported imagery are given in Table 1.\n\n\n\nTable 1: Exported image band order and source sensor bands.\n\n\n\n\n\n\n\n\n\n\n\n\nExported TIF band\nCommon name\nSentinel-2 band\nLandsat 5/7 band\nLandsat 8/9 band\n\n\n\n\n1\nBlue\nB2\nSR_B1\nSR_B2\n\n\n2\nGreen\nB3\nSR_B2\nSR_B3\n\n\n3\nRed\nB4\nSR_B3\nSR_B4\n\n\n4\nNear infrared\nB8\nSR_B4\nSR_B5\n\n\n5\nShortwave infrared 1\nB11\nSR_B5\nSR_B6\n\n\n6\nShortwave infrared 2\nB12\nSR_B7\nSR_B7\n\n\n\n\n\n\n\n\n\n\nChoose comparison years.\n\nSelect one older image and one newer image.\nGood starting pairs:\n\n2018 vs 2025 for Sentinel-2\n2000 vs 2025 for Landsat-based long-term change\n\n\nInspect false-color composites.\n\nUse NIR, red, green to highlight vegetation.\nUse SWIR1, NIR, red to highlight bare soil, clearing, and dry vegetation.\n\n\n\n\nYou will need to use QGIS Model Designer to calculate NDVI for each composite raster, and save the resulting file. To do this first create an ndvi directory next to the QGIS project file.\ngran_chaco_project/\n├── gran_chaco.qgz\n├── rasters/\n│   └── S2_2025_dry_season.tif\n└── ndvi/\nNext open Model Designer (Processing –&gt; Model Designer…). In the panel at the lower left set eh Model Name to “calc NDVI” and the model group to “calc index”. Now that the model is named you can start creating the workflow.\nAt the top of the left panel there should be an area that looks like what is shown in Figure 1. While in the Inputs tab find Raster layer and double click. In the resulting dialogue popup add input_image as the description, check the mandatory box, then close the dialogue.\n\n\n\n\n\n\nFigure 1: Add raster layer dialog in the QGIS graphical modeler.\n\n\n\nAfter you have done this, press the “save model in project” button () to save the model. (If one were interested in using this model in another project one could save a model as a file using the Save model as button.)\nNext we should insure that the raster is in the right CRS. To do this, click the Toolbox tab in the left panel (to access the Processing toolbox), and search for “Warp”. Click Warp from GDAL -&gt; Raster Projections. Change the description to “Warp to project crs”. Use input_image as the input layer, and check the Use project CRS box. Change Resampling method to use to bilinear, then close the dialogue. Press the “save model in project” button.\nIn the next step you will actually calculate NDVI. Recall that the formulat for NDVI is\n\\[\n\\frac{NIR - Red}{NIR + Red}\n\\]\nand from Table 1 you can see that NIR is band 4 and red is Band 3 in the input image.\nFrom the toolbox add GDAL -&gt; Raster miscellaneous -&gt; Raster calculator. Add the description “calc NDVI”. Under Input layer A click the Model input button () and change it to Algorithm Output.\nIn the dropdown menu next to the Algorithm output button, , select __“Reprojected” from algorithm “Warp to project CRS”_ Under Number of raster band for A put 4. Repeat the process for Input layer B, but use band 3. In the Calculation in gdalnumeric syntax using… enter (A - B) / (A + B).\nWe want to be able to run this tool as a batch process and save the results to file. To do this we will enter an expression under Calculated . The button under calculated must be changed to Pre-calculated Value, then we can enter the following QGIS specific expression for creating an output filename based on the input file.\n@project_folder || '/ndvi/' || base_file_name(decode_uri(@input_image, 'path')) || '_NDVI.tif'\nFor more on this the the Expression breakdown tip box.\n\n\n\n\n\n\nTipExpression breakdown\n\n\n\n\n@project_folder is a QGIS variable for the folder containing the current .qgz project\n|| is a string concatenation, meaning “join these text pieces”\n'/ndvi/' is literal text\n@input_image is the model input variable; this must match the input name in Model Designer\ndecode_uri(@input_image, 'path') extracts the filesystem path from the input raster/layer URI\nbase_file_name(...) gets the file stem without folder or extension\n'_NDVI.tif' is the suffix to add\n\n\n\n\nNBR:\n\n(NIR - SWIR2) / (NIR + SWIR2)\n\nNDMI:\n\n(NIR - SWIR1) / (NIR + SWIR1)\n\n\n\nSubtract index rasters.\n\nCalculate:\n\nnewer_index - older_index\n\nLarge negative values may indicate vegetation loss or clearing.\nLarge positive values may indicate vegetation recovery or crop growth.\n\nClassify change.\n\nPick a threshold for likely clearing.\nExample:\n\nstrong vegetation loss\nlittle or no change\nvegetation gain\n\nAdjust thresholds after visually checking known cleared areas.\n\nClean the change map.\n\nRemove small isolated patches.\nOptional: polygonize the change raster.\nOptional: calculate area of changed land.\n\nValidate visually.\n\nCompare the change map against the original before/after imagery.\nCheck several cleared fields and intact forest patches.\nNote confusion between cropland cycles, bare soil, burned areas, and true forest clearing.\n\n\n\n\n\n\n\nBefore and after dry-season composites.\nFalse-color maps showing land-cover patterns.\nIndex difference raster.\nClassified change raster or vector layer.\nSummary table of changed area.\nShort interpretation of where and how land use changed.\n\n\n\n\n\nUse the same months for each year to reduce seasonal bias.\nMedian composites help, but they do not remove all phenology or crop-cycle differences.\nSentinel-2 gives better spatial detail from 2018 onward.\nLandsat gives a longer historical record at coarser resolution."
   },
   {
     "objectID": "gran_chaco.html#goal",
@@ -2342,7 +2356,7 @@
     "href": "gran_chaco.html#change-detection-workflow",
     "title": "Gran Chaco Land-Use Change Detection",
     "section": "",
-    "text": "Choose comparison years.\n\nSelect one older image and one newer image.\nGood starting pairs:\n\n2018 vs 2025 for Sentinel-2\n2000 vs 2025 for Landsat-based long-term change\n\n\nInspect false-color composites.\n\nUse NIR, red, green to highlight vegetation.\nUse SWIR1, NIR, red to highlight bare soil, clearing, and dry vegetation.\n\n\n\n\nYou will need to use QGIS Model Designer to calculate NDVI for each composite raster, and save the resulting file. To do this first create an ndvi directory next to the QGIS project file.\ngran_chaco_project/\n├── gran_chaco.qgz\n├── rasters/\n│   └── S2_2025_dry_season.tif\n└── ndvi/\nNext open Model Designer (Processing –&gt; Model Designer…). In the panel at the lower left set eh Model Name to “calc NDVI” and the model group to “calc index”. Now that the model is named you can start creating the workflow.\nAt the top of the left panel there should be an area that looks like what is shown in Figure 1. While in the Inputs tab find Raster layer and double click. In the resulting dialogue popup add input_image as the description, check the mandatory box, then close the dialogue.\n\n\n\n\n\n\nFigure 1: Add raster layer dialog in the QGIS graphical modeler.\n\n\n\nAfter you have done this, press the “save model in project” button () to save the model. (If one were interested in using this model in another project one could save a model as a file using the Save model as button.)\nNext we should insure that the raster is in the right CRS. To do this, click the Toolbox tab in the left panel (to access the Processing toolbox), and search for “Warp”. Click Warp from GDAL -&gt; Raster Projections. Change the description to “Warp to project crs”. Use input_image as the input layer, and check the Use project CRS box. Change Resampling method to use to bilinear, then close the dialogue. Press the “save model in project” button.\nIn the next step you will actually calculate NDVI. Recall that the formulat for NDVI is\n\\[\n\\frac{NIR - Red}{NIR + Red}\n\\]\nand from Table 1 you can see that NIR is band 4 and red is Band 3 in the input image.\nFrom the toolbox add GDAL -&gt; Raster miscellaneous -&gt; Raster calculator. Add the description “calc NDVI”. Under Input layer A click the Model input button () and change it to Algorithm Output.\nIn the dropdown menu next to the Algorithm output button, , select __“Reprojected” from algorithm “Warp to project CRS”_ Under Number of raster band for A put 4. Repeat the process for Input layer B, but use band 3. In the Calculation in gdalnumeric syntax using… enter (A - B) / (A + B).\nWe want to be able to run this tool as a batch process and save the results to file. To do this we will enter an expression under Calculated . The button under calculated must be changed to Pre-calculated Value, then we can enter the following QGIS specific expression for creating an output filename based on the input file.\n@project_folder || '/ndvi/' || base_file_name(decode_uri(@input_image, 'path')) || '_NDVI.tif'\nFor more on this the the Expression breakdown tip box.\n\n\n\n\n\n\nExpression breakdown\n\n\n\n\n@project_folder is a QGIS variable for the folder containing the current .qgz project\n|| is a string concatenation, meaning “join these text pieces”\n'/ndvi/' is literal text\n@input_image is the model input variable; this must match the input name in Model Designer\ndecode_uri(@input_image, 'path') extracts the filesystem path from the input raster/layer URI\nbase_file_name(...) gets the file stem without folder or extension\n'_NDVI.tif' is the suffix to add\n\n\n\n\nNBR:\n\n(NIR - SWIR2) / (NIR + SWIR2)\n\nNDMI:\n\n(NIR - SWIR1) / (NIR + SWIR1)\n\n\n\nSubtract index rasters.\n\nCalculate:\n\nnewer_index - older_index\n\nLarge negative values may indicate vegetation loss or clearing.\nLarge positive values may indicate vegetation recovery or crop growth.\n\nClassify change.\n\nPick a threshold for likely clearing.\nExample:\n\nstrong vegetation loss\nlittle or no change\nvegetation gain\n\nAdjust thresholds after visually checking known cleared areas.\n\nClean the change map.\n\nRemove small isolated patches.\nOptional: polygonize the change raster.\nOptional: calculate area of changed land.\n\nValidate visually.\n\nCompare the change map against the original before/after imagery.\nCheck several cleared fields and intact forest patches.\nNote confusion between cropland cycles, bare soil, burned areas, and true forest clearing."
+    "text": "Choose comparison years.\n\nSelect one older image and one newer image.\nGood starting pairs:\n\n2018 vs 2025 for Sentinel-2\n2000 vs 2025 for Landsat-based long-term change\n\n\nInspect false-color composites.\n\nUse NIR, red, green to highlight vegetation.\nUse SWIR1, NIR, red to highlight bare soil, clearing, and dry vegetation.\n\n\n\n\nYou will need to use QGIS Model Designer to calculate NDVI for each composite raster, and save the resulting file. To do this first create an ndvi directory next to the QGIS project file.\ngran_chaco_project/\n├── gran_chaco.qgz\n├── rasters/\n│   └── S2_2025_dry_season.tif\n└── ndvi/\nNext open Model Designer (Processing –&gt; Model Designer…). In the panel at the lower left set eh Model Name to “calc NDVI” and the model group to “calc index”. Now that the model is named you can start creating the workflow.\nAt the top of the left panel there should be an area that looks like what is shown in Figure 1. While in the Inputs tab find Raster layer and double click. In the resulting dialogue popup add input_image as the description, check the mandatory box, then close the dialogue.\n\n\n\n\n\n\nFigure 1: Add raster layer dialog in the QGIS graphical modeler.\n\n\n\nAfter you have done this, press the “save model in project” button () to save the model. (If one were interested in using this model in another project one could save a model as a file using the Save model as button.)\nNext we should insure that the raster is in the right CRS. To do this, click the Toolbox tab in the left panel (to access the Processing toolbox), and search for “Warp”. Click Warp from GDAL -&gt; Raster Projections. Change the description to “Warp to project crs”. Use input_image as the input layer, and check the Use project CRS box. Change Resampling method to use to bilinear, then close the dialogue. Press the “save model in project” button.\nIn the next step you will actually calculate NDVI. Recall that the formulat for NDVI is\n\\[\n\\frac{NIR - Red}{NIR + Red}\n\\]\nand from Table 1 you can see that NIR is band 4 and red is Band 3 in the input image.\nFrom the toolbox add GDAL -&gt; Raster miscellaneous -&gt; Raster calculator. Add the description “calc NDVI”. Under Input layer A click the Model input button () and change it to Algorithm Output.\nIn the dropdown menu next to the Algorithm output button, , select __“Reprojected” from algorithm “Warp to project CRS”_ Under Number of raster band for A put 4. Repeat the process for Input layer B, but use band 3. In the Calculation in gdalnumeric syntax using… enter (A - B) / (A + B).\nWe want to be able to run this tool as a batch process and save the results to file. To do this we will enter an expression under Calculated . The button under calculated must be changed to Pre-calculated Value, then we can enter the following QGIS specific expression for creating an output filename based on the input file.\n@project_folder || '/ndvi/' || base_file_name(decode_uri(@input_image, 'path')) || '_NDVI.tif'\nFor more on this the the Expression breakdown tip box.\n\n\n\n\n\n\nTipExpression breakdown\n\n\n\n\n@project_folder is a QGIS variable for the folder containing the current .qgz project\n|| is a string concatenation, meaning “join these text pieces”\n'/ndvi/' is literal text\n@input_image is the model input variable; this must match the input name in Model Designer\ndecode_uri(@input_image, 'path') extracts the filesystem path from the input raster/layer URI\nbase_file_name(...) gets the file stem without folder or extension\n'_NDVI.tif' is the suffix to add\n\n\n\n\nNBR:\n\n(NIR - SWIR2) / (NIR + SWIR2)\n\nNDMI:\n\n(NIR - SWIR1) / (NIR + SWIR1)\n\n\n\nSubtract index rasters.\n\nCalculate:\n\nnewer_index - older_index\n\nLarge negative values may indicate vegetation loss or clearing.\nLarge positive values may indicate vegetation recovery or crop growth.\n\nClassify change.\n\nPick a threshold for likely clearing.\nExample:\n\nstrong vegetation loss\nlittle or no change\nvegetation gain\n\nAdjust thresholds after visually checking known cleared areas.\n\nClean the change map.\n\nRemove small isolated patches.\nOptional: polygonize the change raster.\nOptional: calculate area of changed land.\n\nValidate visually.\n\nCompare the change map against the original before/after imagery.\nCheck several cleared fields and intact forest patches.\nNote confusion between cropland cycles, bare soil, burned areas, and true forest clearing."
   },
   {
     "objectID": "gran_chaco.html#outputs",
@@ -2485,22 +2499,22 @@
     "text": "Answers to Written Questions 1-9 above, in a pdf."
   },
   {
-    "objectID": "project_1.html",
-    "href": "project_1.html",
+    "objectID": "lab_02_first_map.html",
+    "href": "lab_02_first_map.html",
     "title": "Lab 2: Mapping",
     "section": "",
     "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\nPractice organizing files\n\n\n\n\nThis assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.\nMake a Folder called NR218 in your home folder. Make a subdirectory, lab_2 inside of NR218\nagustov\n└──nr218 \n   └── lab_2\nAll of your work for this lab will go into the lab_2 directory. You will zip it and submit the zipped file on Canvas"
   },
   {
-    "objectID": "project_1.html#learning-goals",
-    "href": "project_1.html#learning-goals",
+    "objectID": "lab_02_first_map.html#learning-goals",
+    "href": "lab_02_first_map.html#learning-goals",
     "title": "Lab 2: Mapping",
     "section": "",
     "text": "Understand geographic concepts\nStart working with geographic data\nMake your first map!\nStart working with map attributes and styling\nPractice organizing files"
   },
   {
-    "objectID": "project_1.html#introduction",
-    "href": "project_1.html#introduction",
+    "objectID": "lab_02_first_map.html#introduction",
+    "href": "lab_02_first_map.html#introduction",
     "title": "Lab 2: Mapping",
     "section": "",
     "text": "This assignment consists of three parts. Written responses, tutorials, and a short project in which you will make a map.\nMake a Folder called NR218 in your home folder. Make a subdirectory, lab_2 inside of NR218\nagustov\n└──nr218 \n   └── lab_2\nAll of your work for this lab will go into the lab_2 directory. You will zip it and submit the zipped file on Canvas"
@@ -2580,7 +2594,7 @@
     "href": "terminal_cheatsheet.html#some-examples",
     "title": "",
     "section": "Some examples",
-    "text": "Some examples\n\n\n\n\n\n\n\n\n\nTask\nzsh / bash\nPowerShell\n\n\n\n\nGo to your home directory\ncd ~\ncd ~\n\n\nGo to the course directory\ncd ~/nr218\ncd ~\\nr218\n\n\nList files in the current directory\nls\nls\n\n\nList files in nr218\nls ~/nr218\nls ~\\nr218\n\n\nMake a new directory\nmkdir ~/nr218/lab_1\nmkdir ~\\nr218\\lab_1\n\n\nMake several directories\nmkdir ~/nr218/lab_2 ~/nr218/lab_3\nmkdir ~\\nr218\\lab_2, ~\\nr218\\lab_3\n\n\nMake nested directories\nmkdir -p ~/nr218/project_1/data\nmkdir ~\\nr218\\project_1\\data\n\n\nCopy a file into a directory\ncp ~/nr218/notes.txt ~/nr218/lab_1/\ncp ~\\nr218\\notes.txt ~\\nr218\\lab_1\\\n\n\nMove or rename a directory\nmv ~/nr218/lab_1 ~/nr218/lab_01\nmv ~\\nr218\\lab_1 ~\\nr218\\lab_01\n\n\nShow the first 10 lines of a file\nhead ~/nr218/README.md\nGet-Content ~\\nr218\\README.md -Head 10"
+    "text": "Some examples\n\n\n\n\n\n\n\n\n\nTask\nzsh / bash\nPowerShell\n\n\n\n\nGo to your home directory\ncd ~\ncd ~\n\n\nGo to the course directory\ncd ~/nr218\ncd ~\\nr218\n\n\nList files in the current directory\nls\nls\n\n\nList files in nr218\nls ~/nr218\nls ~\\nr218\n\n\nMake a new directory\nmkdir ~/nr218/lab_1\nmkdir ~\\nr218\\lab_1\n\n\nMake several directories\nmkdir ~/nr218/lab_2 ~/nr218/lab_3\nmkdir ~\\nr218\\lab_2, ~\\nr218\\lab_3\n\n\nMake nested directories\nmkdir -p ~/nr218/lab_02_first_map/data\nmkdir ~\\nr218\\lab_02_first_map\\data\n\n\nCopy a file into a directory\ncp ~/nr218/notes.txt ~/nr218/lab_1/\ncp ~\\nr218\\notes.txt ~\\nr218\\lab_1\\\n\n\nMove or rename a directory\nmv ~/nr218/lab_1 ~/nr218/lab_01\nmv ~\\nr218\\lab_1 ~\\nr218\\lab_01\n\n\nShow the first 10 lines of a file\nhead ~/nr218/README.md\nGet-Content ~\\nr218\\README.md -Head 10"
   },
   {
     "objectID": "project_2.html",
@@ -2902,7 +2916,7 @@
     "href": "some_basic_gis_concepts.html#attributes",
     "title": "Some basic GIS Concepts",
     "section": "Attributes",
-    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNone\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNone\nNone\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNone\nNone\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
+    "text": "Attributes\n\n\n\n\n\n\n\n\n\nOBJECTID\nGlobalID\ntype\nsource\npoly_DateCurrent\nmission\nincident_name\nincident_number\narea_acres\ndescription\nFireDiscoveryDate\nCreationDate\nEditDate\ndisplayStatus\ngeometry\n\n\n\n\n0\n3025\n04ba1d01-c043-478f-ad62-e7eeb903cf09\nHeat Perimeter\nFIRIS\n2025-01-01 05:39:02.359000+00:00\nCA-SBC-OAK-N40Y\nOak\nNaN\n41.998143\nFIRIS Perimeter\nNaT\n2025-01-01 05:37:18+00:00\nNaT\nInactive\nPOLYGON ((-120.24304 34.88387, -120.24302 34.8...\n\n\n1\n3026\n4551a5e4-e94d-46e2-9aac-73cc4314c946\nHeat Perimeter\nFIRIS\n2025-01-02 05:16:55.340000+00:00\nCA-SDU-BORDER1-N40Y\nNaN\nNaN\n16.911501\nFIRIS Perimeter\nNaT\n2025-01-02 05:13:35+00:00\nNaT\nInactive\nMULTIPOLYGON (((-116.82928 32.59686, -116.8293...\n\n\n2\n3027\n2b1329f3-5b39-4c0e-ad34-1250e436e0e1\nHeat Perimeter\nFIRIS\n2025-01-07 22:11:19.142000+00:00\nCA-LFD-PALISADES-N57B\nNaN\nNaN\n771.572356\nFIRIS Perimeter\nNaT\n2025-01-07 22:09:29+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n3\n3028\na766c1b5-1d8e-43b3-9aac-02358de18d35\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:35.698000+00:00\nCA-LFD-PALISADES-N57B\nNaN\nNaN\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n4\n3029\n72049d43-03fe-4cc1-899a-fe2eb43934e7\nHeat Perimeter\nFIRIS\n2025-01-07 23:17:39.454000+00:00\nCA-LFD-PALISADES-N57B\nNaN\nNaN\n1261.520779\nFIRIS Perimeter\nNaT\n2025-01-07 23:13:25+00:00\nNaT\nInactive\nMULTIPOLYGON (((-118.55013 34.06195, -118.5501...\n\n\n\n\n\n\n\nAttributes of assets/CA_Perimeters_CAL_FIRE_NIFC_FIRIS_public_view.geojson"
   },
   {
     "objectID": "some_basic_gis_concepts.html#section-1",
@@ -3077,14 +3091,14 @@
     "href": "projections_etc.html#map-scale",
     "title": "",
     "section": "Map Scale",
-    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include scale\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
+    "text": "Map Scale\nThe factor of reduction of the world so it fits on a map\n\nYou need to shrink things to make a map\nOn reference maps it is generally important to include scale\n\nRepresentative fraction (RF) describes scale as a simple ratio\n\n\n\n\nThe numerator, which is always unity (i.e., 1), denotes map distance.\nThe denominator denotes ground or “real-world” distance.\nunit neutral\nLarge vs small, 1:1,000 &gt; 1:1,000,000\nLarge shows more detail"
   },
   {
     "objectID": "projections_etc.html#map-scale-1",
     "href": "projections_etc.html#map-scale-1",
     "title": "",
     "section": "Map Scale",
-    "text": "Map Scale\n\n\n\n\n\n\n\n\nScale Bars\n\n\n\nOn contour maps, contour interval is also included"
+    "text": "Map Scale\n\n\n\n\n\n\n\nScale Bars\n\n\n\nOn contour maps, contour interval is also included"
   },
   {
     "objectID": "projections_etc.html#coordinate-systems",
@@ -3623,7 +3637,7 @@
     "href": "georeferencing.html#what-is-a-tif",
     "title": "",
     "section": "What Is A TIF",
-    "text": "What Is A TIF\n\n\nA tif is a container format\nIt stores image pixels plus tags (metadata)\nCompression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG\nA GeoTIFF is a TIFF with georeferencing tags\nA regular TIFF lacks georeferencing tags"
+    "text": "What Is A TIF\n\nA tif is a container format\nIt stores image pixels plus tags (metadata)\nCompression of the image inside the container can be: none, lossless (LZW, Deflate, etc…), or JPEG\nA GeoTIFF is a TIFF with georeferencing tags\nA regular TIFF lacks georeferencing tags"
   },
   {
     "objectID": "georeferencing.html#normal-tifs-no-georeferencing",
@@ -3700,7 +3714,7 @@
     "href": "intro_excel_arc.html#how-to-organize-your-files",
     "title": "",
     "section": "How to Organize your files",
-    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── Project_1/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
+    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── lab_02_first_map/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
   },
   {
     "objectID": "intro_excel_arc.html#section-2",
