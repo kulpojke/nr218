@@ -28,7 +28,7 @@ More properly, what is GNSS?
 [Open the video on YouTube](https://www.youtube.com/watch?v=tz23G_UXCGA)
 
 
-## Important Points style="font-size:0.7em"
+## Important Points {style="font-size:0.7em"}
 ::: { .r-stack}
 ::: {.fragment .absolute .fade-out data-fragment-index="1"}
 
@@ -84,7 +84,7 @@ $$
 + How does the satellite know where it is?
     + Ground stations!
 + How do the ground stations know where they are, what with the continents moving around and all?
-    + Qulsars!
+    + Quasars!
     + Radio telescopes male a precise map of continental movement from qulsars
     + Ground stations are tied into that map
 

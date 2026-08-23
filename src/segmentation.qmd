@@ -4,7 +4,7 @@
 ## Data {style="font-size:0.7em"}
 
 
-In Lab 11 you have been working with the two Sentinel 2 datasets.  You should already have them, but if not they can be downloaded with the links below.
+In Lab 6 you have been working with the two Sentinel 2 datasets.  You should already have them, but if not they can be downloaded with the links below.
 
 + [median composite image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC6Qrj_lbP2QqXekQ4w4yQeAXpYURPD6mSP2u-bkB4-Urc?e=9wV35w)
 + [max composite image](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAjxciGVyL-R6vO3V0U1HODAQbjdadeuhyOR07YxrA8vZA?e=GqfPgK)
@@ -18,7 +18,7 @@ In Lab 11 you have been working with the two Sentinel 2 datasets.  You should al
 ::: {.r-stack style="min-height: 9em; width: 100%; align-items: flex-start; justify-content: flex-start;"}
 
 ::: {.fragment .fade-out data-fragment-index="1" style="width: 100%; max-width: 100%; font-size:1.0em; text-align:left;"}
-In Lab 11 you you are asked to segment the image to find lithium brine evaporation ponds near Susques Argentina.
+In Lab 6 you are asked to segment the image to find lithium brine evaporation ponds near Susques, Argentina.
 :::
 
 ::: {.fragment .fade-in-then-out data-fragment-index="1" style="width: 100%; max-width: 100%; font-size:1.0em; text-align:left;"}

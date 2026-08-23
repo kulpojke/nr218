@@ -1,5 +1,6 @@
 ---
-title: ""
+title: "lab 5: A Quick Lesson in Multi-band Rasters Using NAIP
+"
 page-layout: full
 format: 
   html:
@@ -7,8 +8,6 @@ format:
     css: style/styles.css
     
 ---
-
-# A Quick Lesson in Multi-band Rasters Using NAIP
 
 In this exercise you will explore some visualizations and calculate simple spectral indices using NAIP imagery (see @tip-naip).  You will also get some more practice performing spatial overlays and merging vectors.
  
@@ -35,13 +34,13 @@ The National Agriculture Imagery Program (NAIP) acquires aerial imagery during t
 :::
 
 
-Create a working directory, called `lab_10`, for this lab in your `nr218` folder. Create a `data` folder and put the downloaded data inside. Then:
+Create a working directory, called `lab_05_NAIP`, for this lab in your `nr218` folder. Create a `data` folder and put the downloaded data inside. Then:
 
 + Open QGIS and start a new project
 + Change the project CRS to EPSG:6339
-+ Save it in the `lab_10` folder as `coffee_fire.qgz`
++ Save it in the `lab_05_NAIP` folder as `coffee_fire.qgz`
 
-Also create a text document (using Notepad, TextEdit, gedit, or similar), name it `answers.txt`, and save it in `lab_10`. Throughout this lab there will be questions included in the format of the text below. Answer the questions in `answers.txt`.
+Also create a text document (using Notepad, TextEdit, gedit, or similar), name it `answers.txt`, and save it in `lab_05_NAIP`. Throughout this lab there will be questions included in the format of the text below. Answer the questions in `answers.txt`.
 
 > Questions will be included in this format, with a sidebar and in grey, throughout the exercise.
 
@@ -49,7 +48,7 @@ Also create a text document (using Notepad, TextEdit, gedit, or similar), name i
 You should now have a directory structure like this.
 
 ```
-lab_10/
+lab_05_NAIP/
 ├── coffee_fire.qgz
 ├── data/
 │   ├── subset_of_cal_hist_fires.geojson
@@ -165,7 +164,7 @@ Where $L$ is often 0.5, but can be adjusted for more reflective exposed soil. Th
 
 ## Submission
 
-As usual, zip you lab_10 directory and submit to Canvas.  
+As usual, zip you lab_05_NAIP directory and submit to Canvas.  
 
 +-----------------------------------+--------------------------------------------------------------+-------------+
 | Part                              | Items                                                        | % of points |

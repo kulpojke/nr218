@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>lab_11</title>
+<title>lab 5: A Quick Lesson in Multi-band Rasters Using NAIP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,7 +68,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style/styles.css">
 </head>
 
 <body class="quarto-light">
@@ -80,271 +110,286 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">lab 5: A Quick Lesson in Multi-band Rasters Using NAIP</h1>
+</div>
 
 
 
+<div class="quarto-title-meta column-page">
 
-<section id="segmentation-with-a-basic-workflow" class="level1">
-<h1>Segmentation (with a basic workflow)</h1>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Download links to data:</p>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this exercise you will explore some visualizations and calculate simple spectral indices using NAIP imagery (see <a href="#tip-naip" class="quarto-xref">Tip&nbsp;1</a>). You will also get some more practice performing spatial overlays and merging vectors.</p>
+<section id="data-and-directory-structure" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-directory-structure">Data and directory structure</h2>
+<p>First we will need the data. Download the vector file of fire perimeters and the 2022 NAIP image below.</p>
 <ul>
-<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQC6Qrj_lbP2QqXekQ4w4yQeAXpYURPD6mSP2u-bkB4-Urc?e=9wV35w">median composite image</a></li>
-<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQAjxciGVyL-R6vO3V0U1HODAQbjdadeuhyOR07YxrA8vZA?e=GqfPgK">max composite image</a></li>
+<li><a href="https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQDiOQnn5iZ2SoC9RFOZXMQ6AYohr1UK1PuzRVCWknsOpLQ?e=XmKEES">fire perimeters</a></li>
+<li><a href="https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQCbn6SrRXfWTpTedYV781GaAf0KYHKhx3KR9q1ULPDs69g?e=G4GTkg">NAIP image</a> (This NAIP file has been clipped and slightly downsampled from 0.6 m resolution to 1 m resolution.)</li>
 </ul>
-<p>Make a directory for this lab, and the next, called <code>susques</code>. Put the data into a data folder. Open QGIS, start a project. Save it as <code>susques.qgz</code>. (You will answer questions later in <code>lab_11_answers.txt</code>)</p>
-<pre><code>susques/
-├── susques.qgz
+<p><span style="font-size:0.3.5em">The fire perimeters data is a subset of polygons from California Historical Fire Perimeters dataset from <a href="https://data.ca.gov/group/fire">California Open Data Portal</a></span>.</p>
+<div id="tip-naip" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;1: What is NAIP
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The National Agriculture Imagery Program (NAIP) acquires aerial imagery during the agricultural growing seasons in the United States. It is generally made available to governmental agencies and the public within a year of acquisition.</p>
+<ul>
+<li>High-resolution aerial imagery of the continental United States</li>
+<li>Collected during agricultural growing seasons</li>
+<li>Typically 4-band: Red, Green, Blue, Near-Infrared (NIR)</li>
+<li>60 cm (or better) spatial resolution</li>
+<li>Updated on a 2-3 year cycle for each state</li>
+</ul>
+</div>
+</div>
+<p>Create a working directory, called <code>lab_05_NAIP</code>, for this lab in your <code>nr218</code> folder. Create a <code>data</code> folder and put the downloaded data inside. Then:</p>
+<ul>
+<li>Open QGIS and start a new project</li>
+<li>Change the project CRS to EPSG:6339</li>
+<li>Save it in the <code>lab_05_NAIP</code> folder as <code>coffee_fire.qgz</code></li>
+</ul>
+<p>Also create a text document (using Notepad, TextEdit, gedit, or similar), name it <code>answers.txt</code>, and save it in <code>lab_05_NAIP</code>. Throughout this lab there will be questions included in the format of the text below. Answer the questions in <code>answers.txt</code>.</p>
+<blockquote class="blockquote">
+<p>Questions will be included in this format, with a sidebar and in grey, throughout the exercise.</p>
+</blockquote>
+<p>You should now have a directory structure like this.</p>
+<pre><code>lab_05_NAIP/
+├── coffee_fire.qgz
 ├── data/
-│   ├── s2_susques_max_2025_clipped.tif
-│   └── s2_susques_median_2025_clipped.tif
-└── lab_11_answers.txt</code></pre>
-<p>For this project, you have two Sentinel-2 images (from Google Earth Engine’s <a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED">Harmonized Sentinel-2 MSI Level-2A Surface Reflectance collection</a>) to work with. The first is a <em>median composite image</em> and, the second, a <em>max composite image</em>. Both images are of the same scene, near <a href="https://en.wikipedia.org/wiki/Susques">Susques, Argentina</a>, In the <a href="https://en.wikipedia.org/wiki/Atacama_Desert">Atacama Desert</a>. They are taken over the period from 2025-04-01 to 2025-10-26.</p>
-<p>The bands available in the two composite images are listed in <a href="#tbl-bands" class="quarto-xref">Table&nbsp;2</a>.</p>
+│   ├── subset_of_cal_hist_fires.geojson
+│   └── naip_2022.tif
+└── answers.txt</code></pre>
 </section>
-<section id="segmentation-using-a-binary-mask" class="level2">
-<h2 class="anchored" data-anchor-id="segmentation-using-a-binary-mask">Segmentation using a binary mask</h2>
-<p>In this exercise you will segment the image to find the <a href="https://eros.usgs.gov/earthshots/ponds">lithium brine evaporation ponds</a>, using only the raster calculator, and the Polygonize tool (Raster to Vector, from GDAL)</p>
-<p>To do this you will need to:</p>
+<section id="data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
+<p>During this workflow, there is no need to save any file with <em>scratch</em> in the name. You will want to save other files in your data directory.</p>
 <ol type="1">
-<li>Select an appropriate spectral index (or indices) and calculate it using Raster Calculator</li>
-<li>Create a binary mask (pond / not pond) by using a threshold value of your spectral index.</li>
-<li>Calculate the total area of the ponds.</li>
-<li>Answer these questions in <code>lab_11_answers.txt</code></li>
+<li><p>Open <code>subset_of_cal_hist_fires.geojson</code> in QGIS.</p></li>
+<li><p>Add a basemap.</p></li>
 </ol>
 <blockquote class="blockquote">
-<p>q1. What spectral index (or indices) did you use?<br>
-q2. What bands are involved in the index and why are those bands useful for this task?<br>
-q3. What was the threshold value used to create you mask?<br>
-q4. What is the total area of the brine evaporation ponds?<br>
-q5. What CRS did you use when measuring the area of the brine evaporation ponds?<br>
-q6. What is the difference in mean SWIR1 (band 11) within and outside of evaporation ponds in the image?<br>
-q7. What is a median composite image? A maximum composite image?</p>
+<p>Question 1. Where are these fire perimeters?</p>
+</blockquote>
+<div id="fig-vectors" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:40%;">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/lab_10_vectors.png" class="wrap-right img-fluid figure-img" style="--wrap-width:40%;">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Vectors created while creating <code>fires_in_AOI</code>
+</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>Question 2. What CRS is <code>subset_of_cal_hist_fires.geojson</code> in? Is there something you should do regarding the CRS?</p>
+</blockquote>
+<ol start="3" type="1">
+<li><p>Extract the perimeter of the Coffee Fire (<code>FIRE_NAME</code> is <code>COFFEE</code>). There are a few ways you can do this, your choice. Name the resulting layer <code>Coffee fire</code>. (I would recommend naming the file you save <code>coffee_fire.geojson</code>.)</p></li>
+<li><p>Reduce the number of polygons in the fire perimeter layer, <code>subset_of_cal_hist_fires</code>, by selecting only fires that have happened since 2014 (Hint: extract by attribute), i.e.&nbsp;<code>YEAR_ &gt; 2013</code>. Name the resulting layer <code>scratch_1</code>.</p></li>
+<li><p>Use the “Extract layer extent” tool to get a polygon of the extent of the Coffee fire. Name the result <code>scratch_extent</code>.</p></li>
+<li><p>Buffer <code>scratch_extent</code> by 1000 m, using mitered joint style. Name the buffered layer, our area of interest, <code>AOI</code>. <a href="#fig-vectors" class="quarto-xref">Figure&nbsp;1</a> shows the layers that should have been created at this point (AOI is still called <code>Buffered</code> in the image).</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>Question 3. Try buffering <code>scratch_extent</code> with the default joint style instead of mitered. What is the difference?</p>
+</blockquote>
+<ol start="7" type="1">
+<li><p>Now extract all of the polygons in <code>scratch_1</code> which <em>intersect</em> <code>AOI</code> (Hint: “select by location”). Name the result <code>scratch_2</code>.</p></li>
+<li><p>Clip <code>scratch_2</code> by <code>AOI</code>. Save the results as <code>fires_in_AOI</code>.</p></li>
+<li><p>When you are satisfied that <code>fires_in_AOI</code> turned out correctly, you can delete <code>scratch_1</code>, <code>scratch_2</code>, and <code>scratch_extent</code>. (Now you should not have any temporary layers in your layer panel.)</p></li>
+</ol>
+<div id="fig-transparency" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:40%;">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-transparency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/transpareny_window.png" class="wrap-right img-fluid figure-img" style="--wrap-width:40%;">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-transparency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Transparency tab in symbology.
+</figcaption>
+</figure>
+</div>
+<ol start="10" type="1">
+<li>Open <code>naip_2022</code>. If you have a basemap on, turn it off so that the NAIP imagery is over a white background. Notice that the image looks very pale. Open the Layer Properties dialog. Go to the Transparency tab on the left (see <a href="#fig-transparency" class="quarto-xref">Figure&nbsp;2</a>). Change the transparency band to None. See the change that occurs.</li>
+</ol>
+<blockquote class="blockquote">
+<p>Question 4. What just happened when you made that change. What is band 4 in the image? QGIS was interpreting it as a transparency band, why?</p>
+</blockquote>
+</section>
+<section id="explore-visualizations-and-spectral-indices" class="level2">
+<h2 class="anchored" data-anchor-id="explore-visualizations-and-spectral-indices">Explore Visualizations and Spectral Indices</h2>
+<ol type="1">
+<li>Now view the image as False color
+<ol type="a">
+<li>Recall from earlier, that means Near-Infrared to Red, Red to Green, and Green to Blue (i.e.&nbsp;band order is NIR, G, R)</li>
+<li>Open symbology and change the band order</li>
+<li>Zoom in so that individual trees are visible.</li>
+<li>Save your QGIS project so the false-color visualization is preserved.</li>
+</ol></li>
+</ol>
+<blockquote class="blockquote">
+<p>Question 5. Why do trees stand out from the ground using this false color image?</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Calculate Normalized Difference Vegetation Index (NDVI) using the Raster Calculator. Save the file as <code>NDVI.tif</code></li>
+</ol>
+<p><span class="math display">\[NDVI = \frac{NIR - Red}{NIR + Red}\]</span></p>
+<p><strong>NDVI Values</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Value Range</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-1 to 0</td>
+<td>Water, clouds, or non-vegetated surfaces.</td>
+</tr>
+<tr class="even">
+<td>0 to 0.1</td>
+<td>Exposed rock, sand, or snow.</td>
+</tr>
+<tr class="odd">
+<td>0.2 to 0.5</td>
+<td>Sparse vegetation,</td>
+</tr>
+<tr class="even">
+<td>0.6 to 0.9</td>
+<td>Dense Vegetation</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>Question 6. a) How many bands does the NDVI raster have?</p>
+</blockquote>
+<ol start="3" type="1">
+<li>Adjust the symbology to some color scheme you think is appropriate for displaying NDVI.</li>
+</ol>
+<p>The Soil Adjusted Vegetation Index (SAVI) is useful when the soil is highly exposed in an image. Soil is often highly reflective across all bands, reducing the contrast between vegetation and soil. It is the same as NDVI with an adjustment factor, <span class="math inline">\(L\)</span>, to compensate for soil.</p>
+<p><span class="math display">\[
+SAVI = \frac{(NIR - Red) \times (1 + L)}{NIR + Red + L}
+\]</span></p>
+<ol start="4" type="1">
+<li>Calculate SAVI. Use similar symbology rules you used for NDVI.</li>
+</ol>
+<p>Where <span class="math inline">\(L\)</span> is often 0.5, but can be adjusted for more reflective exposed soil. The soil in the Klamath Mountains, where this data is from, tends to be highly reflective, which means a fairly high value of <span class="math inline">\(L\)</span> (close to 1) should be used. Experiment with values of <span class="math inline">\(L\)</span> to see if you can make a raster where contrast between trees and soil is higher than in your NDVI raster.</p>
+<blockquote class="blockquote">
+<p>Question 7. a) Were you able to improve upon NDVI using SAVI? b) What value of <span class="math inline">\(L\)</span> did you end up using?<br>
+c) NDVI is defined on the interval [-1, -1], what about SAVI?</p>
+</blockquote>
+</section>
+<section id="finding-zonal-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="finding-zonal-statistics">Finding Zonal Statistics</h2>
+<ol type="1">
+<li><p>Extract a separate <code>River fire</code> layer, for the River Complex, from your <code>fires in AOI</code> layer.</p></li>
+<li><p>Spatial Overlays:</p>
+<ol type="a">
+<li>Find the difference between the <code>River fire</code> and <code>Coffee fire</code> layers, call it <code>river only</code>,</li>
+<li>Find the difference between the <code>Coffee fire</code> and <code>River fire</code> layers, call it <code>coffee only</code></li>
+<li>Find the intersection between the <code>Coffee fire</code> and <code>River fire</code> layers, call it <code>both</code></li>
+<li>Use the AOI and the three layers you just found to make a polygon called <code>unburned</code>, i.e areas burned by neither fire.</li>
+</ol></li>
+<li><p>Change the value of the <code>FIRE_NAME</code> attribute for each of the layers you created in the last step to match the layer name.</p></li>
+<li><p>Use the <em>Merge vector layers</em> tool to merge the four layers you just created (<code>river only</code>, <code>coffee only</code>, <code>both</code>, <code>unburned</code>). Save the merged layer as <code>treatments.geojson</code>. Change the symbology of the treatments layer to categorized. Remove <code>river only</code>, <code>coffee only</code>, <code>both</code>, and <code>unburned</code> layers.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>Question 8. One can think of the layer you just created as containing polygons representing four treatments in a natural experiment. Describe what each of the polygons you created represents.</p>
+</blockquote>
+<ol start="5" type="1">
+<li>Use the zonal statistics tool to find mean, median, and standard deviation of NDVI in each treatment.</li>
+</ol>
+<blockquote class="blockquote">
+<p>Question 9. Paste the mean median and standard distributions from the zonal statistics.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Question 10. Briefly describe the differences in NDVI between the four treatments. Include a table showing the NDVI statistics you calculated (You can export the file as a csv with only the columns you want, and open it in Excel, then paste into your text file).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Question 11. Use <code>tree</code> and paste output to show the structure of your working directory.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Question 11. Describe how the steps taken here fit into the <em>Filter, Map, Reduce</em> workflow.</p>
 </blockquote>
 </section>
 <section id="submission" class="level2">
 <h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p>Submit zipped project folder. Scoring will be conducted as shown in <a href="#tbl-rubric" class="quarto-xref">Table&nbsp;1</a></p>
-</section>
-<section id="tables" class="level2">
-<h2 class="anchored" data-anchor-id="tables">Tables</h2>
-<div style="font-size:0.9em">
-<div id="tbl-rubric" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rubric-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Rubric for scoring
-</figcaption>
-<div aria-describedby="tbl-rubric-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p>As usual, zip you lab_05_NAIP directory and submit to Canvas.</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 55%">
+<col style="width: 12%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Item</th>
-<th>Percentage of score</th>
+<th>Part</th>
+<th>Items</th>
+<th>% of points</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Projects opens and all files are present</td>
-<td>40%</td>
+<td>Project Works</td>
+<td><ul>
+<li>Opens</li>
+<li>Layers open without having to search for files</li>
+</ul></td>
+<td>20%</td>
 </tr>
 <tr class="even">
-<td>Ponds successfully Segmented</td>
-<td>30%</td>
+<td>Data preparation and vector workflow</td>
+<td><ul>
+<li>Correct CRS</li>
+<li>AOI layer</li>
+<li><code>fires_in_AOI</code></li>
+</ul></td>
+<td>25%</td>
 </tr>
 <tr class="odd">
-<td>Answers to questions</td>
-<td>30%</td>
+<td>NAIP visualization and spectral-index workflow</td>
+<td><ul>
+<li>False-color display</li>
+<li>Correctly calculated and styled NDVI and SAVI rasters</li>
+</ul></td>
+<td>20%</td>
+</tr>
+<tr class="even">
+<td>Spatial overlays and zonal statistics</td>
+<td><ul>
+<li>Merged treatment layer</li>
+<li>Proper symbology `</li>
+</ul></td>
+<td>20%</td>
+</tr>
+<tr class="odd">
+<td><code>answers.txt</code></td>
+<td><ul>
+<li>Complete, accurate responses to Questions 1-11</li>
+</ul></td>
+<td>15%</td>
 </tr>
 </tbody>
 </table>
-</div>
-</figure>
-</div>
-</div>
-<div style="font-size:0.9em">
-<div id="tbl-bands" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Sentinel-2 bands available in the composite images
-</figcaption>
-<div aria-describedby="tbl-bands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: right;">GeoTIFF band</th>
-<th>Band name</th>
-<th>Description</th>
-<th style="text-align: right;">Native pixel size</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td><code>B1</code></td>
-<td>Aerosols</td>
-<td style="text-align: right;">60 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td><code>B2</code></td>
-<td>Blue</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td><code>B3</code></td>
-<td>Green</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td><code>B4</code></td>
-<td>Red</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td><code>B5</code></td>
-<td>Red edge 1</td>
-<td style="text-align: right;">20 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td><code>B6</code></td>
-<td>Red edge 2</td>
-<td style="text-align: right;">20 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7</td>
-<td><code>B7</code></td>
-<td>Red edge 3</td>
-<td style="text-align: right;">20 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">8</td>
-<td><code>B8</code></td>
-<td>Near infrared (NIR)</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">9</td>
-<td><code>B8A</code></td>
-<td>Red edge 4</td>
-<td style="text-align: right;">20 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">10</td>
-<td><code>B9</code></td>
-<td>Water vapor</td>
-<td style="text-align: right;">60 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">11</td>
-<td><code>B11</code></td>
-<td>Shortwave infrared 1 (SWIR1)</td>
-<td style="text-align: right;">20 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">12</td>
-<td><code>B12</code></td>
-<td>Shortwave infrared 2 (SWIR2)</td>
-<td style="text-align: right;">20 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">13</td>
-<td><code>AOT</code></td>
-<td>Aerosol optical thickness</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">14</td>
-<td><code>WVP</code></td>
-<td>Water vapor pressure</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">15</td>
-<td><code>SCL</code></td>
-<td>Scene classification map</td>
-<td style="text-align: right;">20 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">16</td>
-<td><code>TCI_R</code></td>
-<td>True color image, red channel</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">17</td>
-<td><code>TCI_G</code></td>
-<td>True color image, green channel</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">18</td>
-<td><code>TCI_B</code></td>
-<td>True color image, blue channel</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">19</td>
-<td><code>MSK_CLDPRB</code></td>
-<td>Cloud probability map</td>
-<td style="text-align: right;">20 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">20</td>
-<td><code>MSK_SNWPRB</code></td>
-<td>Snow probability map</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">21</td>
-<td><code>QA10</code></td>
-<td>Always empty</td>
-<td style="text-align: right;">10 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">22</td>
-<td><code>QA20</code></td>
-<td>Always empty</td>
-<td style="text-align: right;">20 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">23</td>
-<td><code>QA60</code></td>
-<td>Cloud mask</td>
-<td style="text-align: right;">60 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">24</td>
-<td><code>MSK_CLASSI_OPAQUE</code></td>
-<td>Opaque cloud classification</td>
-<td style="text-align: right;">60 m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">25</td>
-<td><code>MSK_CLASSI_CIRRUS</code></td>
-<td>Cirrus cloud classification</td>
-<td style="text-align: right;">60 m</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">26</td>
-<td><code>MSK_CLASSI_SNOW_ICE</code></td>
-<td>Snow/ice classification</td>
-<td style="text-align: right;">60 m</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

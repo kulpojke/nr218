@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Working With DEMs</title>
+<title>Lab 4: Working With DEMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -120,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Working With DEMs</h1>
+<h1 class="title">Lab 4: Working With DEMs</h1>
 </div>
 
 
@@ -137,22 +137,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="lab-8-dems" class="level1">
-<h1>Lab 8: DEMs</h1>
 <p>Now that you’ve learned a bit about what DEMs are and what they can be used for, get some practice working with them in QGIS.</p>
 <p><strong>Quick file organization housekeeping:</strong></p>
-<p>Make a new folder inside your <code>nr218</code> directory called <code>lab_8</code>. Inside that folder, make a <code>data</code> folder. All downloaded files will go in the <code>data</code> folder You should have a directory structure as shown below.</p>
+<p>Make a new folder inside your <code>nr218</code> directory called <code>lab_4</code>. Inside that folder, make a <code>data</code> folder. All downloaded files will go in the <code>data</code> folder You should have a directory structure as shown below.</p>
 <pre><code>nr218/
-└── lab_8
+└── lab_4
     └── data
     
 </code></pre>
-<section id="par-1-finding-data-online" class="level2">
-<h2 class="anchored" data-anchor-id="par-1-finding-data-online">Par 1: Finding Data Online</h2>
+<section id="part-1-finding-data-online" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-finding-data-online">Part 1: Finding Data Online</h2>
 <p>So far in this class you’ve been given files to work with. Today, you are going to practice acquiring some data on your own.</p>
 <p>Generating DEMs, particularly at a high resolution, can be costly and time-consuming. Luckily, there are some great online resources for accessing existing imagery. One such resource is the <a href="https://www.usgs.gov/tools/lidarexplorer">USGS LiDAR Explorer</a>.</p>
 <p>Follow the link above, and then click “Launch Application” to get to the interactive map (<a href="#fig-lidar1" class="quarto-xref">Figure&nbsp;1</a>).</p>
-<div id="fig-lidar1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Startup map of LiDAR Explorer" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application">
+<div id="fig-lidar1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application" data-fig-cap="Startup map of LiDAR Explorer">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lidar1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/lidar_explorer_1.png" class="img-fluid figure-img" data-fig-cap="Startup map of LiDAR Explorer" alt="Image showing initial map that loads when launching the USGS LiDAR Explorer Application">
@@ -164,7 +162,7 @@ Figure&nbsp;1: Startup map of LiDAR Explorer
 </div>
 <p>You can navigate around the map by clicking and dragging with your mouse. Zooming is accomplished using your scroll wheel (or the “+” button at the top left of the map viewer, if you like your zooming to be painful). Orient your map view so that it’s centered on San Luis Obispo. There are three check boxes in the left panel. Try checking and unchecking them to see what happens.</p>
 <p>Next, define your <strong>area of interest</strong> (AOI). This will return all of the available LiDAR and DEM downloads within a specified geographic area. For this exercise you will look at <a href="https://www.nps.gov/chis/planyourvisit/anacapa.htm" data-alt-text="Link to National Parks page on Anacapa Island">Anacapa Island</a>. Click the <em>Define area of interest</em> box and draw a box around Anacapa (by holding control and dragging , see <a href="#fig-lidar3" class="quarto-xref">Figure&nbsp;2</a>), then check what pops up on the right side of the screen .</p>
-<div id="fig-lidar3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Defined area of interest" alt="Image showing what an area of interest box looks like on the map">
+<div id="fig-lidar3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing what an area of interest box looks like on the map" data-fig-cap="Defined area of interest">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lidar3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/anacpa_AOI_lidar_explorer.png" class="img-fluid figure-img" data-fig-cap="Defined area of interest" alt="Image showing what an area of interest box looks like on the map">
@@ -232,7 +230,7 @@ Tip&nbsp;1: How to download files using the download list
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The following commands fetch the DEMs from th URLs in <code>downloadlist.txt</code>. Note that they are assuming that <code>downloadlist.txt</code> is in the directory where you are running the command. If it is not, you can adjust the path to <code>downloadlist.txt</code>(e.g.&nbsp;to <code>~/Downloads/downloadlist.txt</code> if it sits in your Downloads folder)</p>
+<p>The following commands fetch the DEMs from the URLs in <code>downloadlist.txt</code>. Note that they are assuming that <code>downloadlist.txt</code> is in the directory where you are running the command. If it is not, you can adjust the path to <code>downloadlist.txt</code>(e.g.&nbsp;to <code>~/Downloads/downloadlist.txt</code> if it sits in your Downloads folder)</p>
 <details>
 <summary>
 Windows
@@ -263,7 +261,7 @@ This tells <code>wget</code> to download each URL listed in the text file.
 <li>NAD83(2011) / UTM zone 11N = EPSG:6340</li>
 <li>NAVD88 height = EPSG:5703</li>
 </ul></li>
-<li>The 1 arc second DEM is in EPSG:4269, a geographic CRS.</li>
+<li>The 1 arc second DEM is in EPSG:4269, a GCS CRS.</li>
 </ul>
 <p>For this project you will use EPSG:6340.</p>
 <p>At this point you should:</p>
@@ -330,11 +328,12 @@ Figure&nbsp;5: A section of the OPR DEM over Anacapa Island showing seams at the
 <li>Reproject the result (Warp) to the project CRS.</li>
 <li>Save the result as <code>nr218/lab_8/data/DEM_1arc/dem_arcsec</code></li>
 </ol>
+<p>At this point you are done using thea arc-second DEMs. I suggest you remove them from your layer list to avoid confusion on subsequent parts of the lab.</p>
 </section>
 </section>
-<section id="dem-derivative-products" class="level2">
-<h2 class="anchored" data-anchor-id="dem-derivative-products">DEM derivative products</h2>
-<p>Next you will create a few different derivative products from your OPR DEMs (you will not be using the arc second DEMs anymore for the lab). Some are useful as visualizations. Others are useful in analysis.</p>
+<section id="dem-derivative-products-using-opr-dem" class="level2">
+<h2 class="anchored" data-anchor-id="dem-derivative-products-using-opr-dem">DEM derivative products (Using OPR DEM)</h2>
+<p>Next you will create a few different derivative products from your OPR DEMs. (you will not be using the arc second DEMs anymore for the lab.) Some are useful as visualizations. Others are useful in analysis.</p>
 <section id="slope" class="level3">
 <h3 class="anchored" data-anchor-id="slope">Slope</h3>
 <p>Slope maps are useful in various types of elevation. They are OK as visualizations, but not great. Slope can be expressed as percent or degrees.</p>
@@ -353,7 +352,7 @@ Tip&nbsp;3: Azimuth and Z Factor
 <p>You can adjust the output of your hillshade by changing the values of the <code>azimuth</code> and <code>Z factor</code>. Take a moment to play around with the values for these parameters. What do you think each one does?</p>
 </div>
 </div>
-<div id="fig-hillshade" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="Image showing a hillshade render of a DEM" data-fig-cap="Hillshade" style="--wrap-width:45%;">
+<div id="fig-hillshade" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:45%;" alt="Image showing a hillshade render of a DEM" data-fig-cap="Hillshade">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hillshade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/anacapa_hillshade.png" class="wrap-right img-fluid figure-img" style="--wrap-width:45%;" data-fig-cap="Hillshade" alt="Image showing a hillshade render of a DEM">
@@ -369,6 +368,7 @@ Figure&nbsp;6: Hillshade
 <p>Hillshade is a useful visualization, but the pixel values are not meaningful from an analysis standpoint.</p>
 <ol type="1">
 <li>From the Raster menu, go to Analysis &gt; Hillshade (or search Hillshade in the processing tools window).</li>
+<li>Make sure you are using your OPR DEM layer as the input.</li>
 <li>Adjust the Z factor if you’d like. Keep the azimuth at its default for now.</li>
 <li>Click on the 3 dots to the right of the <code>[Save to temporary file]</code> box and select <code>Save to file</code>. Navigate to your <code>data</code> folder and name the file something you can identify it by (i.e.&nbsp;include hillshade in the name). Before you hit <code>Save</code>, make sure the file format is <code>.tif</code>.</li>
 <li>Leave all other parameters at their default and hit <code>Run</code>.</li>
@@ -378,6 +378,7 @@ Figure&nbsp;6: Hillshade
 <h3 class="anchored" data-anchor-id="contour-lines">Contour Lines</h3>
 <ol type="1">
 <li>Now go to Raster &gt; Extraction &gt; Contour (or search Contour in the processing tools window).</li>
+<li>Make sure you are using your OPR DEM layer as the input.</li>
 <li>Adjust the contour interval to 10 meters (this tool does not specify an index interval).</li>
 <li>Save the layer as a new file the same way you did above. Make sure that the file type is <code>.geojson</code>.</li>
 <li>Leave all other parameters at their default and hit <code>Run</code>.</li>
@@ -386,7 +387,7 @@ Figure&nbsp;6: Hillshade
 <section id="combining-dem-visualizations" class="level3">
 <h3 class="anchored" data-anchor-id="combining-dem-visualizations">Combining DEM Visualizations</h3>
 <ol type="1">
-<li>Open up the Symbology window for your original DEM and change the Render Type to <code>Singleband pseudocolor</code>. Choose any graduated color ramp from the dropdown.</li>
+<li>Open up the Symbology window for your OPR DEM and change the Render Type to <code>Singleband pseudocolor</code>. Choose any graduated color ramp from the dropdown.</li>
 <li>Make sure your hillshade layer is above the DEM in the layer panel. In the Symbology window, change the <code>blending mode</code> to <code>multiply</code>. Locate the Transparency tab (one below Symbology), and adjust the layer opacity to your liking.</li>
 <li>Make sure your contour layer is the topmost layer. Go to the Symbology window and adjust the color and thickness of your lines to your liking.</li>
 </ol>
@@ -448,7 +449,6 @@ Figure&nbsp;6: Hillshade
 </ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
