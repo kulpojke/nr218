@@ -31,3 +31,15 @@ push the down arrow to see examples.
 | Move or rename a directory | `mv ~/nr218/lab_1 ~/nr218/lab_01` | `mv ~\nr218\lab_1 ~\nr218\lab_01` |
 | Show the first 10 lines of a file | `head ~/nr218/README.md` | `Get-Content ~\nr218\README.md -Head 10` |
 :::
+
+## If you ever need help {style="font-size:0.6em"}
+
+Look at the man pages (man is short for manual)
+
+Linux or Mac  
+`man ls`
+
+Powershell  
+`Get-Help ls`  
+or for more detail  
+`Get-Help ls -Full`

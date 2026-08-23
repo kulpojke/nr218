@@ -60,7 +60,7 @@ __Assorted Links__
 __Lab Assignments__    
 [Lab 1](lab_01_computers.qmd){style="font-size:0.8em"}  
 [Lab 2](lab_02_first_map.html){style="font-size:0.8em"}  
-[Lab 7](project_2.html){style="font-size:0.8em"}  
+[Lab 3](lab_03_vectors.html){style="font-size:0.8em"}  
 [Lab 8](lab_8.qmd){style="font-size:0.8em"}  
 [Lab 10](lab_10.qmd){style="font-size:0.8em"}  
 [Lab 11](lab_11.qmd){style="font-size:0.8em"}  
@@ -104,6 +104,8 @@ __Lab Assignments__
 
 {{< include vector_tutorial.qmd >}}
 
+{{< include gps.qmd >}}
+
 {{< include dem_slides.qmd >}}
 
 {{< include remote_sensing.qmd >}}
@@ -120,7 +122,4 @@ __Lab Assignments__
 
 {{< include georeferencing.qmd >}}
 
-{{< include gps.qmd >}}
-
 {{< include intro_to_esri.qmd >}}
-

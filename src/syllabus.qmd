@@ -47,7 +47,7 @@ Quizzes can happen any time! How many will there be? 1? 10? Who knows? Quizzes c
 | Assignment     | Percentage of Grade| Description  |
 |----------------|------|----|
 | [Lab 2](lab_02_first_map.html)   | 10  |  Mapping  |
-| [Project 2](project_2.html)      | 10  |  Vector Data Analysis  |
+| [Lab 3](lab_03_vectors.html)     | 10  |  Vector Data Analysis  |
 | [Project 3](project_3.html)      | 10  |  Raster Data Analysis  |
 | [Project 4](project_4.html)      | 20  |  Remote Sensing, Image Analysis, and Modeling  |
 | Lab exercises  | 30  |  Not all labs have exercises due, see calendar  |
@@ -114,7 +114,7 @@ There are many other helpful sources of information on GIS Software, here area c
 | January 21   | 3    | GeoProcessing and Vector Operations                                  | Lab 6  |              |                                               |
 | January 26   | 4    | Data Creation, Editing, Topology Basics                              | Lab 7  | ch. 7 and 8  |                                               |
 | January 28   | 4    | Rasters and Elevation Data                                           | Lab 8  |              |                                               |
-| February 2   | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | Lab 9  | ch. 9 and 10 | [Project 2](project_2.html)                   |
+| February 2   | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | Lab 9  | ch. 9 and 10 | [Lab 3](lab_03_vectors.html)                  |
 | February 4   | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              | [Lab 8](lab_8.html)                           |
 | February 9   | 6    | Segmentation                                                         | Lab 11 |              |                                               |
 | February 11  | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | Lab 12 |              | [Lab 10](lab_10.html)                                        |

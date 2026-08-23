@@ -105,7 +105,7 @@ There are many other helpful sources of information on GIS Software, here area c
 | April 16     | 3    | GeoProcessing and Vector Operations                                  | Lab 6  |              | [Lab 2](../lab_02_first_map.html)                 |
 | April 21     | 4    | Data Creation, Editing, Topology Basics                              | Lab 7  | ch. 7 and 8  |                                               |
 | April 23     | 4    | Rasters and Elevation Data                                           | Lab 8  |              |                                               |
-| April 28     | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | Lab 9  | ch. 9 and 10 | [Lab 7](../project_2.html)                       |
+| April 28     | 5    | Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters       | Lab 9  | ch. 9 and 10 | [Lab 3](../lab_03_vectors.html)                  |
 | April 30     | 5    | Remote Sensing and Spectral Indices                                  | Lab 10 |              | [Lab 8](../lab_8.html)                           |
 | May 5        | 6    | Segmentation                                                         | Lab 11 |              |                                               |
 | May 7        | 6    | Raster $\times$ Vector Operations, Zonal Statistics, Point Sampling  | Lab 12 |              | [Lab 10](../lab_10.html)                         |

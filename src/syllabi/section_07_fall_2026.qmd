@@ -26,12 +26,12 @@ Thursday: 4:00 - 6:50
 | September 1  | 2          | Lecture: Basic GIS Concepts \| Scale, Coordinate systems, and Map Projections   |
 | September 3  | 2          | Lab 2, Basics, and first map   |
 | September 8  | 3          | Lecture: Spatial Data Models and File Formats    |
-| September 10 | 3          | Lab: TBD   |
+| September 10 | 3          | Open Lab   |
 | September 15 | 4          | Lecture: Data Creation, Editing, Topology Basics    |
-| September 17 | 4          | Lab: TBD   |
+| September 17 | 4          | Lab 3, Vectors   |
 | September 22 | 5          | Lecture: Tables: Joins and Queries, GeoProcessing and Vector Operations   | 
-| September 24 | 5          | Lab: TBD   | 
-| September 29 | 6          | Lecture: GCS Review, GPS Data, plotting x/y coordinates, exporting vector data   | 
+| September 24 | 5          | Open Lab   | 
+| September 29 | 6          | Lecture: GCS Review, GPS, plotting x/y coordinates, exporting vector data   | 
 | October 1    | 6          | Lab: TBD   | 
 | October 6    | 7          | Lecture: Rasters and Digital Elevation Models   | 
 | October 8    | 7          | Lab: TBD   | 

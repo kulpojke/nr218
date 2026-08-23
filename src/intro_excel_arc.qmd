@@ -87,7 +87,7 @@ Be kind to your future self - keep your files organized:
 ├── NR218/
 │   ├── lab_02_first_map/
 │   │   └── ...
-│   └── Project_2/
+│   └── lab_03_vectors/
 │       ├── Vector/
 │       │   ├── trees.parquet
 │       │   └── streams.geogjson
@@ -95,7 +95,7 @@ Be kind to your future self - keep your files organized:
 │       │   ├── dem.tif
 │       │   └── rainfall.h5
 │       ├── qgis/
-│       │   └── project_2.qmd
+│       │   └── lab_03_vectors.qmd
 │       └── Results/
 │           ├── Figures/
 │           │   ├── figure1.png

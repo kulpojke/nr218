@@ -186,7 +186,7 @@
     "href": "index.html#how-to-organize-your-files",
     "title": "NR 218",
     "section": "How to Organize your files",
-    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── lab_02_first_map/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
+    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── lab_02_first_map/\n│   │   └── ...\n│   └── lab_03_vectors/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── lab_03_vectors.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
   },
   {
     "objectID": "index.html#cloud-storage-1",
@@ -236,6 +236,13 @@
     "title": "NR 218",
     "section": "Some examples",
     "text": "Some examples\n\n\n\n\n\n\n\n\n\nTask\nzsh / bash\nPowerShell\n\n\n\n\nGo to your home directory\ncd ~\ncd ~\n\n\nGo to the course directory\ncd ~/nr218\ncd ~\\nr218\n\n\nList files in the current directory\nls\nls\n\n\nList files in nr218\nls ~/nr218\nls ~\\nr218\n\n\nMake a new directory\nmkdir ~/nr218/lab_1\nmkdir ~\\nr218\\lab_1\n\n\nMake several directories\nmkdir ~/nr218/lab_2 ~/nr218/lab_3\nmkdir ~\\nr218\\lab_2, ~\\nr218\\lab_3\n\n\nMake nested directories\nmkdir -p ~/nr218/lab_02_first_map/data\nmkdir ~\\nr218\\lab_02_first_map\\data\n\n\nCopy a file into a directory\ncp ~/nr218/notes.txt ~/nr218/lab_1/\ncp ~\\nr218\\notes.txt ~\\nr218\\lab_1\\\n\n\nMove or rename a directory\nmv ~/nr218/lab_1 ~/nr218/lab_01\nmv ~\\nr218\\lab_1 ~\\nr218\\lab_01\n\n\nShow the first 10 lines of a file\nhead ~/nr218/README.md\nGet-Content ~\\nr218\\README.md -Head 10"
+  },
+  {
+    "objectID": "index.html#if-you-ever-need-help",
+    "href": "index.html#if-you-ever-need-help",
+    "title": "NR 218",
+    "section": "If you ever need help",
+    "text": "If you ever need help\nLook at the man pages (man is short for manual)\nLinux or Mac\nman ls\nPowershell\nGet-Help ls\nor for more detail\nGet-Help ls -Full"
   },
   {
     "objectID": "index.html#what-is-gis",
@@ -831,6 +838,48 @@
     "title": "NR 218",
     "section": "Digitizing to create secondary vector data",
     "text": "Digitizing to create secondary vector data\n\nTablet\n\nTracing on a light table with specialized hardware, then\n\nHeads up\n\nClicking and drawing in GIS software\n\nAutomated\n\nMany different form, some simple some complex"
+  },
+  {
+    "objectID": "index.html#what-is-gps",
+    "href": "index.html#what-is-gps",
+    "title": "NR 218",
+    "section": "What is GPS?",
+    "text": "What is GPS?"
+  },
+  {
+    "objectID": "index.html#history-of-gps",
+    "href": "index.html#history-of-gps",
+    "title": "NR 218",
+    "section": "History of GPS",
+    "text": "History of GPS"
+  },
+  {
+    "objectID": "index.html#how-does-gps-work",
+    "href": "index.html#how-does-gps-work",
+    "title": "NR 218",
+    "section": "How does GPS Work",
+    "text": "How does GPS Work"
+  },
+  {
+    "objectID": "index.html#video",
+    "href": "index.html#video",
+    "title": "NR 218",
+    "section": "Video",
+    "text": "Video\n\nAs we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.\nTake less careful notes in the rest. It is an interesting geospatial analysis.\n\n\n\nOpen the video on YouTube"
+  },
+  {
+    "objectID": "index.html#important-points-stylefont-size0.7em",
+    "href": "index.html#important-points-stylefont-size0.7em",
+    "title": "NR 218",
+    "section": "Important Points style=“font-size:0.7em”",
+    "text": "Important Points style=“font-size:0.7em”\n\n\n\nGlobal Navigation Satellite Systems (GNSS) is the general category comprising the following systems:\n\nGPS: United States, first satellite launched in 1978\nGLONASS: Russia/Soviet Union, first satellite launched in 1982\nBeiDou: China, first satellite launched in 2000\nGalileo: European Union, first test satellite launched in 2005\n\n\n\n\n\nSignals from Satellites\n\nSignals contain the position of the satellite, and the exact time sent\n\\(\\ell = c t\\)\n\n\n\n\nIf you know your distance from 3 points in 3D space, theoretically you know where you are,\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3\n\\end{aligned}\n\\]\nbut there are sources of error …\n\n\nYour the ground unit’s time is wrong, so you need at tleast 4 satellites to solve for distance error caused by clock error, b.\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1 + b\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2 + b\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3 + b\\\\\n\\sqrt{(x - x_4)^{2} + (y - y_4)^{2} + (z - z_4)^{2}} = c t_4 + b\n\\end{aligned}\n\\]\n\n\n\nHow does the satellite know where it is?\n\nGround stations!\n\nHow do the ground stations know where they are, what with the continents moving around and all?\n\nQulsars!\nRadio telescopes male a precise map of continental movement from qulsars\nGround stations are tied into that map\n\n\n\n\n\nOther complexities:\n\nRelativistic effects\nRotation of earth\nAtmospheric effects\n\nSo GNSS units use many satellites to improve location\n\nphones, ~ 3m\nPrecision units , cms\n\n\n\n\n\nGPS signals are weak\n\ntransmitted at about 50 W\narrives at about \\(10^{-16}\\) W\n\n\n\n\nHere’s a slide-friendly table. These are carrier center frequencies in MHz.\n\n\n\n\n\n\n\n\n\nSystem\nOperator\nMain GNSS signals\nFrequencies\n\n\n\n\nGPS\nU.S.\nL1, L2, L5\n1575.42, 1227.60, 1176.45\n\n\nGalileo\nEuropean Union\nE1, E5a, E5b, E5, E6\n1575.42, 1176.45, 1207.14, 1191.795, 1278.75\n\n\nBeiDou\nChina\nB1I, B1C, B2a, B2b/B2I, B3I\n1561.098, 1575.42, 1176.45, 1207.14, 1268.52\n\n\nGLONASS\nRussia\nL1, L2\nL1: 1598.0625-1605.375; L2: 1242.9375-1248.625\n\n\nQZSS\nJapan\nL1, L2, L5, L6\n1575.42, 1227.60, 1176.45, 1278.75\n\n\nNavIC\nIndia\nL1, L5, S-band\n1575.42, 1176.45, 2492.028\n\n\n\nNote: GLONASS is different because its older signals use slightly different frequencies for different satellites, so it is listed as ranges.\nSources: GPS.gov, ESA/Galileo Navipedia, BeiDou CSNO/TARC, GLONASS ICD listing, QZSS Cabinet Office, ISRO NavIC FAQ."
+  },
+  {
+    "objectID": "index.html#exercise",
+    "href": "index.html#exercise",
+    "title": "NR 218",
+    "section": "Exercise",
+    "text": "Exercise\n\n\nDrain scavenger hunt\n\nWork in pairs and find storm drains around campus\nFor each drain, take one clear photo\nUse your phone to record the latitude and longitude in decimal degrees\nFor each drain, enter the following into the Google Form:\n\nlatitude\nlongitude\napproximate size in cm\nshape: round, rectangular, or other\nphoto\n\n\n\n\n\nAfter the class has submitted data:\n\nopen the linked Google Sheet\ndownload the sheet as a CSV\nopen QGIS\nadd the CSV as a delimited text layer\nset X field = longitude and Y field = latitude\nset the CRS to WGS84, EPSG:4326\ninspect the points and fix any obvious coordinate errors\n\n\n\n\n\nAdd photo locations from EXIF data:\n\ndownload the original uploaded photos from Google Drive\nin QGIS, open the Processing Toolbox\nsearch for and run Import geotagged photos\nuse the downloaded photo folder as the input folder\ncreate a point layer from the photo EXIF coordinates\ncompare the EXIF photo points to the manually entered CSV points\nnote which photos are missing location data or plot in the wrong place"
   },
   {
     "objectID": "index.html#what-is-a-dem",
@@ -1533,48 +1582,6 @@
     "text": "Lab 15\nGeoreferencing Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nIn the Georeferencing tool, when you run the transform, there is a column called Residual. What is this, how might it be useful. How does your choice of CRS affect the utility of this information?\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
   },
   {
-    "objectID": "index.html#what-is-gps",
-    "href": "index.html#what-is-gps",
-    "title": "NR 218",
-    "section": "What is GPS?",
-    "text": "What is GPS?"
-  },
-  {
-    "objectID": "index.html#history-of-gps",
-    "href": "index.html#history-of-gps",
-    "title": "NR 218",
-    "section": "History of GPS",
-    "text": "History of GPS"
-  },
-  {
-    "objectID": "index.html#how-does-gps-work",
-    "href": "index.html#how-does-gps-work",
-    "title": "NR 218",
-    "section": "How does GPS Work",
-    "text": "How does GPS Work"
-  },
-  {
-    "objectID": "index.html#video",
-    "href": "index.html#video",
-    "title": "NR 218",
-    "section": "Video",
-    "text": "Video\n\nAs we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.\nTake less careful notes in the rest. It is an interesting geospatial analysis.\n\n\n\nOpen the video on YouTube"
-  },
-  {
-    "objectID": "index.html#important-points",
-    "href": "index.html#important-points",
-    "title": "NR 218",
-    "section": "Important Points",
-    "text": "Important Points\n\n\n\nGlobal Navigation Satellite Systems (GNSS) is the general category comprising the following systems:\n\nGPS: United States, first satellite launched in 1978\nGLONASS: Russia/Soviet Union, first satellite launched in 1982\nBeiDou: China, first satellite launched in 2000\nGalileo: European Union, first test satellite launched in 2005\n\n\n\n\n\nSignals from Satellites\n\nSignals contain the position of the satellite, and the exact time sent\n\\(\\ell = c t\\)\n\n\n\n\nIf you know your distance from 3 points in 3D space, theoretically you know where you are,\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3\n\\end{aligned}\n\\]\nbut there are sources of error …\n\n\nYour the ground unit’s time is wrong, so you need at tleast 4 satellites to solve for distance error caused by clock error, b.\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1 + b\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2 + b\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3 + b\\\\\n\\sqrt{(x - x_4)^{2} + (y - y_4)^{2} + (z - z_4)^{2}} = c t_4 + b\n\\end{aligned}\n\\]\n\n\n\nHow does the satellite know where it is?\n\nGround stations!\n\nHow do the ground stations know where they are, what with the continents moving around and all?\n\nQulsars!\nRadio telescopes male a precise map of continental movement from qulsars\nGround stations are tied into that map\n\n\n\n\n\nOther complexities:\n\nRelativistic effects\nRotation of earth\nAtmospheric effects\n\nSo GNSS units use many satellites to improve location\n\nphones, ~ 3m\nPrecision units , cms\n\n\n\n\n\nGPS signals are weak\n\ntransmitted at about 50 W\narrives at about \\(10^{-16}\\) W\n\n\n\n\nHere’s a slide-friendly table. These are carrier center frequencies in MHz.\n\n\n\n\n\n\n\n\n\nSystem\nOperator\nMain GNSS signals\nFrequencies\n\n\n\n\nGPS\nU.S.\nL1, L2, L5\n1575.42, 1227.60, 1176.45\n\n\nGalileo\nEuropean Union\nE1, E5a, E5b, E5, E6\n1575.42, 1176.45, 1207.14, 1191.795, 1278.75\n\n\nBeiDou\nChina\nB1I, B1C, B2a, B2b/B2I, B3I\n1561.098, 1575.42, 1176.45, 1207.14, 1268.52\n\n\nGLONASS\nRussia\nL1, L2\nL1: 1598.0625-1605.375; L2: 1242.9375-1248.625\n\n\nQZSS\nJapan\nL1, L2, L5, L6\n1575.42, 1227.60, 1176.45, 1278.75\n\n\nNavIC\nIndia\nL1, L5, S-band\n1575.42, 1176.45, 2492.028\n\n\n\nNote: GLONASS is different because its older signals use slightly different frequencies for different satellites, so it is listed as ranges.\nSources: GPS.gov, ESA/Galileo Navipedia, BeiDou CSNO/TARC, GLONASS ICD listing, QZSS Cabinet Office, ISRO NavIC FAQ."
-  },
-  {
-    "objectID": "index.html#exercise",
-    "href": "index.html#exercise",
-    "title": "NR 218",
-    "section": "Exercise",
-    "text": "Exercise\n\n\nDrain scavenger hunt\n\nWork in pairs and find storm drains around campus\nFor each drain, take one clear photo\nUse your phone to record the latitude and longitude in decimal degrees\nFor each drain, enter the following into the Google Form:\n\nlatitude\nlongitude\napproximate size in cm\nshape: round, rectangular, or other\nphoto\n\n\n\n\n\nAfter the class has submitted data:\n\nopen the linked Google Sheet\ndownload the sheet as a CSV\nopen QGIS\nadd the CSV as a delimited text layer\nset X field = longitude and Y field = latitude\nset the CRS to WGS84, EPSG:4326\ninspect the points and fix any obvious coordinate errors\n\n\n\n\n\nAdd photo locations from EXIF data:\n\ndownload the original uploaded photos from Google Drive\nin QGIS, open the Processing Toolbox\nsearch for and run Import geotagged photos\nuse the downloaded photo folder as the input folder\ncreate a point layer from the photo EXIF coordinates\ncompare the EXIF photo points to the manually entered CSV points\nnote which photos are missing location data or plot in the wrong place"
-  },
-  {
     "objectID": "index.html#arcgis-vs-qgis",
     "href": "index.html#arcgis-vs-qgis",
     "title": "NR 218",
@@ -2125,7 +2132,7 @@
     "href": "data_storage.html#how-to-organize-your-files",
     "title": "",
     "section": "How to Organize your files",
-    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── lab_02_first_map/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
+    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── lab_02_first_map/\n│   │   └── ...\n│   └── lab_03_vectors/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── lab_03_vectors.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
   },
   {
     "objectID": "data_storage.html#cloud-storage",
@@ -2597,37 +2604,44 @@
     "text": "Some examples\n\n\n\n\n\n\n\n\n\nTask\nzsh / bash\nPowerShell\n\n\n\n\nGo to your home directory\ncd ~\ncd ~\n\n\nGo to the course directory\ncd ~/nr218\ncd ~\\nr218\n\n\nList files in the current directory\nls\nls\n\n\nList files in nr218\nls ~/nr218\nls ~\\nr218\n\n\nMake a new directory\nmkdir ~/nr218/lab_1\nmkdir ~\\nr218\\lab_1\n\n\nMake several directories\nmkdir ~/nr218/lab_2 ~/nr218/lab_3\nmkdir ~\\nr218\\lab_2, ~\\nr218\\lab_3\n\n\nMake nested directories\nmkdir -p ~/nr218/lab_02_first_map/data\nmkdir ~\\nr218\\lab_02_first_map\\data\n\n\nCopy a file into a directory\ncp ~/nr218/notes.txt ~/nr218/lab_1/\ncp ~\\nr218\\notes.txt ~\\nr218\\lab_1\\\n\n\nMove or rename a directory\nmv ~/nr218/lab_1 ~/nr218/lab_01\nmv ~\\nr218\\lab_1 ~\\nr218\\lab_01\n\n\nShow the first 10 lines of a file\nhead ~/nr218/README.md\nGet-Content ~\\nr218\\README.md -Head 10"
   },
   {
-    "objectID": "project_2.html",
-    "href": "project_2.html",
-    "title": "Lab 7: Vector Data Analysis",
+    "objectID": "terminal_cheatsheet.html#if-you-ever-need-help",
+    "href": "terminal_cheatsheet.html#if-you-ever-need-help",
+    "title": "",
+    "section": "If you ever need help",
+    "text": "If you ever need help\nLook at the man pages (man is short for manual)\nLinux or Mac\nman ls\nPowershell\nGet-Help ls\nor for more detail\nGet-Help ls -Full"
+  },
+  {
+    "objectID": "lab_03_vectors.html",
+    "href": "lab_03_vectors.html",
+    "title": "Lab 3: Vector Data Analysis",
     "section": "",
     "text": "Become familiar with vector processing operations in QGIS, import and create GIS data\nPerform basic joins and spatial operations such as buffer, dissolve, intersect, union\nStyle maps in a custom fashion based on columnar values\nUnderstand different data types and corresponding data representations\n\nQuery and filter spatial datasets\n\n\n\n\nProvide written responses to the following Questions:\n\nMeasurement Scales: The following data are using which type of measurement scale?\n\nMy happiness score on a scale of 1 to 10 = 7\nMy weight = 192 lbs.\nThe city I live in = Helsinki Finland\nMy current body temperature = 99.8 \\(\\circ\\) F\nMy current body temperature = 37.7 ºF\nMy current body temperature = 310.8 K\nThe number of impossible burgers I can eat before passing out = 12\n\nDigitizing Methods: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.\nAccuracy and Precision Errors: What are the five types of accuracy/precision errors associated with geographic information? Provide an example of each type of error.\nBoundary Mapping Challenges: Per the description of the positional accuracy of wetland boundaries in the textbook, discuss a different map feature whose boundaries are inherently vague and difficult to map.\n\n\n\n\n\n\nComplete the following tutorials. Pay attention to how you organize you project. You will turn in a zipped copy of you entire tutorials directory. Each tutorial should have a working project with all of its data intact. The grader will open your project to make sure it works.\n\nConvert excel file of latitudes/longitudes to a point shapefile:\n\nCarefully follow the instructions and complete the Tutorial - Importing Spreadsheets or CSV Files: https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html\n\nDigitize map data:\n\nCarefully follow the instructions and complete the Tutorial - Digitizing Basics: https://www.qgistutorials.com/en/docs/3/digitizing_basics.html\n\nPerform a tabular join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Table Joins: https://www.qgistutorials.com/en/docs/3/performing_table_joins.html\n\nPerform a Spatial Join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Joins: https://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html\n\nPerform a Spatial Query:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Queries: https://www.qgistutorials.com/en/docs/3/performing_spatial_queries.html\n\n\n\n\n\n\nSubmit on Canvas:\nA zipped file with your tutorials and written responses inside"
   },
   {
-    "objectID": "project_2.html#learning-goals",
-    "href": "project_2.html#learning-goals",
-    "title": "Lab 7: Vector Data Analysis",
+    "objectID": "lab_03_vectors.html#learning-goals",
+    "href": "lab_03_vectors.html#learning-goals",
+    "title": "Lab 3: Vector Data Analysis",
     "section": "",
     "text": "Become familiar with vector processing operations in QGIS, import and create GIS data\nPerform basic joins and spatial operations such as buffer, dissolve, intersect, union\nStyle maps in a custom fashion based on columnar values\nUnderstand different data types and corresponding data representations\n\nQuery and filter spatial datasets"
   },
   {
-    "objectID": "project_2.html#written-responses",
-    "href": "project_2.html#written-responses",
-    "title": "Lab 7: Vector Data Analysis",
+    "objectID": "lab_03_vectors.html#written-responses",
+    "href": "lab_03_vectors.html#written-responses",
+    "title": "Lab 3: Vector Data Analysis",
     "section": "",
     "text": "Provide written responses to the following Questions:\n\nMeasurement Scales: The following data are using which type of measurement scale?\n\nMy happiness score on a scale of 1 to 10 = 7\nMy weight = 192 lbs.\nThe city I live in = Helsinki Finland\nMy current body temperature = 99.8 \\(\\circ\\) F\nMy current body temperature = 37.7 ºF\nMy current body temperature = 310.8 K\nThe number of impossible burgers I can eat before passing out = 12\n\nDigitizing Methods: Describe at least two different methods for adding the information from a USGS topographic map to a digital GIS.\nAccuracy and Precision Errors: What are the five types of accuracy/precision errors associated with geographic information? Provide an example of each type of error.\nBoundary Mapping Challenges: Per the description of the positional accuracy of wetland boundaries in the textbook, discuss a different map feature whose boundaries are inherently vague and difficult to map."
   },
   {
-    "objectID": "project_2.html#project-work",
-    "href": "project_2.html#project-work",
-    "title": "Lab 7: Vector Data Analysis",
+    "objectID": "lab_03_vectors.html#project-work",
+    "href": "lab_03_vectors.html#project-work",
+    "title": "Lab 3: Vector Data Analysis",
     "section": "",
     "text": "Complete the following tutorials. Pay attention to how you organize you project. You will turn in a zipped copy of you entire tutorials directory. Each tutorial should have a working project with all of its data intact. The grader will open your project to make sure it works.\n\nConvert excel file of latitudes/longitudes to a point shapefile:\n\nCarefully follow the instructions and complete the Tutorial - Importing Spreadsheets or CSV Files: https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html\n\nDigitize map data:\n\nCarefully follow the instructions and complete the Tutorial - Digitizing Basics: https://www.qgistutorials.com/en/docs/3/digitizing_basics.html\n\nPerform a tabular join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Table Joins: https://www.qgistutorials.com/en/docs/3/performing_table_joins.html\n\nPerform a Spatial Join:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Joins: https://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html\n\nPerform a Spatial Query:\n\nCarefully follow the instructions and complete the Tutorial - Performing Spatial Queries: https://www.qgistutorials.com/en/docs/3/performing_spatial_queries.html"
   },
   {
-    "objectID": "project_2.html#submission-requirements",
-    "href": "project_2.html#submission-requirements",
-    "title": "Lab 7: Vector Data Analysis",
+    "objectID": "lab_03_vectors.html#submission-requirements",
+    "href": "lab_03_vectors.html#submission-requirements",
+    "title": "Lab 3: Vector Data Analysis",
     "section": "",
     "text": "Submit on Canvas:\nA zipped file with your tutorials and written responses inside"
   },
@@ -3714,7 +3728,7 @@
     "href": "intro_excel_arc.html#how-to-organize-your-files",
     "title": "",
     "section": "How to Organize your files",
-    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── lab_02_first_map/\n│   │   └── ...\n│   └── Project_2/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── project_2.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
+    "text": "How to Organize your files\n\nPick a convention and be consistent\nFor example:\n\n/Work/NR_classes/\n├── Class1/\n│   └── ...\n├── NR218/\n│   ├── lab_02_first_map/\n│   │   └── ...\n│   └── lab_03_vectors/\n│       ├── Vector/\n│       │   ├── trees.parquet\n│       │   └── streams.geogjson\n|       ├── Raster/\n│       │   ├── dem.tif\n│       │   └── rainfall.h5\n│       ├── qgis/\n│       │   └── lab_03_vectors.qmd\n│       └── Results/\n│           ├── Figures/\n│           │   ├── figure1.png\n│           │   ├── figure2.png\n│           │   └── map.png\n│           └── proj_2_report.doc"
   },
   {
     "objectID": "intro_excel_arc.html#section-2",
@@ -3927,11 +3941,11 @@
     "text": "Video\n\nAs we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.\nTake less careful notes in the rest. It is an interesting geospatial analysis.\n\n\n\nOpen the video on YouTube"
   },
   {
-    "objectID": "gps.html#important-points",
-    "href": "gps.html#important-points",
+    "objectID": "gps.html#important-points-stylefont-size0.7em",
+    "href": "gps.html#important-points-stylefont-size0.7em",
     "title": "",
-    "section": "Important Points",
-    "text": "Important Points\n\n\n\nGlobal Navigation Satellite Systems (GNSS) is the general category comprising the following systems:\n\nGPS: United States, first satellite launched in 1978\nGLONASS: Russia/Soviet Union, first satellite launched in 1982\nBeiDou: China, first satellite launched in 2000\nGalileo: European Union, first test satellite launched in 2005\n\n\n\n\n\nSignals from Satellites\n\nSignals contain the position of the satellite, and the exact time sent\n\\(\\ell = c t\\)\n\n\n\n\nIf you know your distance from 3 points in 3D space, theoretically you know where you are,\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3\n\\end{aligned}\n\\]\nbut there are sources of error …\n\n\nYour the ground unit’s time is wrong, so you need at tleast 4 satellites to solve for distance error caused by clock error, b.\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1 + b\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2 + b\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3 + b\\\\\n\\sqrt{(x - x_4)^{2} + (y - y_4)^{2} + (z - z_4)^{2}} = c t_4 + b\n\\end{aligned}\n\\]\n\n\n\nHow does the satellite know where it is?\n\nGround stations!\n\nHow do the ground stations know where they are, what with the continents moving around and all?\n\nQulsars!\nRadio telescopes male a precise map of continental movement from qulsars\nGround stations are tied into that map\n\n\n\n\n\nOther complexities:\n\nRelativistic effects\nRotation of earth\nAtmospheric effects\n\nSo GNSS units use many satellites to improve location\n\nphones, ~ 3m\nPrecision units , cms\n\n\n\n\n\nGPS signals are weak\n\ntransmitted at about 50 W\narrives at about \\(10^{-16}\\) W\n\n\n\n\nHere’s a slide-friendly table. These are carrier center frequencies in MHz.\n\n\n\n\n\n\n\n\n\nSystem\nOperator\nMain GNSS signals\nFrequencies\n\n\n\n\nGPS\nU.S.\nL1, L2, L5\n1575.42, 1227.60, 1176.45\n\n\nGalileo\nEuropean Union\nE1, E5a, E5b, E5, E6\n1575.42, 1176.45, 1207.14, 1191.795, 1278.75\n\n\nBeiDou\nChina\nB1I, B1C, B2a, B2b/B2I, B3I\n1561.098, 1575.42, 1176.45, 1207.14, 1268.52\n\n\nGLONASS\nRussia\nL1, L2\nL1: 1598.0625-1605.375; L2: 1242.9375-1248.625\n\n\nQZSS\nJapan\nL1, L2, L5, L6\n1575.42, 1227.60, 1176.45, 1278.75\n\n\nNavIC\nIndia\nL1, L5, S-band\n1575.42, 1176.45, 2492.028\n\n\n\nNote: GLONASS is different because its older signals use slightly different frequencies for different satellites, so it is listed as ranges.\nSources: GPS.gov, ESA/Galileo Navipedia, BeiDou CSNO/TARC, GLONASS ICD listing, QZSS Cabinet Office, ISRO NavIC FAQ."
+    "section": "Important Points style=“font-size:0.7em”",
+    "text": "Important Points style=“font-size:0.7em”\n\n\n\nGlobal Navigation Satellite Systems (GNSS) is the general category comprising the following systems:\n\nGPS: United States, first satellite launched in 1978\nGLONASS: Russia/Soviet Union, first satellite launched in 1982\nBeiDou: China, first satellite launched in 2000\nGalileo: European Union, first test satellite launched in 2005\n\n\n\n\n\nSignals from Satellites\n\nSignals contain the position of the satellite, and the exact time sent\n\\(\\ell = c t\\)\n\n\n\n\nIf you know your distance from 3 points in 3D space, theoretically you know where you are,\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3\n\\end{aligned}\n\\]\nbut there are sources of error …\n\n\nYour the ground unit’s time is wrong, so you need at tleast 4 satellites to solve for distance error caused by clock error, b.\n\\[\n\\begin{aligned}\n\\sqrt{(x - x_1)^{2} + (y - y_1)^{2} + (z - z_1)^{2}} = c t_1 + b\\\\\n\\sqrt{(x - x_2)^{2} + (y - y_2)^{2} + (z - z_2)^{2}} = c t_2 + b\\\\\n\\sqrt{(x - x_3)^{2} + (y - y_3)^{2} + (z - z_3)^{2}} = c t_3 + b\\\\\n\\sqrt{(x - x_4)^{2} + (y - y_4)^{2} + (z - z_4)^{2}} = c t_4 + b\n\\end{aligned}\n\\]\n\n\n\nHow does the satellite know where it is?\n\nGround stations!\n\nHow do the ground stations know where they are, what with the continents moving around and all?\n\nQulsars!\nRadio telescopes male a precise map of continental movement from qulsars\nGround stations are tied into that map\n\n\n\n\n\nOther complexities:\n\nRelativistic effects\nRotation of earth\nAtmospheric effects\n\nSo GNSS units use many satellites to improve location\n\nphones, ~ 3m\nPrecision units , cms\n\n\n\n\n\nGPS signals are weak\n\ntransmitted at about 50 W\narrives at about \\(10^{-16}\\) W\n\n\n\n\nHere’s a slide-friendly table. These are carrier center frequencies in MHz.\n\n\n\n\n\n\n\n\n\nSystem\nOperator\nMain GNSS signals\nFrequencies\n\n\n\n\nGPS\nU.S.\nL1, L2, L5\n1575.42, 1227.60, 1176.45\n\n\nGalileo\nEuropean Union\nE1, E5a, E5b, E5, E6\n1575.42, 1176.45, 1207.14, 1191.795, 1278.75\n\n\nBeiDou\nChina\nB1I, B1C, B2a, B2b/B2I, B3I\n1561.098, 1575.42, 1176.45, 1207.14, 1268.52\n\n\nGLONASS\nRussia\nL1, L2\nL1: 1598.0625-1605.375; L2: 1242.9375-1248.625\n\n\nQZSS\nJapan\nL1, L2, L5, L6\n1575.42, 1227.60, 1176.45, 1278.75\n\n\nNavIC\nIndia\nL1, L5, S-band\n1575.42, 1176.45, 2492.028\n\n\n\nNote: GLONASS is different because its older signals use slightly different frequencies for different satellites, so it is listed as ranges.\nSources: GPS.gov, ESA/Galileo Navipedia, BeiDou CSNO/TARC, GLONASS ICD listing, QZSS Cabinet Office, ISRO NavIC FAQ."
   },
   {
     "objectID": "gps.html#exercise",

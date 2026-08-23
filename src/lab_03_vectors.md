@@ -5,7 +5,7 @@ format:
     theme: cyborg
 ---
 
-# Lab 7: Vector Data Analysis
+# Lab 3: Vector Data Analysis
 
 
 ## Learning Goals
