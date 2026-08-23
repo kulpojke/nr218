@@ -42,10 +42,10 @@ There will be five quizzes. For each quiz, if you get 75% of the points, you get
 ## Assignment Weight
 | Assignment     | Percentage of Grade| Description  |
 |---------------------------|-----|----|
-| Lab exercises             | 50  |  9 have assignments that need to  be turned in  |
-| Quizzes                   | 10  |  Quizzes can happen any time! |
-| [Project](../project_4.html) | 20  |  Will use skills learned throughout the quarter  |
-| Final Exam                | 20  |  Oral exam, in which you will explain what you did in project 4  |  
+| Lab exercises             | 42  |  There are 7 assignments that need to be turned in  |
+| Quizzes                   | 18  |  Quizzes can happen any time! |
+| [Cachuma Project](../project_cachuma.html) | 20  |  Will use skills learned throughout the quarter  |
+| Final Exam                | 20  |  Oral exam, in which you will explain what you did in the Cachuma project  |  
 
 ## Grading
 
@@ -102,36 +102,35 @@ There are many other helpful sources of information on GIS Software, here area c
 | August 25    | 1          | Lecture: Introduction, What is GIS, Computers Reading: [On Computers](../computers.html) |
 | August 27    | 1          | [Lab 1, Computers](../lab_01_computers.html)   |
 | September 1  | 2          | Lecture: Basic GIS Concepts \| Scale, Coordinate systems, and Map Projections   |
-| September 3  | 2          | Lab 2, Basics, and first map   |
+| September 3  | 2          | [Lab 2, Basics and First Map](../lab_02_first_map.html)   |
 | September 8  | 3          | Lecture: Spatial Data Models and File Formats    |
 | September 10 | 3          | Open Lab   |
-| September 15 | 4          | Lecture: Data Creation, Editing, Topology Basics    |
-| September 17 | 4          | Lab 3, Vectors   |
+| September 15 | 4          | Lecture: Data Creation, Editing, Topology Basics \| [Lab 3, Vectors](../lab_03_vectors.html)    |
+| September 17 | 4          | Open Lab (No Instructor)   |
 | September 22 | 5          | Lecture: Tables: Joins and Queries, GeoProcessing and Vector Operations   | 
 | September 24 | 5          | Open Lab   | 
 | September 29 | 6          | Lecture: GCS Review, GPS, plotting x/y coordinates, exporting vector data   | 
-| October 1    | 6          | Lab: TBD   | 
+| October 1    | 6          | Lab: GPS   | 
 | October 6    | 7          | Lecture: Rasters and Digital Elevation Models   | 
-| October 8    | 7          | Lab 4, DEMs   | 
+| October 8    | 7          | [Lab 4, DEMs](../lab_04_DEMS.html)   | 
 | October 13   | 8          | Lecture: Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters   | 
 | October 15   | 8          | Open Lab   | 
 | October 20   | 9          | Lecture: Remote Sensing and Spectral Indices   | 
-| October 22   | 9          | Lab 5, Using Multi-spectral Data   | 
+| October 22   | 9          | [Lab 5, Using Multi-spectral Data](../lab_05_NAIP.html)   | 
 | October 27   | 10         | Lecture: Interpolation, Zonal Statistics, and Summarizing Surfaces   | 
 | October 29   | 10         | Open Lab   | 
 | November 3   | 11         | Lecture: Segmentation, Normalized Difference Hotdog Index   | 
-| November 5   | 11         | Lab 6, Segmentation   | 
+| November 5   | 11         | [Lab 6, Segmentation](../lab_06_segmentation.html)   | 
 | November 10  | 12         | Open Lab   | 
 | November 12  | 12         | Open Lab     | 
 | November 17  | 13         | Lecture: Workflow Design and Geoprocessing Models   | 
-| November 19  | 13         | Lab 7, Change detection   | 
+| November 19  | 13         | [Lab 7, Change Detection](../lab_07_gran_chaco.html)   | 
 | November 24  | Fall Break |       | 
 | November 26  | Fall Break |       | 
-| December 1   | 14         | Lecture: Other GIS platforms    | 
-| December 3   | 14         | Lab: TBD   | 
-| December 8   | 15         | Lecture: Modern Map Making   | 
-| December 10  | 15         | Lab: TBD   | 
-| December 15  | Finals     | Lecture: TBD   |
-| December 17  | Finals     | Lab: TBD   |
+| December 1   | 14         | Project introduction    | 
+| December 3   | 14         | Project   | 
+| December 8   | 15         | Lecture: Other GIS platforms   | 
+| December 10  | 15         | Project   | 
+
 
        

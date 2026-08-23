@@ -50,10 +50,10 @@ navigation-mode: vertical
 
 ::: {.columns}
 ::: {.column width="5-%"}
-__Assorted Links__   
-[Section 7 Syllabus](syllabi/section_07_fall_2026.html){style="font-size:0.8em"}
-[Section 9 Syllabus](syllabi/section_09_fall_2026.html){style="font-size:0.8em"}
-[Short Reading on Computers](computers.html){style="font-size:0.8em"}  
+__Assorted Links__     
+[Section 7 Syllabus](syllabi/section_07_fall_2026.html){style="font-size:0.8em"}  
+[Section 9 Syllabus](syllabi/section_09_fall_2026.html){style="font-size:0.8em"}  
+[Short Reading on Computers](computers.html){style="font-size:0.8em"}    
 :::
 
 
@@ -69,7 +69,7 @@ __Lab Assignments__
 [Lab 12](project_3.md){style="font-size:0.8em"}  
 [Lab 14](lab_14.qmd){style="font-size:0.8em"}  
 [Lab 15](georeferencing.qmd#/1/7){style="font-size:0.8em"}  
-[Project](project_4.md){style="font-size:0.8em"}
+[Cachuma Project](project_cachuma.md){style="font-size:0.8em"}
 
 :::
 :::

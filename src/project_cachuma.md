@@ -5,7 +5,7 @@ format:
     theme: quartz
 ---
 
-# Project 
+# Cachuma Project
 
 
 __Download data__ for [Cachuma Reservoir](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/IgAhORxF2PtRRrtnycd25E56AcEvKtTw8GJGHseeVMHRqk4?e=2ERezi)

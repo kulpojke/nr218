@@ -49,7 +49,7 @@ Quizzes can happen any time! How many will there be? 1? 10? Who knows? Quizzes c
 | [Lab 2](lab_02_first_map.html)   | 10  |  Mapping  |
 | [Lab 3](lab_03_vectors.html)     | 10  |  Vector Data Analysis  |
 | [Project 3](project_3.html)      | 10  |  Raster Data Analysis  |
-| [Project 4](project_4.html)      | 20  |  Remote Sensing, Image Analysis, and Modeling  |
+| [Cachuma Project](project_cachuma.html) | 20  |  Remote Sensing, Image Analysis, and Modeling  |
 | Lab exercises  | 30  |  Not all labs have exercises due, see calendar  |
 | Quizzes        | 15  |  Quizzes can happen any time! |
 | Participation  |  5  |  Will be based on participation and engagement  |  
@@ -125,5 +125,5 @@ There are many other helpful sources of information on GIS Software, here area c
 | March 2      | 9    | Advanced Topics (tbd)                                                | Lab 16 |              | Lab 14                                        |
 | March 4      | 9    |                                                                      | Lab 17 |              | Lab 15                                        |
 | March 9      | 10   | Modern Map Making                                                    | Lab 17 |              |                                               |  
-| March 11     | 10   |                                                                      | Lab 19 |              | [Project 4]((project_4.md))                                              |
+| March 11     | 10   |                                                                      | Lab 19 |              | [Cachuma Project](project_cachuma.html)                                  |
        
