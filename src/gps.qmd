@@ -2,12 +2,24 @@
 
 ## What is GPS?
 
-## History of GPS
+More properly, what is GNSS?
+
++ GNSS stands for **Global Navigation Satellite System**.
++ It uses signals from satellites to determine a receiver's location, elevation, and precise time.
++ GPS is the U.S. GNSS; other systems include Galileo, GLONASS, and BeiDou.
+
+
+## History of GNSS
+
++ **1957:** Scientists tracked Sputnik using shifts in its radio signal, demonstrating that satellites could aid navigation.
++ **1960s:** The U.S. Navy's Transit system became the first operational satellite-navigation system.
++ **1973–1995:** The United States developed GPS, launching its first satellite in 1978 and reaching full operational capability in 1995.
++ **2000:** The United States ended Selective Availability, greatly improving civilian GPS accuracy.
++ **Today:** GPS operates alongside other GNSS constellations, including GLONASS, Galileo, and BeiDou.
+
 
 ## How does GPS Work
 
-
-## Video
 + As we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.
 + Take less careful notes in the rest.  It is an interesting geospatial analysis.
 
@@ -173,6 +185,4 @@ __Drain scavenger hunt__
 :::
 
 :::
-
-
 

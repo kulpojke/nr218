@@ -4,7 +4,7 @@ format:
   html:
     theme: cyborg
     css: ../style/terminal_theme.css
-    include-after-body: ../style/terminal_theme_include_subdir.html
+    include-after-body: style/terminal_theme_include_subdir.html
 ---
 
 

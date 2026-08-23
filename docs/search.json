@@ -844,28 +844,21 @@
     "href": "index.html#what-is-gps",
     "title": "NR 218",
     "section": "What is GPS?",
-    "text": "What is GPS?"
+    "text": "What is GPS?\nMore properly, what is GNSS?\n\nGNSS stands for Global Navigation Satellite System.\nIt uses signals from satellites to determine a receiver’s location, elevation, and precise time.\nGPS is the U.S. GNSS; other systems include Galileo, GLONASS, and BeiDou."
   },
   {
-    "objectID": "index.html#history-of-gps",
-    "href": "index.html#history-of-gps",
+    "objectID": "index.html#history-of-gnss",
+    "href": "index.html#history-of-gnss",
     "title": "NR 218",
-    "section": "History of GPS",
-    "text": "History of GPS"
+    "section": "History of GNSS",
+    "text": "History of GNSS\n\n1957: Scientists tracked Sputnik using shifts in its radio signal, demonstrating that satellites could aid navigation.\n1960s: The U.S. Navy’s Transit system became the first operational satellite-navigation system.\n1973–1995: The United States developed GPS, launching its first satellite in 1978 and reaching full operational capability in 1995.\n2000: The United States ended Selective Availability, greatly improving civilian GPS accuracy.\nToday: GPS operates alongside other GNSS constellations, including GLONASS, Galileo, and BeiDou."
   },
   {
     "objectID": "index.html#how-does-gps-work",
     "href": "index.html#how-does-gps-work",
     "title": "NR 218",
     "section": "How does GPS Work",
-    "text": "How does GPS Work"
-  },
-  {
-    "objectID": "index.html#video",
-    "href": "index.html#video",
-    "title": "NR 218",
-    "section": "Video",
-    "text": "Video\n\nAs we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.\nTake less careful notes in the rest. It is an interesting geospatial analysis.\n\n\n\nOpen the video on YouTube"
+    "text": "How does GPS Work\n\nAs we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.\nTake less careful notes in the rest. It is an interesting geospatial analysis.\n\n\n\nOpen the video on YouTube"
   },
   {
     "objectID": "index.html#important-points-stylefont-size0.7em",
@@ -3917,28 +3910,21 @@
     "href": "gps.html#what-is-gps",
     "title": "",
     "section": "What is GPS?",
-    "text": "What is GPS?"
+    "text": "What is GPS?\nMore properly, what is GNSS?\n\nGNSS stands for Global Navigation Satellite System.\nIt uses signals from satellites to determine a receiver’s location, elevation, and precise time.\nGPS is the U.S. GNSS; other systems include Galileo, GLONASS, and BeiDou."
   },
   {
-    "objectID": "gps.html#history-of-gps",
-    "href": "gps.html#history-of-gps",
+    "objectID": "gps.html#history-of-gnss",
+    "href": "gps.html#history-of-gnss",
     "title": "",
-    "section": "History of GPS",
-    "text": "History of GPS"
+    "section": "History of GNSS",
+    "text": "History of GNSS\n\n1957: Scientists tracked Sputnik using shifts in its radio signal, demonstrating that satellites could aid navigation.\n1960s: The U.S. Navy’s Transit system became the first operational satellite-navigation system.\n1973–1995: The United States developed GPS, launching its first satellite in 1978 and reaching full operational capability in 1995.\n2000: The United States ended Selective Availability, greatly improving civilian GPS accuracy.\nToday: GPS operates alongside other GNSS constellations, including GLONASS, Galileo, and BeiDou."
   },
   {
     "objectID": "gps.html#how-does-gps-work",
     "href": "gps.html#how-does-gps-work",
     "title": "",
     "section": "How does GPS Work",
-    "text": "How does GPS Work"
-  },
-  {
-    "objectID": "gps.html#video",
-    "href": "gps.html#video",
-    "title": "",
-    "section": "Video",
-    "text": "Video\n\nAs we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.\nTake less careful notes in the rest. It is an interesting geospatial analysis.\n\n\n\nOpen the video on YouTube"
+    "text": "How does GPS Work\n\nAs we watch this video, take especially careful notes on the explanation of how GPS works from 4:43 to 10:48.\nTake less careful notes in the rest. It is an interesting geospatial analysis.\n\n\n\nOpen the video on YouTube"
   },
   {
     "objectID": "gps.html#important-points-stylefont-size0.7em",
