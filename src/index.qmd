@@ -69,7 +69,7 @@ __Lab Assignments__
 [Lab 12](project_3.md){style="font-size:0.8em"}  
 [Lab 14](lab_14.qmd){style="font-size:0.8em"}  
 [Lab 15](georeferencing.qmd#/1/7){style="font-size:0.8em"}  
-[Cachuma Project](project_cachuma.md){style="font-size:0.8em"}
+[Cachuma Project](lab_08_cachuma.md){style="font-size:0.8em"}
 
 :::
 :::

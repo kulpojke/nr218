@@ -42,10 +42,9 @@ There will be five quizzes. For each quiz, if you get 75% of the points, you get
 ## Assignment Weight
 | Assignment     | Percentage of Grade| Description  |
 |---------------------------|-----|----|
-| Lab exercises             | 42  |  There are 7 assignments that need to be turned in  |
+| Lab exercises             | 64  |  There are 8 assignments that need to be turned in  |
 | Quizzes                   | 18  |  Quizzes can happen any time! |
-| [Cachuma Project](../project_cachuma.html) | 20  |  Will use skills learned throughout the quarter  |
-| Final Exam                | 20  |  Oral exam, in which you will explain what you did in the Cachuma project  |  
+| Final Exam                | 20  |    |  
 
 ## Grading
 
@@ -127,10 +126,11 @@ There are many other helpful sources of information on GIS Software, here area c
 | November 18  | 13         | [Lab 7, Change Detection](../lab_07_gran_chaco.html)   | 
 | November 23  | Fall Break |       | 
 | November 25  | Fall Break |       | 
-| November 30  | 14         | Project introduction    | 
-| December 2   | 14         | Project   | 
+| November 30  | 14         | Lab 8, Lake Cachuma    | 
+| December 2   | 14         | Open Lab   | 
 | December 7   | 15         | Lecture: Other GIS platforms   | 
-| December 9   | 15         | Project   | 
+| December 9   | 15         | Open Lab   | 
+| December 14  | Finals     | Final Exam, 7:00–9:30 p.m.   |
 
 
        

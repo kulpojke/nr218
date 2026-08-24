@@ -2594,7 +2594,7 @@
     "href": "syllabi/section_07_fall_2026.html#assignment-weight",
     "title": "Section 07 Schedule",
     "section": "Assignment Weight",
-    "text": "Assignment Weight\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nLab exercises\n42\nThere are 7 assignments that need to be turned in\n\n\nQuizzes\n18\nQuizzes can happen any time!\n\n\nCachuma Project\n20\nWill use skills learned throughout the quarter\n\n\nFinal Exam\n20\nOral exam, in which you will explain what you did in the Cachuma project"
+    "text": "Assignment Weight\n\n\n\n\n\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nLab exercises\n64\nThere are 8 assignments that need to be turned in\n\n\nQuizzes\n18\nQuizzes can happen any time!\n\n\nFinal Exam\n20"
   },
   {
     "objectID": "syllabi/section_07_fall_2026.html#grading",
@@ -2706,7 +2706,7 @@
     "href": "syllabi/section_09_fall_2026.html#assignment-weight",
     "title": "Section 09 Schedule",
     "section": "Assignment Weight",
-    "text": "Assignment Weight\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nLab exercises\n42\nThere are 7 assignments that need to be turned in\n\n\nQuizzes\n18\nQuizzes can happen any time!\n\n\nCachuma Project\n20\nWill use skills learned throughout the quarter\n\n\nFinal Exam\n20\nOral exam, in which you will explain what you did in the Cachuma project"
+    "text": "Assignment Weight\n\n\n\n\n\n\n\n\nAssignment\nPercentage of Grade\nDescription\n\n\n\n\nLab exercises\n64\nThere are 8 assignments that need to be turned in\n\n\nQuizzes\n18\nQuizzes can happen any time!\n\n\nFinal Exam\n20"
   },
   {
     "objectID": "syllabi/section_09_fall_2026.html#grading",
@@ -2807,39 +2807,39 @@
     "text": "Submit on Canvas:\nA zipped file with your tutorials and written responses inside"
   },
   {
-    "objectID": "project_cachuma.html",
-    "href": "project_cachuma.html",
+    "objectID": "lab_08_cachuma.html",
+    "href": "lab_08_cachuma.html",
     "title": "Cachuma Project",
     "section": "",
-    "text": "Download data for Cachuma Reservoir\nIt includes:\n\na DEM from summer of 2018 (as tiles)\nSentinel-2 image from July, 2018\nSentinel-2 image from February, 2024\n\n\n\nFind the following:\n\nThe approximate surface area of the lake in summer, 2018\nThe approximate elevation of the lake surface in summer, 2018\nThe approximate surface area of the lake in February, 2024\nThe approximate elevation of the lake surface in February, 2024\nThe approximate change in volume of water stored in the reservoir between 2018 and 2024. (See this painfully slow video or this webpage for tips.)\nThe change in NDVI between 2018 and 2024 in the four plots (vectors/plots.geojson)\n\n\n\n\n1) Description of methods\nWrite a short document describing the methods you used to solve the problem. Here is an example faux-document It should contain:\n\nMethods: Write a clear explanation of what you did, and why. Document the steps you took, use figures where needed.\n\nA table of important layers created in your workflow. (These layers should be cross referenced in your methods.)\nResults: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.\n\n2) GIS Poject Files\nA zip file of your project directory.\n3) A pdf map of the project area\nShould include scale, legend, and North arrow.\n\n\n\nRecall from the syllabus that the Project is worth 20% of the grade. The final exam, which is about the project, is worth another 20%.\nThe project grade will be based on:\n\nExplanation of the methods, methods are applicable to the problem (25%)\nReasonable estimates of the values (25%)\nThe project opens and contains all of the layers you describe in you methods (25%)\nYour map has all of the required elements, and looks ok (25%)\n\nThe final exam grade will be based on:\n\nYou can explain your methods, and answer questions about them.\n\n\n\n\n\nYou will need to mosaic the raster tiles or build a vrt\nFor a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 \\(m^{3}\\) New hints as of 2026-05-18\nThere are several ways to figure out the elevation of the surface after finding it. None of them (that I can think of) involve zonal statistics.\nThe lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM."
+    "text": "Download data for Cachuma Reservoir\nIt includes:\n\na DEM from summer of 2018 (as tiles)\nSentinel-2 image from July, 2018\nSentinel-2 image from February, 2024\n\n\n\nFind the following:\n\nThe approximate surface area of the lake in summer, 2018\nThe approximate elevation of the lake surface in summer, 2018\nThe approximate surface area of the lake in February, 2024\nThe approximate elevation of the lake surface in February, 2024\nThe approximate change in volume of water stored in the reservoir between 2018 and 2024. (See this painfully slow video or this webpage for tips.)\n\n\n\n\n1) Description of methods\nWrite a short document describing the methods you used to solve the problem. It should contain:\n\nMethods: Write a brief explanation of what you did, and why. Document the steps you took, use figures where needed.\n\nA table of important layers created in your workflow. (These layers should be cross referenced in your methods.)\nResults: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.\n\n2) GIS Poject Files\nA zip file of your project directory.\n3) A pdf map of the project area\nShould include scale, legend, and North arrow.\n\n\n\nThe lab grade will be based on:\n\nExplanation of the methods, methods are applicable to the problem (25%)\nReasonable estimates of the values (25%)\nThe project opens and contains all of the layers you describe in you methods (25%)\nYour map has all of the required elements, and looks ok (25%)\n\n\n\n\n\nYou will need to mosaic the raster tiles or build a vrt\nFor a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 \\(m^{3}\\)\nThere are several ways to figure out the elevation of the surface after finding it. None of them (that I can think of) involve zonal statistics.\nThe lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM."
   },
   {
-    "objectID": "project_cachuma.html#task",
-    "href": "project_cachuma.html#task",
+    "objectID": "lab_08_cachuma.html#task",
+    "href": "lab_08_cachuma.html#task",
     "title": "Cachuma Project",
     "section": "",
-    "text": "Find the following:\n\nThe approximate surface area of the lake in summer, 2018\nThe approximate elevation of the lake surface in summer, 2018\nThe approximate surface area of the lake in February, 2024\nThe approximate elevation of the lake surface in February, 2024\nThe approximate change in volume of water stored in the reservoir between 2018 and 2024. (See this painfully slow video or this webpage for tips.)\nThe change in NDVI between 2018 and 2024 in the four plots (vectors/plots.geojson)"
+    "text": "Find the following:\n\nThe approximate surface area of the lake in summer, 2018\nThe approximate elevation of the lake surface in summer, 2018\nThe approximate surface area of the lake in February, 2024\nThe approximate elevation of the lake surface in February, 2024\nThe approximate change in volume of water stored in the reservoir between 2018 and 2024. (See this painfully slow video or this webpage for tips.)"
   },
   {
-    "objectID": "project_cachuma.html#deliverables",
-    "href": "project_cachuma.html#deliverables",
+    "objectID": "lab_08_cachuma.html#deliverables",
+    "href": "lab_08_cachuma.html#deliverables",
     "title": "Cachuma Project",
     "section": "",
-    "text": "1) Description of methods\nWrite a short document describing the methods you used to solve the problem. Here is an example faux-document It should contain:\n\nMethods: Write a clear explanation of what you did, and why. Document the steps you took, use figures where needed.\n\nA table of important layers created in your workflow. (These layers should be cross referenced in your methods.)\nResults: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.\n\n2) GIS Poject Files\nA zip file of your project directory.\n3) A pdf map of the project area\nShould include scale, legend, and North arrow."
+    "text": "1) Description of methods\nWrite a short document describing the methods you used to solve the problem. It should contain:\n\nMethods: Write a brief explanation of what you did, and why. Document the steps you took, use figures where needed.\n\nA table of important layers created in your workflow. (These layers should be cross referenced in your methods.)\nResults: Tell me your estimate for the volume of water, how confident you are in your answer, and what the major sources of error are.\n\n2) GIS Poject Files\nA zip file of your project directory.\n3) A pdf map of the project area\nShould include scale, legend, and North arrow."
   },
   {
-    "objectID": "project_cachuma.html#how-the-project-will-be-graded",
-    "href": "project_cachuma.html#how-the-project-will-be-graded",
+    "objectID": "lab_08_cachuma.html#how-the-lab-will-be-graded",
+    "href": "lab_08_cachuma.html#how-the-lab-will-be-graded",
     "title": "Cachuma Project",
     "section": "",
-    "text": "Recall from the syllabus that the Project is worth 20% of the grade. The final exam, which is about the project, is worth another 20%.\nThe project grade will be based on:\n\nExplanation of the methods, methods are applicable to the problem (25%)\nReasonable estimates of the values (25%)\nThe project opens and contains all of the layers you describe in you methods (25%)\nYour map has all of the required elements, and looks ok (25%)\n\nThe final exam grade will be based on:\n\nYou can explain your methods, and answer questions about them."
+    "text": "The lab grade will be based on:\n\nExplanation of the methods, methods are applicable to the problem (25%)\nReasonable estimates of the values (25%)\nThe project opens and contains all of the layers you describe in you methods (25%)\nYour map has all of the required elements, and looks ok (25%)"
   },
   {
-    "objectID": "project_cachuma.html#hints",
-    "href": "project_cachuma.html#hints",
+    "objectID": "lab_08_cachuma.html#hints",
+    "href": "lab_08_cachuma.html#hints",
     "title": "Cachuma Project",
     "section": "",
-    "text": "You will need to mosaic the raster tiles or build a vrt\nFor a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 \\(m^{3}\\) New hints as of 2026-05-18\nThere are several ways to figure out the elevation of the surface after finding it. None of them (that I can think of) involve zonal statistics.\nThe lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM."
+    "text": "You will need to mosaic the raster tiles or build a vrt\nFor a sanity check on your volume estimation, the total capacity of the reservoir is currently estimated as 232,000,000 \\(m^{3}\\)\nThere are several ways to figure out the elevation of the surface after finding it. None of them (that I can think of) involve zonal statistics.\nThe lake surface area in 2018 can be found from the Sentinel 2 imagery, or from the DEM."
   },
   {
     "objectID": "lab_01_computers.html",

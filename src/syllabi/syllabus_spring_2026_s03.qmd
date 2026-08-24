@@ -42,7 +42,7 @@ There will be five quizzes. For each quiz, if you get 75% of the points, you get
 |---------------------------|-----|----|
 | Lab exercises             | 50  |  9 have assignments that need to  be turned in  |
 | Quizzes                   | 10  |  Quizzes can happen any time! |
-| [Cachuma Project](../project_cachuma.html) | 20  |  Will use skills learned throughout the quarter  |
+| [Cachuma Project](../lab_08_cachuma.html) | 20  |  Will use skills learned throughout the quarter  |
 | Final Exam                | 20  |  Oral exam, in which you will explain what you did in the Cachuma project  |  
 
 ## Grading
@@ -115,7 +115,7 @@ There are many other helpful sources of information on GIS Software, here area c
 | May 20       | 8    | Advanced Topics (tbd)                                                | Lab 16 |              | [Lab 14](../lab_14.html)                         
 | May 25       | 9    | **NO CLASS** (Memorial Day)                                          |        |              |                                               |
 | May 27       | 9    | Modern Map Making                                                    | Lab 17 |              | [Lab 15](../georeferencing.html)                  |
-| May 31 (Sunday) | 10 |                                                                     |        |              | [Cachuma Project](../project_cachuma.html)          |
+| May 31 (Sunday) | 10 |                                                                     |        |              | [Cachuma Project](../lab_08_cachuma.html)          |
 | June 1       | 10   |      Oral Exams                                                            | Lab 17 |              |                                               |
 | June 3       | 10   |                Oral Exams                                                      | Lab 19 |              | 
 
