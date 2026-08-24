@@ -112,7 +112,7 @@ There are many other helpful sources of information on GIS Software, here area c
 | September 30 | 6          | Lab: GPS   | 
 | October 5    | 7          | Lecture: Rasters and Digital Elevation Models   | 
 | October 7    | 7          | [Lab 4, DEMs](../lab_04_DEMS.html)   | 
-| October 12   | 8          | Lecture: Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters   | 
+| October 12   | 8          | Le129.65.41.107cture: Raster Analysis: Map Algebra, Resampling, Reprojecting Rasters   | 
 | October 14   | 8          | Open Lab   | 
 | October 19   | 9          | Lecture: Remote Sensing and Spectral Indices   | 
 | October 21   | 9          | [Lab 5, Using Multi-spectral Data](../lab_05_NAIP.html)   | 
