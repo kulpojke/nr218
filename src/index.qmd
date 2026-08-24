@@ -59,17 +59,15 @@ __Assorted Links__
 
 ::: {.column width="50%"}
 __Lab Assignments__    
-[Lab 1](lab_01_computers.qmd){style="font-size:0.8em"}  
-[Lab 2](lab_02_first_map.html){style="font-size:0.8em"}  
-[Lab 3](lab_03_vectors.html){style="font-size:0.8em"}  
-[Lab 4](lab_04_DEMS.qmd){style="font-size:0.8em"}  
-[Lab 5](lab_05_NAIP.qmd){style="font-size:0.8em"}  
-[Lab 6](lab_06_segmentation.qmd){style="font-size:0.8em"}  
-[Lab 7](lab_07_gran_chaco.qmd){style="font-size:0.8em"}  
-[Lab 12](project_3.md){style="font-size:0.8em"}  
-[Lab 14](lab_14.qmd){style="font-size:0.8em"}  
-[Lab 15](georeferencing.qmd#/1/7){style="font-size:0.8em"}  
-[Cachuma Project](lab_08_cachuma.md){style="font-size:0.8em"}
+[Lab 1, Computers](lab_01_computers.html){style="font-size:0.8em"}  
+[Lab 2, Basics and First Map](lab_02_first_map.html){style="font-size:0.8em"}  
+[Lab 3, Vectors](lab_03_vectors.html){style="font-size:0.8em"}  
+[Lab: GPS](gps.html){style="font-size:0.8em"}  
+[Lab 4, DEMs](lab_04_DEMS.html){style="font-size:0.8em"}  
+[Lab 5, Using Multi-spectral Data](lab_05_NAIP.html){style="font-size:0.8em"}  
+[Lab 6, Segmentation](lab_06_segmentation.html){style="font-size:0.8em"}  
+[Lab 7, Change Detection](lab_07_gran_chaco.html){style="font-size:0.8em"}  
+[Lab 8, Lake Cachuma](lab_08_cachuma.html){style="font-size:0.8em"}
 
 :::
 :::

@@ -4,12 +4,12 @@ format:
   html:
     theme: cyborg
     css: ../style/terminal_theme.css
-    include-after-body: style/terminal_theme_include_subdir.html
+    include-after-body: ../style/terminal_theme_include_subdir.html
 ---
 
 
 ## Class Details
-Room __TBD__
+__Room:__ 10-215 (Aglish 215)
 
 __Two hours of lecture per week __  
 Monday: 6:00 - 7:50  
@@ -21,7 +21,7 @@ Wednesday: 6:00 - 8:50
 ## Instructor Details
 Michael Huggins  
 &#9993; [mthuggin@calpoly.edu](mailto:mthuggin@calpoly.edu)  
-Office Hours: Mondays 2:00 - 4:00  
+Office Hours: Mondays 12:00 - 1:00 
 Building 72-107 (Plant Conservatory)  
 
 __TA:__ TBD
@@ -126,7 +126,7 @@ There are many other helpful sources of information on GIS Software, here area c
 | November 18  | 13         | [Lab 7, Change Detection](../lab_07_gran_chaco.html)   | 
 | November 23  | Fall Break |       | 
 | November 25  | Fall Break |       | 
-| November 30  | 14         | Lab 8, Lake Cachuma    | 
+| November 30  | 14         | [Lab 8, Lake Cachuma](../lab_08_cachuma.md)  | 
 | December 2   | 14         | Open Lab   | 
 | December 7   | 15         | Lecture: Other GIS platforms   | 
 | December 9   | 15         | Open Lab   | 

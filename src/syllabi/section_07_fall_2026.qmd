@@ -4,12 +4,12 @@ format:
   html:
     theme: cyborg
     css: ../style/terminal_theme.css
-    include-after-body: style/terminal_theme_include_subdir.html
+    include-after-body: ../style/terminal_theme_include_subdir.html
 ---
 
 
 ## Class Details
-Room __TBD__
+__Room:__ 11-304
 
 __Two hours of lecture per week __  
 Tuesday: 4:00 - 5:50  
@@ -126,7 +126,7 @@ There are many other helpful sources of information on GIS Software, here area c
 | November 19  | 13         | [Lab 7, Change Detection](../lab_07_gran_chaco.html)   | 
 | November 24  | Fall Break |       | 
 | November 26  | Fall Break |       | 
-| December 1   | 14         | Lab 8, Lake Cachuma    |
+| December 1   | 14         | [Lab 8, Lake Cachuma](../lab_08_cachuma.md) |
 | December 3   | 14         | Open Lab   |
 | December 8   | 15         | Lecture: Other GIS platforms   | 
 | December 10  | 15         | Open Lab   |
