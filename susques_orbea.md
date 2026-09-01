@@ -55,7 +55,7 @@ A simple pattern is:
 
 That way each step writes a new polygon layer with the previous statistics already saved, and the last file contains all four mean fields together. The screenshot below shows the batch table layout for this exact setup.
 
-![Batch zonal statistics tool in QGIS configured for segmented polygons derived from the 4-band Susques Sentinel-2 image.](img/zonal_stats_batch.png)
+![Batch zonal statistics tool in QGIS configured for segmented polygons derived from the 4-band Susques Sentinel-2 image.](src/img/zonal_stats_batch.png)
 
 
 ### K means clustering

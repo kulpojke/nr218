@@ -131,7 +131,7 @@ Sources: [GPS.gov](https://archive.gps.gov/systems/gps/modernization/civilsignal
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="8"}
-![](../img/GPS-3D-trilateration.png)
+![](img/GPS-3D-trilateration.png)
 :::
 
 :::
@@ -185,4 +185,3 @@ __Drain scavenger hunt__
 :::
 
 :::
-
