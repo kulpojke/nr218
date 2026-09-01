@@ -218,7 +218,7 @@ A __geoid__ is an approximation of the true shape of the Earth.
 
 ## Elevation: Ellipsoid and Geoid {.columns .smaller style="font-size:0.6em"}
 
-::: {.column width="52%"}
+::: {.column width="52%" style="font-size:0.7em"}
 
 
 __Ellipsoidal height__ ($h$) is measured above the reference ellipsoid.
