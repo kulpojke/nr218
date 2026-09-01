@@ -445,7 +445,7 @@
     "href": "index.html#elevation-ellipsoid-and-geoid",
     "title": "NR 218",
     "section": "Elevation: Ellipsoid and Geoid",
-    "text": "Elevation: Ellipsoid and Geoid\n\nEllipsoidal height (\\(h\\)) is measured above the reference ellipsoid.\n\n\nGNSS positions are commonly referenced this way\nIt is a geometric height, not a sea-level elevation\n\n\n\nOrthometric height (\\(H\\)) is measured above the geoid.\n\n\n\nThis is the elevation usually meant on maps and DEMs\nThe geoid approximates mean sea level\n\n\n\nThe difference between the ellipsoid and geoid is the geoid height or geoid undulation (\\(N\\)).\n\n\n\nGeoid height converts ellipsoidal height to elevation\nElevation above the geoid: \\(H = h - N\\)\n\n\n\n\\[h = H + N \\qquad H = h - N\\]"
+    "text": "Elevation: Ellipsoid and Geoid\n\n\nEllipsoidal height (\\(h\\)) is measured above the reference ellipsoid.\n\n\nGNSS positions are commonly referenced this way\nIt is a geometric height, not a sea-level elevation\n\n\n\nOrthometric height (\\(H\\)) is measured above the geoid.\n\n\n\nThis is the elevation usually meant on maps and DEMs\nThe geoid approximates mean sea level\n\n\n\nThe difference between the ellipsoid and geoid is the geoid height or geoid undulation (\\(N\\)).\n\n\n\nGeoid height converts ellipsoidal height to elevation\nElevation above the geoid: \\(H = h - N\\)\n\n\n\n\\[h = H + N \\qquad H = h - N\\]"
   },
   {
     "objectID": "index.html#datums",
@@ -3343,7 +3343,7 @@
     "href": "projections_etc.html#elevation-ellipsoid-and-geoid",
     "title": "",
     "section": "Elevation: Ellipsoid and Geoid",
-    "text": "Elevation: Ellipsoid and Geoid\n\nEllipsoidal height (\\(h\\)) is measured above the reference ellipsoid.\n\n\nGNSS positions are commonly referenced this way\nIt is a geometric height, not a sea-level elevation\n\n\n\nOrthometric height (\\(H\\)) is measured above the geoid.\n\n\n\nThis is the elevation usually meant on maps and DEMs\nThe geoid approximates mean sea level\n\n\n\nThe difference between the ellipsoid and geoid is the geoid height or geoid undulation (\\(N\\)).\n\n\n\nGeoid height converts ellipsoidal height to elevation\nElevation above the geoid: \\(H = h - N\\)\n\n\n\n\\[h = H + N \\qquad H = h - N\\]"
+    "text": "Elevation: Ellipsoid and Geoid\n\n\nEllipsoidal height (\\(h\\)) is measured above the reference ellipsoid.\n\n\nGNSS positions are commonly referenced this way\nIt is a geometric height, not a sea-level elevation\n\n\n\nOrthometric height (\\(H\\)) is measured above the geoid.\n\n\n\nThis is the elevation usually meant on maps and DEMs\nThe geoid approximates mean sea level\n\n\n\nThe difference between the ellipsoid and geoid is the geoid height or geoid undulation (\\(N\\)).\n\n\n\nGeoid height converts ellipsoidal height to elevation\nElevation above the geoid: \\(H = h - N\\)\n\n\n\n\\[h = H + N \\qquad H = h - N\\]"
   },
   {
     "objectID": "projections_etc.html#datums",
