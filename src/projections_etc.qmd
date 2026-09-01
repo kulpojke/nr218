@@ -254,7 +254,7 @@ $$h = H + N \qquad H = h - N$$
 
 ::: {.column width="57%"}
 
-![](img/H_eq_h-N.jpg){style="width: 500px; height: auto;"}
+![](img/H_eq_h-N.jpg){style="width: 450px; height: auto;"}
 
 :::
 
