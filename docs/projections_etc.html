@@ -250,67 +250,146 @@ On contour maps, contour interval is also included</li>
 <p><span style="color: red;">The negative is important!</span> SLO vs.&nbsp;off the coast of Shandong</p>
 </div>
 </section>
-<section id="spheroids-and-geoids" class="slide level2 columns incremental center" style="font-size:0.6em">
-<h2>Spheroids and Geoids</h2>
-<div class="column" style="width:40%;">
-<div class="r-stack" style="margin-bottom: 60px; width: 40%;">
-<div class="fragment absolute fade-in" data-fragment-index="1" style="">
-<p>A <strong>geoid</strong> is an approximation of the true shape of the earth</p>
-</div>
-</div>
-<div class="fragment fade-in" data-fragment-index="2" style="font-size:0.6em">
-<p>&nbsp;&nbsp;&nbsp; <span class="math inline">\(\circ\)</span> As defined by its gravitational field rather than its topography <sup>1</sup></p>
-</div>
-<div class="fragment fade-in" data-fragment-index="3" style="font-size:0.6em">
-<p>&nbsp;&nbsp;&nbsp; <span class="math inline">\(\circ\)</span> Gravitational field found by finding equipotential surfaces</p>
-</div>
-<div class="fragment fade-in" data-fragment-index="4" style="font-size:0.6em">
-<p>&nbsp;&nbsp;&nbsp; <span class="math inline">\(\circ\)</span> <em>The</em> geoid is the specific equipotential surface that best approximates mean sea level (MSL) on a global basis</p>
-</div>
-<div class="fragment fade-in" data-fragment-index="4" style="font-size:0.6em">
-<p>&nbsp;&nbsp;&nbsp; <span class="math inline">\(\circ\)</span> MSL diverges from the geoid by up to 2 m in places.</p>
-</div>
-</div><div class="column" style="width:60%;">
-<div class="{r-stack}">
-<div class="fragment fade-in-then-out" data-fragment-index="3">
-<p><img data-src="img/Gravitational_field_Earth_lines_2.png" style="position: absolute; right: 0px"></p>
-</div>
-<div class="fragment fade-in-then-out" data-fragment-index="4">
-<p><img data-src="img/Gravity_anomalies_on_Earth.jpg" style="position: absolute; right: 0px; width: 250px"></p>
-</div>
-</div>
-</div><aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://figshare.utas.edu.au/articles/journal_contribution/Understanding_coordinate_reference_systems_datums_and_transformations/22873136/1?file=40609577">Janssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009).</a></p></li></ol></aside></section>
-<section id="spheroids-and-geoids-1" class="slide level2 columns smaller center" style="font-size:0.6em">
-<h2>Spheroids and Geoids</h2>
-<div class="column" style="width:40%;">
+<section id="spheroids-ellipsoids" class="slide level2 columns smaller center" style="font-size:0.6em">
+<h2>Spheroids / Ellipsoids</h2>
+<div class="column" style="width:45%;">
+<p>To define a geographic coordinate system, one must decide on a reasonable geometric shape for the Earth.</p>
+<p>The shape of Earth is approximated using a <em>spheroid</em> (also called an ellipsoid of revolution).</p>
 <div class="fragment fade-in" data-fragment-index="1">
-<p>The geoid is pretty complex…</p>
+<p>A geographic coordinate system (GCS) uses the spheroid as its reference surface.</p>
 </div>
-<div class="fragment fade-in" data-fragment-index="2">
-<p>so the surface is approximated using a <em>spheroid</em> (also called an ellipsoid of revolution)</p>
+<div class="fragment fade-in" data-fragment-index="1">
+<p>Latitude and longitude form an angular grid on that model of the Earth.</p>
 </div>
-<div class="fragment fade-in" data-fragment-index="3">
-<p>A GCS is based on a reference model of the Earth, usually a sphere or spheroid (ellipsoid)</p>
-</div>
-</div><div class="column" style="width:60%;">
+</div><div class="column" style="width:55%;">
 <div class="r-stack">
-<div class="fragment fade-in-then-out" data-fragment-index="1">
-<p><img data-src="img/Gravity_anomalies_on_Earth.jpg" style="width: 300px; height: auto;"></p>
-</div>
-<div class="fragment fade-in-then-out" data-fragment-index="2">
+<div class="fragment fade-out" data-fragment-index="1">
 <p><img data-src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Constructie_ellipso%C3%AFde.gif?20070313202411" style="width: 300px; height: auto;"></p>
 </div>
-<div class="fragment fade-in" data-fragment-index="3">
-<p><img data-src="img/several_ellipsoids.png" style="width: 300px; height: auto;"></p>
+<div class="fragment fade-in-fade-out" data-fragment-index="1">
+<p><img data-src="../img/gcs_on_shere.png" style="width: 360px; height: auto;"></p>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="https://gistbok-topics.ucgis.org/DM-05-047">UCGIS GIS&amp;T Body of Knowledge</a></p>
+</div>
+</div>
+<div class="fragment fade-in" data-fragment-index="2">
+<p><img data-src="../img/gcs_on_ellipsoid.png" style="width: 360px; height: auto;"></p>
+<div class="attribution" style="font-size:0.4em">
+<p>Image Source: <a href="https://gistbok-topics.ucgis.org/DM-05-047">UCGIS GIS&amp;T Body of Knowledge</a></p>
+</div>
 </div>
 </div>
 </div></section>
-<section id="datums" class="slide level2 center">
+<section id="geoids" class="slide level2 columns smaller center" style="font-size:0.6em">
+<h2>Geoids</h2>
+<div class="column" style="width:52%;">
+<div class="fragment fade-in" data-fragment-index="1">
+<p>A <strong>geoid</strong> is an approximation of the true shape of the Earth.</p>
+</div>
+<div class="fragment fade-in" data-fragment-index="2">
+<ul>
+<li>Defined by Earth’s gravitational field rather than its topography <sup>1</sup></li>
+</ul>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<ul>
+<li>Gravitational fields are described using equipotential surfaces</li>
+</ul>
+</div>
+<div class="fragment fade-in" data-fragment-index="4">
+<ul>
+<li><em>The</em> geoid is the equipotential surface that best approximates mean sea level (MSL) globally</li>
+</ul>
+</div>
+<div class="fragment fade-in" data-fragment-index="5">
+<ul>
+<li>MSL diverges from the geoid by up to 2 m in places</li>
+</ul>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="r-stack">
+<div class="fragment fade-in-then-out" data-fragment-index="3">
+<p><img data-src="../img/Gravitational-Equipotential-Lines-1.png" style="width: 360px; height: auto;"></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="4">
+<p><img data-src="../img/Gravity_anomalies_on_Earth.jpg" style="width: 360px; height: auto;"></p>
+</div>
+</div>
+</div><aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://figshare.utas.edu.au/articles/journal_contribution/Understanding_coordinate_reference_systems_datums_and_transformations/22873136/1?file=40609577">Janssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009).</a></p></li></ol></aside></section>
+<section id="elevation-ellipsoid-and-geoid" class="slide level2 columns smaller center" style="font-size:0.6em">
+<h2>Elevation: Ellipsoid and Geoid</h2>
+<div class="column" style="width:52%;">
+<p><strong>Ellipsoidal height</strong> (<span class="math inline">\(h\)</span>) is measured above the reference ellipsoid.</p>
+<div class="fragment fade-in" data-fragment-index="1">
+<ul>
+<li>GNSS positions are commonly referenced this way</li>
+<li>It is a geometric height, not a sea-level elevation</li>
+</ul>
+</div>
+<div class="fragment fade-in" data-fragment-index="2">
+<p><strong>Orthometric height</strong> (<span class="math inline">\(H\)</span>) is measured above the geoid.</p>
+</div>
+<div class="fragment fade-in" data-fragment-index="2">
+<ul>
+<li>This is the elevation usually meant on maps and DEMs</li>
+<li>The geoid approximates mean sea level</li>
+</ul>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<p>The difference between the ellipsoid and geoid is the <strong>geoid height</strong> or <strong>geoid undulation</strong> (<span class="math inline">\(N\)</span>).</p>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<ul>
+<li>Geoid height converts ellipsoidal height to elevation</li>
+<li>Elevation above the geoid: <span class="math inline">\(H = h - N\)</span></li>
+</ul>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<p><span class="math display">\[h = H + N \qquad H = h - N\]</span></p>
+</div>
+</div><div class="column" style="width:48%;">
+<p><img data-src="../img/H_eq_h-N.jpg" style="width: 400px; height: auto;"></p>
+</div></section>
+<section id="datums" class="slide level2 columns smaller center" style="font-size:0.6em">
 <h2>Datums</h2>
-<div class="{r-stack}">
+<p>A <strong>datum</strong> defines the reference frame that makes coordinates line up with the real Earth.</p>
+<div class="column" style="width:50%;">
+<div class="r-stack" style="position: relative; width: 100%; height: 330px;">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="top: 0; left: 0; width: 100%; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; text-align: left;">
+<p><strong>Horizontal datums</strong></p>
+<ul>
+<li>Anchor an ellipsoid to the Earth for latitude/longitude or projected coordinates</li>
+<li>Define the origin, orientation, scale, and realization of the horizontal reference frame</li>
+<li>Used for <em>where</em> something is on the Earth’s surface</li>
+<li>A local horizontal datum aligns an ellipsoid to best fit the geoid over a particular region.</li>
+<li>Examples: NAD27, NAD83, WGS84</li>
+</ul>
+</div>
+<div class="fragment absolute fade-in" data-fragment-index="1" style="top: 0; left: 0; width: 100%; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; text-align: left;">
+<p><strong>Vertical datums</strong></p>
+<ul>
+<li>Define the zero-height surface for elevations or depths</li>
+<li>Often tied to mean sea level through a geoid model, leveling network, or tidal observations</li>
+<li>Used for <em>how high</em> or <em>how deep</em> something is</li>
+<li>Examples: NAVD88 (original leveling based), EGM96/EGM2008 (geoid based), local tidal datums</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="r-stack" style="position: relative; width: 100%; height: 330px;">
+<div class="fragment absolute fade-out" data-fragment-index="1" style="top: 0; left: 0; width: 100%; max-width: 100%; box-sizing: border-box;">
+<p><img data-src="../img/horizontal_datums.png"></p>
+</div>
+<div class="fragment absolute fade-in" data-fragment-index="1" style="top: 0; left: 0; width: 100%; max-width: 100%; box-sizing: border-box;">
+<p><img data-src="../img/leveling_based_datum.jpg"></p>
+</div>
+</div>
+</div></section>
+<section id="horizontal-datum-types" class="slide level2 center">
+<h2>Horizontal Datum Types</h2>
 <div class="fragment absolute fade-out" data-fragment-index="1" style="">
 <ul>
-<li>A <em>datum</em> is a spheroid with an origen point and orientation aligning it for a particular use.</li>
+<li>A <em>horizontal datum</em> anchors a spheroid/ellipsoid with an origin and orientation for a particular use.</li>
 </ul>
 <p><img data-src="img/datum.png"></p>
 <div class="attribution" style="font-size:0.4em">
@@ -332,7 +411,7 @@ On contour maps, contour interval is also included</li>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
 <ul>
-<li>A geocentric datum aligns the centroid of the geoid to the center of the ellipsoid</li>
+<li>A geocentric datum places the ellipsoid’s center at Earth’s center of mass, supporting global positioning</li>
 </ul>
 <p><img data-src="img/Datum_geocentric.svg"></p>
 <div class="attribution" style="font-size:0.4em">
@@ -383,7 +462,6 @@ On contour maps, contour interval is also included</li>
 <p><span style="font-size:0.5em">* NAD83 is Earth-centered in concept, but regionally realized and not identical to a fully global geocentric frame.</span></p>
 </div>
 </div>
-</div>
 </section>
 <section id="projections" class="slide level2 columns center">
 <h2>Projections</h2>
@@ -402,6 +480,7 @@ On contour maps, contour interval is also included</li>
 <div class="{r-stack}">
 <div class="fragment absolute fade-in-then-out" style="width: 50%" data-fragment-index="1">
 <p>Imagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a <strong>developable surface</strong> (flattenable surface).</p>
+<p><span style="font-size:0.5em">(This is called a gnomonic projection. There are <a href="https://en.wikipedia.org/wiki/Stereographic_map_projection">stereographic</a> and <a href="https://en.wikipedia.org/wiki/Orthographic_projection">orthographic</a> projections too, but that is too much for this class.)</span></p>
 </div>
 <div class="fragment absolute fade-in-then-out" style="width: 50%" data-fragment-index="2">
 <p>There are three commonly used developable surfaces</p>
@@ -512,6 +591,45 @@ Bottom: Equirectangular projection with Tissot’s indicatrix.</span></p>
 <iframe src="https://earth.nullschool.net/#current/wind/surface/level/waterman" style="width: 80%; height: 80%; border: none;" title="Real-time Wind Map">
 </iframe>
 </div>
+</section>
+<section id="grids" class="slide level2 smaller center">
+<h2>Grids</h2>
+<ul>
+<li>A <strong>grid</strong> is a regular coordinate system laid over a projected map</li>
+<li>Locations are measured as <span class="math inline">\(x,y\)</span> distances, usually in meters or feet</li>
+<li>GIS often calls these coordinates <strong>easting</strong> and <strong>northing</strong></li>
+<li>Grid coordinates are not latitude/longitude; they are coordinates on the flat map</li>
+</ul>
+</section>
+<section id="coordinate-reference-systems" class="slide level2 smaller center">
+<h2>Coordinate Reference Systems</h2>
+<ul>
+<li>A <strong>CRS</strong> is the complete definition that makes coordinates meaningful</li>
+<li>A geographic CRS uses a datum/reference frame, ellipsoid, axes, and angular units</li>
+<li>A projected CRS adds a map projection and planar grid to a geographic CRS</li>
+<li>A vertical CRS defines heights or depths; a compound CRS combines horizontal and vertical CRSs</li>
+<li>3D geographic CRS: lon/lat plus ellipsoidal height; compound CRS: horizontal CRS plus separate vertical CRS</li>
+</ul>
+</section>
+<section id="ways-to-define-a-crs" class="slide level2 smaller center">
+<h2>Ways to define a CRS</h2>
+<ul>
+<li>EPSG code
+<ul>
+<li>Short numeric identifier from a standard registry</li>
+<li>Example: <code>EPSG:4326</code></li>
+</ul></li>
+<li>Well known text (WKT)
+<ul>
+<li>Verbose text definition of the full CRS</li>
+<li>Good for storing exact CRS metadata</li>
+</ul></li>
+<li>proj
+<ul>
+<li>Compact parameter string used by PROJ/GDAL tools</li>
+<li>Example: <code>+proj=utm +zone=10 +datum=NAD83 +units=m</code></li>
+</ul></li>
+</ul>
 </section>
 <section id="utm" class="slide level2 columns center" style="font-size:0.7em">
 <h2>UTM</h2>

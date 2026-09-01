@@ -129,94 +129,184 @@ degrees (DD).
 <span style="color: red;">The negative is important!</span> SLO vs. off the coast of Shandong
 :::
 
-## Spheroids and Geoids {.columns .incremental style="font-size:0.6em"}
+## Spheroids / Ellipsoids {.columns .smaller style="font-size:0.6em"}
 
-::: {.column width="40%"}
+::: {.column width="45%"}
 
-::: {.r-stack style="margin-bottom: 60px; width: 40%;"}
+To define a geographic coordinate system, one must decide on a reasonable geometric shape for the Earth.
 
-::: {.fragment .absolute .fade-in data-fragment-index=1}
-A __geoid__ is an approximation of the true shape of the earth
-:::    
+The shape of Earth is approximated using a _spheroid_ (also called an ellipsoid of revolution).
+
+::: {.fragment .fade-in data-fragment-index=1}
+A geographic coordinate system (GCS) uses the spheroid as its reference surface.
 :::
 
-::: {.fragment .fade-in data-fragment-index=2 style="font-size:0.6em"}    
-&nbsp;&nbsp;&nbsp; $\circ$ As defined by its gravitational field rather than its topography [^2]
+::: {.fragment .fade-in data-fragment-index=1}
+Latitude and longitude form an angular grid on that model of the Earth.
 :::
-
-::: {.fragment .fade-in data-fragment-index=3 style="font-size:0.6em"}    
-&nbsp;&nbsp;&nbsp; $\circ$ Gravitational field found by finding equipotential surfaces
-:::
-
-::: {.fragment .fade-in data-fragment-index=4 style="font-size:0.6em"}    
-&nbsp;&nbsp;&nbsp; $\circ$ _The_ geoid is the specific equipotential surface that best approximates
-mean sea level (MSL) on a global basis
-::: 
-
-::: {.fragment .fade-in data-fragment-index=4 style="font-size:0.6em"}    
-&nbsp;&nbsp;&nbsp; $\circ$ MSL diverges from the geoid by up to 2 m in places.
-::: 
 
 :::
 
-::: {.column width="60%"}
-::: {r-stack}
+::: {.column width="55%"}
+::: {.r-stack}
+
+::: {.fragment .fade-out data-fragment-index=1}
+![](https://upload.wikimedia.org/wikipedia/commons/b/bd/Constructie_ellipso%C3%AFde.gif?20070313202411){style="width: 300px; height: auto;"}
+:::
+
+::: {.fragment .fade-in-fade-out data-fragment-index=1}
+![](../img/gcs_on_shere.png){style="width: 360px; height: auto;"}
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [UCGIS GIS&T Body of Knowledge](https://gistbok-topics.ucgis.org/DM-05-047)
+:::
+:::
+
+::: {.fragment .fade-in data-fragment-index=2}
+![](../img/gcs_on_ellipsoid.png){style="width: 360px; height: auto;"}
+
+::: {.attribution style="font-size:0.4em"}
+Image Source: [UCGIS GIS&T Body of Knowledge](https://gistbok-topics.ucgis.org/DM-05-047)
+:::
+:::
+
+:::
+:::
+
+## Geoids {.columns .smaller style="font-size:0.6em"}
+
+::: {.column width="52%"}
+
+::: {.fragment .fade-in data-fragment-index=1}
+A __geoid__ is an approximation of the true shape of the Earth.
+:::
+
+::: {.fragment .fade-in data-fragment-index=2}
++ Defined by Earth's gravitational field rather than its topography [^2]
+:::
+
+::: {.fragment .fade-in data-fragment-index=3}
++ Gravitational fields are described using equipotential surfaces
+:::
+
+::: {.fragment .fade-in data-fragment-index=4}
++ _The_ geoid is the equipotential surface that best approximates mean sea level (MSL) globally
+:::
+
+::: {.fragment .fade-in data-fragment-index=5}
++ MSL diverges from the geoid by up to 2 m in places
+:::
+
+:::
+
+::: {.column width="48%"}
+::: {.r-stack}
+
 ::: {.fragment .fade-in-then-out data-fragment-index=3}
-![](img/Gravitational_field_Earth_lines_2.png){style="position: absolute; right: 0px"}
+![](../img/Gravitational-Equipotential-Lines-1.png){style="width: 360px; height: auto;"}
 :::
 
-::: {.fragment .fade-in-then-out data-fragment-index=4}
-![](img/Gravity_anomalies_on_Earth.jpg){style="position: absolute; right: 0px; width: 250px"}
+::: {.fragment .fade-in data-fragment-index=4}
+![](../img/Gravity_anomalies_on_Earth.jpg){style="width: 360px; height: auto;"}
 :::
 
-
 :::
 :::
-
 
 [^2]: [Janssen, Volker. "Understanding coordinate reference systems, datums and transformations." (2009).](https://figshare.utas.edu.au/articles/journal_contribution/Understanding_coordinate_reference_systems_datums_and_transformations/22873136/1?file=40609577)
 
 
-## Spheroids and Geoids {.columns .smaller style="font-size:0.6em"}
+## Elevation: Ellipsoid and Geoid {.columns .smaller style="font-size:0.6em"}
 
-::: {.column width="40%"}
+::: {.column width="52%"}
+
+
+__Ellipsoidal height__ ($h$) is measured above the reference ellipsoid.
 
 ::: {.fragment .fade-in data-fragment-index=1}
-The geoid is pretty complex... 
++ GNSS positions are commonly referenced this way
++ It is a geometric height, not a sea-level elevation
 :::
 
 ::: {.fragment .fade-in data-fragment-index=2}
-so the surface is approximated using a  _spheroid_ (also called an ellipsoid of revolution) 
+__Orthometric height__ ($H$) is measured above the geoid.
+:::
+
+::: {.fragment .fade-in data-fragment-index=2}
++ This is the elevation usually meant on maps and DEMs
++ The geoid approximates mean sea level
 :::
 
 ::: {.fragment .fade-in data-fragment-index=3}
-A GCS is based on a reference model of the Earth, usually a sphere or spheroid (ellipsoid)
-:::
-
-:::
-
-::: {.column width="60%"}
-::: {.r-stack}
-
-::: {.fragment .fade-in-then-out data-fragment-index=1}
-![](img/Gravity_anomalies_on_Earth.jpg){style="width: 300px; height: auto;"}
-:::
-
-::: {.fragment .fade-in-then-out data-fragment-index=2}
-![](https://upload.wikimedia.org/wikipedia/commons/b/bd/Constructie_ellipso%C3%AFde.gif?20070313202411){style="width: 300px; height: auto;"}
+The difference between the ellipsoid and geoid is the __geoid height__ or __geoid undulation__ ($N$).
 :::
 
 ::: {.fragment .fade-in data-fragment-index=3}
-![](img/several_ellipsoids.png){style="width: 300px; height: auto;"}
++ Geoid height converts ellipsoidal height to elevation
++ Elevation above the geoid: $H = h - N$
 :::
+
+::: {.fragment .fade-in data-fragment-index=3}
+$$h = H + N \qquad H = h - N$$
+:::
+
+:::
+
+::: {.column width="48%"}
+
+![](../img/H_eq_h-N.jpg){style="width: 400px; height: auto;"}
+
+:::
+
+## Datums {.columns .smaller style="font-size:0.6em"}
+
+A __datum__ defines the reference frame that makes coordinates line up with the real Earth.
+
+::: {.column width="50%"}
+::: {.r-stack style="position: relative; width: 100%; height: 330px;"}
+
+::: {.fragment .absolute .fade-out data-fragment-index=1 style="top: 0; left: 0; width: 100%; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; text-align: left;"}
+__Horizontal datums__
+
++ Anchor an ellipsoid to the Earth for latitude/longitude or projected coordinates
++ Define the origin, orientation, scale, and realization of the horizontal reference frame
++ Used for _where_ something is on the Earth's surface
++ A local horizontal datum aligns an ellipsoid to best fit the geoid over a particular region.
++ Examples: NAD27, NAD83, WGS84
+:::
+
+::: {.fragment .absolute .fade-in data-fragment-index=1 style="top: 0; left: 0; width: 100%; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; text-align: left;"}
+__Vertical datums__
+
++ Define the zero-height surface for elevations or depths
++ Often tied to mean sea level through a geoid model, leveling network, or tidal observations
++ Used for _how high_ or _how deep_ something is
++ Examples: NAVD88 (original leveling based), EGM96/EGM2008 (geoid based), local tidal datums
+:::
+
 :::
 :::
 
-## Datums
-::: {r-stack}
+::: {.column width="50%"}
+::: {.r-stack style="position: relative; width: 100%; height: 330px;"}
+
+::: {.fragment .absolute .fade-out data-fragment-index=1 style="top: 0; left: 0; width: 100%; max-width: 100%; box-sizing: border-box;"}
+![](../img/horizontal_datums.png)
+:::
+
+::: {.fragment .absolute .fade-in data-fragment-index=1 style="top: 0; left: 0; width: 100%; max-width: 100%; box-sizing: border-box;"}
+![](../img/leveling_based_datum.jpg)
+:::
+
+:::
+:::
+
+
+
+## Horizontal Datum Types
 
 ::: {.fragment .absolute .fade-out data-fragment-index="1"}
-+ A _datum_ is a spheroid with an origen point and orientation aligning it for a particular use.
++ A _horizontal datum_ anchors a spheroid/ellipsoid with an origin and orientation for a particular use.
 
 ![](img/datum.png)
 
@@ -238,7 +328,7 @@ Image Source: [Manny Gimond](http://mgimond.github.io/)
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
-+ A geocentric datum aligns the centroid of the geoid to the center of the ellipsoid
++ A geocentric datum places the ellipsoid's center at Earth's center of mass, supporting global positioning
 
 ![](img/Datum_geocentric.svg)
 
@@ -263,7 +353,7 @@ Image Source: [Manny Gimond](http://mgimond.github.io/)
 :::
 :::
 
-:::
+
 
 ## Projections {.columns}
 
@@ -285,6 +375,8 @@ Image Source: [Manny Gimond](http://mgimond.github.io/)
 ::: {r-stack}
 ::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=1}
 Imagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a __developable surface__ (flattenable surface).
+
+[(This is called a gnomonic projection. There are [stereographic](https://en.wikipedia.org/wiki/Stereographic_map_projection) and [orthographic](https://en.wikipedia.org/wiki/Orthographic_projection) projections too, but that is too much for this class.)]{style="font-size:0.5em"}
 :::
 
 ::: {.fragment .absolute style="width: 50%" .fade-in-then-out data-fragment-index=2}
@@ -425,6 +517,32 @@ Real-time Waterman Wind Map
 
 :::
 
+## Grids {.smaller}
+
++ A __grid__ is a regular coordinate system laid over a projected map
++ Locations are measured as $x,y$ distances, usually in meters or feet
++ GIS often calls these coordinates __easting__ and __northing__
++ Grid coordinates are not latitude/longitude; they are coordinates on the flat map
+
+## Coordinate Reference Systems {.smaller}
+
++ A __CRS__ is the complete definition that makes coordinates meaningful
++ A geographic CRS uses a datum/reference frame, ellipsoid, axes, and angular units
++ A projected CRS adds a map projection and planar grid to a geographic CRS
++ A vertical CRS defines heights or depths; a compound CRS combines horizontal and vertical CRSs
++ 3D geographic CRS: lon/lat plus ellipsoidal height; compound CRS: horizontal CRS plus separate vertical CRS
+
+## Ways to define a CRS {.smaller}
+
++ EPSG code
+  + Short numeric identifier from a standard registry
+  + Example: `EPSG:4326`
++ Well known text (WKT)
+  + Verbose text definition of the full CRS
+  + Good for storing exact CRS metadata
++ proj
+  + Compact parameter string used by PROJ/GDAL tools
+  + Example: `+proj=utm +zone=10 +datum=NAD83 +units=m`
 
 ## UTM {.columns style="font-size:0.7em"}
 

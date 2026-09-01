@@ -427,25 +427,39 @@
     "text": "DMS to DD conversion\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD).\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
   },
   {
-    "objectID": "index.html#spheroids-and-geoids",
-    "href": "index.html#spheroids-and-geoids",
+    "objectID": "index.html#spheroids-ellipsoids",
+    "href": "index.html#spheroids-ellipsoids",
     "title": "NR 218",
-    "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravitational field rather than its topography 1\n\n\n    \\(\\circ\\) Gravitational field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid is the specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
+    "section": "Spheroids / Ellipsoids",
+    "text": "Spheroids / Ellipsoids\n\nTo define a geographic coordinate system, one must decide on a reasonable geometric shape for the Earth.\nThe shape of Earth is approximated using a spheroid (also called an ellipsoid of revolution).\n\nA geographic coordinate system (GCS) uses the spheroid as its reference surface.\n\n\nLatitude and longitude form an angular grid on that model of the Earth.\n\n\n\n\n\n\n\n\n\nImage Source: UCGIS GIS&T Body of Knowledge\n\n\n\n\n\nImage Source: UCGIS GIS&T Body of Knowledge"
   },
   {
-    "objectID": "index.html#spheroids-and-geoids-1",
-    "href": "index.html#spheroids-and-geoids-1",
+    "objectID": "index.html#geoids",
+    "href": "index.html#geoids",
     "title": "NR 218",
-    "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\n\n\nso the surface is approximated using a spheroid (also called an ellipsoid of revolution)\n\n\nA GCS is based on a reference model of the Earth, usually a sphere or spheroid (ellipsoid)"
+    "section": "Geoids",
+    "text": "Geoids\n\n\nA geoid is an approximation of the true shape of the Earth.\n\n\n\nDefined by Earth’s gravitational field rather than its topography 1\n\n\n\n\nGravitational fields are described using equipotential surfaces\n\n\n\n\nThe geoid is the equipotential surface that best approximates mean sea level (MSL) globally\n\n\n\n\nMSL diverges from the geoid by up to 2 m in places\n\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
+  },
+  {
+    "objectID": "index.html#elevation-ellipsoid-and-geoid",
+    "href": "index.html#elevation-ellipsoid-and-geoid",
+    "title": "NR 218",
+    "section": "Elevation: Ellipsoid and Geoid",
+    "text": "Elevation: Ellipsoid and Geoid\n\nEllipsoidal height (\\(h\\)) is measured above the reference ellipsoid.\n\n\nGNSS positions are commonly referenced this way\nIt is a geometric height, not a sea-level elevation\n\n\n\nOrthometric height (\\(H\\)) is measured above the geoid.\n\n\n\nThis is the elevation usually meant on maps and DEMs\nThe geoid approximates mean sea level\n\n\n\nThe difference between the ellipsoid and geoid is the geoid height or geoid undulation (\\(N\\)).\n\n\n\nGeoid height converts ellipsoidal height to elevation\nElevation above the geoid: \\(H = h - N\\)\n\n\n\n\\[h = H + N \\qquad H = h - N\\]"
   },
   {
     "objectID": "index.html#datums",
     "href": "index.html#datums",
     "title": "NR 218",
     "section": "Datums",
-    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond\n\n\n\n\n\nCommon datums used in North America\n\n\n\n\n\n\n\n\n\nDatum\nType\nTypical use in North America\n\n\n\n\nNAD27\nLocal\nLegacy U.S., Mexico, and Central America maps\n\n\nNAD83\nRegional geocentric*\nStandard for most modern U.S. and Canadian mapping\n\n\nNAD83 (2011)\nRegional geocentric\nHigh-accuracy modern U.S. realization of NAD83\n\n\nWGS84\nGlobal geocentric\nGPS and global web mapping\n\n\n\n* NAD83 is Earth-centered in concept, but regionally realized and not identical to a fully global geocentric frame."
+    "text": "Datums\nA datum defines the reference frame that makes coordinates line up with the real Earth.\n\n\n\nHorizontal datums\n\nAnchor an ellipsoid to the Earth for latitude/longitude or projected coordinates\nDefine the origin, orientation, scale, and realization of the horizontal reference frame\nUsed for where something is on the Earth’s surface\nA local horizontal datum aligns an ellipsoid to best fit the geoid over a particular region.\nExamples: NAD27, NAD83, WGS84\n\n\n\nVertical datums\n\nDefine the zero-height surface for elevations or depths\nOften tied to mean sea level through a geoid model, leveling network, or tidal observations\nUsed for how high or how deep something is\nExamples: NAVD88 (original leveling based), EGM96/EGM2008 (geoid based), local tidal datums"
+  },
+  {
+    "objectID": "index.html#horizontal-datum-types",
+    "href": "index.html#horizontal-datum-types",
+    "title": "NR 218",
+    "section": "Horizontal Datum Types",
+    "text": "Horizontal Datum Types\n\n\nA horizontal datum anchors a spheroid/ellipsoid with an origin and orientation for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum places the ellipsoid’s center at Earth’s center of mass, supporting global positioning\n\n\n\nImage Source: Manny Gimond\n\n\n\n\n\nCommon datums used in North America\n\n\n\n\n\n\n\n\n\nDatum\nType\nTypical use in North America\n\n\n\n\nNAD27\nLocal\nLegacy U.S., Mexico, and Central America maps\n\n\nNAD83\nRegional geocentric*\nStandard for most modern U.S. and Canadian mapping\n\n\nNAD83 (2011)\nRegional geocentric\nHigh-accuracy modern U.S. realization of NAD83\n\n\nWGS84\nGlobal geocentric\nGPS and global web mapping\n\n\n\n* NAD83 is Earth-centered in concept, but regionally realized and not identical to a fully global geocentric frame."
   },
   {
     "objectID": "index.html#projections",
@@ -459,7 +473,7 @@
     "href": "index.html#projections-1",
     "title": "NR 218",
     "section": "Projections",
-    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a developable surface (flattenable surface).\n\n\nThere are three commonly used developable surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe developable surface can be oriented in many ways.\n\nEach developable surface can be in one of two cases tangent and secant\n\n\n\n\nThe aspect of the projection is the orientation of the developable surface relative to the axis of the earth\n\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection (with normal aspect) is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nLike the Waterman Butterfly\n\n\n\n\nExamine the size distortions on a Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
+    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a developable surface (flattenable surface).\n(This is called a gnomonic projection. There are stereographic and orthographic projections too, but that is too much for this class.)\n\n\nThere are three commonly used developable surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe developable surface can be oriented in many ways.\n\nEach developable surface can be in one of two cases tangent and secant\n\n\n\n\nThe aspect of the projection is the orientation of the developable surface relative to the axis of the earth\n\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection (with normal aspect) is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nLike the Waterman Butterfly\n\n\n\n\nExamine the size distortions on a Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
   },
   {
     "objectID": "index.html#section-4",
@@ -467,6 +481,27 @@
     "title": "NR 218",
     "section": "",
     "text": "Real-time Waterman Wind Map"
+  },
+  {
+    "objectID": "index.html#grids",
+    "href": "index.html#grids",
+    "title": "NR 218",
+    "section": "Grids",
+    "text": "Grids\n\nA grid is a regular coordinate system laid over a projected map\nLocations are measured as \\(x,y\\) distances, usually in meters or feet\nGIS often calls these coordinates easting and northing\nGrid coordinates are not latitude/longitude; they are coordinates on the flat map"
+  },
+  {
+    "objectID": "index.html#coordinate-reference-systems",
+    "href": "index.html#coordinate-reference-systems",
+    "title": "NR 218",
+    "section": "Coordinate Reference Systems",
+    "text": "Coordinate Reference Systems\n\nA CRS is the complete definition that makes coordinates meaningful\nA geographic CRS uses a datum/reference frame, ellipsoid, axes, and angular units\nA projected CRS adds a map projection and planar grid to a geographic CRS\nA vertical CRS defines heights or depths; a compound CRS combines horizontal and vertical CRSs\n3D geographic CRS: lon/lat plus ellipsoidal height; compound CRS: horizontal CRS plus separate vertical CRS"
+  },
+  {
+    "objectID": "index.html#ways-to-define-a-crs",
+    "href": "index.html#ways-to-define-a-crs",
+    "title": "NR 218",
+    "section": "Ways to define a CRS",
+    "text": "Ways to define a CRS\n\nEPSG code\n\nShort numeric identifier from a standard registry\nExample: EPSG:4326\n\nWell known text (WKT)\n\nVerbose text definition of the full CRS\nGood for storing exact CRS metadata\n\nproj\n\nCompact parameter string used by PROJ/GDAL tools\nExample: +proj=utm +zone=10 +datum=NAD83 +units=m"
   },
   {
     "objectID": "index.html#utm",
@@ -3290,25 +3325,39 @@
     "text": "DMS to DD conversion\nDegrees can be written in degrees-minutes-seconds (DMS) or in decimal degrees (DD).\n\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n128° 40’ 52.0428” W\n\n\n\n\n\n\n\n\n128\n\n\n128 + (40 / 60)\n\n\n128 + (40 / 60) + ( 52.0428 / 60\\(^{2}\\) )\n\n\n-128.68112299\n\n\n\nThe negative is important! SLO vs. off the coast of Shandong"
   },
   {
-    "objectID": "projections_etc.html#spheroids-and-geoids",
-    "href": "projections_etc.html#spheroids-and-geoids",
+    "objectID": "projections_etc.html#spheroids-ellipsoids",
+    "href": "projections_etc.html#spheroids-ellipsoids",
     "title": "",
-    "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\n\nA geoid is an approximation of the true shape of the earth\n\n\n\n    \\(\\circ\\) As defined by its gravitational field rather than its topography 1\n\n\n    \\(\\circ\\) Gravitational field found by finding equipotential surfaces\n\n\n    \\(\\circ\\) The geoid is the specific equipotential surface that best approximates mean sea level (MSL) on a global basis\n\n\n    \\(\\circ\\) MSL diverges from the geoid by up to 2 m in places.\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
+    "section": "Spheroids / Ellipsoids",
+    "text": "Spheroids / Ellipsoids\n\nTo define a geographic coordinate system, one must decide on a reasonable geometric shape for the Earth.\nThe shape of Earth is approximated using a spheroid (also called an ellipsoid of revolution).\n\nA geographic coordinate system (GCS) uses the spheroid as its reference surface.\n\n\nLatitude and longitude form an angular grid on that model of the Earth.\n\n\n\n\n\n\n\n\n\nImage Source: UCGIS GIS&T Body of Knowledge\n\n\n\n\n\nImage Source: UCGIS GIS&T Body of Knowledge"
   },
   {
-    "objectID": "projections_etc.html#spheroids-and-geoids-1",
-    "href": "projections_etc.html#spheroids-and-geoids-1",
+    "objectID": "projections_etc.html#geoids",
+    "href": "projections_etc.html#geoids",
     "title": "",
-    "section": "Spheroids and Geoids",
-    "text": "Spheroids and Geoids\n\n\nThe geoid is pretty complex…\n\n\nso the surface is approximated using a spheroid (also called an ellipsoid of revolution)\n\n\nA GCS is based on a reference model of the Earth, usually a sphere or spheroid (ellipsoid)"
+    "section": "Geoids",
+    "text": "Geoids\n\n\nA geoid is an approximation of the true shape of the Earth.\n\n\n\nDefined by Earth’s gravitational field rather than its topography 1\n\n\n\n\nGravitational fields are described using equipotential surfaces\n\n\n\n\nThe geoid is the equipotential surface that best approximates mean sea level (MSL) globally\n\n\n\n\nMSL diverges from the geoid by up to 2 m in places\n\n\n\n\n\n\n\n\n\n\n\nJanssen, Volker. “Understanding coordinate reference systems, datums and transformations.” (2009)."
+  },
+  {
+    "objectID": "projections_etc.html#elevation-ellipsoid-and-geoid",
+    "href": "projections_etc.html#elevation-ellipsoid-and-geoid",
+    "title": "",
+    "section": "Elevation: Ellipsoid and Geoid",
+    "text": "Elevation: Ellipsoid and Geoid\n\nEllipsoidal height (\\(h\\)) is measured above the reference ellipsoid.\n\n\nGNSS positions are commonly referenced this way\nIt is a geometric height, not a sea-level elevation\n\n\n\nOrthometric height (\\(H\\)) is measured above the geoid.\n\n\n\nThis is the elevation usually meant on maps and DEMs\nThe geoid approximates mean sea level\n\n\n\nThe difference between the ellipsoid and geoid is the geoid height or geoid undulation (\\(N\\)).\n\n\n\nGeoid height converts ellipsoidal height to elevation\nElevation above the geoid: \\(H = h - N\\)\n\n\n\n\\[h = H + N \\qquad H = h - N\\]"
   },
   {
     "objectID": "projections_etc.html#datums",
     "href": "projections_etc.html#datums",
     "title": "",
     "section": "Datums",
-    "text": "Datums\n\n\n\nA datum is a spheroid with an origen point and orientation aligning it for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum aligns the centroid of the geoid to the center of the ellipsoid\n\n\n\nImage Source: Manny Gimond\n\n\n\n\n\nCommon datums used in North America\n\n\n\n\n\n\n\n\n\nDatum\nType\nTypical use in North America\n\n\n\n\nNAD27\nLocal\nLegacy U.S., Mexico, and Central America maps\n\n\nNAD83\nRegional geocentric*\nStandard for most modern U.S. and Canadian mapping\n\n\nNAD83 (2011)\nRegional geocentric\nHigh-accuracy modern U.S. realization of NAD83\n\n\nWGS84\nGlobal geocentric\nGPS and global web mapping\n\n\n\n* NAD83 is Earth-centered in concept, but regionally realized and not identical to a fully global geocentric frame."
+    "text": "Datums\nA datum defines the reference frame that makes coordinates line up with the real Earth.\n\n\n\nHorizontal datums\n\nAnchor an ellipsoid to the Earth for latitude/longitude or projected coordinates\nDefine the origin, orientation, scale, and realization of the horizontal reference frame\nUsed for where something is on the Earth’s surface\nA local horizontal datum aligns an ellipsoid to best fit the geoid over a particular region.\nExamples: NAD27, NAD83, WGS84\n\n\n\nVertical datums\n\nDefine the zero-height surface for elevations or depths\nOften tied to mean sea level through a geoid model, leveling network, or tidal observations\nUsed for how high or how deep something is\nExamples: NAVD88 (original leveling based), EGM96/EGM2008 (geoid based), local tidal datums"
+  },
+  {
+    "objectID": "projections_etc.html#horizontal-datum-types",
+    "href": "projections_etc.html#horizontal-datum-types",
+    "title": "",
+    "section": "Horizontal Datum Types",
+    "text": "Horizontal Datum Types\n\n\nA horizontal datum anchors a spheroid/ellipsoid with an origin and orientation for a particular use.\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA local datum matches a geoid to an ellipsoid to fit a local context, e.g.\n\nNAD27 (North American Datum of 1927) is widely used in the U.S., especially in older maps.\nED50 (European Datum of 1950) is common in Western Europe.\n\n\n\n\nImage Source: Manny Gimond\n\n\n\n\nA geocentric datum places the ellipsoid’s center at Earth’s center of mass, supporting global positioning\n\n\n\nImage Source: Manny Gimond\n\n\n\n\n\nCommon datums used in North America\n\n\n\n\n\n\n\n\n\nDatum\nType\nTypical use in North America\n\n\n\n\nNAD27\nLocal\nLegacy U.S., Mexico, and Central America maps\n\n\nNAD83\nRegional geocentric*\nStandard for most modern U.S. and Canadian mapping\n\n\nNAD83 (2011)\nRegional geocentric\nHigh-accuracy modern U.S. realization of NAD83\n\n\nWGS84\nGlobal geocentric\nGPS and global web mapping\n\n\n\n* NAD83 is Earth-centered in concept, but regionally realized and not identical to a fully global geocentric frame."
   },
   {
     "objectID": "projections_etc.html#projections",
@@ -3322,7 +3371,7 @@
     "href": "projections_etc.html#projections-1",
     "title": "",
     "section": "Projections",
-    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a developable surface (flattenable surface).\n\n\nThere are three commonly used developable surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe developable surface can be oriented in many ways.\n\nEach developable surface can be in one of two cases tangent and secant\n\n\n\n\nThe aspect of the projection is the orientation of the developable surface relative to the axis of the earth\n\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection (with normal aspect) is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nLike the Waterman Butterfly\n\n\n\n\nExamine the size distortions on a Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
+    "text": "Projections\n\n\n\nImagine a lightbulb inside of the earth, shining out and projecting the shadows of the continents onto a developable surface (flattenable surface).\n(This is called a gnomonic projection. There are stereographic and orthographic projections too, but that is too much for this class.)\n\n\nThere are three commonly used developable surfaces\n\nplane\ncone\ncylinder\n\n\n\n\nThe developable surface can be oriented in many ways.\n\nEach developable surface can be in one of two cases tangent and secant\n\n\n\n\nThe aspect of the projection is the orientation of the developable surface relative to the axis of the earth\n\n\n\nTissot’s indicatrix\nShows linear, angular, and areal distortions of maps\n\n\nEquidistant projections\n\n\nMaintains distance between points in one direction (usually north-south)\nAngles and shapes are not preserved\nGood for small-scale maps that cover large areas\nOften used for global thematic maps\n\n\n\n\nConformal map projections\n\n\nPreserve angles (also known as bearings) between locations\nUsed for navigational purposes\nAreas tend to be quite distorted\nShapes are more or less preserved over small areas, at small scales areas become wildly distorted\ne.g. Mercator projection (with normal aspect) is famous for distorting Greenland\n\n\n\n\nEqual area or equivalent projections\n\n\nPreserve area\nDistort angles\n\n\n\n\nWeird projections\n\n\nOften made as compromises between types of distortion\nLike the Waterman Butterfly\n\n\n\n\nExamine the size distortions on a Mercator Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Left: circles of equal area on globe. Right: same circles on Mercator projection.\n\n\n  Top: True-color satellite image of Earth in equirectangular projection.\nBottom: Equirectangular projection with Tissot’s indicatrix.\n\n\n \nTop: Nautical Chart of Lake Superior in Mercator projection. Bottom: Mercator projection."
   },
   {
     "objectID": "projections_etc.html#section",
@@ -3330,6 +3379,27 @@
     "title": "",
     "section": "",
     "text": "Real-time Waterman Wind Map"
+  },
+  {
+    "objectID": "projections_etc.html#grids",
+    "href": "projections_etc.html#grids",
+    "title": "",
+    "section": "Grids",
+    "text": "Grids\n\nA grid is a regular coordinate system laid over a projected map\nLocations are measured as \\(x,y\\) distances, usually in meters or feet\nGIS often calls these coordinates easting and northing\nGrid coordinates are not latitude/longitude; they are coordinates on the flat map"
+  },
+  {
+    "objectID": "projections_etc.html#coordinate-reference-systems",
+    "href": "projections_etc.html#coordinate-reference-systems",
+    "title": "",
+    "section": "Coordinate Reference Systems",
+    "text": "Coordinate Reference Systems\n\nA CRS is the complete definition that makes coordinates meaningful\nA geographic CRS uses a datum/reference frame, ellipsoid, axes, and angular units\nA projected CRS adds a map projection and planar grid to a geographic CRS\nA vertical CRS defines heights or depths; a compound CRS combines horizontal and vertical CRSs\n3D geographic CRS: lon/lat plus ellipsoidal height; compound CRS: horizontal CRS plus separate vertical CRS"
+  },
+  {
+    "objectID": "projections_etc.html#ways-to-define-a-crs",
+    "href": "projections_etc.html#ways-to-define-a-crs",
+    "title": "",
+    "section": "Ways to define a CRS",
+    "text": "Ways to define a CRS\n\nEPSG code\n\nShort numeric identifier from a standard registry\nExample: EPSG:4326\n\nWell known text (WKT)\n\nVerbose text definition of the full CRS\nGood for storing exact CRS metadata\n\nproj\n\nCompact parameter string used by PROJ/GDAL tools\nExample: +proj=utm +zone=10 +datum=NAD83 +units=m"
   },
   {
     "objectID": "projections_etc.html#utm",
