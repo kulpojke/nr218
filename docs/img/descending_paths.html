@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WNP7MLF');</script>
+        <!-- End Google Tag Manager -->
+        <!-- process generated -->
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#630202"/>
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="NASA-FIRMS">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#630202">
+        <meta name="apple-mobile-web-app-title" content="NASA Fire Info">
+        <link rel="icon" sizes="192x192" href="/images/touch/icon-192x192.png">
+        <link rel="apple-touch-icon" href="/images/touch/icon-192x192.png">
+        <meta name="msapplication-TileImage" content="/images/touch/icon-144x144.png">
+        <meta name="msapplication-TileColor" content="#630202">
+        <meta name="theme-color" content="#630202">
+        <meta property="og:title" content="NASA-FIRMS">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="/images/touch/icon-192x192.png">
+        <meta property="og:url" content="https://firms.modaps.eosdis.nasa.gov/map/">
+        <meta property="og:description" content="Fire Information for Resource Management System">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="https://firms.modaps.eosdis.nasa.gov/map/">
+        <meta name="twitter:title" content="NASA-FIRMS">
+        <meta name="twitter:description" content="Fire Information for Resource Management System">
+        <meta name="twitter:image" content="/images/touch/icon-192x192.png">
+        <meta name="twitter:creator" content="@nasa">
+        
+        <link rel="manifest" href="/content/manifest/firms.json">
+        <meta name="description" content="Global fire map and data. NASA | LANCE | Fire Information for Resource Management System provides near real-time active fire data from MODIS and VIIRS to meet the needs of firefighters, scientists and users interested in monitoring fires. Fire data is available for download or can be viewed through a map interface. Users can subscribe to email alerts bases on their area of interest.">
+        <meta name="keywords" content="fire, wildfire, fire map, map, archive fire data, fire email alerts, fire download, fire data download, California, USA, US, Canada, Indonesia, Australia, Asia, Africa, Amazon, Brazil, Europe, Siberia, Russia">
+        <title>NASA | LANCE | FIRMS</title>
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;600&display=swap" rel="stylesheet">
+        <style> html { background: #222; font-size:10px; } </style>    
+    </head>
+    <script>
+        window.URL_REDIRECT = '';
+    </script>
+<script>
+    var dataLayer = window.dataLayer = window.dataLayer || [];
+    var date_ranges = {"modis_nrt": ["2020-11-01", "2026-02-10"],"modis_v6": ["2000-11-01", "2025-12-31"],"jpss1_viirs_c2_nrt": ["2019-12-04", "2026-02-10"],"jpss1_viirs_c2": ["2018-04-01", "2025-11-30"],"jpss2_viirs_c2_nrt": ["2024-01-17", "2026-02-10"],"suomi_viirs_c2_nrt": ["2019-09-01", "2026-02-10"],"suomi_viirs_c2_sp": ["2012-01-20", "2025-11-30"],"landsat_nrt": ["2022-06-20", "2026-02-09"],"goesr_abi_c1_nrt": ["2022-08-09", "2026-02-10"],"ba_monthly": ["2000-11-01", "2025-10-01"],"ba_monthly_viirs": ["2012-03-01", "2025-10-01"]};
+</script>
+<style>
+#spinner  {
+    text-align: center;
+    position: fixed; right: 0; bottom: 0;
+    background: linear-gradient(rgb(80, 2, 2), rgb(179, 18, 14),rgb(80, 2, 2));
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
+    margin:0 auto;
+    z-index: 650;
+}
+
+#spinner h1  {
+    position:relative; top:-13rem;
+    font-family: sans-serif;
+    font-size: 6rem;
+    font-weight: 600;
+    line-height:1.5rem;
+    color: rgb(240,240,240);
+}
+
+#spinner h1 span {
+    font-size:2rem;
+    font-weight:400;
+    color: rgba(240,240,240, 0.9);
+}
+
+#spinner>div {
+    border: 1.5rem solid rgba(255, 255, 255, 0.41);
+    border-radius: 50%;
+    border-top: 1.5rem solid  rgba(99, 2, 2, 0.4);
+    width: 15rem;
+    height: 15rem;
+    margin:0 auto;
+    margin-top:33vh;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@media screen and (max-width: 720px), screen and (max-height: 720px) {
+    #spinner>div {
+        border: 1rem solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        border-top: 1rem solid rgba(99, 2, 2, 0.4);
+        font-size:5rem;
+    }
+    #spinner h1 span {
+        font-size:2rem;
+    }
+}
+@media screen and (max-width: 420px) {
+    #spinner h1 span {
+        font-size:1.8rem;
+    }
+}
+</style>
+
+<body>
+    <div id="spinner">
+        <div></div>
+        <h1>FIRMS<span><br>Fire Information for Resource Management System</span></h1>                                        
+    </div>
+</body>
+<link rel=stylesheet href=/dist/firms_map.ae0958d3.css><script type=module src=/dist/firms_map.d082fe1b.js></script>
+<script src="https://fbm.earthdata.nasa.gov/for/firms/feedback.js"></script>
+
+    <!--googleon: all-->    
+    <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA&subagency=GSFC&dclink=true"></script>  
+</html>
