@@ -102,6 +102,8 @@ __Lab Assignments__
 
 {{< include spatial_data_models.qmd >}}
 
+{{< include data_creation_editing_topology.qmd >}}
+
 {{< include vector_tutorial.qmd >}}
 
 {{< include gps.qmd >}}

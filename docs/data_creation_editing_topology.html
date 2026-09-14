@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>spatial_data_models</title>
+  <title>data_creation_editing_topology</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -127,660 +127,311 @@
 
 
 <section>
-<section id="spatial-data-models-and-formats" class="title-slide slide level1 center">
-<h1>Spatial Data Models and Formats</h1>
+<section id="data-creation-editing-and-topology" class="title-slide slide level1 center">
+<h1>Data Creation, Editing, and Topology</h1>
 
 </section>
-<section id="data-overview" class="slide level2 center">
-<h2>Data Overview</h2>
-<p>What are Spatial Data?</p>
+<section id="goals" class="slide level2 smaller center">
+<h2>Goals</h2>
+<p>By the end of this exercise, you should be able to:</p>
+<ul>
+<li>Add a basemap with QuickMapServices (which, you should already be a ble to do)</li>
+<li>Digitize features from imagery</li>
+<li>Add and edit attribute values</li>
+<li>Use snapping to prevent topology errors</li>
+<li>Create new line and polygon layers in a GeoPackage</li>
+<li>Find and fix undershoots and overshoots in a line layer</li>
+</ul>
+</section>
+<section id="data" class="slide level2 center">
+<h2>Data</h2>
+<p>Download the <a href="https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/cal_poly_stream_network.gpkg">Cal Poly stream network GeoPackage</a>.</p>
 <div style="font-size:0.7em">
+<p>Save it somewhere stable, such as your course data folder. This GeoPackage already contains:</p>
 <ul>
-<li>“Data that describe the geographic and spatial aspects of phenomena.”</li>
-</ul>
-</div>
-<p>What are Metadata?</p>
-<div style="font-size:0.7em">
-<ul>
-<li>Data about the data</li>
-<li>Ex: units, what instruments were used, who/what/when/where/how the data was collected</li>
+<li><code>campus_boundary</code>: the Cal Poly campus boundary</li>
+<li><code>stream_network</code>: NHD stream lines clipped to campus, with two intentional topology errors</li>
 </ul>
 </div>
 </section>
-<section id="data-types" class="slide level2 center">
-<h2>Data Types</h2>
+<section id="about-geopackages-.gpkg" class="slide level2 smaller center">
+<h2>About GeoPackages (<code>.gpkg</code>)</h2>
 <ul>
-<li><p>Data can have different <strong>types</strong></p>
-<div style="font-size:0.7em">
-<ul>
-<li>Ex: How might “population” data differ from “county” data?</li>
+<li>A GeoPackage is a single-file spatial database.</li>
+<li>It can store multiple layers in one file.</li>
+<li>It can store points, lines, polygons, rasters, and non-spatial tables.</li>
+<li>It preserves coordinate reference system information.</li>
+<li>It supports longer field names than shapefiles.</li>
+<li>It is easier to move and submit than a folder full of shapefile sidecar files.</li>
+<li>QGIS can create, edit, and save directly to GeoPackages.</li>
 </ul>
-</div></li>
-<li><p>The most common types of data available for use in a GIS are:</p>
-<div style="font-size:0.7em">
-<ul>
-<li><p><strong>Boolean</strong> - True / False statements (think off/on switch)</p></li>
-<li><p><strong>String</strong> - Alphanumeric text denoted by quotes (e.g.&nbsp;“Lake Tahoe”)</p></li>
-<li><p><strong>Numerical</strong> - numerical values (e.g.&nbsp;latitude/longitude coordinates)</p>
-<div style="font-size:0.8em">
-<ul>
-<li><strong>Integers (ints)</strong> - numerical values (8 bit or 16 bit precision)</li>
-<li><strong>Floating Point (float)</strong> - negatives, decimal values (32 bit precision)</li>
-</ul>
-</div></li>
-</ul>
-</div></li>
-</ul>
-<aside class="notes">
-<p>Which of these dtypes do you think tends to be most memory intensive memory?</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="boolean-data" class="slide level2 center" style="font-size:0.7em">
-<h2>Boolean data</h2>
-<ul>
-<li>Boolean data is either True or False (Can also be thought of as 1 or 0)</li>
-<li>Theoretically, it can be stored as 1 bit, but in practice it is generally stored as a byte (8 bits) because hardware usually addresses hardware by byte, so writing individual bits is complex</li>
-</ul>
-<p><img data-src="img/bit_v_byte.png" style="width: 50%; height: auto;" alt="Diagram comparing a single bit with a byte, showing that one bit stores one binary value while one byte contains eight bits."></p>
-</section>
-<section id="string-data" class="slide level2 center" style="font-size:0.7em">
-<h2>String data</h2>
-<ul>
-<li>String data contains characters.</li>
-<li>Strings can be stored with different encodings. The more characters exist in the encoding set, the more memory the characters require.</li>
-</ul>
-<p><img data-src="img/utf8.png" style="width: 50%; height: auto;" alt="Image showing examples of string encoding."></p>
-</section>
-<section id="numerical-data" class="slide level2 center" style="font-size:0.6em">
-<h2>Numerical Data</h2>
-<div class="r-stack">
-<div class="fragment absolute fade-out" data-fragment-index="1" style="font-size:0.7em">
-<p><span style="font-size:1.5em">Integer</span></p>
-<table style="width: 100%; border-collapse: collapse;">
-<thead>
-<tr>
-<th style="text-align: left; width: 22%;">
-Integer Type
-</th>
-<th style="text-align: right; width: 10%;">
-Bytes
-</th>
-<th style="text-align: left; width: 68%;">
-Range of Values Stored
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code>int8</code>
-</td>
-<td style="text-align: right;">
-1
-</td>
-<td>
--128 to 127
-</td>
-</tr>
-<tr>
-<td>
-<code>uint8</code>
-</td>
-<td style="text-align: right;">
-1
-</td>
-<td>
-0 to 255
-</td>
-</tr>
-<tr>
-<td>
-<code>int16</code>
-</td>
-<td style="text-align: right;">
-2
-</td>
-<td>
--32,768 to 32,767
-</td>
-</tr>
-<tr>
-<td>
-<code>uint16</code>
-</td>
-<td style="text-align: right;">
-2
-</td>
-<td>
-0 to 65,535
-</td>
-</tr>
-<tr>
-<td>
-<code>int32</code>
-</td>
-<td style="text-align: right;">
-4
-</td>
-<td>
--2,147,483,648 to 2,147,483,647
-</td>
-</tr>
-<tr>
-<td>
-<code>uint32</code>
-</td>
-<td style="text-align: right;">
-4
-</td>
-<td>
-0 to 4,294,967,295
-</td>
-</tr>
-<tr>
-<td>
-<code>int64</code>
-</td>
-<td style="text-align: right;">
-8
-</td>
-<td>
--9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-</td>
-</tr>
-<tr>
-<td>
-<code>uint64</code>
-</td>
-<td style="text-align: right;">
-8
-</td>
-<td>
-0 to 18,446,744,073,709,551,615
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
-<p><span style="font-size:1.5em">Floating Point</span></p>
-<table style="width: 100%; border-collapse: collapse;">
-<thead>
-<tr>
-<th style="text-align: left; width: 22%;">
-Data Type
-</th>
-<th style="text-align: right; width: 10%;">
-Bytes
-</th>
-<th style="text-align: left; width: 68%;">
-Approximate Range of Values Stored
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code>float32</code>
-</td>
-<td style="text-align: right;">
-4
-</td>
-<td>
-about 1.2 x 10<sup>-38</sup> to 3.4 x 10<sup>38</sup> (about 7 decimal digits precision)
-</td>
-</tr>
-<tr>
-<td>
-<code>float64</code>
-</td>
-<td style="text-align: right;">
-8
-</td>
-<td>
-about 2.2 x 10<sup>-308</sup> to 1.8 x 10<sup>308</sup> (about 15 to 16 decimal digits precision)
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="continuous-vs-discrete-data" class="slide level2 smaller center">
-<h2>Continuous vs Discrete Data</h2>
-<div class="r-stack">
-<div class="fragment absolute fade-out" data-fragment-index="1" style="">
-<ul>
-<li><strong>Continuous</strong> data consists of numerical values that can be measured with an arbitrary level of precision</li>
-<li><strong>Discrete</strong> data consists of a limited number of possible values</li>
-</ul>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
-<ul>
-<li><strong>Continuous</strong> data consists of numerical values that can be measured with an arbitrary level of precision
-<ul>
-<li>e.g., Distance, temperature, elevation, reflectance</li>
-<li>i.e.&nbsp;a distance can be 1 km, 0.5 km, or 0.00000000000001 km</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
-<ul>
-<li><strong>Discrete</strong> data consists of a limited number of possible values
-<ul>
-<li>Count data</li>
-<li>Number trees in a sample plot, number of houses on a block</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="levels-of-measurement" class="slide level2 center">
-<h2>Levels of Measurement</h2>
-<div class="r-stack">
-<div class="fragment absolute fade-out" data-fragment-index="1" style="font-size:0.7em">
-<ul>
-<li><strong>Nominal</strong> - Names or identifiers of objects</li>
-<li><strong>Ordinal</strong> - Ranked categories based on a measure</li>
-<li><strong>Ratio</strong> - have a 0 value that indicates absence of the quantity of interest</li>
-<li><strong>Interval</strong> - have a regular scale, but not a meaningful 0 value</li>
-</ul>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="font-size:0.7em">
-<p><span style="font-size:1.1em"><strong>Nominal and ordinal data are types of <em>categorical</em> data</strong></span></p>
-<ul>
-<li><strong>Nominal</strong> - Names or identifiers of objects</li>
-</ul>
-<p><span style="display:block; margin-left:1.5em;">e.g.&nbsp;Land Cover: “Oak Woodland”, “Grassland”, “Forest”, etc…</span></p>
-<ul>
-<li><strong>Ordinal</strong> - Ranked categories based on a measure</li>
-</ul>
-<p><span style="display:block; margin-left:1.5em;">e.g.&nbsp;Fire Hazard: “Low”, “Medium”, “High”</span></p>
-</div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="font-size:0.6em">
-<p><span style="font-size:1.1em"><strong>Ratio and interval data can be <em>continuous</em> or <em>discrete</em></strong></span></p>
-<p><strong>Ratio</strong> - Multiplication makes sense, e.g.&nbsp;200 K is twice as hot as 100 K <span class="math display">\[
-2 \times 100 \mathrm{K} = 200 \mathrm{K}
-\]</span></p>
-<p><strong>Interval</strong> - Multiplication <strong>does not</strong> make sense, e.g.&nbsp;200°C is <strong>not</strong> twice as hot as 100°C <span class="math display">\[
-2 \times 100°\mathrm{C} \neq 200°\mathrm{C}
-\]</span> <img data-src="img/Kelvin_og_Celsius_temperaturskalaer.png" style="display: block; margin: 0 auto; width: 45%; height: auto;"></p>
-<div class="attribution" style="font-size:0.4em; width:45%; margin:0 auto; text-align:left;">
-<p>Image Source: <a href="https://upload.wikimedia.org/wikipedia/commons/c/3/Kelvin_og_Celsius_temperaturskalaer.png">wikimedia</a></p>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Which of these do you think would be discrete? Which are Continuos?</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="geospatial-data-types-vector-vs.-raster" class="slide level2 center" style="font-size:0.7em">
-<h2>Geospatial Data Types: Vector vs.&nbsp;Raster</h2>
-<div class="figure" style="text-align: center; margin: 0 auto;">
-<p><img data-src="img/vector_vs_raster.png" style="height: 500px;"></p>
-</div>
-</section>
-<section id="vector-data" class="slide level2 center">
-<h2>Vector Data</h2>
-<div class="r-stack">
-<div class="fragment fade-in-then-out">
-<div class="columns">
-<div class="column" style="width:40%;">
-<div style="font-size:0.7em">
-<ul>
-<li>Can be described by points, lines, polygons
-<ul>
-<li>Ex: roads, rivers, train tracks, hiking trails, sidewalks, building footprints, county boundaries</li>
-</ul></li>
-<li>NOT images, do NOT contain any pixels</li>
-<li>The kind of data we’ve been working with so far</li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="figure" style="text-align: right; margin: 0 auto;">
-<p><img data-src="img/vector_example.png" style="height: 500px;"></p>
-</div>
-</div></div>
-</div>
-<div class="fragment fade-in-then-out">
-<div class="columns">
-<div class="column" style="width:40%;">
-<div style="font-size:0.7em">
-<ul>
-<li>Often stored as tabular data files with geographic metadata</li>
-<li>Points, lines, and polygons represent the spatial features</li>
-<li>Topology describes the connectivity, area definition, and contiguity of interrelated points, lines, and polygon</li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="figure" style="text-align: right; margin: 0 auto;">
-<p><img data-src="img/vector_table.png" style="height: 500px;"></p>
-</div>
-</div></div>
-</div>
-<div class="fragment fade-in-then-out">
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><strong>Points</strong></p>
-<div style="font-size:0.7em">
-<ul>
-<li>Zero-dimensional objects containing a <strong>single coordinate pair.</strong>
-<ul>
-<li>Ex: Lat, Lon (sometimes elevation) coordinates denoting a city, building, address, etc</li>
-</ul></li>
-<li>X,Y (,Z) coordinates on a Cartesian plane (or Euclidean space)</li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="figure" style="text-align: right; margin: 0 auto;">
-<p><img data-src="img/vector_example.png" style="height: 500px;"></p>
-</div>
-</div></div>
-</div>
-<div class="fragment fade-in-then-out">
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><strong>Lines</strong></p>
-<div style="font-size:0.7em">
-<ul>
-<li>One-dimensional objects composed of multiple, explicitly connected points.</li>
-<li>Lines have the property of length.</li>
-<li>Also called an “arc.”</li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="figure" style="text-align: right; margin: 0 auto;">
-<p><img data-src="img/vector_example.png" style="height: 500px;"></p>
-</div>
-</div></div>
-</div>
-<div class="fragment fade-in">
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><strong>Polygons</strong></p>
-<div style="font-size:0.7em">
-<ul>
-<li>Two-dimensional features created by multiple lines to create a “closed” feature.</li>
-<li>First point on the first line segment is the same as the last point on the last line.</li>
-<li>Can represent city boundaries, buildings, lakes, soils, etc.</li>
-<li>Have the properties of area and perimeter.</li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="figure" style="text-align: right; margin: 0 auto;">
-<p><img data-src="img/vector_example.png" style="height: 500px;"></p>
-</div>
-</div></div>
-</div>
-</div>
-</section>
-<section id="structuring-vector-data" class="slide level2 center">
-<h2>Structuring Vector Data</h2>
-<div class="r-stack">
-<div class="fragment fade-in-then-out">
-<ul>
-<li>There are several ways to define relationships between vector data:
-<ul>
-<li><p>Feature based: The <strong>“Spaghetti Model”</strong></p>
-<div style="font-size:0.8em">
-<ul>
-<li>Each feature is a long string of coordinates</li>
-<li>No relationships between features</li>
-</ul>
-</div></li>
-<li><p>Structured: The <strong>“Topological Model”</strong></p>
-<div style="font-size:0.8em">
-<ul>
-<li>Enforced relationships between features</li>
-</ul>
-</div></li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment fade-in">
-<p><img data-src="img/spaghetti_vs_topo.png" style="height: 600px;"></p>
-</div>
-</div>
-</section>
-<section id="some-common-vector-file-formats" class="slide level2 center" style="font-size:0.4em">
-<h2>Some Common Vector File Formats</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 21%">
-<col style="width: 23%">
-<col style="width: 33%">
-<col style="width: 9%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Format</th>
-<th>File Extension</th>
-<th>Stores Topology</th>
-<th>Binary / Human Readable</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Shapefile</td>
-<td>.shp (+ .shx, .dbf, .prj)</td>
-<td>No</td>
-<td>Binary</td>
-<td>Common, but aging</td>
-</tr>
-<tr class="even">
-<td>GeoJSON</td>
-<td>.geojson, .json</td>
-<td>No</td>
-<td>Human Readable</td>
-<td>Web-friendly, text-based</td>
-</tr>
-<tr class="odd">
-<td>GeoPackage</td>
-<td>.gpkg</td>
-<td>No</td>
-<td>Binary</td>
-<td>Modern SQLite-based format</td>
-</tr>
-<tr class="even">
-<td>KML/KMZ</td>
-<td>.kml, .kmz</td>
-<td>No</td>
-<td>Human Readable (.kml) / Binary (.kmz)</td>
-<td>Google Earth format</td>
-</tr>
-<tr class="odd">
-<td>TopoJSON</td>
-<td>.topojson</td>
-<td>Yes</td>
-<td>Human Readable</td>
-<td>json, Encodes topology</td>
-</tr>
-<tr class="even">
-<td>PostGIS</td>
-<td>(database)</td>
-<td>Yes (optional)</td>
-<td>Binary</td>
-<td>PostgreSQL spatial extension</td>
-</tr>
-<tr class="odd">
-<td>File Geodatabase</td>
-<td>.gdb</td>
-<td>Yes (optional)</td>
-<td>Binary</td>
-<td>ESRI proprietary format, annoying to use in other software</td>
-</tr>
-<tr class="even">
-<td>GeoParquet</td>
-<td>.parquet</td>
-<td>No</td>
-<td>Binary</td>
-<td>Column-oriented, efficient</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="how-to-open-gdb-in-qgis" class="slide level2 smaller center">
-<h2>How to open gdb in QGIS</h2>
+<section id="exercise-overview" class="slide level2 smaller center">
+<h2>Exercise Overview</h2>
+<p>Today we will build a small campus editing dataset:</p>
 <ol type="1">
-<li><p>Download 3D Hydrography Program data for the CONUS</p>
-<p><a href="https://prd-tnm.s3.amazonaws.com/StagedProducts/Hydrography/3DHP/Annual/GDB/3dhp_all_GDB_FY25_CONUS_20250313/3dhp_all_CONUS_20250313_GDB.zip">gdb</a><br>
-<a href="https://thor-f5.er.usgs.gov/ngtoc/metadata/waf/hydrography/3dhp/annual/3dhp_all_CONUS_20250313_GDB.xml">metadata</a>(Optional)</p></li>
-<li><p>Unzip the zip. (Unless you plan to use it later, you can just unzip it into the Downloads folder where the zip sits)</p></li>
-<li><p>Press <code>ctrl-shift-v</code> (<code>cmd-shift-v</code> on Mac)</p>
-<ol type="a">
-<li>At the top, under “source type”, check the directory box.<br>
-</li>
-<li>Browse for and select <code>3dhp_all_CONUS_20250313_GDB.gdb</code> where you unzipped it.</li>
-<li>Click Add</li>
-</ol></li>
+<li>Open <code>cal_poly_stream_network.gpkg</code></li>
+<li>Add satellite imagery with QuickMapServices</li>
+<li>Digitize five buildings as polygons</li>
+<li>Digitize walking paths between those buildings as lines</li>
+<li>Edit attributes for each new feature</li>
+<li>Save the new layers into the same GeoPackage</li>
+<li>Find and fix topology errors in <code>stream_network</code></li>
 </ol>
 </section>
-<section id="discussion" class="slide level2 center">
-<h2>Discussion</h2>
-<div>
-<div style="font-size:0.7em">
+<section id="step-1-open-the-geopackage" class="slide level2 smaller center">
+<h2>Step 1: Open the GeoPackage</h2>
+<ol type="1">
+<li>Open QGIS.</li>
+<li>Press <code>Ctrl+Shift+V</code> (<code>Cmd+Shift+V</code> on Mac) to open the Data Source Manager.</li>
+<li>Under <em>Source Type</em>, select <em>File</em>.</li>
+<li>Click the browse button and select <code>cal_poly_stream_network.gpkg</code>.</li>
+<li>Click <em>Add</em>.</li>
+<li>Add both layers:
 <ul>
-<li class="fragment"><p>What vector type (point, line, or polygon) best represents the following features:</p>
-<div>
-<div style="font-size:0.8em">
-<ul>
-<li class="fragment">state boundaries,</li>
-<li class="fragment">telephone poles,</li>
-<li class="fragment">buildings,</li>
-<li class="fragment">cities,</li>
-<li class="fragment">stream networks,</li>
-<li class="fragment">mountain peaks,</li>
-<li class="fragment">soil types,</li>
-<li class="fragment">flight tracks?</li>
-</ul>
+<li><code>campus_boundary</code></li>
+<li><code>stream_network</code></li>
+</ul></li>
+<li>Set the project CRS to <code>EPSG:26910</code>.</li>
+</ol>
+<div style="font-size:0.6em">
+<p><code>EPSG:26910</code> is NAD83 / UTM zone 10N, a projected coordinate system with meter units.</p>
 </div>
-</div></li>
-<li class="fragment"><p>Which of these features can be represented by multiple vector types?</p></li>
-<li class="fragment"><p>What conditions might lead you choose one vector type over another?</p></li>
-</ul>
+<div style="font-size:0.55em">
+<p><a href="https://spacedaily.com/s-the-united-states-is-replacing-every-official-latitude-longitude-and-height-it-publishes-existing-coordinates-will-move-by-as-much-as-four-meters-and-the-million-survey-marks-in-the-ground-will-no/" title="Article explaining that the National Geodetic Survey is replacing NAD83 and NAVD88, so published coordinates can shift even when physical locations do not move.">Oh! Speaking of NAD83: why official U.S. coordinates are changing</a></p>
+<div class="attribution" style="font-size:0.8em">
+<p>Caption: Replacing a datum changes the reference frame used to describe locations, so latitude, longitude, and height values can change even when the ground stays put. Source: Space Daily, published September 10, 2026.</p>
 </div>
 </div>
 </section>
-<section id="raster-data" class="slide level2 center">
-<h2>Raster Data</h2>
-
-<img data-src="img/amazon1.gif" class="r-stretch"></section>
-<section id="raster-data-1" class="slide level2 center">
-<h2>Raster Data</h2>
-<div class="r-stack">
-<div class="fragment fade-in-then-out">
-<div class="columns">
-<div class="column" style="width:40%;">
-<div style="font-size:0.7em">
-<ul>
-<li>Images, stacks of images (satellite / drone image)
-<ul>
-<li><em>Rastrum</em>, Latin meaning “scraper” –&gt; <em>Raster</em>, German meaning “screen”</li>
-</ul></li>
-<li>Grids of numbers</li>
-<li>Things with pixels!</li>
-</ul>
+<section id="step-2-add-satellite-imagery" class="slide level2 columns center">
+<h2>Step 2: Add Satellite Imagery</h2>
+<div class="column" style="width:50%;">
+<div style="font-size:0.55em">
+<ol type="1">
+<li>Click <em>Plugins</em> –&gt; <em>Manage and Install Plugins</em>.</li>
+<li>Search for <em>QuickMapServices</em>.</li>
+<li>Install the plugin if needed.</li>
+<li>Use the <em>Search QMS</em> bar to search for satellite imagery.</li>
+<li>Add an imagery layer such as ESRI Satellite or Bing Satellite.</li>
+<li>Zoom to the campus boundary.</li>
+</ol>
 </div>
 </div><div class="column" style="width:50%;">
-<p><img data-src="img/raster_example2.png" width="600"></p>
-</div></div>
-</div>
-<div class="fragment fade-in-then-out">
-<div class="columns">
-<div class="column" style="width:40%;">
-<div style="font-size:0.7em">
+<p><img data-src="img/search_qms.png" height="550"></p>
+</div></section>
+<section id="step-3-turn-on-snapping" class="slide level2 smaller center">
+<h2>Step 3: Turn on Snapping</h2>
+<p>Before digitizing:</p>
+<ol type="1">
+<li>Open <em>Project</em> –&gt; <em>Snapping Options</em>.</li>
+<li>Turn snapping on.</li>
+<li>Set snapping to:
 <ul>
-<li>Images, stacks of images (satellite / drone image)
-<ul>
-<li><em>Rastrum</em>, Latin meaning “scraper” –&gt; <em>Raster</em>, German meaning “screen”</li>
+<li><code>All layers</code></li>
+<li><code>Vertex and segment</code></li>
+<li>tolerance around <code>10 px</code></li>
 </ul></li>
-<li>Grids of numbers</li>
-<li>Things with pixels!</li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<p><img data-src="img/plain_dem.png" width="600"></p>
-</div></div>
-</div>
-<div class="fragment fade-in">
-<div class="columns">
-<div class="column" style="width:40%;">
+<li>Turn on topological editing if available.</li>
+</ol>
 <div style="font-size:0.7em">
-<ul>
-<li>The <strong>spatial resolution</strong> of a raster dataset represents a measure of the precision or detail of the displayed information.
-<ul>
-<li>a.k.a. pixel size</li>
-<li>Ex: 1mm, 1cm, or 1m</li>
-</ul></li>
-<li>So when you hear that a camera has N megapixels - this just means it has many millions of pixels</li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="figure" style="fig-align: center;">
-<p><img data-src="img/raster_example3.png" style="background-color:white;"></p>
-</div>
-</div></div>
-</div>
+<p>Snapping helps line endpoints and polygon boundaries connect exactly, not just visually.</p>
 </div>
 </section>
-<section id="spatial-resolution" class="slide level2 center">
-<h2>Spatial Resolution</h2>
-<div class="r-stack">
-<div class="fragment fade-in-then-out">
+<section id="step-4-create-a-buildings-layer" class="slide level2 smaller center">
+<h2>Step 4: Create a Buildings Layer</h2>
+<p>Create a new layer inside <code>cal_poly_stream_network.gpkg</code>.</p>
+<ol type="1">
+<li>Go to <em>Layer</em> –&gt; <em>Create Layer</em> –&gt; <em>New GeoPackage Layer</em>.</li>
+<li>For <em>Database</em>, browse to <code>cal_poly_stream_network.gpkg</code>.</li>
+<li>Set <em>Table name</em> to <code>buildings</code>.</li>
+<li>Set <em>Geometry type</em> to <code>Polygon</code>.</li>
+<li>Set CRS to <code>EPSG:26910</code>.</li>
+<li>Add fields:</li>
+</ol>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Field name</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bldg_name</code></td>
+<td>Text</td>
+<td>Library</td>
+</tr>
+<tr class="even">
+<td><code>bldg_use</code></td>
+<td>Text</td>
+<td>academic</td>
+</tr>
+<tr class="odd">
+<td><code>stories</code></td>
+<td>Whole number</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-5-digitize-5-buildings" class="slide level2 smaller center">
+<h2>Step 5: Digitize 5 Buildings</h2>
+<ol type="1">
+<li>Select the <code>buildings</code> layer.</li>
+<li>Toggle editing on.</li>
+<li>Use <em>Add Polygon Feature</em>.</li>
+<li>Trace five building footprints from the satellite imagery.</li>
+<li>Fill in attributes for each building.</li>
+<li>Save edits.</li>
+</ol>
 <div style="font-size:0.7em">
-<p>The <strong>spatial resolution</strong> of a raster dataset represents a measure of the precision or detail of the displayed information.</p>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/spatial_resolution.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
-<div class="fragment fade-in">
-<div style="font-size:0.7em">
-<p>The <strong>spatial resolution</strong> of a raster dataset represents a measure of the precision or detail of the displayed information.</p>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/spatial_resolution2.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
+<p>Choose buildings that are close enough to connect with walking paths in the next step.</p>
 </div>
 </section>
-<section id="raster-file-formats" class="slide level2 center">
-<h2>Raster File Formats</h2>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
-<p><strong>TIF (Sometimes TIFF)</strong></p>
+<section id="step-6-create-a-walking-paths-layer" class="slide level2 smaller center">
+<h2>Step 6: Create a Walking Paths Layer</h2>
+<p>Create another new layer inside the same GeoPackage.</p>
+<ol type="1">
+<li>Go to <em>Layer</em> –&gt; <em>Create Layer</em> –&gt; <em>New GeoPackage Layer</em>.</li>
+<li>Use <code>cal_poly_stream_network.gpkg</code> as the database.</li>
+<li>Set <em>Table name</em> to <code>walking_paths</code>.</li>
+<li>Set <em>Geometry type</em> to <code>Line</code>.</li>
+<li>Set CRS to <code>EPSG:26910</code>.</li>
+<li>Add fields:</li>
+</ol>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Field name</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>path_name</code></td>
+<td>Text</td>
+<td>path_01</td>
+</tr>
+<tr class="even">
+<td><code>surface</code></td>
+<td>Text</td>
+<td>concrete</td>
+</tr>
+<tr class="odd">
+<td><code>accessible</code></td>
+<td>Text</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-7-digitize-walking-paths" class="slide level2 smaller center">
+<h2>Step 7: Digitize Walking Paths</h2>
+<ol type="1">
+<li>Select <code>walking_paths</code>.</li>
+<li>Toggle editing on.</li>
+<li>Use <em>Add Line Feature</em>.</li>
+<li>Digitize walking paths connecting your five buildings.</li>
+<li>Snap path endpoints to building edges or nearby path vertices.</li>
+<li>Add attribute values for each path.</li>
+<li>Save edits.</li>
+</ol>
+<div style="font-size:0.7em">
+<p>Try to create a connected mini-network rather than five unrelated line segments.</p>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
-<p><strong>COG</strong></p>
+</section>
+<section id="step-8-attribute-editing-check" class="slide level2 smaller center">
+<h2>Step 8: Attribute Editing Check</h2>
+<p>Open the attribute tables for <code>buildings</code> and <code>walking_paths</code>.</p>
+<p>Check that:</p>
+<ul>
+<li>Every feature has attribute values.</li>
+<li><code>stories</code> contains numbers, not text.</li>
+<li><code>surface</code> uses consistent categories.</li>
+<li><code>accessible</code> uses consistent values, such as <code>yes</code> and <code>no</code>.</li>
+</ul>
+<p>Then edit at least two attribute values using the attribute table.</p>
+</section>
+<section id="step-9-confirm-everything-is-in-the-geopackage" class="slide level2 smaller center">
+<h2>Step 9: Confirm Everything Is in the GeoPackage</h2>
+<p>In the Browser panel, expand <code>cal_poly_stream_network.gpkg</code>.</p>
+<p>You should now see:</p>
+<ul>
+<li><code>campus_boundary</code></li>
+<li><code>stream_network</code></li>
+<li><code>buildings</code></li>
+<li><code>walking_paths</code></li>
+</ul>
+<div style="font-size:0.7em">
+<p>The goal is one portable file containing the original data plus the layers you created.</p>
 </div>
-<div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
-<p><strong>VRT</strong></p>
+</section>
+<section id="step-10-find-stream-topology-errors" class="slide level2 smaller center">
+<h2>Step 10: Find Stream Topology Errors</h2>
+<p>The <code>stream_network</code> layer contains intentional line topology errors:</p>
+<ul>
+<li>one undershoot</li>
+<li>one overshoot</li>
+</ul>
+<p>Use:</p>
+<ul>
+<li>snapping</li>
+<li>vertex editing</li>
+<li>the Topology Checker plugin</li>
+<li>visual inspection at stream junctions</li>
+</ul>
+<p>to find the bad endpoints.</p>
+<div style="font-size:0.65em">
+<p>Some real stream endpoints occur at headwaters or where streams leave the campus boundary. The errors you are looking for are near stream junctions.</p>
 </div>
+</section>
+<section id="topology-checker-setup" class="slide level2 smaller center">
+<h2>Topology Checker Setup</h2>
+<ol type="1">
+<li>Click <em>Plugins</em> –&gt; <em>Manage and Install Plugins</em>.</li>
+<li>Search for <em>Topology Checker</em>.</li>
+<li>Enable it if needed.</li>
+<li>Open the Topology Checker panel: <img data-src="img/mActionTopologyChecker.png"></li>
+<li>Click the configure button: <img data-src="img/mActionOptions.png"></li>
+<li>Add a rule for <code>stream_network</code>:
+<ul>
+<li><code>must not have dangles</code></li>
+</ul></li>
+<li>Click <em>Validate All</em>: <img data-src="img/mActionValidateAll.png"></li>
+</ol>
+</section>
+<section id="fix-the-stream-network" class="slide level2 smaller center">
+<h2>Fix the Stream Network</h2>
+<p>Use the Vertex Tool to repair the errors.</p>
+<ul>
+<li>For the undershoot: move the dangling endpoint until it snaps to the junction.</li>
+<li>For the overshoot: move or delete the extra endpoint so the line ends at the junction.</li>
+<li>Save edits after fixing each error.</li>
+<li>Run Topology Checker again.</li>
+</ul>
+<div style="font-size:0.7em">
+<p>The goal is not just to make the map look right. The stream endpoints should actually connect.</p>
+</div>
+</section>
+<section id="deliverable" class="slide level2 smaller center">
+<h2>Deliverable</h2>
+<p>Submit your edited <code>cal_poly_stream_network.gpkg</code>.</p>
+<p>It should contain:</p>
+<ul>
+<li><code>campus_boundary</code></li>
+<li><code>stream_network</code> with fixed topology</li>
+<li><code>buildings</code> with five digitized polygons</li>
+<li><code>walking_paths</code> connecting the buildings</li>
+</ul>
+<p>Also submit brief answers:</p>
+<ol type="1">
+<li>What topology errors did you find?</li>
+<li>Which editing tools did you use to fix them?</li>
+<li>Why can two lines that look connected still fail a topology check?</li>
+</ol>
 
 
 </section></section>
