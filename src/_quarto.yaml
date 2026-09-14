@@ -32,6 +32,7 @@ project:
     - w2_house_keeping.qmd
     - projections_etc.qmd
     - spatial_data_models.qmd
+    - data_creation_editing_topology.qmd
     - vector_tutorial.qmd
     - dem_slides.qmd
     - finding_gis_data.qmd

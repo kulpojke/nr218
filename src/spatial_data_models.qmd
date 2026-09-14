@@ -490,65 +490,30 @@ The **spatial resolution** of a raster dataset represents a measure of the preci
 :::
 :::
 
-## 
+## Raster File Formats
 
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
+__TIF (Sometimes TIFF)__
 
-
-
-
-
-
-
-
-
-
-
-
-## Stop here, below is incomplete
-
-## Spectral Resolution
-
-::: {.r-stack}
-::: {.fragment .fade-in-then-out}
-![](img/spectrumZoomed.png)
-
-::: {.attribution style="font-size:0.4em"}
-Image Source: [Neon](https://www.neonscience.org/resources/learning-hub/tutorials/hyper-spec-intro)
 :::
+
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
+__COG__
+:::
+
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
+__VRT__
+
 :::
 
 
-::: {.fragment .fade-in-then-out}
-![](img/FWHM2.png)
-
-::: {.attribution style="font-size:0.4em"}
-Image Source: [Neon](https://www.neonscience.org/resources/learning-hub/tutorials/hyper-spec-intro)
-:::
-:::
 
 
-::: {.fragment .fade-in-then-out}
-![](img/RGB-bands-raster-stack.jpg)
 
-::: {.attribution style="font-size:0.4em"}
-Image Source: [Neon](https://www.neonscience.org/resources/learning-hub/tutorials/hyper-spec-intro)
-:::
-:::
 
-::: {.fragment .fade-in-then-out}
-![](img/landsat_v_sentinel-2-1.png)
 
-::: {.attribution style="font-size:0.4em"}
-Image Source: [NASA](https://landsat.gsfc.nasa.gov/article/sentinel-2a-launches-our-compliments-our-complements/)
-:::
-:::
 
-::: {.fragment .fade-in-then-out}
-![](img/Hyperspectral_image_data_cube.jpg){style="width: 70%; max-width: 95%; max-height: 70vh;"}
 
-::: {.attribution style="font-size:0.4em"}
-Image Source: University of Texas at Austin, Center for Space Research via [ESA](https://www.esa.int/ESA_Multimedia/Images/2014/04/Hyperspectral_image_data_cube)
-:::
-:::
 
-:::
+

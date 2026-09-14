@@ -4177,5 +4177,124 @@
     "title": "",
     "section": "Exercise",
     "text": "Exercise\n\n\nDrain scavenger hunt\n\nWork in pairs and find storm drains around campus\nFor each drain, take one clear photo\nUse your phone to record the latitude and longitude in decimal degrees\nFor each drain, enter the following into the Google Form:\n\nlatitude\nlongitude\napproximate size in cm\nshape: round, rectangular, or other\nphoto\n\n\n\n\n\nAfter the class has submitted data:\n\nopen the linked Google Sheet\ndownload the sheet as a CSV\nopen QGIS\nadd the CSV as a delimited text layer\nset X field = longitude and Y field = latitude\nset the CRS to WGS84, EPSG:4326\ninspect the points and fix any obvious coordinate errors\n\n\n\n\n\nAdd photo locations from EXIF data:\n\ndownload the original uploaded photos from Google Drive\nin QGIS, open the Processing Toolbox\nsearch for and run Import geotagged photos\nuse the downloaded photo folder as the input folder\ncreate a point layer from the photo EXIF coordinates\ncompare the EXIF photo points to the manually entered CSV points\nnote which photos are missing location data or plot in the wrong place"
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#goals",
+    "href": "data_creation_editing_topology.html#goals",
+    "title": "",
+    "section": "Goals",
+    "text": "Goals\nBy the end of this exercise, you should be able to:\n\nAdd a basemap with QuickMapServices\nCreate new line and polygon layers in a GeoPackage\nDigitize features from imagery\nAdd and edit attribute values\nUse snapping to prevent topology errors\nFind and fix undershoots and overshoots in a stream network"
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#data",
+    "href": "data_creation_editing_topology.html#data",
+    "title": "",
+    "section": "Data",
+    "text": "Data\nDownload the Cal Poly stream network GeoPackage.\n\nSave it somewhere stable, such as your course data folder. This GeoPackage already contains:\n\ncampus_boundary: the Cal Poly campus boundary\nstream_network: NHD stream lines clipped to campus, with two intentional topology errors"
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#about-geopackages-.gpkg",
+    "href": "data_creation_editing_topology.html#about-geopackages-.gpkg",
+    "title": "",
+    "section": "About GeoPackages (.gpkg)",
+    "text": "About GeoPackages (.gpkg)\n\nA GeoPackage is a single-file spatial database.\nIt can store multiple layers in one file.\nIt can store points, lines, polygons, rasters, and non-spatial tables.\nIt preserves coordinate reference system information.\nIt supports longer field names than shapefiles.\nIt is easier to move and submit than a folder full of shapefile sidecar files.\nQGIS can create, edit, and save directly to GeoPackages."
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#exercise-overview",
+    "href": "data_creation_editing_topology.html#exercise-overview",
+    "title": "",
+    "section": "Exercise Overview",
+    "text": "Exercise Overview\nToday you will build a small campus editing dataset:\n\nOpen cal_poly_stream_network.gpkg\nAdd satellite imagery with QuickMapServices\nDigitize five buildings as polygons\nDigitize walking paths between those buildings as lines\nEdit attributes for each new feature\nSave the new layers into the same GeoPackage\nFind and fix topology errors in stream_network"
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#step-1-open-the-geopackage",
+    "href": "data_creation_editing_topology.html#step-1-open-the-geopackage",
+    "title": "",
+    "section": "Step 1: Open the GeoPackage",
+    "text": "Step 1: Open the GeoPackage\n\nOpen QGIS.\nDrag cal_poly_stream_network.gpkg into the QGIS map window.\nAdd both layers:\n\ncampus_boundary\nstream_network\n\nSet the project CRS to EPSG:26910.\n\n\nEPSG:26910 is NAD83 / UTM zone 10N, a projected coordinate system with meter units."
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#step-2-add-satellite-imagery",
+    "href": "data_creation_editing_topology.html#step-2-add-satellite-imagery",
+    "title": "",
+    "section": "Step 2: Add Satellite Imagery",
+    "text": "Step 2: Add Satellite Imagery\n\n\n\nClick Plugins –&gt; Manage and Install Plugins.\nSearch for QuickMapServices.\nInstall the plugin if needed.\nUse the Search QMS bar to search for satellite imagery.\nAdd an imagery layer such as ESRI Satellite or Bing Satellite.\nZoom to the campus boundary."
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#step-3-turn-on-snapping",
+    "href": "data_creation_editing_topology.html#step-3-turn-on-snapping",
+    "title": "",
+    "section": "Step 3: Turn on Snapping",
+    "text": "Step 3: Turn on Snapping\nBefore digitizing:\n\nOpen Project –&gt; Snapping Options.\nTurn snapping on.\nSet snapping to:\n\nAll layers\nVertex and segment\ntolerance around 10 px\n\nTurn on topological editing if available.\n\n\nSnapping helps line endpoints and polygon boundaries connect exactly, not just visually."
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#step-4-create-a-buildings-layer",
+    "href": "data_creation_editing_topology.html#step-4-create-a-buildings-layer",
+    "title": "",
+    "section": "Step 4: Create a Buildings Layer",
+    "text": "Step 4: Create a Buildings Layer\nCreate a new layer inside cal_poly_stream_network.gpkg.\n\nGo to Layer –&gt; Create Layer –&gt; New GeoPackage Layer.\nFor Database, browse to cal_poly_stream_network.gpkg.\nSet Table name to buildings.\nSet Geometry type to Polygon.\nSet CRS to EPSG:26910.\nAdd fields:\n\n\n\n\nField name\nType\nExample\n\n\n\n\nbldg_name\nText\nLibrary\n\n\nbldg_use\nText\nacademic\n\n\nstories\nWhole number\n3"
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#step-5-digitize-5-buildings",
+    "href": "data_creation_editing_topology.html#step-5-digitize-5-buildings",
+    "title": "",
+    "section": "Step 5: Digitize 5 Buildings",
+    "text": "Step 5: Digitize 5 Buildings\n\nSelect the buildings layer.\nToggle editing on.\nUse Add Polygon Feature.\nTrace five building footprints from the satellite imagery.\nFill in attributes for each building.\nSave edits.\n\n\nChoose buildings that are close enough to connect with walking paths in the next step."
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#step-6-create-a-walking-paths-layer",
+    "href": "data_creation_editing_topology.html#step-6-create-a-walking-paths-layer",
+    "title": "",
+    "section": "Step 6: Create a Walking Paths Layer",
+    "text": "Step 6: Create a Walking Paths Layer\nCreate another new layer inside the same GeoPackage.\n\nGo to Layer –&gt; Create Layer –&gt; New GeoPackage Layer.\nUse cal_poly_stream_network.gpkg as the database.\nSet Table name to walking_paths.\nSet Geometry type to Line.\nSet CRS to EPSG:26910.\nAdd fields:\n\n\n\n\nField name\nType\nExample\n\n\n\n\npath_name\nText\npath_01\n\n\nsurface\nText\nconcrete\n\n\naccessible\nText\nyes"
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#step-7-digitize-walking-paths",
+    "href": "data_creation_editing_topology.html#step-7-digitize-walking-paths",
+    "title": "",
+    "section": "Step 7: Digitize Walking Paths",
+    "text": "Step 7: Digitize Walking Paths\n\nSelect walking_paths.\nToggle editing on.\nUse Add Line Feature.\nDigitize walking paths connecting your five buildings.\nSnap path endpoints to building edges or nearby path vertices.\nAdd attribute values for each path.\nSave edits.\n\n\nTry to create a connected mini-network rather than five unrelated line segments."
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#step-8-attribute-editing-check",
+    "href": "data_creation_editing_topology.html#step-8-attribute-editing-check",
+    "title": "",
+    "section": "Step 8: Attribute Editing Check",
+    "text": "Step 8: Attribute Editing Check\nOpen the attribute tables for buildings and walking_paths.\nCheck that:\n\nEvery feature has attribute values.\nstories contains numbers, not text.\nsurface uses consistent categories.\naccessible uses consistent values, such as yes and no.\n\nThen edit at least two attribute values using the attribute table."
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#step-9-confirm-everything-is-in-the-geopackage",
+    "href": "data_creation_editing_topology.html#step-9-confirm-everything-is-in-the-geopackage",
+    "title": "",
+    "section": "Step 9: Confirm Everything Is in the GeoPackage",
+    "text": "Step 9: Confirm Everything Is in the GeoPackage\nIn the Browser panel, expand cal_poly_stream_network.gpkg.\nYou should now see:\n\ncampus_boundary\nstream_network\nbuildings\nwalking_paths\n\n\nThe goal is one portable file containing the original data plus the layers you created."
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#step-10-find-stream-topology-errors",
+    "href": "data_creation_editing_topology.html#step-10-find-stream-topology-errors",
+    "title": "",
+    "section": "Step 10: Find Stream Topology Errors",
+    "text": "Step 10: Find Stream Topology Errors\nThe stream_network layer contains intentional line topology errors:\n\none undershoot\none overshoot\n\nUse:\n\nsnapping\nvertex editing\nthe Topology Checker plugin\nvisual inspection at stream junctions\n\nto find the bad endpoints.\n\nSome real stream endpoints occur at headwaters or where streams leave the campus boundary. The errors you are looking for are near stream junctions."
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#topology-checker-setup",
+    "href": "data_creation_editing_topology.html#topology-checker-setup",
+    "title": "",
+    "section": "Topology Checker Setup",
+    "text": "Topology Checker Setup\n\nClick Plugins –&gt; Manage and Install Plugins.\nSearch for Topology Checker.\nEnable it if needed.\nOpen the Topology Checker panel: \nClick the configure button: \nAdd a rule for stream_network:\n\nmust not have dangles\n\nClick Validate All:"
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#fix-the-stream-network",
+    "href": "data_creation_editing_topology.html#fix-the-stream-network",
+    "title": "",
+    "section": "Fix the Stream Network",
+    "text": "Fix the Stream Network\nUse the Vertex Tool to repair the errors.\n\nFor the undershoot: move the dangling endpoint until it snaps to the junction.\nFor the overshoot: move or delete the extra endpoint so the line ends at the junction.\nSave edits after fixing each error.\nRun Topology Checker again.\n\n\nThe goal is not just to make the map look right. The stream endpoints should actually connect."
+  },
+  {
+    "objectID": "data_creation_editing_topology.html#deliverable",
+    "href": "data_creation_editing_topology.html#deliverable",
+    "title": "",
+    "section": "Deliverable",
+    "text": "Deliverable\nSubmit your edited cal_poly_stream_network.gpkg.\nIt should contain:\n\ncampus_boundary\nstream_network with fixed topology\nbuildings with five digitized polygons\nwalking_paths connecting the buildings\n\nAlso submit brief answers:\n\nWhat topology errors did you find?\nWhich editing tools did you use to fix them?\nWhy can two lines that look connected still fail a topology check?"
   }
 ]
