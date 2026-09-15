@@ -767,7 +767,7 @@
     "href": "index.html#raster-file-formats",
     "title": "NR 218",
     "section": "Raster File Formats",
-    "text": "Raster File Formats\n\nTIF (Sometimes TIFF)\n\n\nCOG\n\n\nVRT"
+    "text": "Raster File Formats\n\nTIF (Sometimes TIFF)\n\n\nCommon raster file format for GIS and remote sensing data\nA GeoTIFF is a TIFF that also stores geospatial metadata\n\nCRS / projection\npixel size\nlocation on Earth\n\nCan store one band or many bands\n\nDEM: usually one band\nsatellite image: often multiple bands\n\nOften a real data file: the pixel values are stored inside the .tif\n\n\n\n\nCOG\n\n\n\n\nCloud Optimized GeoTIFF\nStill a GeoTIFF, but organized for fast access over the internet\nUses internal tiling and overview pyramids\nSoftware can read only the pieces it needs\n\nuseful for very large rasters\nuseful when data live on a server or in cloud storage\n\nSame basic idea as a .tif, but better arranged for streaming and web workflows\n\n\n\n\n\n\nCloud Optimized GeoTIFF overviews store lower-resolution pyramid layers so software can quickly draw zoomed-out views without reading every full-resolution pixel.\n\n\n\nCaption: COGs include internal overviews so GIS software can request an appropriate resolution for the current map scale.\n\n\n\n\nVRT\n\n\nVirtual Raster\nA small XML file that points to other raster files\nUsually does not store the pixel values itself\nUseful for mosaics and stacks\n\ntreat many tiles like one raster\ncombine bands from separate files\n\nFragile if the source rasters are moved or renamed\n\nthe .vrt depends on paths to the original files"
   },
   {
     "objectID": "index.html#goals",
@@ -802,7 +802,7 @@
     "href": "index.html#step-1-open-the-geopackage",
     "title": "NR 218",
     "section": "Step 1: Open the GeoPackage",
-    "text": "Step 1: Open the GeoPackage\n\nOpen QGIS.\nPress Ctrl+Shift+V (Cmd+Shift+V on Mac) to open the Data Source Manager.\nUnder Source Type, select File.\nClick the browse button and select cal_poly_stream_network.gpkg.\nClick Add.\nAdd both layers:\n\ncampus_boundary\nstream_network\n\nSet the project CRS to EPSG:26910.\n\n\nEPSG:26910 is NAD83 / UTM zone 10N, a projected coordinate system with meter units.\n\n\nOh! Speaking of NAD83: why official U.S. coordinates are changing\n\nCaption: Replacing a datum changes the reference frame used to describe locations, so latitude, longitude, and height values can change even when the ground stays put. Source: Space Daily, published September 10, 2026."
+    "text": "Step 1: Open the GeoPackage\n\nOpen QGIS.\nPress Ctrl+Shift+V (Cmd+Shift+V on Mac) to open the Data Source Manager.\nUnder Source Type, select File.\nClick the browse button and select cal_poly_stream_network.gpkg.\nClick Add.\nAdd both layers:\n\ncampus_boundary\nstream_network\n\nSet the project CRS to EPSG:26910 (NAD83 / UTM zone 10N).\n\n\nOh! Speaking of NAD83: why official U.S. coordinates are changing\n\nCaption: Replacing a datum changes the reference frame used to describe locations, so latitude, longitude, and height values can change even when the ground stays put. Source: Space Daily, published September 10, 2026."
   },
   {
     "objectID": "index.html#step-2-add-satellite-imagery",
@@ -880,13 +880,6 @@
     "title": "NR 218",
     "section": "Fix the Stream Network",
     "text": "Fix the Stream Network\nUse the Vertex Tool to repair the errors.\n\nFor the undershoot: move the dangling endpoint until it snaps to the junction.\nFor the overshoot: move or delete the extra endpoint so the line ends at the junction.\nSave edits after fixing each error.\nRun Topology Checker again.\n\n\nThe goal is not just to make the map look right. The stream endpoints should actually connect."
-  },
-  {
-    "objectID": "index.html#deliverable",
-    "href": "index.html#deliverable",
-    "title": "NR 218",
-    "section": "Deliverable",
-    "text": "Deliverable\nSubmit your edited cal_poly_stream_network.gpkg.\nIt should contain:\n\ncampus_boundary\nstream_network with fixed topology\nbuildings with five digitized polygons\nwalking_paths connecting the buildings\n\nAlso submit brief answers:\n\nWhat topology errors did you find?\nWhich editing tools did you use to fix them?\nWhy can two lines that look connected still fail a topology check?"
   },
   {
     "objectID": "index.html#vector-data-review",
@@ -2104,7 +2097,7 @@
     "href": "data_creation_editing_topology.html#step-1-open-the-geopackage",
     "title": "",
     "section": "Step 1: Open the GeoPackage",
-    "text": "Step 1: Open the GeoPackage\n\nOpen QGIS.\nPress Ctrl+Shift+V (Cmd+Shift+V on Mac) to open the Data Source Manager.\nUnder Source Type, select File.\nClick the browse button and select cal_poly_stream_network.gpkg.\nClick Add.\nAdd both layers:\n\ncampus_boundary\nstream_network\n\nSet the project CRS to EPSG:26910.\n\n\nEPSG:26910 is NAD83 / UTM zone 10N, a projected coordinate system with meter units.\n\n\nOh! Speaking of NAD83: why official U.S. coordinates are changing\n\nCaption: Replacing a datum changes the reference frame used to describe locations, so latitude, longitude, and height values can change even when the ground stays put. Source: Space Daily, published September 10, 2026."
+    "text": "Step 1: Open the GeoPackage\n\nOpen QGIS.\nPress Ctrl+Shift+V (Cmd+Shift+V on Mac) to open the Data Source Manager.\nUnder Source Type, select File.\nClick the browse button and select cal_poly_stream_network.gpkg.\nClick Add.\nAdd both layers:\n\ncampus_boundary\nstream_network\n\nSet the project CRS to EPSG:26910 (NAD83 / UTM zone 10N).\n\n\nOh! Speaking of NAD83: why official U.S. coordinates are changing\n\nCaption: Replacing a datum changes the reference frame used to describe locations, so latitude, longitude, and height values can change even when the ground stays put. Source: Space Daily, published September 10, 2026."
   },
   {
     "objectID": "data_creation_editing_topology.html#step-2-add-satellite-imagery",
@@ -2182,13 +2175,6 @@
     "title": "",
     "section": "Fix the Stream Network",
     "text": "Fix the Stream Network\nUse the Vertex Tool to repair the errors.\n\nFor the undershoot: move the dangling endpoint until it snaps to the junction.\nFor the overshoot: move or delete the extra endpoint so the line ends at the junction.\nSave edits after fixing each error.\nRun Topology Checker again.\n\n\nThe goal is not just to make the map look right. The stream endpoints should actually connect."
-  },
-  {
-    "objectID": "data_creation_editing_topology.html#deliverable",
-    "href": "data_creation_editing_topology.html#deliverable",
-    "title": "",
-    "section": "Deliverable",
-    "text": "Deliverable\nSubmit your edited cal_poly_stream_network.gpkg.\nIt should contain:\n\ncampus_boundary\nstream_network with fixed topology\nbuildings with five digitized polygons\nwalking_paths connecting the buildings\n\nAlso submit brief answers:\n\nWhat topology errors did you find?\nWhich editing tools did you use to fix them?\nWhy can two lines that look connected still fail a topology check?"
   },
   {
     "objectID": "projections_etc.html#map-conventions",
@@ -3644,7 +3630,7 @@
     "href": "spatial_data_models.html#raster-file-formats",
     "title": "",
     "section": "Raster File Formats",
-    "text": "Raster File Formats\n\nTIF (Sometimes TIFF)\n\n\nCOG\n\n\nVRT"
+    "text": "Raster File Formats\n\nTIF (Sometimes TIFF)\n\n\nCommon raster file format for GIS and remote sensing data\nA GeoTIFF is a TIFF that also stores geospatial metadata\n\nCRS / projection\npixel size\nlocation on Earth\n\nCan store one band or many bands\n\nDEM: usually one band\nsatellite image: often multiple bands\n\nOften a real data file: the pixel values are stored inside the .tif\n\n\n\n\nCOG\n\n\n\n\nCloud Optimized GeoTIFF\nStill a GeoTIFF, but organized for fast access over the internet\nUses internal tiling and overview pyramids\nSoftware can read only the pieces it needs\n\nuseful for very large rasters\nuseful when data live on a server or in cloud storage\n\nSame basic idea as a .tif, but better arranged for streaming and web workflows\n\n\n\n\n\n\nCloud Optimized GeoTIFF overviews store lower-resolution pyramid layers so software can quickly draw zoomed-out views without reading every full-resolution pixel.\n\n\n\nCaption: COGs include internal overviews so GIS software can request an appropriate resolution for the current map scale.\n\n\n\n\nVRT\n\n\nVirtual Raster\nA small XML file that points to other raster files\nUsually does not store the pixel values itself\nUseful for mosaics and stacks\n\ntreat many tiles like one raster\ncombine bands from separate files\n\nFragile if the source rasters are moved or renamed\n\nthe .vrt depends on paths to the original files"
   },
   {
     "objectID": "vector_tutorial.html#vector-data-review",

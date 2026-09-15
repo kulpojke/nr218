@@ -54,11 +54,8 @@ Today we will build a small campus editing dataset:
 6. Add both layers:
    + `campus_boundary`
    + `stream_network`
-7. Set the project CRS to `EPSG:26910`.
+7. Set the project CRS to `EPSG:26910` (NAD83 / UTM zone 10N).
 
-::: {style="font-size:0.6em"}
-`EPSG:26910` is NAD83 / UTM zone 10N, a projected coordinate system with meter units.
-:::
 
 ::: {style="font-size:0.55em"}
 [Oh! Speaking of NAD83: why official U.S. coordinates are changing](https://spacedaily.com/s-the-united-states-is-replacing-every-official-latitude-longitude-and-height-it-publishes-existing-coordinates-will-move-by-as-much-as-four-meters-and-the-million-survey-marks-in-the-ground-will-no/ "Article explaining that the National Geodetic Survey is replacing NAD83 and NAVD88, so published coordinates can shift even when physical locations do not move.")
@@ -233,20 +230,3 @@ Use the Vertex Tool to repair the errors.
 ::: {style="font-size:0.7em"}
 The goal is not just to make the map look right. The stream endpoints should actually connect.
 :::
-
-## Deliverable {.smaller}
-
-Submit your edited `cal_poly_stream_network.gpkg`.
-
-It should contain:
-
-+ `campus_boundary`
-+ `stream_network` with fixed topology
-+ `buildings` with five digitized polygons
-+ `walking_paths` connecting the buildings
-
-Also submit brief answers:
-
-1. What topology errors did you find?
-2. Which editing tools did you use to fix them?
-3. Why can two lines that look connected still fail a topology check?

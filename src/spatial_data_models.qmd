@@ -495,20 +495,65 @@ The **spatial resolution** of a raster dataset represents a measure of the preci
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="1"}
 __TIF (Sometimes TIFF)__
 
+::: {style="font-size:0.65em"}
++ Common raster file format for GIS and remote sensing data
++ A **GeoTIFF** is a TIFF that also stores geospatial metadata
+  + CRS / projection
+  + pixel size
+  + location on Earth
++ Can store one band or many bands
+  + DEM: usually one band
+  + satellite image: often multiple bands
++ Often a real data file: the pixel values are stored inside the `.tif`
+:::
+
 :::
 
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="2"}
 __COG__
+
+::: {.columns}
+
+::: {.column width="45%"}
+::: {style="font-size:0.6em"}
++ **Cloud Optimized GeoTIFF**
++ Still a GeoTIFF, but organized for fast access over the internet
++ Uses internal tiling and overview pyramids
++ Software can read only the pieces it needs
+  + useful for very large rasters
+  + useful when data live on a server or in cloud storage
++ Same basic idea as a `.tif`, but better arranged for streaming and web workflows
+:::
+:::
+
+::: {.column width="55%"}
+![Cloud Optimized GeoTIFF overviews store lower-resolution pyramid layers so software can quickly draw zoomed-out views without reading every full-resolution pixel.](img/COGoverviews.png){fig-alt="Diagram showing a Cloud Optimized GeoTIFF with full-resolution image tiles and progressively smaller overview layers used for faster display at different zoom levels."}
+
+::: {.attribution style="font-size:0.45em"}
+Caption: COGs include internal overviews so GIS software can request an appropriate resolution for the current map scale.
+:::
+:::
+
+:::
+
 :::
 
 ::: {.fragment .absolute .fade-in-then-out data-fragment-index="3"}
 __VRT__
 
+::: {style="font-size:0.65em"}
++ **Virtual Raster**
++ A small XML file that points to other raster files
++ Usually does **not** store the pixel values itself
++ Useful for mosaics and stacks
+  + treat many tiles like one raster
+  + combine bands from separate files
++ Fragile if the source rasters are moved or renamed
+  + the `.vrt` depends on paths to the original files
 :::
 
-
-
+:::
 
 
 

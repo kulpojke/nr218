@@ -774,12 +774,71 @@ about 2.2 x 10<sup>-308</sup> to 1.8 x 10<sup>308</sup> (about 15 to 16 decimal 
 <h2>Raster File Formats</h2>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="1" style="">
 <p><strong>TIF (Sometimes TIFF)</strong></p>
+<div style="font-size:0.65em">
+<ul>
+<li>Common raster file format for GIS and remote sensing data</li>
+<li>A <strong>GeoTIFF</strong> is a TIFF that also stores geospatial metadata
+<ul>
+<li>CRS / projection</li>
+<li>pixel size</li>
+<li>location on Earth</li>
+</ul></li>
+<li>Can store one band or many bands
+<ul>
+<li>DEM: usually one band</li>
+<li>satellite image: often multiple bands</li>
+</ul></li>
+<li>Often a real data file: the pixel values are stored inside the <code>.tif</code></li>
+</ul>
+</div>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="2" style="">
 <p><strong>COG</strong></p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div style="font-size:0.6em">
+<ul>
+<li><strong>Cloud Optimized GeoTIFF</strong></li>
+<li>Still a GeoTIFF, but organized for fast access over the internet</li>
+<li>Uses internal tiling and overview pyramids</li>
+<li>Software can read only the pieces it needs
+<ul>
+<li>useful for very large rasters</li>
+<li>useful when data live on a server or in cloud storage</li>
+</ul></li>
+<li>Same basic idea as a <code>.tif</code>, but better arranged for streaming and web workflows</li>
+</ul>
+</div>
+</div><div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/COGoverviews.png" alt="Diagram showing a Cloud Optimized GeoTIFF with full-resolution image tiles and progressively smaller overview layers used for faster display at different zoom levels."></p>
+<figcaption>Cloud Optimized GeoTIFF overviews store lower-resolution pyramid layers so software can quickly draw zoomed-out views without reading every full-resolution pixel.</figcaption>
+</figure>
+</div>
+<div class="attribution" style="font-size:0.45em">
+<p>Caption: COGs include internal overviews so GIS software can request an appropriate resolution for the current map scale.</p>
+</div>
+</div></div>
 </div>
 <div class="fragment absolute fade-in-then-out" data-fragment-index="3" style="">
 <p><strong>VRT</strong></p>
+<div style="font-size:0.65em">
+<ul>
+<li><strong>Virtual Raster</strong></li>
+<li>A small XML file that points to other raster files</li>
+<li>Usually does <strong>not</strong> store the pixel values itself</li>
+<li>Useful for mosaics and stacks
+<ul>
+<li>treat many tiles like one raster</li>
+<li>combine bands from separate files</li>
+</ul></li>
+<li>Fragile if the source rasters are moved or renamed
+<ul>
+<li>the <code>.vrt</code> depends on paths to the original files</li>
+</ul></li>
+</ul>
+</div>
 </div>
 
 
