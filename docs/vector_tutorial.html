@@ -273,7 +273,7 @@
 <section id="tabular-joins" class="slide level2 center" style="font-size:0.7em">
 <h2>Tabular Joins</h2>
 <ol type="1">
-<li><p>Download <a href="https://github.com/kulpojke/nr218/blob/main/assets/cal_counties.geojson">California Counties</a> and <a href="https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv">median household income</a></p></li>
+<li><p>Download <a href="https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/bay_area_counties.geojson">Bay Area Counties</a> and <a href="https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv">median household income</a> and <a href="https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv">California median household income</a> and <a href="https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv">median household income</a></p></li>
 <li><p>add the counties layer</p></li>
 <li><p>add the income csv (you must select “no geometry (attribute only table)”)</p></li>
 <li><p>Open the attribute tables for each look at the names for the columns containing county name</p></li>
@@ -287,16 +287,19 @@
 <li><p>Change the symbology to make a thematic map showing median income by county.</p></li>
 </ol>
 </section>
-<section id="spatial-joins" class="slide level2 center" style="font-size:0.7em">
+<section id="spatial-joins" class="slide level2 center" style="font-size:0.6em">
 <h2>Spatial Joins</h2>
 <p><strong>One-to-One Spatial Join</strong></p>
 <ul>
-<li><p>Output: Each feature from the target layer (the primary layer) gets a single matching record from the join layer (secondary layer).</p></li>
-<li><p>Handling Multiple Matches: If multiple matches are found, only one matching feature is selected (usually the first or based on criteria like nearest neighbor).</p></li>
-<li><p>Example:Joining cities (target) with climate zones (join layer), ensuring each city gets only one associated climate zone. <strong>One-to-Many Spatial Join</strong></p></li>
-<li><p>Output: If multiple matching features exist, the target feature is duplicated for each matching feature from the join layer.</p></li>
-<li><p>Handling Multiple Matches: Every matching record from the join layer is included, leading to multiple rows for one target feature.</p></li>
-<li><p>Example: Joining states (target) with cities (join layer). Each state will appear multiple times for every city within its boundaries.</p></li>
+<li>Output: Each feature from the target layer (the primary layer) gets a single matching record from the join layer (secondary layer).</li>
+<li>Handling Multiple Matches: If multiple matches are found, only one matching feature is selected (usually the first or based on criteria like nearest neighbor).</li>
+<li>Example:Joining cities (target) with climate zones (join layer), ensuring each city gets only one associated climate zone.</li>
+</ul>
+<p><strong>One-to-Many Spatial Join</strong></p>
+<ul>
+<li>Output: If multiple matching features exist, the target feature is duplicated for each matching feature from the join layer.</li>
+<li>Handling Multiple Matches: Every matching record from the join layer is included, leading to multiple rows for one target feature.</li>
+<li>Example: Joining states (target) with cities (join layer). Each state will appear multiple times for every city within its boundaries.</li>
 </ul>
 </section>
 <section id="merge-vs-spatial-join" class="slide level2 center">
@@ -308,9 +311,9 @@ You might use a merge to combine two adjacent land parcels into a single, larger
 </section>
 <section id="spatial-joins-1" class="slide level2 smaller center">
 <h2>Spatial Joins</h2>
-<p>Download California cities <a href="https://gis.data.ca.gov/api/download/v1/items/8cd5d2038c5547ba911eea7bec48e28b/geojson?layers=2">here</a> or from [this link] (https://raw.githubusercontent.com/kulpojke/nr218/main/assets//California_Cities_and_Identifiers_Blue_Version_view_9179458143702591125.geojson)</p>
+<p>Download California cities <a href="https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/bay_area_cities.geojson">here</a> and <a href="https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv">median household income</a></p>
 <ul>
-<li>Use the “join attributes by location” tool from the geoprocessing toolbox to join cities to counties</li>
+<li>Use the “join attributes by location” tool from the processing toolbox to join cities to counties</li>
 <li>There will be problems. Hint: “validate geometries and”fix geometries” tools will be useful.</li>
 </ul>
 <p><strong>Challenge</strong> - Join counties to cities, and calculate total urban area for each county.</p>
