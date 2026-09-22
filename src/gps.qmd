@@ -113,9 +113,8 @@ $$
 
 ::: {.fragment .absolute .fade-in-then-out style="font-size:0.7em" data-fragment-index="7"}
 
-Here’s a slide-friendly table. These are **carrier center frequencies** in **MHz**.
 
-| System | Operator | Main GNSS signals | Frequencies |
+| System | Operator | Main GNSS signals | Frequencies (MHz) |
 |---|---:|---|---:|
 | **GPS** | U.S. | L1, L2, L5 | 1575.42, 1227.60, 1176.45 |
 | **Galileo** | European Union | E1, E5a, E5b, E5, E6 | 1575.42, 1176.45, 1207.14, 1191.795, 1278.75 |
