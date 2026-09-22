@@ -170,10 +170,12 @@ Spatial joins transfer attributes based on how features relate in space (interse
 1. Download [Bay Area Counties](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/bay_area_counties.geojson) and [median household income](https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv) and [California median household income](https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv) and [median household income](https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv)
 
 2. add the counties layer
+  a. Notice that there are multiple polygons for some cities, e.g. San Francisco.
+  b. Make it so there is only on polygon per city.
 
 3. add the income csv (you must select "no geometry (attribute only table)")
 
-3. Open the attribute tables for each look at the names for the columns containing county name
+3. Open the attribute tables for each. Notice at the names for the columns containing county name
 
 4. In the Processing Toolbox search "join" and select "join attributes by field"
     + Input layer 1 is counties, input layer 2 is the income CSV  
@@ -208,12 +210,12 @@ You might use a merge to combine two adjacent land parcels into a single, larger
 
 ## Spatial Joins {.smaller}
 
-Download California cities [here](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/bay_area_cities.geojson) and [median household income](https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv)
+Download BAy Area cities [here](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/bay_area_cities.geojson) and [median household income](https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv)
 
 + Use the "join attributes by location" tool from the processing toolbox to join cities to counties 
-+ There will be problems. Hint: "validate geometries and "fix geometries" tools will be useful.
 
-__Challenge__ - Join counties to cities, and calculate total urban area for each county.
+
+__Challenge__ - Calculate total urban area for each county.
 
 ## Topology Checker
 
