@@ -942,7 +942,7 @@
     "href": "index.html#tabular-joins",
     "title": "NR 218",
     "section": "Tabular Joins",
-    "text": "Tabular Joins\n\nDownload Bay Area Counties and median household income and California median household income and median household income\nadd the counties layer\n\n\nNotice that there are multiple polygons for some cities, e.g. San Francisco.\nMake it so there is only on polygon per city.\n\n\nadd the income csv (you must select “no geometry (attribute only table)”)\nOpen the attribute tables for each. Notice at the names for the columns containing county name\nIn the Processing Toolbox search “join” and select “join attributes by field”\n\nInput layer 1 is counties, input layer 2 is the income CSV\n\nuse appropriate column names\n\nLook at the attribute table of the resulting layer\nChange the symbology to make a thematic map showing median income by county."
+    "text": "Tabular Joins\n\nDownload Bay Area Counties and California median household income\nadd the counties layer\n\n\nNotice that there are multiple polygons for some cities, e.g. San Francisco.\nMake it so there is only on polygon per city.\n\n\nadd the income csv (you must select “no geometry (attribute only table)”)\nOpen the attribute tables for each. Notice at the names for the columns containing county name\nIn the Processing Toolbox search “join” and select “join attributes by field”\n\nInput layer 1 is counties, input layer 2 is the income CSV\n\nuse appropriate column names\n\nLook at the attribute table of the resulting layer\nChange the symbology to make a thematic map showing median income by county."
   },
   {
     "objectID": "index.html#spatial-joins",
@@ -963,7 +963,7 @@
     "href": "index.html#spatial-joins-1",
     "title": "NR 218",
     "section": "Spatial Joins",
-    "text": "Spatial Joins\nDownload BAy Area cities here and median household income\n\nUse the “join attributes by location” tool from the processing toolbox to join cities to counties\n\nChallenge - Calculate total urban area for each county."
+    "text": "Spatial Joins\nDownload Bay Area cities here\n\nUse the “join attributes by location” tool from the processing toolbox to join cities to counties\n\nChallenge - Calculate total urban area for each county."
   },
   {
     "objectID": "index.html#topology-checker",
@@ -977,7 +977,7 @@
     "href": "index.html#digitizing-to-create-secondary-vector-data",
     "title": "NR 218",
     "section": "Digitizing to create secondary vector data",
-    "text": "Digitizing to create secondary vector data\n\nTablet\n\nTracing on a light table with specialized hardware, then\n\nHeads up\n\nClicking and drawing in GIS software\n\nAutomated\n\nMany different form, some simple some complex"
+    "text": "Digitizing to create secondary vector data\n\nTablet\n\nTracing on a light table with specialized hardware\n\nHeads up\n\nClicking and drawing in GIS software\n\nAutomated\n\nMany different forms, some simple some complex"
   },
   {
     "objectID": "index.html#what-is-gps",
@@ -3693,7 +3693,7 @@
     "href": "vector_tutorial.html#tabular-joins",
     "title": "",
     "section": "Tabular Joins",
-    "text": "Tabular Joins\n\nDownload Bay Area Counties and median household income and California median household income and median household income\nadd the counties layer\n\n\nNotice that there are multiple polygons for some cities, e.g. San Francisco.\nMake it so there is only on polygon per city.\n\n\nadd the income csv (you must select “no geometry (attribute only table)”)\nOpen the attribute tables for each. Notice at the names for the columns containing county name\nIn the Processing Toolbox search “join” and select “join attributes by field”\n\nInput layer 1 is counties, input layer 2 is the income CSV\n\nuse appropriate column names\n\nLook at the attribute table of the resulting layer\nChange the symbology to make a thematic map showing median income by county."
+    "text": "Tabular Joins\n\nDownload Bay Area Counties and California median household income\nadd the counties layer\n\n\nNotice that there are multiple polygons for some cities, e.g. San Francisco.\nMake it so there is only on polygon per city.\n\n\nadd the income csv (you must select “no geometry (attribute only table)”)\nOpen the attribute tables for each. Notice at the names for the columns containing county name\nIn the Processing Toolbox search “join” and select “join attributes by field”\n\nInput layer 1 is counties, input layer 2 is the income CSV\n\nuse appropriate column names\n\nLook at the attribute table of the resulting layer\nChange the symbology to make a thematic map showing median income by county."
   },
   {
     "objectID": "vector_tutorial.html#spatial-joins",
@@ -3714,7 +3714,7 @@
     "href": "vector_tutorial.html#spatial-joins-1",
     "title": "",
     "section": "Spatial Joins",
-    "text": "Spatial Joins\nDownload BAy Area cities here and median household income\n\nUse the “join attributes by location” tool from the processing toolbox to join cities to counties\n\nChallenge - Calculate total urban area for each county."
+    "text": "Spatial Joins\nDownload Bay Area cities here\n\nUse the “join attributes by location” tool from the processing toolbox to join cities to counties\n\nChallenge - Calculate total urban area for each county."
   },
   {
     "objectID": "vector_tutorial.html#topology-checker",
@@ -3728,7 +3728,7 @@
     "href": "vector_tutorial.html#digitizing-to-create-secondary-vector-data",
     "title": "",
     "section": "Digitizing to create secondary vector data",
-    "text": "Digitizing to create secondary vector data\n\nTablet\n\nTracing on a light table with specialized hardware, then\n\nHeads up\n\nClicking and drawing in GIS software\n\nAutomated\n\nMany different form, some simple some complex"
+    "text": "Digitizing to create secondary vector data\n\nTablet\n\nTracing on a light table with specialized hardware\n\nHeads up\n\nClicking and drawing in GIS software\n\nAutomated\n\nMany different forms, some simple some complex"
   },
   {
     "objectID": "finding_gis_data.html#what-is-sentinel-2",

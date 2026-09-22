@@ -165,9 +165,9 @@ Spatial joins transfer attributes based on how features relate in space (interse
 
 :::
 
-## Tabular Joins {style="font-size:0.7em"}
+## Tabular Joins {style="font-size:0.5em"}
 
-1. Download [Bay Area Counties](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/bay_area_counties.geojson) and [median household income](https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv) and [California median household income](https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv) and [median household income](https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv)
+1. Download [Bay Area Counties](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/bay_area_counties.geojson) and [California median household income](https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv)
 
 2. add the counties layer
   a. Notice that there are multiple polygons for some cities, e.g. San Francisco.
@@ -210,7 +210,7 @@ You might use a merge to combine two adjacent land parcels into a single, larger
 
 ## Spatial Joins {.smaller}
 
-Download BAy Area cities [here](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/bay_area_cities.geojson) and [median household income](https://github.com/kulpojke/nr218/blob/main/assets/cal_median_household.csv)
+Download Bay Area cities [here](https://github.com/kulpojke/nr218/raw/refs/heads/main/assets/bay_area_cities.geojson)
 
 + Use the "join attributes by location" tool from the processing toolbox to join cities to counties 
 
@@ -267,8 +267,8 @@ If one were so inclined, one could fix these errors using the vertex tool in the
 ## Digitizing to create secondary vector data
 
 + Tablet
-  + Tracing on a light table with specialized hardware, then 
+  + Tracing on a light table with specialized hardware
 + Heads up 
   - Clicking and drawing in GIS software
 + Automated
-  - Many different form, some simple some complex
+  - Many different forms, some simple some complex
