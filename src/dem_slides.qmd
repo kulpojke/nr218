@@ -387,7 +387,7 @@ What happens in the reprojection can be thought of as a two-step process
 
 ::: {.fragment .absolute .fade-out data-fragment-index="1" style="font-size:0.7em"}
 
-0. Download `dw_2025.tif`, `dw_20218.tif`, and `dw_style.qml` from [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/IgBVkac3a5CsRaUAvV-819C-AQGVatwXdM5B6Zz0oonWnbM?e=JbScCs "Link to files")
+0. Download `dw_2025.tif`, `dw_20218.tif`, and `dw_style.qml` from [this link](https://cpslo-my.sharepoint.com/:f:/g/personal/mthuggin_calpoly_edu/IgBVkac3a5CsRaUAvV-819C-AQGVatwXdM5B6Zz0oonWnbM?e=JbScCs "Link to files"). Also download [this DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQCSzCfxbbX0QLteSpkYoBFfAcmTrvmInX8oqpyV6WXjMvQ?e=ePHXvc)
 
 1. In QGIS open dw_2025. 
     a. Look at the CRS
