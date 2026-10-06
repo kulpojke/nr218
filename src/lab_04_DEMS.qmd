@@ -12,7 +12,7 @@ Now that you've learned a bit about what DEMs are and what they can be used for,
 
 __Quick file organization housekeeping:__
 
-Make a new folder inside your `nr218` directory called `lab_4`. Inside that folder, make a `data` folder. All downloaded files will go in the `data` folder You should have a directory structure as shown below. 
+Make a new folder inside your `nr218` directory called `lab_4`. Inside that folder, make a `data` folder. All downloaded files will go in the `data` folder. You should have a directory structure as shown below. 
 
 ```
 nr218/
@@ -22,7 +22,7 @@ nr218/
 
 ```
 
-## Part 1: Finding Data Online
+## Finding Data Online
 
 So far in this class you've been given files to work with. Today, you are going to practice acquiring some data on your own.
 
@@ -34,7 +34,7 @@ Follow the link above, and then click "Launch Application" to get to the interac
 
 You can navigate around the map by clicking and dragging with your mouse. Zooming is accomplished using your scroll wheel (or the "+" button at the top left of the map viewer, if you like your zooming to be painful). Orient your map view so that it's centered on San Luis Obispo.  There are three check boxes in the left panel. Try checking and unchecking them to see what happens. 
 
-Next, define your __area of interest__ (AOI). This will return all of the available LiDAR and DEM downloads within a specified geographic area.  For this exercise you will look at [Anacapa Island](https://www.nps.gov/chis/planyourvisit/anacapa.htm){alt-text="Link to National Parks page on Anacapa Island"}. Click the _Define area of interest_ box and draw a box around Anacapa (by holding control and dragging , see @fig-lidar3), then check what pops up on the right side of the screen .
+Next, define your __area of interest__ (AOI). This will return all of the available LiDAR and DEM downloads within a specified geographic area.  For this exercise you will look at [Anacapa Island](https://www.nps.gov/chis/planyourvisit/anacapa.htm){alt-text="Link to National Parks page on Anacapa Island"}. Click the _Define area of interest_ box and draw a box around Anacapa Island (by holding control and dragging , see @fig-lidar3), then check what pops up on the right side of the screen .
 
 ![Defined area of interest](img/anacpa_AOI_lidar_explorer.png){#fig-lidar3 fig-alt="Image showing what an area of interest box looks like on the map" fig-cap="Defined area of interest"}
 
@@ -57,13 +57,13 @@ _DEMs 1 Meter_ holds Project-based bare-earth DEM, usually derived from lidar an
 _DEMs ~10m 1/3_ are the seamless 3DEP elevation layer, blended across larger areas and distributed as a nationwide medium-resolution product. The resolution is 1/3 arc second (recall that sometimes lat/lon is written in degrees minutes seconds) which is _about_ 10 m ground distance, but the E/W ground distance varies with latitude at Anacapa the actual ground distance per pixel is  about 10.3 m N/S
 and about 8.5 m E/W.
 
-_DEM Source (OPR)_ are DEMs distributed at the source project's original resolution and projection.  For Anacapa there should be 18 tiles under _DEM Source (OPR)_. If you hover over the titles of the slides, the extents of the tiles will be shown on the map, as can be seen in @fig-anacapa-tiles. 
+_DEM Source (OPR)_ are DEMs distributed at the source project's original resolution and projection.  For Anacapa there should be 18 tiles under _DEM Source (OPR)_. If you hover over the titles of the tiles, the extents of the tiles will be shown on the map, as can be seen in @fig-anacapa-tiles. 
 
 Before downloading the data, prepare your project directory.   You will be working with 2 DEM datasets for this project, the OPR DEM, and the 1 arc second DEM.  Make a subdirectory within data for each, as shown below.
 
 ```
 nr218/
-└── lab_8
+└── lab_4
     └── data
           ├──DEM_OPR   
           └──DEM_1arc
@@ -76,13 +76,13 @@ download the tiles in bulk using a download list.  The download list can be down
 
 ![The download list icon is to the right of "(OPR)"](img/lidar_exp_download_list.png){#fig-download-list fig-alt="Image showing the download list icon to the right of OPR" .wrap-right style="--wrap-width:35%;"}
 
-After downloading the OPR tiles from the downloadlist,  you will need to download the ~30m DEMS.  Under the _DEM ~30m 1_ heading click the _Current_ button.  Once the button is clicked, there should be 2 tiles listed. Now click the download button next to each of the two files.  After they download, move them to `nr218/lab_8/data/DEM_1arc`
+After downloading the OPR tiles from the downloadlist,  you will need to download the ~30m DEMS.  Under the _DEM ~30m 1_ heading click the _Current_ button.  Once the button is clicked, there should be 2 tiles listed. Now click the download button next to each of the two files.  After they download, move them to `nr218/lab_4/data/DEM_1arc`
 
 
 <details>
 <summary>Read this if Lidar Explorer is Broken</summary>
 
-Bummer!  This happens sometimes these days. Hopefully it comes back soon. In the meantime, here is a [link to a copy of the download list](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/anacapa_downloadlist.txt).
+Bummer!  This happens sometimes these days. Hopefully it comes back soon. In the meantime, here is a [link to a copy of the download list](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/anacapa_downloadlist.txt). (Notice, this file is called anacapa_downloadlist.txt, rather than just downloadlist, so you will have to adjust in the instructions.)
 
 </details>
 
@@ -93,7 +93,7 @@ The following commands fetch the DEMs from the URLs in `downloadlist.txt`.  Note
 <details>
 <summary>Windows</summary>
 
-In `PowerShell`, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data/DEM_OPR`). Then run:
+In `PowerShell`, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_4/data/DEM_OPR`). Then run:
 
 This reads each URL from `downloadlist.txt` and downloads the files one by one into the current folder. It is a bit cumbersome on Windows because there is not a simple built-in command like `wget -i` for downloading a whole list of files at once. The following will download every file listed in `downloadlist.txt` into your current folder.
 ``` powershell
@@ -106,7 +106,7 @@ foreach ($url in Get-Content .\downloadlist.txt) {
 <details>
 <summary>Mac or Linux</summary>
 
-In `Terminal`, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_8/data/DEM_OPR`). Then run:
+In `Terminal`, first `cd` into the folder where you want the downloads to go (for example, `nr218/lab_4/data/DEM_OPR`). Then run:
 
 ``` bash
 wget -i downloadlist.txt
@@ -137,7 +137,7 @@ At this point you should:
 1. Open QGIS.
 2. Create a new project.
 3. Set the project CRS to EPSG:6340.
-4. Save the project (call it `anacapa.qgz` and save it in your lab_8 directory)
+4. Save the project (call it `anacapa.qgz` and save it in your lab_4 directory)
 
 ::: {#tip-crs .callout-tip}
 ## A deep dive on Coordinate Reference Systems
@@ -159,13 +159,13 @@ At this point you should:
 ### Mosaicing the OPR Data
 ![A section of the OPR DEM over Anacapa Island showing seams at the borders of the tiles.](img/anacapa_tile_seems.png){#fig-seems fig-alt="Image showing a section of the OPR DEM over Anacapa Island showing seams at the borders of the tiles" .wrap-right style="--wrap-width:45%;"}
 
-Open the DEM tiles you saved to `nr218/lab_8/data/DEM_OPR` (you can highlight them all, and open them all at once, by clicking the top file, then holding control and clicking the bottom file in the browser). If you zoom in a little, you will be able to see seams at the borders of the tiles, similar to those shown in @fig-seems.  This does not occur because of sudden changes in elevation at the edges of the tiles, but rather is an artifact of the way a DEM is rendered in QGIS.  When QGIS opens a single band raster, by default it rescales the colors displayed, to the range in elevation of the tile.  This is done to maximize the contrast of the layer, but makes tiled data look bad.
+Open the DEM tiles you saved to `nr218/lab_4/data/DEM_OPR` (you can highlight them all, and open them all at once, by clicking the top file, then holding shift and clicking the bottom file in the browser). If you zoom in a little, you will be able to see seams at the borders of the tiles, similar to those shown in @fig-seems.  This does not occur because of sudden changes in elevation at the edges of the tiles, but rather is an artifact of the way a DEM is rendered in QGIS.  When QGIS opens a single band raster, by default it rescales the colors displayed, to the range in elevation of the tile.  This is done to maximize the contrast of the layer, but makes tiled data look bad.
 
 To fix the seams, and to simplify further analysis, there are a couple of approaches available.  The first, mosaicing, is to join all of the tiles into a single tif file.  The other is to build a virtual raster (.vrt) which is a small sidecar file which indexes the existing tiles. You will use the virtual raster for the OPR dataset.  
 
-To create a virtual raster, use the _Build Virtual Raster_ tool from the processing toolbox (under _GDAL_ > _Raster miscellaneous_). Click the browse button at the right side of _Input layers_. If the OPR DEM tiles are the only layers you have opened you can click the add all button on the right (or click each one manually).  Press the back button to go back to the previous page of the tool, then save the vrt file in the `DEM_OPR` directory alongside the DEMs. Once a vrt has been saved, the relative path between it and the tiles it has indexed must not change.
+To create a virtual raster, use the _Build Virtual Raster_ tool from the processing toolbox (under _GDAL_ > _Raster miscellaneous_). Click the browse button at the right side of _Input layers_. If the OPR DEM tiles are the only layers you have opened you can click the add all button on the right (or click each one manually).  Press the back button to go back to the previous page of the tool, then save the vrt file in the `DEM_OPR` directory alongside the DEMs. Once a vrt has been saved, the relative path between it and the tiles it has indexed must not change.  Since the OPR data is already in the project projection you need not worry about reprojecting it.
 
-Since the OPR data is already in the project projection you need not worry about reprojecting it.
+Rename the vrt file something descriptive (such as OPR DEM) and remove the tiles  you used to create it from the layer panel.
 
 ### Mosaicing and Reprojecting the Arc second DEMS
 
@@ -176,28 +176,86 @@ There are only 2 tiles for the Arc second resolution DEM.  You will join them by
 2. Next use the _Merge_ tool (_GDAL_ > _Raster miscellaneous_) to merge the arc second resolution tiles (save as scratch, again it is an intermediate file).
 3. Clip the result using the extent created in step 1 (_Raster_ > _Extraction_ > _Clip Raster by Mask Layer_).
 4. Reproject the result (Warp) to the project CRS.
-5. Save the result as `nr218/lab_8/data/DEM_1arc/dem_arcsec`
+5. Save the result in a new directory `nr218/lab_4/derivatives/` as `dem_arcsec.tif`
 
-At this point you are done using thea arc-second DEMs.  I suggest you remove them from your layer list to avoid confusion on subsequent parts of the lab.
+At this point __you are done using the arc-second DEMs__.  I suggest you remove them from your layer list to avoid confusion on subsequent parts of the lab.
 
 ## DEM derivative products (Using OPR DEM)
 
-Next you will create a few different derivative products from your OPR DEMs. (you will not be using the arc second DEMs anymore for the lab.)  Some are useful as visualizations. Others are useful in analysis.
+Next you will create a few different derivative products from your OPR DEMs. (you will not be using the arc second DEMs anymore for the lab.)  Some are useful as visualizations. Others are useful in analysis. 
 
 ### Slope 
 
 Slope maps are useful in various types of elevation.  They are OK as visualizations, but not great. Slope can be expressed as percent or degrees.
 
-Use __Raster__ > __Analysis__ > __Slope__. 
+Create two slope maps, one in degrees, and one as percent.
 
-Save your slopemap as a tif, into a new directory `nr218/lab_8/derivatives/slope.tif`
+1. Slope in degrees
+  + Use __Raster__ > __Analysis__ > __Slope__. 
+  + Select your OPR DEM as the input layer.
+  + Leave everything else as the default setting.
+  + Run
+
+2. Slope as percent
+  + Use __Raster__ > __Analysis__ > __Slope__. 
+  + Select your OPR DEM as the input layer.
+  + Select the _Express slope as a percent instead of degrees_ box.
+  + Run
+
+Save your slope maps as tifs, in a new directory `nr218/lab_4/derivatives/` as `opr_slope_deg.tif` and `opr_slope_perc.tif`
+
+```
+nr218/
+└── lab_4/
+    ├── data/
+    |     ├── DEM_OPR/
+    |     |    └── all of your OPR DEM tiles    
+    |     └── DEM_1arc/
+    |          └── your DEM arc second tiles
+    └── derivatives/
+          ├── dem_arcsec.tif
+          ├── opr_slope_deg.tif   
+          └── opr_slope_perc.tif
+```
+
+## Aspect
+
+_Slope_ tells you how steep the terrain is (in degrees or percent change from horizontal). _Aspect_ tells you which direction each slope of the terrain faces.  
+ 
+_Raster_ > _Analysis_ > _Aspect_, use your OPR DEM.
+
+Look at the units.  How would you interpret them?
+
+Save your aspect raster as `nr218/lab_4/derivatives/opr_aspect.tif`
 
 ::: {#tip-hillshade .callout-tip}
-## Azimuth and Z Factor
+## Values of percentage slope
+The slope tool will calculate slopes greater than 100% because percent slope measures the ratio of vertical rise to horizontal run, not an angle out of a maximum 100.
 
-You can adjust the output of your hillshade by changing the values of the `azimuth` and `Z factor`. Take a moment to play around with the values for these parameters. What do you think each one does?
+Mathematically, the formula is:
 
-:::
+$$
+\text{Slope}_{\%} = \frac{\text{Rise}}{\text{Run}} \times 100 
+$$
+
+
+As you can see from the equation, slope will cross the 100% mark as soon as it becomes steeper than a perfect diagonal:
+
++ Less than 45$\degree$: The horizontal distance (run) is greater than the height (rise), resulting in a slope under 100%.
++ Exactly 45$\degree$: The rise equals the run (e.g., 10 meters up for every 10 meters forward). This results in exactly a 100% slope.
++ Greater than 45$\degree$: The vertical distance is greater than the horizontal distance (e.g., 20 meters up for every 10 meters forward). This yields a 200% slope.
+
+As a slope approaches a perfectly vertical cliff (a 90° angle), the horizontal _run_ drops toward zero. Since you cannot divide by zero, the percent slope theoretically approaches infinity.  If your Digital Elevation Model (DEM) includes sharp terrain features like cliffs, canyons, or sharp highway embankments, QGIS is accurately calculating these extreme slopes, which can easily reach 300%, 500%, or more.
+
+This will often result in a very dark rendering of the raster because by default QGIS will stretch the greyscale (or color ramp) to encompass the entire range of the data. If a few pixels have absurdly high values, pixels in a reasonable range will appear dark.  
+
+Fix this by using the cumulative count cut option in symbology.
+
+::: 
+
+
+
+
 
 ![Hillshade](img/anacapa_hillshade.png){#fig-hillshade fig-alt="Image showing a hillshade render of a DEM" fig-cap="Hillshade" .wrap-right style="--wrap-width:45%;"}
 
@@ -208,52 +266,29 @@ Hillshade is a useful visualization, but the pixel values are not meaningful fro
 
 1. From the Raster menu, go to Analysis > Hillshade (or search Hillshade in the processing tools window).
 2. Make sure you are using your OPR DEM layer as the input.
-3. Adjust the Z factor if you'd like. Keep the azimuth at its default for now.
-4. Click on the 3 dots to the right of the `[Save to temporary file]` box and select `Save to file`. Navigate to your `data` folder and name the file something you can identify it by (i.e. include hillshade in the name). Before you hit `Save`, make sure the file format is `.tif`.
-5. Leave all other parameters at their default and hit `Run`.
+3. Leave all other parameters at their default and hit `Run`.
+4. Save your hillshade as `nr218/lab_4/derivatives/opr_hillshade.tif`
+
+You can adjust the looks of your hillshade by changing the values of the `azimuth` and `Z factor`. Take a moment to play around with the values for these parameters. What do you think each one does?
+
 
 ### Contour Lines
 
 1. Now go to Raster > Extraction > Contour (or search Contour in the processing tools window).
 2. Make sure you are using your OPR DEM layer as the input.
 3. Adjust the contour interval to 10 meters (this tool does not specify an index interval).
-4. Save the layer as a new file the same way you did above. Make sure that the file type is `.geojson`.
-5. Leave all other parameters at their default and hit `Run`.
+4. Leave all other parameters at their default and hit `Run`.
+5. Save the layer as `nr218/lab_4/derivatives/opr_contours.geojson`
 
-
-### Combining DEM Visualizations
-
-1. Open up the Symbology window for your OPR DEM and change the Render Type to `Singleband pseudocolor`. Choose any graduated color ramp from the dropdown.
-2. Make sure your hillshade layer is above the DEM in the layer panel. In the Symbology window, change the `blending mode` to `multiply`. Locate the Transparency tab (one below Symbology), and adjust the layer opacity to your liking.
-3. Make sure your contour layer is the topmost layer. Go to the Symbology window and adjust the color and thickness of your lines to your liking.
-
-
-## Extracting Information from DEMs
-
-So far you have focused on visualizing elevation data; now you will shift toward analyzing it.
-
-
-### Slope and Aspect
-
-You already created a slope layer. _Slope_ tells you how steep the terrain is (in degrees or percent change from horizontal). _Aspect_ tells you which direction each slope of the terrain faces.  
- 
-_Raster_ > _Analysis_ > _Aspect_
-
-## Other Terrain Analysis
-
-Together with hillshade and contours, slope and aspect are often categorized as _terrain analysis_. Other forms of  terrain analysis include:
-
-+ Topographic position index (TPI), which classifies each pixel in relation to the altitude of its neighboring cells
-+ Topographic wetness index (TWI) 
-+ Topographic ruggedness index (TRI)
-+ Geomorphons
 
 ## Geomorphons
 + In the toolbox, search for geomorphons, and select _r.geomorphon_ from under GRASS.
-+ Use an outer search radius or 10, and an inner search radius of 2
-+ Save the output to your `derivatives` directory as `geomorph_10_2.tif`
++ Use your OPR DEM as input.
++ Use an outer search radius of 10, and an inner search radius of 2 (pixels)
++ Save the output to your `derivatives` directory as `opr_geomorph_10_2.tif` (`nr218/lab_4/derivatives/opr_geomorph_10_2.tif`)
 + Right-click [this style definition file](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/geomorph_style.qml) and use _save link as_ to download it.
 + In the symbology tab of the layer properties window for the geomorphons layer, there is a dropdown menu at the very bottom that looks like this ![Style Button](img/style_dropdown.png).  Click it and add the file you downloaded in the last step.
+
 
 ## Sampling Raster Values
 
@@ -269,19 +304,81 @@ Now use the _sample raster values_ tool on your OPR DEM.
 
 Examine the output of the tool by opening the attribute table. What did it do? Rename the output layer (called `Sampled` by default) to something more useful.
 
-Now run the same steps as above, but this time use the output layer as your input and the slope as your raster (Change the `output column prefix` to "slope_" this time). You should now have a new point layer that includes the elevation and the slope. Open the attribute table and look at the values.
+Now run the same steps as above, but this time use the output layer as your input and the slope (percent) as your raster (Change the `output column prefix` to "slope_" this time). You should now have a new point layer that includes the elevation and the slope. Open the attribute table and look at the values.
 
 Repeat this process for aspect.
 
 Save your final layer, with elevation, slope, and aspect attributes to your `derivatives` directory as `samples.geojson`
 
 
+## Combining DEM Visualizations and making a map
+
+1. Open up the Symbology window for your OPR DEM and change the Render Type to `Singleband pseudocolor`. Choose any graduated color ramp from the dropdown.
+2. Make sure your hillshade layer is above the DEM in the layer panel. In the Symbology window, change the `blending mode` to `multiply`. Locate the Transparency tab (one below Symbology), and adjust the layer opacity to your liking.
+3. Make sure your contour layer is the topmost layer. Go to the Symbology window and adjust the color and thickness of your lines to your liking.
+4. Mess with any of the above settings until you get nice visualization of topography.
+
+###  Exporting a Map
+
+__Exporting a GeoPDF__
+
+Use your visualization above.  Put your points with the sampled values on top and check the box to display them. Add labels to display the elevation of each point.
+
+Create a print layout.  Create a map with scalebar, legend and north arrow.
+
+In the print layout window, choose _Layout_ > _Export as PDF_. Save the file directly in your `lab_4` folder with an appropriate name. In the PDF export options, check the box next to `Create Geospatial PDF`, leave the other settings at their defaults, and complete the export.
+
+Let's take a look at what we just exported! Locate the file on your computer and open it in Adobe or a similar PDF viewer. Look for a `Layers` icon, and see what you can do - you should be able to toggle the map layers on and off. Pretty cool!
+
+::: {#tip-avenza .callout-tip}
+## Using a GeoPDF in the Field
+
+If you have the app `Avenza` on your phone, or something similar, you can import GeoPDFs from QGIS and use them as your base map!
+
+:::
+
+
+Remember to save your project!
+
 ## Questions
 
-Save a file `questions.txt` (use notepad or similar) in your `lab_8` directory with answers to the following.
+Save a file `questions.txt` (use notepad or similar) in your `lab_4` directory with answers to the following.
 
 1. You used EPSG:6340 for the project.  Why is this a good choice? Why not use EPSG:26911, or EPSG:4269?
 2. In what units are the pixel values (i.e. elevation) of the OPR DEM?  How do you know? (F.Y.I., This is not a terribly simple answer.)
 3. What is the resolution of the OPR DEM?
 4. Why is the y resolution listed as negative?
 5. What is the advantage of building a VRT instead of creating a full mosaic, and when would a mosaic be the better choice?
+6. When you made your hillshade, I asked you to mess around with the settings of `azimuth` and `Z factor`.  What do they do?
+7. What are the pixel values in aspect? What are their units? How would you interpret them?
+
+
+## Final Directory Structure
+
+By the end of the lab, your folder should look like this. Names in angle brackets are placeholders for the downloaded tile filenames or a filename you choose. Keep the VRT alongside its OPR tiles. Store the downloaded style and sample points in `data`, and keep `downloadlist.txt` in `DEM_OPR` if you run the download commands from that folder.
+
+```text
+nr218/
+└── lab_4/
+    ├── anacapa.qgz
+    ├── questions.txt
+    ├── <your map>.pdf                     # Exported GeoPDF
+    ├── data/
+    │   ├── DEM_OPR/
+    │   │   ├── downloadlist.txt
+    │   │   ├── <OPR DEM tiles>.tif          # All 18 downloaded tiles
+    │   │   └── <your virtual raster>.vrt
+    │   ├── DEM_1arc/
+    │   │   └── <1 arc-second DEM tiles>.tif # Both downloaded tiles
+    │   ├── geomorph_style.qml
+    │   └── anacapa_sample_points.geojson
+    └── derivatives/
+        ├── dem_arcsec.tif
+        ├── opr_slope_deg.tif
+        ├── opr_slope_perc.tif
+        ├── opr_aspect.tif
+        ├── opr_hillshade.tif
+        ├── opr_contours.geojson
+        ├── opr_geomorph_10_2.tif
+        └── samples.geojson
+```

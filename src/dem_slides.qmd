@@ -142,7 +142,7 @@ What does 1 arcsecond resolution mean?
 
 ## Download this DEM
 
-Download [this DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQCSzCfxbbX0QLteSpkYoBFfAcmTrvmInX8oqpyV6WXjMvQ?e=ePHXvc)
+Download [this DEM](https://cpslo-my.sharepoint.com/:i:/g/personal/mthuggin_calpoly_edu/IQCSzCfxbbX0QLteSpkYoBFfAcmTrvmInX8oqpyV6WXjMvQ?e=ePHXvc) 
 
 ## Visualizing Elevation {style="font-size:0.6em"}
 
