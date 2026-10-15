@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PROVISIONAL — NOAA gridded weather forecasts in QGIS</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-fdf903738bb741fab4d0a4277064cb5a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-are-we-exploring" id="toc-what-are-we-exploring" class="nav-link active" data-scroll-target="#what-are-we-exploring"><span class="header-section-number">0.1</span> What are we exploring?</a>
+  <ul class="collapse">
+  <li><a href="#three-kinds-of-time" id="toc-three-kinds-of-time" class="nav-link" data-scroll-target="#three-kinds-of-time"><span class="header-section-number">0.1.1</span> Three kinds of time</a></li>
+  <li><a href="#file-naming-conventions" id="toc-file-naming-conventions" class="nav-link" data-scroll-target="#file-naming-conventions"><span class="header-section-number">0.1.2</span> File naming conventions</a></li>
+  <li><a href="#what-the-dang-is-a-grib-file-anyway" id="toc-what-the-dang-is-a-grib-file-anyway" class="nav-link" data-scroll-target="#what-the-dang-is-a-grib-file-anyway"><span class="header-section-number">0.1.3</span> What the dang is a GRIB file anyway?</a></li>
+  </ul></li>
+  <li><a href="#set-up-qgis-and-open-the-supplied-data" id="toc-set-up-qgis-and-open-the-supplied-data" class="nav-link" data-scroll-target="#set-up-qgis-and-open-the-supplied-data"><span class="header-section-number">0.2</span> Set up QGIS and open the supplied data</a>
+  <ul class="collapse">
+  <li><a href="#data-provenance-and-preparation" id="toc-data-provenance-and-preparation" class="nav-link" data-scroll-target="#data-provenance-and-preparation"><span class="header-section-number">0.2.1</span> Data provenance and preparation</a></li>
+  </ul></li>
+  <li><a href="#map-simulated-radar-reflectivity" id="toc-map-simulated-radar-reflectivity" class="nav-link" data-scroll-target="#map-simulated-radar-reflectivity"><span class="header-section-number">0.3</span> Map simulated radar reflectivity</a></li>
+  <li><a href="#extract-a-grid-scale-forecast-at-kansas-city" id="toc-extract-a-grid-scale-forecast-at-kansas-city" class="nav-link" data-scroll-target="#extract-a-grid-scale-forecast-at-kansas-city"><span class="header-section-number">0.4</span> Extract a (grid scale) forecast at Kansas City</a></li>
+  <li><a href="#stop-not-ready-at-all-past-here" id="toc-stop-not-ready-at-all-past-here" class="nav-link" data-scroll-target="#stop-not-ready-at-all-past-here"><span class="header-section-number">1</span> Stop! not ready at all past here!</a>
+  <ul class="collapse">
+  <li><a href="#turn-accumulated-precipitation-into-an-interval-amount" id="toc-turn-accumulated-precipitation-into-an-interval-amount" class="nav-link" data-scroll-target="#turn-accumulated-precipitation-into-an-interval-amount"><span class="header-section-number">1.1</span> Turn accumulated precipitation into an interval amount</a></li>
+  <li><a href="#examine-the-atmosphere-above-the-storm" id="toc-examine-the-atmosphere-above-the-storm" class="nav-link" data-scroll-target="#examine-the-atmosphere-above-the-storm"><span class="header-section-number">1.2</span> Examine the atmosphere above the storm</a></li>
+  <li><a href="#consider-the-storm-in-three-dimensions" id="toc-consider-the-storm-in-three-dimensions" class="nav-link" data-scroll-target="#consider-the-storm-in-three-dimensions"><span class="header-section-number">1.3</span> Consider the storm in three dimensions</a></li>
+  <li><a href="#summarize-rotating-storm-potential-across-the-forecast" id="toc-summarize-rotating-storm-potential-across-the-forecast" class="nav-link" data-scroll-target="#summarize-rotating-storm-potential-across-the-forecast"><span class="header-section-number">1.4</span> Summarize rotating-storm potential across the forecast</a></li>
+  <li><a href="#animate-hurricane-miltons-forecast" id="toc-animate-hurricane-miltons-forecast" class="nav-link" data-scroll-target="#animate-hurricane-miltons-forecast"><span class="header-section-number">1.5</span> Animate Hurricane Milton’s forecast</a></li>
+  <li><a href="#extend-the-investigation" id="toc-extend-the-investigation" class="nav-link" data-scroll-target="#extend-the-investigation"><span class="header-section-number">1.6</span> Extend the investigation</a></li>
+  <li><a href="#instructor-review-checklist" id="toc-instructor-review-checklist" class="nav-link" data-scroll-target="#instructor-review-checklist"><span class="header-section-number">1.7</span> Instructor review checklist</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.8</span> References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PROVISIONAL — NOAA gridded weather forecasts in QGIS</h1>
+<p class="subtitle lead">An HRRR exploration using supplied local data</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+PROVISIONAL: as in, not done!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a draft lesson, not yet fully tested. It follows the trajectory of dynamical.org’s <a href="https://colab.research.google.com/github/dynamical-org/notebooks/blob/main/noaa-hrrr-forecast-48-hour-virtual.ipynb">NOAA HRRR 48-hour virtual forecast notebook</a>, adapted for QGIS.</p>
+<p><strong>So don’t get worked up if this lesson crashes and burns</strong></p>
+</div>
+</div>
+<section id="what-are-we-exploring" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="what-are-we-exploring"><span class="header-section-number">0.1</span> What are we exploring?</h2>
+<p>We will be examining some basic concepts in geo-spatiotemporal data analysis, using meterological data.</p>
+<p>A weather forecast is a collection of grids containing different variables, elevations, and forecast times. We will examine a weather map, make a point forecast, (and not today) perform rainfall calculations, examine vertical structure, create a storm-track summary, and create an animation. We will use NOAA’s High-Resolution Rapid Refresh (HRRR) data. HRRR uses a 3 km grid over the contiguous United States in a Lambert conformal conic projection.</p>
+<p>By the end of the proposed exercise, you should be able to inspect a multidimensional weather dataset, explain forecast timing, symbolize a weather variable, sample a location, and calculate differences and maxima across forecast hours.</p>
+<section id="three-kinds-of-time" class="level3" data-number="0.1.1">
+<h3 data-number="0.1.1" class="anchored" data-anchor-id="three-kinds-of-time"><span class="header-section-number">0.1.1</span> Three kinds of time</h3>
+<ul>
+<li><strong>Initialization time:</strong> when the forecast run starts.</li>
+<li><strong>Lead time:</strong> how far into the future that run predicts.</li>
+<li><strong>Valid time:</strong> the time being predicted: initialization plus lead time.</li>
+</ul>
+<p>For example, if the run initialized at <code>2024-05-21 18:00 UTC</code>, at lead hour 4, is valid at <code>2024-05-21 22:00 UTC</code>. Two forecasts can have the same valid time but different initialization times. Keep all times in UTC throughout this exercise.</p>
+</section>
+<section id="file-naming-conventions" class="level3" data-number="0.1.2">
+<h3 data-number="0.1.2" class="anchored" data-anchor-id="file-naming-conventions"><span class="header-section-number">0.1.2</span> File naming conventions</h3>
+<p>The file’s names explain their contents. In <code>hrrr.20240521/hrrr.t18z.wrfsfcf04.grib2</code>, The directory gives the date. The pieces of the filename are:</p>
+<ul>
+<li><code>hrrr</code>: the model</li>
+<li><code>t18z</code>: the initialization time, 18:00 UTC</li>
+<li><code>wrfsfc</code>: the product type, the 2D surface-level file (other types include wrfprs for pressure levels, wrfnat for native levels, and wrfsub for sub-hourly)</li>
+<li><code>f04</code>: the forecast hour, meaning a 4-hour lead time</li>
+</ul>
+<p>So this file holds the forecast valid at 18Z + 4 h = 22:00 UTC, on the date of the folder it sits in (2024-05-21). The <code>.subset</code> part was added while extracting subsets of the data for this tutorial.</p>
+</section>
+<section id="what-the-dang-is-a-grib-file-anyway" class="level3" data-number="0.1.3">
+<h3 data-number="0.1.3" class="anchored" data-anchor-id="what-the-dang-is-a-grib-file-anyway"><span class="header-section-number">0.1.3</span> What the dang is a GRIB file anyway?</h3>
+<p>GRIB (GRIdded Binary) is a World Meteorological Organization (WMO) format built for sending weather model grids over slow telecom links, where data moved as discrete <strong>messages</strong>, like telegrams. A GRIB message is a self-contained unit holding one gridded field: one variable, at one level, at one time (for example, 2 m temperature valid at 22Z). Each message carries its own header describing the grid, variable, time, and packing, followed by the packed values and an end marker (<code>7777</code>).</p>
+<p>A GRIB file is just many messages concatenated, with no file-level header. NOAA’s <code>.idx</code> files list each message’s byte offset, so you can download or subset only the messages you need. In GDAL and QGIS, each message appears as a <strong>band</strong>, so a file holds one forecast hour, and its bands are the different fields and levels.</p>
+</section>
+</section>
+<section id="set-up-qgis-and-open-the-supplied-data" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="set-up-qgis-and-open-the-supplied-data"><span class="header-section-number">0.2</span> Set up QGIS and open the supplied data</h2>
+<ol type="1">
+<li>Create a working folder called, <code>noaa</code>, with <code>data</code>, <code>outputs</code>, and <code>maps</code> subfolders. Save a QGIS project as <code>noaa_gridded.qgz</code>.</li>
+<li>Download <a href="https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQCFkOhGCNLXT6ixenzMrb7QAfvyOMyROLUJNOQPcVvRMcA?e=tRUMUp">the data</a></li>
+<li>Copy the <code>noaa_gridded_data</code> folder from the zip into <code>data</code>. The <code>.subset.grib2</code> files contain selected, unmodified GRIB messages on the full CONUS grid; adjacent JSON files identify their source records.</li>
+</ol>
+<pre><code>nr218/
+└── noaa/
+    ├── noaa_gridded.qgz
+    ├── data/
+    │   └── noaa_gridded_data/
+    │       ├── hrrr.20240521/
+    │       │   ├── hrrr.t18z.wrfprsf03.grib2.source.idx
+    │       │   ├── hrrr.t18z.wrfprsf03.subset.grib2
+    │       │   ├── hrrr.t18z.wrfprsf03.subset.grib2.json
+    │       │   ├── hrrr.t18z.wrfsfcf04.grib2.source.idx
+    │       │   ├── hrrr.t18z.wrfsfcf04.subset.grib2
+    │       │   └── hrrr.t18z.wrfsfcf04.subset.grib2.json
+    │       ├── hrrr.20241009/
+    │       │   ├── hrrr.t00z.wrfsfcf00.grib2.source.idx
+    │       │   └── ...
+    │       ├── hrrr.20250314/
+    │       │   ├── hrrr.t12z.wrfsfcf00.grib2.source.idx
+    │       │   └── ...
+    │       ├── inventory.json
+    │       ├── SHA256SUMS
+    │       └── validation.json
+    ├── outputs/
+    └── maps/</code></pre>
+<ol start="4" type="1">
+<li>Open a <code>.subset.grib2</code> file (<em>Data Source Manager → Raster</em>). Inspect its band descriptions before. When you are done, you can remove the layer.</li>
+<li>Select a dated folder and filename for the initialization and forecast lead. Within each file, select the band for the required variable and vertical level. A file represents one forecast hour; its bands represent fields and levels, not a time series.</li>
+<li>Check CRS, units, scale/offset, and NoData. Do not assign EPSG:4326 to a native HRRR grid to make it line up. Keep source metadata alongside any derived raster.</li>
+</ol>
+<section id="data-provenance-and-preparation" class="level3" data-number="0.2.1">
+<h3 data-number="0.2.1" class="anchored" data-anchor-id="data-provenance-and-preparation"><span class="header-section-number">0.2.1</span> Data provenance and preparation</h3>
+<p>NOAA distributes HRRR as GRIB2. These particular files came from <a href="https://github.com/microsoft/AIforEarthDataSets/blob/main/data/noaa-hrrr.md">Planetary Computer’s NOAA mirror</a>, at <code>https://noaahrrr.blob.core.windows.net/hrrr</code>. All 100 files and 581 bands passed GDAL 3.12.2 metadata/time/grid checks and a sample-window decode per band; see <code>noaa_gridded_data/validation.json</code> for band descriptions and units. The folder includes source indexes, per-file provenance, a combined <code>inventory.json</code>, and <code>SHA256SUMS</code>. Local band numbers change when messages are selected; consult the local band metadata rather than the original source record number.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Folder and file pattern</th>
+<th>Contents</th>
+<th>Lesson use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hrrr.20240521/hrrr.t18z.wrfsfcf04.subset.grib2</code></td>
+<td>Composite Reflectivity, <code>REFC</code>, entire atmosphere</td>
+<td>Greenfield simulated radar</td>
+</tr>
+<tr class="even">
+<td><code>hrrr.20240521/hrrr.t18z.wrfprsf03.subset.grib2</code></td>
+<td>Pressure-level temperature, dew point, winds, height, and condensate fields</td>
+<td>Sounding and storm structure</td>
+</tr>
+<tr class="odd">
+<td><code>hrrr.20250314/hrrr.t12z.wrfsfcfHH.subset.grib2</code></td>
+<td><code>TMP</code> and <code>DPT</code> at 2 m; available <code>MXUPHL</code> at 0–3 km</td>
+<td>Kansas City forecast and rotation swath</td>
+</tr>
+<tr class="even">
+<td><code>hrrr.20241009/hrrr.t00z.wrfsfcfHH.subset.grib2</code></td>
+<td><code>REFC</code>; available run-total <code>APCP</code></td>
+<td>Tampa precipitation and Milton animation</td>
+</tr>
+</tbody>
+</table>
+<p>Here <code>HH</code> ranges from <code>00</code> through <code>48</code>. These selected runs include hour-zero accumulation and maximum records labeled <code>0-0 day</code></p>
+<p>The pressure-level file retains temperature (<code>TMP</code>), dew point (<code>DPT</code>), wind components (<code>UGRD</code>, <code>VGRD</code>), and geopotential height (<code>HGT</code>) at all available pressure levels, plus graupel (<code>GRLE</code>), snow (<code>SNMR</code>), cloud water (<code>CLWMR</code>), and rain (<code>RWMR</code>) mixing ratios at 150 hPa and below in altitude (pressure ≥150 hPa).</p>
+</section>
+</section>
+<section id="map-simulated-radar-reflectivity" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="map-simulated-radar-reflectivity"><span class="header-section-number">0.3</span> Map simulated radar reflectivity</h2>
+<p>#TODO: explain what is being done here. we are working at the 2024-05-21 inititiation time.</p>
+<p>Use composite reflectivity from initialization <code>2024-05-21 18:00 UTC</code>, lead hour <strong>4</strong>, valid <code>2024-05-21 22:00 UTC</code>.</p>
+<ol type="1">
+<li>Open hrrr.20240521/hrrr.t18z.wrfsfcf04.subset.grib2. Its single band contains composite reflectivity (REFC).</li>
+<li>Open <strong>Layer Properties → Symbology</strong> and choose <strong>Singleband pseudocolor</strong>. Set a fixed display range of <strong>5–70 dBZ</strong> and use a multicolor ramp such as Turbo if available.</li>
+<li>Make values at or below 5 transparent using raster transparency settings. Preserve the original raster values.</li>
+<li>Add state boundaries for context and label the map with the variable, units, initialization, and valid time.</li>
+</ol>
+<p><strong>Discuss:</strong></p>
+<ul>
+<li>Where are the strongest modeled echoes?</li>
+<li>Why is this a simulated radar field rather than an observed radar image?</li>
+<li>Note, A 3 km grid does not resolve an individual tornado.</li>
+</ul>
+</section>
+<section id="extract-a-grid-scale-forecast-at-kansas-city" class="level2" data-number="0.4">
+<h2 data-number="0.4" class="anchored" data-anchor-id="extract-a-grid-scale-forecast-at-kansas-city"><span class="header-section-number">0.4</span> Extract a (grid scale) forecast at Kansas City</h2>
+<p>Use longitude <strong>−94.58</strong>, latitude <strong>39.10</strong>,<br>
+and initialization <code>2025-03-14 12:00 UTC</code>.<br>
+Compares 2 m air temperature and 2 m dew point across the forecast.</p>
+<ol type="1">
+<li>Create a one-row CSV with columns <code>name,longitude,latitude</code> and values <code>Kansas City,-94.58,39.10</code>.</li>
+<li>Open the CSV as a delimited text point layer in EPSG:4326 then save it as a GeoPackage.</li>
+<li>Load all of the grib files from <code>hrrr.20241009/</code>.<br>
+</li>
+<li>Reproject a copy of the point into the raster CRS.</li>
+<li><em>Pluggins &gt; Manage and install pluggins</em>, search for and install <em>point sampling tool</em>.</li>
+<li><em>Pluggins &gt; Point sampling tool</em>, Select all of the raster layers you just imported. (Click the top one, hold shift click the bottom so they are selected.) Save the output in you data directory as a GeoPackage, <code>sampled.gpkg</code>.</li>
+<li>Open the attribute table of the new <code>sampled.gpkg</code>.</li>
+</ol>
+<ul>
+<li>it is saved in “Wide format” with a single row (<code>fid</code> = 1) and about 147 columns: one for every combination of forecast hour and band (…<code>f48.subset_1, ...f48.subset_2, ...f48.subset_3, ...f47.subset_1</code>, and so on). The time dimension (forecast hour) and the variable (band) are both packed into the column names.</li>
+<li>We want it in long in time but still wide in variable, where each row is one observation, and each column is one variable.<br>
+</li>
+<li>This would be trivial to do if we were doing our analysis in R or Python, it would be a hassle ina spreadheet, and it is a total hassle in QGIS. We also want to change the column names tobe more meaningful. This would take forver in an intro class. Thus I am just going to give you some code to copy and paste some QGIS specific Python (so much more complex than if we were just using python)…</li>
+</ul>
+<ol start="7" type="1">
+<li>Open <em>Pluggins &gt; Python Console</em></li>
+</ol>
+<ul>
+<li>click the code dock editor button (<img src="img/code_dock_editor_button.png" class="img-fluid">)</li>
+<li>paste the following code intote editor</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re, os</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> (QgsVectorLayer, QgsFeature, QgsProject,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                       QgsVectorFileWriter)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.utils <span class="im">import</span> iface</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>src <span class="op">=</span> iface.activeLayer()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>pat <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'wrfsfcf(\d+)\.subset_(\d+)$'</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># band number -&gt; column name</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> {<span class="dv">1</span>: <span class="st">"MXUPHL"</span>, <span class="dv">2</span>: <span class="st">"TMP"</span>, <span class="dv">3</span>: <span class="st">"DPT"</span>}</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>fmap <span class="op">=</span> {}</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> src.fields():</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> pat.search(f.name())</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        fmap[f.name()] <span class="op">=</span> (<span class="bu">int</span>(m.group(<span class="dv">1</span>)), <span class="bu">int</span>(m.group(<span class="dv">2</span>)))</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>bands <span class="op">=</span> <span class="bu">sorted</span>({b <span class="cf">for</span> _, b <span class="kw">in</span> fmap.values()})</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>hours <span class="op">=</span> <span class="bu">sorted</span>({h <span class="cf">for</span> h, _ <span class="kw">in</span> fmap.values()})</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>fields <span class="op">=</span> <span class="st">"&amp;"</span>.join([<span class="st">"field=fid:integer"</span>, <span class="st">"field=fhour:integer"</span>] <span class="op">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>                  [<span class="ss">f"field=</span><span class="sc">{</span>names<span class="sc">.</span>get(b, <span class="ss">f'subset_</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">'</span>)<span class="sc">}</span><span class="ss">:double"</span> <span class="cf">for</span> b <span class="kw">in</span> bands])</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>out <span class="op">=</span> QgsVectorLayer(<span class="st">"NoGeometry?"</span> <span class="op">+</span> fields, <span class="st">"hrrr_long"</span>, <span class="st">"memory"</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>prov <span class="op">=</span> out.dataProvider()</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>new_feats <span class="op">=</span> []</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sf <span class="kw">in</span> src.getFeatures():</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> {}</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, (h, b) <span class="kw">in</span> fmap.items():</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        rows.setdefault(h, {})[b] <span class="op">=</span> sf[name]</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> h <span class="kw">in</span> hours:</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        nf <span class="op">=</span> QgsFeature(out.fields())</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        nf.setAttributes([sf.<span class="bu">id</span>() <span class="cf">if</span> src.fields().indexOf(<span class="st">"fid"</span>) <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">else</span> sf[<span class="st">"fid"</span>], h] <span class="op">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>                         [rows[h].get(b) <span class="cf">for</span> b <span class="kw">in</span> bands])</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        new_feats.append(nf)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>prov.addFeatures(new_feats)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>out.updateExtents()</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>QgsProject.instance().addMapLayer(out)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> os.path.join(os.path.expanduser(<span class="st">"~"</span>), <span class="st">"hrrr_long.csv"</span>)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>opts <span class="op">=</span> QgsVectorFileWriter.SaveVectorOptions()</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>opts.driverName <span class="op">=</span> <span class="st">"CSV"</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>err <span class="op">=</span> QgsVectorFileWriter.writeAsVectorFormatV3(</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    out, path, QgsProject.instance().transformContext(), opts)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Saved to"</span>, path, err[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="8" type="1">
+<li><p>Now open the attribute table to hrrr long and take a look.</p></li>
+<li><p>Export as a csv.</p></li>
+<li><p>Open the csv in Excell (or whatever you want to use). Plot <code>TMP</code> and <code>DPT</code> against lead time (<code>fhour</code>).</p></li>
+</ol>
+<p><strong>Discuss:</strong> When does the dew point fall most sharply? Does temperature change at the same time?</p>
+</section>
+<section id="stop-not-ready-at-all-past-here" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Stop! not ready at all past here!</h1>
+<section id="turn-accumulated-precipitation-into-an-interval-amount" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="turn-accumulated-precipitation-into-an-interval-amount"><span class="header-section-number">1.1</span> Turn accumulated precipitation into an interval amount</h2>
+<p>Use Tampa at longitude <strong>−82.46</strong>, latitude <strong>27.95</strong>, and initialization <code>2024-10-09 00:00 UTC</code>.</p>
+<p>The notebook variable <code>total_precipitation_run_total_surface</code> corresponds here to the <code>APCP:surface:0-HH hour acc fcst</code> record (or the equivalent interval in days at hours 0, 24, and 48). The download selects this run-total record, excluding shorter-interval APCP records. Verify its metadata. For liquid-water equivalent, 1 kg/m² equals 1 mm of water depth.</p>
+<ol type="1">
+<li><p>Load two consecutive accumulated-precipitation grids from the same run. Confirm matching grid alignment, units, and accumulation origin.</p></li>
+<li><p>In <strong>Raster Calculator</strong>, subtract the earlier grid from the later grid. The downloaded Milton files use band 1 for reflectivity and band 2 for precipitation. Select band 2 directly, or first extract the APCP bands as single-band working rasters. For single-band layers renamed <code>accum_f005</code> and <code>accum_f006</code>:</p>
+<pre class="text"><code>"accum_f006@1" - "accum_f005@1"</code></pre></li>
+<li><p>If the input unit is mm, this result is the interval amount in mm. Divide by elapsed seconds for mm/s, or by elapsed hours for mm/hour. For a one-hour interval, divide by 3600 for mm/s.</p></li>
+<li><p>Sample both the accumulated and interval grids at Tampa. Repeat for the run to build the two series shown in the notebook.</p></li>
+</ol>
+<p>Do not subtract grids from different initialization times. Check negative differences for resets, missing values, or mismatched assets. Leave the first interval undefined unless its starting accumulation is known. A label saying “hourly rainfall” is insufficient without checking the interval length.</p>
+</section>
+<section id="examine-the-atmosphere-above-the-storm" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="examine-the-atmosphere-above-the-storm"><span class="header-section-number">1.2</span> Examine the atmosphere above the storm</h2>
+<p>The next notebook section extracts a <strong>vertical column</strong> near longitude <strong>−94.0</strong>, latitude <strong>41.0</strong>, at initialization <code>2024-05-21 18:00 UTC</code>, lead hour <strong>3</strong>. It constructs a sounding with temperature, dew point, wind, and geopotential height on pressure levels.</p>
+<p><strong>Proposed QGIS adaptation:</strong> load matching pressure-level slices, sample the same point, and assemble a table by pressure. Exclude below-ground or missing levels. Compare temperature and dew point at several elevations.</p>
+<p><strong>Deferred:</strong> the notebook’s Skew-T diagram, parcel calculation, CAPE, and wind barbs require additional meteorological tools. Choose a plotting workflow during review rather than treating an ordinary line chart as a Skew-T.</p>
+</section>
+<section id="consider-the-storm-in-three-dimensions" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="consider-the-storm-in-three-dimensions"><span class="header-section-number">1.3</span> Consider the storm in three dimensions</h2>
+<p>The notebook next combines cloud and precipitation mixing ratios into a three-dimensional condensate visualization over longitude <strong>−96 to −92</strong>, latitude <strong>39 to 43</strong>, using the same initialization and lead hour as the sounding.</p>
+<p><strong>Proposed QGIS exercise:</strong> compare horizontal slices at several pressure levels with consistent units and symbology. Explain how cloud structure changes with height.</p>
+<p><strong>Deferred:</strong> reproducing the volumetric isosurfaces requires a separately validated workflow. Pressure is not geometric height, and draping a raster over terrain in QGIS’s 3D view does not reproduce this atmospheric volume. Retain this as an optional extension.</p>
+</section>
+<section id="summarize-rotating-storm-potential-across-the-forecast" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="summarize-rotating-storm-potential-across-the-forecast"><span class="header-section-number">1.4</span> Summarize rotating-storm potential across the forecast</h2>
+<p>Return to surface-group variable <code>maximum_updraft_helicity_3000_0m</code>, initialization <code>2025-03-14 12:00 UTC</code>, over longitude <strong>−95 to −80</strong>, latitude <strong>30 to 42</strong>. Use the <code>MXUPHL:3000-0 m above ground</code> band and confirm its units. These are hourly interval maxima; the temporal maximum combines those intervals.</p>
+<ol type="1">
+<li>Load the MXUPHL band from every available lead-hour file through hour 48 from that one run. Extract or select only that band for each input, not the temperature or dew-point bands.</li>
+<li>Check that the rasters use the same CRS, pixel size, origin, and extent.</li>
+<li>Run <strong>Cell statistics</strong> with the statistic <strong>Maximum</strong>, using those slices as inputs and a matching reference raster. Record the NoData policy; missing hours make the temporal maximum incomplete.</li>
+<li>Display the output over <strong>25–250 m²/s²</strong>, with values at or below 25 transparent.</li>
+</ol>
+<p>This calculates the largest value at each cell over time. The result is a forecast swath of updraft rotation, not an observed tornado track or a tornado probability. Record how many forecast hours contributed.</p>
+</section>
+<section id="animate-hurricane-miltons-forecast" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="animate-hurricane-miltons-forecast"><span class="header-section-number">1.5</span> Animate Hurricane Milton’s forecast</h2>
+<p>Use composite reflectivity from initialization <code>2024-10-09 00:00 UTC</code>, across the forecast, over longitude <strong>−88 to −79</strong>, latitude <strong>24 to 31</strong>.</p>
+<ol type="1">
+<li>Prepare one raster layer per valid hour, with consistent extent and grid. The notebook reduces spatial detail for speed; start with native-resolution regional subsets here and evaluate performance.</li>
+<li>Apply the same <strong>5–70 dBZ</strong> symbology and transparency to every layer.</li>
+<li>In each layer’s <strong>Temporal</strong> properties, enable temporal control and assign a fixed range corresponding to its valid hour. Treat the one-hour display window as an animation convention for an instantaneous field.</li>
+<li>Open the <strong>Temporal Controller</strong>, set a one-hour step, and test a few frames. Check range boundaries so adjacent hours do not overlap unintentionally.</li>
+<li>Add a visible valid-time label and keep the map extent and color range fixed. Preview the sequence before exporting frames.</li>
+</ol>
+<p>The temporal setup needs testing in the selected QGIS version. See <a href="https://documentation.qgis.org/3.44/en/docs/user_manual/working_with_raster/raster_properties.html">QGIS raster properties</a> for available modes.</p>
+<p><strong>Discuss:</strong> What moves between frames? Which apparent changes could result from changing symbology rather than changing weather?</p>
+</section>
+<section id="extend-the-investigation" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="extend-the-investigation"><span class="header-section-number">1.6</span> Extend the investigation</h2>
+<p>Choose one direction after the main workflow is verified:</p>
+<ul>
+<li>Map the forecast maximum of hail size or wind gust, checking the variable’s units and definition.</li>
+<li>Sample incoming shortwave radiation through time to identify rapid changes relevant to solar generation.</li>
+<li>Compare forecast and analysis fields at matching valid times, units, and grid locations. An analysis is another modeled estimate, not independent ground truth.</li>
+<li>Use <strong>Zonal statistics</strong> to summarize a selected field over a watershed or county. For precipitation, explain why summing cell depths is not a rainfall volume without accounting for cell area.</li>
+</ul>
+<p>Save the QGIS project, source metadata, derived rasters, a labeled map, and a brief explanation of initialization versus valid time.</p>
+</section>
+<section id="instructor-review-checklist" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="instructor-review-checklist"><span class="header-section-number">1.7</span> Instructor review checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Verify the GRIB inventory, provenance, band selections, and classroom QGIS readability; decide whether GeoTIFF conversion is needed.</label></li>
+<li><label><input type="checkbox">Record tested QGIS/GDAL versions and exact variable/band mappings.</label></li>
+<li><label><input type="checkbox">Verify units, scale/offset, CRS, forecast timing, accumulation conventions, and NoData handling.</label></li>
+<li><label><input type="checkbox">Test one complete local load → map → sample path before expanding to many hours.</label></li>
+<li><label><input type="checkbox">Select a repeatable time-series/table workflow and decide whether vertical and 3D extensions belong in the lab.</label></li>
+<li><label><input type="checkbox">Check data volume, classroom download time, and temporal display boundaries.</label></li>
+<li><label><input type="checkbox">Add screenshots and expected outputs after testing; remove PROVISIONAL only after review.</label></li>
+</ul>
+</section>
+<section id="references" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="references"><span class="header-section-number">1.8</span> References</h2>
+<ul>
+<li><a href="https://github.com/dynamical-org/notebooks/blob/main/noaa-hrrr-forecast-48-hour-virtual.ipynb">Original notebook source</a>: sequence, case studies, variables, and selections adapted here.</li>
+<li><a href="https://dynamical.org/catalog/noaa-hrrr-forecast-48-hour-virtual/">dynamical.org dataset documentation</a>.</li>
+<li><a href="https://docs.qgis.org/3.44/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html">QGIS raster analysis tools</a>: sampling, cell statistics, and zonal statistics.</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

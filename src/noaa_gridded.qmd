@@ -1,0 +1,287 @@
+---
+title: "PROVISIONAL — NOAA gridded weather forecasts in QGIS"
+subtitle: "An HRRR exploration using supplied local data"
+format:
+  html:
+    toc: true
+    number-sections: true
+execute:
+  eval: false
+---
+
+::: {.callout-warning}
+## PROVISIONAL: as in, not done!
+
+This is a draft lesson, not yet fully tested. It follows the trajectory of dynamical.org's [NOAA HRRR 48-hour virtual forecast notebook](https://colab.research.google.com/github/dynamical-org/notebooks/blob/main/noaa-hrrr-forecast-48-hour-virtual.ipynb), adapted for QGIS.
+
+**So don't get worked up if this lesson crashes and burns** 
+:::
+
+## What are we exploring?
+
+We will be examining some basic concepts in geo-spatiotemporal data analysis, using meterological data.
+
+A weather forecast is a collection of grids containing different variables, elevations, and forecast times. We will examine a weather map, make a point forecast, (and not today) perform rainfall calculations, examine vertical structure, create a storm-track summary, and create an animation.  We will use NOAA's High-Resolution Rapid Refresh (HRRR) data.  HRRR uses a 3 km grid over the contiguous United States in a Lambert conformal conic projection. 
+
+By the end of the proposed exercise, you should be able to inspect a multidimensional weather dataset, explain forecast timing, symbolize a weather variable, sample a location, and calculate differences and maxima across forecast hours.
+
+### Three kinds of time
+
+- **Initialization time:** when the forecast run starts.
+- **Lead time:** how far into the future that run predicts.
+- **Valid time:** the time being predicted: initialization plus lead time.
+
+For example, if the run initialized at `2024-05-21 18:00 UTC`, at lead hour 4, is valid at `2024-05-21 22:00 UTC`. Two forecasts can have the same valid time but different initialization times. Keep all times in UTC throughout this exercise.
+
+### File naming conventions
+
+The file's names explain their contents. In `hrrr.20240521/hrrr.t18z.wrfsfcf04.grib2`, The directory gives the date. The pieces of the filename are:
+
++ `hrrr`: the model
++ `t18z`: the initialization time, 18:00 UTC
++ `wrfsfc`: the product type, the 2D surface-level file (other types include wrfprs for pressure levels, wrfnat for native levels, and wrfsub for sub-hourly)
++ `f04`: the forecast hour, meaning a 4-hour lead time
+
+So this file holds the forecast valid at 18Z + 4 h = 22:00 UTC, on the date of the folder it sits in (2024-05-21). The `.subset` part was added while extracting subsets of the data for this tutorial.
+
+### What the dang is a GRIB file anyway?
+
+GRIB (GRIdded Binary) is a World Meteorological Organization (WMO) format built for sending weather model grids over slow telecom links, where data moved as discrete **messages**, like telegrams. A GRIB message is a self-contained unit holding one gridded field: one variable, at one level, at one time (for example, 2 m temperature valid at 22Z). Each message carries its own header describing the grid, variable, time, and packing, followed by the packed values and an end marker (`7777`).
+
+A GRIB file is just many messages concatenated, with no file-level header. NOAA's `.idx` files list each message's byte offset, so you can download or subset only the messages you need. In GDAL and QGIS, each message appears as a **band**, so a file holds one forecast hour, and its bands are the different fields and levels.
+
+## Set up QGIS and open the supplied data
+
+1. Create a working folder called, `noaa`, with `data`, `outputs`, and `maps` subfolders. Save a QGIS project as `noaa_gridded.qgz`.
+2. Download [the data](https://cpslo-my.sharepoint.com/:u:/g/personal/mthuggin_calpoly_edu/IQCFkOhGCNLXT6ixenzMrb7QAfvyOMyROLUJNOQPcVvRMcA?e=tRUMUp)
+3. Copy the  `noaa_gridded_data` folder from the zip into `data`. The `.subset.grib2` files contain selected, unmodified GRIB messages on the full CONUS grid; adjacent JSON files identify their source records.
+
+```
+nr218/
+└── noaa/
+    ├── noaa_gridded.qgz
+    ├── data/
+    │   └── noaa_gridded_data/
+    │       ├── hrrr.20240521/
+    │       │   ├── hrrr.t18z.wrfprsf03.grib2.source.idx
+    │       │   ├── hrrr.t18z.wrfprsf03.subset.grib2
+    │       │   ├── hrrr.t18z.wrfprsf03.subset.grib2.json
+    │       │   ├── hrrr.t18z.wrfsfcf04.grib2.source.idx
+    │       │   ├── hrrr.t18z.wrfsfcf04.subset.grib2
+    │       │   └── hrrr.t18z.wrfsfcf04.subset.grib2.json
+    │       ├── hrrr.20241009/
+    │       │   ├── hrrr.t00z.wrfsfcf00.grib2.source.idx
+    │       │   └── ...
+    │       ├── hrrr.20250314/
+    │       │   ├── hrrr.t12z.wrfsfcf00.grib2.source.idx
+    │       │   └── ...
+    │       ├── inventory.json
+    │       ├── SHA256SUMS
+    │       └── validation.json
+    ├── outputs/
+    └── maps/
+```
+
+4. Open a `.subset.grib2` file  (_Data Source Manager → Raster_). Inspect its band descriptions before. When you are done, you can remove the layer.
+5. Select a dated folder and filename for the initialization and forecast lead. Within each file, select the band for the required variable and vertical level. A file represents one forecast hour; its bands represent fields and levels, not a time series.
+6. Check CRS, units, scale/offset, and NoData. Do not assign EPSG:4326 to a native HRRR grid to make it line up. Keep source metadata alongside any derived raster.
+
+### Data provenance and preparation
+
+NOAA distributes HRRR as GRIB2. These particular files came from [Planetary Computer's NOAA mirror](https://github.com/microsoft/AIforEarthDataSets/blob/main/data/noaa-hrrr.md), at `https://noaahrrr.blob.core.windows.net/hrrr`.  All 100 files and 581 bands passed GDAL 3.12.2 metadata/time/grid checks and a sample-window decode per band; see `noaa_gridded_data/validation.json` for band descriptions and units.  The folder includes source indexes, per-file provenance, a combined `inventory.json`, and `SHA256SUMS`. Local band numbers change when messages are selected; consult the local band metadata rather than the original source record number.
+
+| Folder and file pattern | Contents | Lesson use |
+|---|---|---|
+| `hrrr.20240521/hrrr.t18z.wrfsfcf04.subset.grib2` | Composite Reflectivity, `REFC`, entire atmosphere | Greenfield simulated radar |
+| `hrrr.20240521/hrrr.t18z.wrfprsf03.subset.grib2` | Pressure-level temperature, dew point, winds, height, and condensate fields | Sounding and storm structure |
+| `hrrr.20250314/hrrr.t12z.wrfsfcfHH.subset.grib2` | `TMP` and `DPT` at 2 m; available `MXUPHL` at 0–3 km | Kansas City forecast and rotation swath |
+| `hrrr.20241009/hrrr.t00z.wrfsfcfHH.subset.grib2` | `REFC`; available run-total `APCP` | Tampa precipitation and Milton animation |
+
+Here `HH` ranges from `00` through `48`. These selected runs include hour-zero accumulation and maximum records labeled `0-0 day`
+
+The pressure-level file retains temperature (`TMP`), dew point (`DPT`), wind components (`UGRD`, `VGRD`), and geopotential height (`HGT`) at all available pressure levels, plus graupel (`GRLE`), snow (`SNMR`), cloud water (`CLWMR`), and rain (`RWMR`) mixing ratios at 150 hPa and below in altitude (pressure ≥150 hPa). 
+
+## Map simulated radar reflectivity
+
+#TODO: explain what is being done here. we are working at the 2024-05-21 inititiation time.
+ 
+Use composite reflectivity from initialization `2024-05-21 18:00 UTC`, lead hour **4**, valid `2024-05-21 22:00 UTC`.
+
+1. Open hrrr.20240521/hrrr.t18z.wrfsfcf04.subset.grib2. Its single band contains composite reflectivity (REFC).
+3. Open **Layer Properties → Symbology** and choose **Singleband pseudocolor**. Set a fixed display range of **5–70 dBZ** and use a multicolor ramp such as Turbo if available.
+4. Make values at or below 5 transparent using raster transparency settings. Preserve the original raster values.
+5. Add state boundaries for context and label the map with the variable, units, initialization, and valid time.
+
+**Discuss:** 
+
++ Where are the strongest modeled echoes? 
++ Why is this a simulated radar field rather than an observed radar image? 
++ Note, A 3 km grid does not resolve an individual tornado.
+
+## Extract a (grid scale) forecast at Kansas City
+
+Use longitude **−94.58**, latitude **39.10**,  
+and initialization `2025-03-14 12:00 UTC`.  
+Compares 2 m air temperature and 2 m dew point across the forecast.
+
+1. Create a one-row CSV with columns `name,longitude,latitude` and values `Kansas City,-94.58,39.10`. 
+2. Open the CSV as a delimited text point layer in EPSG:4326 then save it as a GeoPackage.
+2. Load all of the grib files from `hrrr.20241009/`.  
+3. Reproject a copy of the point into the raster CRS.
+4. _Pluggins > Manage and install pluggins_, search for and install _point sampling tool_.
+5.  _Pluggins > Point sampling tool_,  Select all of the raster layers you just imported. (Click the top one, hold shift click the bottom so they are selected.) Save the output in you data directory as a GeoPackage, `sampled.gpkg`.
+6. Open the attribute table of the new `sampled.gpkg`. 
+
++ it is saved in "Wide format" with a single row (`fid` = 1) and about 147 columns: one for every combination of forecast hour and band (...`f48.subset_1, ...f48.subset_2, ...f48.subset_3, ...f47.subset_1`, and so on). The time dimension (forecast hour) and the variable (band) are both packed into the column names.
++ We want it in long in time but still wide in variable, where each row is one observation, and each column is one variable.  
++ This would be trivial to do if we were doing our analysis in R or Python, it would be a hassle ina spreadheet, and it is a total hassle in QGIS.  We also want to change the column names tobe more meaningful. This would take forver in an intro class. Thus I am just going to give you some code to copy and paste some QGIS specific Python (so much more complex than if we were just using python)...
+
+7. Open _Pluggins > Python Console_
+
++ click the code dock editor button (![](img/code_dock_editor_button.png))
++ paste the following code intote editor
+```python
+import re, os
+from qgis.core import (QgsVectorLayer, QgsFeature, QgsProject,
+                       QgsVectorFileWriter)
+from qgis.utils import iface
+
+src = iface.activeLayer()
+pat = re.compile(r'wrfsfcf(\d+)\.subset_(\d+)$')
+
+# band number -> column name
+names = {1: "MXUPHL", 2: "TMP", 3: "DPT"}
+
+fmap = {}
+for f in src.fields():
+    m = pat.search(f.name())
+    if m:
+        fmap[f.name()] = (int(m.group(1)), int(m.group(2)))
+
+bands = sorted({b for _, b in fmap.values()})
+hours = sorted({h for h, _ in fmap.values()})
+
+fields = "&".join(["field=fid:integer", "field=fhour:integer"] +
+                  [f"field={names.get(b, f'subset_{b}')}:double" for b in bands])
+out = QgsVectorLayer("NoGeometry?" + fields, "hrrr_long", "memory")
+prov = out.dataProvider()
+
+new_feats = []
+for sf in src.getFeatures():
+    rows = {}
+    for name, (h, b) in fmap.items():
+        rows.setdefault(h, {})[b] = sf[name]
+    for h in hours:
+        nf = QgsFeature(out.fields())
+        nf.setAttributes([sf.id() if src.fields().indexOf("fid") < 0 else sf["fid"], h] +
+                         [rows[h].get(b) for b in bands])
+        new_feats.append(nf)
+
+prov.addFeatures(new_feats)
+out.updateExtents()
+QgsProject.instance().addMapLayer(out)
+
+path = os.path.join(os.path.expanduser("~"), "hrrr_long.csv")
+opts = QgsVectorFileWriter.SaveVectorOptions()
+opts.driverName = "CSV"
+err = QgsVectorFileWriter.writeAsVectorFormatV3(
+    out, path, QgsProject.instance().transformContext(), opts)
+print("Saved to", path, err[0])
+```
+8. Now open the attribute table to hrrr long and take a look.
+
+4. Export as a csv.
+
+5. Open the csv in Excell (or whatever you want to use). Plot `TMP` and `DPT` against lead time (`fhour`). 
+
+
+**Discuss:** When does the dew point fall most sharply? Does temperature change at the same time?
+
+
+# Stop! not ready at all past here!
+
+## Turn accumulated precipitation into an interval amount
+
+Use Tampa at longitude **−82.46**, latitude **27.95**, and initialization `2024-10-09 00:00 UTC`.
+
+The notebook variable `total_precipitation_run_total_surface` corresponds here to the `APCP:surface:0-HH hour acc fcst` record (or the equivalent interval in days at hours 0, 24, and 48). The download selects this run-total record, excluding shorter-interval APCP records. Verify its metadata. For liquid-water equivalent, 1 kg/m² equals 1 mm of water depth.
+
+1. Load two consecutive accumulated-precipitation grids from the same run. Confirm matching grid alignment, units, and accumulation origin.
+2. In **Raster Calculator**, subtract the earlier grid from the later grid. The downloaded Milton files use band 1 for reflectivity and band 2 for precipitation. Select band 2 directly, or first extract the APCP bands as single-band working rasters. For single-band layers renamed `accum_f005` and `accum_f006`:
+
+   ```text
+   "accum_f006@1" - "accum_f005@1"
+   ```
+
+3. If the input unit is mm, this result is the interval amount in mm. Divide by elapsed seconds for mm/s, or by elapsed hours for mm/hour. For a one-hour interval, divide by 3600 for mm/s.
+4. Sample both the accumulated and interval grids at Tampa. Repeat for the run to build the two series shown in the notebook.
+
+Do not subtract grids from different initialization times. Check negative differences for resets, missing values, or mismatched assets. Leave the first interval undefined unless its starting accumulation is known. A label saying “hourly rainfall” is insufficient without checking the interval length.
+
+## Examine the atmosphere above the storm
+
+The next notebook section extracts a __vertical column__ near longitude **−94.0**, latitude **41.0**, at initialization `2024-05-21 18:00 UTC`, lead hour **3**. It constructs a sounding with temperature, dew point, wind, and geopotential height on pressure levels.
+
+**Proposed QGIS adaptation:** load matching pressure-level slices, sample the same point, and assemble a table by pressure. Exclude below-ground or missing levels. Compare temperature and dew point at several elevations.
+
+**Deferred:** the notebook's Skew-T diagram, parcel calculation, CAPE, and wind barbs require additional meteorological tools. Choose a plotting workflow during review rather than treating an ordinary line chart as a Skew-T.
+
+## Consider the storm in three dimensions
+
+The notebook next combines cloud and precipitation mixing ratios into a three-dimensional condensate visualization over longitude **−96 to −92**, latitude **39 to 43**, using the same initialization and lead hour as the sounding.
+
+**Proposed QGIS exercise:** compare horizontal slices at several pressure levels with consistent units and symbology. Explain how cloud structure changes with height.
+
+**Deferred:** reproducing the volumetric isosurfaces requires a separately validated workflow. Pressure is not geometric height, and draping a raster over terrain in QGIS's 3D view does not reproduce this atmospheric volume. Retain this as an optional extension.
+
+## Summarize rotating-storm potential across the forecast
+
+Return to surface-group variable `maximum_updraft_helicity_3000_0m`, initialization `2025-03-14 12:00 UTC`, over longitude **−95 to −80**, latitude **30 to 42**. Use the `MXUPHL:3000-0 m above ground` band and confirm its units. These are hourly interval maxima; the temporal maximum combines those intervals.
+
+1. Load the MXUPHL band from every available lead-hour file through hour 48 from that one run. Extract or select only that band for each input, not the temperature or dew-point bands.
+2. Check that the rasters use the same CRS, pixel size, origin, and extent.
+3. Run **Cell statistics** with the statistic **Maximum**, using those slices as inputs and a matching reference raster. Record the NoData policy; missing hours make the temporal maximum incomplete.
+4. Display the output over **25–250 m²/s²**, with values at or below 25 transparent.
+
+This calculates the largest value at each cell over time. The result is a forecast swath of updraft rotation, not an observed tornado track or a tornado probability. Record how many forecast hours contributed.
+
+## Animate Hurricane Milton's forecast
+
+Use composite reflectivity from initialization `2024-10-09 00:00 UTC`, across the forecast, over longitude **−88 to −79**, latitude **24 to 31**.
+
+1. Prepare one raster layer per valid hour, with consistent extent and grid. The notebook reduces spatial detail for speed; start with native-resolution regional subsets here and evaluate performance.
+2. Apply the same **5–70 dBZ** symbology and transparency to every layer.
+3. In each layer's **Temporal** properties, enable temporal control and assign a fixed range corresponding to its valid hour. Treat the one-hour display window as an animation convention for an instantaneous field.
+4. Open the **Temporal Controller**, set a one-hour step, and test a few frames. Check range boundaries so adjacent hours do not overlap unintentionally.
+5. Add a visible valid-time label and keep the map extent and color range fixed. Preview the sequence before exporting frames.
+
+The temporal setup needs testing in the selected QGIS version. See [QGIS raster properties](https://documentation.qgis.org/3.44/en/docs/user_manual/working_with_raster/raster_properties.html) for available modes.
+
+**Discuss:** What moves between frames? Which apparent changes could result from changing symbology rather than changing weather?
+
+## Extend the investigation
+
+Choose one direction after the main workflow is verified:
+
+- Map the forecast maximum of hail size or wind gust, checking the variable's units and definition.
+- Sample incoming shortwave radiation through time to identify rapid changes relevant to solar generation.
+- Compare forecast and analysis fields at matching valid times, units, and grid locations. An analysis is another modeled estimate, not independent ground truth.
+- Use **Zonal statistics** to summarize a selected field over a watershed or county. For precipitation, explain why summing cell depths is not a rainfall volume without accounting for cell area.
+
+Save the QGIS project, source metadata, derived rasters, a labeled map, and a brief explanation of initialization versus valid time.
+
+## Instructor review checklist
+
+- [ ] Verify the GRIB inventory, provenance, band selections, and classroom QGIS readability; decide whether GeoTIFF conversion is needed.
+- [ ] Record tested QGIS/GDAL versions and exact variable/band mappings.
+- [ ] Verify units, scale/offset, CRS, forecast timing, accumulation conventions, and NoData handling.
+- [ ] Test one complete local load → map → sample path before expanding to many hours.
+- [ ] Select a repeatable time-series/table workflow and decide whether vertical and 3D extensions belong in the lab.
+- [ ] Check data volume, classroom download time, and temporal display boundaries.
+- [ ] Add screenshots and expected outputs after testing; remove PROVISIONAL only after review.
+
+## References
+
+- [Original notebook source](https://github.com/dynamical-org/notebooks/blob/main/noaa-hrrr-forecast-48-hour-virtual.ipynb): sequence, case studies, variables, and selections adapted here.
+- [dynamical.org dataset documentation](https://dynamical.org/catalog/noaa-hrrr-forecast-48-hour-virtual/).
+- [QGIS raster analysis tools](https://docs.qgis.org/3.44/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html): sampling, cell statistics, and zonal statistics.

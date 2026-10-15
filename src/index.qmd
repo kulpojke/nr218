@@ -54,6 +54,7 @@ __Assorted Links__
 [Section 7 Syllabus](syllabi/section_07_fall_2026.html){style="font-size:0.8em"}  
 [Section 9 Syllabus](syllabi/section_09_fall_2026.html){style="font-size:0.8em"}  
 [Short Reading on Computers](computers.html){style="font-size:0.8em"}    
+[NOAA Gridded Data](noaa_gridded.html){style="font-size:0.8em"}    
 :::
 
 
