@@ -249,9 +249,55 @@ Image Source: [NASA Earthdata](https://www.earthdata.nasa.gov/learn/earth-observ
 
 ## Filter, Map, Reduce
 
-+ Filter - Find the subset of data needed.
-+ Map - Transform the raw data into useful data
-+ Reduce - Extract needed information
+A three-step pattern for working with large datasets: **narrow it down, reshape it, summarize it.**
+
+```
+raw data  →  Filter  →  Map  →  Reduce  →  answer
+```
+
+| Step | What it does | Umbra footprints example |
+|------|--------------|--------------------------|
+| **Filter** | Keeps only the records you need and drops the rest | Keep scenes tagged `Los_Angeles_CA_Wildfires` |
+| **Map** | Applies the same transformation to every record | Turn each browser URL into an S3 bucket path |
+| **Reduce** | Combines many values into one result | Count the scenes, or total the area covered |
+
+::: {.notes}
+Each step takes the output of the one before it. Filtering first means
+the later steps have less data to process.
+:::
+
+## Filter
+
+**Keep only the records that pass a test. Discard the rest.**
+
+::: {.incremental}
+- Takes a collection and a **condition** (a true/false test)
+- Returns the *same kind* of records, just **fewer** of them
+- Never changes the records themselves
+- Do it **first**: less data to transform, move and store
+:::
+
+## Filter: common kinds {.smaller}
+
+| Type | Question it asks | Example |
+|------|------------------|---------|
+| **Attribute** | Does the value match? | `shortname == "Los_Angeles_CA_Wildfires"` |
+| **Temporal** | Is it in the date range? | `date >= "2025-01-07"` |
+| **Spatial** | Is it inside the area? | footprint intersects the LA bounding box |
+
+```python
+import pandas as pd
+
+df = pd.read_csv("umbra_urls.csv")                           # 1,000s of scenes
+
+la = df[df["shortname"] == "Los_Angeles_CA_Wildfires"]      # filter: 5 scenes
+```
+
+::: {.notes}
+Filters can be combined with AND / OR to narrow things further. The same
+idea appears everywhere: SQL `WHERE`, `ogr2ogr -where` / `-spat`,
+QGIS "Extract by expression", and `df[df.col == value]` in pandas.
+:::
 
 ## Spectral indices {.smaller}
 
