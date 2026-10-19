@@ -297,7 +297,7 @@ la = df[df["shortname"] == "Los_Angeles_CA_Wildfires"]      # filter: 5 scenes
 Filters can be combined with AND / OR to narrow things further. The same
 idea appears everywhere: SQL `WHERE`, `ogr2ogr -where` / `-spat`,
 QGIS "Extract by expression", and `df[df.col == value]` in pandas.
-:::
+:::y
 
 ## Spectral indices {.smaller}
 
