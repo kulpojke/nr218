@@ -37,7 +37,7 @@ The National Agriculture Imagery Program (NAIP) acquires aerial imagery during t
 Create a working directory, called `lab_05_NAIP`, for this lab in your `nr218` folder. Create a `data` folder and put the downloaded data inside. Then:
 
 + Open QGIS and start a new project
-+ Change the project CRS to EPSG:6339
++ Change the project CRS to EPSG:26910
 + Save it in the `lab_05_NAIP` folder as `coffee_fire.qgz`
 
 Also create a text document (using Notepad, TextEdit, gedit, or similar), name it `answers.txt`, and save it in `lab_05_NAIP`. Throughout this lab there will be questions included in the format of the text below. Answer the questions in `answers.txt`.
@@ -68,7 +68,7 @@ During this workflow, there is no need to save any file with _scratch_ in the na
 
 ![Vectors created while creating `fires_in_AOI`](img/lab_10_vectors.png ){#fig-vectors  .wrap-right style="--wrap-width:40%;"}
 
->  Question 2. What CRS is `subset_of_cal_hist_fires.geojson` in? Is there something you should do regarding the CRS?  
+>  Question 2. What CRS is `subset_of_cal_hist_fires.geojson` in? 
 
 3. Extract the perimeter of the Coffee Fire (`FIRE_NAME` is `COFFEE`). There are a few ways you can do this, your choice. Name the resulting layer `Coffee fire`. (I would recommend naming the file you save `coffee_fire.geojson`.)
 
