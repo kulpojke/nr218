@@ -249,24 +249,23 @@ Image Source: [NASA Earthdata](https://www.earthdata.nasa.gov/learn/earth-observ
 
 ## Filter, Map, Reduce
 
-A three-step pattern for working with large datasets: **narrow it down, reshape it, summarize it.**
+A three-step pattern for working with large datasets: 
 
 ```
 raw data  →  Filter  →  Map  →  Reduce  →  answer
 ```
+:::{style="font-size:0.6em"}
+ * __Filter__  - Keeps only the records you need and drops the rest 
+ * __Map__  - Applies the same transformation to every record 
+ * __Reduce__  - Combines many values into one result 
+:::
 
-| Step | What it does | Umbra footprints example |
-|------|--------------|--------------------------|
-| **Filter** | Keeps only the records you need and drops the rest | Keep scenes tagged `Los_Angeles_CA_Wildfires` |
-| **Map** | Applies the same transformation to every record | Turn each browser URL into an S3 bucket path |
-| **Reduce** | Combines many values into one result | Count the scenes, or total the area covered |
-
-::: {.notes}
+::: {style="font-size:0.5em"}
 Each step takes the output of the one before it. Filtering first means
 the later steps have less data to process.
 :::
 
-## Filter
+## Filter 
 
 **Keep only the records that pass a test. Discard the rest.**
 
@@ -277,31 +276,81 @@ the later steps have less data to process.
 - Do it **first**: less data to transform, move and store
 :::
 
-## Filter: common kinds {.smaller}
+## Filter: common kinds {style="font-size:0.7em"}
 
-| Type | Question it asks | Example |
-|------|------------------|---------|
-| **Attribute** | Does the value match? | `shortname == "Los_Angeles_CA_Wildfires"` |
-| **Temporal** | Is it in the date range? | `date >= "2025-01-07"` |
-| **Spatial** | Is it inside the area? | footprint intersects the LA bounding box |
+
+ **Attribute**  `Fire_name == "Los_Angeles_CA_Wildfires"`  
+ **Temporal**   `date >= "2025-01-07"`  
+ **Spatial**   footprint intersects the LA bounding box  
 
 ```python
 import pandas as pd
 
-df = pd.read_csv("umbra_urls.csv")                           # 1,000s of scenes
-
-la = df[df["shortname"] == "Los_Angeles_CA_Wildfires"]      # filter: 5 scenes
+df = pd.read_csv('umbra_urls.csv')                           # 1,000s of scenes
+la = df[df['Fire_name'] == 'Los_Angeles_CA_Wildfires']      # filter: 5 scenes
 ```
 
 ::: {.notes}
 Filters can be combined with AND / OR to narrow things further. The same
 idea appears everywhere: SQL `WHERE`, `ogr2ogr -where` / `-spat`,
 QGIS "Extract by expression", and `df[df.col == value]` in pandas.
-:::y
+:::
 
-## Spectral indices {.smaller}
 
-Spectral index 
+## Map {style="font-size:0.7em"}
+
+**Apply the same transformation to every record. Same count in, same count out.**
+
+::: {.incremental}
+- Takes a collection and a **function**
+    - `[ a, b, c ]  →  f(x)  →  [ f(a), f(b), f(c) ]`
+- Returns **one result per item** (a pixel, a feature, a row): none dropped, none merged
+    - [(An item can have _several values_, e.g.bands, or attributes. The function may combine values: NDVI uses red and NIR together)]{style="font-size:0.6em"}
+- Each item is processed **independently**, so it parallelises easily
+- Usually comes **after Filter**, so you only transform what you need
+:::
+
+
+
+
+## Map: three levels {style="font-size:0.55em"}
+
+| Level | Operation | What it does |
+|-------|-----------|--------------|
+| **Pixel** | dB conversion | SAR power to decibels: `10 * log10(x)` |
+| | Scaling | DN to reflectance, Kelvin to Celsius |
+| | Thresholding | Continuous band to classes (e.g. water where NDWI > 0) |
+| | Masking | Cloudy pixels become NoData |
+| | Change detection | Post-fire minus pre-fire, pixel by pixel |
+| **Feature** | Reproject | Move each geometry to a new CRS |
+| | Centroid / buffer | Replace each footprint with a point or buffered shape |
+| | Compute area | Add an `area_km2` field to each polygon |
+| **Record** | URL to bucket path | Browser link to `s3://` path for rclone |
+| | Parse metadata | Pull the date out of a filename or KML `description` |
+| | Convert format | KML to GeoPackage, GeoTIFF to COG |
+
+::: {.notes}
+Spectral indices (NDVI, NBR, NDWI) are also maps: the same formula
+applied to every pixel. They are just the best-known example.
+:::
+
+
+
+## Map vs. neighborhood operations {style="font-size:0.7em"}
+___Pedantic Point___
+
+A true map looks **only at the item in front of it**.
+
+| Map (per item) | Not a map (looks at neighbours) |
+|----------------|---------------------------------|
+| dB conversion | Speckle filtering |
+| NDVI | Slope and aspect from a DEM |
+| Reproject | Blur or edge detection |
+
+Neighbourhood operations are called **focal** operations. Each output depends on several inputs, so they are harder to split up and run in parallel.
+
+## _Map_
+### Spectral indices {style="font-size:0.7em"}
 
 + A mathematical equation that is applied on the various spectral bands of an
 image on a per pixel basis
@@ -314,7 +363,8 @@ spatial and temporal comparisons [^nasa]
 [^nasa]:  NASA ARSET slideshow _Spectral Indices for Land and Aquatic Applications_
 
 
-## Spectral Response Curves {.smaller}
+## _Map_
+### Spectral Response Curves {style="font-size:0.7em"}
 
 ::: { .r-stack}
 
@@ -327,7 +377,7 @@ Image Source: [SEOS](https://seos-project.eu/classification/classification-c01-p
 
 :::
 
-::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.8em"}
+::: {.fragment .absolute .fade-in-then-out data-fragment-index="1" style="font-size:0.6em"}
 $$
 \text{NBR} = \frac{\text{NIR} - \text{SWIR-2}}{\text{NIR} + \text{SWIR-2}} = \frac{B_8 - B_{12}}{B_8 + B_{12}}
 $$
@@ -338,7 +388,8 @@ $$
 :::
 
 
-## Common Spectral Indices {style="font-size:0.5em"}
+## _Map_ {style="font-size:0.5em"}
+### Common Spectral Indices 
 | Index | Formula | Typical Use |
 | --- | --- | --- |
 | NDVI | $(\text{NIR} - \text{Red}) / (\text{NIR} + \text{Red})$ | Vegetation greenness/vigor |
@@ -350,9 +401,11 @@ $$
 | NDMI | $(\text{NIR} - \text{SWIR-1}) / (\text{NIR} + \text{SWIR-1})$ | Vegetation moisture |
 
 
-## NDVI
+## _Map_
+### NDVI
 
-$(\text{NIR} - \text{Red}) / (\text{NIR} + \text{Red})$
+$\text{NDVI} = \frac{\text{NIR} - \text{Red}}{\text{NIR} + \text{Red}}$
+
 
 ::: {.fragment .absolute .fade-out data-fragment-index="1"  }
 ![](img/spectral_signatures_landsat_450.jpg)
@@ -379,7 +432,8 @@ Image Source: [NASA ARSET](https://appliedsciences.nasa.gov/sites/default/files/
 :::
 :::
 
-## Raster Calculator
+## _Map_
+### Raster Calculator
 
 - Applies map algebra to rasters, cell by cell
 - Useful for band math, reclassification, masking, and thresholding
@@ -390,7 +444,8 @@ Image Source: [NASA ARSET](https://appliedsciences.nasa.gov/sites/default/files/
 
 
 
-## Extracting Zonal Statistics
+## _Reduce_
+### Extracting Zonal Statistics
 
 ::: { .r-stack}
 ::: {.fragment .absolute .fade-out data-fragment-index="1"}
