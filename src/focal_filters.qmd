@@ -1,5 +1,10 @@
 # Focal Filters
 
+Download for examples:
+
+- [dins_building_style.qml](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/dins_building_style.qml)
+- [dins_buildings_palisade_clip.geojson](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/dins_buildings_palisade_clip.geojson)
+- [palisades_clip.tif](https://raw.githubusercontent.com/kulpojke/nr218/main/assets/palisades_clip.tif)
 
 ## What are Focal Filters? {style="font-size:0.7em"}
 
