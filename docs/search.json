@@ -1477,6 +1477,20 @@
     "text": "We can do the same operation we just did through the plugin:"
   },
   {
+    "objectID": "index.html#segmentation-1",
+    "href": "index.html#segmentation-1",
+    "title": "NR 218",
+    "section": "Segmentation",
+    "text": "Segmentation\nYou have calculated spectral indices and looked at the difference in vegetation greenness in the aftermath of several fires.\nSometimes one wants to separate an image into different regions to signify some sort of distinction. For example:\n\nDifferent types of land cover\nObjects, such as buildings, trees or cars.\n\nThis type of task is called Segmentation, because you are dividing the image into segments representing different things."
+  },
+  {
+    "objectID": "index.html#types-of-segmentation",
+    "href": "index.html#types-of-segmentation",
+    "title": "NR 218",
+    "section": "Types of segmentation",
+    "text": "Types of segmentation\n\nSemantic segmentation: every pixel gets a class (water, vegetation, bare soil, urban). In practice this is per-pixel classification.\nInstance segmentation: like semantic segmentation, but each object is kept separate. For example, pond 1, pond 2 and pond 3 instead of just “pond.”\nObject-based segmentation (OBIA): group pixels into similar “objects” first, with no labels. Then classify the objects instead of the pixels.\n\nToday we will be doing semantic segmentation."
+  },
+  {
     "objectID": "index.html#semantic-segmentation",
     "href": "index.html#semantic-segmentation",
     "title": "NR 218",
@@ -1540,8 +1554,8 @@
     "text": "Installing attribute based clustering pluggin\nGo to pluggins, search for Attribute based clustering, install the pluggin"
   },
   {
-    "objectID": "index.html#segmentation-1",
-    "href": "index.html#segmentation-1",
+    "objectID": "index.html#segmentation-2",
+    "href": "index.html#segmentation-2",
     "title": "NR 218",
     "section": "Segmentation",
     "text": "Segmentation\n\n\n\n\nDownload Sentinel 2 (bands 4, 3, 2 and 8) tile of Brazilian Atlantic Forest\n\n\n\n\n\nBand\nCommon name\nCentral wavelength (nm)\nResolution (m)\n\n\n\n\n\nB1\nCoastal aerosol\n443\n60\n\n\n\nB2\nBlue\n490\n10\n\n\n\nB3\nGreen\n560\n10\n\n\n\nB4\nRed\n665\n10\n\n\n\nB5\nRed Edge 1\n705\n20\n\n\n\nB6\nRed Edge 2\n740\n20\n\n\n\nB7\nRed Edge 3\n783\n20\n\n\n\nB8\nNIR\n842\n10\n\n\n\nB8A\nNarrow NIR\n865\n20\n\n\n\nB9\nWater vapor\n945\n60\n\n\n\nB10\nCirrus\n1375\n60\n\n\n\nB11\nSWIR 1\n1610\n20\n\n\n\nB12\nSWIR 2\n2190\n20\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing Raster Calculator, extract Band 4 from the image, (can be scratch layer, rename it NIR)\nRun Zonal Statistics using the segments and the NIR raster, calculate mean\nIn the geoprocessing toolbox, find K-means clustering (ABC) under Attribute based clustering\nRun with 3 clusters, and class as the value “Fields to use for clustering”\nDissolve the output (Clusterd Layer) based on on class\n\n\n\n\n\n\n\n\n\nThis image contains Sentinel2 bands 4, 3, 2 and 8.\n\n\n\nGo to Processing Toolbox &gt; OTB &gt; Segmentation &gt; Segmentation\nYou can run the algorithm with default settings, except you need to specify an output file (use a .shp file as output, Orfeo complains about geojson for some reason.)\n\n\n\n\nYou should end up with something like this (after you adjust the symbology)"
@@ -2107,6 +2121,20 @@
     "text": "Lab 15\nGeoreferencing Assignment\n\nTry again\nExperiment with different transformations / resampling techniques\nAdd more GCPs\n\nAnswer the following questions:\n\nAs you add more GCPs initially the accuracy increases rapidly, at some point, adding new points starts to make less of a difference. Based on this how many GCPs do you think is enough.\nWere you able to notice any difference using different transformations and resampling techniques? Which do you think worked best?\nIn the Georeferencing tool, when you run the transform, there is a column called Residual. What is this, how might it be useful. How does your choice of CRS affect the utility of this information?\nInclude an image of the georeferenced map overlaying the basemap, (with enough transparency to see the alignment, also include your GCPs)"
   },
   {
+    "objectID": "segmentation.html#segmentation-1",
+    "href": "segmentation.html#segmentation-1",
+    "title": "",
+    "section": "Segmentation",
+    "text": "Segmentation\nYou have calculated spectral indices and looked at the difference in vegetation greenness in the aftermath of several fires.\nSometimes one wants to separate an image into different regions to signify some sort of distinction. For example:\n\nDifferent types of land cover\nObjects, such as buildings, trees or cars.\n\nThis type of task is called Segmentation, because you are dividing the image into segments representing different things."
+  },
+  {
+    "objectID": "segmentation.html#types-of-segmentation",
+    "href": "segmentation.html#types-of-segmentation",
+    "title": "",
+    "section": "Types of segmentation",
+    "text": "Types of segmentation\n\nSemantic segmentation: every pixel gets a class (water, vegetation, bare soil, urban). In practice this is per-pixel classification.\nInstance segmentation: like semantic segmentation, but each object is kept separate. For example, pond 1, pond 2 and pond 3 instead of just “pond.”\nObject-based segmentation (OBIA): group pixels into similar “objects” first, with no labels. Then classify the objects instead of the pixels.\n\nToday we will be doing semantic segmentation."
+  },
+  {
     "objectID": "segmentation.html#semantic-segmentation",
     "href": "segmentation.html#semantic-segmentation",
     "title": "",
@@ -2170,8 +2198,8 @@
     "text": "Installing attribute based clustering pluggin\nGo to pluggins, search for Attribute based clustering, install the pluggin"
   },
   {
-    "objectID": "segmentation.html#segmentation-1",
-    "href": "segmentation.html#segmentation-1",
+    "objectID": "segmentation.html#segmentation-2",
+    "href": "segmentation.html#segmentation-2",
     "title": "",
     "section": "Segmentation",
     "text": "Segmentation\n\n\n\n\nDownload Sentinel 2 (bands 4, 3, 2 and 8) tile of Brazilian Atlantic Forest\n\n\n\n\n\nBand\nCommon name\nCentral wavelength (nm)\nResolution (m)\n\n\n\n\n\nB1\nCoastal aerosol\n443\n60\n\n\n\nB2\nBlue\n490\n10\n\n\n\nB3\nGreen\n560\n10\n\n\n\nB4\nRed\n665\n10\n\n\n\nB5\nRed Edge 1\n705\n20\n\n\n\nB6\nRed Edge 2\n740\n20\n\n\n\nB7\nRed Edge 3\n783\n20\n\n\n\nB8\nNIR\n842\n10\n\n\n\nB8A\nNarrow NIR\n865\n20\n\n\n\nB9\nWater vapor\n945\n60\n\n\n\nB10\nCirrus\n1375\n60\n\n\n\nB11\nSWIR 1\n1610\n20\n\n\n\nB12\nSWIR 2\n2190\n20\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing Raster Calculator, extract Band 4 from the image, (can be scratch layer, rename it NIR)\nRun Zonal Statistics using the segments and the NIR raster, calculate mean\nIn the geoprocessing toolbox, find K-means clustering (ABC) under Attribute based clustering\nRun with 3 clusters, and class as the value “Fields to use for clustering”\nDissolve the output (Clusterd Layer) based on on class\n\n\n\n\n\n\n\n\n\nThis image contains Sentinel2 bands 4, 3, 2 and 8.\n\n\n\nGo to Processing Toolbox &gt; OTB &gt; Segmentation &gt; Segmentation\nYou can run the algorithm with default settings, except you need to specify an output file (use a .shp file as output, Orfeo complains about geojson for some reason.)\n\n\n\n\nYou should end up with something like this (after you adjust the symbology)"

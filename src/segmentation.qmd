@@ -1,15 +1,17 @@
 # Segmentation
 
+
+## Segmentation {style="font-size:0.7em"}
 You have calculated spectral indices and looked at the difference in vegetation greenness in the aftermath of several fires.  
 
 Sometimes one wants to separate an image into different regions to signify some sort of distinction. For example:
 
-    + Different types of land cover
-    + Objects, such as buildings, trees or cars.
++ Different types of land cover
++ Objects, such as buildings, trees or cars.
 
 This type of task is called _Segmentation_, because you are dividing the image into segments representing different things.
 
-# Types of segmentation
+## Types of segmentation {style="font-size:0.7em"}
 
 + _Semantic segmentation_: every pixel gets a class (water, vegetation, bare soil, urban). In practice this is per-pixel classification.
 + _Instance segmentation_: like semantic segmentation, but each object is kept separate. For example, pond 1, pond 2 and pond 3 instead of just "pond."
