@@ -298,7 +298,7 @@ Table&nbsp;2: Exported image band order and source sensor bands.
 <li>Double click <em>Raster layer</em>.</li>
 <li>In the dialogue, enter <code>input_image</code> as the description (this will serve a reference to the input, so the exact name will be important later), check the <em>mandatory</em> box, then close the dialogue.</li>
 </ul>
-<div id="fig-add-raster-layer" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:40%;" alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input.">
+<div id="fig-add-raster-layer" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input." style="--wrap-width:40%;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-add-raster-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/add_raster_layer.png" class="wrap-right img-fluid figure-img" style="--wrap-width:40%;" alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input.">
@@ -367,16 +367,63 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
 </ul></li>
 </ol>
 <!-- end of index steps list; keeps the workflow list below separate -->
-<ol start="4" type="1">
-<li>Subtract index rasters.
+</section>
+<section id="calculate-change-between-years" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-change-between-years">Calculate change between years</h3>
+<p>Next you will build a second model that subtracts one year’s index raster from the next year’s. The result shows where the index went up or down between the two years:</p>
+<p><span class="math display">\[
+\Delta index = index_{n+1} - index_{n}
+\]</span></p>
 <ul>
-<li>Calculate:
-<ul>
-<li><code>newer_index - older_index</code></li>
-</ul></li>
 <li>Large negative values may indicate vegetation loss or clearing.</li>
 <li>Large positive values may indicate vegetation recovery or crop growth.</li>
+<li>Values near 0 mean little or no change.</li>
+</ul>
+<ol type="1">
+<li><p><strong>Create an output folder.</strong> Create a <code>change</code> directory next to the QGIS project file.</p>
+<pre><code>gran_chaco_project/
+├── gran_chaco.qgz
+├── rasters/
+├── ndvi/
+└── change/</code></pre></li>
+<li><p><strong>Open Model Designer and name the model.</strong></p>
+<ul>
+<li>Open a new Model Designer window (<em>Processing –&gt; Model Designer…</em>).</li>
+<li>Set the Model Name to “calc change” and the model group to “calc index”.</li>
 </ul></li>
+<li><p><strong>Add the two raster inputs.</strong></p>
+<ul>
+<li>In the <em>Inputs</em> tab, double click <em>Raster layer</em>.</li>
+<li>Enter <code>year_n</code> as the description, check the <em>mandatory</em> box, then close the dialogue. This is the older raster.</li>
+<li>Repeat to add a second raster input named <code>year_np1</code> (“year n plus 1”). This is the newer raster.</li>
+<li>Press the “save model in project” button.</li>
+</ul>
+<p>The inputs are the index rasters made by your first model, which are already in the project CRS, so this model does not need a Warp step.</p></li>
+<li><p><strong>Add the Raster calculator and connect the inputs.</strong></p>
+<ul>
+<li>From the toolbox add <em>GDAL -&gt; Raster miscellaneous -&gt; Raster calculator</em>.</li>
+<li>Add the description “calc change”.</li>
+<li>Under <em>Input layer A</em>, select <code>year_np1</code> and set <em>Number of raster band for A</em> to 1.</li>
+<li>Under <em>Input layer B</em>, select <code>year_n</code> and set <em>Number of raster band for B</em> to 1.</li>
+</ul>
+<p>Index rasters only have one band, so the band number is always 1.</p></li>
+<li><p><strong>Enter the subtraction.</strong> In <em>Calculation in gdalnumeric syntax using…</em> enter <code>A - B</code>. The order matters: newer minus older means a loss of vegetation comes out negative.</p></li>
+<li><p><strong>Set the output filename.</strong></p>
+<ul>
+<li>Change the button under <em>Calculated</em> to <em>Pre-calculated Value</em>.</li>
+<li>Enter this QGIS expression:</li>
+</ul>
+<pre><code>@project_folder || '/change/' || base_file_name(decode_uri(@year_np1, 'path')) || '_minus_' || base_file_name(decode_uri(@year_n, 'path')) || '.tif'</code></pre>
+<p>This uses the same pieces as the NDVI expression, just with both inputs. For example, <code>NDVI_l89_2025_dry_season.tif</code> minus <code>NDVI_l89_2024_dry_season.tif</code> is saved as <code>change/NDVI_l89_2025_dry_season_minus_NDVI_l89_2024_dry_season.tif</code>.</p></li>
+<li><p><strong>Save and run the model.</strong></p>
+<ul>
+<li>Press the “save model in project” button.</li>
+<li>Both inputs must line up pixel for pixel, so compare two rasters from the same sensor (for example two <code>l89</code> years).</li>
+<li>To calculate change for many pairs of years at once, run the model as a batch process. Put the older years in the <code>year_n</code> column and the year after each one in the <code>year_np1</code> column.</li>
+</ul></li>
+</ol>
+<!-- end of change steps list; keeps the workflow list below separate -->
+<ol start="5" type="1">
 <li>Classify change.
 <ul>
 <li>Pick a threshold for likely clearing.</li>
