@@ -32,7 +32,7 @@ The bands available in the two composite images are listed in @tbl-bands.
 ## Segmentation using a binary mask 
 
 
-In this exercise you will segment the image to find the [lithium brine evaporation ponds](https://eros.usgs.gov/earthshots/ponds), using only the raster calculator, and the Polygonize tool (Raster to Vector, from GDAL)
+In this exercise you will segment the image to find the [lithium brine evaporation ponds](https://eros.usgs.gov/earthshots/ponds), using the raster calculator, and the Polygonize tool (Raster to Vector, from GDAL)
 
 To do this you will need to:
 

@@ -298,7 +298,7 @@ Table&nbsp;2: Exported image band order and source sensor bands.
 <li>Double click <em>Raster layer</em>.</li>
 <li>In the dialogue, enter <code>input_image</code> as the description (this will serve a reference to the input, so the exact name will be important later), check the <em>mandatory</em> box, then close the dialogue.</li>
 </ul>
-<div id="fig-add-raster-layer" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input." style="--wrap-width:40%;">
+<div id="fig-add-raster-layer" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:40%;" alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-add-raster-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/add_raster_layer.png" class="wrap-right img-fluid figure-img" style="--wrap-width:40%;" alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input.">
@@ -364,13 +364,23 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
 <ul>
 <li>NBR: <code>(NIR - SWIR2) / (NIR + SWIR2)</code></li>
 <li>NDMI: <code>(NIR - SWIR1) / (NIR + SWIR1)</code></li>
+</ul>
+<p>Each index gets its own output folder (<code>nbr/</code> and <code>ndmi/</code>) and filename prefix, so change <code>'/ndvi/NDVI_'</code> in the output expression to <code>'/nbr/NBR_'</code> or <code>'/ndmi/NDMI_'</code>.</p></li>
+<li><p><strong>Run each index model as a batch process.</strong></p>
+<ul>
+<li>Save the model and close Model Designer.</li>
+<li>In the Processing Toolbox, open <em>Project models -&gt; calc index</em>, right-click “calc NDVI” and choose <em>Execute as Batch Process…</em></li>
+<li>At the top of the <code>input_image</code> column, click <em>Autofill…</em> and choose <em>Select from Available Layers…</em> Tick every composite raster from the <code>rasters/</code> folder and click OK. You get one row per raster. (The rasters must be loaded in the project to show up in this list.)</li>
+<li>Click <em>Run</em>. The output filenames come from the expression in step 8, so there is nothing to fill in for the outputs.</li>
+<li>Repeat for “calc NBR” and “calc NDMI”.</li>
+<li>When all three are done, add the new rasters in <code>ndvi/</code>, <code>nbr/</code> and <code>ndmi/</code> to the project (for example by dragging them in from the Browser panel). The next step needs them loaded.</li>
 </ul></li>
 </ol>
 <!-- end of index steps list; keeps the workflow list below separate -->
 </section>
 <section id="calculate-change-between-years" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-change-between-years">Calculate change between years</h3>
-<p>Next you will build a second model that subtracts one year’s index raster from the next year’s. The result shows where the index went up or down between the two years:</p>
+<p>Next you will subtract each year’s index raster from the following year’s. The result shows where the index went up or down between the two years:</p>
 <p><span class="math display">\[
 \Delta index = index_{n+1} - index_{n}
 \]</span></p>
@@ -379,47 +389,51 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
 <li>Large positive values may indicate vegetation recovery or crop growth.</li>
 <li>Values near 0 mean little or no change.</li>
 </ul>
+<p>This time you do not need a model. There is only one step, so you will run the GDAL Raster calculator directly as a batch process. The index rasters are already in the project CRS, so no Warp step is needed either.</p>
 <ol type="1">
-<li><p><strong>Create an output folder.</strong> Create a <code>change</code> directory next to the QGIS project file.</p>
+<li><p><strong>Create the output folders.</strong> Create a <code>change</code> directory next to the QGIS project file, with a folder inside it for each index.</p>
 <pre><code>gran_chaco_project/
 ├── gran_chaco.qgz
 ├── rasters/
 ├── ndvi/
-└── change/</code></pre></li>
-<li><p><strong>Open Model Designer and name the model.</strong></p>
+├── nbr/
+├── ndmi/
+└── change/
+    ├── dNDVI/
+    ├── dNBR/
+    └── dNDMI/</code></pre></li>
+<li><p><strong>Open the Raster calculator as a batch process.</strong> In the Processing Toolbox, find <em>GDAL -&gt; Raster miscellaneous -&gt; Raster calculator</em>, right-click it and choose <em>Execute as Batch Process…</em> (Make sure you use the GDAL one. There is also a QGIS <em>Raster calculator</em> under <em>Raster analysis</em>, which works differently.)</p></li>
+<li><p><strong>Fill in the layer pairs.</strong> Each row subtracts one pair of rasters: the newer year goes in <em>Input layer A</em> and the year before it goes in <em>Input layer B</em>. Both rasters in a pair must come from the same sensor so the pixels line up, so do one index and one sensor at a time. For NDVI from Landsat 8/9 (2013–2025):</p>
 <ul>
-<li>Open a new Model Designer window (<em>Processing –&gt; Model Designer…</em>).</li>
-<li>Set the Model Name to “calc change” and the model group to “calc index”.</li>
-</ul></li>
-<li><p><strong>Add the two raster inputs.</strong></p>
-<ul>
-<li>In the <em>Inputs</em> tab, double click <em>Raster layer</em>.</li>
-<li>Enter <code>year_n</code> as the description, check the <em>mandatory</em> box, then close the dialogue. This is the older raster.</li>
-<li>Repeat to add a second raster input named <code>year_np1</code> (“year n plus 1”). This is the newer raster.</li>
-<li>Press the “save model in project” button.</li>
+<li>At the top of the <em>Input layer A</em> column, click <em>Autofill… -&gt; Select from Available Layers…</em> and tick the <code>NDVI_l89</code> layers for 2014 through 2025, every year except the oldest. This makes 12 rows.</li>
+<li>At the top of the <em>Input layer B</em> column, do the same, but tick 2013 through 2024, every year except the newest.</li>
+<li>Leave <em>Number of raster band for A</em> and <em>Number of raster band for B</em> at 1. Index rasters only have one band.</li>
 </ul>
-<p>The inputs are the index rasters made by your first model, which are already in the project CRS, so this model does not need a Warp step.</p></li>
-<li><p><strong>Add the Raster calculator and connect the inputs.</strong></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Check your pairs before you run
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Autofill fills the rows in the order the layers appear in the list, which may not be year order. Before you click <em>Run</em>, read down both columns and make sure every <em>Input layer A</em> is exactly one year after the <em>Input layer B</em> in the same row (2014 and 2013, 2015 and 2014, and so on). If a row is off, use the dropdown in that cell to pick the right layer.</p>
+</div>
+</div></li>
+<li><p><strong>Enter the subtraction.</strong> In the first row of the <em>Calculation in gdalnumeric syntax…</em> column enter <code>A - B</code>, then click <em>Autofill… -&gt; Fill Down</em> at the top of the column to copy it to every row. The order matters: newer minus older means a loss of vegetation comes out negative.</p></li>
+<li><p><strong>Set the output filenames.</strong></p>
 <ul>
-<li>From the toolbox add <em>GDAL -&gt; Raster miscellaneous -&gt; Raster calculator</em>.</li>
-<li>Add the description “calc change”.</li>
-<li>Under <em>Input layer A</em>, select <code>year_np1</code> and set <em>Number of raster band for A</em> to 1.</li>
-<li>Under <em>Input layer B</em>, select <code>year_n</code> and set <em>Number of raster band for B</em> to 1.</li>
+<li>In the first row of the <em>Calculated</em> column, click the <em>…</em> button and choose <em>Save to File…</em></li>
+<li>Go to <code>change/dNDVI/</code>, enter <code>d.tif</code> as the filename and click <em>Save</em>.</li>
+<li>In the <em>Autofill settings</em> dialogue, choose <em>Fill with parameter values</em> and pick <em>Input layer A</em> as the parameter, then click OK.</li>
 </ul>
-<p>Index rasters only have one band, so the band number is always 1.</p></li>
-<li><p><strong>Enter the subtraction.</strong> In <em>Calculation in gdalnumeric syntax using…</em> enter <code>A - B</code>. The order matters: newer minus older means a loss of vegetation comes out negative.</p></li>
-<li><p><strong>Set the output filename.</strong></p>
+<p>Each output is named <code>d</code> plus the name of its newer layer. For example, <code>NDVI_l89_2025_dry_season</code> minus <code>NDVI_l89_2024_dry_season</code> is saved as <code>change/dNDVI/dNDVI_l89_2025_dry_season.tif</code>, the change from 2024 to 2025. Check that the output column looks like this before you run.</p></li>
+<li><p><strong>Run, then repeat.</strong></p>
 <ul>
-<li>Change the button under <em>Calculated</em> to <em>Pre-calculated Value</em>.</li>
-<li>Enter this QGIS expression:</li>
-</ul>
-<pre><code>@project_folder || '/change/' || base_file_name(decode_uri(@year_np1, 'path')) || '_minus_' || base_file_name(decode_uri(@year_n, 'path')) || '.tif'</code></pre>
-<p>This uses the same pieces as the NDVI expression, just with both inputs. For example, <code>NDVI_l89_2025_dry_season.tif</code> minus <code>NDVI_l89_2024_dry_season.tif</code> is saved as <code>change/NDVI_l89_2025_dry_season_minus_NDVI_l89_2024_dry_season.tif</code>.</p></li>
-<li><p><strong>Save and run the model.</strong></p>
-<ul>
-<li>Press the “save model in project” button.</li>
-<li>Both inputs must line up pixel for pixel, so compare two rasters from the same sensor (for example two <code>l89</code> years).</li>
-<li>To calculate change for many pairs of years at once, run the model as a batch process. Put the older years in the <code>year_n</code> column and the year after each one in the <code>year_np1</code> column.</li>
+<li>Click <em>Run</em>.</li>
+<li>Repeat for the other sensors (<code>l57</code>, 2000–2011, and <code>s2</code>, 2018–2025), then for NBR and NDMI, saving each index into its own folder in <code>change/</code>.</li>
 </ul></li>
 </ol>
 <!-- end of change steps list; keeps the workflow list below separate -->
