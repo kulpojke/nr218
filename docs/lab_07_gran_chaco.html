@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -29,17 +29,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bf5fdfb57e9d2f7422e38ff088dfdfaf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b31e5964e9981dea50e926b314bcc293.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +80,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -101,7 +99,7 @@ window.Quarto = {
 <link rel="stylesheet" href="style/terminal_theme.css">
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="fullcontent">
 
 <div id="quarto-search-results"></div>
 <!-- content -->
@@ -133,11 +131,58 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>You are being provided with data for an area in Paraguay’s <a href="https://en.wikipedia.org/wiki/Gran_Chaco">Gran Chaco region</a>. The AOI includes dry forest and more recent agricultural clearing near the Cerro Chovoreca frontier. The dataset includes annual dry-season median composites made from June-August imagery.</p>
 <p>Sentinel-2 and Landsat 5, 7, 8 and/or 9 images were searched from June through August for the years 2000-2025 using Google Earth Engine. Images were filtered by date, area of interest, and sun angle; Sentinel-2 images were also filtered by scene-level cloudiness. Cloud and cloud-shadow masking and surface reflectance scaling functions were then mapped over the image collections. Finally, the images for each year were reduced to annual dry-season median composite images. If you would like to see how this was done, see <a href="assets/sentinel_gran_chaco.html">this notebook</a>.</p>
-<p>The bands of the exported imagery are given in <a href="#tbl-exported-bands" class="quarto-xref">Table&nbsp;1</a>.</p>
+<p>Each TIF in the <code>rasters/</code> directory holds the composite for one year. The files are named <code>&lt;sensor&gt;_&lt;year&gt;_dry_season.tif</code>, where the sensor prefix tells you which satellite the imagery came from (<a href="#tbl-raster-files" class="quarto-xref">Table&nbsp;1</a>).</p>
+<div id="tbl-raster-files" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-raster-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Raster files in the <code>rasters/</code> directory.
+</figcaption>
+<div aria-describedby="tbl-raster-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>File prefix</th>
+<th>Sensor</th>
+<th>Years</th>
+<th>Pixel size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>l57_</code></td>
+<td>Landsat 5 and 7</td>
+<td>2000–2011</td>
+<td>~30 m</td>
+</tr>
+<tr class="even">
+<td><code>l89_</code></td>
+<td>Landsat 8 and 9</td>
+<td>2013–2025</td>
+<td>~30 m</td>
+</tr>
+<tr class="odd">
+<td><code>s2_</code></td>
+<td>Sentinel-2</td>
+<td>2018–2025</td>
+<td>~10 m</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>There is no 2012 file, because Landsat 5 stopped collecting data in late 2011 and Landsat 8 launched in 2013. The 2018 Sentinel-2 composite is mostly empty, so you should probably not use it.</p>
+<p>All files cover the same area and share these properties:</p>
+<ul>
+<li><strong>Bands:</strong> six bands, named <code>blue</code>, <code>green</code>, <code>red</code>, <code>nir</code>, <code>swir1</code> and <code>swir2</code>, in the order shown in <a href="#tbl-exported-bands" class="quarto-xref">Table&nbsp;2</a>.</li>
+<li><strong>Values:</strong> surface reflectance, already scaled to 0–1. A value of 0.2 means the surface reflected about 20% of the incoming light in that band. Healthy vegetation has low red (~0.05) and high NIR (~0.2–0.3) values.</li>
+<li><strong>CRS:</strong> EPSG:4326 (WGS 84), so coordinates and pixel sizes are in degrees, not meters. You will reproject to the project CRS before calculating areas.</li>
+<li><strong>Missing data:</strong> pixels masked for cloud or cloud shadow are stored as NaN.</li>
+</ul>
 <div id="tbl-exported-bands" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-exported-bands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Exported image band order and source sensor bands.
+Table&nbsp;2: Exported image band order and source sensor bands.
 </figcaption>
 <div aria-describedby="tbl-exported-bands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -206,17 +251,19 @@ Table&nbsp;1: Exported image band order and source sensor bands.
 </figure>
 </div>
 </section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>Download the project <a href="">here</a>. Extract the folder found within the zip to your <code>nr218</code> directory. The project folder contains a QGIS project file, and a bunch of TIFs in a directory called rasters.</p>
+<p>Open the QGIS project. Set the project CRS to an appropriate UTM CRS.</p>
+</section>
 <section id="change-detection-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="change-detection-workflow">Change Detection Workflow</h2>
+<p>First inspect the data to get an idea what you are looking at.</p>
 <ol type="1">
 <li>Choose comparison years.
 <ul>
 <li>Select one older image and one newer image.</li>
-<li>Good starting pairs:
-<ul>
-<li>2018 vs 2025 for Sentinel-2</li>
-<li>2000 vs 2025 for Landsat-based long-term change</li>
-</ul></li>
+<li>Suggested pair: 2000 (<code>l57_2000_dry_season.tif</code>) vs 2025 (<code>l89_2025_dry_season.tif</code>). Both are 30 m Landsat composites, so the pixels line up and you capture 25 years of change.</li>
 </ul></li>
 <li>Inspect false-color composites.
 <ul>
@@ -224,17 +271,29 @@ Table&nbsp;1: Exported image band order and source sensor bands.
 <li>Use SWIR1, NIR, red to highlight bare soil, clearing, and dry vegetation.</li>
 </ul></li>
 </ol>
+<p>Now that you have given it the old eyeball, you can start trying to quantify year to year change.</p>
 <section id="calculate-vegetation-or-disturbance-indices." class="level3">
 <h3 class="anchored" data-anchor-id="calculate-vegetation-or-disturbance-indices.">Calculate vegetation or disturbance indices.</h3>
-<p>You will need to use QGIS Model Designer to calculate NDVI for each composite raster, and save the resulting file. To do this first create an <code>ndvi</code> directory next to the QGIS project file.</p>
+<p>You will use QGIS Model Designer to build a model that calculates NDVI for each composite raster and saves the result to a file.</p>
+<ol type="1">
+<li><p><strong>Create an output folder.</strong> Create an <code>ndvi</code> directory next to the QGIS project file.</p>
 <pre><code>gran_chaco_project/
 ├── gran_chaco.qgz
 ├── rasters/
 │   └── S2_2025_dry_season.tif
-└── ndvi/</code></pre>
-<p>Next open Model Designer (<em>Processing –&gt; Model Designer…</em>). In the panel at the lower left set eh Model Name to “calc NDVI” and the model group to “calc index”. Now that the model is named you can start creating the workflow.</p>
-<p>At the top of the left panel there should be an area that looks like what is shown in <a href="#fig-add-raster-layer" class="quarto-xref">Figure&nbsp;1</a>. While in the <em>Inputs</em> tab find Raster layer and double click. In the resulting dialogue popup add <code>input_image</code> as the description, check the <em>mandatory</em> box, then close the dialogue.</p>
-<div id="fig-add-raster-layer" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input." style="--wrap-width:40%;">
+└── ndvi/</code></pre></li>
+<li><p><strong>Open Model Designer and name the model.</strong></p>
+<ul>
+<li>Open <em>Processing –&gt; Model Designer…</em></li>
+<li>In the panel at the lower left, set the Model Name to “calc NDVI” and the model group to “calc index”.</li>
+</ul></li>
+<li><p><strong>Add the raster input.</strong></p>
+<ul>
+<li>At the top of the left panel, open the <em>Inputs</em> tab (see <a href="#fig-add-raster-layer" class="quarto-xref">Figure&nbsp;1</a>).</li>
+<li>Double click <em>Raster layer</em>.</li>
+<li>In the dialogue, enter <code>input_image</code> as the description (this will serve a reference to the input, so the exact name will be important later), check the <em>mandatory</em> box, then close the dialogue.</li>
+</ul>
+<div id="fig-add-raster-layer" class="wrap-right quarto-float quarto-figure quarto-figure-center anchored" style="--wrap-width:40%;" alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-add-raster-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/add_raster_layer.png" class="wrap-right img-fluid figure-img" style="--wrap-width:40%;" alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input.">
@@ -243,50 +302,66 @@ Table&nbsp;1: Exported image band order and source sensor bands.
 Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
 </figcaption>
 </figure>
-</div>
-<p>After you have done this, press the “save model in project” button (<img src="img/model_designer_save_model_in_project.png" title="Save Model in Project button" class="img-fluid" style="vertical-align:middle;" width="35" alt="Save Model in Project button">) to save the model. (If one were interested in using this model in another project one could save a model as a file using the <em>Save model as</em> button.)</p>
-<p>Next we should insure that the raster is in the right CRS. To do this, click the <em>Toolbox</em> tab in the left panel (to access the Processing toolbox), and search for “Warp”. Click <em>Warp</em> from <em>GDAL</em> -&gt; <em>Raster Projections</em>. Change the description to “Warp to project crs”. Use <code>input_image</code> as the input layer, and check the <em>Use project CRS</em> box. Change <em>Resampling method to use</em> to bilinear, then close the dialogue. Press the “save model in project” button.</p>
-<p>In the next step you will actually calculate NDVI. Recall that the formulat for NDVI is</p>
+</div></li>
+<li><p><strong>Save the model.</strong> Press the “save model in project” button (<img src="img/model_designer_save_model_in_project.png" title="Save Model in Project button" class="img-fluid" style="vertical-align:middle;" width="35" alt="Save Model in Project button">). (If you want to use this model in another project, you can save it as a file with the <em>Save model as</em> button.)</p></li>
+<li><p><strong>Reproject the raster to the project CRS.</strong></p>
+<ul>
+<li>Click the <em>Toolbox</em> tab in the left panel and search for “Warp”.</li>
+<li>Click <em>Warp</em> from <em>GDAL -&gt; Raster Projections</em>.</li>
+<li>Change the description to “Warp to project CRS”.</li>
+<li>Use <code>input_image</code> as the input layer and check the <em>Use project CRS</em> box.</li>
+<li>Change <em>Resampling method to use</em> to bilinear, then close the dialogue.</li>
+<li>Press the “save model in project” button.</li>
+</ul></li>
+<li><p><strong>Add the Raster calculator and connect the bands.</strong> Recall that the formula for NDVI is</p>
 <p><span class="math display">\[
 \frac{NIR - Red}{NIR + Red}
 \]</span></p>
-<p>and from <a href="#tbl-exported-bands" class="quarto-xref">Table&nbsp;1</a> you can see that NIR is band 4 and red is Band 3 in the input image.</p>
-<p>From the toolbox add <em>GDAL -&gt; Raster miscellaneous -&gt; Raster calculator</em>. Add the description “calc NDVI”. Under <em>Input layer A</em> click the <em>Model input</em> button (<img src="img/model_designer_model_input_button.png" title="Model input button" class="img-fluid" style="vertical-align:middle;" width="35" alt="Model input button">) and change it to <em>Algorithm Output</em>.</p>
-<p>In the dropdown menu next to the <em>Algorithm output</em> button, <img src="img/model_designer_algorithm_output_button.png" title="Algorithm output button" class="img-fluid" style="vertical-align:middle;" width="35" alt="Algorithm output button">, select __“Reprojected” from algorithm “Warp to project CRS”_ Under <em>Number of raster band for A</em> put 4. Repeat the process for <em>Input layer B</em>, but use band 3. In the <em>Calculation in gdalnumeric syntax using…</em> enter <code>(A - B) / (A + B)</code>.</p>
-<p>We want to be able to run this tool as a batch process and save the results to file. To do this we will enter an expression under <em>Calculated</em> . The button under calculated must be changed to <em>Pre-calculated Value</em>, then we can enter the following QGIS specific expression for creating an output filename based on the input file.</p>
-<pre><code>@project_folder || '/ndvi/' || base_file_name(decode_uri(@input_image, 'path')) || '_NDVI.tif'</code></pre>
-<p>For more on this the the Expression breakdown tip box.</p>
+<p>and from <a href="#tbl-exported-bands" class="quarto-xref">Table&nbsp;2</a> you can see that NIR is band 4 and red is band 3 in the input image.</p>
+<ul>
+<li>From the toolbox add <em>GDAL -&gt; Raster miscellaneous -&gt; Raster calculator</em>.</li>
+<li>Add the description “calc NDVI”.</li>
+<li>Under <em>Input layer A</em>, click the <em>Model input</em> button (<img src="img/model_designer_model_input_button.png" title="Model input button" class="img-fluid" style="vertical-align:middle;" width="35" alt="Model input button">) and change it to <em>Algorithm Output</em>.</li>
+<li>In the dropdown next to the <em>Algorithm output</em> button (<img src="img/model_designer_algorithm_output_button.png" title="Algorithm output button" class="img-fluid" style="vertical-align:middle;" width="35" alt="Algorithm output button">), select <em>“Reprojected” from algorithm “Warp to project CRS”</em>.</li>
+<li>Under <em>Number of raster band for A</em>, enter 4 (NIR).</li>
+<li>Repeat for <em>Input layer B</em>, but use band 3 (red).</li>
+</ul></li>
+<li><p><strong>Enter the NDVI formula.</strong> In <em>Calculation in gdalnumeric syntax using…</em> enter <code>(A - B) / (A + B)</code>.</p></li>
+<li><p><strong>Set the output filename.</strong> We want to run this tool as a batch process and save the results to file, so the output name is built from the input name.</p>
+<ul>
+<li>Change the button under <em>Calculated</em> to <em>Pre-calculated Value</em>.</li>
+<li>Enter this QGIS expression:</li>
+</ul>
+<pre><code>@project_folder || '/ndvi/NDVI_' || base_file_name(decode_uri(@input_image, 'path')) || '.tif'</code></pre>
+<p>For more on this see the Expression breakdown tip box.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Expression breakdown
+Expression breakdown
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
 <li><code>@project_folder</code> is a QGIS variable for the folder containing the current <code>.qgz</code> project</li>
 <li><code>||</code> is a string concatenation, meaning “join these text pieces”</li>
-<li><code>'/ndvi/'</code> is literal text</li>
-<li><code>@input_image</code> is the model input variable; this must match the input name in Model Designer</li>
+<li><code>'/ndvi/NDVI_'</code> is literal text: the output folder plus the prefix for the new filename</li>
+<li><code>@input_image</code> is the model input variable; <strong>this must match the input name</strong> that you specified when you added the input to the model</li>
 <li><code>decode_uri(@input_image, 'path')</code> extracts the filesystem path from the input raster/layer URI</li>
 <li><code>base_file_name(...)</code> gets the file stem without folder or extension</li>
-<li><code>'_NDVI.tif'</code> is the suffix to add</li>
+<li><code>'.tif'</code> is the file extension to add</li>
 </ul>
 </div>
-</div>
+</div></li>
+<li><p><strong>Make models for NBR and NDMI.</strong> Repeat the steps above with these formulas:</p>
 <ul>
-<li>NBR:
-<ul>
-<li><code>(NIR - SWIR2) / (NIR + SWIR2)</code></li>
+<li>NBR: <code>(NIR - SWIR2) / (NIR + SWIR2)</code></li>
+<li>NDMI: <code>(NIR - SWIR1) / (NIR + SWIR1)</code></li>
 </ul></li>
-<li>NDMI:
-<ul>
-<li><code>(NIR - SWIR1) / (NIR + SWIR1)</code></li>
-</ul></li>
-</ul>
+</ol>
+<!-- end of index steps list; keeps the workflow list below separate -->
 <ol start="4" type="1">
 <li>Subtract index rasters.
 <ul>
@@ -350,243 +425,236 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
 </main> <!-- /main -->
 <script src="style/terminal_theme.js"></script>
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
     }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
     }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -594,161 +662,185 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 </div> <!-- /content -->
 
 

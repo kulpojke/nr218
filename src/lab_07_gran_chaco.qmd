@@ -27,7 +27,24 @@ You are being provided with data for an area in Paraguay's [Gran Chaco region](h
 
 Sentinel-2 and Landsat 5, 7, 8 and/or 9 images were searched from June through August for the years 2000-2025 using Google Earth Engine. Images were filtered by date, area of interest, and sun angle; Sentinel-2 images were also filtered by scene-level cloudiness. Cloud and cloud-shadow masking and surface reflectance scaling functions were then mapped over the image collections. Finally, the images for each year were reduced to annual dry-season median composite images. If you would like to see how this was done, see [this notebook](assets/sentinel_gran_chaco.html).
 
-The bands of the exported imagery are given in @tbl-exported-bands.
+Each TIF in the `rasters/` directory holds the composite for one year. The files are named `<sensor>_<year>_dry_season.tif`, where the sensor prefix tells you which satellite the imagery came from (@tbl-raster-files).
+
+| File prefix | Sensor | Years | Pixel size |
+| --- | --- | --- | --- |
+| `l57_` | Landsat 5 and 7 | 2000–2011 | ~30 m |
+| `l89_` | Landsat 8 and 9 | 2013–2025 | ~30 m |
+| `s2_` | Sentinel-2 | 2018–2025 | ~10 m |
+
+: Raster files in the `rasters/` directory. {#tbl-raster-files}
+
+There is no 2012 file, because Landsat 5 stopped collecting data in late 2011 and Landsat 8 launched in 2013. The 2018 Sentinel-2 composite is mostly empty, so you should probably not use it.
+
+All files cover the same area and share these properties:
+
+- **Bands:** six bands, named `blue`, `green`, `red`, `nir`, `swir1` and `swir2`, in the order shown in @tbl-exported-bands.
+- **Values:** surface reflectance, already scaled to 0–1. A value of 0.2 means the surface reflected about 20% of the incoming light in that band. Healthy vegetation has low red (~0.05) and high NIR (~0.2–0.3) values.
+- **CRS:** EPSG:4326 (WGS 84), so coordinates and pixel sizes are in degrees, not meters. You will reproject to the project CRS before calculating areas.
+- **Missing data:** pixels masked for cloud or cloud shadow are stored as NaN.
 
 | Exported TIF band | Common name | Sentinel-2 band | Landsat 5/7 band | Landsat 8/9 band |
 | --- | --- | --- | --- | --- |
@@ -40,78 +57,110 @@ The bands of the exported imagery are given in @tbl-exported-bands.
 
 : Exported image band order and source sensor bands. {#tbl-exported-bands}
 
+## Setup 
+
+Download the project [here](). Extract the folder found within the zip to your `nr218` directory. The project folder contains a QGIS project file, and a bunch of TIFs in a directory called rasters.  
+
+Open the QGIS project. Set the project CRS to an appropriate UTM CRS.
 
 ## Change Detection Workflow
+First inspect the data to get an idea what you are looking at.
 
 1. Choose comparison years.
    - Select one older image and one newer image.
-   - Good starting pairs:
-     - 2018 vs 2025 for Sentinel-2
-     - 2000 vs 2025 for Landsat-based long-term change
+   - Suggested pair: 2000 (`l57_2000_dry_season.tif`) vs 2025 (`l89_2025_dry_season.tif`). Both are 30 m Landsat composites, so the pixels line up and you capture 25 years of change.
 
 2. Inspect false-color composites.
    - Use NIR, red, green to highlight vegetation.
    - Use SWIR1, NIR, red to highlight bare soil, clearing, and dry vegetation.
 
+Now that you have given it the old eyeball, you can start trying to quantify year to year change.
+
 ### Calculate vegetation or disturbance indices.
 
-You will need to use QGIS Model Designer to calculate NDVI for each composite raster, and save the resulting file.  To do this first create an `ndvi` directory next to the QGIS project file. 
+You will use QGIS Model Designer to build a model that calculates NDVI for each composite raster and saves the result to a file.
 
-```
-gran_chaco_project/
-├── gran_chaco.qgz
-├── rasters/
-│   └── S2_2025_dry_season.tif
-└── ndvi/
-```
+1. **Create an output folder.**
+   Create an `ndvi` directory next to the QGIS project file.
 
-Next open Model Designer (_Processing --> Model Designer..._).  In the panel at the lower left set the Model Name to "calc NDVI" and the model group to "calc index".  Now that the model is named you can start creating the workflow.
+   ```
+   gran_chaco_project/
+   ├── gran_chaco.qgz
+   ├── rasters/
+   │   └── S2_2025_dry_season.tif
+   └── ndvi/
+   ```
 
-At the top of the left panel there should be an area that looks like what is shown in @fig-add-raster-layer.  While in the _Inputs_ tab find Raster layer and double click.  In the resulting dialogue popup add `input_image` as the description, check the _mandatory_ box, then close the dialogue.
+2. **Open Model Designer and name the model.**
+   - Open _Processing --> Model Designer..._
+   - In the panel at the lower left, set the Model Name to "calc NDVI" and the model group to "calc index".
 
-![Add raster layer dialog in the QGIS graphical modeler.](img/add_raster_layer.png){#fig-add-raster-layer .wrap-right style="--wrap-width:40%;" fig-alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input."} 
+3. **Add the raster input.**
+   - At the top of the left panel, open the _Inputs_ tab (see @fig-add-raster-layer).
+   - Double click _Raster layer_.
+   - In the dialogue, enter `input_image` as the description (this will serve a reference to the input, so the exact name will be important later), check the _mandatory_ box, then close the dialogue.
 
-After you have done this, press the "save model in project" button (![Save Model in Project button](img/model_designer_save_model_in_project.png "Save Model in Project button"){width="35px" style="vertical-align:middle;"}) to save the model. (If one were interested in using this model in another project one could save a model as a file using the _Save model as_ button.)  
+   ![Add raster layer dialog in the QGIS graphical modeler.](img/add_raster_layer.png){#fig-add-raster-layer .wrap-right style="--wrap-width:40%;" fig-alt="QGIS graphical modeler Inputs panel showing the Raster Layer option used to add a raster input."}
 
-Next we should ensure that the raster is in the right CRS.  To do this, click the _Toolbox_ tab in the left panel (to access the Processing toolbox), and search for "Warp".  Click _Warp_ from _GDAL_ -> _Raster Projections_.  Change the description to "Warp to project CRS". Use `input_image` as the input layer, and check the _Use project CRS_ box.  Change _Resampling method to use_ to bilinear, then close the dialogue.  Press the "save model in project" button.
+4. **Save the model.**
+   Press the "save model in project" button (![Save Model in Project button](img/model_designer_save_model_in_project.png "Save Model in Project button"){width="35px" style="vertical-align:middle;"}). (If you want to use this model in another project, you can save it as a file with the _Save model as_ button.)
 
-In the next step you will actually calculate NDVI. Recall that the formula for NDVI is
+5. **Reproject the raster to the project CRS.**
+   - Click the _Toolbox_ tab in the left panel and search for "Warp".
+   - Click _Warp_ from _GDAL -> Raster Projections_.
+   - Change the description to "Warp to project CRS".
+   - Use `input_image` as the input layer and check the _Use project CRS_ box.
+   - Change _Resampling method to use_ to bilinear, then close the dialogue.
+   - Press the "save model in project" button.
 
-$$ 
-\frac{NIR - Red}{NIR + Red}
-$$
+6. **Add the Raster calculator and connect the bands.**
+   Recall that the formula for NDVI is
 
-and from @tbl-exported-bands  you can see that NIR is band 4 and red is Band 3 in the input image.
+   $$
+   \frac{NIR - Red}{NIR + Red}
+   $$
 
-From the toolbox add _GDAL -> Raster miscellaneous -> Raster calculator_. Add the description "calc NDVI". Under _Input layer A_ click the _Model input_ button (![Model input button](img/model_designer_model_input_button.png "Model input button"){width="35px" style="vertical-align:middle;"}) and change it to _Algorithm Output_. 
+   and from @tbl-exported-bands you can see that NIR is band 4 and red is band 3 in the input image.
 
-In the dropdown menu next to the _Algorithm output_ button, ![Algorithm output button](img/model_designer_algorithm_output_button.png "Algorithm output button"){width="35px" style="vertical-align:middle;"}, select _"Reprojected" from algorithm "Warp to project CRS"_. Under _Number of raster band for A_ put 4. Repeat the process for _Input layer B_, but use band 3.  In the _Calculation in gdalnumeric syntax using..._ enter `(A - B) / (A + B)`.
+   - From the toolbox add _GDAL -> Raster miscellaneous -> Raster calculator_.
+   - Add the description "calc NDVI".
+   - Under _Input layer A_, click the _Model input_ button (![Model input button](img/model_designer_model_input_button.png "Model input button"){width="35px" style="vertical-align:middle;"}) and change it to _Algorithm Output_.
+   - In the dropdown next to the _Algorithm output_ button (![Algorithm output button](img/model_designer_algorithm_output_button.png "Algorithm output button"){width="35px" style="vertical-align:middle;"}), select _"Reprojected" from algorithm "Warp to project CRS"_.
+   - Under _Number of raster band for A_, enter 4 (NIR).
+   - Repeat for _Input layer B_, but use band 3 (red).
 
-We want to be able to run this tool as a batch process and save the results to file. To do this we will enter an expression under _Calculated_ .  The button under calculated must be changed to _Pre-calculated Value_, then we can enter the following QGIS specific expression for creating an output filename based on the input file.
+7. **Enter the NDVI formula.**
+   In _Calculation in gdalnumeric syntax using..._ enter `(A - B) / (A + B)`.
 
-```
-@project_folder || '/ndvi/NDVI_' || base_file_name(decode_uri(@input_image, 'path')) || '.tif'
-```
-For more on this see the Expression breakdown tip box.
+8. **Set the output filename.**
+   We want to run this tool as a batch process and save the results to file, so the output name is built from the input name.
+   - Change the button under _Calculated_ to _Pre-calculated Value_.
+   - Enter this QGIS expression:
 
-::: {.callout-tip}
-## Expression breakdown
+   ```
+   @project_folder || '/ndvi/NDVI_' || base_file_name(decode_uri(@input_image, 'path')) || '.tif'
+   ```
 
-- `@project_folder` is a QGIS variable for the folder containing the current `.qgz` project
-- `||` is a string concatenation, meaning “join these text pieces”
-- `'/ndvi/NDVI_'` is literal text: the output folder plus the prefix for the new filename
-- `@input_image` is the model input variable; __this must match the input name__ that you specified when you added the input to the model
-- `decode_uri(@input_image, 'path')` extracts the filesystem path from the input raster/layer URI
-- `base_file_name(...)` gets the file stem without folder or extension
-- `'.tif'` is the file extension to add
-:::
+   For more on this see the Expression breakdown tip box.
 
-Now make models for calculating NBR and NDMI as well
+   ::: {.callout-tip}
+   ## Expression breakdown
 
-   - NBR:
-     - `(NIR - SWIR2) / (NIR + SWIR2)`
-   - NDMI:
-     - `(NIR - SWIR1) / (NIR + SWIR1)`
+   - `@project_folder` is a QGIS variable for the folder containing the current `.qgz` project
+   - `||` is a string concatenation, meaning “join these text pieces”
+   - `'/ndvi/NDVI_'` is literal text: the output folder plus the prefix for the new filename
+   - `@input_image` is the model input variable; __this must match the input name__ that you specified when you added the input to the model
+   - `decode_uri(@input_image, 'path')` extracts the filesystem path from the input raster/layer URI
+   - `base_file_name(...)` gets the file stem without folder or extension
+   - `'.tif'` is the file extension to add
+   :::
+
+9. **Make models for NBR and NDMI.**
+   Repeat the steps above with these formulas:
+   - NBR: `(NIR - SWIR2) / (NIR + SWIR2)`
+   - NDMI: `(NIR - SWIR1) / (NIR + SWIR1)`
+
+<!-- end of index steps list; keeps the workflow list below separate -->
 
 4. Subtract index rasters.
    - Calculate:
