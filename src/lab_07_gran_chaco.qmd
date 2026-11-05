@@ -9,6 +9,8 @@ resources:
   - style/terminal_theme.js
 ---
 
+# __THis is not done yet, do not start__
+
 # Gran Chaco Land-Use Change Detection
 
 ## Goal
