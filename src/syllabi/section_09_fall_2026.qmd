@@ -24,7 +24,8 @@ Michael Huggins
 Office Hours: Mondays 12:00 - 1:00 
 Building 72-107 (Plant Conservatory)  
 
-__TA:__ TBD
+__TA:__ Jillian Ong <jiong@calpoly.edu>
+
 
 ## Learning Goals
 + How to formulate and answer problems using spatial data  
