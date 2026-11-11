@@ -208,7 +208,7 @@ This time you do not need a model. There is only one step, so you will run the G
    In the Processing Toolbox, find _GDAL -> Raster miscellaneous -> Raster calculator_, right-click it and choose _Execute as Batch Process..._ (Make sure you use the GDAL one. There is also a QGIS _Raster calculator_ under _Raster analysis_, which works differently.)
 
 3. **Fill in the layer pairs.**
-   Each row subtracts one pair of rasters: the newer year goes in _Input layer A_ and the year before it goes in _Input layer B_. Both rasters in a pair must come from the same sensor so the pixels line up, so do one index and one sensor at a time. For NDVI from Landsat 8/9 (2013–2025):
+   Each row subtracts one pair of rasters: the newer year goes in _Input layer A_ and the year before it goes in _Input layer B_. __Both rasters in a pair must come from the same sensor__ so the pixels line up, so do one index and one sensor at a time. Begin with NDVI from Landsat 8/9 (2013–2025):
 
    - At the top of the _Input layer A_ column, click _Autofill... -> Select from Available Layers..._ and tick the `NDVI_l89` layers for 2014 through 2025, every year except the oldest. This makes 12 rows.
    - At the top of the _Input layer B_ column, do the same, but tick 2013 through 2024, every year except the newest.
@@ -237,7 +237,7 @@ This time you do not need a model. There is only one step, so you will run the G
 <!-- end of change steps list; keeps the workflow list below separate -->
 
 5. Classify change.
-   - Pick a threshold for likely clearing.
+   Now you need to pick thresholds to detect clearing and regrowth. For each 
    - Example:
      - strong vegetation loss
      - little or no change

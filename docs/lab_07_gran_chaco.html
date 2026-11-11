@@ -403,7 +403,7 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
     ├── dNBR/
     └── dNDMI/</code></pre></li>
 <li><p><strong>Open the Raster calculator as a batch process.</strong> In the Processing Toolbox, find <em>GDAL -&gt; Raster miscellaneous -&gt; Raster calculator</em>, right-click it and choose <em>Execute as Batch Process…</em> (Make sure you use the GDAL one. There is also a QGIS <em>Raster calculator</em> under <em>Raster analysis</em>, which works differently.)</p></li>
-<li><p><strong>Fill in the layer pairs.</strong> Each row subtracts one pair of rasters: the newer year goes in <em>Input layer A</em> and the year before it goes in <em>Input layer B</em>. Both rasters in a pair must come from the same sensor so the pixels line up, so do one index and one sensor at a time. For NDVI from Landsat 8/9 (2013–2025):</p>
+<li><p><strong>Fill in the layer pairs.</strong> Each row subtracts one pair of rasters: the newer year goes in <em>Input layer A</em> and the year before it goes in <em>Input layer B</em>. <strong>Both rasters in a pair must come from the same sensor</strong> so the pixels line up, so do one index and one sensor at a time. Begin with NDVI from Landsat 8/9 (2013–2025):</p>
 <ul>
 <li>At the top of the <em>Input layer A</em> column, click <em>Autofill… -&gt; Select from Available Layers…</em> and tick the <code>NDVI_l89</code> layers for 2014 through 2025, every year except the oldest. This makes 12 rows.</li>
 <li>At the top of the <em>Input layer B</em> column, do the same, but tick 2013 through 2024, every year except the newest.</li>
