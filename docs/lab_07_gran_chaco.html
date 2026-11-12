@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -29,17 +29,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bf5fdfb57e9d2f7422e38ff088dfdfaf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b31e5964e9981dea50e926b314bcc293.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +80,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -101,7 +99,7 @@ window.Quarto = {
 <link rel="stylesheet" href="style/terminal_theme.css">
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="fullcontent">
 
 <div id="quarto-search-results"></div>
 <!-- content -->
@@ -123,6 +121,9 @@ window.Quarto = {
 <section id="goal" class="level2">
 <h2 class="anchored" data-anchor-id="goal">Goal</h2>
 <p>Detect land-use change and deforestation in the Gran Chaco using dry-season satellite image composites.</p>
+<blockquote class="blockquote">
+<p><strong>Qx:</strong> Answer the questions asked given in the boxes in answers.txt.</p>
+</blockquote>
 </section>
 <section id="study-area" class="level2">
 <h2 class="anchored" data-anchor-id="study-area">Study Area</h2>
@@ -135,48 +136,66 @@ window.Quarto = {
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>You are being provided with data for an area in Paraguay’s <a href="https://en.wikipedia.org/wiki/Gran_Chaco">Gran Chaco region</a>. The AOI includes dry forest and more recent agricultural clearing near the Cerro Chovoreca frontier. The dataset includes annual dry-season median composites made from June-August imagery.</p>
-<p>Sentinel-2 and Landsat 5, 7, 8 and/or 9 images were searched from June through August for the years 2000-2025 using Google Earth Engine. Images were filtered by date, area of interest, and sun angle; Sentinel-2 images were also filtered by scene-level cloudiness. Cloud and cloud-shadow masking and surface reflectance scaling functions were then mapped over the image collections. Finally, the images for each year were reduced to annual dry-season median composite images. If you would like to see how this was done, see <a href="assets/sentinel_gran_chaco.html">this notebook</a>.</p>
-<p>Each TIF in the <code>rasters/</code> directory holds the composite for one year. The files are named <code>&lt;sensor&gt;_&lt;year&gt;_dry_season.tif</code>, where the sensor prefix tells you which satellite the imagery came from (<a href="#tbl-raster-files" class="quarto-xref">Table&nbsp;1</a>).</p>
+<p>Landsat 5, 7, 8 and 9 images were searched from June through August for the years 2000-2025 using Google Earth Engine. Images were filtered by date, area of interest, and sun angle. Cloud and cloud-shadow masking and surface reflectance scaling functions were then mapped over the image collections. Finally, the images for each year were reduced to annual dry-season median composite images. If you would like to see how this was done, see <a href="assets/sentinel_gran_chaco.html">this notebook</a>. (The notebook also builds Sentinel-2 composites, which are not used in this lab.)</p>
+<p>The <code>landsat/</code> directory holds six composites, five years apart (<a href="#tbl-raster-files" class="quarto-xref">Table&nbsp;1</a>). The files are named <code>&lt;sensor&gt;_&lt;year&gt;_dry_season.tif</code>, where the sensor prefix tells you which satellite the imagery came from.</p>
 <div id="tbl-raster-files" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-raster-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Raster files in the <code>rasters/</code> directory.
+Table&nbsp;1: Raster files in the <code>landsat/</code> directory.
 </figcaption>
 <div aria-describedby="tbl-raster-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>File prefix</th>
+<th>File</th>
 <th>Sensor</th>
-<th>Years</th>
+<th>Year</th>
 <th>Pixel size</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>l57_</code></td>
+<td><code>l57_2000_dry_season.tif</code></td>
 <td>Landsat 5 and 7</td>
-<td>2000–2011</td>
+<td>2000</td>
 <td>~30 m</td>
 </tr>
 <tr class="even">
-<td><code>l89_</code></td>
-<td>Landsat 8 and 9</td>
-<td>2013–2025</td>
+<td><code>l57_2005_dry_season.tif</code></td>
+<td>Landsat 5 and 7</td>
+<td>2005</td>
 <td>~30 m</td>
 </tr>
 <tr class="odd">
-<td><code>s2_</code></td>
-<td>Sentinel-2</td>
-<td>2018–2025</td>
-<td>~10 m</td>
+<td><code>l57_2010_dry_season.tif</code></td>
+<td>Landsat 5 and 7</td>
+<td>2010</td>
+<td>~30 m</td>
+</tr>
+<tr class="even">
+<td><code>l89_2015_dry_season.tif</code></td>
+<td>Landsat 8 and 9</td>
+<td>2015</td>
+<td>~30 m</td>
+</tr>
+<tr class="odd">
+<td><code>l89_2020_dry_season.tif</code></td>
+<td>Landsat 8 and 9</td>
+<td>2020</td>
+<td>~30 m</td>
+</tr>
+<tr class="even">
+<td><code>l89_2025_dry_season.tif</code></td>
+<td>Landsat 8 and 9</td>
+<td>2025</td>
+<td>~30 m</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-<p>There is no 2012 file, because Landsat 5 stopped collecting data in late 2011 and Landsat 8 launched in 2013. The 2018 Sentinel-2 composite is mostly empty, so you should probably not use it.</p>
+<p>These years were picked from a full 2000–2025 series because they are evenly spaced and have few image artifacts. Some years in between have stripes from the failed scan-line corrector on Landsat 7, or come from extreme drought years that make change hard to detect.</p>
 <p>All files cover the same area and share these properties:</p>
 <ul>
 <li><strong>Bands:</strong> six bands, named <code>blue</code>, <code>green</code>, <code>red</code>, <code>nir</code>, <code>swir1</code> and <code>swir2</code>, in the order shown in <a href="#tbl-exported-bands" class="quarto-xref">Table&nbsp;2</a>.</li>
@@ -192,17 +211,15 @@ Table&nbsp;2: Exported image band order and source sensor bands.
 <div aria-describedby="tbl-exported-bands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Exported TIF band</th>
 <th>Common name</th>
-<th>Sentinel-2 band</th>
 <th>Landsat 5/7 band</th>
 <th>Landsat 8/9 band</th>
 </tr>
@@ -211,42 +228,36 @@ Table&nbsp;2: Exported image band order and source sensor bands.
 <tr class="odd">
 <td>1</td>
 <td>Blue</td>
-<td>B2</td>
 <td>SR_B1</td>
 <td>SR_B2</td>
 </tr>
 <tr class="even">
 <td>2</td>
 <td>Green</td>
-<td>B3</td>
 <td>SR_B2</td>
 <td>SR_B3</td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td>Red</td>
-<td>B4</td>
 <td>SR_B3</td>
 <td>SR_B4</td>
 </tr>
 <tr class="even">
 <td>4</td>
 <td>Near infrared</td>
-<td>B8</td>
 <td>SR_B4</td>
 <td>SR_B5</td>
 </tr>
 <tr class="odd">
 <td>5</td>
 <td>Shortwave infrared 1</td>
-<td>B11</td>
 <td>SR_B5</td>
 <td>SR_B6</td>
 </tr>
 <tr class="even">
 <td>6</td>
 <td>Shortwave infrared 2</td>
-<td>B12</td>
 <td>SR_B7</td>
 <td>SR_B7</td>
 </tr>
@@ -258,12 +269,15 @@ Table&nbsp;2: Exported image band order and source sensor bands.
 </section>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>Download the project <a href="">here</a>. Extract the folder found within the zip to your <code>nr218</code> directory. The project folder contains a QGIS project file, and a bunch of TIFs in a directory called rasters.</p>
+<p>Download the project <a href="">here</a>. Extract the folder found within the zip to your <code>nr218</code> directory. The project folder contains a QGIS project file and six TIFs in a directory called <code>landsat/</code>.</p>
 <p>Open the QGIS project. Set the project CRS to an appropriate UTM CRS.</p>
+<blockquote class="blockquote">
+<p><strong>Q1:</strong> Why did you choose the particular variant of UTM zone 21S that you did? Contrast it to others and explain the difference.</p>
+</blockquote>
 </section>
 <section id="change-detection-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="change-detection-workflow">Change Detection Workflow</h2>
-<p>First inspect the data to get an idea what you are looking at.</p>
+<p>First visually inspect the data to get an idea what you are looking at.</p>
 <ol type="1">
 <li>Choose comparison years.
 <ul>
@@ -277,20 +291,29 @@ Table&nbsp;2: Exported image band order and source sensor bands.
 </ul></li>
 </ol>
 <p>Now that you have given it the old eyeball, you can start trying to quantify year to year change.</p>
-<section id="calculate-vegetation-or-disturbance-indices." class="level3">
-<h3 class="anchored" data-anchor-id="calculate-vegetation-or-disturbance-indices.">Calculate vegetation or disturbance indices.</h3>
-<p>You will use QGIS Model Designer to build a model that calculates NDVI for each composite raster and saves the result to a file.</p>
+<section id="calculate-ndvi-and-extract-swir1." class="level3">
+<h3 class="anchored" data-anchor-id="calculate-ndvi-and-extract-swir1.">Calculate NDVI and extract SWIR1.</h3>
+<p>You will work with six Landsat composites, five years apart, from the <code>landsat/</code> folder: 2000, 2005, 2010, 2015, 2020 and 2025. For each one you will make two single-band rasters:</p>
+<ul>
+<li><strong>NDVI</strong>, the classic “greenness” index.</li>
+<li><strong>SWIR1</strong>, the shortwave infrared 1 reflectance (band 5) on its own.</li>
+</ul>
+<p>You will use both to detect clearing and then compare how well each one works.</p>
+<p>You will use QGIS Model Designer to build one model that, for each composite raster, calculates NDVI and extracts SWIR1, and saves each result to its own folder.</p>
 <ol type="1">
-<li><p><strong>Create an output folder.</strong> Create an <code>ndvi</code> directory next to the QGIS project file.</p>
-<pre><code>gran_chaco_project/
+<li><p><strong>Create the output folders.</strong> Create an <code>ndvi</code> directory and a <code>swir1</code> directory next to the QGIS project file.</p>
+<pre><code>gran_chaco_&lt;firstname&gt;_&lt;lastname&gt;/
 ├── gran_chaco.qgz
-├── rasters/
-│   └── S2_2025_dry_season.tif
-└── ndvi/</code></pre></li>
+├── landsat/
+│   ├── l57_2000_dry_season.tif
+│   ├── ...
+│   └── l89_2025_dry_season.tif
+├── ndvi/
+└── swir1/</code></pre></li>
 <li><p><strong>Open Model Designer and name the model.</strong></p>
 <ul>
 <li>Open <em>Processing –&gt; Model Designer…</em></li>
-<li>In the panel at the lower left, set the Model Name to “calc NDVI” and the model group to “calc index”.</li>
+<li>In the panel at the lower left, set the Model Name to “calc NDVI and SWIR1” and the model group to “calc index”.</li>
 </ul></li>
 <li><p><strong>Add the raster input.</strong></p>
 <ul>
@@ -345,7 +368,7 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Expression breakdown
+Expression breakdown
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -360,54 +383,58 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
 </ul>
 </div>
 </div></li>
-<li><p><strong>Make models for NBR and NDMI.</strong> Repeat the steps above with these formulas:</p>
+<li><p><strong>Change your model to extract SWIR1 as well.</strong> SWIR1 is not an index. You just need band 5 by itself, warped to the project CRS like the NDVI. The warped raster already exists inside the model, so you only need to add a second Raster calculator that uses it:</p>
 <ul>
-<li>NBR: <code>(NIR - SWIR2) / (NIR + SWIR2)</code></li>
-<li>NDMI: <code>(NIR - SWIR1) / (NIR + SWIR1)</code></li>
+<li>Add that raster calculator to extract SWIR1.</li>
+<li>Write the result to the <code>swir1</code> folder with a <code>SWIR1_</code> prefix</li>
+<li>Press the “save model in project” button.</li>
 </ul>
-<p>Each index gets its own output folder (<code>nbr/</code> and <code>ndmi/</code>) and filename prefix, so change <code>'/ndvi/NDVI_'</code> in the output expression to <code>'/nbr/NBR_'</code> or <code>'/ndmi/NDMI_'</code>.</p></li>
-<li><p><strong>Run each index model as a batch process.</strong></p>
+<p>Your model now has one input, one Warp step, and two Raster calculators branching off the Warp:</p>
+<pre><code>input_image ──&gt; Warp to project CRS ──┬──&gt; calc NDVI     ──&gt; ndvi/NDVI_&lt;input name&gt;.tif
+                                      └──&gt; extract SWIR1 ──&gt; swir1/SWIR1_&lt;input name&gt;.tif</code></pre></li>
+<li><p><strong>Run the model as a batch process.</strong></p>
 <ul>
 <li>Save the model and close Model Designer.</li>
-<li>In the Processing Toolbox, open <em>Project models -&gt; calc index</em>, right-click “calc NDVI” and choose <em>Execute as Batch Process…</em></li>
-<li>At the top of the <code>input_image</code> column, click <em>Autofill…</em> and choose <em>Select from Available Layers…</em> Tick every composite raster from the <code>rasters/</code> folder and click OK. You get one row per raster. (The rasters must be loaded in the project to show up in this list.)</li>
-<li>Click <em>Run</em>. The output filenames come from the expression in step 8, so there is nothing to fill in for the outputs.</li>
-<li>Repeat for “calc NBR” and “calc NDMI”.</li>
-<li>When all three are done, add the new rasters in <code>ndvi/</code>, <code>nbr/</code> and <code>ndmi/</code> to the project (for example by dragging them in from the Browser panel). The next step needs them loaded.</li>
+<li>In the Processing Toolbox, open <em>Project models -&gt; calc index</em>, right-click “calc NDVI and SWIR1” and choose <em>Execute as Batch Process…</em></li>
+<li>At the top of the <code>input_image</code> column, click <em>Autofill…</em> and choose <em>Select from Available Layers…</em> Tick the six composites from the <code>landsat/</code> folder and click OK. You get one row per raster. (The rasters must be loaded in the project to show up in this list.)</li>
+<li>Click <em>Run</em>. The output filenames come from the expressions in steps 8 and 9, so there is nothing to fill in for the outputs. Each row writes two files, so you should end up with six rasters in <code>ndvi/</code> and six in <code>swir1/</code>.</li>
+<li>Add the new rasters in <code>ndvi/</code> and <code>swir1/</code> to the project (for example by dragging them in from the Browser panel). The next step needs them loaded.</li>
 </ul></li>
 </ol>
 <!-- end of index steps list; keeps the workflow list below separate -->
+<p>Before you go on, put <code>SWIR1_l57_2000_dry_season</code> and <code>SWIR1_l89_2025_dry_season</code> side by side. Style both with the same min/max (about 0.1 to 0.35). Intact forest is <strong>dark</strong> in SWIR1 (roughly 0.15–0.19). Cleared fields are <strong>bright</strong> (above about 0.21). Now do the same with the two NDVI layers.</p>
+<blockquote class="blockquote">
+<p><strong>Q2:</strong> Which one shows the cleared fields more clearly?</p>
+</blockquote>
 </section>
-<section id="calculate-change-between-years" class="level3">
-<h3 class="anchored" data-anchor-id="calculate-change-between-years">Calculate change between years</h3>
-<p>Next you will subtract each year’s index raster from the following year’s. The result shows where the index went up or down between the two years:</p>
+<section id="calculate-change-between-dates" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-change-between-dates">Calculate change between dates</h3>
+<p>Next you will subtract each date’s raster from the one five years later. The result shows where the value went up or down over those five years:</p>
 <p><span class="math display">\[
-\Delta index = index_{n+1} - index_{n}
+\Delta = value_{later} - value_{earlier}
 \]</span></p>
 <ul>
-<li>Large negative values may indicate vegetation loss or clearing.</li>
-<li>Large positive values may indicate vegetation recovery or crop growth.</li>
+<li><strong>dNDVI</strong>: a large negative value may mean vegetation loss.</li>
+<li><strong>dSWIR1</strong>: a large <strong>positive</strong> value may mean clearing, because cleared ground is brighter in SWIR1 than forest. Note the sign is the opposite of dNDVI.</li>
 <li>Values near 0 mean little or no change.</li>
 </ul>
-<p>This time you do not need a model. There is only one step, so you will run the GDAL Raster calculator directly as a batch process. The index rasters are already in the project CRS, so no Warp step is needed either.</p>
+<p>This time you do not need a model. There is only one step, so you will run the GDAL Raster calculator directly as a batch process. The NDVI and SWIR1 rasters are already in the project CRS, so no Warp step is needed either.</p>
 <ol type="1">
-<li><p><strong>Create the output folders.</strong> Create a <code>change</code> directory next to the QGIS project file, with a folder inside it for each index.</p>
-<pre><code>gran_chaco_project/
+<li><p><strong>Create the output folders.</strong> Create a <code>change</code> directory next to the QGIS project file, with a folder inside it for each layer type.</p>
+<pre><code>gran_chaco_&lt;firstname&gt;_&lt;lastname&gt;/
 ├── gran_chaco.qgz
-├── rasters/
+├── landsat/
 ├── ndvi/
-├── nbr/
-├── ndmi/
+├── swir1/
 └── change/
     ├── dNDVI/
-    ├── dNBR/
-    └── dNDMI/</code></pre></li>
+    └── dSWIR1/</code></pre></li>
 <li><p><strong>Open the Raster calculator as a batch process.</strong> In the Processing Toolbox, find <em>GDAL -&gt; Raster miscellaneous -&gt; Raster calculator</em>, right-click it and choose <em>Execute as Batch Process…</em> (Make sure you use the GDAL one. There is also a QGIS <em>Raster calculator</em> under <em>Raster analysis</em>, which works differently.)</p></li>
-<li><p><strong>Fill in the layer pairs.</strong> Each row subtracts one pair of rasters: the newer year goes in <em>Input layer A</em> and the year before it goes in <em>Input layer B</em>. <strong>Both rasters in a pair must come from the same sensor</strong> so the pixels line up, so do one index and one sensor at a time. Begin with NDVI from Landsat 8/9 (2013–2025):</p>
+<li><p><strong>Fill in the layer pairs.</strong> Each row subtracts one pair of rasters: the later date goes in <em>Input layer A</em> and the date five years before it goes in <em>Input layer B</em>. Start with SWIR1:</p>
 <ul>
-<li>At the top of the <em>Input layer A</em> column, click <em>Autofill… -&gt; Select from Available Layers…</em> and tick the <code>NDVI_l89</code> layers for 2014 through 2025, every year except the oldest. This makes 12 rows.</li>
-<li>At the top of the <em>Input layer B</em> column, do the same, but tick 2013 through 2024, every year except the newest.</li>
-<li>Leave <em>Number of raster band for A</em> and <em>Number of raster band for B</em> at 1. Index rasters only have one band.</li>
+<li>At the top of the <em>Input layer A</em> column, click <em>Autofill… -&gt; Select from Available Layers…</em> and tick the <code>SWIR1</code> layers for 2005, 2010, 2015, 2020 and 2025 (every date except the oldest). This makes 5 rows.</li>
+<li>At the top of the <em>Input layer B</em> column, do the same, but tick 2000, 2005, 2010, 2015 and 2020 (every date except the newest).</li>
+<li>Leave <em>Number of raster band for A</em> and <em>Number of raster band for B</em> at 1. These rasters only have one band.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -415,74 +442,173 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Check your pairs before you run
+Check your pairs before you run
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Autofill fills the rows in the order the layers appear in the list, which may not be year order. Before you click <em>Run</em>, read down both columns and make sure every <em>Input layer A</em> is exactly one year after the <em>Input layer B</em> in the same row (2014 and 2013, 2015 and 2014, and so on). If a row is off, use the dropdown in that cell to pick the right layer.</p>
+<p>Autofill fills the rows in the order the layers appear in the list, which may not be date order. Before you click <em>Run</em>, read down both columns and make sure every <em>Input layer A</em> is exactly five years after the <em>Input layer B</em> in the same row (2005 and 2000, 2010 and 2005, and so on). If a row is off, use the dropdown in that cell to pick the right layer.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mixing Landsat 5/7 and Landsat 8/9
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The 2010→2015 pair compares a Landsat 5/7 composite with a Landsat 8/9 composite. That is fine here: all six composites were exported on exactly the same grid, and SWIR1 values for unchanged forest are very similar for both sensor groups.</p>
 </div>
 </div></li>
-<li><p><strong>Enter the subtraction.</strong> In the first row of the <em>Calculation in gdalnumeric syntax…</em> column enter <code>A - B</code>, then click <em>Autofill… -&gt; Fill Down</em> at the top of the column to copy it to every row. The order matters: newer minus older means a loss of vegetation comes out negative.</p></li>
+<li><p><strong>Enter the subtraction.</strong> In the first row of the <em>Calculation in gdalnumeric syntax…</em> column enter <code>A - B</code>, then click <em>Autofill… -&gt; Fill Down</em> at the top of the column to copy it to every row. The order matters: later minus earlier.</p></li>
 <li><p><strong>Set the output filenames.</strong></p>
 <ul>
 <li>In the first row of the <em>Calculated</em> column, click the <em>…</em> button and choose <em>Save to File…</em></li>
-<li>Go to <code>change/dNDVI/</code>, enter <code>d.tif</code> as the filename and click <em>Save</em>.</li>
+<li>Go to <code>change/dSWIR1/</code>, enter <code>d.tif</code> as the filename and click <em>Save</em>.</li>
 <li>In the <em>Autofill settings</em> dialogue, choose <em>Fill with parameter values</em> and pick <em>Input layer A</em> as the parameter, then click OK.</li>
+<li>This will insert the name of <em>Input layer A</em> directly before <code>.tif</code>.</li>
 </ul>
-<p>Each output is named <code>d</code> plus the name of its newer layer. For example, <code>NDVI_l89_2025_dry_season</code> minus <code>NDVI_l89_2024_dry_season</code> is saved as <code>change/dNDVI/dNDVI_l89_2025_dry_season.tif</code>, the change from 2024 to 2025. Check that the output column looks like this before you run.</p></li>
-<li><p><strong>Run, then repeat.</strong></p>
+<p>Each output is named <code>d</code> plus the name of its later layer. For example, <code>SWIR1_l89_2025_dry_season</code> minus <code>SWIR1_l89_2020_dry_season</code> is saved as <code>change/dSWIR1/dSWIR1_l89_2025_dry_season.tif</code>, the change from 2020 to 2025. Check that the output column looks like this before you run.</p></li>
+<li><p><strong>Run, then repeat for NDVI.</strong></p>
 <ul>
 <li>Click <em>Run</em>.</li>
-<li>Repeat for the other sensors (<code>l57</code>, 2000–2011, and <code>s2</code>, 2018–2025), then for NBR and NDMI, saving each index into its own folder in <code>change/</code>.</li>
+<li>Repeat steps 2–5 with the <code>NDVI</code> layers, saving into <code>change/dNDVI/</code>.</li>
+<li>Add all ten change rasters to the project.</li>
 </ul></li>
 </ol>
 <!-- end of change steps list; keeps the workflow list below separate -->
-<ol start="5" type="1">
-<li>Classify change.
+</section>
+<section id="compare-dndvi-and-dswir1" class="level3">
+<h3 class="anchored" data-anchor-id="compare-dndvi-and-dswir1">Compare dNDVI and dSWIR1</h3>
+<p>Style the change rasters so they are easy to compare:</p>
 <ul>
-<li>Pick a threshold for likely clearing.</li>
-<li>Example:
+<li><strong>dNDVI:</strong> singleband pseudocolor, <code>RdYlGn</code> color ramp, min −0.4, max 0.4. Red = NDVI went down, green = NDVI went up.</li>
+<li><strong>dSWIR1:</strong> singleband pseudocolor, <code>RdYlGn</code> color ramp <strong>inverted</strong>, min −0.1, max 0.1. Red = SWIR1 went up (possible clearing), green = SWIR1 went down.</li>
+</ul>
+<p>Now look closely at two periods, <strong>2010→2015</strong> and <strong>2015→2020</strong>, and answer these questions:</p>
+<blockquote class="blockquote">
+<p><strong>Q3:</strong> In <code>dNDVI_l89_2020_dry_season</code> (2015→2020), what color is the large area of forest that was never cleared? If you used dNDVI alone, what would you conclude happened to that forest? (Make sure the ramp is set to min −0.4 and max 0.4 as described above. With QGIS’s default min/max, the colors are stretched to fit this layer’s values and the forest will look misleadingly normal.)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Q4:</strong> In <code>dNDVI_l89_2015_dry_season</code> (2010→2015), find a field that was cleared during that period (compare the 2010 and 2015 composites). Did NDVI go up or down there? Why might clearing a forest make NDVI go <em>up</em>?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Q5:</strong> Look at the same two periods in dSWIR1. Does the uncleared forest stay near 0? Do the newly cleared fields stand out?</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why dry and wet years confuse NDVI (open after answering)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The Gran Chaco has a strong dry season, and how dry it gets changes a lot from year to year. Judging from the imagery, the dry seasons of 2015 and 2025 were relatively wet and green, while 2010 and 2020 were much drier.</p>
 <ul>
-<li>strong vegetation loss</li>
-<li>little or no change</li>
-<li>vegetation gain</li>
-</ul></li>
-<li>Adjust thresholds after visually checking known cleared areas.</li>
-</ul></li>
-<li>Clean the change map.
+<li>In a <strong>dry year</strong> the forest drops some leaves and gets less green, so its NDVI falls even though nothing was cut. Compare 2015 (wet) with 2020 (dry) and the whole forest looks like it lost vegetation.</li>
+<li>In a <strong>wet year</strong> the planted pastures turn bright green, often greener than the forest itself. So a field cleared between 2010 (dry) and 2015 (wet) can have a <em>higher</em> NDVI afterward than the forest it replaced.</li>
+</ul>
+<p>NDVI measures greenness, and greenness here depends mostly on rainfall. SWIR1 responds to the structure of the surface. A forest canopy is rough and full of shadow and moist leaves, so it stays dark in SWIR1 whether the year is wet or dry. Pasture and bare soil are flat and bright in SWIR1, whether the grass is green or dead. That is why the forest/cleared difference in SWIR1 holds up across wet and dry years.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="map-clearing" class="level3">
+<h3 class="anchored" data-anchor-id="map-clearing">Map clearing</h3>
+<p>A pixel was <strong>cleared</strong> during a five-year period if both of these are true:</p>
 <ul>
-<li>Remove small isolated patches.</li>
-<li>Optional: polygonize the change raster.</li>
-<li>Optional: calculate area of changed land.</li>
-</ul></li>
-<li>Validate visually.
+<li><strong>It was forest at the start:</strong> SWIR1 in the earlier year is below 0.20.</li>
+<li><strong>It got brighter:</strong> dSWIR1 is greater than 0.05.</li>
+</ul>
+<p>The first condition matters. Without it, fields that were already cleared and just got drier between two years would also be counted as new clearing.</p>
+<ol type="1">
+<li><p><strong>Create the output folder.</strong> Create <code>change/cleared/</code>.</p></li>
+<li><p><strong>Open the GDAL Raster calculator as a batch process</strong> (same as before).</p></li>
+<li><p><strong>Fill in the inputs.</strong></p>
 <ul>
-<li>Compare the change map against the original before/after imagery.</li>
-<li>Check several cleared fields and intact forest patches.</li>
-<li>Note confusion between cropland cycles, bare soil, burned areas, and true forest clearing.</li>
+<li><em>Input layer A</em>: Autofill with the <code>dSWIR1</code> layers for the later year of each pair 2005, 2010, 2015 and 2020.</li>
+<li><em>Input layer B</em>: Autofill with the <code>SWIR1</code> layers for the earlier year of each pair: 2000, 2005, 2010 and 2015.</li>
+<li>Check that the pairs are properly aligned: <code>dSWIR1_l57_2005_dry_season</code> (2000→2005) goes with <code>SWIR1_l57_2000_dry_season</code>, and so on.</li>
 </ul></li>
+<li><p><strong>Enter the rule.</strong> In the first calculation cell enter the expression below, then use <em>Fill Down</em>:</p>
+<pre><code>(B &lt; 0.20) * (A &gt; 0.05)</code></pre>
+<p>Each comparison gives 1 where it is true and 0 where it is false. Multiplying them gives 1 only where <strong>both</strong> are true, so it works as an AND. This expression reads like, <em>Pixel is forest, AND becomes brighter</em>.</p></li>
+<li><p><strong>Set the output filenames.</strong> Save the first row as <code>change/cleared/cleared_.tif</code>, then <em>Fill with parameter values</em> from <em>Input layer A</em>. The 2020→2025 result becomes <code>cleared_dSWIR1_l89_2025_dry_season.tif</code>.</p></li>
+<li><p><strong>Run, add the results, and check them.</strong> Style each cleared layer so 1 is a bright color and 0 is transparent, and put it over the later composite in false color (SWIR1, NIR, red). Do the red patches line up with new fields? Pan around some intact forest: are there false alarms?</p>
+<p>The 0.20 and 0.05 thresholds were chosen by checking known forest and known fields in these images. If you find areas where they do not work well, try adjusting them and note what changed.</p></li>
 </ol>
+<blockquote class="blockquote">
+<p><strong>Q6:</strong> We could have done the previous two caluclations (change and mapping clearing) in one step in Raster Calculator. What formula would one use to do so?</p>
+</blockquote>
+</section>
+<section id="clean-the-map" class="level3">
+<h3 class="anchored" data-anchor-id="clean-the-map">Clean the map</h3>
+<p>The cleared maps contain some single pixels and tiny patches along field edges and roads. Remove them with a sieve:</p>
+<ol type="1">
+<li>Open <em>GDAL -&gt; Raster analysis -&gt; Sieve</em> as a batch process.</li>
+<li>Autofill the input column with the five <code>cleared_</code> layers.</li>
+<li>Set <em>Threshold</em> to 11 and leave <em>Use 8-connectedness</em> unchecked. Each pixel is about 29 m × 29 m ≈ 0.085 ha, so 11 pixels is about 1 ha. Any cleared patch smaller than that is removed.</li>
+<li>Save the outputs to <code>change/cleared/</code> with the prefix <code>sieved_</code> (save the first row as <code>sieved_.tif</code> and <em>Fill with parameter values</em> from the input layer).</li>
+</ol>
+</section>
+<section id="calculate-cleared-area" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-cleared-area">Calculate cleared area</h3>
+<ol type="1">
+<li>Open <em>Raster analysis -&gt; Raster layer unique values report</em> as a batch process and add the five <code>sieved_</code> layers.</li>
+<li>For each report, find the row where the value is 1. It gives the pixel count and the area in m².</li>
+<li>Convert to hectares (divide by 10,000) and make a table of cleared area for each five-year period.</li>
+</ol>
+<p>Which period had the most clearing?</p>
+<p><strong>Optional:</strong> Polygonize one of the sieved rasters (<em>GDAL -&gt; Raster conversion -&gt; Polygonize</em>) and look at the size and shape of the cleared patches.</p>
+</section>
+<section id="validate-visually" class="level3">
+<h3 class="anchored" data-anchor-id="validate-visually">Validate visually</h3>
+<ul>
+<li>Compare each cleared map with the before and after composites.</li>
+<li>Check several cleared fields and several intact forest patches.</li>
+<li>Note any confusion: cropland cycles, bare soil, burned areas, or the rocky, sparsely vegetated hills of Cerro Chovoreca in the north.</li>
+</ul>
 </section>
 </section>
 <section id="outputs" class="level2">
 <h2 class="anchored" data-anchor-id="outputs">Outputs</h2>
-<ul>
-<li>Before and after dry-season composites.</li>
-<li>False-color maps showing land-cover patterns.</li>
-<li>Index difference raster.</li>
-<li>Classified change raster or vector layer.</li>
-<li>Summary table of changed area.</li>
-<li>Short interpretation of where and how land use changed.</li>
-</ul>
-</section>
-<section id="notes" class="level2">
-<h2 class="anchored" data-anchor-id="notes">Notes</h2>
-<ul>
-<li>Use the same months for each year to reduce seasonal bias.</li>
-<li>Median composites help, but they do not remove all phenology or crop-cycle differences.</li>
-<li>Sentinel-2 gives better spatial detail from 2018 onward.</li>
-<li>Landsat gives a longer historical record at coarser resolution.</li>
-</ul>
+<p>When you are done, your project folder should look like this. Rename the top-level folder to <code>gran_chaco_&lt;firstname&gt;_&lt;lastname&gt;/</code> (for example <code>gran_chaco_ada_lovelace/</code>), and put <code>answers.txt</code> directly inside it.</p>
+<pre><code>gran_chaco_&lt;firstname&gt;_&lt;lastname&gt;/
+├── answers.txt
+├── gran_chaco.qgz
+├── gran_chaco_aoi.geojson
+├── landsat/
+│   ├── l57_2000_dry_season.tif
+│   ├── ...
+│   └── l89_2025_dry_season.tif
+├── ndvi/
+│   ├── NDVI_l57_2000_dry_season.tif
+│   ├── ...
+│   └── NDVI_l89_2025_dry_season.tif
+├── swir1/
+│   ├── SWIR1_l57_2000_dry_season.tif
+│   ├── ...
+│   └── SWIR1_l89_2025_dry_season.tif
+└── change/
+    ├── dNDVI/
+    │   ├── dNDVI_l57_2005_dry_season.tif      
+    │   ├── ...
+    │   └── dNDVI_l89_2025_dry_season.tif      
+    ├── dSWIR1/
+    │   ├── dSWIR1_l57_2005_dry_season.tif
+    │   ├── ...
+    │   └── dSWIR1_l89_2025_dry_season.tif
+    └── cleared/
+        ├── cleared_dSWIR1_l57_2005_dry_season.tif
+        ├── ...
+        └── sieved_cleared_dSWIR1_l89_2025_dry_season.tif</code></pre>
+<p>Each change file is named after the <strong>later</strong> year of its pair. The years in brackets show which period each file covers. The same applies to the <code>dSWIR1</code>, <code>cleared_</code> and <code>sieved_</code> files. The <code>cleared/</code> folder holds ten files: five <code>cleared_</code> files and five <code>sieved_</code> files.</p>
 
 
 </section>
@@ -491,243 +617,236 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
 </main> <!-- /main -->
 <script src="style/terminal_theme.js"></script>
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
     }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
     }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -735,161 +854,185 @@ Figure&nbsp;1: Add raster layer dialog in the QGIS graphical modeler.
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 </div> <!-- /content -->
 
 

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
+
+  <title>workflows</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-e9506f4cf0740638825fabafd1e71958.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="workflows-batch-processing-and-model-designer" class="title-slide slide level1 center">
+<h1>Workflows: Batch Processing and Model Designer</h1>
+<p>Download for examples:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/kulpojke/nr218/main/assets/ca_quakes_2015_2024.zip">ca_quakes_2015_2024.zip</a> (one CSV of earthquakes per year)</li>
+<li><a href="https://raw.githubusercontent.com/kulpojke/nr218/main/assets/cal_counties.geojson">cal_counties.geojson</a></li>
+</ul>
+</section>
+<section id="why-automate" class="slide level2 center" style="font-size:0.7em">
+<h2>Why automate?</h2>
+<ul>
+<li>GIS work is full of repetition: the same steps for every year, every tile, every county, every band</li>
+<li>Doing it by hand is slow, and every click is a chance to make a mistake</li>
+<li>An automated workflow is <strong>reproducible</strong>: you (or someone else) can run it again and get the same result</li>
+<li>The workflow is also <strong>documentation</strong>: it records exactly what you did</li>
+<li>Change one thing (a threshold, an input, a CRS), rerun everything</li>
+</ul>
+</section>
+<section id="three-ways-to-repeat-work-in-qgis" class="slide level2 center" style="font-size:0.6em">
+<h2>Three ways to repeat work in QGIS</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>What it repeats</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Batch processing</strong></td>
+<td>One tool, many runs</td>
+<td>Buffer 10 layers at once</td>
+</tr>
+<tr class="even">
+<td><strong>Model Designer</strong></td>
+<td>A chain of tools, packaged as one new tool</td>
+<td>CSV → points → filter → count per county</td>
+</tr>
+<tr class="odd">
+<td><strong>Python (PyQGIS)</strong></td>
+<td>Anything</td>
+<td>Not today</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><span class="fragment">They combine: <strong>a model can be run as a batch</strong>. That is where the real power is.</span></p>
+</section>
+<section id="you-already-have-a-record-of-your-workflow" class="slide level2 center" style="font-size:0.7em">
+<h2>You already have a record of your workflow</h2>
+<ul>
+<li><em>Processing → History…</em> lists every Processing tool you have run, with all of its parameters</li>
+<li>Double-click an entry to open the tool again with the same settings</li>
+<li>Right-click to copy it as a Python command or a <code>qgis_process</code> command (more on that at the end)</li>
+</ul>
+</section>
+<section id="todays-data-california-earthquakes" class="slide level2 center" style="font-size:0.6em">
+<h2>Today’s data: California earthquakes</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>From the USGS earthquake catalog (ComCat)</li>
+<li>Every magnitude 2.5+ earthquake, 2015–2024</li>
+<li><strong>One CSV per year</strong>: <code>ca_quakes_2015.csv</code> … <code>ca_quakes_2024.csv</code></li>
+<li>Useful columns: <code>time</code>, <code>latitude</code>, <code>longitude</code>, <code>depth</code>, <code>mag</code>, <code>place</code></li>
+<li>The search area is a rectangle, so it includes parts of Nevada, Mexico and the ocean</li>
+<li>Plus <code>cal_counties.geojson</code>, which you have used before</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>M2.5+ events</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2015</td>
+<td>1087</td>
+</tr>
+<tr class="even">
+<td>2016</td>
+<td>975</td>
+</tr>
+<tr class="odd">
+<td>2017</td>
+<td>854</td>
+</tr>
+<tr class="even">
+<td>2018</td>
+<td>715</td>
+</tr>
+<tr class="odd">
+<td>2019</td>
+<td><strong>3641</strong></td>
+</tr>
+<tr class="even">
+<td>2020</td>
+<td><strong>2627</strong></td>
+</tr>
+<tr class="odd">
+<td>2021</td>
+<td>1533</td>
+</tr>
+<tr class="even">
+<td>2022</td>
+<td>958</td>
+</tr>
+<tr class="odd">
+<td>2023</td>
+<td>901</td>
+</tr>
+<tr class="even">
+<td>2024</td>
+<td>1049</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<p><span class="fragment">What happened in 2019? We’ll use batch processing and a model to find out where.</span></p>
+</section>
+<section id="part-1-batch-processing" class="slide level2 center">
+<h2>Part 1: Batch processing</h2>
+</section>
+<section id="the-batch-window" class="slide level2 center" style="font-size:0.6em">
+<h2>The batch window</h2>
+<ul>
+<li>In the Processing Toolbox, right-click a tool → <em>Execute as Batch Process…</em></li>
+<li><strong>Each row is one run of the tool. Each column is one of the tool’s parameters.</strong></li>
+<li>Add or remove rows with the ➕ / ➖ buttons</li>
+<li>Save the whole table (📁 / 💾 buttons) and load it again later</li>
+<li>Tick <em>Load layers on completion</em> if you want to see the results right away</li>
+</ul>
+
+<img data-src="img/zonal_stats_batch.png" style="width:100.0%" alt="QGIS batch processing window for Zonal statistics with four rows, each using a different raster band" class="r-stretch"></section>
+<section id="autofill-filling-the-table-quickly" class="slide level2 center" style="font-size:0.6em">
+<h2>Autofill: filling the table quickly</h2>
+<p>The <em>Autofill…</em> menu at the top of each column:</p>
+<ul>
+<li><strong>Select Files… / Add All Files from a Directory…</strong>: one row per file</li>
+<li><strong>Select from Available Layers…</strong>: one row per layer already loaded in the project</li>
+<li><strong>Fill Down</strong>: copy the first row’s value into every row</li>
+<li><strong>Calculate by Expression…</strong>: build each row’s value with a QGIS expression</li>
+</ul>
+<p>For the <strong>output</strong> column, pick a file name for the first row with <em>…</em> → <em>Save to File…</em> and QGIS offers to autofill the rest:</p>
+<ul>
+<li><strong>Fill with numbers</strong>: <code>out1.gpkg</code>, <code>out2.gpkg</code>, …</li>
+<li><strong>Fill with parameter values</strong>: add the name of an input to each file name, e.g.&nbsp;<code>pts_ca_quakes_2019.gpkg</code></li>
+</ul>
+</section>
+<section id="batch-example-ten-csvs-ten-point-layers" class="slide level2 center" style="font-size:0.6em">
+<h2>Batch example: ten CSVs → ten point layers</h2>
+<p>Tool: <em>Vector creation → Create points layer from table</em></p>
+<ol type="1">
+<li><strong>Input layer:</strong> <em>Autofill → Select Files…</em> → pick all ten CSVs (10 rows)</li>
+<li><strong>X field:</strong> <code>longitude</code> → <em>Fill Down</em></li>
+<li><strong>Y field:</strong> <code>latitude</code> → <em>Fill Down</em></li>
+<li><strong>Target CRS:</strong> EPSG:4326 → <em>Fill Down</em></li>
+<li><strong>Points from table:</strong> first row <code>quakes/pts_.gpkg</code> → <em>Fill with parameter values</em> → <em>Input layer</em></li>
+<li><em>Run</em></li>
+</ol>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>X is <strong>longitude</strong>, Y is <strong>latitude</strong>. Swap them and your earthquakes end up in Antarctica.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="a-batch-doesnt-have-to-use-many-files" class="slide level2 center" style="font-size:0.7em">
+<h2>A batch doesn’t have to use many files</h2>
+<p>Rows can change <strong>any</strong> parameter, not just the input:</p>
+<ul>
+<li>One layer, several buffer distances: 1 km, 5 km, 10 km</li>
+<li>One DEM, hillshades from several sun angles</li>
+<li>One raster, focal filters with 3×3, 5×5 and 9×9 windows</li>
+<li>One set of polygons, zonal statistics for each band (the screenshot two slides back: same layers, bands 1–4)</li>
+</ul>
+</section>
+<section id="part-2-model-designer" class="slide level2 center">
+<h2>Part 2: Model Designer</h2>
+</section>
+<section id="what-is-a-model" class="slide level2 center" style="font-size:0.7em">
+<h2>What is a model?</h2>
+<ul>
+<li>A <strong>flowchart that runs</strong>: boxes are tools, lines carry data from one tool to the next</li>
+<li>Inputs (yellow) go in at the top, outputs (green) come out at the bottom</li>
+<li>Once saved, it shows up in the Processing Toolbox like any other tool</li>
+<li>So you can run it once, <strong>or run it as a batch</strong></li>
+</ul>
+</section>
+<section id="what-a-model-can-look-like" class="slide level2 smaller center">
+<h2>What a model can look like</h2>
+<p><img data-src="img/final_model.png" style="max-height: 60vh; object-fit: contain;" alt="A large QGIS model with four inputs (land use, roads, streams, DEM) feeding reproject, extract, buffer, slope, clip and dissolve steps, ending in a Camping Area output"></p>
+<p>Four inputs, about fifteen steps, one output. Today’s will be much smaller.</p>
+</section>
+<section id="the-model-designer-window" class="slide level2 center" style="font-size:0.6em">
+<h2>The Model Designer window</h2>
+<p><em>Processing → Model Designer…</em></p>
+<ul>
+<li><strong>Inputs tab:</strong> the parameters your model will ask for (Vector layer, Raster layer, Number, Field, File/Folder, CRS, …)</li>
+<li><strong>Algorithms tab:</strong> every Processing tool; drag one onto the canvas</li>
+<li><strong>Canvas:</strong> where the flowchart is built</li>
+<li><strong>Model properties:</strong> the model’s name and group (where it appears in the Toolbox)</li>
+<li><strong>Toolbar:</strong> run the model (▶), save in the project, save to a <code>.model3</code> file, export as an image or a Python script</li>
+</ul>
+<p><strong>Save often.</strong> Model Designer will not save your work for you.</p>
+</section>
+<section id="where-does-each-value-come-from" class="slide level2 center" style="font-size:0.6em">
+<h2>Where does each value come from?</h2>
+<p>When you add a tool to a model, each parameter has a button that sets <strong>where its value comes from</strong>:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Value</strong></td>
+<td>Typed in, the same every time</td>
+<td>Target CRS = EPSG:4326</td>
+</tr>
+<tr class="even">
+<td><strong>Model Input</strong></td>
+<td>Asked for when the model runs</td>
+<td>the CSV file</td>
+</tr>
+<tr class="odd">
+<td><strong>Algorithm Output</strong></td>
+<td>The result of an earlier step</td>
+<td>the points from step 1</td>
+</tr>
+<tr class="even">
+<td><strong>Pre-calculated Value</strong></td>
+<td>An expression worked out when the model runs</td>
+<td>an output file name</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Algorithm Output</strong> is what chains tools together. This is the part people find most confusing, so take it slowly.</p>
+</section>
+<section id="outputs-final-vs.-intermediate" class="slide level2 center" style="font-size:0.7em">
+<h2>Outputs: final vs.&nbsp;intermediate</h2>
+<ul>
+<li>Every tool in a model produces output, but most of it you don’t need to keep</li>
+<li><strong>Leave an output’s name blank</strong>: it is temporary and thrown away when the model finishes</li>
+<li><strong>Give an output a name</strong>: it becomes a <strong>model output</strong>, and you choose where it is saved when you run the model</li>
+<li>To make the output name come from the input name (handy in a batch), use a <strong>Pre-calculated Value</strong> expression, like in the Gran Chaco lab:</li>
+</ul>
+<pre><code>@project_folder || '/out/counts_' || base_file_name(decode_uri(@quake_csv, 'path')) || '.gpkg'</code></pre>
+</section>
+<section id="example-model-earthquakes-per-county" class="slide level2 center" style="font-size:0.7em">
+<h2>Example model: earthquakes per county</h2>
+<p>Three inputs, three steps, one output:</p>
+<div style="font-size:1.3em">
+<pre><code>quake_csv (input)
+    │
+    ▼
+[1] Create points layer from table
+    │
+    ▼
+[2] Extract by expression    ◄── min_mag (input)
+    │
+    ▼
+[3] Count points in polygon  ◄── counties (input)
+    │
+    ▼
+quake_counts (output)</code></pre>
+</div>
+<p>How many earthquakes of at least <code>min_mag</code> happened in each county, in the year given by <code>quake_csv</code>?</p>
+</section>
+<section id="the-model-step-by-step" class="slide level2 center" style="font-size:0.6em">
+<h2>The model, step by step</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Tool</th>
+<th>Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Inputs</td>
+<td></td>
+<td><code>quake_csv</code> (Vector layer, Geometryless), <code>counties</code> (Vector layer, Polygon), <code>min_mag</code> (Number, default 3)</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Create points layer from table</td>
+<td>X = <code>longitude</code>, Y = <code>latitude</code>, CRS = EPSG:4326</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Extract by expression</td>
+<td><code>"mag" &gt;= @min_mag</code> (model inputs become <code>@variables</code>)</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Count points in polygon</td>
+<td>polygons = <code>counties</code>, points = step 2, field name <code>n_quakes</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="build-it-then-test-it" class="slide level2 center" style="font-size:0.7em">
+<h2>Build it, then test it</h2>
+<ol type="1">
+<li>Add the three inputs</li>
+<li>Add the three tools and connect them with <strong>Algorithm Output</strong></li>
+<li>Name the last output <code>quake_counts</code></li>
+<li>Save the model in the project</li>
+<li><strong>Run it once</strong> (▶) on a single year, e.g.&nbsp;2019</li>
+<li>Check the result: open the attribute table, sort by <code>n_quakes</code></li>
+</ol>
+<p><strong>Always test on one input before you run a batch.</strong> If it’s wrong once, it will be wrong ten times.</p>
+</section>
+<section id="run-the-model-as-a-batch" class="slide level2 center" style="font-size:0.7em">
+<h2>Run the model as a batch</h2>
+<p>Processing Toolbox → <em>Models</em> (or <em>Project models</em>) → right-click your model → <em>Execute as Batch Process…</em></p>
+<ul>
+<li><code>quake_csv</code>: <em>Autofill → Select Files…</em> → all ten CSVs</li>
+<li><code>counties</code>: pick <code>cal_counties</code> → <em>Fill Down</em></li>
+<li><code>min_mag</code>: <code>3</code> → <em>Fill Down</em></li>
+<li><code>quake_counts</code>: first row <code>counts_.gpkg</code> → <em>Fill with parameter values</em> → <code>quake_csv</code></li>
+<li><em>Run</em>. That’s ten years × three steps = 30 tool runs from one click.</li>
+</ul>
+</section>
+<section id="what-did-we-find" class="slide level2 center" style="font-size:0.6em">
+<h2>What did we find?</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>M3+ in search area</th>
+<th>M3+ inside CA counties</th>
+<th>Top counties</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2018</td>
+<td>176</td>
+<td>149</td>
+<td>Riverside, San Benito, San Bernardino</td>
+</tr>
+<tr class="even">
+<td>2019</td>
+<td>1385</td>
+<td>1309</td>
+<td><strong>Inyo (592), San Bernardino (567)</strong></td>
+</tr>
+<tr class="odd">
+<td>2020</td>
+<td>898</td>
+<td><strong>380</strong></td>
+<td>Imperial, Inyo, Mono</td>
+</tr>
+<tr class="even">
+<td>2022</td>
+<td>270</td>
+<td>199</td>
+<td><strong>Humboldt</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<ul>
+<li><strong>2019:</strong> the Ridgecrest sequence (M6.4 and M7.1, July 2019) and thousands of aftershocks</li>
+<li><strong>2020:</strong> most of the M3+ quakes were <strong>outside</strong> California: the M6.5 Monte Cristo Range earthquake in Nevada (May 2020). Counting only inside the counties changed the answer.</li>
+<li><strong>2022:</strong> the M6.4 Ferndale earthquake (December 2022)</li>
+</ul>
+</div>
+</section>
+<section id="gotchas" class="slide level2 center" style="font-size:0.6em">
+<h2>Gotchas</h2>
+<ul>
+<li><strong>Test on one input first</strong>, then batch</li>
+<li><strong>X = longitude, Y = latitude</strong></li>
+<li><strong>CSVs opened from a file are all text.</strong> <code>"mag" &gt;= 3</code> still works, but use <code>to_real("mag")</code> for math or graduated symbols</li>
+<li><strong><em>Select from Available Layers</em> only lists loaded layers.</strong> Use <em>Select Files…</em> for files on disk</li>
+<li><strong>Check that your rows line up</strong> (e.g.&nbsp;year 2005 with year 2000) before clicking <em>Run</em></li>
+<li><strong>Same output name = overwritten file.</strong> Build names from the input name</li>
+<li><strong>Save in project vs.&nbsp;save as file:</strong> a <code>.model3</code> file can be reused in other projects and shared</li>
+</ul>
+</section>
+<section id="from-a-model-to-code" class="slide level2 center" style="font-size:0.6em">
+<h2>From a model to code</h2>
+<p>Everything you ran is just a command. <em>Processing → History</em> → right-click → copy as <code>qgis_process</code> command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">qgis_process</span> run native:createpointslayerfromtable <span class="at">--</span> <span class="dt">\</span></span>
+<span id="cb3-2"><a></a>    INPUT=ca_quakes_2019.csv XFIELD=longitude YFIELD=latitude <span class="dt">\</span></span>
+<span id="cb3-3"><a></a>    TARGET_CRS=EPSG:4326 OUTPUT=pts_2019.gpkg</span>
+<span id="cb3-4"><a></a></span>
+<span id="cb3-5"><a></a><span class="ex">qgis_process</span> run native:extractbyexpression <span class="at">--</span> <span class="dt">\</span></span>
+<span id="cb3-6"><a></a>    INPUT=pts_2019.gpkg EXPRESSION=<span class="st">'"mag" &gt;= 3'</span> OUTPUT=m3_2019.gpkg</span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a><span class="ex">qgis_process</span> run native:countpointsinpolygon <span class="at">--</span> <span class="dt">\</span></span>
+<span id="cb3-9"><a></a>    POLYGONS=cal_counties.geojson POINTS=m3_2019.gpkg <span class="dt">\</span></span>
+<span id="cb3-10"><a></a>    FIELD=n_quakes OUTPUT=counts_2019.gpkg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Model Designer can also export a model as a Python script. Models and batches are a stepping stone to scripting.</p>
+</section>
+<section id="up-next-the-gran-chaco-lab" class="slide level2 center" style="font-size:0.7em">
+<h2>Up next: the Gran Chaco lab</h2>
+<p>You’ll use both tools on satellite imagery:</p>
+<ul>
+<li>A <strong>model</strong> that reprojects each Landsat composite and writes NDVI and SWIR1 to their own folders</li>
+<li><strong>Batch</strong> runs of that model over six years, then batch raster calculations to find where forest was cleared</li>
+</ul>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

@@ -17,6 +17,9 @@ resources:
 
 Detect land-use change and deforestation in the Gran Chaco using dry-season satellite image composites.
 
+> __Qx:__ Answer the questions asked given in the boxes in answers.txt.  
+
+
 ## Study Area
 
 - Use the [Gran Chaco AOI GeoJSON](assets/gran_chaco_aoi.geojson) as the area of interest.
@@ -68,8 +71,10 @@ Download the project [here](). Extract the folder found within the zip to your `
 
 Open the QGIS project. Set the project CRS to an appropriate UTM CRS.
 
+> __Q1:__ Why did you choose the particular variant of UTM zone 21S that you did? Contrast it to others and explain the difference. 
+
 ## Change Detection Workflow
-First inspect the data to get an idea what you are looking at.
+First visually inspect the data to get an idea what you are looking at.
 
 1. Choose comparison years.
    - Select one older image and one newer image.
@@ -81,7 +86,7 @@ First inspect the data to get an idea what you are looking at.
 
 Now that you have given it the old eyeball, you can start trying to quantify year to year change.
 
-### Calculate vegetation or disturbance indices.
+### Calculate NDVI and extract SWIR1.
 
 You will work with six Landsat composites, five years apart, from the `landsat/` folder: 2000, 2005, 2010, 2015, 2020 and 2025. For each one you will make two single-band rasters:
 
@@ -90,13 +95,13 @@ You will work with six Landsat composites, five years apart, from the `landsat/`
 
 You will use both to detect clearing and then compare how well each one works.
 
-You will use QGIS Model Designer to build a model that calculates NDVI for each composite raster and saves the result to a file.
+You will use QGIS Model Designer to build one model that, for each composite raster, calculates NDVI and extracts SWIR1, and saves each result to its own folder.
 
 1. **Create the output folders.**
    Create an `ndvi` directory and a `swir1` directory next to the QGIS project file.
 
    ```
-   gran_chaco_project/
+   gran_chaco_<firstname>_<lastname>/
    ├── gran_chaco.qgz
    ├── landsat/
    │   ├── l57_2000_dry_season.tif
@@ -108,7 +113,7 @@ You will use QGIS Model Designer to build a model that calculates NDVI for each 
 
 2. **Open Model Designer and name the model.**
    - Open _Processing --> Model Designer..._
-   - In the panel at the lower left, set the Model Name to "calc NDVI" and the model group to "calc index".
+   - In the panel at the lower left, set the Model Name to "calc NDVI and SWIR1" and the model group to "calc index".
 
 3. **Add the raster input.**
    - At the top of the left panel, open the _Inputs_ tab (see @fig-add-raster-layer).
@@ -170,25 +175,31 @@ You will use QGIS Model Designer to build a model that calculates NDVI for each 
    - `'.tif'` is the file extension to add
    :::
 
-9. **Make a model for SWIR1.**
-   SWIR1 is not an index. You just need band 5 by itself, warped to the project CRS like the NDVI. Build a second model the same way (steps 2–8), with these changes:
-   - Model Name: "calc SWIR1" (same group, "calc index").
-   - Raster calculator description: "extract SWIR1".
-   - _Input layer A_: the Warp output, band **5** (SWIR1). Leave _Input layer B_ empty.
-   - Formula: `A`
-   - Output expression: change `'/ndvi/NDVI_'` to `'/swir1/SWIR1_'`.
+9. **Change your model to extract SWIR1 as well.**
+   SWIR1 is not an index. You just need band 5 by itself, warped to the project CRS like the NDVI. The warped raster already exists inside the model, so you only need to add a second Raster calculator that uses it:
+   - Add that raster calculator to extract SWIR1. 
+   - Write the result to the `swir1` folder with a `SWIR1_` prefix
+   - Press the "save model in project" button.
 
-10. **Run each model as a batch process.**
+   Your model now has one input, one Warp step, and two Raster calculators branching off the Warp:
+
+   ```
+   input_image ──> Warp to project CRS ──┬──> calc NDVI     ──> ndvi/NDVI_<input name>.tif
+                                         └──> extract SWIR1 ──> swir1/SWIR1_<input name>.tif
+   ```
+
+10. **Run the model as a batch process.**
     - Save the model and close Model Designer.
-    - In the Processing Toolbox, open _Project models -> calc index_, right-click "calc NDVI" and choose _Execute as Batch Process..._
+    - In the Processing Toolbox, open _Project models -> calc index_, right-click "calc NDVI and SWIR1" and choose _Execute as Batch Process..._
     - At the top of the `input_image` column, click _Autofill..._ and choose _Select from Available Layers..._ Tick the six composites from the `landsat/` folder and click OK. You get one row per raster. (The rasters must be loaded in the project to show up in this list.)
-    - Click _Run_. The output filenames come from the expression in step 8, so there is nothing to fill in for the outputs.
-    - Repeat for "calc SWIR1".
-    - When both are done, add the new rasters in `ndvi/` and `swir1/` to the project (for example by dragging them in from the Browser panel). The next step needs them loaded.
+    - Click _Run_. The output filenames come from the expressions in steps 8 and 9, so there is nothing to fill in for the outputs. Each row writes two files, so you should end up with six rasters in `ndvi/` and six in `swir1/`.
+    - Add the new rasters in `ndvi/` and `swir1/` to the project (for example by dragging them in from the Browser panel). The next step needs them loaded.
 
 <!-- end of index steps list; keeps the workflow list below separate -->
 
-Before you go on, put `SWIR1_l57_2000_dry_season` and `SWIR1_l89_2025_dry_season` side by side. Style both with the same min/max (about 0.1 to 0.35). Intact forest is **dark** in SWIR1 (roughly 0.15–0.19). Cleared fields are **bright** (above about 0.21). Now do the same with the two NDVI layers. Which one shows the cleared fields more clearly?
+Before you go on, put `SWIR1_l57_2000_dry_season` and `SWIR1_l89_2025_dry_season` side by side. Style both with the same min/max (about 0.1 to 0.35). Intact forest is **dark** in SWIR1 (roughly 0.15–0.19). Cleared fields are **bright** (above about 0.21). Now do the same with the two NDVI layers. 
+
+> __Q2:__ Which one shows the cleared fields more clearly?
 
 ### Calculate change between dates
 
@@ -208,7 +219,7 @@ This time you do not need a model. There is only one step, so you will run the G
    Create a `change` directory next to the QGIS project file, with a folder inside it for each layer type.
 
    ```
-   gran_chaco_project/
+   gran_chaco_<firstname>_<lastname>/
    ├── gran_chaco.qgz
    ├── landsat/
    ├── ndvi/
@@ -247,6 +258,7 @@ This time you do not need a model. There is only one step, so you will run the G
    - In the first row of the _Calculated_ column, click the _..._ button and choose _Save to File..._
    - Go to `change/dSWIR1/`, enter `d.tif` as the filename and click _Save_.
    - In the _Autofill settings_ dialogue, choose _Fill with parameter values_ and pick _Input layer A_ as the parameter, then click OK.
+   - This will insert the name of _Input layer A_ directly before `.tif`.
 
    Each output is named `d` plus the name of its later layer. For example, `SWIR1_l89_2025_dry_season` minus `SWIR1_l89_2020_dry_season` is saved as `change/dSWIR1/dSWIR1_l89_2025_dry_season.tif`, the change from 2020 to 2025. Check that the output column looks like this before you run.
 
@@ -266,9 +278,11 @@ Style the change rasters so they are easy to compare:
 
 Now look closely at two periods, **2010→2015** and **2015→2020**, and answer these questions:
 
-1. In `dNDVI_l89_2020_dry_season` (2015→2020), what color is the large area of forest that was never cleared? If you used dNDVI alone, what would you conclude happened to that forest?
-2. In `dNDVI_l89_2015_dry_season` (2010→2015), find a field that was cleared during that period (compare the 2010 and 2015 composites). Did NDVI go up or down there? Why might clearing a forest make NDVI go *up*?
-3. Look at the same two periods in dSWIR1. Does the uncleared forest stay near 0? Do the newly cleared fields stand out?
+> __Q3:__ In `dNDVI_l89_2020_dry_season` (2015→2020), what color is the large area of forest that was never cleared? If you used dNDVI alone, what would you conclude happened to that forest? (Make sure the ramp is set to min −0.4 and max 0.4 as described above. With QGIS's default min/max, the colors are stretched to fit this layer's values and the forest will look misleadingly normal.)
+
+> __Q4:__ In `dNDVI_l89_2015_dry_season` (2010→2015), find a field that was cleared during that period (compare the 2010 and 2015 composites). Did NDVI go up or down there? Why might clearing a forest make NDVI go *up*?
+
+> __Q5:__ Look at the same two periods in dSWIR1. Does the uncleared forest stay near 0? Do the newly cleared fields stand out?
 
 ::: {.callout-note collapse="true"}
 ## Why dry and wet years confuse NDVI (open after answering)
@@ -295,9 +309,9 @@ The first condition matters. Without it, fields that were already cleared and ju
 2. **Open the GDAL Raster calculator as a batch process** (same as before).
 
 3. **Fill in the inputs.**
-   - _Input layer A_: Autofill with the five `dSWIR1` layers.
-   - _Input layer B_: Autofill with the `SWIR1` layers for the **earlier** year of each pair: 2000, 2005, 2010, 2015 and 2020.
-   - Check the pairs: `dSWIR1_l57_2005_dry_season` (2000→2005) goes with `SWIR1_l57_2000_dry_season`, and so on.
+   - _Input layer A_: Autofill with the `dSWIR1` layers for the later year of each pair 2005, 2010, 2015 and 2020.
+   - _Input layer B_: Autofill with the `SWIR1` layers for the earlier year of each pair: 2000, 2005, 2010 and 2015.
+   - Check that the pairs are properly aligned: `dSWIR1_l57_2005_dry_season` (2000→2005) goes with `SWIR1_l57_2000_dry_season`, and so on.
 
 4. **Enter the rule.**
    In the first calculation cell enter the expression below, then use _Fill Down_:
@@ -306,7 +320,7 @@ The first condition matters. Without it, fields that were already cleared and ju
    (B < 0.20) * (A > 0.05)
    ```
 
-   Each comparison gives 1 where it is true and 0 where it is false. Multiplying them gives 1 only where **both** are true, so it works as an AND. The output is 1 for cleared and 0 for everything else.
+   Each comparison gives 1 where it is true and 0 where it is false. Multiplying them gives 1 only where **both** are true, so it works as an AND. This expression reads like, _Pixel is forest, AND becomes brighter_. 
 
 5. **Set the output filenames.** Save the first row as `change/cleared/cleared_.tif`, then _Fill with parameter values_ from _Input layer A_. The 2020→2025 result becomes `cleared_dSWIR1_l89_2025_dry_season.tif`.
 
@@ -314,6 +328,8 @@ The first condition matters. Without it, fields that were already cleared and ju
    Style each cleared layer so 1 is a bright color and 0 is transparent, and put it over the later composite in false color (SWIR1, NIR, red). Do the red patches line up with new fields? Pan around some intact forest: are there false alarms?
 
    The 0.20 and 0.05 thresholds were chosen by checking known forest and known fields in these images. If you find areas where they do not work well, try adjusting them and note what changed.
+
+> __Q6:__ We could have done the previous two caluclations (change and mapping clearing) in one step in Raster Calculator.  What formula would one use to do so?
 
 ### Clean the map
 
@@ -342,15 +358,41 @@ Which period had the most clearing?
 
 ## Outputs
 
-- Before and after dry-season composites.
-- False-color maps showing land-cover patterns.
-- Index difference raster.
-- Classified change raster or vector layer.
-- Summary table of changed area.
-- Short interpretation of where and how land use changed.
+When you are done, your project folder should look like this. Rename the top-level folder to `gran_chaco_<firstname>_<lastname>/` (for example `gran_chaco_ada_lovelace/`), and put `answers.txt` directly inside it.
 
-## Notes
+```
+gran_chaco_<firstname>_<lastname>/
+├── answers.txt
+├── gran_chaco.qgz
+├── gran_chaco_aoi.geojson
+├── landsat/
+│   ├── l57_2000_dry_season.tif
+│   ├── ...
+│   └── l89_2025_dry_season.tif
+├── ndvi/
+│   ├── NDVI_l57_2000_dry_season.tif
+│   ├── ...
+│   └── NDVI_l89_2025_dry_season.tif
+├── swir1/
+│   ├── SWIR1_l57_2000_dry_season.tif
+│   ├── ...
+│   └── SWIR1_l89_2025_dry_season.tif
+└── change/
+    ├── dNDVI/
+    │   ├── dNDVI_l57_2005_dry_season.tif      
+    │   ├── ...
+    │   └── dNDVI_l89_2025_dry_season.tif      
+    ├── dSWIR1/
+    │   ├── dSWIR1_l57_2005_dry_season.tif
+    │   ├── ...
+    │   └── dSWIR1_l89_2025_dry_season.tif
+    └── cleared/
+        ├── cleared_dSWIR1_l57_2005_dry_season.tif
+        ├── ...
+        └── sieved_cleared_dSWIR1_l89_2025_dry_season.tif
+```
 
-- Use the same months for each year to reduce seasonal bias.
-- Median composites help, but they do not remove all phenology or crop-cycle differences.
-- Landsat gives a 25-year record (2000–2025) at ~30 m resolution. Sentinel-2 has finer detail (~10 m) but its record only starts in the late 2010s, so it can't show the early clearing.
+Each change file is named after the **later** year of its pair. The years in brackets show which period each file covers. The same applies to the `dSWIR1`, `cleared_` and `sieved_` files. The `cleared/` folder holds ten files: five `cleared_` files and five `sieved_` files.
+
+
+

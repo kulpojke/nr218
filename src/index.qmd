@@ -123,6 +123,8 @@ __Lab Assignments__
 
 {{< include focal_filters.qmd >}}
 
+{{< include workflows.qmd >}}
+
 {{< include georeferencing.qmd >}}
 
 {{< include intro_to_esri.qmd >}}

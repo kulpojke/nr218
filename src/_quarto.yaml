@@ -43,6 +43,7 @@ project:
     - rasterizing_by_attribute.qmd
     - georeferencing.qmd
     - focal_filters.qmd
+    - workflows.qmd
     - intro_excel_arc.qmd
     - intro_excel_arc_tmp.qmd
     - gps.qmd
