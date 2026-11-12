@@ -518,7 +518,7 @@ quake_counts (output)</code></pre>
 <tr class="odd">
 <td>2</td>
 <td>Extract by expression</td>
-<td><code>"mag" &gt;= @min_mag</code> (model inputs become <code>@variables</code>)</td>
+<td><code>to_real("mag") &gt;= @min_mag</code> (<code>to_real</code> turns the text into a number; model inputs become <code>@variables</code>)</td>
 </tr>
 <tr class="even">
 <td>3</td>
@@ -602,7 +602,7 @@ quake_counts (output)</code></pre>
 <ul>
 <li><strong>Test on one input first</strong>, then batch</li>
 <li><strong>X = longitude, Y = latitude</strong></li>
-<li><strong>CSVs opened from a file are all text.</strong> <code>"mag" &gt;= 3</code> still works, but use <code>to_real("mag")</code> for math or graduated symbols</li>
+<li><strong>CSVs opened from a file are all text.</strong> That is why the model uses <code>to_real("mag")</code>: it turns the text into a number before comparing</li>
 <li><strong><em>Select from Available Layers</em> only lists loaded layers.</strong> Use <em>Select Files…</em> for files on disk</li>
 <li><strong>Check that your rows line up</strong> (e.g.&nbsp;year 2005 with year 2000) before clicking <em>Run</em></li>
 <li><strong>Same output name = overwritten file.</strong> Build names from the input name</li>
@@ -617,7 +617,7 @@ quake_counts (output)</code></pre>
 <span id="cb3-3"><a></a>    TARGET_CRS=EPSG:4326 OUTPUT=pts_2019.gpkg</span>
 <span id="cb3-4"><a></a></span>
 <span id="cb3-5"><a></a><span class="ex">qgis_process</span> run native:extractbyexpression <span class="at">--</span> <span class="dt">\</span></span>
-<span id="cb3-6"><a></a>    INPUT=pts_2019.gpkg EXPRESSION=<span class="st">'"mag" &gt;= 3'</span> OUTPUT=m3_2019.gpkg</span>
+<span id="cb3-6"><a></a>    INPUT=pts_2019.gpkg EXPRESSION=<span class="st">'to_real("mag") &gt;= 3'</span> OUTPUT=m3_2019.gpkg</span>
 <span id="cb3-7"><a></a></span>
 <span id="cb3-8"><a></a><span class="ex">qgis_process</span> run native:countpointsinpolygon <span class="at">--</span> <span class="dt">\</span></span>
 <span id="cb3-9"><a></a>    POLYGONS=cal_counties.geojson POINTS=m3_2019.gpkg <span class="dt">\</span></span>

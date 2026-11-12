@@ -1852,7 +1852,7 @@
     "href": "index.html#the-model-step-by-step",
     "title": "NR 218",
     "section": "The model, step by step",
-    "text": "The model, step by step\n\n\n\n\n\n\n\n\nStep\nTool\nSettings\n\n\n\n\nInputs\n\nquake_csv (Vector layer, Geometryless), counties (Vector layer, Polygon), min_mag (Number, default 3)\n\n\n1\nCreate points layer from table\nX = longitude, Y = latitude, CRS = EPSG:4326\n\n\n2\nExtract by expression\n\"mag\" &gt;= @min_mag (model inputs become @variables)\n\n\n3\nCount points in polygon\npolygons = counties, points = step 2, field name n_quakes"
+    "text": "The model, step by step\n\n\n\n\n\n\n\n\nStep\nTool\nSettings\n\n\n\n\nInputs\n\nquake_csv (Vector layer, Geometryless), counties (Vector layer, Polygon), min_mag (Number, default 3)\n\n\n1\nCreate points layer from table\nX = longitude, Y = latitude, CRS = EPSG:4326\n\n\n2\nExtract by expression\nto_real(\"mag\") &gt;= @min_mag (to_real turns the text into a number; model inputs become @variables)\n\n\n3\nCount points in polygon\npolygons = counties, points = step 2, field name n_quakes"
   },
   {
     "objectID": "index.html#build-it-then-test-it",
@@ -1880,14 +1880,14 @@
     "href": "index.html#gotchas",
     "title": "NR 218",
     "section": "Gotchas",
-    "text": "Gotchas\n\nTest on one input first, then batch\nX = longitude, Y = latitude\nCSVs opened from a file are all text. \"mag\" &gt;= 3 still works, but use to_real(\"mag\") for math or graduated symbols\nSelect from Available Layers only lists loaded layers. Use Select Files… for files on disk\nCheck that your rows line up (e.g. year 2005 with year 2000) before clicking Run\nSame output name = overwritten file. Build names from the input name\nSave in project vs. save as file: a .model3 file can be reused in other projects and shared"
+    "text": "Gotchas\n\nTest on one input first, then batch\nX = longitude, Y = latitude\nCSVs opened from a file are all text. That is why the model uses to_real(\"mag\"): it turns the text into a number before comparing\nSelect from Available Layers only lists loaded layers. Use Select Files… for files on disk\nCheck that your rows line up (e.g. year 2005 with year 2000) before clicking Run\nSame output name = overwritten file. Build names from the input name\nSave in project vs. save as file: a .model3 file can be reused in other projects and shared"
   },
   {
     "objectID": "index.html#from-a-model-to-code",
     "href": "index.html#from-a-model-to-code",
     "title": "NR 218",
     "section": "From a model to code",
-    "text": "From a model to code\nEverything you ran is just a command. Processing → History → right-click → copy as qgis_process command:\nqgis_process run native:createpointslayerfromtable -- \\\n    INPUT=ca_quakes_2019.csv XFIELD=longitude YFIELD=latitude \\\n    TARGET_CRS=EPSG:4326 OUTPUT=pts_2019.gpkg\n\nqgis_process run native:extractbyexpression -- \\\n    INPUT=pts_2019.gpkg EXPRESSION='\"mag\" &gt;= 3' OUTPUT=m3_2019.gpkg\n\nqgis_process run native:countpointsinpolygon -- \\\n    POLYGONS=cal_counties.geojson POINTS=m3_2019.gpkg \\\n    FIELD=n_quakes OUTPUT=counts_2019.gpkg\nModel Designer can also export a model as a Python script. Models and batches are a stepping stone to scripting."
+    "text": "From a model to code\nEverything you ran is just a command. Processing → History → right-click → copy as qgis_process command:\nqgis_process run native:createpointslayerfromtable -- \\\n    INPUT=ca_quakes_2019.csv XFIELD=longitude YFIELD=latitude \\\n    TARGET_CRS=EPSG:4326 OUTPUT=pts_2019.gpkg\n\nqgis_process run native:extractbyexpression -- \\\n    INPUT=pts_2019.gpkg EXPRESSION='to_real(\"mag\") &gt;= 3' OUTPUT=m3_2019.gpkg\n\nqgis_process run native:countpointsinpolygon -- \\\n    POLYGONS=cal_counties.geojson POINTS=m3_2019.gpkg \\\n    FIELD=n_quakes OUTPUT=counts_2019.gpkg\nModel Designer can also export a model as a Python script. Models and batches are a stepping stone to scripting."
   },
   {
     "objectID": "index.html#up-next-the-gran-chaco-lab",
@@ -4806,7 +4806,7 @@
     "href": "workflows.html#the-model-step-by-step",
     "title": "",
     "section": "The model, step by step",
-    "text": "The model, step by step\n\n\n\n\n\n\n\n\nStep\nTool\nSettings\n\n\n\n\nInputs\n\nquake_csv (Vector layer, Geometryless), counties (Vector layer, Polygon), min_mag (Number, default 3)\n\n\n1\nCreate points layer from table\nX = longitude, Y = latitude, CRS = EPSG:4326\n\n\n2\nExtract by expression\n\"mag\" &gt;= @min_mag (model inputs become @variables)\n\n\n3\nCount points in polygon\npolygons = counties, points = step 2, field name n_quakes"
+    "text": "The model, step by step\n\n\n\n\n\n\n\n\nStep\nTool\nSettings\n\n\n\n\nInputs\n\nquake_csv (Vector layer, Geometryless), counties (Vector layer, Polygon), min_mag (Number, default 3)\n\n\n1\nCreate points layer from table\nX = longitude, Y = latitude, CRS = EPSG:4326\n\n\n2\nExtract by expression\nto_real(\"mag\") &gt;= @min_mag (to_real turns the text into a number; model inputs become @variables)\n\n\n3\nCount points in polygon\npolygons = counties, points = step 2, field name n_quakes"
   },
   {
     "objectID": "workflows.html#build-it-then-test-it",
@@ -4834,14 +4834,14 @@
     "href": "workflows.html#gotchas",
     "title": "",
     "section": "Gotchas",
-    "text": "Gotchas\n\nTest on one input first, then batch\nX = longitude, Y = latitude\nCSVs opened from a file are all text. \"mag\" &gt;= 3 still works, but use to_real(\"mag\") for math or graduated symbols\nSelect from Available Layers only lists loaded layers. Use Select Files… for files on disk\nCheck that your rows line up (e.g. year 2005 with year 2000) before clicking Run\nSame output name = overwritten file. Build names from the input name\nSave in project vs. save as file: a .model3 file can be reused in other projects and shared"
+    "text": "Gotchas\n\nTest on one input first, then batch\nX = longitude, Y = latitude\nCSVs opened from a file are all text. That is why the model uses to_real(\"mag\"): it turns the text into a number before comparing\nSelect from Available Layers only lists loaded layers. Use Select Files… for files on disk\nCheck that your rows line up (e.g. year 2005 with year 2000) before clicking Run\nSame output name = overwritten file. Build names from the input name\nSave in project vs. save as file: a .model3 file can be reused in other projects and shared"
   },
   {
     "objectID": "workflows.html#from-a-model-to-code",
     "href": "workflows.html#from-a-model-to-code",
     "title": "",
     "section": "From a model to code",
-    "text": "From a model to code\nEverything you ran is just a command. Processing → History → right-click → copy as qgis_process command:\nqgis_process run native:createpointslayerfromtable -- \\\n    INPUT=ca_quakes_2019.csv XFIELD=longitude YFIELD=latitude \\\n    TARGET_CRS=EPSG:4326 OUTPUT=pts_2019.gpkg\n\nqgis_process run native:extractbyexpression -- \\\n    INPUT=pts_2019.gpkg EXPRESSION='\"mag\" &gt;= 3' OUTPUT=m3_2019.gpkg\n\nqgis_process run native:countpointsinpolygon -- \\\n    POLYGONS=cal_counties.geojson POINTS=m3_2019.gpkg \\\n    FIELD=n_quakes OUTPUT=counts_2019.gpkg\nModel Designer can also export a model as a Python script. Models and batches are a stepping stone to scripting."
+    "text": "From a model to code\nEverything you ran is just a command. Processing → History → right-click → copy as qgis_process command:\nqgis_process run native:createpointslayerfromtable -- \\\n    INPUT=ca_quakes_2019.csv XFIELD=longitude YFIELD=latitude \\\n    TARGET_CRS=EPSG:4326 OUTPUT=pts_2019.gpkg\n\nqgis_process run native:extractbyexpression -- \\\n    INPUT=pts_2019.gpkg EXPRESSION='to_real(\"mag\") &gt;= 3' OUTPUT=m3_2019.gpkg\n\nqgis_process run native:countpointsinpolygon -- \\\n    POLYGONS=cal_counties.geojson POINTS=m3_2019.gpkg \\\n    FIELD=n_quakes OUTPUT=counts_2019.gpkg\nModel Designer can also export a model as a Python script. Models and batches are a stepping stone to scripting."
   },
   {
     "objectID": "workflows.html#up-next-the-gran-chaco-lab",
