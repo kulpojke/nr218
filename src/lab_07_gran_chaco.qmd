@@ -27,19 +27,22 @@ Detect land-use change and deforestation in the Gran Chaco using dry-season sate
 
 You are being provided with data for an area in Paraguay's [Gran Chaco region](https://en.wikipedia.org/wiki/Gran_Chaco). The AOI includes dry forest and more recent agricultural clearing near the Cerro Chovoreca frontier. The dataset includes annual dry-season median composites made from June-August imagery.
 
-Sentinel-2 and Landsat 5, 7, 8 and/or 9 images were searched from June through August for the years 2000-2025 using Google Earth Engine. Images were filtered by date, area of interest, and sun angle; Sentinel-2 images were also filtered by scene-level cloudiness. Cloud and cloud-shadow masking and surface reflectance scaling functions were then mapped over the image collections. Finally, the images for each year were reduced to annual dry-season median composite images. If you would like to see how this was done, see [this notebook](assets/sentinel_gran_chaco.html).
+Landsat 5, 7, 8 and 9 images were searched from June through August for the years 2000-2025 using Google Earth Engine. Images were filtered by date, area of interest, and sun angle. Cloud and cloud-shadow masking and surface reflectance scaling functions were then mapped over the image collections. Finally, the images for each year were reduced to annual dry-season median composite images. If you would like to see how this was done, see [this notebook](assets/sentinel_gran_chaco.html). (The notebook also builds Sentinel-2 composites, which are not used in this lab.)
 
-Each TIF in the `rasters/` directory holds the composite for one year. The files are named `<sensor>_<year>_dry_season.tif`, where the sensor prefix tells you which satellite the imagery came from (@tbl-raster-files).
+The `landsat/` directory holds six composites, five years apart (@tbl-raster-files). The files are named `<sensor>_<year>_dry_season.tif`, where the sensor prefix tells you which satellite the imagery came from.
 
-| File prefix | Sensor | Years | Pixel size |
+| File | Sensor | Year | Pixel size |
 | --- | --- | --- | --- |
-| `l57_` | Landsat 5 and 7 | 2000–2011 | ~30 m |
-| `l89_` | Landsat 8 and 9 | 2013–2025 | ~30 m |
-| `s2_` | Sentinel-2 | 2018–2025 | ~10 m |
+| `l57_2000_dry_season.tif` | Landsat 5 and 7 | 2000 | ~30 m |
+| `l57_2005_dry_season.tif` | Landsat 5 and 7 | 2005 | ~30 m |
+| `l57_2010_dry_season.tif` | Landsat 5 and 7 | 2010 | ~30 m |
+| `l89_2015_dry_season.tif` | Landsat 8 and 9 | 2015 | ~30 m |
+| `l89_2020_dry_season.tif` | Landsat 8 and 9 | 2020 | ~30 m |
+| `l89_2025_dry_season.tif` | Landsat 8 and 9 | 2025 | ~30 m |
 
-: Raster files in the `rasters/` directory. {#tbl-raster-files}
+: Raster files in the `landsat/` directory. {#tbl-raster-files}
 
-There is no 2012 file, because Landsat 5 stopped collecting data in late 2011 and Landsat 8 launched in 2013. The 2018 Sentinel-2 composite is mostly empty, so you should probably not use it.
+These years were picked from a full 2000–2025 series because they are evenly spaced and have few image artifacts. Some years in between have stripes from the failed scan-line corrector on Landsat 7, or come from extreme drought years that make change hard to detect.
 
 All files cover the same area and share these properties:
 
@@ -48,20 +51,20 @@ All files cover the same area and share these properties:
 - **CRS:** EPSG:4326 (WGS 84), so coordinates and pixel sizes are in degrees, not meters. You will reproject to the project CRS before calculating areas.
 - **Missing data:** pixels masked for cloud or cloud shadow are stored as NaN.
 
-| Exported TIF band | Common name | Sentinel-2 band | Landsat 5/7 band | Landsat 8/9 band |
-| --- | --- | --- | --- | --- |
-| 1 | Blue | B2 | SR_B1 | SR_B2 |
-| 2 | Green | B3 | SR_B2 | SR_B3 |
-| 3 | Red | B4 | SR_B3 | SR_B4 |
-| 4 | Near infrared | B8 | SR_B4 | SR_B5 |
-| 5 | Shortwave infrared 1 | B11 | SR_B5 | SR_B6 |
-| 6 | Shortwave infrared 2 | B12 | SR_B7 | SR_B7 |
+| Exported TIF band | Common name | Landsat 5/7 band | Landsat 8/9 band |
+| --- | --- | --- | --- |
+| 1 | Blue | SR_B1 | SR_B2 |
+| 2 | Green | SR_B2 | SR_B3 |
+| 3 | Red | SR_B3 | SR_B4 |
+| 4 | Near infrared | SR_B4 | SR_B5 |
+| 5 | Shortwave infrared 1 | SR_B5 | SR_B6 |
+| 6 | Shortwave infrared 2 | SR_B7 | SR_B7 |
 
 : Exported image band order and source sensor bands. {#tbl-exported-bands}
 
 ## Setup 
 
-Download the project [here](). Extract the folder found within the zip to your `nr218` directory. The project folder contains a QGIS project file, and a bunch of TIFs in a directory called rasters.  
+Download the project [here](). Extract the folder found within the zip to your `nr218` directory. The project folder contains a QGIS project file and six TIFs in a directory called `landsat/`.
 
 Open the QGIS project. Set the project CRS to an appropriate UTM CRS.
 
@@ -80,17 +83,27 @@ Now that you have given it the old eyeball, you can start trying to quantify yea
 
 ### Calculate vegetation or disturbance indices.
 
+You will work with six Landsat composites, five years apart, from the `landsat/` folder: 2000, 2005, 2010, 2015, 2020 and 2025. For each one you will make two single-band rasters:
+
+- **NDVI**, the classic "greenness" index.
+- **SWIR1**, the shortwave infrared 1 reflectance (band 5) on its own.
+
+You will use both to detect clearing and then compare how well each one works.
+
 You will use QGIS Model Designer to build a model that calculates NDVI for each composite raster and saves the result to a file.
 
-1. **Create an output folder.**
-   Create an `ndvi` directory next to the QGIS project file.
+1. **Create the output folders.**
+   Create an `ndvi` directory and a `swir1` directory next to the QGIS project file.
 
    ```
    gran_chaco_project/
    ├── gran_chaco.qgz
-   ├── rasters/
-   │   └── S2_2025_dry_season.tif
-   └── ndvi/
+   ├── landsat/
+   │   ├── l57_2000_dry_season.tif
+   │   ├── ...
+   │   └── l89_2025_dry_season.tif
+   ├── ndvi/
+   └── swir1/
    ```
 
 2. **Open Model Designer and name the model.**
@@ -157,102 +170,175 @@ You will use QGIS Model Designer to build a model that calculates NDVI for each 
    - `'.tif'` is the file extension to add
    :::
 
-9. **Make models for NBR and NDMI.**
-   Repeat the steps above with these formulas:
-   - NBR: `(NIR - SWIR2) / (NIR + SWIR2)`
-   - NDMI: `(NIR - SWIR1) / (NIR + SWIR1)`
+9. **Make a model for SWIR1.**
+   SWIR1 is not an index. You just need band 5 by itself, warped to the project CRS like the NDVI. Build a second model the same way (steps 2–8), with these changes:
+   - Model Name: "calc SWIR1" (same group, "calc index").
+   - Raster calculator description: "extract SWIR1".
+   - _Input layer A_: the Warp output, band **5** (SWIR1). Leave _Input layer B_ empty.
+   - Formula: `A`
+   - Output expression: change `'/ndvi/NDVI_'` to `'/swir1/SWIR1_'`.
 
-   Each index gets its own output folder (`nbr/` and `ndmi/`) and filename prefix, so change `'/ndvi/NDVI_'` in the output expression to `'/nbr/NBR_'` or `'/ndmi/NDMI_'`.
-
-10. **Run each index model as a batch process.**
+10. **Run each model as a batch process.**
     - Save the model and close Model Designer.
     - In the Processing Toolbox, open _Project models -> calc index_, right-click "calc NDVI" and choose _Execute as Batch Process..._
-    - At the top of the `input_image` column, click _Autofill..._ and choose _Select from Available Layers..._ Tick every composite raster from the `rasters/` folder and click OK. You get one row per raster. (The rasters must be loaded in the project to show up in this list.)
+    - At the top of the `input_image` column, click _Autofill..._ and choose _Select from Available Layers..._ Tick the six composites from the `landsat/` folder and click OK. You get one row per raster. (The rasters must be loaded in the project to show up in this list.)
     - Click _Run_. The output filenames come from the expression in step 8, so there is nothing to fill in for the outputs.
-    - Repeat for "calc NBR" and "calc NDMI".
-    - When all three are done, add the new rasters in `ndvi/`, `nbr/` and `ndmi/` to the project (for example by dragging them in from the Browser panel). The next step needs them loaded.
+    - Repeat for "calc SWIR1".
+    - When both are done, add the new rasters in `ndvi/` and `swir1/` to the project (for example by dragging them in from the Browser panel). The next step needs them loaded.
 
 <!-- end of index steps list; keeps the workflow list below separate -->
 
-### Calculate change between years
+Before you go on, put `SWIR1_l57_2000_dry_season` and `SWIR1_l89_2025_dry_season` side by side. Style both with the same min/max (about 0.1 to 0.35). Intact forest is **dark** in SWIR1 (roughly 0.15–0.19). Cleared fields are **bright** (above about 0.21). Now do the same with the two NDVI layers. Which one shows the cleared fields more clearly?
 
-Next you will subtract each year's index raster from the following year's. The result shows where the index went up or down between the two years:
+### Calculate change between dates
+
+Next you will subtract each date's raster from the one five years later. The result shows where the value went up or down over those five years:
 
 $$
-\Delta index = index_{n+1} - index_{n}
+\Delta = value_{later} - value_{earlier}
 $$
 
-- Large negative values may indicate vegetation loss or clearing.
-- Large positive values may indicate vegetation recovery or crop growth.
+- **dNDVI**: a large negative value may mean vegetation loss.
+- **dSWIR1**: a large **positive** value may mean clearing, because cleared ground is brighter in SWIR1 than forest. Note the sign is the opposite of dNDVI.
 - Values near 0 mean little or no change.
 
-This time you do not need a model. There is only one step, so you will run the GDAL Raster calculator directly as a batch process. The index rasters are already in the project CRS, so no Warp step is needed either.
+This time you do not need a model. There is only one step, so you will run the GDAL Raster calculator directly as a batch process. The NDVI and SWIR1 rasters are already in the project CRS, so no Warp step is needed either.
 
 1. **Create the output folders.**
-   Create a `change` directory next to the QGIS project file, with a folder inside it for each index.
+   Create a `change` directory next to the QGIS project file, with a folder inside it for each layer type.
 
    ```
    gran_chaco_project/
    ├── gran_chaco.qgz
-   ├── rasters/
+   ├── landsat/
    ├── ndvi/
-   ├── nbr/
-   ├── ndmi/
+   ├── swir1/
    └── change/
        ├── dNDVI/
-       ├── dNBR/
-       └── dNDMI/
+       └── dSWIR1/
    ```
 
 2. **Open the Raster calculator as a batch process.**
    In the Processing Toolbox, find _GDAL -> Raster miscellaneous -> Raster calculator_, right-click it and choose _Execute as Batch Process..._ (Make sure you use the GDAL one. There is also a QGIS _Raster calculator_ under _Raster analysis_, which works differently.)
 
 3. **Fill in the layer pairs.**
-   Each row subtracts one pair of rasters: the newer year goes in _Input layer A_ and the year before it goes in _Input layer B_. __Both rasters in a pair must come from the same sensor__ so the pixels line up, so do one index and one sensor at a time. Begin with NDVI from Landsat 8/9 (2013–2025):
+   Each row subtracts one pair of rasters: the later date goes in _Input layer A_ and the date five years before it goes in _Input layer B_. Start with SWIR1:
 
-   - At the top of the _Input layer A_ column, click _Autofill... -> Select from Available Layers..._ and tick the `NDVI_l89` layers for 2014 through 2025, every year except the oldest. This makes 12 rows.
-   - At the top of the _Input layer B_ column, do the same, but tick 2013 through 2024, every year except the newest.
-   - Leave _Number of raster band for A_ and _Number of raster band for B_ at 1. Index rasters only have one band.
+   - At the top of the _Input layer A_ column, click _Autofill... -> Select from Available Layers..._ and tick the `SWIR1` layers for 2005, 2010, 2015, 2020 and 2025 (every date except the oldest). This makes 5 rows.
+   - At the top of the _Input layer B_ column, do the same, but tick 2000, 2005, 2010, 2015 and 2020 (every date except the newest).
+   - Leave _Number of raster band for A_ and _Number of raster band for B_ at 1. These rasters only have one band.
 
    ::: {.callout-warning}
    ## Check your pairs before you run
 
-   Autofill fills the rows in the order the layers appear in the list, which may not be year order. Before you click _Run_, read down both columns and make sure every _Input layer A_ is exactly one year after the _Input layer B_ in the same row (2014 and 2013, 2015 and 2014, and so on). If a row is off, use the dropdown in that cell to pick the right layer.
+   Autofill fills the rows in the order the layers appear in the list, which may not be date order. Before you click _Run_, read down both columns and make sure every _Input layer A_ is exactly five years after the _Input layer B_ in the same row (2005 and 2000, 2010 and 2005, and so on). If a row is off, use the dropdown in that cell to pick the right layer.
+   :::
+
+   ::: {.callout-note}
+   ## Mixing Landsat 5/7 and Landsat 8/9
+
+   The 2010→2015 pair compares a Landsat 5/7 composite with a Landsat 8/9 composite. That is fine here: all six composites were exported on exactly the same grid, and SWIR1 values for unchanged forest are very similar for both sensor groups.
    :::
 
 4. **Enter the subtraction.**
-   In the first row of the _Calculation in gdalnumeric syntax..._ column enter `A - B`, then click _Autofill... -> Fill Down_ at the top of the column to copy it to every row. The order matters: newer minus older means a loss of vegetation comes out negative.
+   In the first row of the _Calculation in gdalnumeric syntax..._ column enter `A - B`, then click _Autofill... -> Fill Down_ at the top of the column to copy it to every row. The order matters: later minus earlier.
 
 5. **Set the output filenames.**
    - In the first row of the _Calculated_ column, click the _..._ button and choose _Save to File..._
-   - Go to `change/dNDVI/`, enter `d.tif` as the filename and click _Save_.
+   - Go to `change/dSWIR1/`, enter `d.tif` as the filename and click _Save_.
    - In the _Autofill settings_ dialogue, choose _Fill with parameter values_ and pick _Input layer A_ as the parameter, then click OK.
 
-   Each output is named `d` plus the name of its newer layer. For example, `NDVI_l89_2025_dry_season` minus `NDVI_l89_2024_dry_season` is saved as `change/dNDVI/dNDVI_l89_2025_dry_season.tif`, the change from 2024 to 2025. Check that the output column looks like this before you run.
+   Each output is named `d` plus the name of its later layer. For example, `SWIR1_l89_2025_dry_season` minus `SWIR1_l89_2020_dry_season` is saved as `change/dSWIR1/dSWIR1_l89_2025_dry_season.tif`, the change from 2020 to 2025. Check that the output column looks like this before you run.
 
-6. **Run, then repeat.**
+6. **Run, then repeat for NDVI.**
    - Click _Run_.
-   - Repeat for the other sensors (`l57`, 2000–2011, and `s2`, 2018–2025), then for NBR and NDMI, saving each index into its own folder in `change/`.
+   - Repeat steps 2–5 with the `NDVI` layers, saving into `change/dNDVI/`.
+   - Add all ten change rasters to the project.
 
 <!-- end of change steps list; keeps the workflow list below separate -->
 
-5. Classify change.
-   Now you need to pick thresholds to detect clearing and regrowth. For each 
-   - Example:
-     - strong vegetation loss
-     - little or no change
-     - vegetation gain
-   - Adjust thresholds after visually checking known cleared areas.
+### Compare dNDVI and dSWIR1
 
-6. Clean the change map.
-   - Remove small isolated patches.
-   - Optional: polygonize the change raster.
-   - Optional: calculate area of changed land.
+Style the change rasters so they are easy to compare:
 
-7. Validate visually.
-   - Compare the change map against the original before/after imagery.
-   - Check several cleared fields and intact forest patches.
-   - Note confusion between cropland cycles, bare soil, burned areas, and true forest clearing.
+- **dNDVI:** singleband pseudocolor, `RdYlGn` color ramp, min −0.4, max 0.4. Red = NDVI went down, green = NDVI went up.
+- **dSWIR1:** singleband pseudocolor, `RdYlGn` color ramp **inverted**, min −0.1, max 0.1. Red = SWIR1 went up (possible clearing), green = SWIR1 went down.
+
+Now look closely at two periods, **2010→2015** and **2015→2020**, and answer these questions:
+
+1. In `dNDVI_l89_2020_dry_season` (2015→2020), what color is the large area of forest that was never cleared? If you used dNDVI alone, what would you conclude happened to that forest?
+2. In `dNDVI_l89_2015_dry_season` (2010→2015), find a field that was cleared during that period (compare the 2010 and 2015 composites). Did NDVI go up or down there? Why might clearing a forest make NDVI go *up*?
+3. Look at the same two periods in dSWIR1. Does the uncleared forest stay near 0? Do the newly cleared fields stand out?
+
+::: {.callout-note collapse="true"}
+## Why dry and wet years confuse NDVI (open after answering)
+
+The Gran Chaco has a strong dry season, and how dry it gets changes a lot from year to year. Judging from the imagery, the dry seasons of 2015 and 2025 were relatively wet and green, while 2010 and 2020 were much drier.
+
+- In a **dry year** the forest drops some leaves and gets less green, so its NDVI falls even though nothing was cut. Compare 2015 (wet) with 2020 (dry) and the whole forest looks like it lost vegetation.
+- In a **wet year** the planted pastures turn bright green, often greener than the forest itself. So a field cleared between 2010 (dry) and 2015 (wet) can have a *higher* NDVI afterward than the forest it replaced.
+
+NDVI measures greenness, and greenness here depends mostly on rainfall. SWIR1 responds to the structure of the surface. A forest canopy is rough and full of shadow and moist leaves, so it stays dark in SWIR1 whether the year is wet or dry. Pasture and bare soil are flat and bright in SWIR1, whether the grass is green or dead. That is why the forest/cleared difference in SWIR1 holds up across wet and dry years.
+:::
+
+### Map clearing
+
+A pixel was **cleared** during a five-year period if both of these are true:
+
+- **It was forest at the start:** SWIR1 in the earlier year is below 0.20.
+- **It got brighter:** dSWIR1 is greater than 0.05.
+
+The first condition matters. Without it, fields that were already cleared and just got drier between two years would also be counted as new clearing.
+
+1. **Create the output folder.** Create `change/cleared/`.
+
+2. **Open the GDAL Raster calculator as a batch process** (same as before).
+
+3. **Fill in the inputs.**
+   - _Input layer A_: Autofill with the five `dSWIR1` layers.
+   - _Input layer B_: Autofill with the `SWIR1` layers for the **earlier** year of each pair: 2000, 2005, 2010, 2015 and 2020.
+   - Check the pairs: `dSWIR1_l57_2005_dry_season` (2000→2005) goes with `SWIR1_l57_2000_dry_season`, and so on.
+
+4. **Enter the rule.**
+   In the first calculation cell enter the expression below, then use _Fill Down_:
+
+   ```
+   (B < 0.20) * (A > 0.05)
+   ```
+
+   Each comparison gives 1 where it is true and 0 where it is false. Multiplying them gives 1 only where **both** are true, so it works as an AND. The output is 1 for cleared and 0 for everything else.
+
+5. **Set the output filenames.** Save the first row as `change/cleared/cleared_.tif`, then _Fill with parameter values_ from _Input layer A_. The 2020→2025 result becomes `cleared_dSWIR1_l89_2025_dry_season.tif`.
+
+6. **Run, add the results, and check them.**
+   Style each cleared layer so 1 is a bright color and 0 is transparent, and put it over the later composite in false color (SWIR1, NIR, red). Do the red patches line up with new fields? Pan around some intact forest: are there false alarms?
+
+   The 0.20 and 0.05 thresholds were chosen by checking known forest and known fields in these images. If you find areas where they do not work well, try adjusting them and note what changed.
+
+### Clean the map
+
+The cleared maps contain some single pixels and tiny patches along field edges and roads. Remove them with a sieve:
+
+1. Open _GDAL -> Raster analysis -> Sieve_ as a batch process.
+2. Autofill the input column with the five `cleared_` layers.
+3. Set _Threshold_ to 11 and leave _Use 8-connectedness_ unchecked. Each pixel is about 29 m × 29 m ≈ 0.085 ha, so 11 pixels is about 1 ha. Any cleared patch smaller than that is removed.
+4. Save the outputs to `change/cleared/` with the prefix `sieved_` (save the first row as `sieved_.tif` and _Fill with parameter values_ from the input layer).
+
+### Calculate cleared area
+
+1. Open _Raster analysis -> Raster layer unique values report_ as a batch process and add the five `sieved_` layers.
+2. For each report, find the row where the value is 1. It gives the pixel count and the area in m².
+3. Convert to hectares (divide by 10,000) and make a table of cleared area for each five-year period.
+
+Which period had the most clearing?
+
+**Optional:** Polygonize one of the sieved rasters (_GDAL -> Raster conversion -> Polygonize_) and look at the size and shape of the cleared patches.
+
+### Validate visually
+
+- Compare each cleared map with the before and after composites.
+- Check several cleared fields and several intact forest patches.
+- Note any confusion: cropland cycles, bare soil, burned areas, or the rocky, sparsely vegetated hills of Cerro Chovoreca in the north.
 
 ## Outputs
 
@@ -267,5 +353,4 @@ This time you do not need a model. There is only one step, so you will run the G
 
 - Use the same months for each year to reduce seasonal bias.
 - Median composites help, but they do not remove all phenology or crop-cycle differences.
-- Sentinel-2 gives better spatial detail from 2018 onward.
-- Landsat gives a longer historical record at coarser resolution.
+- Landsat gives a 25-year record (2000–2025) at ~30 m resolution. Sentinel-2 has finer detail (~10 m) but its record only starts in the late 2010s, so it can't show the early clearing.
