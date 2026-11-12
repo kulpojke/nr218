@@ -25,6 +25,9 @@ Download for examples:
 <br>
 
 [They combine: **a model can be run as a batch**. That is where the real power is.]{.fragment}
+ <br> 
+
+[Just using Python on its own is also a good way!]{.fragment}
 
 ## You already have a record of your workflow {style="font-size:0.7em"}
 
@@ -193,7 +196,7 @@ How many earthquakes of at least `min_mag` happened in each county, in the year 
 | -- | ------ | ------------ |
 | Inputs | | `quake_csv` (Vector layer, Geometryless), `counties` (Vector layer, Polygon), `min_mag` (Number, default 3) |
 | 1 | Create points layer from table | X = `longitude`, Y = `latitude`, CRS = EPSG:4326 |
-| 2 | Extract by expression | `"mag" >= @min_mag` (model inputs become `@variables`) |
+| 2 | Extract by expression | `to_real("mag") >= @min_mag` (`to_real` turns the text into a number; model inputs become `@variables`) |
 | 3 | Count points in polygon | polygons = `counties`, points = step 2, field name `n_quakes` |
 
 ## Build it, then test it {style="font-size:0.7em"}
@@ -236,7 +239,7 @@ Processing Toolbox → _Models_ (or _Project models_) → right-click your model
 
 - **Test on one input first**, then batch
 - **X = longitude, Y = latitude**
-- **CSVs opened from a file are all text.** `"mag" >= 3` still works, but use `to_real("mag")` for math or graduated symbols
+- **CSVs opened from a file are all text.** That is why the model uses `to_real("mag")`: it turns the text into a number before comparing
 - **_Select from Available Layers_ only lists loaded layers.** Use _Select Files..._ for files on disk
 - **Check that your rows line up** (e.g. year 2005 with year 2000) before clicking _Run_
 - **Same output name = overwritten file.** Build names from the input name
@@ -252,7 +255,7 @@ qgis_process run native:createpointslayerfromtable -- \
     TARGET_CRS=EPSG:4326 OUTPUT=pts_2019.gpkg
 
 qgis_process run native:extractbyexpression -- \
-    INPUT=pts_2019.gpkg EXPRESSION='"mag" >= 3' OUTPUT=m3_2019.gpkg
+    INPUT=pts_2019.gpkg EXPRESSION='to_real("mag") >= 3' OUTPUT=m3_2019.gpkg
 
 qgis_process run native:countpointsinpolygon -- \
     POLYGONS=cal_counties.geojson POINTS=m3_2019.gpkg \

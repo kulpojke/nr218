@@ -67,7 +67,7 @@ All files cover the same area and share these properties:
 
 ## Setup 
 
-Download the project [here](). Extract the folder found within the zip to your `nr218` directory. The project folder contains a QGIS project file and six TIFs in a directory called `landsat/`.
+Download the data [here](https://cpslo-my.sharepoint.com/personal/mthuggin_calpoly_edu/_layouts/15/download.aspx?share=IQB5grIYV2hmSamf5nwIAmzhAZLSdWMEZp2yhxop5PyXxJo). Extract the folder found within the zip to your `nr218` directory. The project folder contains a QGIS project file and six TIFs in a directory called `landsat/`.
 
 Open the QGIS project. Set the project CRS to an appropriate UTM CRS.
 
@@ -188,6 +188,7 @@ You will use QGIS Model Designer to build one model that, for each composite ras
                                          └──> extract SWIR1 ──> swir1/SWIR1_<input name>.tif
    ```
 
+
 10. **Run the model as a batch process.**
     - Save the model and close Model Designer.
     - In the Processing Toolbox, open _Project models -> calc index_, right-click "calc NDVI and SWIR1" and choose _Execute as Batch Process..._
@@ -200,6 +201,8 @@ You will use QGIS Model Designer to build one model that, for each composite ras
 Before you go on, put `SWIR1_l57_2000_dry_season` and `SWIR1_l89_2025_dry_season` side by side. Style both with the same min/max (about 0.1 to 0.35). Intact forest is **dark** in SWIR1 (roughly 0.15–0.19). Cleared fields are **bright** (above about 0.21). Now do the same with the two NDVI layers. 
 
 > __Q2:__ Which one shows the cleared fields more clearly?
+
+> __Q3:__ Check the pixel size of one of your new SWIR1_ rasters (Layer Properties → Information). Why isn't it exactly 30 m?
 
 ### Calculate change between dates
 
@@ -251,6 +254,8 @@ This time you do not need a model. There is only one step, so you will run the G
    The 2010→2015 pair compares a Landsat 5/7 composite with a Landsat 8/9 composite. That is fine here: all six composites were exported on exactly the same grid, and SWIR1 values for unchanged forest are very similar for both sensor groups.
    :::
 
+   > __Q4:__  The 2010→2015 pair compares Landsat 5/7 with Landsat 8/9. What would you check to convince yourself this comparison is fair?
+
 4. **Enter the subtraction.**
    In the first row of the _Calculation in gdalnumeric syntax..._ column enter `A - B`, then click _Autofill... -> Fill Down_ at the top of the column to copy it to every row. The order matters: later minus earlier.
 
@@ -278,11 +283,11 @@ Style the change rasters so they are easy to compare:
 
 Now look closely at two periods, **2010→2015** and **2015→2020**, and answer these questions:
 
-> __Q3:__ In `dNDVI_l89_2020_dry_season` (2015→2020), what color is the large area of forest that was never cleared? If you used dNDVI alone, what would you conclude happened to that forest? (Make sure the ramp is set to min −0.4 and max 0.4 as described above. With QGIS's default min/max, the colors are stretched to fit this layer's values and the forest will look misleadingly normal.)
+> __Q5:__ In `dNDVI_l89_2020_dry_season` (2015→2020), what color is the large area of forest that was never cleared? If you used dNDVI alone, what would you conclude happened to that forest? (Make sure the ramp is set to min −0.4 and max 0.4 as described above. With QGIS's default min/max, the colors are stretched to fit this layer's values and the forest will look misleadingly normal.)
 
-> __Q4:__ In `dNDVI_l89_2015_dry_season` (2010→2015), find a field that was cleared during that period (compare the 2010 and 2015 composites). Did NDVI go up or down there? Why might clearing a forest make NDVI go *up*?
+> __Q6:__ In `dNDVI_l89_2015_dry_season` (2010→2015), find a field that was cleared during that period (compare the 2010 and 2015 composites). Did NDVI go up or down there? Why might clearing a forest make NDVI go *up*?
 
-> __Q5:__ Look at the same two periods in dSWIR1. Does the uncleared forest stay near 0? Do the newly cleared fields stand out?
+> __Q7:__ Look at the same two periods in dSWIR1. Does the uncleared forest stay near 0? Do the newly cleared fields stand out?
 
 ::: {.callout-note collapse="true"}
 ## Why dry and wet years confuse NDVI (open after answering)
@@ -329,7 +334,7 @@ The first condition matters. Without it, fields that were already cleared and ju
 
    The 0.20 and 0.05 thresholds were chosen by checking known forest and known fields in these images. If you find areas where they do not work well, try adjusting them and note what changed.
 
-> __Q6:__ We could have done the previous two caluclations (change and mapping clearing) in one step in Raster Calculator.  What formula would one use to do so?
+> __Q8:__ We could have done the previous two caluclations (change and mapping clearing) in one step in Raster Calculator.  What formula would one use to do so?
 
 ### Clean the map
 
@@ -349,6 +354,8 @@ The cleared maps contain some single pixels and tiny patches along field edges a
 Which period had the most clearing?
 
 **Optional:** Polygonize one of the sieved rasters (_GDAL -> Raster conversion -> Polygonize_) and look at the size and shape of the cleared patches.
+
+> __Q9:__ Which five-year period had the most clearing, and how many hectares were cleared?
 
 ### Validate visually
 

@@ -269,7 +269,7 @@ Table&nbsp;2: Exported image band order and source sensor bands.
 </section>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>Download the project <a href="">here</a>. Extract the folder found within the zip to your <code>nr218</code> directory. The project folder contains a QGIS project file and six TIFs in a directory called <code>landsat/</code>.</p>
+<p>Download the data <a href="https://cpslo-my.sharepoint.com/personal/mthuggin_calpoly_edu/_layouts/15/download.aspx?share=IQB5grIYV2hmSamf5nwIAmzhAZLSdWMEZp2yhxop5PyXxJo">here</a>. Extract the folder found within the zip to your <code>nr218</code> directory. The project folder contains a QGIS project file and six TIFs in a directory called <code>landsat/</code>.</p>
 <p>Open the QGIS project. Set the project CRS to an appropriate UTM CRS.</p>
 <blockquote class="blockquote">
 <p><strong>Q1:</strong> Why did you choose the particular variant of UTM zone 21S that you did? Contrast it to others and explain the difference.</p>
@@ -406,6 +406,9 @@ Expression breakdown
 <blockquote class="blockquote">
 <p><strong>Q2:</strong> Which one shows the cleared fields more clearly?</p>
 </blockquote>
+<blockquote class="blockquote">
+<p><strong>Q3:</strong> Check the pixel size of one of your new SWIR1_ rasters (Layer Properties → Information). Why isn’t it exactly 30 m?</p>
+</blockquote>
 </section>
 <section id="calculate-change-between-dates" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-change-between-dates">Calculate change between dates</h3>
@@ -461,7 +464,10 @@ Mixing Landsat 5/7 and Landsat 8/9
 <div class="callout-body-container callout-body">
 <p>The 2010→2015 pair compares a Landsat 5/7 composite with a Landsat 8/9 composite. That is fine here: all six composites were exported on exactly the same grid, and SWIR1 values for unchanged forest are very similar for both sensor groups.</p>
 </div>
-</div></li>
+</div>
+<blockquote class="blockquote">
+<p><strong>Q4:</strong> The 2010→2015 pair compares Landsat 5/7 with Landsat 8/9. What would you check to convince yourself this comparison is fair?</p>
+</blockquote></li>
 <li><p><strong>Enter the subtraction.</strong> In the first row of the <em>Calculation in gdalnumeric syntax…</em> column enter <code>A - B</code>, then click <em>Autofill… -&gt; Fill Down</em> at the top of the column to copy it to every row. The order matters: later minus earlier.</p></li>
 <li><p><strong>Set the output filenames.</strong></p>
 <ul>
@@ -489,13 +495,13 @@ Mixing Landsat 5/7 and Landsat 8/9
 </ul>
 <p>Now look closely at two periods, <strong>2010→2015</strong> and <strong>2015→2020</strong>, and answer these questions:</p>
 <blockquote class="blockquote">
-<p><strong>Q3:</strong> In <code>dNDVI_l89_2020_dry_season</code> (2015→2020), what color is the large area of forest that was never cleared? If you used dNDVI alone, what would you conclude happened to that forest? (Make sure the ramp is set to min −0.4 and max 0.4 as described above. With QGIS’s default min/max, the colors are stretched to fit this layer’s values and the forest will look misleadingly normal.)</p>
+<p><strong>Q5:</strong> In <code>dNDVI_l89_2020_dry_season</code> (2015→2020), what color is the large area of forest that was never cleared? If you used dNDVI alone, what would you conclude happened to that forest? (Make sure the ramp is set to min −0.4 and max 0.4 as described above. With QGIS’s default min/max, the colors are stretched to fit this layer’s values and the forest will look misleadingly normal.)</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><strong>Q4:</strong> In <code>dNDVI_l89_2015_dry_season</code> (2010→2015), find a field that was cleared during that period (compare the 2010 and 2015 composites). Did NDVI go up or down there? Why might clearing a forest make NDVI go <em>up</em>?</p>
+<p><strong>Q6:</strong> In <code>dNDVI_l89_2015_dry_season</code> (2010→2015), find a field that was cleared during that period (compare the 2010 and 2015 composites). Did NDVI go up or down there? Why might clearing a forest make NDVI go <em>up</em>?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><strong>Q5:</strong> Look at the same two periods in dSWIR1. Does the uncleared forest stay near 0? Do the newly cleared fields stand out?</p>
+<p><strong>Q7:</strong> Look at the same two periods in dSWIR1. Does the uncleared forest stay near 0? Do the newly cleared fields stand out?</p>
 </blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -544,7 +550,7 @@ Why dry and wet years confuse NDVI (open after answering)
 <p>The 0.20 and 0.05 thresholds were chosen by checking known forest and known fields in these images. If you find areas where they do not work well, try adjusting them and note what changed.</p></li>
 </ol>
 <blockquote class="blockquote">
-<p><strong>Q6:</strong> We could have done the previous two caluclations (change and mapping clearing) in one step in Raster Calculator. What formula would one use to do so?</p>
+<p><strong>Q8:</strong> We could have done the previous two caluclations (change and mapping clearing) in one step in Raster Calculator. What formula would one use to do so?</p>
 </blockquote>
 </section>
 <section id="clean-the-map" class="level3">
@@ -566,6 +572,9 @@ Why dry and wet years confuse NDVI (open after answering)
 </ol>
 <p>Which period had the most clearing?</p>
 <p><strong>Optional:</strong> Polygonize one of the sieved rasters (<em>GDAL -&gt; Raster conversion -&gt; Polygonize</em>) and look at the size and shape of the cleared patches.</p>
+<blockquote class="blockquote">
+<p><strong>Q9:</strong> Which five-year period had the most clearing, and how many hectares were cleared?</p>
+</blockquote>
 </section>
 <section id="validate-visually" class="level3">
 <h3 class="anchored" data-anchor-id="validate-visually">Validate visually</h3>
