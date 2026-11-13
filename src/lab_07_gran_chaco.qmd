@@ -67,7 +67,7 @@ All files cover the same area and share these properties:
 
 ## Setup 
 
-Download the data [here](https://cpslo-my.sharepoint.com/personal/mthuggin_calpoly_edu/_layouts/15/download.aspx?share=IQB5grIYV2hmSamf5nwIAmzhAZLSdWMEZp2yhxop5PyXxJo). Extract the folder found within the zip to your `nr218` directory. The project folder contains a QGIS project file and six TIFs in a directory called `landsat/`.
+Download the data [here](https://cpslo-my.sharepoint.com/:u:/r/personal/mthuggin_calpoly_edu/Documents/nr218_files/gran_chaco_landsat.zip?d=w460d443dfeef4b8aa11ca67ab8a94327&csf=1&web=1&e=ZQlNdt). Extract the folder found within the zip to your `nr218` directory. The project folder contains a QGIS project file and six TIFs in a directory called `landsat/`.
 
 Open the QGIS project. Set the project CRS to an appropriate UTM CRS.
 
